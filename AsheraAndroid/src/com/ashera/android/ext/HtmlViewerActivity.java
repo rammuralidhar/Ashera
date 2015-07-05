@@ -3,6 +3,8 @@ package com.ashera.android.ext;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.util.Iterator;
+import java.util.List;
 
 import org.ccil.cowan.tagsoup.HTMLSchema;
 import org.ccil.cowan.tagsoup.Parser;
@@ -18,6 +20,11 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
+
+import com.osbcp.cssparser.CSSParser;
+import com.osbcp.cssparser.PropertyValue;
+import com.osbcp.cssparser.Rule;
+import com.osbcp.cssparser.Selector;
 
 public class HtmlViewerActivity extends Activity {
 	private static class HtmlParser {
@@ -85,6 +92,41 @@ public class HtmlViewerActivity extends Activity {
 		public void startElement(String uri, String localName, String qName,
 				Attributes atts) throws SAXException {
 			Log.e("startElement", localName);
+			
+			if (localName.equals("link")) {
+				try {
+					InputStream is = getAssets().open("www/" + atts.getValue("href"));
+					byte[] b = new byte[is.available()];
+					is.read(b);
+					is.close();
+					 String contents = new String(b);
+					 List<Rule> rules = CSSParser.parse(contents);
+					 
+					 for (Iterator iterator = rules.iterator(); iterator
+							.hasNext();) {
+						Rule rule = (Rule) iterator.next();
+						// Get all the selectors (such as 'table', 'table td', 'a')
+				        List<Selector> selectors = rule.getSelectors();
+
+				        for (Selector selector : selectors) {
+							Log.e("selector", selector.toString());
+						}
+				        // Get all the property (such as 'width') and its value (such as '100px')   
+				        List<PropertyValue> propertyValues = rule.getPropertyValues();
+				        
+				        for (PropertyValue propertyValue : propertyValues) {
+				        	Log.e("selector", propertyValue.toString());
+						}
+					}
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+				
 
 		}
 
