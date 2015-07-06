@@ -2,12 +2,16 @@ package com.ashera.android.ext;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.StringReader;
-import java.util.Iterator;
 import java.util.List;
 
 import org.ccil.cowan.tagsoup.HTMLSchema;
 import org.ccil.cowan.tagsoup.Parser;
+import org.w3c.dom.css.CSSMediaRule;
+import org.w3c.dom.css.CSSRule;
+import org.w3c.dom.css.CSSRuleList;
+import org.w3c.dom.css.CSSStyleSheet;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.InputSource;
@@ -21,10 +25,11 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
 
-import com.osbcp.cssparser.CSSParser;
-import com.osbcp.cssparser.PropertyValue;
-import com.osbcp.cssparser.Rule;
-import com.osbcp.cssparser.Selector;
+import com.steadystate.css.dom.MediaListImpl;
+import com.steadystate.css.dom.Property;
+import com.steadystate.css.parser.CSSOMParser;
+import com.steadystate.css.parser.SACParserCSS3;
+import com.steadystate.css.parser.media.MediaQuery;
 
 public class HtmlViewerActivity extends Activity {
 	private static class HtmlParser {
@@ -94,38 +99,46 @@ public class HtmlViewerActivity extends Activity {
 			Log.e("startElement", localName);
 			
 			if (localName.equals("link")) {
+				InputStream is = null;
 				try {
-					InputStream is = getAssets().open("www/" + atts.getValue("href"));
-					byte[] b = new byte[is.available()];
-					is.read(b);
-					is.close();
-					 String contents = new String(b);
-					 List<Rule> rules = CSSParser.parse(contents);
+					is = getAssets().open("www/" + atts.getValue("href"));
+				    CSSOMParser parser = new CSSOMParser(new SACParserCSS3());
+					 CSSStyleSheet sheet = parser.parseStyleSheet(new org.w3c.css.sac.InputSource(
+							 new InputStreamReader(is)), null, null);
 					 
-					 for (Iterator iterator = rules.iterator(); iterator
-							.hasNext();) {
-						Rule rule = (Rule) iterator.next();
-						// Get all the selectors (such as 'table', 'table td', 'a')
-				        List<Selector> selectors = rule.getSelectors();
+					 CSSRuleList rules = sheet.getCssRules();
+					 for (int i = 0; i < rules.getLength(); i++) {
+					     final CSSRule rule = rules.item(i);
+					     
+					     if (rule instanceof CSSMediaRule) {
+					    	 MediaListImpl cssRules = ((MediaListImpl)((CSSMediaRule) rule).getMedia());
+					    	 
+							MediaQuery mediaQuery = cssRules.mediaQuery(0);
+							List<Property> properties = mediaQuery.getProperties();
+							Log.e("xxxw",properties.size() + " " + properties.get(1).getCssText() + " "
+									+ mediaQuery.getMedia());
+					     }
 
-				        for (Selector selector : selectors) {
-							Log.e("selector", selector.toString());
-						}
-				        // Get all the property (such as 'width') and its value (such as '100px')   
-				        List<PropertyValue> propertyValues = rule.getPropertyValues();
-				        
-				        for (PropertyValue propertyValue : propertyValues) {
-				        	Log.e("selector", propertyValue.toString());
-						}
-					}
+					     Log.e("xxx",rule.getCssText());
+					 }
+					 
+					 is.close();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					Log.e("exception", e.getMessage() + "");
+				}finally {
+					try {
+						is.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
-			}
+			} 
 				
 
 		}
