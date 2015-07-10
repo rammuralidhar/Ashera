@@ -2,23 +2,36 @@ package com.ashera.android.utils.ui;
 
 import java.util.Map;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.view.ViewCompat;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 public class ContainerUI implements UI{
 
 	@Override
-	public boolean createUi(Map<String, String> cssAttributes, Object parentData) {
+	public Object createUi(Map<String, String> cssAttributes, Object parentData, Object contextObj) {
 		String display = cssAttributes.get("display");
+		Context context = (Context) contextObj;
+		if (parentData == null) {
+			parentData = new FrameLayout(context);
+		}
 		ViewGroup parentContainer = (ViewGroup) parentData;
-		LinearLayout child = new LinearLayout(parentContainer.getContext());
+		
 		if (display != null  && display.equals("flex")) {
+			LinearLayout child = new LinearLayout(context);
+			child.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
+					LayoutParams.MATCH_PARENT));
+			child.setBackgroundColor(Color.RED);
 			setOrientation(cssAttributes, child);
+			parentContainer.addView(child);
 		}
 		
-		parentContainer.addView(child);
-		return false;
+		
+		return parentContainer;
 	}
 
 	private void setOrientation(Map<String, String> cssAttributes, LinearLayout linearLayout) {

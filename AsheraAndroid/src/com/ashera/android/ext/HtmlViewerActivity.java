@@ -28,6 +28,6 @@ public class HtmlViewerActivity extends Activity {
         
         String html = IOUtils.readFileToString("www/index.html", this);
         HtmlSaxHandler handler = new HtmlSaxHandler(this, html, parser);
-		handler.parse();
+		setContentView(handler.parse());
 	}
 }

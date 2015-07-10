@@ -12,9 +12,10 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 
 import com.ashera.android.utils.BaseContentHandler;
 import com.ashera.android.utils.css.CssParser;
@@ -37,8 +38,9 @@ public class HtmlSaxHandler extends BaseContentHandler {
 		this.cssParser = CSS_PARSER_FACTORY.getParser();
 	}
 
-	public LinearLayout parse() {
-
+	public FrameLayout parse() {
+		FrameLayout frameLayout = new FrameLayout(context);
+		viewGroups.push(frameLayout);
 		mReader.setContentHandler(this);
 		try {
 			mReader.parse(new InputSource(new StringReader(mSource)));
@@ -50,8 +52,8 @@ public class HtmlSaxHandler extends BaseContentHandler {
 			// TagSoup doesn't throw parse exceptions.
 			throw new RuntimeException(e);
 		}
-
-		return null;
+		frameLayout.setBackgroundColor(Color.BLUE);
+		return frameLayout;
 	}
 
 
@@ -60,23 +62,29 @@ public class HtmlSaxHandler extends BaseContentHandler {
 			Attributes atts) throws SAXException {
 		Log.e("startElement", localName);
 		
-		if (localName.equals("html")) {
-			
-		} else if (localName.equals("body")) {
-		}
-		else if (localName.equals("link")) {
+		if (localName.equals("link")) {
 			cssParser.addFile(context, "www/" + atts.getValue("href"));
 		} else {
 			Map<String, String> cssattributes = cssParser.get(localName);
 			UI ui = uiFactory.get(localName, cssattributes);
-			ui.createUi(cssattributes, context);
+			
+			Object parent = null;
+			if (!viewGroups.isEmpty()) {
+				parent = viewGroups.peek();
+			}
+
+			viewGroups.push((ViewGroup) ui.createUi(cssattributes, parent, context));
 		}
 	}
 
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
-		Log.e("EndTag", localName);
+		Log.e("EndTag", localName + " "  + viewGroups.size());
+		
+		if (!localName.equals("link")) {
+			viewGroups.pop();
+		}
 
 	}
 }
