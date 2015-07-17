@@ -18,24 +18,23 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.ashera.android.utils.BaseContentHandler;
-import com.ashera.android.utils.css.CssParser;
-import com.ashera.android.utils.css.CssParserFactory;
 import com.ashera.android.utils.ui.UI;
+import com.ashera.android.utils.ui.UIContext;
 import com.ashera.android.utils.ui.UIFactory;
 
 public class HtmlSaxHandler extends BaseContentHandler {
 	private String mSource;
 	private XMLReader mReader;
 	private Context context;
-	private static CssParserFactory CSS_PARSER_FACTORY = new CssParserFactory();
-	private CssParser cssParser;
+	private UIContext uiContext = new UIContext();
 	private UIFactory uiFactory = new UIFactory();
 	private Stack<ViewGroup> viewGroups = new Stack<ViewGroup>();
+	private Stack<Boolean> pushParent = new Stack<Boolean>();
 	public HtmlSaxHandler(Context context, String source, Parser parser) {
 		this.context = context;
+		uiContext.setContext(context);
 		mSource = source;
 		mReader = parser;
-		this.cssParser = CSS_PARSER_FACTORY.getParser();
 	}
 
 	public FrameLayout parse() {
@@ -61,30 +60,34 @@ public class HtmlSaxHandler extends BaseContentHandler {
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException {
 		Log.e("startElement", localName);
-		
-		if (localName.equals("link")) {
-			cssParser.addFile(context, "www/" + atts.getValue("href"));
-		} else {
-			Map<String, String> cssattributes = cssParser.get(localName);
-			UI ui = uiFactory.get(localName, cssattributes);
-			
+				
+		Map<String, String> cssattributes = uiContext.getCssParser().get(localName);
+		UI ui = uiFactory.get(localName, cssattributes);
+		boolean parentPushed = false;
+		if (ui != null) {
 			Object parent = null;
 			if (!viewGroups.isEmpty()) {
 				parent = viewGroups.peek();
 			}
-
-			viewGroups.push((ViewGroup) ui.createUi(cssattributes, parent, context));
+			uiContext.setParent(parent);
+			
+			parent = ui.createUi(localName, atts, uiContext);
+			
+			if (parent != null) {
+				parentPushed = true;
+				viewGroups.push((ViewGroup) parent);
+			}
 		}
+		
+		pushParent.add(parentPushed);
 	}
 
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
-		Log.e("EndTag", localName + " "  + viewGroups.size());
 		
-		if (!localName.equals("link")) {
+		if (pushParent.pop()) {
 			viewGroups.pop();
 		}
-
 	}
 }

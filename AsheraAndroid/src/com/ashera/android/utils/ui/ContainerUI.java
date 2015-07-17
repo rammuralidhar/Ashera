@@ -13,9 +13,12 @@ import android.widget.LinearLayout;
 public class ContainerUI implements UI{
 
 	@Override
-	public Object createUi(Map<String, String> cssAttributes, Object parentData, Object contextObj) {
+	public Object createUi(String localName, Object attributes, UIContext contextObj) {
+		Map<String, String> cssAttributes = contextObj.getCssParser().get(localName);
 		String display = cssAttributes.get("display");
-		Context context = (Context) contextObj;
+		Context context = (Context) contextObj.getContext();
+		
+		Object parentData = contextObj.getParent();
 		if (parentData == null) {
 			parentData = new FrameLayout(context);
 		}
