@@ -37,7 +37,7 @@ public class CssParserImpl implements CssParser {
 			    		 int styles = cssStyleRule.getStyle().getLength();
 			    		 
 			    		 for (int j = 0; j < styles; j++) {
-							String key = cssStyleRule.getStyle().item(i);
+							String key = cssStyleRule.getStyle().item(j);
 							String value = cssStyleRule.getStyle().getPropertyValue(key);
 							finalattributes.put(key, value);
 						}

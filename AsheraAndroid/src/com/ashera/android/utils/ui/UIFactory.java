@@ -9,6 +9,7 @@ public class UIFactory {
 		registrationMap.put("div", new ContainerUI());
 		registrationMap.put("body", new ContainerUI());
 		registrationMap.put("link", new HyperLinkUI());
+		registrationMap.put("label", new LabelUI());
 	}
 	public UI get(String localname, Map<String, String> cssattributes) {
 		return registrationMap.get(localname);
