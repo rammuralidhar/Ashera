@@ -13,10 +13,11 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.ashera.android.ext.R;
 
-public class FlowLayout extends ViewGroup {
+public class FlowLayout extends LinearLayout {
     public static final int HORIZONTAL = 0;
     public static final int VERTICAL = 1;
     public static final int LAYOUT_DIRECTION_LTR = 0;
@@ -24,9 +25,11 @@ public class FlowLayout extends ViewGroup {
 
     private final LayoutConfiguration config;
     List<LineDefinition> lines = new ArrayList<LineDefinition>();
+	private boolean applyWrap;
 
-    public FlowLayout(Context context) {
+    public FlowLayout(Context context, boolean applyWrap) {
         super(context);
+        this.applyWrap = applyWrap;
         this.config = new LayoutConfiguration(context, null);
     }
 
@@ -35,13 +38,14 @@ public class FlowLayout extends ViewGroup {
         this.config = new LayoutConfiguration(context, attributeSet);
     }
 
-    public FlowLayout(Context context, AttributeSet attributeSet, int defStyle) {
-        super(context, attributeSet, defStyle);
-        this.config = new LayoutConfiguration(context, attributeSet);
-    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    	if (!applyWrap) {
+    		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    		return;
+    	}
+    	
         final int sizeWidth = MeasureSpec.getSize(widthMeasureSpec) - this.getPaddingRight() - this.getPaddingLeft();
         final int sizeHeight = MeasureSpec.getSize(heightMeasureSpec) - this.getPaddingTop() - this.getPaddingBottom();
         final int modeWidth = MeasureSpec.getMode(widthMeasureSpec);
@@ -285,6 +289,10 @@ public class FlowLayout extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
+    	if (!applyWrap) {
+    		super.onLayout(changed, l, t, r, b);
+    		return;
+    	}
         final int count = this.getChildCount();
         for (int i = 0; i < count; i++) {
             View child = this.getChildAt(i);
@@ -434,7 +442,7 @@ public class FlowLayout extends ViewGroup {
         this.requestLayout();
     }
 
-    public static class LayoutParams extends MarginLayoutParams {
+    public static class LayoutParams extends LinearLayout.LayoutParams {
         public boolean newLine = false;
         @ViewDebug.ExportedProperty(mapping = {
                 @ViewDebug.IntToString(from = Gravity.NO_GRAVITY, to = "NONE"),

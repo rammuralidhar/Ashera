@@ -30,17 +30,10 @@ public class ContainerUI implements UI{
 		if (display != null  && display.equals("flex")) {
 			ViewGroup child =null;
 			
-			if (rowWrap != null && rowWrap.equals("wrap")) {
-				child = new FlowLayout(context);
-				child.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-						LayoutParams.MATCH_PARENT));
-				setOrientation(cssAttributes, (FlowLayout) child);
-			} else {
-				child = new LinearLayout(context);
-				setOrientation(cssAttributes, (LinearLayout) child);
-				child.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-						LayoutParams.MATCH_PARENT));
-			}
+			child = new FlowLayout(context, rowWrap != null && rowWrap.equals("wrap"));
+			child.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
+					LayoutParams.MATCH_PARENT));
+			setOrientation(cssAttributes, (FlowLayout) child);
 			
 			child.setBackgroundColor(Color.RED);
 			
@@ -54,20 +47,6 @@ public class ContainerUI implements UI{
 	}
 
 	private void setOrientation(Map<String, String> cssAttributes, FlowLayout linearLayout) {
-		linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-		String flexDirection = cssAttributes.get("flex-direction");
-		
-		if (flexDirection != null) {
-			if (flexDirection.equals("column")) { 
-				linearLayout.setOrientation(LinearLayout.VERTICAL);
-			} else if (flexDirection.equals("row-reverse")) {
-				ViewCompat.setLayoutDirection(linearLayout, ViewCompat.LAYOUT_DIRECTION_RTL);
-			} else if (flexDirection.equals("column-reverse")) {
-				linearLayout.setOrientation(LinearLayout.VERTICAL);
-			}
-		}
-	}
-	private void setOrientation(Map<String, String> cssAttributes, LinearLayout linearLayout) {
 		linearLayout.setOrientation(LinearLayout.HORIZONTAL);
 		String flexDirection = cssAttributes.get("flex-direction");
 		
