@@ -24,7 +24,13 @@ public class CssParserImpl implements CssParser {
 	}
 	
 	@Override
-	public Map<String, String> get(String tag) {
+	public Map<String, String> get(String tag, String className) {
+		String selectorText[] = new String[0];
+		
+		if (className != null) {
+			selectorText = className.split("\\s");
+		}
+ 		
 		LinkedHashMap<String, String> finalattributes = new LinkedHashMap<String, String>();
 		for (CSSRuleList rules : ruleList) {
 			for (int i = 0; i < rules.getLength(); i++) {
@@ -32,6 +38,15 @@ public class CssParserImpl implements CssParser {
 			     
 			     if (rule instanceof CSSStyleRule) {
 			    	 CSSStyleRule cssStyleRule = (CSSStyleRule) rule;
+			    	 
+			    	 for (int j = 0; j < selectorText.length; j++) {
+			    		 if (cssStyleRule.getSelectorText().equals("*." + selectorText[j])) {
+			    			 String key = cssStyleRule.getStyle().item(j);
+			    			 String value = cssStyleRule.getStyle().getPropertyValue(key);
+			    			 finalattributes.put(key, value);
+				    	 }	
+			    	 }
+			    	 
 			    	 
 			    	 if (cssStyleRule.getSelectorText().equals(tag)) {
 			    		 int styles = cssStyleRule.getStyle().getLength();

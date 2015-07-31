@@ -3,6 +3,7 @@ package com.ashera.android.utils.ui;
 import java.util.Map;
 
 import org.apmem.tools.layouts.FlowLayout;
+import org.xml.sax.Attributes;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -16,7 +17,8 @@ public class ContainerUI implements UI{
 
 	@Override
 	public Object createUi(String localName, Object attributes, UIContext contextObj) {
-		Map<String, String> cssAttributes = contextObj.getCssParser().get(localName);
+		String className = ((Attributes) attributes).getValue("class");
+		Map<String, String> cssAttributes = contextObj.getCssParser().get(localName, className);
 		String display = cssAttributes.get("display");
 		String rowWrap = cssAttributes.get("row-wrap");
 		Context context = (Context) contextObj.getContext();

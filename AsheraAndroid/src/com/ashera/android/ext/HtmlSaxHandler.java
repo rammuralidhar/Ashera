@@ -2,7 +2,6 @@ package com.ashera.android.ext;
 
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.Map;
 import java.util.Stack;
 
 import org.ccil.cowan.tagsoup.Parser;
@@ -60,9 +59,8 @@ public class HtmlSaxHandler extends BaseContentHandler {
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException {
 		Log.e("startElement", localName);
-				
-		Map<String, String> cssattributes = uiContext.getCssParser().get(localName);
-		UI ui = uiFactory.get(localName, cssattributes);
+		
+		UI ui = uiFactory.get(localName, atts);
 		boolean parentPushed = false;
 		if (ui != null) {
 			Object parent = null;
