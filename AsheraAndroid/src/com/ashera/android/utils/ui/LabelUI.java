@@ -16,12 +16,11 @@ public class LabelUI implements UI{
 		TextView textView = new TextView(context);
 		textView.setLayoutParams(new FlowLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT));
-		textView.setText("12345s");
 		Object parentData = contextObj.getParent();
 		if (parentData != null) {
 			((ViewGroup) parentData).addView(textView);
 		}
-		return null;
+		return textView;
 	}
 
 }

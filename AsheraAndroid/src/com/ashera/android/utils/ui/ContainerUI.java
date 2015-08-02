@@ -21,11 +21,21 @@ public class ContainerUI implements UI{
 		Map<String, String> cssAttributes = contextObj.getCssParser().get(localName, className);
 		String display = cssAttributes.get("display");
 		String rowWrap = cssAttributes.get("row-wrap");
+		String flex = cssAttributes.get("flex");
+		String flex_basis = null;
+		
+		if (flex!= null && !flex.trim().equals("")) {
+			String[] arr = flex.split("\\s");
+			flex_basis = flex.split("\\s")[arr.length - 1];
+		}
+		
 		Context context = (Context) contextObj.getContext();
 		
 		Object parentData = contextObj.getParent();
 		if (parentData == null) {
 			parentData = new FrameLayout(context);
+			((FrameLayout) parentData).setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
+					LayoutParams.MATCH_PARENT));
 		}
 		ViewGroup parentContainer = (ViewGroup) parentData;
 		
@@ -33,8 +43,12 @@ public class ContainerUI implements UI{
 			ViewGroup child =null;
 			
 			child = new FlowLayout(context, rowWrap != null && rowWrap.equals("wrap"));
-			child.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-					LayoutParams.MATCH_PARENT));
+			child.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
+					LayoutParams.WRAP_CONTENT));
+			if (flex_basis != null && flex_basis.equals("100%")) {
+				child.getLayoutParams().width = LayoutParams.MATCH_PARENT;
+			}
+			
 			setOrientation(cssAttributes, (FlowLayout) child);
 			
 			child.setBackgroundColor(Color.RED);

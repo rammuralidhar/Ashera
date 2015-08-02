@@ -15,8 +15,10 @@ import android.graphics.Color;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.ashera.android.utils.BaseContentHandler;
+import com.ashera.android.utils.ui.LabelUI;
 import com.ashera.android.utils.ui.UI;
 import com.ashera.android.utils.ui.UIContext;
 import com.ashera.android.utils.ui.UIFactory;
@@ -54,7 +56,32 @@ public class HtmlSaxHandler extends BaseContentHandler {
 		return frameLayout;
 	}
 
-
+	@Override
+	public void characters(char[] ch, int start, int length)
+			throws SAXException {
+		super.characters(ch, start, length);
+		
+		String content = new String(ch, start, length);
+		boolean handled = false;
+		if (content != null && !content.trim().equals("")) {
+			if (!pushParent.empty()) {
+				Object view = pushParent.peek();
+				
+				if (view instanceof TextView) {
+					handled = true;
+					((TextView) view).setText(content);
+				}
+			}
+			
+			if (!handled) {
+				UI ui = uiFactory.get("label", null);
+				((TextView) ui.createUi("label", null, uiContext)).setText(content);
+			}
+		}
+		
+		
+	}
+	
 	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException {

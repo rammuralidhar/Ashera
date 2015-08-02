@@ -13,7 +13,7 @@ public class UIFactory {
 		registrationMap.put("label", new LabelUI());
 	}
 	public UI get(String localname,  Attributes atts) {
-		if (atts.getValue("data-container-element") != null) {
+		if (atts != null && atts.getValue("data-container-element") != null) {
 			return new ContainerUI();
 		}
 		return registrationMap.get(localname);
