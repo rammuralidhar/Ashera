@@ -41,9 +41,14 @@ public class CssParserImpl implements CssParser {
 			    	 
 			    	 for (int j = 0; j < selectorText.length; j++) {
 			    		 if (cssStyleRule.getSelectorText().equals("*." + selectorText[j])) {
-			    			 String key = cssStyleRule.getStyle().item(j);
-			    			 String value = cssStyleRule.getStyle().getPropertyValue(key);
-			    			 finalattributes.put(key, value);
+			    			 
+			    			 int attributes = cssStyleRule.getStyle().getLength();
+			    			 for (int k = 0; k < attributes; k++) {
+			    				 String key = cssStyleRule.getStyle().item(k);
+				    			 String value = cssStyleRule.getStyle().getPropertyValue(key);
+				    			 finalattributes.put(key, value);
+			    			 }
+			    			 
 				    	 }	
 			    	 }
 			    	 

@@ -43,11 +43,14 @@ public class ContainerUI implements UI{
 			ViewGroup child =null;
 			
 			child = new FlowLayout(context, rowWrap != null && rowWrap.equals("wrap"));
-			child.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
-					LayoutParams.WRAP_CONTENT));
+			LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
+					LayoutParams.WRAP_CONTENT);
+			
 			if (flex_basis != null && flex_basis.equals("100%")) {
-				child.getLayoutParams().width = LayoutParams.MATCH_PARENT;
+				layoutParams.width = LayoutParams.MATCH_PARENT;
 			}
+			
+			child.setLayoutParams(layoutParams);
 			
 			setOrientation(cssAttributes, (FlowLayout) child);
 			

@@ -64,18 +64,24 @@ public class HtmlSaxHandler extends BaseContentHandler {
 		String content = new String(ch, start, length);
 		boolean handled = false;
 		if (content != null && !content.trim().equals("")) {
-			if (!pushParent.empty()) {
-				Object view = pushParent.peek();
+			Object parent = null; 
+			if (!viewGroups.empty()) {
+				Object view = viewGroups.peek();
 				
 				if (view instanceof TextView) {
 					handled = true;
 					((TextView) view).setText(content);
 				}
+				
+				parent = view;
 			}
 			
 			if (!handled) {
 				UI ui = uiFactory.get("label", null);
-				((TextView) ui.createUi("label", null, uiContext)).setText(content);
+				TextView createUi = (TextView) ui.createUi("label", null, uiContext);
+				ViewGroup viewGroup = (ViewGroup) parent;
+				createUi.setLayoutParams(viewGroup.getLayoutParams());
+				createUi.setText(content);
 			}
 		}
 		
