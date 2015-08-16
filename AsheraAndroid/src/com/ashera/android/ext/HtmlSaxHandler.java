@@ -29,7 +29,6 @@ public class HtmlSaxHandler extends BaseContentHandler {
 	private UIFactory uiFactory = new UIFactory();
 	private Stack<ViewGroup> viewGroups = new Stack<ViewGroup>();
 	private Stack<Boolean> pushParent = new Stack<Boolean>();
-	private String localName;
 	private UI ui;
 
 	public HtmlSaxHandler(Context context, String source, Parser parser) {
@@ -75,8 +74,6 @@ public class HtmlSaxHandler extends BaseContentHandler {
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException {
 		Log.e("layout", localName);
-		this.localName = localName;
-		
 
 		this.ui = uiFactory.get(localName, atts);
 		boolean parentPushed = false;
