@@ -8,12 +8,17 @@ import org.xml.sax.Attributes;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.view.ViewCompat;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class ContainerUI implements UI{
+
+	private ViewGroup parentContainer;
+	private Object attributes;
 
 	@Override
 	public Object createUi(String localName, Object attributes, UIContext contextObj) {
@@ -21,6 +26,7 @@ public class ContainerUI implements UI{
 		Map<String, String> cssAttributes = contextObj.getCssParser().get(localName, className);
 		String display = cssAttributes.get("display");
 		String rowWrap = cssAttributes.get("row-wrap");
+		String width = cssAttributes.get("width");
 		String flex = cssAttributes.get("flex");
 		String flex_basis = null;
 		
@@ -37,16 +43,16 @@ public class ContainerUI implements UI{
 			((FrameLayout) parentData).setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
 					LayoutParams.MATCH_PARENT));
 		}
-		ViewGroup parentContainer = (ViewGroup) parentData;
+		ViewGroup parentContainer = (ViewGroup) parentData; 
 		
 		if (display != null  && display.equals("flex")) {
-			ViewGroup child =null;
+			ViewGroup child = null;
 			
 			child = new FlowLayout(context, rowWrap != null && rowWrap.equals("wrap"));
 			LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
 					LayoutParams.WRAP_CONTENT);
 			
-			if (flex_basis != null && flex_basis.equals("100%")) {
+			if (flex_basis != null && flex_basis.equals("100%")  || (width != null && width.equals("100%"))) {
 				layoutParams.width = LayoutParams.MATCH_PARENT;
 			}
 			
@@ -61,7 +67,9 @@ public class ContainerUI implements UI{
 			parentContainer = child;
 		}
 		
-		
+		Log.e("layout", parentContainer + " " + parentContainer.getLayoutParams().width + "");
+		this.parentContainer = parentContainer;
+		this.attributes = attributes;
 		return parentContainer;
 	}
 
@@ -78,5 +86,17 @@ public class ContainerUI implements UI{
 				linearLayout.setOrientation(LinearLayout.VERTICAL);
 			}
 		}
+	}
+
+	@Override
+	public void setContent(String content, UIContext context) {
+		UI ui = new UIFactory().get("label", null);
+		TextView textView = (TextView) ui.createUi("label", attributes, context);
+		context.setParent(parentContainer);
+		ui.setContent(content, context);
+
+		textView.setLayoutParams(new LinearLayout.LayoutParams(
+				parentContainer.getLayoutParams().width, parentContainer
+						.getLayoutParams().height));
 	}
 }

@@ -12,4 +12,9 @@ public class HyperLinkUI implements UI{
 		return null;
 	}
 
+	@Override
+	public void setContent(String content, UIContext context) {
+		
+	}
+
 }

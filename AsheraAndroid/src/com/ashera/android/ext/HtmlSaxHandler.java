@@ -15,10 +15,8 @@ import android.graphics.Color;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import com.ashera.android.utils.BaseContentHandler;
-import com.ashera.android.utils.ui.LabelUI;
 import com.ashera.android.utils.ui.UI;
 import com.ashera.android.utils.ui.UIContext;
 import com.ashera.android.utils.ui.UIFactory;
@@ -31,6 +29,9 @@ public class HtmlSaxHandler extends BaseContentHandler {
 	private UIFactory uiFactory = new UIFactory();
 	private Stack<ViewGroup> viewGroups = new Stack<ViewGroup>();
 	private Stack<Boolean> pushParent = new Stack<Boolean>();
+	private String localName;
+	private UI ui;
+
 	public HtmlSaxHandler(Context context, String source, Parser parser) {
 		this.context = context;
 		uiContext.setContext(context);
@@ -60,40 +61,24 @@ public class HtmlSaxHandler extends BaseContentHandler {
 	public void characters(char[] ch, int start, int length)
 			throws SAXException {
 		super.characters(ch, start, length);
-		
+
 		String content = new String(ch, start, length);
-		boolean handled = false;
+
+		Log.e("layout", "characters" + content);
 		if (content != null && !content.trim().equals("")) {
-			Object parent = null; 
-			if (!viewGroups.empty()) {
-				Object view = viewGroups.peek();
-				
-				if (view instanceof TextView) {
-					handled = true;
-					((TextView) view).setText(content);
-				}
-				
-				parent = view;
-			}
-			
-			if (!handled) {
-				UI ui = uiFactory.get("label", null);
-				TextView createUi = (TextView) ui.createUi("label", null, uiContext);
-				ViewGroup viewGroup = (ViewGroup) parent;
-				createUi.setLayoutParams(viewGroup.getLayoutParams());
-				createUi.setText(content);
-			}
+			ui.setContent(content, uiContext);
 		}
-		
-		
+
 	}
-	
+
 	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException {
-		Log.e("startElement", localName);
+		Log.e("layout", localName);
+		this.localName = localName;
 		
-		UI ui = uiFactory.get(localName, atts);
+
+		this.ui = uiFactory.get(localName, atts);
 		boolean parentPushed = false;
 		if (ui != null) {
 			Object parent = null;
@@ -101,22 +86,22 @@ public class HtmlSaxHandler extends BaseContentHandler {
 				parent = viewGroups.peek();
 			}
 			uiContext.setParent(parent);
-			
+
 			parent = ui.createUi(localName, atts, uiContext);
-			
-			if (parent != null) {
+
+			if (parent != null && parent instanceof ViewGroup) {
 				parentPushed = true;
 				viewGroups.push((ViewGroup) parent);
 			}
 		}
-		
+
 		pushParent.add(parentPushed);
 	}
 
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
-		
+
 		if (pushParent.pop()) {
 			viewGroups.pop();
 		}
