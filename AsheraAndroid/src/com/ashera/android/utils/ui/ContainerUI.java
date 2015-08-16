@@ -74,23 +74,26 @@ public class ContainerUI implements UI{
 	}
 
 	private void setOrientation(Map<String, String> cssAttributes, FlowLayout linearLayout) {
-		linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+		linearLayout.setOrientation(LinearLayout.VERTICAL);
 		String flexDirection = cssAttributes.get("flex-direction");
 		
 		if (flexDirection != null) {
 			if (flexDirection.equals("column")) { 
-				linearLayout.setOrientation(LinearLayout.VERTICAL);
+				linearLayout.setOrientation(LinearLayout.HORIZONTAL);
 			} else if (flexDirection.equals("row-reverse")) {
 				ViewCompat.setLayoutDirection(linearLayout, ViewCompat.LAYOUT_DIRECTION_RTL);
 			} else if (flexDirection.equals("column-reverse")) {
 				linearLayout.setOrientation(LinearLayout.VERTICAL);
 			}
 		}
+		
+		Log.e("layout", linearLayout + " " + linearLayout.getOrientation());
 	}
 
 	@Override
 	public void setContent(String content, UIContext context) {
 		UI ui = new UIFactory().get("label", null);
+		Object pObject = context.getParent();
 		TextView textView = (TextView) ui.createUi("label", attributes, context);
 		context.setParent(parentContainer);
 		ui.setContent(content, context);
@@ -98,5 +101,8 @@ public class ContainerUI implements UI{
 		textView.setLayoutParams(new LinearLayout.LayoutParams(
 				parentContainer.getLayoutParams().width, parentContainer
 						.getLayoutParams().height));
+		
+		Log.e("layout", ((LinearLayout) parentContainer).getOrientation() + "");
+		context.setParent(pObject);
 	}
 }

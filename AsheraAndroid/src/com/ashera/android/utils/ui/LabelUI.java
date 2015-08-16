@@ -6,6 +6,7 @@ import android.content.Context;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class LabelUI implements UI{
@@ -23,7 +24,7 @@ public class LabelUI implements UI{
 			((ViewGroup) parentData).addView(textView);
 		}
 		
-		Log.e("layout", parentData + " " + ((ViewGroup) parentData).getLayoutParams().width + "");
+		Log.e("layout", ((ViewGroup) parentData) + " " + ((LinearLayout) parentData).getOrientation());
 		return textView;
 	}
 

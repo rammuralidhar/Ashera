@@ -397,6 +397,7 @@ public class FlowLayout extends LinearLayout {
     }
 
     public void setOrientation(int orientation) {
+    	super.setOrientation(orientation);
         this.config.setOrientation(orientation);
         this.requestLayout();
     }

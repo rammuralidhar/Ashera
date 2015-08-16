@@ -9,4 +9,5 @@
 .header {
   display: flex;  
   flex: 1 100%;
+  flex-direction: column;
 }
