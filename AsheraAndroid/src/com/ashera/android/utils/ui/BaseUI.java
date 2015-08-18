@@ -2,9 +2,9 @@ package com.ashera.android.utils.ui;
 
 import java.util.Map;
 
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.TextView;
 
 public class BaseUI {
@@ -27,11 +27,13 @@ public class BaseUI {
 		setAlpha(view, cssAttributes);
 	}
 
-	@SuppressLint("NewApi")
 	private void setAlpha(View view, Map<String, String> cssAttributes) {
 		String alpla = cssAttributes.get("aplha");
 		if (alpla  != null) {
-			view.setAlpha(Float.parseFloat(alpla));
+			AlphaAnimation alpha = new AlphaAnimation(Float.parseFloat(alpla), Float.parseFloat(alpla));
+			alpha.setDuration(0); // Make animation instant
+			alpha.setFillAfter(true); // Tell it to persist after the animation ends
+			view.startAnimation(alpha);
 		}
 	}
 }
