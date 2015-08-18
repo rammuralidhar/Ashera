@@ -80,9 +80,9 @@ public class ContainerUI implements UI{
 		if (flexDirection != null) {
 			if (flexDirection.equals("column")) { 
 				linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-			} else if (flexDirection.equals("row-reverse")) {
-				ViewCompat.setLayoutDirection(linearLayout, ViewCompat.LAYOUT_DIRECTION_RTL);
 			} else if (flexDirection.equals("column-reverse")) {
+				ViewCompat.setLayoutDirection(linearLayout, ViewCompat.LAYOUT_DIRECTION_RTL);
+			} else if (flexDirection.equals("row-reverse")) {
 				linearLayout.setOrientation(LinearLayout.VERTICAL);
 			}
 		}

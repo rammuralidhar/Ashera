@@ -11,3 +11,9 @@
   flex: 1 100%;
   flex-direction: column;
 }
+
+.label {
+	color: black;
+	background-color: red;
+	opacity: 0.5;
+}
