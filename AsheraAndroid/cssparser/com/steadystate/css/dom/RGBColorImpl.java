@@ -155,7 +155,7 @@ public class RGBColorImpl implements RGBColor, CSSFormatable, Serializable {
      */
     public String getCssText(final CSSFormat format) {
         final StringBuilder result = new StringBuilder();
-        if (null != format && format.isRgbAsHex()) {
+        if (format == null) {
             result
                 .append("#")
                 .append(getColorAsHex(red_))
@@ -180,7 +180,7 @@ public class RGBColorImpl implements RGBColor, CSSFormatable, Serializable {
      */
     @Override
     public String toString() {
-        return getCssText(null);
+    	return getCssText(null);
     }
 
     private String getColorAsHex(final CSSPrimitiveValue color) {
