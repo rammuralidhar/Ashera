@@ -12,7 +12,7 @@ a)  Container blocks
     div
     header
     footer
-    data-container-element attribute - ANy element containing this attribute will be treated as container element
+    data-container-element attribute - Any element containing this attribute will be treated as container element
 
 b) Layouts
     Html 5 flex layout - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
@@ -33,7 +33,20 @@ b) Layouts
     align-self: auto | flex-start | flex-end | center | baseline | stretch;
 
 
-
+c)  CSS attributes
+    
+    color	 - Sets the color of text                   
+    opacity	 - Sets the opacity level for an element
+    
+    background	A shorthand property for setting all the background properties in one declaration
+    background-attachment	Sets whether a background image is fixed or scrolls with the rest of the page
+    background-color	Specifies the background color of an element
+    background-image	Specifies one or more background images for an element
+    background-position	Specifies the position of a background image
+    background-repeat	Sets how a background image will be repeated
+    background-clip	Specifies the painting area of the background
+    background-origin	Specifies where the background image(s) is/are positioned
+    background-size	Specifies the size of the background image(s)
 
 
 
