@@ -1,0 +1,1803 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		277463851BDB318200BAFD75 /* libAsheraIosParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277463791BDB318200BAFD75 /* libAsheraIosParser.a */; };
+		27746AEB1BDB50B400BAFD75 /* CssParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2774674D1BDB504000BAFD75 /* CssParser.h */; };
+		27746AEC1BDB50B400BAFD75 /* CssParserFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2774674F1BDB504000BAFD75 /* CssParserFactory.h */; };
+		277470341BDBEFAD00BAFD75 /* AbstractCSSRuleImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F111BDBEFAC00BAFD75 /* AbstractCSSRuleImpl.m */; };
+		277470351BDBEFAD00BAFD75 /* AbstractSACParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F131BDBEFAC00BAFD75 /* AbstractSACParser.m */; };
+		277470361BDBEFAD00BAFD75 /* AbstractView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F151BDBEFAC00BAFD75 /* AbstractView.m */; };
+		277470371BDBEFAD00BAFD75 /* AndConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F171BDBEFAC00BAFD75 /* AndConditionImpl.m */; };
+		277470381BDBEFAD00BAFD75 /* AttributeCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F191BDBEFAC00BAFD75 /* AttributeCondition.m */; };
+		277470391BDBEFAD00BAFD75 /* AttributeConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F1B1BDBEFAC00BAFD75 /* AttributeConditionImpl.m */; };
+		2774703A1BDBEFAD00BAFD75 /* BeginHyphenAttributeConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F1D1BDBEFAC00BAFD75 /* BeginHyphenAttributeConditionImpl.m */; };
+		2774703B1BDBEFAD00BAFD75 /* BuildConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F1F1BDBEFAC00BAFD75 /* BuildConfig.m */; };
+		2774703C1BDBEFAD00BAFD75 /* CharacterDataSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F211BDBEFAC00BAFD75 /* CharacterDataSelector.m */; };
+		2774703D1BDBEFAD00BAFD75 /* CharacterDataSelectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F231BDBEFAC00BAFD75 /* CharacterDataSelectorImpl.m */; };
+		2774703E1BDBEFAD00BAFD75 /* CharStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F251BDBEFAC00BAFD75 /* CharStream.m */; };
+		2774703F1BDBEFAD00BAFD75 /* ChildSelectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F271BDBEFAC00BAFD75 /* ChildSelectorImpl.m */; };
+		277470401BDBEFAD00BAFD75 /* ClassConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F291BDBEFAC00BAFD75 /* ClassConditionImpl.m */; };
+		277470411BDBEFAD00BAFD75 /* CombinatorCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F321BDBEFAC00BAFD75 /* CombinatorCondition.m */; };
+		277470421BDBEFAD00BAFD75 /* Condition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F341BDBEFAC00BAFD75 /* Condition.m */; };
+		277470431BDBEFAD00BAFD75 /* ConditionalSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F361BDBEFAC00BAFD75 /* ConditionalSelector.m */; };
+		277470441BDBEFAD00BAFD75 /* ConditionalSelectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F381BDBEFAC00BAFD75 /* ConditionalSelectorImpl.m */; };
+		277470451BDBEFAD00BAFD75 /* ConditionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F3A1BDBEFAC00BAFD75 /* ConditionFactory.m */; };
+		277470461BDBEFAD00BAFD75 /* ConditionFactoryImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F3C1BDBEFAC00BAFD75 /* ConditionFactoryImpl.m */; };
+		277470471BDBEFAD00BAFD75 /* ContentCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F3E1BDBEFAC00BAFD75 /* ContentCondition.m */; };
+		277470481BDBEFAD00BAFD75 /* Counter.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F401BDBEFAC00BAFD75 /* Counter.m */; };
+		277470491BDBEFAD00BAFD75 /* CounterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F421BDBEFAC00BAFD75 /* CounterImpl.m */; };
+		2774704A1BDBEFAD00BAFD75 /* CSS2Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F441BDBEFAC00BAFD75 /* CSS2Properties.m */; };
+		2774704B1BDBEFAD00BAFD75 /* CSSCharsetRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F461BDBEFAC00BAFD75 /* CSSCharsetRule.m */; };
+		2774704C1BDBEFAD00BAFD75 /* CSSCharsetRuleImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F481BDBEFAC00BAFD75 /* CSSCharsetRuleImpl.m */; };
+		2774704D1BDBEFAD00BAFD75 /* CssCharStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F4A1BDBEFAC00BAFD75 /* CssCharStream.m */; };
+		2774704E1BDBEFAD00BAFD75 /* CSSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F4C1BDBEFAC00BAFD75 /* CSSException.m */; };
+		2774704F1BDBEFAD00BAFD75 /* CSSFontFaceRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F4E1BDBEFAD00BAFD75 /* CSSFontFaceRule.m */; };
+		277470501BDBEFAD00BAFD75 /* CSSFontFaceRuleImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F501BDBEFAD00BAFD75 /* CSSFontFaceRuleImpl.m */; };
+		277470511BDBEFAD00BAFD75 /* CSSFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F521BDBEFAD00BAFD75 /* CSSFormat.m */; };
+		277470521BDBEFAD00BAFD75 /* CSSFormatable.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F541BDBEFAD00BAFD75 /* CSSFormatable.m */; };
+		277470531BDBEFAD00BAFD75 /* CSSImportRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F561BDBEFAD00BAFD75 /* CSSImportRule.m */; };
+		277470541BDBEFAD00BAFD75 /* CSSImportRuleImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F581BDBEFAD00BAFD75 /* CSSImportRuleImpl.m */; };
+		277470551BDBEFAD00BAFD75 /* CSSMediaRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F5A1BDBEFAD00BAFD75 /* CSSMediaRule.m */; };
+		277470561BDBEFAD00BAFD75 /* CSSMediaRuleImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F5C1BDBEFAD00BAFD75 /* CSSMediaRuleImpl.m */; };
+		277470571BDBEFAD00BAFD75 /* CSSOMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F5E1BDBEFAD00BAFD75 /* CSSOMObject.m */; };
+		277470581BDBEFAD00BAFD75 /* CSSOMObjectImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F601BDBEFAD00BAFD75 /* CSSOMObjectImpl.m */; };
+		277470591BDBEFAD00BAFD75 /* CSSOMParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F621BDBEFAD00BAFD75 /* CSSOMParser.m */; };
+		2774705A1BDBEFAD00BAFD75 /* CSSPageRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F641BDBEFAD00BAFD75 /* CSSPageRule.m */; };
+		2774705B1BDBEFAD00BAFD75 /* CSSPageRuleImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F661BDBEFAD00BAFD75 /* CSSPageRuleImpl.m */; };
+		2774705C1BDBEFAD00BAFD75 /* CSSParseException.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F681BDBEFAD00BAFD75 /* CSSParseException.m */; };
+		2774705D1BDBEFAD00BAFD75 /* CSSPrimitiveValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F6A1BDBEFAD00BAFD75 /* CSSPrimitiveValue.m */; };
+		2774705E1BDBEFAD00BAFD75 /* CSSRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F6C1BDBEFAD00BAFD75 /* CSSRule.m */; };
+		2774705F1BDBEFAD00BAFD75 /* CSSRuleList.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F6E1BDBEFAD00BAFD75 /* CSSRuleList.m */; };
+		277470601BDBEFAD00BAFD75 /* CSSRuleListImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F701BDBEFAD00BAFD75 /* CSSRuleListImpl.m */; };
+		277470611BDBEFAD00BAFD75 /* CSSStyleDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F721BDBEFAD00BAFD75 /* CSSStyleDeclaration.m */; };
+		277470621BDBEFAD00BAFD75 /* CSSStyleDeclarationImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F741BDBEFAD00BAFD75 /* CSSStyleDeclarationImpl.m */; };
+		277470631BDBEFAD00BAFD75 /* CSSStyleRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F761BDBEFAD00BAFD75 /* CSSStyleRule.m */; };
+		277470641BDBEFAD00BAFD75 /* CSSStyleRuleImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F781BDBEFAD00BAFD75 /* CSSStyleRuleImpl.m */; };
+		277470651BDBEFAD00BAFD75 /* CSSStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F7A1BDBEFAD00BAFD75 /* CSSStyleSheet.m */; };
+		277470661BDBEFAD00BAFD75 /* CSSStyleSheetImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F7C1BDBEFAD00BAFD75 /* CSSStyleSheetImpl.m */; };
+		277470671BDBEFAE00BAFD75 /* CSSStyleSheetListImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F7E1BDBEFAD00BAFD75 /* CSSStyleSheetListImpl.m */; };
+		277470681BDBEFAE00BAFD75 /* CSSUnknownRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F801BDBEFAD00BAFD75 /* CSSUnknownRule.m */; };
+		277470691BDBEFAE00BAFD75 /* CSSUnknownRuleImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F821BDBEFAD00BAFD75 /* CSSUnknownRuleImpl.m */; };
+		2774706A1BDBEFAE00BAFD75 /* CSSValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F841BDBEFAD00BAFD75 /* CSSValue.m */; };
+		2774706B1BDBEFAE00BAFD75 /* CSSValueImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F861BDBEFAD00BAFD75 /* CSSValueImpl.m */; };
+		2774706C1BDBEFAE00BAFD75 /* CSSValueList.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F881BDBEFAD00BAFD75 /* CSSValueList.m */; };
+		2774706D1BDBEFAE00BAFD75 /* DescendantSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F8A1BDBEFAD00BAFD75 /* DescendantSelector.m */; };
+		2774706E1BDBEFAE00BAFD75 /* DescendantSelectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F8C1BDBEFAD00BAFD75 /* DescendantSelectorImpl.m */; };
+		2774706F1BDBEFAE00BAFD75 /* DirectAdjacentSelectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F8E1BDBEFAD00BAFD75 /* DirectAdjacentSelectorImpl.m */; };
+		277470701BDBEFAE00BAFD75 /* DocumentCSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F901BDBEFAD00BAFD75 /* DocumentCSS.m */; };
+		277470711BDBEFAE00BAFD75 /* DocumentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F921BDBEFAD00BAFD75 /* DocumentHandler.m */; };
+		277470721BDBEFAE00BAFD75 /* DocumentHandlerExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F941BDBEFAD00BAFD75 /* DocumentHandlerExt.m */; };
+		277470731BDBEFAE00BAFD75 /* DocumentStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F961BDBEFAD00BAFD75 /* DocumentStyle.m */; };
+		277470741BDBEFAE00BAFD75 /* DocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F981BDBEFAD00BAFD75 /* DocumentView.m */; };
+		277470751BDBEFAE00BAFD75 /* DOMExceptionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F9A1BDBEFAD00BAFD75 /* DOMExceptionImpl.m */; };
+		277470761BDBEFAE00BAFD75 /* DOMImplementationCSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F9C1BDBEFAD00BAFD75 /* DOMImplementationCSS.m */; };
+		277470771BDBEFAE00BAFD75 /* ElementCSSInlineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746F9E1BDBEFAD00BAFD75 /* ElementCSSInlineStyle.m */; };
+		277470781BDBEFAE00BAFD75 /* ElementSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA01BDBEFAD00BAFD75 /* ElementSelector.m */; };
+		277470791BDBEFAE00BAFD75 /* ElementSelectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA21BDBEFAD00BAFD75 /* ElementSelectorImpl.m */; };
+		2774707A1BDBEFAE00BAFD75 /* ErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA41BDBEFAD00BAFD75 /* ErrorHandler.m */; };
+		2774707B1BDBEFAE00BAFD75 /* ExceptionResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA61BDBEFAD00BAFD75 /* ExceptionResource.m */; };
+		2774707C1BDBEFAE00BAFD75 /* GeneralAdjacentSelectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA81BDBEFAD00BAFD75 /* GeneralAdjacentSelectorImpl.m */; };
+		2774707D1BDBEFAE00BAFD75 /* HandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FAA1BDBEFAD00BAFD75 /* HandlerBase.m */; };
+		2774707E1BDBEFAE00BAFD75 /* IdConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FAC1BDBEFAD00BAFD75 /* IdConditionImpl.m */; };
+		2774707F1BDBEFAE00BAFD75 /* InputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FAE1BDBEFAD00BAFD75 /* InputSource.m */; };
+		277470801BDBEFAE00BAFD75 /* LangCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB01BDBEFAD00BAFD75 /* LangCondition.m */; };
+		277470811BDBEFAE00BAFD75 /* LangConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB21BDBEFAD00BAFD75 /* LangConditionImpl.m */; };
+		277470821BDBEFAE00BAFD75 /* LangUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB41BDBEFAD00BAFD75 /* LangUtils.m */; };
+		277470831BDBEFAE00BAFD75 /* LexicalUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB61BDBEFAD00BAFD75 /* LexicalUnit.m */; };
+		277470841BDBEFAE00BAFD75 /* LexicalUnitImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB81BDBEFAD00BAFD75 /* LexicalUnitImpl.m */; };
+		277470851BDBEFAE00BAFD75 /* LinkStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FBA1BDBEFAD00BAFD75 /* LinkStyle.m */; };
+		277470861BDBEFAE00BAFD75 /* Locatable.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FBC1BDBEFAD00BAFD75 /* Locatable.m */; };
+		277470871BDBEFAE00BAFD75 /* LocatableImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FBE1BDBEFAD00BAFD75 /* LocatableImpl.m */; };
+		277470881BDBEFAE00BAFD75 /* Locator.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC01BDBEFAD00BAFD75 /* Locator.m */; };
+		277470891BDBEFAE00BAFD75 /* LocatorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC21BDBEFAD00BAFD75 /* LocatorImpl.m */; };
+		2774708A1BDBEFAE00BAFD75 /* MediaList.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC41BDBEFAD00BAFD75 /* MediaList.m */; };
+		2774708B1BDBEFAE00BAFD75 /* MediaListImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC61BDBEFAD00BAFD75 /* MediaListImpl.m */; };
+		2774708C1BDBEFAE00BAFD75 /* MediaQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC81BDBEFAD00BAFD75 /* MediaQuery.m */; };
+		2774708D1BDBEFAE00BAFD75 /* NegativeCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FCA1BDBEFAD00BAFD75 /* NegativeCondition.m */; };
+		2774708E1BDBEFAE00BAFD75 /* NegativeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FCC1BDBEFAD00BAFD75 /* NegativeSelector.m */; };
+		2774708F1BDBEFAE00BAFD75 /* OneOfAttributeConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FCE1BDBEFAD00BAFD75 /* OneOfAttributeConditionImpl.m */; };
+		277470901BDBEFAE00BAFD75 /* Output.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD01BDBEFAD00BAFD75 /* Output.m */; };
+		277470911BDBEFAE00BAFD75 /* ParseException.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD21BDBEFAD00BAFD75 /* ParseException.m */; };
+		277470921BDBEFAE00BAFD75 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD41BDBEFAD00BAFD75 /* Parser.m */; };
+		277470931BDBEFAE00BAFD75 /* ParserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD61BDBEFAD00BAFD75 /* ParserFactory.m */; };
+		277470941BDBEFAE00BAFD75 /* ParserUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD81BDBEFAD00BAFD75 /* ParserUtils.m */; };
+		277470951BDBEFAE00BAFD75 /* PositionalCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FDA1BDBEFAD00BAFD75 /* PositionalCondition.m */; };
+		277470961BDBEFAE00BAFD75 /* PrefixAttributeConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FDC1BDBEFAD00BAFD75 /* PrefixAttributeConditionImpl.m */; };
+		277470971BDBEFAE00BAFD75 /* ProcessingInstructionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FDE1BDBEFAD00BAFD75 /* ProcessingInstructionSelector.m */; };
+		277470981BDBEFAE00BAFD75 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE01BDBEFAD00BAFD75 /* Property.m */; };
+		277470991BDBEFAE00BAFD75 /* PseudoClassConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE21BDBEFAD00BAFD75 /* PseudoClassConditionImpl.m */; };
+		2774709A1BDBEFAE00BAFD75 /* PseudoElementSelectorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE41BDBEFAD00BAFD75 /* PseudoElementSelectorImpl.m */; };
+		2774709B1BDBEFAE00BAFD75 /* R.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE61BDBEFAD00BAFD75 /* R.m */; };
+		2774709C1BDBEFAE00BAFD75 /* Rect.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE81BDBEFAD00BAFD75 /* Rect.m */; };
+		2774709D1BDBEFAE00BAFD75 /* RectImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FEA1BDBEFAD00BAFD75 /* RectImpl.m */; };
+		2774709E1BDBEFAE00BAFD75 /* RGBColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FEC1BDBEFAD00BAFD75 /* RGBColor.m */; };
+		2774709F1BDBEFAE00BAFD75 /* RGBColorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FEE1BDBEFAD00BAFD75 /* RGBColorImpl.m */; };
+		277470A01BDBEFAE00BAFD75 /* SACMediaList.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF01BDBEFAD00BAFD75 /* SACMediaList.m */; };
+		277470A11BDBEFAE00BAFD75 /* SACMediaListImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF21BDBEFAD00BAFD75 /* SACMediaListImpl.m */; };
+		277470A21BDBEFAE00BAFD75 /* SACParserCSS1.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF41BDBEFAD00BAFD75 /* SACParserCSS1.m */; };
+		277470A31BDBEFAE00BAFD75 /* SACParserCSS1Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF61BDBEFAD00BAFD75 /* SACParserCSS1Constants.m */; };
+		277470A41BDBEFAE00BAFD75 /* SACParserCSS1TokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF81BDBEFAD00BAFD75 /* SACParserCSS1TokenManager.m */; };
+		277470A51BDBEFAE00BAFD75 /* SACParserCSS2.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FFA1BDBEFAD00BAFD75 /* SACParserCSS2.m */; };
+		277470A61BDBEFAE00BAFD75 /* SACParserCSS21.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FFC1BDBEFAD00BAFD75 /* SACParserCSS21.m */; };
+		277470A71BDBEFAE00BAFD75 /* SACParserCSS21Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746FFE1BDBEFAD00BAFD75 /* SACParserCSS21Constants.m */; };
+		277470A81BDBEFAE00BAFD75 /* SACParserCSS21TokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470001BDBEFAD00BAFD75 /* SACParserCSS21TokenManager.m */; };
+		277470A91BDBEFAE00BAFD75 /* SACParserCSS2Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470021BDBEFAD00BAFD75 /* SACParserCSS2Constants.m */; };
+		277470AA1BDBEFAE00BAFD75 /* SACParserCSS2TokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470041BDBEFAD00BAFD75 /* SACParserCSS2TokenManager.m */; };
+		277470AB1BDBEFAE00BAFD75 /* SACParserCSS3.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470061BDBEFAD00BAFD75 /* SACParserCSS3.m */; };
+		277470AC1BDBEFAE00BAFD75 /* SACParserCSS3Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470081BDBEFAD00BAFD75 /* SACParserCSS3Constants.m */; };
+		277470AD1BDBEFAE00BAFD75 /* SACParserCSS3TokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774700A1BDBEFAD00BAFD75 /* SACParserCSS3TokenManager.m */; };
+		277470AE1BDBEFAE00BAFD75 /* SACParserCSSmobileOKBasic1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774700C1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1.m */; };
+		277470AF1BDBEFAE00BAFD75 /* SACParserCSSmobileOKBasic1Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774700E1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1Constants.m */; };
+		277470B01BDBEFAE00BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470101BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.m */; };
+		277470B11BDBEFAE00BAFD75 /* Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470151BDBEFAD00BAFD75 /* Selector.m */; };
+		277470B21BDBEFAE00BAFD75 /* SelectorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470171BDBEFAD00BAFD75 /* SelectorFactory.m */; };
+		277470B31BDBEFAE00BAFD75 /* SelectorFactoryImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470191BDBEFAD00BAFD75 /* SelectorFactoryImpl.m */; };
+		277470B41BDBEFAE00BAFD75 /* SelectorList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774701B1BDBEFAD00BAFD75 /* SelectorList.m */; };
+		277470B51BDBEFAE00BAFD75 /* SelectorListImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774701D1BDBEFAD00BAFD75 /* SelectorListImpl.m */; };
+		277470B61BDBEFAE00BAFD75 /* SiblingSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774701F1BDBEFAD00BAFD75 /* SiblingSelector.m */; };
+		277470B71BDBEFAE00BAFD75 /* SimpleSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470211BDBEFAD00BAFD75 /* SimpleSelector.m */; };
+		277470B81BDBEFAE00BAFD75 /* StyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470231BDBEFAD00BAFD75 /* StyleSheet.m */; };
+		277470B91BDBEFAE00BAFD75 /* StyleSheetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470251BDBEFAD00BAFD75 /* StyleSheetList.m */; };
+		277470BA1BDBEFAE00BAFD75 /* SubstringAttributeConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470271BDBEFAD00BAFD75 /* SubstringAttributeConditionImpl.m */; };
+		277470BB1BDBEFAE00BAFD75 /* SuffixAttributeConditionImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470291BDBEFAD00BAFD75 /* SuffixAttributeConditionImpl.m */; };
+		277470BC1BDBEFAE00BAFD75 /* ThrowCssExceptionErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774702B1BDBEFAD00BAFD75 /* ThrowCssExceptionErrorHandler.m */; };
+		277470BD1BDBEFAE00BAFD75 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774702D1BDBEFAD00BAFD75 /* Token.m */; };
+		277470BE1BDBEFAE00BAFD75 /* TokenMgrError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774702F1BDBEFAD00BAFD75 /* TokenMgrError.m */; };
+		277470BF1BDBEFAE00BAFD75 /* UserDataConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470311BDBEFAD00BAFD75 /* UserDataConstants.m */; };
+		277470C01BDBEFAE00BAFD75 /* ViewCSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 277470331BDBEFAD00BAFD75 /* ViewCSS.m */; };
+		277470C11BDBEFE800BAFD75 /* AbstractCSSRuleImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F101BDBEFAC00BAFD75 /* AbstractCSSRuleImpl.h */; };
+		277470C21BDBEFE800BAFD75 /* AbstractSACParser.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F121BDBEFAC00BAFD75 /* AbstractSACParser.h */; };
+		277470C31BDBEFE800BAFD75 /* AbstractView.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F141BDBEFAC00BAFD75 /* AbstractView.h */; };
+		277470C41BDBEFE800BAFD75 /* AndConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F161BDBEFAC00BAFD75 /* AndConditionImpl.h */; };
+		277470C51BDBEFE800BAFD75 /* AttributeCondition.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F181BDBEFAC00BAFD75 /* AttributeCondition.h */; };
+		277470C61BDBEFE800BAFD75 /* AttributeConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F1A1BDBEFAC00BAFD75 /* AttributeConditionImpl.h */; };
+		277470C71BDBEFE800BAFD75 /* BeginHyphenAttributeConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F1C1BDBEFAC00BAFD75 /* BeginHyphenAttributeConditionImpl.h */; };
+		277470C81BDBEFE800BAFD75 /* BuildConfig.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F1E1BDBEFAC00BAFD75 /* BuildConfig.h */; };
+		277470C91BDBEFE800BAFD75 /* CharacterDataSelector.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F201BDBEFAC00BAFD75 /* CharacterDataSelector.h */; };
+		277470CA1BDBEFE800BAFD75 /* CharacterDataSelectorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F221BDBEFAC00BAFD75 /* CharacterDataSelectorImpl.h */; };
+		277470CB1BDBEFE800BAFD75 /* CharStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F241BDBEFAC00BAFD75 /* CharStream.h */; };
+		277470CC1BDBEFE800BAFD75 /* ChildSelectorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F261BDBEFAC00BAFD75 /* ChildSelectorImpl.h */; };
+		277470CD1BDBEFE800BAFD75 /* ClassConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F281BDBEFAC00BAFD75 /* ClassConditionImpl.h */; };
+		277470CE1BDBEFF500BAFD75 /* CombinatorCondition.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F311BDBEFAC00BAFD75 /* CombinatorCondition.h */; };
+		277470CF1BDBEFF500BAFD75 /* Condition.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F331BDBEFAC00BAFD75 /* Condition.h */; };
+		277470D01BDBEFF500BAFD75 /* ConditionalSelector.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F351BDBEFAC00BAFD75 /* ConditionalSelector.h */; };
+		277470D11BDBEFF500BAFD75 /* ConditionalSelectorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F371BDBEFAC00BAFD75 /* ConditionalSelectorImpl.h */; };
+		277470D21BDBEFF500BAFD75 /* ConditionFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F391BDBEFAC00BAFD75 /* ConditionFactory.h */; };
+		277470D31BDBEFF500BAFD75 /* ConditionFactoryImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F3B1BDBEFAC00BAFD75 /* ConditionFactoryImpl.h */; };
+		277470D41BDBEFF500BAFD75 /* ContentCondition.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F3D1BDBEFAC00BAFD75 /* ContentCondition.h */; };
+		277470D51BDBEFF500BAFD75 /* Counter.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F3F1BDBEFAC00BAFD75 /* Counter.h */; };
+		277470D61BDBEFF500BAFD75 /* CounterImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F411BDBEFAC00BAFD75 /* CounterImpl.h */; };
+		277470D71BDBEFF500BAFD75 /* CSS2Properties.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F431BDBEFAC00BAFD75 /* CSS2Properties.h */; };
+		277470D81BDBEFF500BAFD75 /* CSSCharsetRule.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F451BDBEFAC00BAFD75 /* CSSCharsetRule.h */; };
+		277470D91BDBEFF500BAFD75 /* CSSCharsetRuleImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F471BDBEFAC00BAFD75 /* CSSCharsetRuleImpl.h */; };
+		277470DA1BDBEFF500BAFD75 /* CssCharStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F491BDBEFAC00BAFD75 /* CssCharStream.h */; };
+		277470DB1BDBEFF500BAFD75 /* CSSException.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F4B1BDBEFAC00BAFD75 /* CSSException.h */; };
+		277470DC1BDBEFF500BAFD75 /* CSSFontFaceRule.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F4D1BDBEFAD00BAFD75 /* CSSFontFaceRule.h */; };
+		277470DD1BDBEFF500BAFD75 /* CSSFontFaceRuleImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F4F1BDBEFAD00BAFD75 /* CSSFontFaceRuleImpl.h */; };
+		277470DE1BDBEFF500BAFD75 /* CSSFormat.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F511BDBEFAD00BAFD75 /* CSSFormat.h */; };
+		277470DF1BDBEFF500BAFD75 /* CSSFormatable.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F531BDBEFAD00BAFD75 /* CSSFormatable.h */; };
+		277470E01BDBEFF500BAFD75 /* CSSImportRule.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F551BDBEFAD00BAFD75 /* CSSImportRule.h */; };
+		277470E11BDBEFF500BAFD75 /* CSSImportRuleImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F571BDBEFAD00BAFD75 /* CSSImportRuleImpl.h */; };
+		277470E21BDBEFF500BAFD75 /* CSSMediaRule.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F591BDBEFAD00BAFD75 /* CSSMediaRule.h */; };
+		277470E31BDBEFF500BAFD75 /* CSSMediaRuleImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F5B1BDBEFAD00BAFD75 /* CSSMediaRuleImpl.h */; };
+		277470E41BDBEFF500BAFD75 /* CSSOMObject.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F5D1BDBEFAD00BAFD75 /* CSSOMObject.h */; };
+		277470E51BDBEFF500BAFD75 /* CSSOMObjectImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F5F1BDBEFAD00BAFD75 /* CSSOMObjectImpl.h */; };
+		277470E61BDBEFF500BAFD75 /* CSSOMParser.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F611BDBEFAD00BAFD75 /* CSSOMParser.h */; };
+		277470E71BDBEFF500BAFD75 /* CSSPageRule.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F631BDBEFAD00BAFD75 /* CSSPageRule.h */; };
+		277470E81BDBEFF500BAFD75 /* CSSPageRuleImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F651BDBEFAD00BAFD75 /* CSSPageRuleImpl.h */; };
+		277470E91BDBEFF500BAFD75 /* CSSParseException.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F671BDBEFAD00BAFD75 /* CSSParseException.h */; };
+		277470EA1BDBEFF500BAFD75 /* CSSPrimitiveValue.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F691BDBEFAD00BAFD75 /* CSSPrimitiveValue.h */; };
+		277470EB1BDBEFF500BAFD75 /* CSSRule.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F6B1BDBEFAD00BAFD75 /* CSSRule.h */; };
+		277470EC1BDBEFF500BAFD75 /* CSSRuleList.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F6D1BDBEFAD00BAFD75 /* CSSRuleList.h */; };
+		277470ED1BDBEFF500BAFD75 /* CSSRuleListImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F6F1BDBEFAD00BAFD75 /* CSSRuleListImpl.h */; };
+		277470EE1BDBEFF500BAFD75 /* CSSStyleDeclaration.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F711BDBEFAD00BAFD75 /* CSSStyleDeclaration.h */; };
+		277470EF1BDBEFF500BAFD75 /* CSSStyleDeclarationImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F731BDBEFAD00BAFD75 /* CSSStyleDeclarationImpl.h */; };
+		277470F01BDBEFF500BAFD75 /* CSSStyleRule.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F751BDBEFAD00BAFD75 /* CSSStyleRule.h */; };
+		277470F11BDBEFF500BAFD75 /* CSSStyleRuleImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F771BDBEFAD00BAFD75 /* CSSStyleRuleImpl.h */; };
+		277470F21BDBEFF500BAFD75 /* CSSStyleSheet.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F791BDBEFAD00BAFD75 /* CSSStyleSheet.h */; };
+		277470F31BDBEFF500BAFD75 /* CSSStyleSheetImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F7B1BDBEFAD00BAFD75 /* CSSStyleSheetImpl.h */; };
+		277470F41BDBEFF500BAFD75 /* CSSStyleSheetListImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F7D1BDBEFAD00BAFD75 /* CSSStyleSheetListImpl.h */; };
+		277470F51BDBEFF500BAFD75 /* CSSUnknownRule.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F7F1BDBEFAD00BAFD75 /* CSSUnknownRule.h */; };
+		277470F61BDBEFF500BAFD75 /* CSSUnknownRuleImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F811BDBEFAD00BAFD75 /* CSSUnknownRuleImpl.h */; };
+		277470F71BDBEFF500BAFD75 /* CSSValue.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F831BDBEFAD00BAFD75 /* CSSValue.h */; };
+		277470F81BDBEFF500BAFD75 /* CSSValueImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F851BDBEFAD00BAFD75 /* CSSValueImpl.h */; };
+		277470F91BDBEFF500BAFD75 /* CSSValueList.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F871BDBEFAD00BAFD75 /* CSSValueList.h */; };
+		277470FA1BDBEFF500BAFD75 /* DescendantSelector.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F891BDBEFAD00BAFD75 /* DescendantSelector.h */; };
+		277470FB1BDBEFF500BAFD75 /* DescendantSelectorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F8B1BDBEFAD00BAFD75 /* DescendantSelectorImpl.h */; };
+		277470FC1BDBEFF500BAFD75 /* DirectAdjacentSelectorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F8D1BDBEFAD00BAFD75 /* DirectAdjacentSelectorImpl.h */; };
+		277470FD1BDBEFF500BAFD75 /* DocumentCSS.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F8F1BDBEFAD00BAFD75 /* DocumentCSS.h */; };
+		277470FE1BDBEFF500BAFD75 /* DocumentHandler.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F911BDBEFAD00BAFD75 /* DocumentHandler.h */; };
+		277470FF1BDBEFF500BAFD75 /* DocumentHandlerExt.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F931BDBEFAD00BAFD75 /* DocumentHandlerExt.h */; };
+		277471001BDBEFF500BAFD75 /* DocumentStyle.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F951BDBEFAD00BAFD75 /* DocumentStyle.h */; };
+		277471011BDBEFF500BAFD75 /* DocumentView.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F971BDBEFAD00BAFD75 /* DocumentView.h */; };
+		277471021BDBEFF500BAFD75 /* DOMExceptionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F991BDBEFAD00BAFD75 /* DOMExceptionImpl.h */; };
+		277471031BDBEFF500BAFD75 /* DOMImplementationCSS.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F9B1BDBEFAD00BAFD75 /* DOMImplementationCSS.h */; };
+		277471041BDBEFF500BAFD75 /* ElementCSSInlineStyle.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F9D1BDBEFAD00BAFD75 /* ElementCSSInlineStyle.h */; };
+		277471051BDBEFF500BAFD75 /* ElementSelector.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746F9F1BDBEFAD00BAFD75 /* ElementSelector.h */; };
+		277471061BDBEFF500BAFD75 /* ElementSelectorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA11BDBEFAD00BAFD75 /* ElementSelectorImpl.h */; };
+		277471071BDBEFF500BAFD75 /* ErrorHandler.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA31BDBEFAD00BAFD75 /* ErrorHandler.h */; };
+		277471081BDBEFF500BAFD75 /* ExceptionResource.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA51BDBEFAD00BAFD75 /* ExceptionResource.h */; };
+		277471091BDBEFF500BAFD75 /* GeneralAdjacentSelectorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA71BDBEFAD00BAFD75 /* GeneralAdjacentSelectorImpl.h */; };
+		2774710A1BDBEFF500BAFD75 /* HandlerBase.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FA91BDBEFAD00BAFD75 /* HandlerBase.h */; };
+		2774710B1BDBEFF500BAFD75 /* IdConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FAB1BDBEFAD00BAFD75 /* IdConditionImpl.h */; };
+		2774710C1BDBEFF500BAFD75 /* InputSource.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FAD1BDBEFAD00BAFD75 /* InputSource.h */; };
+		2774710D1BDBEFF500BAFD75 /* LangCondition.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FAF1BDBEFAD00BAFD75 /* LangCondition.h */; };
+		2774710E1BDBEFF500BAFD75 /* LangConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB11BDBEFAD00BAFD75 /* LangConditionImpl.h */; };
+		2774710F1BDBEFF500BAFD75 /* LangUtils.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB31BDBEFAD00BAFD75 /* LangUtils.h */; };
+		277471101BDBEFF500BAFD75 /* LexicalUnit.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB51BDBEFAD00BAFD75 /* LexicalUnit.h */; };
+		277471111BDBEFF500BAFD75 /* LexicalUnitImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB71BDBEFAD00BAFD75 /* LexicalUnitImpl.h */; };
+		277471121BDBEFF500BAFD75 /* LinkStyle.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FB91BDBEFAD00BAFD75 /* LinkStyle.h */; };
+		277471131BDBEFF500BAFD75 /* Locatable.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FBB1BDBEFAD00BAFD75 /* Locatable.h */; };
+		277471141BDBEFF500BAFD75 /* LocatableImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FBD1BDBEFAD00BAFD75 /* LocatableImpl.h */; };
+		277471151BDBEFF500BAFD75 /* Locator.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FBF1BDBEFAD00BAFD75 /* Locator.h */; };
+		277471161BDBEFF500BAFD75 /* LocatorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC11BDBEFAD00BAFD75 /* LocatorImpl.h */; };
+		277471171BDBEFF500BAFD75 /* MediaList.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC31BDBEFAD00BAFD75 /* MediaList.h */; };
+		277471181BDBEFF500BAFD75 /* MediaListImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC51BDBEFAD00BAFD75 /* MediaListImpl.h */; };
+		277471191BDBEFF500BAFD75 /* MediaQuery.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC71BDBEFAD00BAFD75 /* MediaQuery.h */; };
+		2774711A1BDBEFF500BAFD75 /* NegativeCondition.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FC91BDBEFAD00BAFD75 /* NegativeCondition.h */; };
+		2774711B1BDBEFF500BAFD75 /* NegativeSelector.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FCB1BDBEFAD00BAFD75 /* NegativeSelector.h */; };
+		2774711C1BDBEFF500BAFD75 /* OneOfAttributeConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FCD1BDBEFAD00BAFD75 /* OneOfAttributeConditionImpl.h */; };
+		2774711D1BDBEFF500BAFD75 /* Output.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FCF1BDBEFAD00BAFD75 /* Output.h */; };
+		2774711E1BDBEFF500BAFD75 /* ParseException.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD11BDBEFAD00BAFD75 /* ParseException.h */; };
+		2774711F1BDBEFF500BAFD75 /* Parser.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD31BDBEFAD00BAFD75 /* Parser.h */; };
+		277471201BDBEFF500BAFD75 /* ParserFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD51BDBEFAD00BAFD75 /* ParserFactory.h */; };
+		277471211BDBEFF500BAFD75 /* ParserUtils.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD71BDBEFAD00BAFD75 /* ParserUtils.h */; };
+		277471221BDBEFF500BAFD75 /* PositionalCondition.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FD91BDBEFAD00BAFD75 /* PositionalCondition.h */; };
+		277471231BDBEFF500BAFD75 /* PrefixAttributeConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FDB1BDBEFAD00BAFD75 /* PrefixAttributeConditionImpl.h */; };
+		277471241BDBEFF500BAFD75 /* ProcessingInstructionSelector.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FDD1BDBEFAD00BAFD75 /* ProcessingInstructionSelector.h */; };
+		277471251BDBEFF500BAFD75 /* Property.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FDF1BDBEFAD00BAFD75 /* Property.h */; };
+		277471261BDBEFF500BAFD75 /* PseudoClassConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE11BDBEFAD00BAFD75 /* PseudoClassConditionImpl.h */; };
+		277471271BDBEFF500BAFD75 /* PseudoElementSelectorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE31BDBEFAD00BAFD75 /* PseudoElementSelectorImpl.h */; };
+		277471281BDBEFF500BAFD75 /* R.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE51BDBEFAD00BAFD75 /* R.h */; };
+		277471291BDBEFF500BAFD75 /* Rect.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE71BDBEFAD00BAFD75 /* Rect.h */; };
+		2774712A1BDBEFF500BAFD75 /* RectImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FE91BDBEFAD00BAFD75 /* RectImpl.h */; };
+		2774712B1BDBEFF500BAFD75 /* RGBColor.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FEB1BDBEFAD00BAFD75 /* RGBColor.h */; };
+		2774712C1BDBEFF500BAFD75 /* RGBColorImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FED1BDBEFAD00BAFD75 /* RGBColorImpl.h */; };
+		2774712D1BDBEFF500BAFD75 /* SACMediaList.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FEF1BDBEFAD00BAFD75 /* SACMediaList.h */; };
+		2774712E1BDBEFF500BAFD75 /* SACMediaListImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF11BDBEFAD00BAFD75 /* SACMediaListImpl.h */; };
+		2774712F1BDBEFF500BAFD75 /* SACParserCSS1.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF31BDBEFAD00BAFD75 /* SACParserCSS1.h */; };
+		277471301BDBEFF500BAFD75 /* SACParserCSS1Constants.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF51BDBEFAD00BAFD75 /* SACParserCSS1Constants.h */; };
+		277471311BDBEFF500BAFD75 /* SACParserCSS1TokenManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF71BDBEFAD00BAFD75 /* SACParserCSS1TokenManager.h */; };
+		277471321BDBEFF500BAFD75 /* SACParserCSS2.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FF91BDBEFAD00BAFD75 /* SACParserCSS2.h */; };
+		277471331BDBEFF500BAFD75 /* SACParserCSS21.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FFB1BDBEFAD00BAFD75 /* SACParserCSS21.h */; };
+		277471341BDBEFF500BAFD75 /* SACParserCSS21Constants.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FFD1BDBEFAD00BAFD75 /* SACParserCSS21Constants.h */; };
+		277471351BDBEFF500BAFD75 /* SACParserCSS21TokenManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746FFF1BDBEFAD00BAFD75 /* SACParserCSS21TokenManager.h */; };
+		277471361BDBEFF500BAFD75 /* SACParserCSS2Constants.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470011BDBEFAD00BAFD75 /* SACParserCSS2Constants.h */; };
+		277471371BDBEFF500BAFD75 /* SACParserCSS2TokenManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470031BDBEFAD00BAFD75 /* SACParserCSS2TokenManager.h */; };
+		277471381BDBEFF500BAFD75 /* SACParserCSS3.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470051BDBEFAD00BAFD75 /* SACParserCSS3.h */; };
+		277471391BDBEFF500BAFD75 /* SACParserCSS3Constants.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470071BDBEFAD00BAFD75 /* SACParserCSS3Constants.h */; };
+		2774713A1BDBEFF500BAFD75 /* SACParserCSS3TokenManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470091BDBEFAD00BAFD75 /* SACParserCSS3TokenManager.h */; };
+		2774713B1BDBEFF500BAFD75 /* SACParserCSSmobileOKBasic1.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774700B1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1.h */; };
+		2774713C1BDBEFF500BAFD75 /* SACParserCSSmobileOKBasic1Constants.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774700D1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1Constants.h */; };
+		2774713D1BDBEFF500BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774700F1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.h */; };
+		2774713E1BDBEFF500BAFD75 /* SACParserMessages.properties in Sources */ = {isa = PBXBuildFile; fileRef = 277470111BDBEFAD00BAFD75 /* SACParserMessages.properties */; };
+		2774713F1BDBEFF500BAFD75 /* SACParserMessages_de.properties in Sources */ = {isa = PBXBuildFile; fileRef = 277470121BDBEFAD00BAFD75 /* SACParserMessages_de.properties */; };
+		277471401BDBEFF500BAFD75 /* SACParserMessages_en.properties in Sources */ = {isa = PBXBuildFile; fileRef = 277470131BDBEFAD00BAFD75 /* SACParserMessages_en.properties */; };
+		277471411BDBEFF500BAFD75 /* Selector.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470141BDBEFAD00BAFD75 /* Selector.h */; };
+		277471421BDBEFF500BAFD75 /* SelectorFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470161BDBEFAD00BAFD75 /* SelectorFactory.h */; };
+		277471431BDBEFF500BAFD75 /* SelectorFactoryImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470181BDBEFAD00BAFD75 /* SelectorFactoryImpl.h */; };
+		277471441BDBEFF500BAFD75 /* SelectorList.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774701A1BDBEFAD00BAFD75 /* SelectorList.h */; };
+		277471451BDBEFF500BAFD75 /* SelectorListImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774701C1BDBEFAD00BAFD75 /* SelectorListImpl.h */; };
+		277471461BDBEFF500BAFD75 /* SiblingSelector.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774701E1BDBEFAD00BAFD75 /* SiblingSelector.h */; };
+		277471471BDBEFF500BAFD75 /* SimpleSelector.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470201BDBEFAD00BAFD75 /* SimpleSelector.h */; };
+		277471481BDBEFF500BAFD75 /* StyleSheet.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470221BDBEFAD00BAFD75 /* StyleSheet.h */; };
+		277471491BDBEFF500BAFD75 /* StyleSheetList.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470241BDBEFAD00BAFD75 /* StyleSheetList.h */; };
+		2774714A1BDBEFF500BAFD75 /* SubstringAttributeConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470261BDBEFAD00BAFD75 /* SubstringAttributeConditionImpl.h */; };
+		2774714B1BDBEFF500BAFD75 /* SuffixAttributeConditionImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470281BDBEFAD00BAFD75 /* SuffixAttributeConditionImpl.h */; };
+		2774714C1BDBEFF500BAFD75 /* ThrowCssExceptionErrorHandler.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774702A1BDBEFAD00BAFD75 /* ThrowCssExceptionErrorHandler.h */; };
+		2774714D1BDBEFF500BAFD75 /* Token.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774702C1BDBEFAD00BAFD75 /* Token.h */; };
+		2774714E1BDBEFF500BAFD75 /* TokenMgrError.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774702E1BDBEFAD00BAFD75 /* TokenMgrError.h */; };
+		2774714F1BDBEFF500BAFD75 /* UserDataConstants.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470301BDBEFAD00BAFD75 /* UserDataConstants.h */; };
+		277471501BDBEFF500BAFD75 /* ViewCSS.h in Sources */ = {isa = PBXBuildFile; fileRef = 277470321BDBEFAD00BAFD75 /* ViewCSS.h */; };
+		277471511BDBF01800BAFD75 /* AttributesImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746ED81BDBBF9D00BAFD75 /* AttributesImpl.h */; };
+		277471521BDBF01800BAFD75 /* AttributesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746ED91BDBBF9D00BAFD75 /* AttributesImpl.m */; };
+		277471531BDBF01800BAFD75 /* AutoDetector.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EDA1BDBBF9D00BAFD75 /* AutoDetector.h */; };
+		277471541BDBF01800BAFD75 /* AutoDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EDB1BDBBF9D00BAFD75 /* AutoDetector.m */; };
+		277471551BDBF01800BAFD75 /* CommandLine.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EDC1BDBBF9D00BAFD75 /* CommandLine.h */; };
+		277471561BDBF01800BAFD75 /* CommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EDD1BDBBF9D00BAFD75 /* CommandLine.m */; };
+		277471571BDBF01800BAFD75 /* Element.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EDE1BDBBF9D00BAFD75 /* Element.h */; };
+		277471581BDBF01800BAFD75 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EDF1BDBBF9D00BAFD75 /* Element.m */; };
+		277471591BDBF01900BAFD75 /* ElementType.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE01BDBBF9D00BAFD75 /* ElementType.h */; };
+		2774715A1BDBF01900BAFD75 /* ElementType.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE11BDBBF9D00BAFD75 /* ElementType.m */; };
+		2774715B1BDBF01900BAFD75 /* HTMLModels.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE21BDBBF9D00BAFD75 /* HTMLModels.h */; };
+		2774715C1BDBF01900BAFD75 /* HTMLModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE31BDBBF9D00BAFD75 /* HTMLModels.m */; };
+		2774715D1BDBF01900BAFD75 /* HTMLScanner.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE41BDBBF9D00BAFD75 /* HTMLScanner.h */; };
+		2774715E1BDBF01900BAFD75 /* HTMLScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE51BDBBF9D00BAFD75 /* HTMLScanner.m */; };
+		2774715F1BDBF01900BAFD75 /* HTMLSchema.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE61BDBBF9D00BAFD75 /* HTMLSchema.h */; };
+		277471601BDBF01900BAFD75 /* HTMLSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE71BDBBF9D00BAFD75 /* HTMLSchema.m */; };
+		277471611BDBF01900BAFD75 /* Parser.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE81BDBBF9D00BAFD75 /* Parser.h */; };
+		277471621BDBF01900BAFD75 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EE91BDBBF9D00BAFD75 /* Parser.m */; };
+		277471631BDBF01900BAFD75 /* PYXScanner.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EEA1BDBBF9D00BAFD75 /* PYXScanner.h */; };
+		277471641BDBF01900BAFD75 /* PYXScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EEB1BDBBF9D00BAFD75 /* PYXScanner.m */; };
+		277471651BDBF01900BAFD75 /* PYXWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EEC1BDBBF9D00BAFD75 /* PYXWriter.h */; };
+		277471661BDBF01900BAFD75 /* PYXWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EED1BDBBF9D00BAFD75 /* PYXWriter.m */; };
+		277471671BDBF01900BAFD75 /* SAX1ParserAdapter.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EEE1BDBBF9D00BAFD75 /* SAX1ParserAdapter.h */; };
+		277471681BDBF01900BAFD75 /* SAX1ParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EEF1BDBBF9D00BAFD75 /* SAX1ParserAdapter.m */; };
+		277471691BDBF01900BAFD75 /* SAXFactoryImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF01BDBBF9D00BAFD75 /* SAXFactoryImpl.h */; };
+		2774716A1BDBF01900BAFD75 /* SAXFactoryImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF11BDBBF9D00BAFD75 /* SAXFactoryImpl.m */; };
+		2774716B1BDBF01900BAFD75 /* SAXParserImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF21BDBBF9D00BAFD75 /* SAXParserImpl.h */; };
+		2774716C1BDBF01900BAFD75 /* SAXParserImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF31BDBBF9D00BAFD75 /* SAXParserImpl.m */; };
+		2774716D1BDBF01900BAFD75 /* ScanHandler.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF41BDBBF9D00BAFD75 /* ScanHandler.h */; };
+		2774716E1BDBF01900BAFD75 /* ScanHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF51BDBBF9D00BAFD75 /* ScanHandler.m */; };
+		2774716F1BDBF01900BAFD75 /* Scanner.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF61BDBBF9D00BAFD75 /* Scanner.h */; };
+		277471701BDBF01900BAFD75 /* Scanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF71BDBBF9D00BAFD75 /* Scanner.m */; };
+		277471711BDBF01900BAFD75 /* Schema.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF81BDBBF9D00BAFD75 /* Schema.h */; };
+		277471721BDBF01900BAFD75 /* Schema.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EF91BDBBF9D00BAFD75 /* Schema.m */; };
+		277471731BDBF01900BAFD75 /* XMLWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = 27746EFA1BDBBF9D00BAFD75 /* XMLWriter.h */; };
+		277471741BDBF01900BAFD75 /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 27746EFB1BDBBF9D00BAFD75 /* XMLWriter.m */; };
+		277471751BDBF02100BAFD75 /* CssParser.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774674D1BDB504000BAFD75 /* CssParser.h */; };
+		277471761BDBF02100BAFD75 /* CssParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774674E1BDB504000BAFD75 /* CssParser.m */; };
+		277471771BDBF02100BAFD75 /* CssParserFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 2774674F1BDB504000BAFD75 /* CssParserFactory.h */; };
+		277471781BDBF02100BAFD75 /* CssParserFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 277467501BDB504000BAFD75 /* CssParserFactory.m */; };
+		277471791BDBF02100BAFD75 /* CssParserImpl.h in Sources */ = {isa = PBXBuildFile; fileRef = 277467511BDB504000BAFD75 /* CssParserImpl.h */; };
+		2774717A1BDBF02100BAFD75 /* CssParserImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 277467521BDB504000BAFD75 /* CssParserImpl.m */; };
+		2774717F1BDBF05100BAFD75 /* BaseContentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774717C1BDBF05100BAFD75 /* BaseContentHandler.m */; };
+		277471801BDBF05100BAFD75 /* HtmlSaxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2774717E1BDBF05100BAFD75 /* HtmlSaxHandler.m */; };
+		277471811BDBF0D000BAFD75 /* HtmlSaxHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2774717D1BDBF05100BAFD75 /* HtmlSaxHandler.h */; };
+		277471821BDBF21300BAFD75 /* BaseContentHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2774717B1BDBF05100BAFD75 /* BaseContentHandler.h */; };
+		277471841BDBF2E000BAFD75 /* Parser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EE81BDBBF9D00BAFD75 /* Parser.h */; };
+		277471851BDBF32A00BAFD75 /* AttributesImpl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746ED81BDBBF9D00BAFD75 /* AttributesImpl.h */; };
+		277471861BDBF32A00BAFD75 /* AutoDetector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EDA1BDBBF9D00BAFD75 /* AutoDetector.h */; };
+		277471871BDBF32A00BAFD75 /* CommandLine.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EDC1BDBBF9D00BAFD75 /* CommandLine.h */; };
+		277471881BDBF32A00BAFD75 /* Element.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EDE1BDBBF9D00BAFD75 /* Element.h */; };
+		277471891BDBF32A00BAFD75 /* ElementType.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EE01BDBBF9D00BAFD75 /* ElementType.h */; };
+		2774718A1BDBF32A00BAFD75 /* HTMLModels.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EE21BDBBF9D00BAFD75 /* HTMLModels.h */; };
+		2774718B1BDBF32A00BAFD75 /* HTMLScanner.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EE41BDBBF9D00BAFD75 /* HTMLScanner.h */; };
+		2774718C1BDBF32A00BAFD75 /* HTMLSchema.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EE61BDBBF9D00BAFD75 /* HTMLSchema.h */; };
+		2774718D1BDBF32A00BAFD75 /* PYXScanner.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EEA1BDBBF9D00BAFD75 /* PYXScanner.h */; };
+		2774718E1BDBF32A00BAFD75 /* PYXWriter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EEC1BDBBF9D00BAFD75 /* PYXWriter.h */; };
+		2774718F1BDBF32A00BAFD75 /* SAX1ParserAdapter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EEE1BDBBF9D00BAFD75 /* SAX1ParserAdapter.h */; };
+		277471901BDBF32A00BAFD75 /* SAXFactoryImpl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EF01BDBBF9D00BAFD75 /* SAXFactoryImpl.h */; };
+		277471911BDBF32A00BAFD75 /* SAXParserImpl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EF21BDBBF9D00BAFD75 /* SAXParserImpl.h */; };
+		277471921BDBF32A00BAFD75 /* ScanHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EF41BDBBF9D00BAFD75 /* ScanHandler.h */; };
+		277471931BDBF32A00BAFD75 /* Scanner.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EF61BDBBF9D00BAFD75 /* Scanner.h */; };
+		277471941BDBF32A00BAFD75 /* Schema.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EF81BDBBF9D00BAFD75 /* Schema.h */; };
+		277471951BDBF32A00BAFD75 /* XMLWriter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27746EFA1BDBBF9D00BAFD75 /* XMLWriter.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		277463861BDB318200BAFD75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277463711BDB318200BAFD75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277463781BDB318200BAFD75;
+			remoteInfo = AsheraIosParser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		277463771BDB318200BAFD75 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				277471851BDBF32A00BAFD75 /* AttributesImpl.h in CopyFiles */,
+				277471861BDBF32A00BAFD75 /* AutoDetector.h in CopyFiles */,
+				277471871BDBF32A00BAFD75 /* CommandLine.h in CopyFiles */,
+				277471881BDBF32A00BAFD75 /* Element.h in CopyFiles */,
+				277471891BDBF32A00BAFD75 /* ElementType.h in CopyFiles */,
+				2774718A1BDBF32A00BAFD75 /* HTMLModels.h in CopyFiles */,
+				2774718B1BDBF32A00BAFD75 /* HTMLScanner.h in CopyFiles */,
+				2774718C1BDBF32A00BAFD75 /* HTMLSchema.h in CopyFiles */,
+				2774718D1BDBF32A00BAFD75 /* PYXScanner.h in CopyFiles */,
+				2774718E1BDBF32A00BAFD75 /* PYXWriter.h in CopyFiles */,
+				2774718F1BDBF32A00BAFD75 /* SAX1ParserAdapter.h in CopyFiles */,
+				277471901BDBF32A00BAFD75 /* SAXFactoryImpl.h in CopyFiles */,
+				277471911BDBF32A00BAFD75 /* SAXParserImpl.h in CopyFiles */,
+				277471921BDBF32A00BAFD75 /* ScanHandler.h in CopyFiles */,
+				277471931BDBF32A00BAFD75 /* Scanner.h in CopyFiles */,
+				277471941BDBF32A00BAFD75 /* Schema.h in CopyFiles */,
+				277471951BDBF32A00BAFD75 /* XMLWriter.h in CopyFiles */,
+				277471841BDBF2E000BAFD75 /* Parser.h in CopyFiles */,
+				277471821BDBF21300BAFD75 /* BaseContentHandler.h in CopyFiles */,
+				277471811BDBF0D000BAFD75 /* HtmlSaxHandler.h in CopyFiles */,
+				27746AEB1BDB50B400BAFD75 /* CssParser.h in CopyFiles */,
+				27746AEC1BDB50B400BAFD75 /* CssParserFactory.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27746AF01BDB605E00BAFD75 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		277463791BDB318200BAFD75 /* libAsheraIosParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAsheraIosParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		277463841BDB318200BAFD75 /* AsheraIosParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsheraIosParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2774638A1BDB318200BAFD75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277465451BDB355800BAFD75 /* Settings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Settings.xcconfig; sourceTree = "<group>"; };
+		2774674D1BDB504000BAFD75 /* CssParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CssParser.h; sourceTree = "<group>"; };
+		2774674E1BDB504000BAFD75 /* CssParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CssParser.m; sourceTree = "<group>"; };
+		2774674F1BDB504000BAFD75 /* CssParserFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CssParserFactory.h; sourceTree = "<group>"; };
+		277467501BDB504000BAFD75 /* CssParserFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CssParserFactory.m; sourceTree = "<group>"; };
+		277467511BDB504000BAFD75 /* CssParserImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CssParserImpl.h; sourceTree = "<group>"; };
+		277467521BDB504000BAFD75 /* CssParserImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CssParserImpl.m; sourceTree = "<group>"; };
+		27746ED81BDBBF9D00BAFD75 /* AttributesImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesImpl.h; sourceTree = "<group>"; };
+		27746ED91BDBBF9D00BAFD75 /* AttributesImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesImpl.m; sourceTree = "<group>"; };
+		27746EDA1BDBBF9D00BAFD75 /* AutoDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoDetector.h; sourceTree = "<group>"; };
+		27746EDB1BDBBF9D00BAFD75 /* AutoDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoDetector.m; sourceTree = "<group>"; };
+		27746EDC1BDBBF9D00BAFD75 /* CommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandLine.h; sourceTree = "<group>"; };
+		27746EDD1BDBBF9D00BAFD75 /* CommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandLine.m; sourceTree = "<group>"; };
+		27746EDE1BDBBF9D00BAFD75 /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = "<group>"; };
+		27746EDF1BDBBF9D00BAFD75 /* Element.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Element.m; sourceTree = "<group>"; };
+		27746EE01BDBBF9D00BAFD75 /* ElementType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementType.h; sourceTree = "<group>"; };
+		27746EE11BDBBF9D00BAFD75 /* ElementType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementType.m; sourceTree = "<group>"; };
+		27746EE21BDBBF9D00BAFD75 /* HTMLModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLModels.h; sourceTree = "<group>"; };
+		27746EE31BDBBF9D00BAFD75 /* HTMLModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLModels.m; sourceTree = "<group>"; };
+		27746EE41BDBBF9D00BAFD75 /* HTMLScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLScanner.h; sourceTree = "<group>"; };
+		27746EE51BDBBF9D00BAFD75 /* HTMLScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLScanner.m; sourceTree = "<group>"; };
+		27746EE61BDBBF9D00BAFD75 /* HTMLSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLSchema.h; sourceTree = "<group>"; };
+		27746EE71BDBBF9D00BAFD75 /* HTMLSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLSchema.m; sourceTree = "<group>"; };
+		27746EE81BDBBF9D00BAFD75 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		27746EE91BDBBF9D00BAFD75 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		27746EEA1BDBBF9D00BAFD75 /* PYXScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYXScanner.h; sourceTree = "<group>"; };
+		27746EEB1BDBBF9D00BAFD75 /* PYXScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYXScanner.m; sourceTree = "<group>"; };
+		27746EEC1BDBBF9D00BAFD75 /* PYXWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYXWriter.h; sourceTree = "<group>"; };
+		27746EED1BDBBF9D00BAFD75 /* PYXWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYXWriter.m; sourceTree = "<group>"; };
+		27746EEE1BDBBF9D00BAFD75 /* SAX1ParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAX1ParserAdapter.h; sourceTree = "<group>"; };
+		27746EEF1BDBBF9D00BAFD75 /* SAX1ParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAX1ParserAdapter.m; sourceTree = "<group>"; };
+		27746EF01BDBBF9D00BAFD75 /* SAXFactoryImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAXFactoryImpl.h; sourceTree = "<group>"; };
+		27746EF11BDBBF9D00BAFD75 /* SAXFactoryImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAXFactoryImpl.m; sourceTree = "<group>"; };
+		27746EF21BDBBF9D00BAFD75 /* SAXParserImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAXParserImpl.h; sourceTree = "<group>"; };
+		27746EF31BDBBF9D00BAFD75 /* SAXParserImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAXParserImpl.m; sourceTree = "<group>"; };
+		27746EF41BDBBF9D00BAFD75 /* ScanHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanHandler.h; sourceTree = "<group>"; };
+		27746EF51BDBBF9D00BAFD75 /* ScanHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanHandler.m; sourceTree = "<group>"; };
+		27746EF61BDBBF9D00BAFD75 /* Scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
+		27746EF71BDBBF9D00BAFD75 /* Scanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scanner.m; sourceTree = "<group>"; };
+		27746EF81BDBBF9D00BAFD75 /* Schema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schema.h; sourceTree = "<group>"; };
+		27746EF91BDBBF9D00BAFD75 /* Schema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schema.m; sourceTree = "<group>"; };
+		27746EFA1BDBBF9D00BAFD75 /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLWriter.h; sourceTree = "<group>"; };
+		27746EFB1BDBBF9D00BAFD75 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
+		27746F101BDBEFAC00BAFD75 /* AbstractCSSRuleImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractCSSRuleImpl.h; sourceTree = "<group>"; };
+		27746F111BDBEFAC00BAFD75 /* AbstractCSSRuleImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractCSSRuleImpl.m; sourceTree = "<group>"; };
+		27746F121BDBEFAC00BAFD75 /* AbstractSACParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractSACParser.h; sourceTree = "<group>"; };
+		27746F131BDBEFAC00BAFD75 /* AbstractSACParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractSACParser.m; sourceTree = "<group>"; };
+		27746F141BDBEFAC00BAFD75 /* AbstractView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractView.h; sourceTree = "<group>"; };
+		27746F151BDBEFAC00BAFD75 /* AbstractView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractView.m; sourceTree = "<group>"; };
+		27746F161BDBEFAC00BAFD75 /* AndConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AndConditionImpl.h; sourceTree = "<group>"; };
+		27746F171BDBEFAC00BAFD75 /* AndConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AndConditionImpl.m; sourceTree = "<group>"; };
+		27746F181BDBEFAC00BAFD75 /* AttributeCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeCondition.h; sourceTree = "<group>"; };
+		27746F191BDBEFAC00BAFD75 /* AttributeCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeCondition.m; sourceTree = "<group>"; };
+		27746F1A1BDBEFAC00BAFD75 /* AttributeConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeConditionImpl.h; sourceTree = "<group>"; };
+		27746F1B1BDBEFAC00BAFD75 /* AttributeConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeConditionImpl.m; sourceTree = "<group>"; };
+		27746F1C1BDBEFAC00BAFD75 /* BeginHyphenAttributeConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeginHyphenAttributeConditionImpl.h; sourceTree = "<group>"; };
+		27746F1D1BDBEFAC00BAFD75 /* BeginHyphenAttributeConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeginHyphenAttributeConditionImpl.m; sourceTree = "<group>"; };
+		27746F1E1BDBEFAC00BAFD75 /* BuildConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildConfig.h; sourceTree = "<group>"; };
+		27746F1F1BDBEFAC00BAFD75 /* BuildConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildConfig.m; sourceTree = "<group>"; };
+		27746F201BDBEFAC00BAFD75 /* CharacterDataSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterDataSelector.h; sourceTree = "<group>"; };
+		27746F211BDBEFAC00BAFD75 /* CharacterDataSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterDataSelector.m; sourceTree = "<group>"; };
+		27746F221BDBEFAC00BAFD75 /* CharacterDataSelectorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterDataSelectorImpl.h; sourceTree = "<group>"; };
+		27746F231BDBEFAC00BAFD75 /* CharacterDataSelectorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterDataSelectorImpl.m; sourceTree = "<group>"; };
+		27746F241BDBEFAC00BAFD75 /* CharStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharStream.h; sourceTree = "<group>"; };
+		27746F251BDBEFAC00BAFD75 /* CharStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharStream.m; sourceTree = "<group>"; };
+		27746F261BDBEFAC00BAFD75 /* ChildSelectorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildSelectorImpl.h; sourceTree = "<group>"; };
+		27746F271BDBEFAC00BAFD75 /* ChildSelectorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildSelectorImpl.m; sourceTree = "<group>"; };
+		27746F281BDBEFAC00BAFD75 /* ClassConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassConditionImpl.h; sourceTree = "<group>"; };
+		27746F291BDBEFAC00BAFD75 /* ClassConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassConditionImpl.m; sourceTree = "<group>"; };
+		27746F2E1BDBEFAC00BAFD75 /* SACParserMessages.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SACParserMessages.properties; sourceTree = "<group>"; };
+		27746F2F1BDBEFAC00BAFD75 /* SACParserMessages_de.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SACParserMessages_de.properties; sourceTree = "<group>"; };
+		27746F301BDBEFAC00BAFD75 /* SACParserMessages_en.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SACParserMessages_en.properties; sourceTree = "<group>"; };
+		27746F311BDBEFAC00BAFD75 /* CombinatorCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinatorCondition.h; sourceTree = "<group>"; };
+		27746F321BDBEFAC00BAFD75 /* CombinatorCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinatorCondition.m; sourceTree = "<group>"; };
+		27746F331BDBEFAC00BAFD75 /* Condition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Condition.h; sourceTree = "<group>"; };
+		27746F341BDBEFAC00BAFD75 /* Condition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Condition.m; sourceTree = "<group>"; };
+		27746F351BDBEFAC00BAFD75 /* ConditionalSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionalSelector.h; sourceTree = "<group>"; };
+		27746F361BDBEFAC00BAFD75 /* ConditionalSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionalSelector.m; sourceTree = "<group>"; };
+		27746F371BDBEFAC00BAFD75 /* ConditionalSelectorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionalSelectorImpl.h; sourceTree = "<group>"; };
+		27746F381BDBEFAC00BAFD75 /* ConditionalSelectorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionalSelectorImpl.m; sourceTree = "<group>"; };
+		27746F391BDBEFAC00BAFD75 /* ConditionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionFactory.h; sourceTree = "<group>"; };
+		27746F3A1BDBEFAC00BAFD75 /* ConditionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionFactory.m; sourceTree = "<group>"; };
+		27746F3B1BDBEFAC00BAFD75 /* ConditionFactoryImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionFactoryImpl.h; sourceTree = "<group>"; };
+		27746F3C1BDBEFAC00BAFD75 /* ConditionFactoryImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionFactoryImpl.m; sourceTree = "<group>"; };
+		27746F3D1BDBEFAC00BAFD75 /* ContentCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCondition.h; sourceTree = "<group>"; };
+		27746F3E1BDBEFAC00BAFD75 /* ContentCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCondition.m; sourceTree = "<group>"; };
+		27746F3F1BDBEFAC00BAFD75 /* Counter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Counter.h; sourceTree = "<group>"; };
+		27746F401BDBEFAC00BAFD75 /* Counter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Counter.m; sourceTree = "<group>"; };
+		27746F411BDBEFAC00BAFD75 /* CounterImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterImpl.h; sourceTree = "<group>"; };
+		27746F421BDBEFAC00BAFD75 /* CounterImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterImpl.m; sourceTree = "<group>"; };
+		27746F431BDBEFAC00BAFD75 /* CSS2Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSS2Properties.h; sourceTree = "<group>"; };
+		27746F441BDBEFAC00BAFD75 /* CSS2Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSS2Properties.m; sourceTree = "<group>"; };
+		27746F451BDBEFAC00BAFD75 /* CSSCharsetRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSCharsetRule.h; sourceTree = "<group>"; };
+		27746F461BDBEFAC00BAFD75 /* CSSCharsetRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSCharsetRule.m; sourceTree = "<group>"; };
+		27746F471BDBEFAC00BAFD75 /* CSSCharsetRuleImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSCharsetRuleImpl.h; sourceTree = "<group>"; };
+		27746F481BDBEFAC00BAFD75 /* CSSCharsetRuleImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSCharsetRuleImpl.m; sourceTree = "<group>"; };
+		27746F491BDBEFAC00BAFD75 /* CssCharStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CssCharStream.h; sourceTree = "<group>"; };
+		27746F4A1BDBEFAC00BAFD75 /* CssCharStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CssCharStream.m; sourceTree = "<group>"; };
+		27746F4B1BDBEFAC00BAFD75 /* CSSException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSException.h; sourceTree = "<group>"; };
+		27746F4C1BDBEFAC00BAFD75 /* CSSException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSException.m; sourceTree = "<group>"; };
+		27746F4D1BDBEFAD00BAFD75 /* CSSFontFaceRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSFontFaceRule.h; sourceTree = "<group>"; };
+		27746F4E1BDBEFAD00BAFD75 /* CSSFontFaceRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSFontFaceRule.m; sourceTree = "<group>"; };
+		27746F4F1BDBEFAD00BAFD75 /* CSSFontFaceRuleImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSFontFaceRuleImpl.h; sourceTree = "<group>"; };
+		27746F501BDBEFAD00BAFD75 /* CSSFontFaceRuleImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSFontFaceRuleImpl.m; sourceTree = "<group>"; };
+		27746F511BDBEFAD00BAFD75 /* CSSFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSFormat.h; sourceTree = "<group>"; };
+		27746F521BDBEFAD00BAFD75 /* CSSFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSFormat.m; sourceTree = "<group>"; };
+		27746F531BDBEFAD00BAFD75 /* CSSFormatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSFormatable.h; sourceTree = "<group>"; };
+		27746F541BDBEFAD00BAFD75 /* CSSFormatable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSFormatable.m; sourceTree = "<group>"; };
+		27746F551BDBEFAD00BAFD75 /* CSSImportRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSImportRule.h; sourceTree = "<group>"; };
+		27746F561BDBEFAD00BAFD75 /* CSSImportRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSImportRule.m; sourceTree = "<group>"; };
+		27746F571BDBEFAD00BAFD75 /* CSSImportRuleImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSImportRuleImpl.h; sourceTree = "<group>"; };
+		27746F581BDBEFAD00BAFD75 /* CSSImportRuleImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSImportRuleImpl.m; sourceTree = "<group>"; };
+		27746F591BDBEFAD00BAFD75 /* CSSMediaRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMediaRule.h; sourceTree = "<group>"; };
+		27746F5A1BDBEFAD00BAFD75 /* CSSMediaRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSMediaRule.m; sourceTree = "<group>"; };
+		27746F5B1BDBEFAD00BAFD75 /* CSSMediaRuleImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMediaRuleImpl.h; sourceTree = "<group>"; };
+		27746F5C1BDBEFAD00BAFD75 /* CSSMediaRuleImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSMediaRuleImpl.m; sourceTree = "<group>"; };
+		27746F5D1BDBEFAD00BAFD75 /* CSSOMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSOMObject.h; sourceTree = "<group>"; };
+		27746F5E1BDBEFAD00BAFD75 /* CSSOMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSOMObject.m; sourceTree = "<group>"; };
+		27746F5F1BDBEFAD00BAFD75 /* CSSOMObjectImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSOMObjectImpl.h; sourceTree = "<group>"; };
+		27746F601BDBEFAD00BAFD75 /* CSSOMObjectImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSOMObjectImpl.m; sourceTree = "<group>"; };
+		27746F611BDBEFAD00BAFD75 /* CSSOMParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSOMParser.h; sourceTree = "<group>"; };
+		27746F621BDBEFAD00BAFD75 /* CSSOMParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSOMParser.m; sourceTree = "<group>"; };
+		27746F631BDBEFAD00BAFD75 /* CSSPageRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSPageRule.h; sourceTree = "<group>"; };
+		27746F641BDBEFAD00BAFD75 /* CSSPageRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSPageRule.m; sourceTree = "<group>"; };
+		27746F651BDBEFAD00BAFD75 /* CSSPageRuleImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSPageRuleImpl.h; sourceTree = "<group>"; };
+		27746F661BDBEFAD00BAFD75 /* CSSPageRuleImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSPageRuleImpl.m; sourceTree = "<group>"; };
+		27746F671BDBEFAD00BAFD75 /* CSSParseException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSParseException.h; sourceTree = "<group>"; };
+		27746F681BDBEFAD00BAFD75 /* CSSParseException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSParseException.m; sourceTree = "<group>"; };
+		27746F691BDBEFAD00BAFD75 /* CSSPrimitiveValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSPrimitiveValue.h; sourceTree = "<group>"; };
+		27746F6A1BDBEFAD00BAFD75 /* CSSPrimitiveValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSPrimitiveValue.m; sourceTree = "<group>"; };
+		27746F6B1BDBEFAD00BAFD75 /* CSSRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSRule.h; sourceTree = "<group>"; };
+		27746F6C1BDBEFAD00BAFD75 /* CSSRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSRule.m; sourceTree = "<group>"; };
+		27746F6D1BDBEFAD00BAFD75 /* CSSRuleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSRuleList.h; sourceTree = "<group>"; };
+		27746F6E1BDBEFAD00BAFD75 /* CSSRuleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSRuleList.m; sourceTree = "<group>"; };
+		27746F6F1BDBEFAD00BAFD75 /* CSSRuleListImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSRuleListImpl.h; sourceTree = "<group>"; };
+		27746F701BDBEFAD00BAFD75 /* CSSRuleListImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSRuleListImpl.m; sourceTree = "<group>"; };
+		27746F711BDBEFAD00BAFD75 /* CSSStyleDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleDeclaration.h; sourceTree = "<group>"; };
+		27746F721BDBEFAD00BAFD75 /* CSSStyleDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleDeclaration.m; sourceTree = "<group>"; };
+		27746F731BDBEFAD00BAFD75 /* CSSStyleDeclarationImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleDeclarationImpl.h; sourceTree = "<group>"; };
+		27746F741BDBEFAD00BAFD75 /* CSSStyleDeclarationImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleDeclarationImpl.m; sourceTree = "<group>"; };
+		27746F751BDBEFAD00BAFD75 /* CSSStyleRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleRule.h; sourceTree = "<group>"; };
+		27746F761BDBEFAD00BAFD75 /* CSSStyleRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleRule.m; sourceTree = "<group>"; };
+		27746F771BDBEFAD00BAFD75 /* CSSStyleRuleImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleRuleImpl.h; sourceTree = "<group>"; };
+		27746F781BDBEFAD00BAFD75 /* CSSStyleRuleImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleRuleImpl.m; sourceTree = "<group>"; };
+		27746F791BDBEFAD00BAFD75 /* CSSStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleSheet.h; sourceTree = "<group>"; };
+		27746F7A1BDBEFAD00BAFD75 /* CSSStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleSheet.m; sourceTree = "<group>"; };
+		27746F7B1BDBEFAD00BAFD75 /* CSSStyleSheetImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleSheetImpl.h; sourceTree = "<group>"; };
+		27746F7C1BDBEFAD00BAFD75 /* CSSStyleSheetImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleSheetImpl.m; sourceTree = "<group>"; };
+		27746F7D1BDBEFAD00BAFD75 /* CSSStyleSheetListImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleSheetListImpl.h; sourceTree = "<group>"; };
+		27746F7E1BDBEFAD00BAFD75 /* CSSStyleSheetListImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleSheetListImpl.m; sourceTree = "<group>"; };
+		27746F7F1BDBEFAD00BAFD75 /* CSSUnknownRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSUnknownRule.h; sourceTree = "<group>"; };
+		27746F801BDBEFAD00BAFD75 /* CSSUnknownRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSUnknownRule.m; sourceTree = "<group>"; };
+		27746F811BDBEFAD00BAFD75 /* CSSUnknownRuleImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSUnknownRuleImpl.h; sourceTree = "<group>"; };
+		27746F821BDBEFAD00BAFD75 /* CSSUnknownRuleImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSUnknownRuleImpl.m; sourceTree = "<group>"; };
+		27746F831BDBEFAD00BAFD75 /* CSSValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSValue.h; sourceTree = "<group>"; };
+		27746F841BDBEFAD00BAFD75 /* CSSValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSValue.m; sourceTree = "<group>"; };
+		27746F851BDBEFAD00BAFD75 /* CSSValueImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSValueImpl.h; sourceTree = "<group>"; };
+		27746F861BDBEFAD00BAFD75 /* CSSValueImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSValueImpl.m; sourceTree = "<group>"; };
+		27746F871BDBEFAD00BAFD75 /* CSSValueList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSValueList.h; sourceTree = "<group>"; };
+		27746F881BDBEFAD00BAFD75 /* CSSValueList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSValueList.m; sourceTree = "<group>"; };
+		27746F891BDBEFAD00BAFD75 /* DescendantSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescendantSelector.h; sourceTree = "<group>"; };
+		27746F8A1BDBEFAD00BAFD75 /* DescendantSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantSelector.m; sourceTree = "<group>"; };
+		27746F8B1BDBEFAD00BAFD75 /* DescendantSelectorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescendantSelectorImpl.h; sourceTree = "<group>"; };
+		27746F8C1BDBEFAD00BAFD75 /* DescendantSelectorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantSelectorImpl.m; sourceTree = "<group>"; };
+		27746F8D1BDBEFAD00BAFD75 /* DirectAdjacentSelectorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectAdjacentSelectorImpl.h; sourceTree = "<group>"; };
+		27746F8E1BDBEFAD00BAFD75 /* DirectAdjacentSelectorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectAdjacentSelectorImpl.m; sourceTree = "<group>"; };
+		27746F8F1BDBEFAD00BAFD75 /* DocumentCSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentCSS.h; sourceTree = "<group>"; };
+		27746F901BDBEFAD00BAFD75 /* DocumentCSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentCSS.m; sourceTree = "<group>"; };
+		27746F911BDBEFAD00BAFD75 /* DocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentHandler.h; sourceTree = "<group>"; };
+		27746F921BDBEFAD00BAFD75 /* DocumentHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentHandler.m; sourceTree = "<group>"; };
+		27746F931BDBEFAD00BAFD75 /* DocumentHandlerExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentHandlerExt.h; sourceTree = "<group>"; };
+		27746F941BDBEFAD00BAFD75 /* DocumentHandlerExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentHandlerExt.m; sourceTree = "<group>"; };
+		27746F951BDBEFAD00BAFD75 /* DocumentStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentStyle.h; sourceTree = "<group>"; };
+		27746F961BDBEFAD00BAFD75 /* DocumentStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentStyle.m; sourceTree = "<group>"; };
+		27746F971BDBEFAD00BAFD75 /* DocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentView.h; sourceTree = "<group>"; };
+		27746F981BDBEFAD00BAFD75 /* DocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentView.m; sourceTree = "<group>"; };
+		27746F991BDBEFAD00BAFD75 /* DOMExceptionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOMExceptionImpl.h; sourceTree = "<group>"; };
+		27746F9A1BDBEFAD00BAFD75 /* DOMExceptionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOMExceptionImpl.m; sourceTree = "<group>"; };
+		27746F9B1BDBEFAD00BAFD75 /* DOMImplementationCSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOMImplementationCSS.h; sourceTree = "<group>"; };
+		27746F9C1BDBEFAD00BAFD75 /* DOMImplementationCSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOMImplementationCSS.m; sourceTree = "<group>"; };
+		27746F9D1BDBEFAD00BAFD75 /* ElementCSSInlineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementCSSInlineStyle.h; sourceTree = "<group>"; };
+		27746F9E1BDBEFAD00BAFD75 /* ElementCSSInlineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementCSSInlineStyle.m; sourceTree = "<group>"; };
+		27746F9F1BDBEFAD00BAFD75 /* ElementSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementSelector.h; sourceTree = "<group>"; };
+		27746FA01BDBEFAD00BAFD75 /* ElementSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementSelector.m; sourceTree = "<group>"; };
+		27746FA11BDBEFAD00BAFD75 /* ElementSelectorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementSelectorImpl.h; sourceTree = "<group>"; };
+		27746FA21BDBEFAD00BAFD75 /* ElementSelectorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementSelectorImpl.m; sourceTree = "<group>"; };
+		27746FA31BDBEFAD00BAFD75 /* ErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorHandler.h; sourceTree = "<group>"; };
+		27746FA41BDBEFAD00BAFD75 /* ErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorHandler.m; sourceTree = "<group>"; };
+		27746FA51BDBEFAD00BAFD75 /* ExceptionResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionResource.h; sourceTree = "<group>"; };
+		27746FA61BDBEFAD00BAFD75 /* ExceptionResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionResource.m; sourceTree = "<group>"; };
+		27746FA71BDBEFAD00BAFD75 /* GeneralAdjacentSelectorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralAdjacentSelectorImpl.h; sourceTree = "<group>"; };
+		27746FA81BDBEFAD00BAFD75 /* GeneralAdjacentSelectorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralAdjacentSelectorImpl.m; sourceTree = "<group>"; };
+		27746FA91BDBEFAD00BAFD75 /* HandlerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandlerBase.h; sourceTree = "<group>"; };
+		27746FAA1BDBEFAD00BAFD75 /* HandlerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandlerBase.m; sourceTree = "<group>"; };
+		27746FAB1BDBEFAD00BAFD75 /* IdConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdConditionImpl.h; sourceTree = "<group>"; };
+		27746FAC1BDBEFAD00BAFD75 /* IdConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdConditionImpl.m; sourceTree = "<group>"; };
+		27746FAD1BDBEFAD00BAFD75 /* InputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSource.h; sourceTree = "<group>"; };
+		27746FAE1BDBEFAD00BAFD75 /* InputSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSource.m; sourceTree = "<group>"; };
+		27746FAF1BDBEFAD00BAFD75 /* LangCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LangCondition.h; sourceTree = "<group>"; };
+		27746FB01BDBEFAD00BAFD75 /* LangCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LangCondition.m; sourceTree = "<group>"; };
+		27746FB11BDBEFAD00BAFD75 /* LangConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LangConditionImpl.h; sourceTree = "<group>"; };
+		27746FB21BDBEFAD00BAFD75 /* LangConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LangConditionImpl.m; sourceTree = "<group>"; };
+		27746FB31BDBEFAD00BAFD75 /* LangUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LangUtils.h; sourceTree = "<group>"; };
+		27746FB41BDBEFAD00BAFD75 /* LangUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LangUtils.m; sourceTree = "<group>"; };
+		27746FB51BDBEFAD00BAFD75 /* LexicalUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LexicalUnit.h; sourceTree = "<group>"; };
+		27746FB61BDBEFAD00BAFD75 /* LexicalUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LexicalUnit.m; sourceTree = "<group>"; };
+		27746FB71BDBEFAD00BAFD75 /* LexicalUnitImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LexicalUnitImpl.h; sourceTree = "<group>"; };
+		27746FB81BDBEFAD00BAFD75 /* LexicalUnitImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LexicalUnitImpl.m; sourceTree = "<group>"; };
+		27746FB91BDBEFAD00BAFD75 /* LinkStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkStyle.h; sourceTree = "<group>"; };
+		27746FBA1BDBEFAD00BAFD75 /* LinkStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkStyle.m; sourceTree = "<group>"; };
+		27746FBB1BDBEFAD00BAFD75 /* Locatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Locatable.h; sourceTree = "<group>"; };
+		27746FBC1BDBEFAD00BAFD75 /* Locatable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Locatable.m; sourceTree = "<group>"; };
+		27746FBD1BDBEFAD00BAFD75 /* LocatableImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocatableImpl.h; sourceTree = "<group>"; };
+		27746FBE1BDBEFAD00BAFD75 /* LocatableImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocatableImpl.m; sourceTree = "<group>"; };
+		27746FBF1BDBEFAD00BAFD75 /* Locator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Locator.h; sourceTree = "<group>"; };
+		27746FC01BDBEFAD00BAFD75 /* Locator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Locator.m; sourceTree = "<group>"; };
+		27746FC11BDBEFAD00BAFD75 /* LocatorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocatorImpl.h; sourceTree = "<group>"; };
+		27746FC21BDBEFAD00BAFD75 /* LocatorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocatorImpl.m; sourceTree = "<group>"; };
+		27746FC31BDBEFAD00BAFD75 /* MediaList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaList.h; sourceTree = "<group>"; };
+		27746FC41BDBEFAD00BAFD75 /* MediaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaList.m; sourceTree = "<group>"; };
+		27746FC51BDBEFAD00BAFD75 /* MediaListImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaListImpl.h; sourceTree = "<group>"; };
+		27746FC61BDBEFAD00BAFD75 /* MediaListImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaListImpl.m; sourceTree = "<group>"; };
+		27746FC71BDBEFAD00BAFD75 /* MediaQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaQuery.h; sourceTree = "<group>"; };
+		27746FC81BDBEFAD00BAFD75 /* MediaQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaQuery.m; sourceTree = "<group>"; };
+		27746FC91BDBEFAD00BAFD75 /* NegativeCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NegativeCondition.h; sourceTree = "<group>"; };
+		27746FCA1BDBEFAD00BAFD75 /* NegativeCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegativeCondition.m; sourceTree = "<group>"; };
+		27746FCB1BDBEFAD00BAFD75 /* NegativeSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NegativeSelector.h; sourceTree = "<group>"; };
+		27746FCC1BDBEFAD00BAFD75 /* NegativeSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegativeSelector.m; sourceTree = "<group>"; };
+		27746FCD1BDBEFAD00BAFD75 /* OneOfAttributeConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneOfAttributeConditionImpl.h; sourceTree = "<group>"; };
+		27746FCE1BDBEFAD00BAFD75 /* OneOfAttributeConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneOfAttributeConditionImpl.m; sourceTree = "<group>"; };
+		27746FCF1BDBEFAD00BAFD75 /* Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Output.h; sourceTree = "<group>"; };
+		27746FD01BDBEFAD00BAFD75 /* Output.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Output.m; sourceTree = "<group>"; };
+		27746FD11BDBEFAD00BAFD75 /* ParseException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseException.h; sourceTree = "<group>"; };
+		27746FD21BDBEFAD00BAFD75 /* ParseException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseException.m; sourceTree = "<group>"; };
+		27746FD31BDBEFAD00BAFD75 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		27746FD41BDBEFAD00BAFD75 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		27746FD51BDBEFAD00BAFD75 /* ParserFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserFactory.h; sourceTree = "<group>"; };
+		27746FD61BDBEFAD00BAFD75 /* ParserFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserFactory.m; sourceTree = "<group>"; };
+		27746FD71BDBEFAD00BAFD75 /* ParserUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserUtils.h; sourceTree = "<group>"; };
+		27746FD81BDBEFAD00BAFD75 /* ParserUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserUtils.m; sourceTree = "<group>"; };
+		27746FD91BDBEFAD00BAFD75 /* PositionalCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionalCondition.h; sourceTree = "<group>"; };
+		27746FDA1BDBEFAD00BAFD75 /* PositionalCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionalCondition.m; sourceTree = "<group>"; };
+		27746FDB1BDBEFAD00BAFD75 /* PrefixAttributeConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixAttributeConditionImpl.h; sourceTree = "<group>"; };
+		27746FDC1BDBEFAD00BAFD75 /* PrefixAttributeConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefixAttributeConditionImpl.m; sourceTree = "<group>"; };
+		27746FDD1BDBEFAD00BAFD75 /* ProcessingInstructionSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessingInstructionSelector.h; sourceTree = "<group>"; };
+		27746FDE1BDBEFAD00BAFD75 /* ProcessingInstructionSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessingInstructionSelector.m; sourceTree = "<group>"; };
+		27746FDF1BDBEFAD00BAFD75 /* Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Property.h; sourceTree = "<group>"; };
+		27746FE01BDBEFAD00BAFD75 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = "<group>"; };
+		27746FE11BDBEFAD00BAFD75 /* PseudoClassConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PseudoClassConditionImpl.h; sourceTree = "<group>"; };
+		27746FE21BDBEFAD00BAFD75 /* PseudoClassConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PseudoClassConditionImpl.m; sourceTree = "<group>"; };
+		27746FE31BDBEFAD00BAFD75 /* PseudoElementSelectorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PseudoElementSelectorImpl.h; sourceTree = "<group>"; };
+		27746FE41BDBEFAD00BAFD75 /* PseudoElementSelectorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PseudoElementSelectorImpl.m; sourceTree = "<group>"; };
+		27746FE51BDBEFAD00BAFD75 /* R.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R.h; sourceTree = "<group>"; };
+		27746FE61BDBEFAD00BAFD75 /* R.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = R.m; sourceTree = "<group>"; };
+		27746FE71BDBEFAD00BAFD75 /* Rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rect.h; sourceTree = "<group>"; };
+		27746FE81BDBEFAD00BAFD75 /* Rect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rect.m; sourceTree = "<group>"; };
+		27746FE91BDBEFAD00BAFD75 /* RectImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectImpl.h; sourceTree = "<group>"; };
+		27746FEA1BDBEFAD00BAFD75 /* RectImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectImpl.m; sourceTree = "<group>"; };
+		27746FEB1BDBEFAD00BAFD75 /* RGBColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGBColor.h; sourceTree = "<group>"; };
+		27746FEC1BDBEFAD00BAFD75 /* RGBColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGBColor.m; sourceTree = "<group>"; };
+		27746FED1BDBEFAD00BAFD75 /* RGBColorImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGBColorImpl.h; sourceTree = "<group>"; };
+		27746FEE1BDBEFAD00BAFD75 /* RGBColorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGBColorImpl.m; sourceTree = "<group>"; };
+		27746FEF1BDBEFAD00BAFD75 /* SACMediaList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACMediaList.h; sourceTree = "<group>"; };
+		27746FF01BDBEFAD00BAFD75 /* SACMediaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACMediaList.m; sourceTree = "<group>"; };
+		27746FF11BDBEFAD00BAFD75 /* SACMediaListImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACMediaListImpl.h; sourceTree = "<group>"; };
+		27746FF21BDBEFAD00BAFD75 /* SACMediaListImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACMediaListImpl.m; sourceTree = "<group>"; };
+		27746FF31BDBEFAD00BAFD75 /* SACParserCSS1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS1.h; sourceTree = "<group>"; };
+		27746FF41BDBEFAD00BAFD75 /* SACParserCSS1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS1.m; sourceTree = "<group>"; };
+		27746FF51BDBEFAD00BAFD75 /* SACParserCSS1Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS1Constants.h; sourceTree = "<group>"; };
+		27746FF61BDBEFAD00BAFD75 /* SACParserCSS1Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS1Constants.m; sourceTree = "<group>"; };
+		27746FF71BDBEFAD00BAFD75 /* SACParserCSS1TokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS1TokenManager.h; sourceTree = "<group>"; };
+		27746FF81BDBEFAD00BAFD75 /* SACParserCSS1TokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS1TokenManager.m; sourceTree = "<group>"; };
+		27746FF91BDBEFAD00BAFD75 /* SACParserCSS2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS2.h; sourceTree = "<group>"; };
+		27746FFA1BDBEFAD00BAFD75 /* SACParserCSS2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS2.m; sourceTree = "<group>"; };
+		27746FFB1BDBEFAD00BAFD75 /* SACParserCSS21.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS21.h; sourceTree = "<group>"; };
+		27746FFC1BDBEFAD00BAFD75 /* SACParserCSS21.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS21.m; sourceTree = "<group>"; };
+		27746FFD1BDBEFAD00BAFD75 /* SACParserCSS21Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS21Constants.h; sourceTree = "<group>"; };
+		27746FFE1BDBEFAD00BAFD75 /* SACParserCSS21Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS21Constants.m; sourceTree = "<group>"; };
+		27746FFF1BDBEFAD00BAFD75 /* SACParserCSS21TokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS21TokenManager.h; sourceTree = "<group>"; };
+		277470001BDBEFAD00BAFD75 /* SACParserCSS21TokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS21TokenManager.m; sourceTree = "<group>"; };
+		277470011BDBEFAD00BAFD75 /* SACParserCSS2Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS2Constants.h; sourceTree = "<group>"; };
+		277470021BDBEFAD00BAFD75 /* SACParserCSS2Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS2Constants.m; sourceTree = "<group>"; };
+		277470031BDBEFAD00BAFD75 /* SACParserCSS2TokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS2TokenManager.h; sourceTree = "<group>"; };
+		277470041BDBEFAD00BAFD75 /* SACParserCSS2TokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS2TokenManager.m; sourceTree = "<group>"; };
+		277470051BDBEFAD00BAFD75 /* SACParserCSS3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS3.h; sourceTree = "<group>"; };
+		277470061BDBEFAD00BAFD75 /* SACParserCSS3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS3.m; sourceTree = "<group>"; };
+		277470071BDBEFAD00BAFD75 /* SACParserCSS3Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS3Constants.h; sourceTree = "<group>"; };
+		277470081BDBEFAD00BAFD75 /* SACParserCSS3Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS3Constants.m; sourceTree = "<group>"; };
+		277470091BDBEFAD00BAFD75 /* SACParserCSS3TokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSS3TokenManager.h; sourceTree = "<group>"; };
+		2774700A1BDBEFAD00BAFD75 /* SACParserCSS3TokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSS3TokenManager.m; sourceTree = "<group>"; };
+		2774700B1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSSmobileOKBasic1.h; sourceTree = "<group>"; };
+		2774700C1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSSmobileOKBasic1.m; sourceTree = "<group>"; };
+		2774700D1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSSmobileOKBasic1Constants.h; sourceTree = "<group>"; };
+		2774700E1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSSmobileOKBasic1Constants.m; sourceTree = "<group>"; };
+		2774700F1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACParserCSSmobileOKBasic1TokenManager.h; sourceTree = "<group>"; };
+		277470101BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACParserCSSmobileOKBasic1TokenManager.m; sourceTree = "<group>"; };
+		277470111BDBEFAD00BAFD75 /* SACParserMessages.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SACParserMessages.properties; sourceTree = "<group>"; };
+		277470121BDBEFAD00BAFD75 /* SACParserMessages_de.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SACParserMessages_de.properties; sourceTree = "<group>"; };
+		277470131BDBEFAD00BAFD75 /* SACParserMessages_en.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SACParserMessages_en.properties; sourceTree = "<group>"; };
+		277470141BDBEFAD00BAFD75 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
+		277470151BDBEFAD00BAFD75 /* Selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selector.m; sourceTree = "<group>"; };
+		277470161BDBEFAD00BAFD75 /* SelectorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorFactory.h; sourceTree = "<group>"; };
+		277470171BDBEFAD00BAFD75 /* SelectorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorFactory.m; sourceTree = "<group>"; };
+		277470181BDBEFAD00BAFD75 /* SelectorFactoryImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorFactoryImpl.h; sourceTree = "<group>"; };
+		277470191BDBEFAD00BAFD75 /* SelectorFactoryImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorFactoryImpl.m; sourceTree = "<group>"; };
+		2774701A1BDBEFAD00BAFD75 /* SelectorList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorList.h; sourceTree = "<group>"; };
+		2774701B1BDBEFAD00BAFD75 /* SelectorList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorList.m; sourceTree = "<group>"; };
+		2774701C1BDBEFAD00BAFD75 /* SelectorListImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorListImpl.h; sourceTree = "<group>"; };
+		2774701D1BDBEFAD00BAFD75 /* SelectorListImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorListImpl.m; sourceTree = "<group>"; };
+		2774701E1BDBEFAD00BAFD75 /* SiblingSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiblingSelector.h; sourceTree = "<group>"; };
+		2774701F1BDBEFAD00BAFD75 /* SiblingSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingSelector.m; sourceTree = "<group>"; };
+		277470201BDBEFAD00BAFD75 /* SimpleSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSelector.h; sourceTree = "<group>"; };
+		277470211BDBEFAD00BAFD75 /* SimpleSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSelector.m; sourceTree = "<group>"; };
+		277470221BDBEFAD00BAFD75 /* StyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleSheet.h; sourceTree = "<group>"; };
+		277470231BDBEFAD00BAFD75 /* StyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleSheet.m; sourceTree = "<group>"; };
+		277470241BDBEFAD00BAFD75 /* StyleSheetList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleSheetList.h; sourceTree = "<group>"; };
+		277470251BDBEFAD00BAFD75 /* StyleSheetList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleSheetList.m; sourceTree = "<group>"; };
+		277470261BDBEFAD00BAFD75 /* SubstringAttributeConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubstringAttributeConditionImpl.h; sourceTree = "<group>"; };
+		277470271BDBEFAD00BAFD75 /* SubstringAttributeConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubstringAttributeConditionImpl.m; sourceTree = "<group>"; };
+		277470281BDBEFAD00BAFD75 /* SuffixAttributeConditionImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuffixAttributeConditionImpl.h; sourceTree = "<group>"; };
+		277470291BDBEFAD00BAFD75 /* SuffixAttributeConditionImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuffixAttributeConditionImpl.m; sourceTree = "<group>"; };
+		2774702A1BDBEFAD00BAFD75 /* ThrowCssExceptionErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrowCssExceptionErrorHandler.h; sourceTree = "<group>"; };
+		2774702B1BDBEFAD00BAFD75 /* ThrowCssExceptionErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrowCssExceptionErrorHandler.m; sourceTree = "<group>"; };
+		2774702C1BDBEFAD00BAFD75 /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
+		2774702D1BDBEFAD00BAFD75 /* Token.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Token.m; sourceTree = "<group>"; };
+		2774702E1BDBEFAD00BAFD75 /* TokenMgrError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenMgrError.h; sourceTree = "<group>"; };
+		2774702F1BDBEFAD00BAFD75 /* TokenMgrError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenMgrError.m; sourceTree = "<group>"; };
+		277470301BDBEFAD00BAFD75 /* UserDataConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataConstants.h; sourceTree = "<group>"; };
+		277470311BDBEFAD00BAFD75 /* UserDataConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataConstants.m; sourceTree = "<group>"; };
+		277470321BDBEFAD00BAFD75 /* ViewCSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCSS.h; sourceTree = "<group>"; };
+		277470331BDBEFAD00BAFD75 /* ViewCSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCSS.m; sourceTree = "<group>"; };
+		2774717B1BDBF05100BAFD75 /* BaseContentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseContentHandler.h; sourceTree = "<group>"; };
+		2774717C1BDBF05100BAFD75 /* BaseContentHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseContentHandler.m; sourceTree = "<group>"; };
+		2774717D1BDBF05100BAFD75 /* HtmlSaxHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlSaxHandler.h; sourceTree = "<group>"; };
+		2774717E1BDBF05100BAFD75 /* HtmlSaxHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlSaxHandler.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		277463761BDB318200BAFD75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277463811BDB318200BAFD75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277463851BDB318200BAFD75 /* libAsheraIosParser.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		277463701BDB318200BAFD75 = {
+			isa = PBXGroup;
+			children = (
+				27746F0F1BDBEFAC00BAFD75 /* cssparser */,
+				27746ED71BDBBF9D00BAFD75 /* htmlparser */,
+				277465451BDB355800BAFD75 /* Settings.xcconfig */,
+				2774637B1BDB318200BAFD75 /* AsheraIosParser */,
+				277463881BDB318200BAFD75 /* AsheraIosParserTests */,
+				2774637A1BDB318200BAFD75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2774637A1BDB318200BAFD75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				277463791BDB318200BAFD75 /* libAsheraIosParser.a */,
+				277463841BDB318200BAFD75 /* AsheraIosParserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2774637B1BDB318200BAFD75 /* AsheraIosParser */ = {
+			isa = PBXGroup;
+			children = (
+				2774717B1BDBF05100BAFD75 /* BaseContentHandler.h */,
+				2774717C1BDBF05100BAFD75 /* BaseContentHandler.m */,
+				2774717D1BDBF05100BAFD75 /* HtmlSaxHandler.h */,
+				2774717E1BDBF05100BAFD75 /* HtmlSaxHandler.m */,
+				2774674D1BDB504000BAFD75 /* CssParser.h */,
+				2774674E1BDB504000BAFD75 /* CssParser.m */,
+				2774674F1BDB504000BAFD75 /* CssParserFactory.h */,
+				277467501BDB504000BAFD75 /* CssParserFactory.m */,
+				277467511BDB504000BAFD75 /* CssParserImpl.h */,
+				277467521BDB504000BAFD75 /* CssParserImpl.m */,
+			);
+			path = AsheraIosParser;
+			sourceTree = "<group>";
+		};
+		277463881BDB318200BAFD75 /* AsheraIosParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				277463891BDB318200BAFD75 /* Supporting Files */,
+			);
+			path = AsheraIosParserTests;
+			sourceTree = "<group>";
+		};
+		277463891BDB318200BAFD75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2774638A1BDB318200BAFD75 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27746ED71BDBBF9D00BAFD75 /* htmlparser */ = {
+			isa = PBXGroup;
+			children = (
+				27746ED81BDBBF9D00BAFD75 /* AttributesImpl.h */,
+				27746ED91BDBBF9D00BAFD75 /* AttributesImpl.m */,
+				27746EDA1BDBBF9D00BAFD75 /* AutoDetector.h */,
+				27746EDB1BDBBF9D00BAFD75 /* AutoDetector.m */,
+				27746EDC1BDBBF9D00BAFD75 /* CommandLine.h */,
+				27746EDD1BDBBF9D00BAFD75 /* CommandLine.m */,
+				27746EDE1BDBBF9D00BAFD75 /* Element.h */,
+				27746EDF1BDBBF9D00BAFD75 /* Element.m */,
+				27746EE01BDBBF9D00BAFD75 /* ElementType.h */,
+				27746EE11BDBBF9D00BAFD75 /* ElementType.m */,
+				27746EE21BDBBF9D00BAFD75 /* HTMLModels.h */,
+				27746EE31BDBBF9D00BAFD75 /* HTMLModels.m */,
+				27746EE41BDBBF9D00BAFD75 /* HTMLScanner.h */,
+				27746EE51BDBBF9D00BAFD75 /* HTMLScanner.m */,
+				27746EE61BDBBF9D00BAFD75 /* HTMLSchema.h */,
+				27746EE71BDBBF9D00BAFD75 /* HTMLSchema.m */,
+				27746EE81BDBBF9D00BAFD75 /* Parser.h */,
+				27746EE91BDBBF9D00BAFD75 /* Parser.m */,
+				27746EEA1BDBBF9D00BAFD75 /* PYXScanner.h */,
+				27746EEB1BDBBF9D00BAFD75 /* PYXScanner.m */,
+				27746EEC1BDBBF9D00BAFD75 /* PYXWriter.h */,
+				27746EED1BDBBF9D00BAFD75 /* PYXWriter.m */,
+				27746EEE1BDBBF9D00BAFD75 /* SAX1ParserAdapter.h */,
+				27746EEF1BDBBF9D00BAFD75 /* SAX1ParserAdapter.m */,
+				27746EF01BDBBF9D00BAFD75 /* SAXFactoryImpl.h */,
+				27746EF11BDBBF9D00BAFD75 /* SAXFactoryImpl.m */,
+				27746EF21BDBBF9D00BAFD75 /* SAXParserImpl.h */,
+				27746EF31BDBBF9D00BAFD75 /* SAXParserImpl.m */,
+				27746EF41BDBBF9D00BAFD75 /* ScanHandler.h */,
+				27746EF51BDBBF9D00BAFD75 /* ScanHandler.m */,
+				27746EF61BDBBF9D00BAFD75 /* Scanner.h */,
+				27746EF71BDBBF9D00BAFD75 /* Scanner.m */,
+				27746EF81BDBBF9D00BAFD75 /* Schema.h */,
+				27746EF91BDBBF9D00BAFD75 /* Schema.m */,
+				27746EFA1BDBBF9D00BAFD75 /* XMLWriter.h */,
+				27746EFB1BDBBF9D00BAFD75 /* XMLWriter.m */,
+			);
+			path = htmlparser;
+			sourceTree = "<group>";
+		};
+		27746F0F1BDBEFAC00BAFD75 /* cssparser */ = {
+			isa = PBXGroup;
+			children = (
+				27746F101BDBEFAC00BAFD75 /* AbstractCSSRuleImpl.h */,
+				27746F111BDBEFAC00BAFD75 /* AbstractCSSRuleImpl.m */,
+				27746F121BDBEFAC00BAFD75 /* AbstractSACParser.h */,
+				27746F131BDBEFAC00BAFD75 /* AbstractSACParser.m */,
+				27746F141BDBEFAC00BAFD75 /* AbstractView.h */,
+				27746F151BDBEFAC00BAFD75 /* AbstractView.m */,
+				27746F161BDBEFAC00BAFD75 /* AndConditionImpl.h */,
+				27746F171BDBEFAC00BAFD75 /* AndConditionImpl.m */,
+				27746F181BDBEFAC00BAFD75 /* AttributeCondition.h */,
+				27746F191BDBEFAC00BAFD75 /* AttributeCondition.m */,
+				27746F1A1BDBEFAC00BAFD75 /* AttributeConditionImpl.h */,
+				27746F1B1BDBEFAC00BAFD75 /* AttributeConditionImpl.m */,
+				27746F1C1BDBEFAC00BAFD75 /* BeginHyphenAttributeConditionImpl.h */,
+				27746F1D1BDBEFAC00BAFD75 /* BeginHyphenAttributeConditionImpl.m */,
+				27746F1E1BDBEFAC00BAFD75 /* BuildConfig.h */,
+				27746F1F1BDBEFAC00BAFD75 /* BuildConfig.m */,
+				27746F201BDBEFAC00BAFD75 /* CharacterDataSelector.h */,
+				27746F211BDBEFAC00BAFD75 /* CharacterDataSelector.m */,
+				27746F221BDBEFAC00BAFD75 /* CharacterDataSelectorImpl.h */,
+				27746F231BDBEFAC00BAFD75 /* CharacterDataSelectorImpl.m */,
+				27746F241BDBEFAC00BAFD75 /* CharStream.h */,
+				27746F251BDBEFAC00BAFD75 /* CharStream.m */,
+				27746F261BDBEFAC00BAFD75 /* ChildSelectorImpl.h */,
+				27746F271BDBEFAC00BAFD75 /* ChildSelectorImpl.m */,
+				27746F281BDBEFAC00BAFD75 /* ClassConditionImpl.h */,
+				27746F291BDBEFAC00BAFD75 /* ClassConditionImpl.m */,
+				27746F2A1BDBEFAC00BAFD75 /* com */,
+				27746F311BDBEFAC00BAFD75 /* CombinatorCondition.h */,
+				27746F321BDBEFAC00BAFD75 /* CombinatorCondition.m */,
+				27746F331BDBEFAC00BAFD75 /* Condition.h */,
+				27746F341BDBEFAC00BAFD75 /* Condition.m */,
+				27746F351BDBEFAC00BAFD75 /* ConditionalSelector.h */,
+				27746F361BDBEFAC00BAFD75 /* ConditionalSelector.m */,
+				27746F371BDBEFAC00BAFD75 /* ConditionalSelectorImpl.h */,
+				27746F381BDBEFAC00BAFD75 /* ConditionalSelectorImpl.m */,
+				27746F391BDBEFAC00BAFD75 /* ConditionFactory.h */,
+				27746F3A1BDBEFAC00BAFD75 /* ConditionFactory.m */,
+				27746F3B1BDBEFAC00BAFD75 /* ConditionFactoryImpl.h */,
+				27746F3C1BDBEFAC00BAFD75 /* ConditionFactoryImpl.m */,
+				27746F3D1BDBEFAC00BAFD75 /* ContentCondition.h */,
+				27746F3E1BDBEFAC00BAFD75 /* ContentCondition.m */,
+				27746F3F1BDBEFAC00BAFD75 /* Counter.h */,
+				27746F401BDBEFAC00BAFD75 /* Counter.m */,
+				27746F411BDBEFAC00BAFD75 /* CounterImpl.h */,
+				27746F421BDBEFAC00BAFD75 /* CounterImpl.m */,
+				27746F431BDBEFAC00BAFD75 /* CSS2Properties.h */,
+				27746F441BDBEFAC00BAFD75 /* CSS2Properties.m */,
+				27746F451BDBEFAC00BAFD75 /* CSSCharsetRule.h */,
+				27746F461BDBEFAC00BAFD75 /* CSSCharsetRule.m */,
+				27746F471BDBEFAC00BAFD75 /* CSSCharsetRuleImpl.h */,
+				27746F481BDBEFAC00BAFD75 /* CSSCharsetRuleImpl.m */,
+				27746F491BDBEFAC00BAFD75 /* CssCharStream.h */,
+				27746F4A1BDBEFAC00BAFD75 /* CssCharStream.m */,
+				27746F4B1BDBEFAC00BAFD75 /* CSSException.h */,
+				27746F4C1BDBEFAC00BAFD75 /* CSSException.m */,
+				27746F4D1BDBEFAD00BAFD75 /* CSSFontFaceRule.h */,
+				27746F4E1BDBEFAD00BAFD75 /* CSSFontFaceRule.m */,
+				27746F4F1BDBEFAD00BAFD75 /* CSSFontFaceRuleImpl.h */,
+				27746F501BDBEFAD00BAFD75 /* CSSFontFaceRuleImpl.m */,
+				27746F511BDBEFAD00BAFD75 /* CSSFormat.h */,
+				27746F521BDBEFAD00BAFD75 /* CSSFormat.m */,
+				27746F531BDBEFAD00BAFD75 /* CSSFormatable.h */,
+				27746F541BDBEFAD00BAFD75 /* CSSFormatable.m */,
+				27746F551BDBEFAD00BAFD75 /* CSSImportRule.h */,
+				27746F561BDBEFAD00BAFD75 /* CSSImportRule.m */,
+				27746F571BDBEFAD00BAFD75 /* CSSImportRuleImpl.h */,
+				27746F581BDBEFAD00BAFD75 /* CSSImportRuleImpl.m */,
+				27746F591BDBEFAD00BAFD75 /* CSSMediaRule.h */,
+				27746F5A1BDBEFAD00BAFD75 /* CSSMediaRule.m */,
+				27746F5B1BDBEFAD00BAFD75 /* CSSMediaRuleImpl.h */,
+				27746F5C1BDBEFAD00BAFD75 /* CSSMediaRuleImpl.m */,
+				27746F5D1BDBEFAD00BAFD75 /* CSSOMObject.h */,
+				27746F5E1BDBEFAD00BAFD75 /* CSSOMObject.m */,
+				27746F5F1BDBEFAD00BAFD75 /* CSSOMObjectImpl.h */,
+				27746F601BDBEFAD00BAFD75 /* CSSOMObjectImpl.m */,
+				27746F611BDBEFAD00BAFD75 /* CSSOMParser.h */,
+				27746F621BDBEFAD00BAFD75 /* CSSOMParser.m */,
+				27746F631BDBEFAD00BAFD75 /* CSSPageRule.h */,
+				27746F641BDBEFAD00BAFD75 /* CSSPageRule.m */,
+				27746F651BDBEFAD00BAFD75 /* CSSPageRuleImpl.h */,
+				27746F661BDBEFAD00BAFD75 /* CSSPageRuleImpl.m */,
+				27746F671BDBEFAD00BAFD75 /* CSSParseException.h */,
+				27746F681BDBEFAD00BAFD75 /* CSSParseException.m */,
+				27746F691BDBEFAD00BAFD75 /* CSSPrimitiveValue.h */,
+				27746F6A1BDBEFAD00BAFD75 /* CSSPrimitiveValue.m */,
+				27746F6B1BDBEFAD00BAFD75 /* CSSRule.h */,
+				27746F6C1BDBEFAD00BAFD75 /* CSSRule.m */,
+				27746F6D1BDBEFAD00BAFD75 /* CSSRuleList.h */,
+				27746F6E1BDBEFAD00BAFD75 /* CSSRuleList.m */,
+				27746F6F1BDBEFAD00BAFD75 /* CSSRuleListImpl.h */,
+				27746F701BDBEFAD00BAFD75 /* CSSRuleListImpl.m */,
+				27746F711BDBEFAD00BAFD75 /* CSSStyleDeclaration.h */,
+				27746F721BDBEFAD00BAFD75 /* CSSStyleDeclaration.m */,
+				27746F731BDBEFAD00BAFD75 /* CSSStyleDeclarationImpl.h */,
+				27746F741BDBEFAD00BAFD75 /* CSSStyleDeclarationImpl.m */,
+				27746F751BDBEFAD00BAFD75 /* CSSStyleRule.h */,
+				27746F761BDBEFAD00BAFD75 /* CSSStyleRule.m */,
+				27746F771BDBEFAD00BAFD75 /* CSSStyleRuleImpl.h */,
+				27746F781BDBEFAD00BAFD75 /* CSSStyleRuleImpl.m */,
+				27746F791BDBEFAD00BAFD75 /* CSSStyleSheet.h */,
+				27746F7A1BDBEFAD00BAFD75 /* CSSStyleSheet.m */,
+				27746F7B1BDBEFAD00BAFD75 /* CSSStyleSheetImpl.h */,
+				27746F7C1BDBEFAD00BAFD75 /* CSSStyleSheetImpl.m */,
+				27746F7D1BDBEFAD00BAFD75 /* CSSStyleSheetListImpl.h */,
+				27746F7E1BDBEFAD00BAFD75 /* CSSStyleSheetListImpl.m */,
+				27746F7F1BDBEFAD00BAFD75 /* CSSUnknownRule.h */,
+				27746F801BDBEFAD00BAFD75 /* CSSUnknownRule.m */,
+				27746F811BDBEFAD00BAFD75 /* CSSUnknownRuleImpl.h */,
+				27746F821BDBEFAD00BAFD75 /* CSSUnknownRuleImpl.m */,
+				27746F831BDBEFAD00BAFD75 /* CSSValue.h */,
+				27746F841BDBEFAD00BAFD75 /* CSSValue.m */,
+				27746F851BDBEFAD00BAFD75 /* CSSValueImpl.h */,
+				27746F861BDBEFAD00BAFD75 /* CSSValueImpl.m */,
+				27746F871BDBEFAD00BAFD75 /* CSSValueList.h */,
+				27746F881BDBEFAD00BAFD75 /* CSSValueList.m */,
+				27746F891BDBEFAD00BAFD75 /* DescendantSelector.h */,
+				27746F8A1BDBEFAD00BAFD75 /* DescendantSelector.m */,
+				27746F8B1BDBEFAD00BAFD75 /* DescendantSelectorImpl.h */,
+				27746F8C1BDBEFAD00BAFD75 /* DescendantSelectorImpl.m */,
+				27746F8D1BDBEFAD00BAFD75 /* DirectAdjacentSelectorImpl.h */,
+				27746F8E1BDBEFAD00BAFD75 /* DirectAdjacentSelectorImpl.m */,
+				27746F8F1BDBEFAD00BAFD75 /* DocumentCSS.h */,
+				27746F901BDBEFAD00BAFD75 /* DocumentCSS.m */,
+				27746F911BDBEFAD00BAFD75 /* DocumentHandler.h */,
+				27746F921BDBEFAD00BAFD75 /* DocumentHandler.m */,
+				27746F931BDBEFAD00BAFD75 /* DocumentHandlerExt.h */,
+				27746F941BDBEFAD00BAFD75 /* DocumentHandlerExt.m */,
+				27746F951BDBEFAD00BAFD75 /* DocumentStyle.h */,
+				27746F961BDBEFAD00BAFD75 /* DocumentStyle.m */,
+				27746F971BDBEFAD00BAFD75 /* DocumentView.h */,
+				27746F981BDBEFAD00BAFD75 /* DocumentView.m */,
+				27746F991BDBEFAD00BAFD75 /* DOMExceptionImpl.h */,
+				27746F9A1BDBEFAD00BAFD75 /* DOMExceptionImpl.m */,
+				27746F9B1BDBEFAD00BAFD75 /* DOMImplementationCSS.h */,
+				27746F9C1BDBEFAD00BAFD75 /* DOMImplementationCSS.m */,
+				27746F9D1BDBEFAD00BAFD75 /* ElementCSSInlineStyle.h */,
+				27746F9E1BDBEFAD00BAFD75 /* ElementCSSInlineStyle.m */,
+				27746F9F1BDBEFAD00BAFD75 /* ElementSelector.h */,
+				27746FA01BDBEFAD00BAFD75 /* ElementSelector.m */,
+				27746FA11BDBEFAD00BAFD75 /* ElementSelectorImpl.h */,
+				27746FA21BDBEFAD00BAFD75 /* ElementSelectorImpl.m */,
+				27746FA31BDBEFAD00BAFD75 /* ErrorHandler.h */,
+				27746FA41BDBEFAD00BAFD75 /* ErrorHandler.m */,
+				27746FA51BDBEFAD00BAFD75 /* ExceptionResource.h */,
+				27746FA61BDBEFAD00BAFD75 /* ExceptionResource.m */,
+				27746FA71BDBEFAD00BAFD75 /* GeneralAdjacentSelectorImpl.h */,
+				27746FA81BDBEFAD00BAFD75 /* GeneralAdjacentSelectorImpl.m */,
+				27746FA91BDBEFAD00BAFD75 /* HandlerBase.h */,
+				27746FAA1BDBEFAD00BAFD75 /* HandlerBase.m */,
+				27746FAB1BDBEFAD00BAFD75 /* IdConditionImpl.h */,
+				27746FAC1BDBEFAD00BAFD75 /* IdConditionImpl.m */,
+				27746FAD1BDBEFAD00BAFD75 /* InputSource.h */,
+				27746FAE1BDBEFAD00BAFD75 /* InputSource.m */,
+				27746FAF1BDBEFAD00BAFD75 /* LangCondition.h */,
+				27746FB01BDBEFAD00BAFD75 /* LangCondition.m */,
+				27746FB11BDBEFAD00BAFD75 /* LangConditionImpl.h */,
+				27746FB21BDBEFAD00BAFD75 /* LangConditionImpl.m */,
+				27746FB31BDBEFAD00BAFD75 /* LangUtils.h */,
+				27746FB41BDBEFAD00BAFD75 /* LangUtils.m */,
+				27746FB51BDBEFAD00BAFD75 /* LexicalUnit.h */,
+				27746FB61BDBEFAD00BAFD75 /* LexicalUnit.m */,
+				27746FB71BDBEFAD00BAFD75 /* LexicalUnitImpl.h */,
+				27746FB81BDBEFAD00BAFD75 /* LexicalUnitImpl.m */,
+				27746FB91BDBEFAD00BAFD75 /* LinkStyle.h */,
+				27746FBA1BDBEFAD00BAFD75 /* LinkStyle.m */,
+				27746FBB1BDBEFAD00BAFD75 /* Locatable.h */,
+				27746FBC1BDBEFAD00BAFD75 /* Locatable.m */,
+				27746FBD1BDBEFAD00BAFD75 /* LocatableImpl.h */,
+				27746FBE1BDBEFAD00BAFD75 /* LocatableImpl.m */,
+				27746FBF1BDBEFAD00BAFD75 /* Locator.h */,
+				27746FC01BDBEFAD00BAFD75 /* Locator.m */,
+				27746FC11BDBEFAD00BAFD75 /* LocatorImpl.h */,
+				27746FC21BDBEFAD00BAFD75 /* LocatorImpl.m */,
+				27746FC31BDBEFAD00BAFD75 /* MediaList.h */,
+				27746FC41BDBEFAD00BAFD75 /* MediaList.m */,
+				27746FC51BDBEFAD00BAFD75 /* MediaListImpl.h */,
+				27746FC61BDBEFAD00BAFD75 /* MediaListImpl.m */,
+				27746FC71BDBEFAD00BAFD75 /* MediaQuery.h */,
+				27746FC81BDBEFAD00BAFD75 /* MediaQuery.m */,
+				27746FC91BDBEFAD00BAFD75 /* NegativeCondition.h */,
+				27746FCA1BDBEFAD00BAFD75 /* NegativeCondition.m */,
+				27746FCB1BDBEFAD00BAFD75 /* NegativeSelector.h */,
+				27746FCC1BDBEFAD00BAFD75 /* NegativeSelector.m */,
+				27746FCD1BDBEFAD00BAFD75 /* OneOfAttributeConditionImpl.h */,
+				27746FCE1BDBEFAD00BAFD75 /* OneOfAttributeConditionImpl.m */,
+				27746FCF1BDBEFAD00BAFD75 /* Output.h */,
+				27746FD01BDBEFAD00BAFD75 /* Output.m */,
+				27746FD11BDBEFAD00BAFD75 /* ParseException.h */,
+				27746FD21BDBEFAD00BAFD75 /* ParseException.m */,
+				27746FD31BDBEFAD00BAFD75 /* Parser.h */,
+				27746FD41BDBEFAD00BAFD75 /* Parser.m */,
+				27746FD51BDBEFAD00BAFD75 /* ParserFactory.h */,
+				27746FD61BDBEFAD00BAFD75 /* ParserFactory.m */,
+				27746FD71BDBEFAD00BAFD75 /* ParserUtils.h */,
+				27746FD81BDBEFAD00BAFD75 /* ParserUtils.m */,
+				27746FD91BDBEFAD00BAFD75 /* PositionalCondition.h */,
+				27746FDA1BDBEFAD00BAFD75 /* PositionalCondition.m */,
+				27746FDB1BDBEFAD00BAFD75 /* PrefixAttributeConditionImpl.h */,
+				27746FDC1BDBEFAD00BAFD75 /* PrefixAttributeConditionImpl.m */,
+				27746FDD1BDBEFAD00BAFD75 /* ProcessingInstructionSelector.h */,
+				27746FDE1BDBEFAD00BAFD75 /* ProcessingInstructionSelector.m */,
+				27746FDF1BDBEFAD00BAFD75 /* Property.h */,
+				27746FE01BDBEFAD00BAFD75 /* Property.m */,
+				27746FE11BDBEFAD00BAFD75 /* PseudoClassConditionImpl.h */,
+				27746FE21BDBEFAD00BAFD75 /* PseudoClassConditionImpl.m */,
+				27746FE31BDBEFAD00BAFD75 /* PseudoElementSelectorImpl.h */,
+				27746FE41BDBEFAD00BAFD75 /* PseudoElementSelectorImpl.m */,
+				27746FE51BDBEFAD00BAFD75 /* R.h */,
+				27746FE61BDBEFAD00BAFD75 /* R.m */,
+				27746FE71BDBEFAD00BAFD75 /* Rect.h */,
+				27746FE81BDBEFAD00BAFD75 /* Rect.m */,
+				27746FE91BDBEFAD00BAFD75 /* RectImpl.h */,
+				27746FEA1BDBEFAD00BAFD75 /* RectImpl.m */,
+				27746FEB1BDBEFAD00BAFD75 /* RGBColor.h */,
+				27746FEC1BDBEFAD00BAFD75 /* RGBColor.m */,
+				27746FED1BDBEFAD00BAFD75 /* RGBColorImpl.h */,
+				27746FEE1BDBEFAD00BAFD75 /* RGBColorImpl.m */,
+				27746FEF1BDBEFAD00BAFD75 /* SACMediaList.h */,
+				27746FF01BDBEFAD00BAFD75 /* SACMediaList.m */,
+				27746FF11BDBEFAD00BAFD75 /* SACMediaListImpl.h */,
+				27746FF21BDBEFAD00BAFD75 /* SACMediaListImpl.m */,
+				27746FF31BDBEFAD00BAFD75 /* SACParserCSS1.h */,
+				27746FF41BDBEFAD00BAFD75 /* SACParserCSS1.m */,
+				27746FF51BDBEFAD00BAFD75 /* SACParserCSS1Constants.h */,
+				27746FF61BDBEFAD00BAFD75 /* SACParserCSS1Constants.m */,
+				27746FF71BDBEFAD00BAFD75 /* SACParserCSS1TokenManager.h */,
+				27746FF81BDBEFAD00BAFD75 /* SACParserCSS1TokenManager.m */,
+				27746FF91BDBEFAD00BAFD75 /* SACParserCSS2.h */,
+				27746FFA1BDBEFAD00BAFD75 /* SACParserCSS2.m */,
+				27746FFB1BDBEFAD00BAFD75 /* SACParserCSS21.h */,
+				27746FFC1BDBEFAD00BAFD75 /* SACParserCSS21.m */,
+				27746FFD1BDBEFAD00BAFD75 /* SACParserCSS21Constants.h */,
+				27746FFE1BDBEFAD00BAFD75 /* SACParserCSS21Constants.m */,
+				27746FFF1BDBEFAD00BAFD75 /* SACParserCSS21TokenManager.h */,
+				277470001BDBEFAD00BAFD75 /* SACParserCSS21TokenManager.m */,
+				277470011BDBEFAD00BAFD75 /* SACParserCSS2Constants.h */,
+				277470021BDBEFAD00BAFD75 /* SACParserCSS2Constants.m */,
+				277470031BDBEFAD00BAFD75 /* SACParserCSS2TokenManager.h */,
+				277470041BDBEFAD00BAFD75 /* SACParserCSS2TokenManager.m */,
+				277470051BDBEFAD00BAFD75 /* SACParserCSS3.h */,
+				277470061BDBEFAD00BAFD75 /* SACParserCSS3.m */,
+				277470071BDBEFAD00BAFD75 /* SACParserCSS3Constants.h */,
+				277470081BDBEFAD00BAFD75 /* SACParserCSS3Constants.m */,
+				277470091BDBEFAD00BAFD75 /* SACParserCSS3TokenManager.h */,
+				2774700A1BDBEFAD00BAFD75 /* SACParserCSS3TokenManager.m */,
+				2774700B1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1.h */,
+				2774700C1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1.m */,
+				2774700D1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1Constants.h */,
+				2774700E1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1Constants.m */,
+				2774700F1BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.h */,
+				277470101BDBEFAD00BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.m */,
+				277470111BDBEFAD00BAFD75 /* SACParserMessages.properties */,
+				277470121BDBEFAD00BAFD75 /* SACParserMessages_de.properties */,
+				277470131BDBEFAD00BAFD75 /* SACParserMessages_en.properties */,
+				277470141BDBEFAD00BAFD75 /* Selector.h */,
+				277470151BDBEFAD00BAFD75 /* Selector.m */,
+				277470161BDBEFAD00BAFD75 /* SelectorFactory.h */,
+				277470171BDBEFAD00BAFD75 /* SelectorFactory.m */,
+				277470181BDBEFAD00BAFD75 /* SelectorFactoryImpl.h */,
+				277470191BDBEFAD00BAFD75 /* SelectorFactoryImpl.m */,
+				2774701A1BDBEFAD00BAFD75 /* SelectorList.h */,
+				2774701B1BDBEFAD00BAFD75 /* SelectorList.m */,
+				2774701C1BDBEFAD00BAFD75 /* SelectorListImpl.h */,
+				2774701D1BDBEFAD00BAFD75 /* SelectorListImpl.m */,
+				2774701E1BDBEFAD00BAFD75 /* SiblingSelector.h */,
+				2774701F1BDBEFAD00BAFD75 /* SiblingSelector.m */,
+				277470201BDBEFAD00BAFD75 /* SimpleSelector.h */,
+				277470211BDBEFAD00BAFD75 /* SimpleSelector.m */,
+				277470221BDBEFAD00BAFD75 /* StyleSheet.h */,
+				277470231BDBEFAD00BAFD75 /* StyleSheet.m */,
+				277470241BDBEFAD00BAFD75 /* StyleSheetList.h */,
+				277470251BDBEFAD00BAFD75 /* StyleSheetList.m */,
+				277470261BDBEFAD00BAFD75 /* SubstringAttributeConditionImpl.h */,
+				277470271BDBEFAD00BAFD75 /* SubstringAttributeConditionImpl.m */,
+				277470281BDBEFAD00BAFD75 /* SuffixAttributeConditionImpl.h */,
+				277470291BDBEFAD00BAFD75 /* SuffixAttributeConditionImpl.m */,
+				2774702A1BDBEFAD00BAFD75 /* ThrowCssExceptionErrorHandler.h */,
+				2774702B1BDBEFAD00BAFD75 /* ThrowCssExceptionErrorHandler.m */,
+				2774702C1BDBEFAD00BAFD75 /* Token.h */,
+				2774702D1BDBEFAD00BAFD75 /* Token.m */,
+				2774702E1BDBEFAD00BAFD75 /* TokenMgrError.h */,
+				2774702F1BDBEFAD00BAFD75 /* TokenMgrError.m */,
+				277470301BDBEFAD00BAFD75 /* UserDataConstants.h */,
+				277470311BDBEFAD00BAFD75 /* UserDataConstants.m */,
+				277470321BDBEFAD00BAFD75 /* ViewCSS.h */,
+				277470331BDBEFAD00BAFD75 /* ViewCSS.m */,
+			);
+			path = cssparser;
+			sourceTree = "<group>";
+		};
+		27746F2A1BDBEFAC00BAFD75 /* com */ = {
+			isa = PBXGroup;
+			children = (
+				27746F2B1BDBEFAC00BAFD75 /* readystate */,
+			);
+			path = com;
+			sourceTree = "<group>";
+		};
+		27746F2B1BDBEFAC00BAFD75 /* readystate */ = {
+			isa = PBXGroup;
+			children = (
+				27746F2C1BDBEFAC00BAFD75 /* css */,
+			);
+			path = readystate;
+			sourceTree = "<group>";
+		};
+		27746F2C1BDBEFAC00BAFD75 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				27746F2D1BDBEFAC00BAFD75 /* parser */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		27746F2D1BDBEFAC00BAFD75 /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				27746F2E1BDBEFAC00BAFD75 /* SACParserMessages.properties */,
+				27746F2F1BDBEFAC00BAFD75 /* SACParserMessages_de.properties */,
+				27746F301BDBEFAC00BAFD75 /* SACParserMessages_en.properties */,
+			);
+			path = parser;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		277463781BDB318200BAFD75 /* AsheraIosParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2774638D1BDB318200BAFD75 /* Build configuration list for PBXNativeTarget "AsheraIosParser" */;
+			buildPhases = (
+				277463751BDB318200BAFD75 /* Sources */,
+				277463761BDB318200BAFD75 /* Frameworks */,
+				277463771BDB318200BAFD75 /* CopyFiles */,
+				27746AF01BDB605E00BAFD75 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AsheraIosParser;
+			productName = AsheraIosParser;
+			productReference = 277463791BDB318200BAFD75 /* libAsheraIosParser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		277463831BDB318200BAFD75 /* AsheraIosParserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277463901BDB318200BAFD75 /* Build configuration list for PBXNativeTarget "AsheraIosParserTests" */;
+			buildPhases = (
+				277463801BDB318200BAFD75 /* Sources */,
+				277463811BDB318200BAFD75 /* Frameworks */,
+				277463821BDB318200BAFD75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				277463871BDB318200BAFD75 /* PBXTargetDependency */,
+			);
+			name = AsheraIosParserTests;
+			productName = AsheraIosParserTests;
+			productReference = 277463841BDB318200BAFD75 /* AsheraIosParserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		277463711BDB318200BAFD75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Ram M";
+				TargetAttributes = {
+					277463781BDB318200BAFD75 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					277463831BDB318200BAFD75 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 277463741BDB318200BAFD75 /* Build configuration list for PBXProject "AsheraIosParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 277463701BDB318200BAFD75;
+			productRefGroup = 2774637A1BDB318200BAFD75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				277463781BDB318200BAFD75 /* AsheraIosParser */,
+				277463831BDB318200BAFD75 /* AsheraIosParserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		277463821BDB318200BAFD75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		277463751BDB318200BAFD75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277471751BDBF02100BAFD75 /* CssParser.h in Sources */,
+				277471761BDBF02100BAFD75 /* CssParser.m in Sources */,
+				277471771BDBF02100BAFD75 /* CssParserFactory.h in Sources */,
+				277471781BDBF02100BAFD75 /* CssParserFactory.m in Sources */,
+				277471791BDBF02100BAFD75 /* CssParserImpl.h in Sources */,
+				2774717A1BDBF02100BAFD75 /* CssParserImpl.m in Sources */,
+				277471511BDBF01800BAFD75 /* AttributesImpl.h in Sources */,
+				277471521BDBF01800BAFD75 /* AttributesImpl.m in Sources */,
+				277471531BDBF01800BAFD75 /* AutoDetector.h in Sources */,
+				277471541BDBF01800BAFD75 /* AutoDetector.m in Sources */,
+				277471551BDBF01800BAFD75 /* CommandLine.h in Sources */,
+				277471561BDBF01800BAFD75 /* CommandLine.m in Sources */,
+				277471571BDBF01800BAFD75 /* Element.h in Sources */,
+				277471581BDBF01800BAFD75 /* Element.m in Sources */,
+				277471591BDBF01900BAFD75 /* ElementType.h in Sources */,
+				2774715A1BDBF01900BAFD75 /* ElementType.m in Sources */,
+				2774715B1BDBF01900BAFD75 /* HTMLModels.h in Sources */,
+				2774715C1BDBF01900BAFD75 /* HTMLModels.m in Sources */,
+				2774715D1BDBF01900BAFD75 /* HTMLScanner.h in Sources */,
+				2774715E1BDBF01900BAFD75 /* HTMLScanner.m in Sources */,
+				2774715F1BDBF01900BAFD75 /* HTMLSchema.h in Sources */,
+				277471601BDBF01900BAFD75 /* HTMLSchema.m in Sources */,
+				277471611BDBF01900BAFD75 /* Parser.h in Sources */,
+				277471621BDBF01900BAFD75 /* Parser.m in Sources */,
+				277471631BDBF01900BAFD75 /* PYXScanner.h in Sources */,
+				277471641BDBF01900BAFD75 /* PYXScanner.m in Sources */,
+				277471651BDBF01900BAFD75 /* PYXWriter.h in Sources */,
+				277471661BDBF01900BAFD75 /* PYXWriter.m in Sources */,
+				277471671BDBF01900BAFD75 /* SAX1ParserAdapter.h in Sources */,
+				277471681BDBF01900BAFD75 /* SAX1ParserAdapter.m in Sources */,
+				277471691BDBF01900BAFD75 /* SAXFactoryImpl.h in Sources */,
+				2774716A1BDBF01900BAFD75 /* SAXFactoryImpl.m in Sources */,
+				2774716B1BDBF01900BAFD75 /* SAXParserImpl.h in Sources */,
+				2774716C1BDBF01900BAFD75 /* SAXParserImpl.m in Sources */,
+				2774716D1BDBF01900BAFD75 /* ScanHandler.h in Sources */,
+				2774716E1BDBF01900BAFD75 /* ScanHandler.m in Sources */,
+				2774716F1BDBF01900BAFD75 /* Scanner.h in Sources */,
+				277471701BDBF01900BAFD75 /* Scanner.m in Sources */,
+				277471711BDBF01900BAFD75 /* Schema.h in Sources */,
+				277471721BDBF01900BAFD75 /* Schema.m in Sources */,
+				277471731BDBF01900BAFD75 /* XMLWriter.h in Sources */,
+				277471741BDBF01900BAFD75 /* XMLWriter.m in Sources */,
+				277470CE1BDBEFF500BAFD75 /* CombinatorCondition.h in Sources */,
+				277470CF1BDBEFF500BAFD75 /* Condition.h in Sources */,
+				277470D01BDBEFF500BAFD75 /* ConditionalSelector.h in Sources */,
+				277470D11BDBEFF500BAFD75 /* ConditionalSelectorImpl.h in Sources */,
+				277470D21BDBEFF500BAFD75 /* ConditionFactory.h in Sources */,
+				277470D31BDBEFF500BAFD75 /* ConditionFactoryImpl.h in Sources */,
+				277470D41BDBEFF500BAFD75 /* ContentCondition.h in Sources */,
+				277470D51BDBEFF500BAFD75 /* Counter.h in Sources */,
+				277470D61BDBEFF500BAFD75 /* CounterImpl.h in Sources */,
+				277470D71BDBEFF500BAFD75 /* CSS2Properties.h in Sources */,
+				277470D81BDBEFF500BAFD75 /* CSSCharsetRule.h in Sources */,
+				277470D91BDBEFF500BAFD75 /* CSSCharsetRuleImpl.h in Sources */,
+				277470DA1BDBEFF500BAFD75 /* CssCharStream.h in Sources */,
+				277470DB1BDBEFF500BAFD75 /* CSSException.h in Sources */,
+				277470DC1BDBEFF500BAFD75 /* CSSFontFaceRule.h in Sources */,
+				277470DD1BDBEFF500BAFD75 /* CSSFontFaceRuleImpl.h in Sources */,
+				277470DE1BDBEFF500BAFD75 /* CSSFormat.h in Sources */,
+				277470DF1BDBEFF500BAFD75 /* CSSFormatable.h in Sources */,
+				277470E01BDBEFF500BAFD75 /* CSSImportRule.h in Sources */,
+				277470E11BDBEFF500BAFD75 /* CSSImportRuleImpl.h in Sources */,
+				277470E21BDBEFF500BAFD75 /* CSSMediaRule.h in Sources */,
+				277470E31BDBEFF500BAFD75 /* CSSMediaRuleImpl.h in Sources */,
+				277470E41BDBEFF500BAFD75 /* CSSOMObject.h in Sources */,
+				277470E51BDBEFF500BAFD75 /* CSSOMObjectImpl.h in Sources */,
+				277470E61BDBEFF500BAFD75 /* CSSOMParser.h in Sources */,
+				277470E71BDBEFF500BAFD75 /* CSSPageRule.h in Sources */,
+				277470E81BDBEFF500BAFD75 /* CSSPageRuleImpl.h in Sources */,
+				277470E91BDBEFF500BAFD75 /* CSSParseException.h in Sources */,
+				277470EA1BDBEFF500BAFD75 /* CSSPrimitiveValue.h in Sources */,
+				277470EB1BDBEFF500BAFD75 /* CSSRule.h in Sources */,
+				277470EC1BDBEFF500BAFD75 /* CSSRuleList.h in Sources */,
+				277470ED1BDBEFF500BAFD75 /* CSSRuleListImpl.h in Sources */,
+				277470EE1BDBEFF500BAFD75 /* CSSStyleDeclaration.h in Sources */,
+				277470EF1BDBEFF500BAFD75 /* CSSStyleDeclarationImpl.h in Sources */,
+				277470F01BDBEFF500BAFD75 /* CSSStyleRule.h in Sources */,
+				277470F11BDBEFF500BAFD75 /* CSSStyleRuleImpl.h in Sources */,
+				277470F21BDBEFF500BAFD75 /* CSSStyleSheet.h in Sources */,
+				277470F31BDBEFF500BAFD75 /* CSSStyleSheetImpl.h in Sources */,
+				277470F41BDBEFF500BAFD75 /* CSSStyleSheetListImpl.h in Sources */,
+				277470F51BDBEFF500BAFD75 /* CSSUnknownRule.h in Sources */,
+				277470F61BDBEFF500BAFD75 /* CSSUnknownRuleImpl.h in Sources */,
+				277470F71BDBEFF500BAFD75 /* CSSValue.h in Sources */,
+				277470F81BDBEFF500BAFD75 /* CSSValueImpl.h in Sources */,
+				277470F91BDBEFF500BAFD75 /* CSSValueList.h in Sources */,
+				277470FA1BDBEFF500BAFD75 /* DescendantSelector.h in Sources */,
+				277470FB1BDBEFF500BAFD75 /* DescendantSelectorImpl.h in Sources */,
+				277470FC1BDBEFF500BAFD75 /* DirectAdjacentSelectorImpl.h in Sources */,
+				277470FD1BDBEFF500BAFD75 /* DocumentCSS.h in Sources */,
+				277470FE1BDBEFF500BAFD75 /* DocumentHandler.h in Sources */,
+				277470FF1BDBEFF500BAFD75 /* DocumentHandlerExt.h in Sources */,
+				277471001BDBEFF500BAFD75 /* DocumentStyle.h in Sources */,
+				277471011BDBEFF500BAFD75 /* DocumentView.h in Sources */,
+				277471021BDBEFF500BAFD75 /* DOMExceptionImpl.h in Sources */,
+				277471031BDBEFF500BAFD75 /* DOMImplementationCSS.h in Sources */,
+				277471041BDBEFF500BAFD75 /* ElementCSSInlineStyle.h in Sources */,
+				277471051BDBEFF500BAFD75 /* ElementSelector.h in Sources */,
+				277471061BDBEFF500BAFD75 /* ElementSelectorImpl.h in Sources */,
+				277471071BDBEFF500BAFD75 /* ErrorHandler.h in Sources */,
+				277471081BDBEFF500BAFD75 /* ExceptionResource.h in Sources */,
+				277471091BDBEFF500BAFD75 /* GeneralAdjacentSelectorImpl.h in Sources */,
+				2774710A1BDBEFF500BAFD75 /* HandlerBase.h in Sources */,
+				2774710B1BDBEFF500BAFD75 /* IdConditionImpl.h in Sources */,
+				2774710C1BDBEFF500BAFD75 /* InputSource.h in Sources */,
+				2774710D1BDBEFF500BAFD75 /* LangCondition.h in Sources */,
+				2774710E1BDBEFF500BAFD75 /* LangConditionImpl.h in Sources */,
+				2774717F1BDBF05100BAFD75 /* BaseContentHandler.m in Sources */,
+				2774710F1BDBEFF500BAFD75 /* LangUtils.h in Sources */,
+				277471101BDBEFF500BAFD75 /* LexicalUnit.h in Sources */,
+				277471111BDBEFF500BAFD75 /* LexicalUnitImpl.h in Sources */,
+				277471121BDBEFF500BAFD75 /* LinkStyle.h in Sources */,
+				277471131BDBEFF500BAFD75 /* Locatable.h in Sources */,
+				277471141BDBEFF500BAFD75 /* LocatableImpl.h in Sources */,
+				277471151BDBEFF500BAFD75 /* Locator.h in Sources */,
+				277471161BDBEFF500BAFD75 /* LocatorImpl.h in Sources */,
+				277471171BDBEFF500BAFD75 /* MediaList.h in Sources */,
+				277471181BDBEFF500BAFD75 /* MediaListImpl.h in Sources */,
+				277471191BDBEFF500BAFD75 /* MediaQuery.h in Sources */,
+				2774711A1BDBEFF500BAFD75 /* NegativeCondition.h in Sources */,
+				2774711B1BDBEFF500BAFD75 /* NegativeSelector.h in Sources */,
+				2774711C1BDBEFF500BAFD75 /* OneOfAttributeConditionImpl.h in Sources */,
+				2774711D1BDBEFF500BAFD75 /* Output.h in Sources */,
+				2774711E1BDBEFF500BAFD75 /* ParseException.h in Sources */,
+				2774711F1BDBEFF500BAFD75 /* Parser.h in Sources */,
+				277471201BDBEFF500BAFD75 /* ParserFactory.h in Sources */,
+				277471211BDBEFF500BAFD75 /* ParserUtils.h in Sources */,
+				277471221BDBEFF500BAFD75 /* PositionalCondition.h in Sources */,
+				277471231BDBEFF500BAFD75 /* PrefixAttributeConditionImpl.h in Sources */,
+				277471241BDBEFF500BAFD75 /* ProcessingInstructionSelector.h in Sources */,
+				277471251BDBEFF500BAFD75 /* Property.h in Sources */,
+				277471261BDBEFF500BAFD75 /* PseudoClassConditionImpl.h in Sources */,
+				277471271BDBEFF500BAFD75 /* PseudoElementSelectorImpl.h in Sources */,
+				277471281BDBEFF500BAFD75 /* R.h in Sources */,
+				277471291BDBEFF500BAFD75 /* Rect.h in Sources */,
+				2774712A1BDBEFF500BAFD75 /* RectImpl.h in Sources */,
+				2774712B1BDBEFF500BAFD75 /* RGBColor.h in Sources */,
+				2774712C1BDBEFF500BAFD75 /* RGBColorImpl.h in Sources */,
+				2774712D1BDBEFF500BAFD75 /* SACMediaList.h in Sources */,
+				2774712E1BDBEFF500BAFD75 /* SACMediaListImpl.h in Sources */,
+				2774712F1BDBEFF500BAFD75 /* SACParserCSS1.h in Sources */,
+				277471301BDBEFF500BAFD75 /* SACParserCSS1Constants.h in Sources */,
+				277471311BDBEFF500BAFD75 /* SACParserCSS1TokenManager.h in Sources */,
+				277471321BDBEFF500BAFD75 /* SACParserCSS2.h in Sources */,
+				277471331BDBEFF500BAFD75 /* SACParserCSS21.h in Sources */,
+				277471341BDBEFF500BAFD75 /* SACParserCSS21Constants.h in Sources */,
+				277471351BDBEFF500BAFD75 /* SACParserCSS21TokenManager.h in Sources */,
+				277471361BDBEFF500BAFD75 /* SACParserCSS2Constants.h in Sources */,
+				277471371BDBEFF500BAFD75 /* SACParserCSS2TokenManager.h in Sources */,
+				277471801BDBF05100BAFD75 /* HtmlSaxHandler.m in Sources */,
+				277471381BDBEFF500BAFD75 /* SACParserCSS3.h in Sources */,
+				277471391BDBEFF500BAFD75 /* SACParserCSS3Constants.h in Sources */,
+				2774713A1BDBEFF500BAFD75 /* SACParserCSS3TokenManager.h in Sources */,
+				2774713B1BDBEFF500BAFD75 /* SACParserCSSmobileOKBasic1.h in Sources */,
+				2774713C1BDBEFF500BAFD75 /* SACParserCSSmobileOKBasic1Constants.h in Sources */,
+				2774713D1BDBEFF500BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.h in Sources */,
+				2774713E1BDBEFF500BAFD75 /* SACParserMessages.properties in Sources */,
+				2774713F1BDBEFF500BAFD75 /* SACParserMessages_de.properties in Sources */,
+				277471401BDBEFF500BAFD75 /* SACParserMessages_en.properties in Sources */,
+				277471411BDBEFF500BAFD75 /* Selector.h in Sources */,
+				277471421BDBEFF500BAFD75 /* SelectorFactory.h in Sources */,
+				277471431BDBEFF500BAFD75 /* SelectorFactoryImpl.h in Sources */,
+				277471441BDBEFF500BAFD75 /* SelectorList.h in Sources */,
+				277471451BDBEFF500BAFD75 /* SelectorListImpl.h in Sources */,
+				277471461BDBEFF500BAFD75 /* SiblingSelector.h in Sources */,
+				277471471BDBEFF500BAFD75 /* SimpleSelector.h in Sources */,
+				277471481BDBEFF500BAFD75 /* StyleSheet.h in Sources */,
+				277471491BDBEFF500BAFD75 /* StyleSheetList.h in Sources */,
+				2774714A1BDBEFF500BAFD75 /* SubstringAttributeConditionImpl.h in Sources */,
+				2774714B1BDBEFF500BAFD75 /* SuffixAttributeConditionImpl.h in Sources */,
+				2774714C1BDBEFF500BAFD75 /* ThrowCssExceptionErrorHandler.h in Sources */,
+				2774714D1BDBEFF500BAFD75 /* Token.h in Sources */,
+				2774714E1BDBEFF500BAFD75 /* TokenMgrError.h in Sources */,
+				2774714F1BDBEFF500BAFD75 /* UserDataConstants.h in Sources */,
+				277471501BDBEFF500BAFD75 /* ViewCSS.h in Sources */,
+				277470C11BDBEFE800BAFD75 /* AbstractCSSRuleImpl.h in Sources */,
+				277470C21BDBEFE800BAFD75 /* AbstractSACParser.h in Sources */,
+				277470C31BDBEFE800BAFD75 /* AbstractView.h in Sources */,
+				277470C41BDBEFE800BAFD75 /* AndConditionImpl.h in Sources */,
+				277470C51BDBEFE800BAFD75 /* AttributeCondition.h in Sources */,
+				277470C61BDBEFE800BAFD75 /* AttributeConditionImpl.h in Sources */,
+				277470C71BDBEFE800BAFD75 /* BeginHyphenAttributeConditionImpl.h in Sources */,
+				277470C81BDBEFE800BAFD75 /* BuildConfig.h in Sources */,
+				277470C91BDBEFE800BAFD75 /* CharacterDataSelector.h in Sources */,
+				277470CA1BDBEFE800BAFD75 /* CharacterDataSelectorImpl.h in Sources */,
+				277470CB1BDBEFE800BAFD75 /* CharStream.h in Sources */,
+				277470CC1BDBEFE800BAFD75 /* ChildSelectorImpl.h in Sources */,
+				277470CD1BDBEFE800BAFD75 /* ClassConditionImpl.h in Sources */,
+				277470881BDBEFAE00BAFD75 /* Locator.m in Sources */,
+				277470B11BDBEFAE00BAFD75 /* Selector.m in Sources */,
+				2774704E1BDBEFAD00BAFD75 /* CSSException.m in Sources */,
+				277470871BDBEFAE00BAFD75 /* LocatableImpl.m in Sources */,
+				277470A71BDBEFAE00BAFD75 /* SACParserCSS21Constants.m in Sources */,
+				277470631BDBEFAD00BAFD75 /* CSSStyleRule.m in Sources */,
+				277470BA1BDBEFAE00BAFD75 /* SubstringAttributeConditionImpl.m in Sources */,
+				277470B61BDBEFAE00BAFD75 /* SiblingSelector.m in Sources */,
+				2774704A1BDBEFAD00BAFD75 /* CSS2Properties.m in Sources */,
+				277470741BDBEFAE00BAFD75 /* DocumentView.m in Sources */,
+				277470BF1BDBEFAE00BAFD75 /* UserDataConstants.m in Sources */,
+				277470541BDBEFAD00BAFD75 /* CSSImportRuleImpl.m in Sources */,
+				277470AB1BDBEFAE00BAFD75 /* SACParserCSS3.m in Sources */,
+				277470551BDBEFAD00BAFD75 /* CSSMediaRule.m in Sources */,
+				2774707A1BDBEFAE00BAFD75 /* ErrorHandler.m in Sources */,
+				2774708C1BDBEFAE00BAFD75 /* MediaQuery.m in Sources */,
+				2774709D1BDBEFAE00BAFD75 /* RectImpl.m in Sources */,
+				277470A31BDBEFAE00BAFD75 /* SACParserCSS1Constants.m in Sources */,
+				277470701BDBEFAE00BAFD75 /* DocumentCSS.m in Sources */,
+				277470AF1BDBEFAE00BAFD75 /* SACParserCSSmobileOKBasic1Constants.m in Sources */,
+				277470731BDBEFAE00BAFD75 /* DocumentStyle.m in Sources */,
+				277470521BDBEFAD00BAFD75 /* CSSFormatable.m in Sources */,
+				2774703E1BDBEFAD00BAFD75 /* CharStream.m in Sources */,
+				277470621BDBEFAD00BAFD75 /* CSSStyleDeclarationImpl.m in Sources */,
+				2774704D1BDBEFAD00BAFD75 /* CssCharStream.m in Sources */,
+				277470B31BDBEFAE00BAFD75 /* SelectorFactoryImpl.m in Sources */,
+				2774706C1BDBEFAE00BAFD75 /* CSSValueList.m in Sources */,
+				2774709E1BDBEFAE00BAFD75 /* RGBColor.m in Sources */,
+				277470A91BDBEFAE00BAFD75 /* SACParserCSS2Constants.m in Sources */,
+				277470801BDBEFAE00BAFD75 /* LangCondition.m in Sources */,
+				277470471BDBEFAD00BAFD75 /* ContentCondition.m in Sources */,
+				277470381BDBEFAD00BAFD75 /* AttributeCondition.m in Sources */,
+				2774706B1BDBEFAE00BAFD75 /* CSSValueImpl.m in Sources */,
+				2774708A1BDBEFAE00BAFD75 /* MediaList.m in Sources */,
+				277470A01BDBEFAE00BAFD75 /* SACMediaList.m in Sources */,
+				2774708F1BDBEFAE00BAFD75 /* OneOfAttributeConditionImpl.m in Sources */,
+				277470501BDBEFAD00BAFD75 /* CSSFontFaceRuleImpl.m in Sources */,
+				2774709A1BDBEFAE00BAFD75 /* PseudoElementSelectorImpl.m in Sources */,
+				277470531BDBEFAD00BAFD75 /* CSSImportRule.m in Sources */,
+				277470B51BDBEFAE00BAFD75 /* SelectorListImpl.m in Sources */,
+				277470451BDBEFAD00BAFD75 /* ConditionFactory.m in Sources */,
+				277470AC1BDBEFAE00BAFD75 /* SACParserCSS3Constants.m in Sources */,
+				277470B41BDBEFAE00BAFD75 /* SelectorList.m in Sources */,
+				277470961BDBEFAE00BAFD75 /* PrefixAttributeConditionImpl.m in Sources */,
+				277470691BDBEFAE00BAFD75 /* CSSUnknownRuleImpl.m in Sources */,
+				2774709F1BDBEFAE00BAFD75 /* RGBColorImpl.m in Sources */,
+				277470411BDBEFAD00BAFD75 /* CombinatorCondition.m in Sources */,
+				277470461BDBEFAD00BAFD75 /* ConditionFactoryImpl.m in Sources */,
+				277470771BDBEFAE00BAFD75 /* ElementCSSInlineStyle.m in Sources */,
+				277470671BDBEFAE00BAFD75 /* CSSStyleSheetListImpl.m in Sources */,
+				277470861BDBEFAE00BAFD75 /* Locatable.m in Sources */,
+				2774703F1BDBEFAD00BAFD75 /* ChildSelectorImpl.m in Sources */,
+				277470831BDBEFAE00BAFD75 /* LexicalUnit.m in Sources */,
+				2774708D1BDBEFAE00BAFD75 /* NegativeCondition.m in Sources */,
+				277470601BDBEFAD00BAFD75 /* CSSRuleListImpl.m in Sources */,
+				277470B21BDBEFAE00BAFD75 /* SelectorFactory.m in Sources */,
+				277470561BDBEFAD00BAFD75 /* CSSMediaRuleImpl.m in Sources */,
+				2774706E1BDBEFAE00BAFD75 /* DescendantSelectorImpl.m in Sources */,
+				2774707B1BDBEFAE00BAFD75 /* ExceptionResource.m in Sources */,
+				2774708E1BDBEFAE00BAFD75 /* NegativeSelector.m in Sources */,
+				277470851BDBEFAE00BAFD75 /* LinkStyle.m in Sources */,
+				277470901BDBEFAE00BAFD75 /* Output.m in Sources */,
+				277470591BDBEFAD00BAFD75 /* CSSOMParser.m in Sources */,
+				277470341BDBEFAD00BAFD75 /* AbstractCSSRuleImpl.m in Sources */,
+				2774707C1BDBEFAE00BAFD75 /* GeneralAdjacentSelectorImpl.m in Sources */,
+				2774706A1BDBEFAE00BAFD75 /* CSSValue.m in Sources */,
+				277470511BDBEFAD00BAFD75 /* CSSFormat.m in Sources */,
+				277470571BDBEFAD00BAFD75 /* CSSOMObject.m in Sources */,
+				277470821BDBEFAE00BAFD75 /* LangUtils.m in Sources */,
+				277470491BDBEFAD00BAFD75 /* CounterImpl.m in Sources */,
+				2774707D1BDBEFAE00BAFD75 /* HandlerBase.m in Sources */,
+				277470B81BDBEFAE00BAFD75 /* StyleSheet.m in Sources */,
+				277470991BDBEFAE00BAFD75 /* PseudoClassConditionImpl.m in Sources */,
+				2774708B1BDBEFAE00BAFD75 /* MediaListImpl.m in Sources */,
+				277470441BDBEFAD00BAFD75 /* ConditionalSelectorImpl.m in Sources */,
+				277470751BDBEFAE00BAFD75 /* DOMExceptionImpl.m in Sources */,
+				2774709C1BDBEFAE00BAFD75 /* Rect.m in Sources */,
+				2774703B1BDBEFAD00BAFD75 /* BuildConfig.m in Sources */,
+				2774707F1BDBEFAE00BAFD75 /* InputSource.m in Sources */,
+				277470941BDBEFAE00BAFD75 /* ParserUtils.m in Sources */,
+				277470C01BDBEFAE00BAFD75 /* ViewCSS.m in Sources */,
+				277470951BDBEFAE00BAFD75 /* PositionalCondition.m in Sources */,
+				2774706D1BDBEFAE00BAFD75 /* DescendantSelector.m in Sources */,
+				2774705D1BDBEFAD00BAFD75 /* CSSPrimitiveValue.m in Sources */,
+				277470811BDBEFAE00BAFD75 /* LangConditionImpl.m in Sources */,
+				277470AE1BDBEFAE00BAFD75 /* SACParserCSSmobileOKBasic1.m in Sources */,
+				277470891BDBEFAE00BAFD75 /* LocatorImpl.m in Sources */,
+				277470981BDBEFAE00BAFD75 /* Property.m in Sources */,
+				2774707E1BDBEFAE00BAFD75 /* IdConditionImpl.m in Sources */,
+				2774704C1BDBEFAD00BAFD75 /* CSSCharsetRuleImpl.m in Sources */,
+				277470391BDBEFAD00BAFD75 /* AttributeConditionImpl.m in Sources */,
+				277470761BDBEFAE00BAFD75 /* DOMImplementationCSS.m in Sources */,
+				277470BD1BDBEFAE00BAFD75 /* Token.m in Sources */,
+				2774705E1BDBEFAD00BAFD75 /* CSSRule.m in Sources */,
+				277470A21BDBEFAE00BAFD75 /* SACParserCSS1.m in Sources */,
+				277470401BDBEFAD00BAFD75 /* ClassConditionImpl.m in Sources */,
+				277470721BDBEFAE00BAFD75 /* DocumentHandlerExt.m in Sources */,
+				277470361BDBEFAD00BAFD75 /* AbstractView.m in Sources */,
+				277470651BDBEFAD00BAFD75 /* CSSStyleSheet.m in Sources */,
+				277470421BDBEFAD00BAFD75 /* Condition.m in Sources */,
+				277470A41BDBEFAE00BAFD75 /* SACParserCSS1TokenManager.m in Sources */,
+				277470BE1BDBEFAE00BAFD75 /* TokenMgrError.m in Sources */,
+				277470A81BDBEFAE00BAFD75 /* SACParserCSS21TokenManager.m in Sources */,
+				277470B71BDBEFAE00BAFD75 /* SimpleSelector.m in Sources */,
+				277470781BDBEFAE00BAFD75 /* ElementSelector.m in Sources */,
+				2774705C1BDBEFAD00BAFD75 /* CSSParseException.m in Sources */,
+				277470AD1BDBEFAE00BAFD75 /* SACParserCSS3TokenManager.m in Sources */,
+				277470A61BDBEFAE00BAFD75 /* SACParserCSS21.m in Sources */,
+				277470431BDBEFAD00BAFD75 /* ConditionalSelector.m in Sources */,
+				2774703C1BDBEFAD00BAFD75 /* CharacterDataSelector.m in Sources */,
+				277470371BDBEFAD00BAFD75 /* AndConditionImpl.m in Sources */,
+				277470711BDBEFAE00BAFD75 /* DocumentHandler.m in Sources */,
+				2774704B1BDBEFAD00BAFD75 /* CSSCharsetRule.m in Sources */,
+				277470351BDBEFAD00BAFD75 /* AbstractSACParser.m in Sources */,
+				277470581BDBEFAD00BAFD75 /* CSSOMObjectImpl.m in Sources */,
+				2774704F1BDBEFAD00BAFD75 /* CSSFontFaceRule.m in Sources */,
+				277470B91BDBEFAE00BAFD75 /* StyleSheetList.m in Sources */,
+				277470BC1BDBEFAE00BAFD75 /* ThrowCssExceptionErrorHandler.m in Sources */,
+				277470AA1BDBEFAE00BAFD75 /* SACParserCSS2TokenManager.m in Sources */,
+				2774705A1BDBEFAD00BAFD75 /* CSSPageRule.m in Sources */,
+				277470791BDBEFAE00BAFD75 /* ElementSelectorImpl.m in Sources */,
+				2774705F1BDBEFAD00BAFD75 /* CSSRuleList.m in Sources */,
+				2774703D1BDBEFAD00BAFD75 /* CharacterDataSelectorImpl.m in Sources */,
+				2774709B1BDBEFAE00BAFD75 /* R.m in Sources */,
+				277470A11BDBEFAE00BAFD75 /* SACMediaListImpl.m in Sources */,
+				277470B01BDBEFAE00BAFD75 /* SACParserCSSmobileOKBasic1TokenManager.m in Sources */,
+				277470841BDBEFAE00BAFD75 /* LexicalUnitImpl.m in Sources */,
+				277470971BDBEFAE00BAFD75 /* ProcessingInstructionSelector.m in Sources */,
+				277470611BDBEFAD00BAFD75 /* CSSStyleDeclaration.m in Sources */,
+				2774706F1BDBEFAE00BAFD75 /* DirectAdjacentSelectorImpl.m in Sources */,
+				2774703A1BDBEFAD00BAFD75 /* BeginHyphenAttributeConditionImpl.m in Sources */,
+				277470A51BDBEFAE00BAFD75 /* SACParserCSS2.m in Sources */,
+				277470921BDBEFAE00BAFD75 /* Parser.m in Sources */,
+				277470681BDBEFAE00BAFD75 /* CSSUnknownRule.m in Sources */,
+				277470641BDBEFAD00BAFD75 /* CSSStyleRuleImpl.m in Sources */,
+				277470661BDBEFAD00BAFD75 /* CSSStyleSheetImpl.m in Sources */,
+				277470911BDBEFAE00BAFD75 /* ParseException.m in Sources */,
+				2774705B1BDBEFAD00BAFD75 /* CSSPageRuleImpl.m in Sources */,
+				277470BB1BDBEFAE00BAFD75 /* SuffixAttributeConditionImpl.m in Sources */,
+				277470481BDBEFAD00BAFD75 /* Counter.m in Sources */,
+				277470931BDBEFAE00BAFD75 /* ParserFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277463801BDB318200BAFD75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		277463871BDB318200BAFD75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277463781BDB318200BAFD75 /* AsheraIosParser */;
+			targetProxy = 277463861BDB318200BAFD75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2774638B1BDB318200BAFD75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 277465451BDB355800BAFD75 /* Settings.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = AsheraParser;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2774638C1BDB318200BAFD75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 277465451BDB355800BAFD75 /* Settings.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AsheraParser;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2774638E1BDB318200BAFD75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2774638F1BDB318200BAFD75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		277463911BDB318200BAFD75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AsheraIosParserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		277463921BDB318200BAFD75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AsheraIosParserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		277463741BDB318200BAFD75 /* Build configuration list for PBXProject "AsheraIosParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2774638B1BDB318200BAFD75 /* Debug */,
+				2774638C1BDB318200BAFD75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2774638D1BDB318200BAFD75 /* Build configuration list for PBXNativeTarget "AsheraIosParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2774638E1BDB318200BAFD75 /* Debug */,
+				2774638F1BDB318200BAFD75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		277463901BDB318200BAFD75 /* Build configuration list for PBXNativeTarget "AsheraIosParserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277463911BDB318200BAFD75 /* Debug */,
+				277463921BDB318200BAFD75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 277463711BDB318200BAFD75 /* Project object */;
+}

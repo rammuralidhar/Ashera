@@ -13,18 +13,21 @@
 		276F40141BD2BD9E00599B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276F40121BD2BD9E00599B85 /* Main.storyboard */; };
 		276F40161BD2BD9E00599B85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276F40151BD2BD9E00599B85 /* Images.xcassets */; };
 		276F40191BD2BD9E00599B85 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276F40171BD2BD9E00599B85 /* LaunchScreen.xib */; };
-		276F40251BD2BD9E00599B85 /* AsheraIosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276F40241BD2BD9E00599B85 /* AsheraIosTests.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		276F401F1BD2BD9E00599B85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 276F3FFD1BD2BD9E00599B85 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 276F40041BD2BD9E00599B85;
-			remoteInfo = AsheraIos;
+/* Begin PBXBuildRule section */
+		279AB9121BDA7D9C00B1F686 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.java;
+			isEditable = 1;
+			outputFiles = (
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}.h",
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}.m",
+			);
+			script = "xzcx\ncvcxv\n";
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		276F40051BD2BD9E00599B85 /* AsheraIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsheraIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,20 +40,11 @@
 		276F40131BD2BD9E00599B85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		276F40151BD2BD9E00599B85 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		276F40181BD2BD9E00599B85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		276F401E1BD2BD9E00599B85 /* AsheraIosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsheraIosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		276F40231BD2BD9E00599B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		276F40241BD2BD9E00599B85 /* AsheraIosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsheraIosTests.m; sourceTree = "<group>"; };
+		279AB90B1BD8C30200B1F686 /* Settings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Settings.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		276F40021BD2BD9E00599B85 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		276F401B1BD2BD9E00599B85 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,8 +57,9 @@
 		276F3FFC1BD2BD9E00599B85 = {
 			isa = PBXGroup;
 			children = (
+				279AB9101BD8FE1200B1F686 /* Classes */,
+				279AB90B1BD8C30200B1F686 /* Settings.xcconfig */,
 				276F40071BD2BD9E00599B85 /* AsheraIos */,
-				276F40211BD2BD9E00599B85 /* AsheraIosTests */,
 				276F40061BD2BD9E00599B85 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				276F40051BD2BD9E00599B85 /* AsheraIos.app */,
-				276F401E1BD2BD9E00599B85 /* AsheraIosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,21 +96,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		276F40211BD2BD9E00599B85 /* AsheraIosTests */ = {
+		279AB9101BD8FE1200B1F686 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				276F40241BD2BD9E00599B85 /* AsheraIosTests.m */,
-				276F40221BD2BD9E00599B85 /* Supporting Files */,
 			);
-			path = AsheraIosTests;
-			sourceTree = "<group>";
-		};
-		276F40221BD2BD9E00599B85 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				276F40231BD2BD9E00599B85 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +115,7 @@
 				276F40031BD2BD9E00599B85 /* Resources */,
 			);
 			buildRules = (
+				279AB9121BDA7D9C00B1F686 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -138,24 +123,6 @@
 			productName = AsheraIos;
 			productReference = 276F40051BD2BD9E00599B85 /* AsheraIos.app */;
 			productType = "com.apple.product-type.application";
-		};
-		276F401D1BD2BD9E00599B85 /* AsheraIosTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 276F402B1BD2BD9E00599B85 /* Build configuration list for PBXNativeTarget "AsheraIosTests" */;
-			buildPhases = (
-				276F401A1BD2BD9E00599B85 /* Sources */,
-				276F401B1BD2BD9E00599B85 /* Frameworks */,
-				276F401C1BD2BD9E00599B85 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				276F40201BD2BD9E00599B85 /* PBXTargetDependency */,
-			);
-			name = AsheraIosTests;
-			productName = AsheraIosTests;
-			productReference = 276F401E1BD2BD9E00599B85 /* AsheraIosTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -168,10 +135,6 @@
 				TargetAttributes = {
 					276F40041BD2BD9E00599B85 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					276F401D1BD2BD9E00599B85 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 276F40041BD2BD9E00599B85;
 					};
 				};
 			};
@@ -189,7 +152,6 @@
 			projectRoot = "";
 			targets = (
 				276F40041BD2BD9E00599B85 /* AsheraIos */,
-				276F401D1BD2BD9E00599B85 /* AsheraIosTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,13 +164,6 @@
 				276F40141BD2BD9E00599B85 /* Main.storyboard in Resources */,
 				276F40191BD2BD9E00599B85 /* LaunchScreen.xib in Resources */,
 				276F40161BD2BD9E00599B85 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		276F401C1BD2BD9E00599B85 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,23 +180,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		276F401A1BD2BD9E00599B85 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				276F40251BD2BD9E00599B85 /* AsheraIosTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		276F40201BD2BD9E00599B85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 276F40041BD2BD9E00599B85 /* AsheraIos */;
-			targetProxy = 276F401F1BD2BD9E00599B85 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		276F40121BD2BD9E00599B85 /* Main.storyboard */ = {
@@ -299,9 +238,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${J2OBJC_HOME}/include\"",
+					"\"${DERIVED_FILES_DIR}\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LIBRARY_SEARCH_PATHS = "\"${J2OBJC_HOME}/lib\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ljre_emul",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -337,8 +287,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${J2OBJC_HOME}/include\"",
+					"\"${DERIVED_FILES_DIR}\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LIBRARY_SEARCH_PATHS = "\"${J2OBJC_HOME}/lib\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ljre_emul",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -347,55 +308,39 @@
 		};
 		276F40291BD2BD9E00599B85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 279AB90B1BD8C30200B1F686 /* Settings.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${DERIVED_FILES_DIR}\"",
+					"\"${J2OBJC_HOME}/include\"",
+				);
 				INFOPLIST_FILE = AsheraIos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"${J2OBJC_HOME}/lib\"";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		276F402A1BD2BD9E00599B85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 279AB90B1BD8C30200B1F686 /* Settings.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${DERIVED_FILES_DIR}\"",
+					"\"${J2OBJC_HOME}/include\"",
+				);
 				INFOPLIST_FILE = AsheraIos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"${J2OBJC_HOME}/lib\"";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		276F402C1BD2BD9E00599B85 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AsheraIosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AsheraIos.app/AsheraIos";
-			};
-			name = Debug;
-		};
-		276F402D1BD2BD9E00599B85 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AsheraIosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AsheraIos.app/AsheraIos";
 			};
 			name = Release;
 		};
@@ -418,14 +363,7 @@
 				276F402A1BD2BD9E00599B85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		276F402B1BD2BD9E00599B85 /* Build configuration list for PBXNativeTarget "AsheraIosTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				276F402C1BD2BD9E00599B85 /* Debug */,
-				276F402D1BD2BD9E00599B85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

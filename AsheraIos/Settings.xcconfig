@@ -1,0 +1,13 @@
+//
+//  Settings.xcconfig
+//  AsheraIos
+//
+//  Created by Ram M on 22/10/15.
+//  Copyright (c) 2015 Ram M. All rights reserved.
+//
+// The path should be written without quotes, when modified use Xcode's Product -> Clean
+J2OBJC_HOME = /Users/ramm/Documents/JAVA/j2objc-master/dist;
+
+HEADER_SEARCH_PATHS = $(inherited) "${J2OBJC_HOME}/include" "${DERIVED_FILES_DIR}";
+LIBRARY_SEARCH_PATHS = $(inherited) "${J2OBJC_HOME}/lib";
+OTHER_LDFLAGS = $(inherited) -l"z" -l"jre_emul" -l"icucore";

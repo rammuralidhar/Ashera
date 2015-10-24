@@ -1,7 +1,7 @@
 package com.ashera.android.utils.ui;
 
-import com.ashera.android.utils.css.CssParser;
-import com.ashera.android.utils.css.CssParserFactory;
+import com.ashera.android.parser.factory.CssParser;
+import com.ashera.android.parser.factory.CssParserFactory;
 
 public class UIContext {
 	private Object context;
