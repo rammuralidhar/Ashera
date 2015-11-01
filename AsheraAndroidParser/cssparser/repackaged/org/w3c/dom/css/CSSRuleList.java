@@ -12,6 +12,8 @@
 
 package repackaged.org.w3c.dom.css;
 
+import com.steadystate.css.util.MultiMap;
+
 /**
  *  The <code>CSSRuleList</code> interface provides the abstraction of an 
  * ordered collection of CSS rules. 
@@ -39,5 +41,7 @@ public interface CSSRuleList {
      *   valid index. 
      */
     public CSSRule item(int index);
+    
+    public MultiMap<String, CSSRule> getRulesCachedByTagName();
 
 }

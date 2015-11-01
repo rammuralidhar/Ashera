@@ -81,4 +81,9 @@ public class ChildSelectorImpl extends LocatableImpl implements DescendantSelect
     public String toString() {
         return ancestorSelector_.toString() + " > " + simpleSelector_.toString();
     }
+    
+	@Override
+	public String getRegEx() {
+		return ancestorSelector_.getRegEx() + ">" + simpleSelector_.getRegEx();
+	}
 }

@@ -139,5 +139,11 @@ public interface Selector {
      * An integer indicating the type of <code>Selector</code>
      */
     public short getSelectorType();
-
+    
+    public final static String TAG_REGEX = "[a-z0-9\\|#\\.]*";
+    public final static String ID_CLASS_REGEX = "%s\\[[a-z0-9\\|#\\.]*%s[\\||\\]][a-z0-9\\|#\\.]*\\]";
+    
+    public final static String SIMPLE_ID_CLASS_REGEX = "%s(\\[[a-z0-9\\|#\\.]*\\])?";
+    public final static String ALL_OTHER_CHARS = "[a-z0-9\\|#\\.>\\[\\]]*";
+    public String getRegEx();
 }

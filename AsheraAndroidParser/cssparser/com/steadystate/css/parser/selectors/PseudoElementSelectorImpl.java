@@ -68,4 +68,9 @@ public class PseudoElementSelectorImpl extends LocatableImpl implements ElementS
     public String toString() {
         return localName_;
     }
+    
+	@Override
+	public String getRegEx() {
+		return null;
+	}
 }

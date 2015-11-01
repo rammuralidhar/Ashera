@@ -89,4 +89,16 @@ public class DescendantSelectorImpl extends LocatableImpl implements DescendantS
         result.append(getSimpleSelector().toString());
         return result.toString();
     }
+    
+	@Override
+	public String getRegEx() {
+		final StringBuilder result = new StringBuilder(getAncestorSelector().getRegEx());
+        if (Selector.SAC_PSEUDO_ELEMENT_SELECTOR == getSimpleSelector().getSelectorType()) {
+            result.append("\\:");
+        }else {
+            result.append(Selector.ALL_OTHER_CHARS);
+        }
+        result.append(getSimpleSelector().getRegEx());
+        return result.toString();
+	}
 }

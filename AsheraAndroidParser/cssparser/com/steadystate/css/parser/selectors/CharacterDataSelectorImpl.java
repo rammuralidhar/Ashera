@@ -64,4 +64,9 @@ public class CharacterDataSelectorImpl extends LocatableImpl implements Characte
     public String toString() {
         return getData();
     }
+
+	@Override
+	public String getRegEx() {
+		return null;
+	}
 }

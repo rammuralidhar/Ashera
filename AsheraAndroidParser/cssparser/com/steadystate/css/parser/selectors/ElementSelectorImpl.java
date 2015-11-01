@@ -67,4 +67,10 @@ public class ElementSelectorImpl extends LocatableImpl implements ElementSelecto
     public String toString() {
         return (getLocalName() != null) ? getLocalName() : "*";
     }
+    
+	@Override
+	public String getRegEx() {
+		System.out.println("localName:   " + localName_);
+		return String.format(Selector.SIMPLE_ID_CLASS_REGEX, localName_, "");
+	}
 }

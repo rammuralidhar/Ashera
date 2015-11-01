@@ -92,4 +92,9 @@ public class DirectAdjacentSelectorImpl extends LocatableImpl implements Sibling
     public String toString() {
         return selector_.toString() + " + " + siblingSelector_.toString();
     }
+    
+	@Override
+	public String getRegEx() {
+		return null;
+	}
 }

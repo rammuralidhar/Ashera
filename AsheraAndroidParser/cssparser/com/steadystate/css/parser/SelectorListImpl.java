@@ -77,4 +77,14 @@ public class SelectorListImpl extends LocatableImpl implements SelectorList, Ser
         }
         return sb.toString();
     }
+
+	@Override
+	public String getRegEx() {
+		String regEx = "";
+		for (int j = selectors_.size() - 1; j >=0; j--) {
+			regEx += selectors_.get(j).getRegEx();
+		}
+		
+		return regEx + Selector.ALL_OTHER_CHARS;
+	}
 }

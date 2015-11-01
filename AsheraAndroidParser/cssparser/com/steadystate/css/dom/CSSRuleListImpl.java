@@ -30,12 +30,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import repackaged.org.w3c.css.sac.SelectorList;
 import repackaged.org.w3c.dom.css.CSSRule;
 import repackaged.org.w3c.dom.css.CSSRuleList;
 
 import com.steadystate.css.format.CSSFormat;
 import com.steadystate.css.format.CSSFormatable;
 import com.steadystate.css.util.LangUtils;
+import com.steadystate.css.util.MultiMap;
 
 /**
  * Implementation of {@link CSSRuleList}.
@@ -46,8 +48,12 @@ import com.steadystate.css.util.LangUtils;
 public class CSSRuleListImpl implements CSSRuleList, CSSFormatable, Serializable {
 
     private static final long serialVersionUID = -1269068897476453290L;
+    private MultiMap<String, CSSRule> ruleMap_ = new MultiMap<String, CSSRule>();
+	private List<CSSRule> rules_;
 
-    private List<CSSRule> rules_;
+    public MultiMap<String, CSSRule> getRulesCachedByTagName() {
+		return ruleMap_;
+	}
 
     public List<CSSRule> getRules() {
         if (rules_ == null) {
@@ -77,6 +83,9 @@ public class CSSRuleListImpl implements CSSRuleList, CSSFormatable, Serializable
 
     public void add(final CSSRule rule) {
         getRules().add(rule);
+        if (rule instanceof CSSStyleRuleImpl) {
+        	updateMap((CSSStyleRuleImpl) rule);
+        }
     }
 
     public void insert(final CSSRule rule, final int index) {
@@ -95,6 +104,38 @@ public class CSSRuleListImpl implements CSSRuleList, CSSFormatable, Serializable
     public String getCssText() {
         return getCssText(null);
     }
+    
+    // added for fast access of rule
+    private void updateMap(CSSStyleRuleImpl cssRule) {
+		SelectorList selectors = cssRule.getSelectors();
+		
+		String selctorText = selectors.toString();
+		String[] whiteSpaceSplit = selctorText.split("\\s");
+		if (whiteSpaceSplit.length > 0) {
+			String key = whiteSpaceSplit[whiteSpaceSplit.length - 1];
+			System.out.println("key" + key);
+
+			if (key.contains(".")) {
+				String[] keys = key.split("\\.");
+				if (!keys[0].equals("*")) {
+					ruleMap_.put(keys[0], cssRule);
+				}
+				if (keys.length > 1) {
+					ruleMap_.put("." + keys[1], cssRule);
+				}
+			} else if (key.contains(".#")) {
+				String[] keys = key.split("#");
+				if (!keys[0].equals("*")) {
+					ruleMap_.put(keys[0], cssRule);
+				}
+				if (keys.length > 1) {
+					ruleMap_.put("#" + keys[1], cssRule);
+				}
+			} else {
+				ruleMap_.put(key, cssRule);
+			}
+		}
+	}
 
     /**
      * {@inheritDoc}

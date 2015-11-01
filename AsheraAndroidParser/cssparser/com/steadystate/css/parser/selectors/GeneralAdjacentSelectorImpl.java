@@ -92,4 +92,9 @@ public class GeneralAdjacentSelectorImpl extends LocatableImpl implements Siblin
     public String toString() {
         return selector_.toString() + " ~ " + siblingSelector_.toString();
     }
+    
+	@Override
+	public String getRegEx() {
+		return null;
+	}
 }

@@ -28,5 +28,7 @@ public interface SelectorList {
      * is not a valid index.  
      */
     public Selector item(int index);
+    
+    public String getRegEx();
 }
 
