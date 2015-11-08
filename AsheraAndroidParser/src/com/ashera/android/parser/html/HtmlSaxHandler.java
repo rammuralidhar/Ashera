@@ -11,7 +11,10 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
+import com.ashera.android.widget.factory.PageData;
+
 public class HtmlSaxHandler implements ContentHandler{
+	private PageData pageData = new PageData();
 	@Override
 	public void endDocument() throws SAXException {
 	}
