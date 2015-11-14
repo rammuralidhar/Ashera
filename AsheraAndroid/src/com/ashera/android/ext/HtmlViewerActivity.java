@@ -1,33 +1,27 @@
 package com.ashera.android.ext;
 
-import org.ccil.cowan.tagsoup.HTMLSchema;
-import org.ccil.cowan.tagsoup.Parser;
-
-import com.ashera.android.utils.IOUtils;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+
+import com.ashera.android.parser.html.HtmlParser;
+import com.ashera.android.utils.IOUtils;
+import com.ashera.android.utils.ui.AndroidHtml;
+import com.ashera.android.utils.ui.AndroidUiFactory;
+import com.ashera.android.widget.factory.Widget;
 
 public class HtmlViewerActivity extends Activity {
-	private static class HtmlParser {
-        private static final HTMLSchema schema = new HTMLSchema();
-    }
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Parser parser = new Parser();
-        try {
-            parser.setProperty(Parser.schemaProperty, HtmlParser.schema);
-        } catch (org.xml.sax.SAXNotRecognizedException e) {
-            // Should not happen.
-            throw new RuntimeException(e);
-        } catch (org.xml.sax.SAXNotSupportedException e) {
-            // Should not happen.
-            throw new RuntimeException(e);
-        }
-        
         String html = IOUtils.readFileToString("www/index.html", this);
-        HtmlSaxHandler handler = new HtmlSaxHandler(this, html, parser);
-		setContentView(handler.parse());
+        Map<String, Object> obj = new HashMap<String, Object>();
+        obj.put("context", this);
+        AndroidUiFactory.register();
+		Widget parse = HtmlParser.parse(html, obj);
+		setContentView((View) parse.asWidget());
 	}
 }

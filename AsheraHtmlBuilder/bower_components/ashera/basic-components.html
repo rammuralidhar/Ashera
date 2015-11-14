@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="import" href="../polymer/polymer.html">
+    <title>Defining a Polymer Element from the Main Document</title>
+  </head>
+  <body>
+    <dom-module id="linear-layout">
+      <template>
+		<style>
+      		::content .llvertical > :nth-child(n){	
+        		display: block;
+        		width: intrinsic;
+      		}
+      		::content .llhorizontal > :nth-child(n){	
+        		display: table-cell;
+      		}
+    	</style>   
+    	<content></content>
+    	</div>  	
+  		
+      </template>
+      <script>
+        HTMLImports.whenReady(function () {
+          Polymer({
+            is: 'linear-layout',
+           		properties: {
+           	      orientation: String,
+           	    },
+          	    attached: function() {
+          	    	var cssclass = 'llhorizontal';
+          	    	var current = this;
+          	    	if (this.orientation == 'vertical') {
+          	    		cssclass = 'llvertical';
+          	    	}
+          	    	
+          	    	$(current).addClass(cssclass);
+          	    }
+          });
+        });
+      </script>
+    </dom-module>
+  </body>
+</html>

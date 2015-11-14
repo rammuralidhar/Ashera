@@ -1,20 +1,34 @@
 package com.ashera.android.parser.html;
 
-import java.io.IOException;
-import java.io.StringReader;
+import java.util.Map;
+import java.util.Stack;
 
-import org.ccil.cowan.tagsoup.Parser;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
-import org.xml.sax.InputSource;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
 
+import android.util.Log;
+import android.view.ViewGroup;
+
+import com.ashera.android.widget.factory.HasText;
+import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.PageData;
+import com.ashera.android.widget.factory.UIFactory;
+import com.ashera.android.widget.factory.Widget;
 
 public class HtmlSaxHandler implements ContentHandler{
 	private PageData pageData = new PageData();
+	private Widget root;
+	private Widget widget;
+	private Stack<HasWidgets> hasWidgets = new Stack<HasWidgets>();
+	private Stack<Boolean> pushParent = new Stack<Boolean>();
+	private Map<String, Object> metadata;
+	
+	public HtmlSaxHandler(Map<String, Object> metadata) {
+		this.metadata = metadata;
+	}
+	
 	@Override
 	public void endDocument() throws SAXException {
 	}
@@ -50,51 +64,62 @@ public class HtmlSaxHandler implements ContentHandler{
 			throws SAXException {
 	}
 
-	private String mSource;
-	private XMLReader mReader;
-
-	public HtmlSaxHandler(String source, Parser parser) {
-		mSource = source;
-		mReader = parser;
-	}
-
 	
 	@Override
 	public void characters(char[] ch, int start, int length)
 			throws SAXException {
-		String content = new String(ch, start, length);
+		if (widget != null)  {
+			String content = new String(ch, start, length);
 
-		if (content != null && !content.trim().equals("")) {
+			if (content != null && !content.trim().equals("")) {
+				if (widget instanceof HasText) {
+					((HasText) widget).setText(content);
+				}
+			}
+			
+			System.out.println("content" + content);
 		}
-		
-		System.out.println("content" + content);
-
 	}
 
 	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException {
+		Log.e("layout", localName);
 
+		this.widget = UIFactory.get(localName);
 		
+		//set root
+		if (root == null && widget != null) {
+			this.root = this.widget;
+		}
+		boolean parentPushed = false;
+		if (widget != null) {
+			this.widget.create(metadata);
+			
+			HasWidgets parent = null;
+			if (!hasWidgets.isEmpty()) {
+				parent = hasWidgets.peek();
+			}
+			widget.setParent(parent);
+
+			if (widget instanceof HasWidgets) {
+				parentPushed = true;
+				hasWidgets.push(parent);
+			}
+		}
+
+		pushParent.add(parentPushed);
 	}
 	
-	public void parse() {
-		mReader.setContentHandler(this);
-		try {
-			mReader.parse(new InputSource(new StringReader(mSource)));
-		} catch (IOException e) {
-			// We are reading from a string. There should not be IO
-			// problems.
-			throw new RuntimeException(e);
-		} catch (SAXException e) {
-			// TagSoup doesn't throw parse exceptions.
-			throw new RuntimeException(e);
-		}
-	}
-
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
+		if (pushParent.pop()) {
+			hasWidgets.pop();
+		}
+	}
 
+	public Widget getRoot() {
+		return root;
 	}
 }

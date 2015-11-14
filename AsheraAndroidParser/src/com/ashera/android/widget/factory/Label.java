@@ -1,6 +1,4 @@
 package com.ashera.android.widget.factory;
 
-public interface Label {
-	String getText();
-	void setText(String text);
+public interface Label extends Style, Widget, HasText {
 }
