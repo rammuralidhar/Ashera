@@ -1,7 +1,11 @@
 package com.ashera.android.parser.html;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
+import java.util.TreeSet;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
@@ -24,6 +28,7 @@ public class HtmlSaxHandler implements ContentHandler{
 	private Stack<HasWidgets> hasWidgets = new Stack<HasWidgets>();
 	private Stack<Boolean> pushParent = new Stack<Boolean>();
 	private Map<String, Object> metadata;
+	private List<String> htmlElements = new ArrayList<String>();
 	
 	public HtmlSaxHandler(Map<String, Object> metadata) {
 		this.metadata = metadata;
@@ -86,6 +91,7 @@ public class HtmlSaxHandler implements ContentHandler{
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException {
 		Log.e("layout", localName);
+		htmlElements.add(getNPath(localName, atts));
 
 		this.widget = WidgetFactory.get(localName);
 		
@@ -123,9 +129,37 @@ public class HtmlSaxHandler implements ContentHandler{
 		pushParent.add(parentPushed);
 	}
 	
+	private String getNPath(String localName, Attributes atts) {
+		StringBuffer stringBuffer = new StringBuffer();
+		stringBuffer.append(localName);
+		String classStr = atts.getValue("class");
+		
+		StringBuffer classBuffer = new StringBuffer("");
+		if (classStr != null && !classStr.trim().equals("")) {
+			String[] classes = classStr.split("\\s");
+			for (int i = 0; i < classes.length; i++) {
+				classBuffer.append("." + classes[i] + "|"); 
+			}
+		}
+		
+		String idStr = atts.getValue("id");
+		StringBuffer idBuffer = new StringBuffer("");
+		if (idStr != null && !idStr.trim().equals("")) {
+			idBuffer.append("#" + idStr.trim() + "|"); 
+		}
+		
+		if (idBuffer.length() > 0 || classBuffer.length() > 0) {
+			stringBuffer.append("[");
+			stringBuffer.append(classBuffer.toString());
+			stringBuffer.append(idBuffer.toString());
+			stringBuffer.append("]");
+		}
+		return stringBuffer.toString();
+	}
+
 	private void updateStyleOnWidget(Widget widget, String localName, Attributes atts) {
 		if (widget instanceof Style) {
-			Map<String, String> cssProperties = pageData.getCss(localName, localName);
+			Map<String, String> cssProperties = pageData.getCss(getNodeExpression(), localName);
 			Style style = (Style) widget;
 			
 			if (cssProperties.containsKey("background-color")) {
@@ -133,10 +167,22 @@ public class HtmlSaxHandler implements ContentHandler{
 			}
 		}
 	}
+	
+	private String getNodeExpression() {
+		StringBuffer stringBuffer = new StringBuffer();
+		for (String htmlElement : htmlElements) {
+			stringBuffer.insert(0, htmlElement + ">");
+		}
+		
+		stringBuffer = stringBuffer.deleteCharAt(stringBuffer.length() - 1);
+		Log.e("test", stringBuffer + "");
+		return stringBuffer.toString();
+	}
 
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
+		htmlElements.remove(htmlElements.size() - 1);
 		if (pushParent.pop()) {
 			hasWidgets.pop();
 		}

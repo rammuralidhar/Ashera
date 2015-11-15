@@ -45,6 +45,7 @@ public class CachedCSSParser {
 				if (item instanceof CSSStyleRuleImpl) {
 					SelectorList selectorList = ((CSSStyleRuleImpl) item).getSelectors();
 					String regex = selectorList.getRegEx();
+					Log.e("test", regex +"");
 					
 					if (nodePathExpression.matches(regex)) {
 						finalrules.add(item);
