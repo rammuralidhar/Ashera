@@ -10,6 +10,7 @@ import repackaged.org.w3c.css.sac.SelectorList;
 import repackaged.org.w3c.dom.css.CSSRule;
 import repackaged.org.w3c.dom.css.CSSRuleList;
 import repackaged.org.w3c.dom.css.CSSStyleSheet;
+import android.util.Log;
 
 import com.steadystate.css.dom.CSSStyleRuleImpl;
 import com.steadystate.css.util.MultiMap;
@@ -23,6 +24,8 @@ public class CachedCSSParser {
 					 new StringReader(cssContentStr)), null, null);
 			 CSSRuleList rules = sheet.getCssRules();
 			 ruleMap_.putAll(rules.getRulesCachedByTagName());
+			 Log.e("test", ruleMap_.keySet() + "");
+			 
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -33,19 +36,23 @@ public class CachedCSSParser {
     	List<CSSRule> rules = ruleMap_.get(tag);
     	List<CSSRule> finalrules = new ArrayList<CSSRule>();
 		
-		int size = rules.size();
-		for (int i = 0; i < size; i++) {
-			CSSRule item = (CSSRule) rules.get(i);
-			
-			if (item instanceof CSSStyleRuleImpl) {
-				SelectorList selectorList = ((CSSStyleRuleImpl) item).getSelectors();
-				String regex = selectorList.getRegEx();
+    	if (rules != null)  {
+			int size = rules.size();
+			Log.e("test", size +"");
+			for (int i = 0; i < size; i++) {
+				CSSRule item = (CSSRule) rules.get(i);
 				
-				if (nodePathExpression.matches(regex)) {
-					finalrules.add(item);
+				if (item instanceof CSSStyleRuleImpl) {
+					SelectorList selectorList = ((CSSStyleRuleImpl) item).getSelectors();
+					String regex = selectorList.getRegEx();
+					
+					if (nodePathExpression.matches(regex)) {
+						finalrules.add(item);
+					}
 				}
 			}
-		}
+    	}
+    	Log.e("test", finalrules +"");
     	return finalrules;
     }
 }

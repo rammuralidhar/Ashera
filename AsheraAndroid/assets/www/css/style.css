@@ -1,15 +1,5 @@
-.wrapper {
-  display: flex;  
-  flex-flow: row wrap;
-  font-weight: bold;
-  text-align: center;
-  width:100%;
-}
-
-.header {
-  display: flex;  
-  flex: 1 100%;
-  flex-direction: column;
+body {
+	background-color: red;
 }
 
 .label {

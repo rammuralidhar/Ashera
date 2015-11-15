@@ -3,8 +3,11 @@ package com.ashera.android.widget.factory;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UIFactory {
+public class WidgetFactory {
 	private static Map<String, Class<? extends Widget>> registrationMap = new HashMap<String, Class<? extends Widget>>();
+	static {
+		WidgetFactory.register("link", Link.class);
+	}
 
 	public static Widget get(String localname) {
 		try {

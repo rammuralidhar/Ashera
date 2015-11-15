@@ -9,13 +9,13 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 
 import android.util.Log;
-import android.view.ViewGroup;
 
 import com.ashera.android.widget.factory.HasText;
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.PageData;
-import com.ashera.android.widget.factory.UIFactory;
+import com.ashera.android.widget.factory.Style;
 import com.ashera.android.widget.factory.Widget;
+import com.ashera.android.widget.factory.WidgetFactory;
 
 public class HtmlSaxHandler implements ContentHandler{
 	private PageData pageData = new PageData();
@@ -27,6 +27,7 @@ public class HtmlSaxHandler implements ContentHandler{
 	
 	public HtmlSaxHandler(Map<String, Object> metadata) {
 		this.metadata = metadata;
+		metadata.put("pageData", pageData);
 	}
 	
 	@Override
@@ -86,7 +87,7 @@ public class HtmlSaxHandler implements ContentHandler{
 			Attributes atts) throws SAXException {
 		Log.e("layout", localName);
 
-		this.widget = UIFactory.get(localName);
+		this.widget = WidgetFactory.get(localName);
 		
 		//set root
 		if (root == null && widget != null) {
@@ -94,23 +95,45 @@ public class HtmlSaxHandler implements ContentHandler{
 		}
 		boolean parentPushed = false;
 		if (widget != null) {
+			metadata.put("localname", localName);
+			metadata.put("uri", uri);
+			metadata.put("qName", qName);
+			metadata.put("attributes", atts);
 			this.widget.create(metadata);
 			
 			HasWidgets parent = null;
 			if (!hasWidgets.isEmpty()) {
 				parent = hasWidgets.peek();
+				
+				if (widget.asWidget() != null) {
+					parent.add(widget);
+				}
 			}
+			
+			updateStyleOnWidget(widget, localName, atts);
+
 			widget.setParent(parent);
 
 			if (widget instanceof HasWidgets) {
 				parentPushed = true;
-				hasWidgets.push(parent);
+				hasWidgets.push((HasWidgets) widget);
 			}
 		}
 
 		pushParent.add(parentPushed);
 	}
 	
+	private void updateStyleOnWidget(Widget widget, String localName, Attributes atts) {
+		if (widget instanceof Style) {
+			Map<String, String> cssProperties = pageData.getCss(localName, localName);
+			Style style = (Style) widget;
+			
+			if (cssProperties.containsKey("background-color")) {
+				style.setBackgroundColor(cssProperties.get("background-color"));
+			}
+		}
+	}
+
 	@Override
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
