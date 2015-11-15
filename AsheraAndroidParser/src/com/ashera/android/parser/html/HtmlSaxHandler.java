@@ -159,7 +159,8 @@ public class HtmlSaxHandler implements ContentHandler{
 
 	private void updateStyleOnWidget(Widget widget, String localName, Attributes atts) {
 		if (widget instanceof Style) {
-			Map<String, String> cssProperties = pageData.getCss(getNodeExpression(), localName);
+			Map<String, String> cssProperties = pageData.getCss(
+					getNodeExpression(), localName, atts.getValue("class"), atts.getValue("id"));
 			Style style = (Style) widget;
 			
 			if (cssProperties.containsKey("background-color")) {
