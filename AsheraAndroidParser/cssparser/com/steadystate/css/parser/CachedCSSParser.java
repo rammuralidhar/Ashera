@@ -34,10 +34,7 @@ public class CachedCSSParser {
 	public List<CSSRule> findRulesByCssPath(String nodePathExpression, String tag, String classNameStr, String id) {
     	// fast access by tag name
     	List<CSSRule> rules = getCssRules(tag);
-    	
-    	if (id != null && !id.equals("")) {
-    		rules.addAll(getCssRules("#" + id));
-    	}
+
     	
     	if (classNameStr != null && !classNameStr.equals("")) {
     		String[] classNames = classNameStr.split("\\s");
@@ -46,6 +43,11 @@ public class CachedCSSParser {
     			rules.addAll(getCssRules("." + className));
 			}
     		
+    	}
+    	
+    	
+    	if (id != null && !id.equals("")) {
+    		rules.addAll(getCssRules("*#" + id));
     	}
     	List<CSSRule> finalrules = new ArrayList<CSSRule>();
 		

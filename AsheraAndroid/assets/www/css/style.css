@@ -6,6 +6,10 @@ body {
 	background-color: #00ff00;
 }
 
+#body {
+	background-color: #00ffff;
+}
+
 .label {
 	color: black;
 	background-color: #00ff00;
