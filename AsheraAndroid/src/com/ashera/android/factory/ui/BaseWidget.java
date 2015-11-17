@@ -1,4 +1,4 @@
-package com.ashera.android.utils.ui;
+package com.ashera.android.factory.ui;
 
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.Widget;

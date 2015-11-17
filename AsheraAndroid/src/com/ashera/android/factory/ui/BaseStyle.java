@@ -1,4 +1,4 @@
-package com.ashera.android.utils.ui;
+package com.ashera.android.factory.ui;
 
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;

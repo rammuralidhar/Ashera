@@ -1,4 +1,4 @@
-package com.ashera.android.utils.ui;
+package com.ashera.android.factory.ui;
 
 import java.util.ArrayList;
 import java.util.Iterator;

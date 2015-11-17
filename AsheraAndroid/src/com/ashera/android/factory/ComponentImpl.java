@@ -1,4 +1,4 @@
-package com.ashera.android.utils.ui;
+package com.ashera.android.factory;
 
 import java.io.IOException;
 import java.io.InputStream;
