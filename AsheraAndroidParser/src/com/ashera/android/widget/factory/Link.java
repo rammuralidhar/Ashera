@@ -4,6 +4,9 @@ import java.util.Map;
 
 import org.xml.sax.Attributes;
 
+import com.ashera.android.component.factory.Component;
+import com.ashera.android.component.factory.ComponentFactory;
+
 public class Link implements Widget{
 	@Override
 	public Object asWidget() {

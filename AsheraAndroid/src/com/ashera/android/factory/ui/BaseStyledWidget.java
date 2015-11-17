@@ -3,7 +3,7 @@ package com.ashera.android.factory.ui;
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.Widget;
 
-public abstract class BaseStyledWidget implements Widget{
+public abstract class BaseStyledWidget extends BaseStyle implements Widget{
 	protected HasWidgets parent;
 
 	@Override

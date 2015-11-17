@@ -20,6 +20,7 @@ import com.ashera.android.widget.factory.PageData;
 import com.ashera.android.widget.factory.Style;
 import com.ashera.android.widget.factory.Widget;
 import com.ashera.android.widget.factory.WidgetFactory;
+import com.ashera.android.widget.factory.setter.AttributeSetterFactory;
 
 public class HtmlSaxHandler implements ContentHandler{
 	private PageData pageData = new PageData();
@@ -166,6 +167,14 @@ public class HtmlSaxHandler implements ContentHandler{
 			if (cssProperties.containsKey("background-color")) {
 				style.setBackgroundColor(cssProperties.get("background-color"));
 			}
+			
+			if (cssProperties.containsKey("color")) {
+				style.setColor(cssProperties.get("color"));
+			}
+			
+			AttributeSetterFactory.get(localName).setAttribute(widget, cssProperties, atts);
+		} else {
+			AttributeSetterFactory.get(localName).setAttribute(widget, null, atts);
 		}
 	}
 	
