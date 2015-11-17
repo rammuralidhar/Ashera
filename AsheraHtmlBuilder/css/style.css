@@ -1,4 +1,14 @@
+body {
+	background-color: blue;
+}
 
+.body {
+	background-color: #00ff00;
+}
+
+#body {
+	background-color: #00ffff;
+}
 
 .red {
 	background-color: red;

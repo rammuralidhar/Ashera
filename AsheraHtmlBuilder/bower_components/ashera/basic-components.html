@@ -14,6 +14,7 @@
         		display: block;
         		width: intrinsic;
       		}
+
       		::content .llhorizontal > :nth-child(n){	
         		display: table-cell;
       		}
@@ -33,10 +34,28 @@
           	    	var cssclass = 'llhorizontal';
           	    	var current = this;
           	    	if (this.orientation == 'vertical') {
-          	    		cssclass = 'llvertical';
+          	    		$(current).addClass('llvertical');
+          	    	} else {
+          	    		// simulate linear layout of android
+          	    		// basically we need to add all children and hide the rest
+          	    		// of the children when there is no space available
+          	    		$(current).addClass('llhorizontal');
+          	    		var children = $(current).children().clone();
+          	    		$(current).children().remove();
+          	    		
+          	    		var screenwidth = $( document).width();
+          	    		var runningwidth = 0;
+          	    		$.each(children, function( index, child ) {
+          	    			$(current).append(child);
+          	    			runningwidth += $(child).width();
+          	    			
+          	    			if (runningwidth < screenwidth) {
+          	    				$(child).css('width', $(child).width() + "px");
+          	    			} else {
+          	    				$(child).hide();
+          	    			}
+          	    		});
           	    	}
-          	    	
-          	    	$(current).addClass(cssclass);
           	    }
           });
         });
