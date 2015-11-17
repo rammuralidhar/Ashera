@@ -11,7 +11,7 @@ import android.util.Log;
 
 import com.ashera.android.widget.factory.Component;
 
-public class AndroidComponentImp implements Component{
+public class ComponentImpl implements Component{
 	private String TAG ="AndroidComponentFactory";
 	@Override
 	public String getFileAsset(String path, Map<String, Object> metadata) {
