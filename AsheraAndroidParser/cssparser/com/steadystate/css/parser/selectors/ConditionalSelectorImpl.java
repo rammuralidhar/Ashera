@@ -95,7 +95,9 @@ public class ConditionalSelectorImpl extends LocatableImpl implements Conditiona
 	@Override
 	public String getRegEx() {
 		if (simpleSelector_.toString().equals("*")) {
-			return String.format(Selector.ID_CLASS_REGEX, Selector.TAG_REGEX, condition_.toString());
+			String selector = String.format(Selector.ID_CLASS_REGEX, Selector.TAG_REGEX, condition_.toString().replaceAll("\\.", "\\\\."));
+			System.out.println(selector);
+			return selector;
 		} else {
 			System.out.println(simpleSelector_.toString());
 			System.out.println(condition_.toString());
