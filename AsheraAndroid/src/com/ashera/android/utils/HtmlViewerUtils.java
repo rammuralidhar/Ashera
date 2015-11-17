@@ -22,8 +22,8 @@ public class HtmlViewerUtils {
 	}
 	
 	public static View displayHtml(String assetHtml, Map<String, Object> metadata, Context context) {
-		String html = IOUtils.readFileToString("www/index.html", context);
-        metadata.put("context", context);
+		metadata.put("context", context);
+		String html = ComponentFactory.get().getFileAsset("www/index.html", metadata);
         AndroidUiFactory.register();
 		Widget parse = HtmlParser.parse(html, metadata);
 		return ((View) parse.asWidget());
