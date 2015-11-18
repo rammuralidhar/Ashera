@@ -1,7 +1,16 @@
+html {
+	width: 100%;
+	height: 100%;
+}
 body {
+	width: 100%;
+	height: 100%;
 	background-color: red;
 }
 
+linear-layout {
+	height: 100%;
+}
 .body {
 	background-color: #00ff00;
 }

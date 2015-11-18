@@ -1,7 +1,14 @@
+html {
+	height: 100%;
+}
 body {
-	background-color: blue;
+	height: 100%;
+	background-color: red;
 }
 
+linear-layout {
+	height: 100%;
+}
 .body {
 	background-color: #00ff00;
 }
