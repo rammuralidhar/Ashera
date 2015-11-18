@@ -18,10 +18,6 @@ public abstract class BaseStyle implements Style{
 	private String marginBottom = "0";
 	private String marginLeft = "0";
 	private String marginRight = "0";
-	
-	@Override
-	public void setColor(String color) {
-	}
 
 	@Override
 	public void setOpacity(float opacity) {
