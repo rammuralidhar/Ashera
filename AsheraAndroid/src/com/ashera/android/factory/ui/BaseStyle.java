@@ -10,10 +10,6 @@ import android.view.animation.AlphaAnimation;
 import com.ashera.android.widget.factory.Style;
 
 public abstract class BaseStyle implements Style{
-	private String color;
-	private float opacity;
-	private String backgroundColor;
-	private String backgroundImage;
 	private String paddingTop = "0";
 	private String paddingBottom  = "0";
 	private String paddingLeft = "0";
@@ -25,18 +21,10 @@ public abstract class BaseStyle implements Style{
 	
 	@Override
 	public void setColor(String color) {
-		this.color = color;
-	}
-
-	@Override
-	public String getColor() {
-		return color;
 	}
 
 	@Override
 	public void setOpacity(float opacity) {
-		this.opacity = opacity;
-		
 		AlphaAnimation alpha = new AlphaAnimation(opacity, opacity);
 		alpha.setDuration(0); // Make animation instant
 		alpha.setFillAfter(true); // Tell it to persist after the animation ends
@@ -44,49 +32,19 @@ public abstract class BaseStyle implements Style{
 	}
 
 	@Override
-	public float getOpacity() {
-		return opacity;
-	}
-
-	@Override
 	public void setBackgroundColor(String color) {
-		this.backgroundColor = color;
-		
 		getView().setBackgroundColor(Color.parseColor(color));
 	}
 
 	@Override
-	public String getBackgroundColor() {
-		return backgroundColor;
-	}
-
-	@Override
 	public void setBackgroundImage(String backgroundImage) {
-		this.backgroundImage = backgroundImage;
-		
 		getView().setBackgroundDrawable(new BitmapDrawable(backgroundImage));
 	}
-
-	@Override
-	public String getBackgroundImage() {
-		return backgroundImage;
-	}
-
-
-	@Override
-	public String getPaddingTop() {
-		return paddingTop;
-	}
-
+	
 	@Override
 	public void setPaddingTop(String paddingTop) {
 		this.paddingTop = paddingTop;
 		setUpPadding();
-	}
-
-	@Override
-	public String getPaddingBottom() {
-		return paddingBottom;
 	}
 
 	@Override
@@ -95,19 +53,10 @@ public abstract class BaseStyle implements Style{
 		setUpPadding();
 	}
 
-	public String getPaddingLeft() {
-		return paddingLeft;
-	}
-
 	@Override
 	public void setPaddingLeft(String paddingLeft) {
 		this.paddingLeft = paddingLeft;
 		setUpPadding();
-	}
-
-	@Override
-	public String getPaddingRight() {
-		return paddingRight;
 	}
 
 	@Override
@@ -123,19 +72,9 @@ public abstract class BaseStyle implements Style{
 	}
 
 	@Override
-	public String getMarginTop() {
-		return marginTop;
-	}
-
-	@Override
 	public void setMarginTop(String marginTop) {
 		this.marginTop = marginTop;
 		setUpMargin();
-	}
-
-	@Override
-	public String getMarginBottom() {
-		return marginBottom;
 	}
 
 	@Override
@@ -144,19 +83,9 @@ public abstract class BaseStyle implements Style{
 		setUpMargin();
 	}
 
-	@Override
-	public String getMarginLeft() {
-		return marginLeft;
-	}
-
 	public void setMarginLeft(String marginLeft) {
 		this.marginLeft = marginLeft;
 		setUpMargin();
-	}
-
-	@Override
-	public String getMarginRight() {
-		return marginRight;
 	}
 
 	@Override
