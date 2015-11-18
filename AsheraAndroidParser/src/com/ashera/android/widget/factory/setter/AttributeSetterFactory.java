@@ -9,6 +9,7 @@ public class AttributeSetterFactory {
 		= new HashMap<String, AttributeSetter>();
 	static {
 		AttributeSetterFactory.register("linear-layout", new LinearlayoutSetter());
+		AttributeSetterFactory.register("label", new LabelSetter());
 	}
 
 	public static AttributeSetter get(String localname) {

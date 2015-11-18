@@ -3,6 +3,7 @@ package com.ashera.android.factory.ui;
 import java.util.Map;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,5 +38,11 @@ public class LabelImpl extends BaseStyledWidget implements Label{
 	@Override
 	public View getView() {
 		return label;
+	}
+
+	@Override
+	public void setColor(String color) {
+		label.setTextColor(Color.parseColor(color));
+		
 	}
 }
