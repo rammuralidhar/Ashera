@@ -213,7 +213,7 @@ public class Path {
         final int nativeInt;
     }
 
-    // these must be in the same order as their native values
+    // these must be in the same order as their values
     static final FillType[] sFillTypeArray = {
         FillType.WINDING,
         FillType.EVEN_ODD,
@@ -778,57 +778,73 @@ public class Path {
         return native_approximate(mNativePath, acceptableError);
     }
 
-    private static native long init1();
-    private static native long init2(long nPath);
-    private static native void native_reset(long nPath);
-    private static native void native_rewind(long nPath);
-    private static native void native_set(long native_dst, long native_src);
-    private static native boolean native_isConvex(long nPath);
-    private static native int native_getFillType(long nPath);
-    private static native void native_setFillType(long nPath, int ft);
-    private static native boolean native_isEmpty(long nPath);
-    private static native boolean native_isRect(long nPath, RectF rect);
-    private static native void native_computeBounds(long nPath, RectF bounds);
-    private static native void native_incReserve(long nPath, int extraPtCount);
-    private static native void native_moveTo(long nPath, float x, float y);
-    private static native void native_rMoveTo(long nPath, float dx, float dy);
-    private static native void native_lineTo(long nPath, float x, float y);
-    private static native void native_rLineTo(long nPath, float dx, float dy);
-    private static native void native_quadTo(long nPath, float x1, float y1,
-                                             float x2, float y2);
-    private static native void native_rQuadTo(long nPath, float dx1, float dy1,
-                                              float dx2, float dy2);
-    private static native void native_cubicTo(long nPath, float x1, float y1,
-                                        float x2, float y2, float x3, float y3);
-    private static native void native_rCubicTo(long nPath, float x1, float y1,
-                                        float x2, float y2, float x3, float y3);
-    private static native void native_arcTo(long nPath, float left, float top,
+    private static long init1() {
+    	return 0;
+    }
+    private static long init2(long nPath) {
+    	return 0;
+    }
+    private static void native_reset(long nPath) {}
+    private static void native_rewind(long nPath){}
+    private static void native_set(long native_dst, long native_src){}
+    private static boolean native_isConvex(long nPath){
+    	return false;
+    }
+    private static int native_getFillType(long nPath){
+    	return 0;
+    }
+    private static void native_setFillType(long nPath, int ft){}
+    private static boolean native_isEmpty(long nPath) {
+    	return false;
+    }
+    private static boolean native_isRect(long nPath, RectF rect) {
+    	return false;
+    }
+    private static void native_computeBounds(long nPath, RectF bounds){}
+    private static void native_incReserve(long nPath, int extraPtCount){}
+    private static void native_moveTo(long nPath, float x, float y){}
+    private static void native_rMoveTo(long nPath, float dx, float dy){}
+    private static void native_lineTo(long nPath, float x, float y){}
+    private static void native_rLineTo(long nPath, float dx, float dy){}
+    private static void native_quadTo(long nPath, float x1, float y1,
+                                             float x2, float y2){}
+    private static void native_rQuadTo(long nPath, float dx1, float dy1,
+                                              float dx2, float dy2){}
+    private static void native_cubicTo(long nPath, float x1, float y1,
+                                        float x2, float y2, float x3, float y3){}
+    private static void native_rCubicTo(long nPath, float x1, float y1,
+                                        float x2, float y2, float x3, float y3){}
+    private static void native_arcTo(long nPath, float left, float top,
                                             float right, float bottom, float startAngle,
-                                            float sweepAngle, boolean forceMoveTo);
-    private static native void native_close(long nPath);
-    private static native void native_addRect(long nPath, float left, float top,
-                                            float right, float bottom, int dir);
-    private static native void native_addOval(long nPath, float left, float top,
-            float right, float bottom, int dir);
-    private static native void native_addCircle(long nPath, float x, float y, float radius, int dir);
-    private static native void native_addArc(long nPath, float left, float top,
+                                            float sweepAngle, boolean forceMoveTo){}
+    private static void native_close(long nPath){}
+    private static void native_addRect(long nPath, float left, float top,
+                                            float right, float bottom, int dir){}
+    private static void native_addOval(long nPath, float left, float top,
+            float right, float bottom, int dir){}
+    private static void native_addCircle(long nPath, float x, float y, float radius, int dir){}
+    private static void native_addArc(long nPath, float left, float top,
                                              float right, float bottom,
-                                             float startAngle, float sweepAngle);
-    private static native void native_addRoundRect(long nPath, float left, float top,
+                                             float startAngle, float sweepAngle){}
+    private static void native_addRoundRect(long nPath, float left, float top,
                                                    float right, float bottom,
-                                                   float rx, float ry, int dir);
-    private static native void native_addRoundRect(long nPath, float left, float top,
+                                                   float rx, float ry, int dir){}
+    private static void native_addRoundRect(long nPath, float left, float top,
                                                    float right, float bottom,
-                                                   float[] radii, int dir);
-    private static native void native_addPath(long nPath, long src, float dx, float dy);
-    private static native void native_addPath(long nPath, long src);
-    private static native void native_addPath(long nPath, long src, long matrix);
-    private static native void native_offset(long nPath, float dx, float dy, long dst_path);
-    private static native void native_offset(long nPath, float dx, float dy);
-    private static native void native_setLastPoint(long nPath, float dx, float dy);
-    private static native void native_transform(long nPath, long matrix, long dst_path);
-    private static native void native_transform(long nPath, long matrix);
-    private static native boolean native_op(long path1, long path2, int op, long result);
-    private static native void finalizer(long nPath);
-    private static native float[] native_approximate(long nPath, float error);
+                                                   float[] radii, int dir){}
+    private static void native_addPath(long nPath, long src, float dx, float dy){}
+    private static void native_addPath(long nPath, long src){}
+    private static void native_addPath(long nPath, long src, long matrix){}
+    private static void native_offset(long nPath, float dx, float dy, long dst_path){}
+    private static void native_offset(long nPath, float dx, float dy){}
+    private static void native_setLastPoint(long nPath, float dx, float dy){}
+    private static void native_transform(long nPath, long matrix, long dst_path){}
+    private static void native_transform(long nPath, long matrix){}
+    private static boolean native_op(long path1, long path2, int op, long result) {
+    	return false;
+    }
+    private static void finalizer(long nPath){}
+    private static float[] native_approximate(long nPath, float error){
+    	return new float[0];
+    }
 }

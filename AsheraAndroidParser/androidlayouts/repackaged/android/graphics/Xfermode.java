@@ -38,7 +38,9 @@ public class Xfermode {
         }
     }
 
-    private static native void finalizer(long native_instance);
+    private static void finalizer(long native_instance) {
+    	
+    }
 
     long native_instance;
 }

@@ -126,5 +126,7 @@ public class PorterDuffColorFilter extends ColorFilter {
         return 31 *  mMode.hashCode() + mColor;
     }
 
-    private static native long native_CreatePorterDuffFilter(int srcColor, int porterDuffMode);
+    private static long native_CreatePorterDuffFilter(int srcColor, int porterDuffMode) {
+    	return 0;
+    }
 }

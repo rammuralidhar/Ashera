@@ -208,7 +208,9 @@ public final class Log {
      * @return Whether or not that this is allowed to be logged.
      * @throws IllegalArgumentException is thrown if the tag.length() > 23.
      */
-    public static native boolean isLoggable(String tag, int level);
+    public static boolean isLoggable(String tag, int level) {
+    	return false;
+    }
 
     /*
      * Send a {@link #WARN} log message and log the exception.
@@ -361,6 +363,8 @@ public final class Log {
     /** @hide */ public static final int LOG_ID_SYSTEM = 3;
     /** @hide */ public static final int LOG_ID_CRASH = 4;
 
-    /** @hide */ public static native int println_native(int bufID,
-            int priority, String tag, String msg);
+    /** @hide */ public static int println_native(int bufID,
+            int priority, String tag, String msg) {
+    	return 1;
+    }
 }

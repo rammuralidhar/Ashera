@@ -227,7 +227,7 @@ public class Color {
             }
             return (int)color;
         } else {
-            Integer color = sColorNameMap.get(colorString.toLowerCase(Locale.ROOT));
+            Integer color = sColorNameMap.get(colorString.toLowerCase());
             if (color != null) {
                 return color;
             }
@@ -378,8 +378,12 @@ public class Color {
         return nativeHSVToColor(alpha, hsv);
     }
 
-    private static native void nativeRGBToHSV(int red, int greed, int blue, float hsv[]);
-    private static native int nativeHSVToColor(int alpha, float hsv[]);
+    private static void nativeRGBToHSV(int red, int greed, int blue, float hsv[]) {
+    	
+    }
+    private static int nativeHSVToColor(int alpha, float hsv[]) {
+    	return 0;
+    }
 
     /**
      * Converts an HTML color (named or numeric) to an integer RGB value.
@@ -392,7 +396,7 @@ public class Color {
      */
     @ColorInt
     public static int getHtmlColor(String color) {
-        Integer i = sColorNameMap.get(color.toLowerCase(Locale.ROOT));
+        Integer i = sColorNameMap.get(color.toLowerCase());
         if (i != null) {
             return i;
         } else {

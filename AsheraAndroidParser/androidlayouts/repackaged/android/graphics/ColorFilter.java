@@ -43,5 +43,7 @@ public class ColorFilter {
         }
     }
 
-    static native void destroyFilter(long native_instance);
+    static void destroyFilter(long native_instance) {
+    	
+    }
 }

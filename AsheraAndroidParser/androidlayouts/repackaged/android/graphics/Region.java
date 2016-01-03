@@ -32,7 +32,7 @@ public class Region implements Parcelable {
      */
     public long mNativeRegion;
 
-    // the native values for these must match up with the enum in SkRegion.h
+    // the values for these must match up with the enum in SkRegion.h
     public enum Op {
         DIFFERENCE(0),
         INTERSECT(1),
@@ -116,17 +116,23 @@ public class Region implements Parcelable {
     /**
      * Return true if this region is empty
      */
-    public native boolean isEmpty();
+    public boolean isEmpty() {
+    	return false;
+    }
     
     /**
      * Return true if the region contains a single rectangle
      */
-    public native boolean isRect();
+    public boolean isRect() {
+    	return false;
+    }
     
     /**
      * Return true if the region contains more than one rectangle
      */
-    public native boolean isComplex();
+    public boolean isComplex() {
+    	return false;
+    }
 
     /**
      * Return a new Rect set to the bounds of the region. If the region is
@@ -170,7 +176,9 @@ public class Region implements Parcelable {
     /**
      * Return true if the region contains the specified point
      */
-    public native boolean contains(int x, int y);
+    public boolean contains(int x, int y) {
+    	return false;
+    }
 
     /**
      * Return true if the region is a single rectangle (not complex) and it
@@ -188,8 +196,10 @@ public class Region implements Parcelable {
      * that the rectangle is not contained by this region, but return true is a
      * guarantee that the rectangle is contained by this region.
      */
-    public native boolean quickContains(int left, int top, int right,
-                                        int bottom);
+    public boolean quickContains(int left, int top, int right,
+                                        int bottom)  {
+                                        	return false;
+                                        }
 
     /**
      * Return true if the region is empty, or if the specified rectangle does
@@ -205,14 +215,18 @@ public class Region implements Parcelable {
      * not intersect the region. Returning false is not a guarantee that they
      * intersect, but returning true is a guarantee that they do not.
      */
-    public native boolean quickReject(int left, int top, int right, int bottom);
+    public boolean quickReject(int left, int top, int right, int bottom) {
+    	return false;
+    }
 
     /**
      * Return true if the region is empty, or if the specified region does not
      * intersect the region. Returning false is not a guarantee that they
      * intersect, but returning true is a guarantee that they do not.
      */
-    public native boolean quickReject(Region rgn);
+    public boolean quickReject(Region rgn)  {
+    	return false;
+    }
 
     /**
      * Translate the region by [dx, dy]. If the region is empty, do nothing.
@@ -225,7 +239,7 @@ public class Region implements Parcelable {
      * Set the dst region to the result of translating this region by [dx, dy].
      * If this region is empty, then dst will be set to empty.
      */
-    public native void translate(int dx, int dy, Region dst);
+    public void translate(int dx, int dy, Region dst) {}
 
     /**
      * Scale the region by the given scale amount. This re-constructs new region by
@@ -245,7 +259,7 @@ public class Region implements Parcelable {
      * If this region is empty, then dst will be set to empty.
      * @hide
      */
-    public native void scale(float scale, Region dst);
+    public void scale(float scale, Region dst) {}
 
     public final boolean union(Rect r) {
         return op(r, Op.UNION);
@@ -403,30 +417,54 @@ public class Region implements Parcelable {
         return mNativeRegion;
     }
 
-    private static native boolean nativeEquals(long native_r1, long native_r2);
+    private static boolean nativeEquals(long native_r1, long native_r2) {
+    	return false;
+    }
 
-    private static native long nativeConstructor();
-    private static native void nativeDestructor(long native_region);
+    private static long nativeConstructor() {
+    	return 0;
+    }
+    private static void nativeDestructor(long native_region){}
 
-    private static native void nativeSetRegion(long native_dst, long native_src);
-    private static native boolean nativeSetRect(long native_dst, int left,
-                                                int top, int right, int bottom);
-    private static native boolean nativeSetPath(long native_dst, long native_path,
-                                                long native_clip);
-    private static native boolean nativeGetBounds(long native_region, Rect rect);
-    private static native boolean nativeGetBoundaryPath(long native_region,
-                                                        long native_path);
+    private static void nativeSetRegion(long native_dst, long native_src){}
+    private static boolean nativeSetRect(long native_dst, int left,
+                                                int top, int right, int bottom) {
+    	return false;
+    }
+    private static boolean nativeSetPath(long native_dst, long native_path,
+                                                long native_clip){
+    	return false;
+    }
+    private static boolean nativeGetBounds(long native_region, Rect rect){
+    	return false;
+    }
+    private static boolean nativeGetBoundaryPath(long native_region,
+                                                        long native_path){
+    	return false;    	
+    }
 
-    private static native boolean nativeOp(long native_dst, int left, int top,
-                                           int right, int bottom, int op);
-    private static native boolean nativeOp(long native_dst, Rect rect,
-                                           long native_region, int op);
-    private static native boolean nativeOp(long native_dst, long native_region1,
-                                           long native_region2, int op);
+    private static boolean nativeOp(long native_dst, int left, int top,
+                                           int right, int bottom, int op){
+    	return false;
+    }
+    private static boolean nativeOp(long native_dst, Rect rect,
+                                           long native_region, int op){
+    	return false;
+    }
+    private static boolean nativeOp(long native_dst, long native_region1,
+                                           long native_region2, int op){
+    	return false;
+    }
 
-    private static native long nativeCreateFromParcel(Parcel p);
-    private static native boolean nativeWriteToParcel(long native_region,
-                                                      Parcel p);
+    private static long nativeCreateFromParcel(Parcel p){
+    	return 0;
+    }
+    private static boolean nativeWriteToParcel(long native_region,
+                                                      Parcel p){
+    	return false;
+    }
 
-    private static native String nativeToString(long native_region);
+    private static String nativeToString(long native_region){
+    	return "";
+    }
 }

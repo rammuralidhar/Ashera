@@ -121,6 +121,10 @@ public class Shader {
         return native_instance;
     }
 
-    private static native void nativeDestructor(long native_shader);
-    private static native long nativeSetLocalMatrix(long native_shader, long matrix_instance);
+    private static void nativeDestructor(long native_shader) {
+    	
+    }
+    private static long nativeSetLocalMatrix(long native_shader, long matrix_instance) {
+    	return 0;
+    }
 }
