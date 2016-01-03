@@ -166,10 +166,6 @@ public class HtmlSaxHandler implements ContentHandler{
 				style.setBackgroundColor(cssProperties.get("background-color"));
 			}
 			
-			if (cssProperties.containsKey("color")) {
-//				style.setColor(cssProperties.get("color"));
-			}
-			
 			AttributeSetterFactory.get(localName).setAttribute(widget, cssProperties, atts);
 		} else {
 			AttributeSetterFactory.get(localName).setAttribute(widget, null, atts);

@@ -15,6 +15,7 @@ linear-layout {
 }
 
 label {
+	color: green;
 }
 .body {
 	background-color: #00ff00;

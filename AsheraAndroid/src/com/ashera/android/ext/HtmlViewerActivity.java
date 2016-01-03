@@ -5,6 +5,7 @@ import java.util.Map;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.transition.Scene;
 
 import com.ashera.android.utils.HtmlViewerUtils;
 

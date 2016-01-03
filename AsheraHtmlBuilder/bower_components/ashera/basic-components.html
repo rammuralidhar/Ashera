@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../polymer/polymer.html">
     <title>Defining a Polymer Element from the Main Document</title>
   </head>
@@ -18,12 +18,29 @@
       		::content .llhorizontal > :nth-child(n){	
         		display: table-cell;
       		}
+      		
+      		::content linear-layout {	
+        		position: relative;
+      		}
     	</style>   
     	<content></content>
     	</div>  	
   		
       </template>
       <script>
+      function sayHelloFunction(a, b) {
+     	 if (a.width != -1) {
+      	 	$(a.wrappedobj).css('width', a.width);
+     	 } else {
+     		 
+     	 }
+     	 if (a.height != -1) {
+     	 	$(a.wrappedobj).css('height', a.height);
+     	 }
+     	 $(a.wrappedobj).css('top', a.mTop);
+     	 $(a.wrappedobj).css('left', a.mLeft);
+     	 $(a.wrappedobj).css('position', 'absolute');
+      }
         HTMLImports.whenReady(function () {
           Polymer({
             is: 'linear-layout',
@@ -32,7 +49,32 @@
            	    },
           	    attached: function() {
           	    	var current = this;
-          	    	if (this.orientation == 'vertical') {
+          	    	$(current).addClass('linear-layout');
+          	    	var myLayout = $(this);
+          		   	var ll = new p.linearLayout();
+          		  	ll.setOrientation(0);
+          		  	if (this.orientation == 'vertical') {
+          		  		ll.setOrientation(1);
+        		 	}
+          		   	var layoutParams = new p.linearLayoutParams();
+          		   	ll.setWrappedObject(myLayout);
+          		  	layoutParams.setWidth(-1);
+          		   	layoutParams.setWidth(-1);
+          		   
+          		   	var views = [];
+          		   	$(myLayout).children().each(function () {
+          			   	var view = new p.view();
+          			   	view.setWrappedObject(this);
+          			   	var layoutParams = new p.linearLayoutParams();
+          			   	layoutParams.setWidth(-2);
+          				layoutParams.setHeight(-2);
+          				view.setLayoutParams(layoutParams);
+          				views.push(view);
+          		   	});
+          		   ll.setChildren1(views);
+          		   ll.requestLayout(0, 0, 200, 500);
+          		 	
+          	    	/*if (this.orientation == 'vertical') {
           	    		$(current).addClass('llvertical');
           	    	} else {
           	    		// simulate linear layout of android
@@ -54,7 +96,7 @@
           	    				$(child).hide();
           	    			}
           	    		});
-          	    	}
+          	    	}*/
           	    }
           });
         });
