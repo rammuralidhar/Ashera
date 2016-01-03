@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import repackaged.com.android.internal.R;
 import repackaged.android.accessibilityservice.AccessibilityServiceInfo;
 import repackaged.android.annotation.Nullable;
 import repackaged.android.graphics.Rect;
@@ -32,7 +33,6 @@ import repackaged.android.util.ArraySet;
 import repackaged.android.util.LongArray;
 import repackaged.android.util.Pools.SynchronizedPool;
 import repackaged.android.view.View;
-import repackaged.com.android.internal.R;
 
 /**
  * This class represents a node of the window content as well as actions that

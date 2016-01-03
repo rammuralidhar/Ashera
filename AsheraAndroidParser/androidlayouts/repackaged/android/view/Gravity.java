@@ -39,8 +39,16 @@ public class Gravity
 
     /** Bits defining the horizontal axis. */
     public static final int AXIS_X_SHIFT = 0;
+
+	private static final int AXIS_PULL_AFTER__AXIS_X_SHIFT = AXIS_PULL_AFTER<<AXIS_X_SHIFT;
+
+	private static final int XIS_PULL_BEFORE__AXIS_X_SHIFT = AXIS_PULL_BEFORE<<AXIS_X_SHIFT;
     /** Bits defining the vertical axis. */
     public static final int AXIS_Y_SHIFT = 4;
+
+	private static final int AXIS_PULL_AFTER__AXIS_Y_SHIFT = AXIS_PULL_AFTER<<AXIS_Y_SHIFT;
+
+	private static final int AXIS_PULL_BEFORE__AXIS_Y_SHIFT = AXIS_PULL_BEFORE<<AXIS_Y_SHIFT;
 
     /** Push object to the top of its container, not changing its size. */
     public static final int TOP = (AXIS_PULL_BEFORE|AXIS_SPECIFIED)<<AXIS_Y_SHIFT;
@@ -200,7 +208,7 @@ public class Gravity
                     }
                 }
                 break;
-            case AXIS_PULL_BEFORE<<AXIS_X_SHIFT:
+            case XIS_PULL_BEFORE__AXIS_X_SHIFT:
                 outRect.left = container.left + xAdj;
                 outRect.right = outRect.left + w;
                 if ((gravity&(AXIS_CLIP<<AXIS_X_SHIFT))
@@ -210,7 +218,7 @@ public class Gravity
                     }
                 }
                 break;
-            case AXIS_PULL_AFTER<<AXIS_X_SHIFT:
+            case AXIS_PULL_AFTER__AXIS_X_SHIFT:
                 outRect.right = container.right - xAdj;
                 outRect.left = outRect.right - w;
                 if ((gravity&(AXIS_CLIP<<AXIS_X_SHIFT))
@@ -241,7 +249,7 @@ public class Gravity
                     }
                 }
                 break;
-            case AXIS_PULL_BEFORE<<AXIS_Y_SHIFT:
+            case AXIS_PULL_BEFORE__AXIS_Y_SHIFT:
                 outRect.top = container.top + yAdj;
                 outRect.bottom = outRect.top + h;
                 if ((gravity&(AXIS_CLIP<<AXIS_Y_SHIFT))
@@ -251,7 +259,7 @@ public class Gravity
                     }
                 }
                 break;
-            case AXIS_PULL_AFTER<<AXIS_Y_SHIFT:
+            case AXIS_PULL_AFTER__AXIS_Y_SHIFT:
                 outRect.bottom = container.bottom - yAdj;
                 outRect.top = outRect.bottom - h;
                 if ((gravity&(AXIS_CLIP<<AXIS_Y_SHIFT))
