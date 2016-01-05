@@ -28,7 +28,7 @@ import org.xml.sax.ext.LexicalHandler;
 /**
 The SAX parser class.
 **/
-public class Parser extends DefaultHandler implements ScanHandler, XMLReader, LexicalHandler {
+public class TagSoupParser extends DefaultHandler implements ScanHandler, XMLReader, LexicalHandler {
 
 	// XMLReader implementation
 

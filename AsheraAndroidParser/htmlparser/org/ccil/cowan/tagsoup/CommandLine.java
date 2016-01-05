@@ -118,7 +118,7 @@ public class CommandLine {
 		System.err.println("]*");
 	}
 
-	private static Parser theParser = null;
+	private static TagSoupParser theParser = null;
 	private static HTMLSchema theSchema = null;
 	private static String theOutputEncoding = null;
 
@@ -128,55 +128,55 @@ public class CommandLine {
 			throws IOException, SAXException {
 		XMLReader r;
 		if (hasOption(options, "--reuse")) {
-			if (theParser == null) theParser = new Parser();
+			if (theParser == null) theParser = new TagSoupParser();
 			r = theParser;
 			}
 		else {
-			r = new Parser();
+			r = new TagSoupParser();
 			}
 		theSchema = new HTMLSchema();
-		r.setProperty(Parser.schemaProperty, theSchema);
+		r.setProperty(TagSoupParser.schemaProperty, theSchema);
 
 		if (hasOption(options, "--nocdata")) {
-			r.setFeature(Parser.CDATAElementsFeature, false);
+			r.setFeature(TagSoupParser.CDATAElementsFeature, false);
 			}
 
 		if (hasOption(options, "--nons") || hasOption(options, "--html")) {
-			r.setFeature(Parser.namespacesFeature, false);
+			r.setFeature(TagSoupParser.namespacesFeature, false);
 			}
 
 		if (hasOption(options, "--nobogons")) {
-			r.setFeature(Parser.ignoreBogonsFeature, true);
+			r.setFeature(TagSoupParser.ignoreBogonsFeature, true);
 			}
 
 		if (hasOption(options, "--any")) {
-			r.setFeature(Parser.bogonsEmptyFeature, false);
+			r.setFeature(TagSoupParser.bogonsEmptyFeature, false);
 			}
 		else if (hasOption(options, "--emptybogons")) {
-			r.setFeature(Parser.bogonsEmptyFeature, true);
+			r.setFeature(TagSoupParser.bogonsEmptyFeature, true);
 			}
 
 		if (hasOption(options, "--norootbogons")) {
-			r.setFeature(Parser.rootBogonsFeature, false);
+			r.setFeature(TagSoupParser.rootBogonsFeature, false);
 			}
 
 		if (hasOption(options, "--nodefaults")) {
-			r.setFeature(Parser.defaultAttributesFeature, false);
+			r.setFeature(TagSoupParser.defaultAttributesFeature, false);
 			}
 		if (hasOption(options, "--nocolons")) {
-			r.setFeature(Parser.translateColonsFeature, true);
+			r.setFeature(TagSoupParser.translateColonsFeature, true);
 			}
 
 		if (hasOption(options, "--norestart")) {
-			r.setFeature(Parser.restartElementsFeature, false);
+			r.setFeature(TagSoupParser.restartElementsFeature, false);
 			}
 
 		if (hasOption(options, "--ignorable")) {
-			r.setFeature(Parser.ignorableWhitespaceFeature, true);
+			r.setFeature(TagSoupParser.ignorableWhitespaceFeature, true);
 			}
 
 		if (hasOption(options, "--pyxin")) {
-			r.setProperty(Parser.scannerProperty, new PYXScanner());
+			r.setProperty(TagSoupParser.scannerProperty, new PYXScanner());
 			}
 
 		Writer w;
@@ -189,7 +189,7 @@ public class CommandLine {
 		ContentHandler h = chooseContentHandler(w);
 		r.setContentHandler(h);
 		if (hasOption(options, "--lexical") && h instanceof LexicalHandler) {
-			r.setProperty(Parser.lexicalHandlerProperty, h);
+			r.setProperty(TagSoupParser.lexicalHandlerProperty, h);
 			}
 		InputSource s = new InputSource();
 		if (src != "") {

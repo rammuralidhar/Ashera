@@ -5,7 +5,7 @@ import java.io.StringReader;
 import java.util.Map;
 
 import org.ccil.cowan.tagsoup.HTMLSchema;
-import org.ccil.cowan.tagsoup.Parser;
+import org.ccil.cowan.tagsoup.TagSoupParser;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -14,9 +14,9 @@ import com.ashera.android.widget.factory.Widget;
 public class HtmlParser {
 	private static final HTMLSchema schema = new HTMLSchema();
 	public static Widget parse(String contentHtml, Map<String, Object> metadata) {
-		Parser parser = new Parser();
+		TagSoupParser parser = new TagSoupParser();
 	    try {
-	        parser.setProperty(Parser.schemaProperty, schema);
+	        parser.setProperty(TagSoupParser.schemaProperty, schema);
 	    } catch (org.xml.sax.SAXNotRecognizedException e) {
 	        // Should not happen.
 	        throw new RuntimeException(e);

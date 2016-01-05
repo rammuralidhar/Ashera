@@ -19,7 +19,7 @@ import javax.xml.parsers.*;
 
 import org.xml.sax.*;
 
-import org.ccil.cowan.tagsoup.Parser;
+import org.ccil.cowan.tagsoup.TagSoupParser;
 
 /**
  * This is a simple implementation of JAXP {@link SAXParser},
@@ -31,12 +31,12 @@ import org.ccil.cowan.tagsoup.Parser;
 public class SAXParserImpl
     extends SAXParser
 {
-    final org.ccil.cowan.tagsoup.Parser parser;
+    final org.ccil.cowan.tagsoup.TagSoupParser parser;
 
     protected SAXParserImpl() // used by factory, for prototypes
     {
         super();
-        parser = new org.ccil.cowan.tagsoup.Parser();
+        parser = new org.ccil.cowan.tagsoup.TagSoupParser();
     }
 
     public static SAXParserImpl newInstance(Map features)
@@ -70,7 +70,7 @@ public class SAXParserImpl
     public boolean isNamespaceAware()
     {
         try {
-            return parser.getFeature(Parser.namespacesFeature);
+            return parser.getFeature(TagSoupParser.namespacesFeature);
         } catch (SAXException sex) { // should never happen... so:
             throw new RuntimeException(sex.getMessage());
         }
@@ -79,7 +79,7 @@ public class SAXParserImpl
     public boolean isValidating()
     {
         try {
-            return parser.getFeature(Parser.validationFeature);
+            return parser.getFeature(TagSoupParser.validationFeature);
         } catch (SAXException sex) { // should never happen... so:
             throw new RuntimeException(sex.getMessage());
         }
