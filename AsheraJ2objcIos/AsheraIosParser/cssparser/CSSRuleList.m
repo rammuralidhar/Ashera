@@ -7,6 +7,7 @@
 #include "CSSRule.h"
 #include "CSSRuleList.h"
 #include "J2ObjC_source.h"
+#include "MultiMap.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/cssparser/repackaged/org/w3c/dom/css/CSSRuleList.java"
 
@@ -14,15 +15,16 @@
 @end
 
 
-#line 23
+#line 25
 @implementation RepackagedOrgW3cDomCssCSSRuleList
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "getLength", NULL, "I", 0x401, NULL, NULL },
     { "itemWithInt:", "item", "Lrepackaged.org.w3c.dom.css.CSSRule;", 0x401, NULL, NULL },
+    { "getRulesCachedByTagName", NULL, "Lcom.steadystate.css.util.MultiMap;", 0x401, NULL, NULL },
   };
-  static const J2ObjcClassInfo _RepackagedOrgW3cDomCssCSSRuleList = { 2, "CSSRuleList", "repackaged.org.w3c.dom.css", NULL, 0x609, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _RepackagedOrgW3cDomCssCSSRuleList = { 2, "CSSRuleList", "repackaged.org.w3c.dom.css", NULL, 0x609, 3, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_RepackagedOrgW3cDomCssCSSRuleList;
 }
 

@@ -27,6 +27,8 @@
 
 - (id<RepackagedOrgW3cCssSacCondition>)getCondition;
 
+- (NSString *)getRegEx;
+
 - (jshort)getSelectorType;
 
 - (id<RepackagedOrgW3cCssSacSimpleSelector>)getSimpleSelector;

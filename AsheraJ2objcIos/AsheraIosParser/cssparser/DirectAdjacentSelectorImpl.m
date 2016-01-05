@@ -84,6 +84,12 @@ withRepackagedOrgW3cCssSacSimpleSelector:(id<RepackagedOrgW3cCssSacSimpleSelecto
   return JreStrcat("$$$", [((id<RepackagedOrgW3cCssSacSelector>) nil_chk(selector__)) description], @" + ", [((id<RepackagedOrgW3cCssSacSimpleSelector>) nil_chk(siblingSelector__)) description]);
 }
 
+
+#line 97
+- (NSString *)getRegEx {
+  return nil;
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "setNodeTypeWithShort:", "setNodeType", "V", 0x1, NULL, NULL },
@@ -95,6 +101,7 @@ withRepackagedOrgW3cCssSacSimpleSelector:(id<RepackagedOrgW3cCssSacSimpleSelecto
     { "getSelector", NULL, "Lrepackaged.org.w3c.css.sac.Selector;", 0x1, NULL, NULL },
     { "getSiblingSelector", NULL, "Lrepackaged.org.w3c.css.sac.SimpleSelector;", 0x1, NULL, NULL },
     { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "getRegEx", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComSteadystateCssParserSelectorsDirectAdjacentSelectorImpl_serialVersionUID },
@@ -102,7 +109,7 @@ withRepackagedOrgW3cCssSacSimpleSelector:(id<RepackagedOrgW3cCssSacSimpleSelecto
     { "selector__", NULL, 0x2, "Lrepackaged.org.w3c.css.sac.Selector;", NULL, NULL,  },
     { "siblingSelector__", NULL, 0x2, "Lrepackaged.org.w3c.css.sac.SimpleSelector;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsDirectAdjacentSelectorImpl = { 2, "DirectAdjacentSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 9, methods, 4, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsDirectAdjacentSelectorImpl = { 2, "DirectAdjacentSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 10, methods, 4, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComSteadystateCssParserSelectorsDirectAdjacentSelectorImpl;
 }
 

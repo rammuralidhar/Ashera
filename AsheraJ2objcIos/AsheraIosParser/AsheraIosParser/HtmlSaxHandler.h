@@ -6,42 +6,63 @@
 #ifndef _ComAsheraAndroidParserHtmlHtmlSaxHandler_H_
 #define _ComAsheraAndroidParserHtmlHtmlSaxHandler_H_
 
-#include "BaseContentHandler.h"
 #include "J2ObjC_header.h"
+#include "org/xml/sax/ContentHandler.h"
 
 @class IOSCharArray;
-@class OrgCcilCowanTagsoupParser;
+@protocol ComAsheraAndroidWidgetFactoryWidget;
+@protocol JavaUtilMap;
 @protocol OrgXmlSaxAttributes;
+@protocol OrgXmlSaxLocator;
 
-@interface ComAsheraAndroidParserHtmlHtmlSaxHandler : ComAsheraAndroidParserHtmlBaseContentHandler
+@interface ComAsheraAndroidParserHtmlHtmlSaxHandler : NSObject < OrgXmlSaxContentHandler >
 
 #pragma mark Public
 
-- (instancetype)initWithNSString:(NSString *)source
-   withOrgCcilCowanTagsoupParser:(OrgCcilCowanTagsoupParser *)parser;
+- (instancetype)initWithJavaUtilMap:(id<JavaUtilMap>)metadata;
 
 - (void)charactersWithCharArray:(IOSCharArray *)ch
                         withInt:(jint)start
                         withInt:(jint)length;
 
+- (void)endDocument;
+
 - (void)endElementWithNSString:(NSString *)uri
                   withNSString:(NSString *)localName
                   withNSString:(NSString *)qName;
 
-- (void)parse;
+- (void)endPrefixMappingWithNSString:(NSString *)prefix;
+
+- (id<ComAsheraAndroidWidgetFactoryWidget>)getRoot;
+
+- (void)ignorableWhitespaceWithCharArray:(IOSCharArray *)ch
+                                 withInt:(jint)start
+                                 withInt:(jint)length;
+
+- (void)processingInstructionWithNSString:(NSString *)target
+                             withNSString:(NSString *)data;
+
+- (void)setDocumentLocatorWithOrgXmlSaxLocator:(id<OrgXmlSaxLocator>)locator;
+
+- (void)skippedEntityWithNSString:(NSString *)name;
+
+- (void)startDocument;
 
 - (void)startElementWithNSString:(NSString *)uri
                     withNSString:(NSString *)localName
                     withNSString:(NSString *)qName
          withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
 
+- (void)startPrefixMappingWithNSString:(NSString *)prefix
+                          withNSString:(NSString *)uri;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComAsheraAndroidParserHtmlHtmlSaxHandler)
 
-FOUNDATION_EXPORT void ComAsheraAndroidParserHtmlHtmlSaxHandler_initWithNSString_withOrgCcilCowanTagsoupParser_(ComAsheraAndroidParserHtmlHtmlSaxHandler *self, NSString *source, OrgCcilCowanTagsoupParser *parser);
+FOUNDATION_EXPORT void ComAsheraAndroidParserHtmlHtmlSaxHandler_initWithJavaUtilMap_(ComAsheraAndroidParserHtmlHtmlSaxHandler *self, id<JavaUtilMap> metadata);
 
-FOUNDATION_EXPORT ComAsheraAndroidParserHtmlHtmlSaxHandler *new_ComAsheraAndroidParserHtmlHtmlSaxHandler_initWithNSString_withOrgCcilCowanTagsoupParser_(NSString *source, OrgCcilCowanTagsoupParser *parser) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT ComAsheraAndroidParserHtmlHtmlSaxHandler *new_ComAsheraAndroidParserHtmlHtmlSaxHandler_initWithJavaUtilMap_(id<JavaUtilMap> metadata) NS_RETURNS_RETAINED;
 
 J2OBJC_TYPE_LITERAL_HEADER(ComAsheraAndroidParserHtmlHtmlSaxHandler)
 

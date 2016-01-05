@@ -6,9 +6,9 @@
 
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
-#include "Parser.h"
 #include "SAX1ParserAdapter.h"
 #include "SAXParserImpl.h"
+#include "TagSoupParser.h"
 #include "java/lang/Boolean.h"
 #include "java/lang/RuntimeException.h"
 #include "java/util/Iterator.h"
@@ -60,7 +60,7 @@
   
 #line 72
   @try {
-    return [((OrgCcilCowanTagsoupParser *) nil_chk(parser_)) getFeatureWithNSString:OrgCcilCowanTagsoupParser_get_namespacesFeature_()];
+    return [((OrgCcilCowanTagsoupTagSoupParser *) nil_chk(parser_)) getFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_namespacesFeature_()];
   }
   @catch (
 #line 74
@@ -75,7 +75,7 @@
   
 #line 81
   @try {
-    return [((OrgCcilCowanTagsoupParser *) nil_chk(parser_)) getFeatureWithNSString:OrgCcilCowanTagsoupParser_get_validationFeature_()];
+    return [((OrgCcilCowanTagsoupTagSoupParser *) nil_chk(parser_)) getFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_validationFeature_()];
   }
   @catch (
 #line 83
@@ -90,7 +90,7 @@
                          withId:(id)value {
   
 #line 91
-  [((OrgCcilCowanTagsoupParser *) nil_chk(parser_)) setPropertyWithNSString:name withId:value];
+  [((OrgCcilCowanTagsoupTagSoupParser *) nil_chk(parser_)) setPropertyWithNSString:name withId:value];
 }
 
 
@@ -98,7 +98,7 @@
 - (id)getPropertyWithNSString:(NSString *)name {
   
 #line 97
-  return [((OrgCcilCowanTagsoupParser *) nil_chk(parser_)) getPropertyWithNSString:name];
+  return [((OrgCcilCowanTagsoupTagSoupParser *) nil_chk(parser_)) getPropertyWithNSString:name];
 }
 
 
@@ -107,7 +107,7 @@
                    withBoolean:(jboolean)value {
   
 #line 105
-  [((OrgCcilCowanTagsoupParser *) nil_chk(parser_)) setFeatureWithNSString:name withBoolean:value];
+  [((OrgCcilCowanTagsoupTagSoupParser *) nil_chk(parser_)) setFeatureWithNSString:name withBoolean:value];
 }
 
 
@@ -115,7 +115,7 @@
 - (jboolean)getFeatureWithNSString:(NSString *)name {
   
 #line 111
-  return [((OrgCcilCowanTagsoupParser *) nil_chk(parser_)) getFeatureWithNSString:name];
+  return [((OrgCcilCowanTagsoupTagSoupParser *) nil_chk(parser_)) getFeatureWithNSString:name];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -132,7 +132,7 @@
     { "getFeatureWithNSString:", "getFeature", "Z", 0x1, "Lorg.xml.sax.SAXNotRecognizedException;Lorg.xml.sax.SAXNotSupportedException;", NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "parser_", NULL, 0x10, "Lorg.ccil.cowan.tagsoup.Parser;", NULL, NULL,  },
+    { "parser_", NULL, 0x10, "Lorg.ccil.cowan.tagsoup.TagSoupParser;", NULL, NULL,  },
   };
   static const J2ObjcClassInfo _OrgCcilCowanTagsoupJaxpSAXParserImpl = { 2, "SAXParserImpl", "org.ccil.cowan.tagsoup.jaxp", NULL, 0x1, 10, methods, 1, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_OrgCcilCowanTagsoupJaxpSAXParserImpl;
@@ -146,7 +146,7 @@ void OrgCcilCowanTagsoupJaxpSAXParserImpl_init(OrgCcilCowanTagsoupJaxpSAXParserI
   (void) JavaxXmlParsersSAXParser_init(self);
   
 #line 39
-  self->parser_ = new_OrgCcilCowanTagsoupParser_init();
+  self->parser_ = new_OrgCcilCowanTagsoupTagSoupParser_init();
 }
 
 

@@ -12,6 +12,7 @@
 #include "java/io/Serializable.h"
 
 @class ComSteadystateCssFormatCSSFormat;
+@class ComSteadystateCssUtilMultiMap;
 @protocol JavaUtilList;
 @protocol RepackagedOrgW3cDomCssCSSRule;
 
@@ -46,6 +47,8 @@
 - (jint)getLength;
 
 - (id<JavaUtilList>)getRules;
+
+- (ComSteadystateCssUtilMultiMap *)getRulesCachedByTagName;
 
 - (NSUInteger)hash;
 

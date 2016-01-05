@@ -9,7 +9,7 @@
 #include "J2ObjC_header.h"
 #include "javax/xml/parsers/SAXParser.h"
 
-@class OrgCcilCowanTagsoupParser;
+@class OrgCcilCowanTagsoupTagSoupParser;
 @protocol JavaUtilMap;
 @protocol OrgXmlSaxParser;
 @protocol OrgXmlSaxXMLReader;
@@ -20,7 +20,7 @@
  */
 @interface OrgCcilCowanTagsoupJaxpSAXParserImpl : JavaxXmlParsersSAXParser {
  @public
-  OrgCcilCowanTagsoupParser *parser_;
+  OrgCcilCowanTagsoupTagSoupParser *parser_;
 }
 
 #pragma mark Public
@@ -56,7 +56,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(OrgCcilCowanTagsoupJaxpSAXParserImpl)
 
-J2OBJC_FIELD_SETTER(OrgCcilCowanTagsoupJaxpSAXParserImpl, parser_, OrgCcilCowanTagsoupParser *)
+J2OBJC_FIELD_SETTER(OrgCcilCowanTagsoupJaxpSAXParserImpl, parser_, OrgCcilCowanTagsoupTagSoupParser *)
 
 FOUNDATION_EXPORT void OrgCcilCowanTagsoupJaxpSAXParserImpl_init(OrgCcilCowanTagsoupJaxpSAXParserImpl *self);
 

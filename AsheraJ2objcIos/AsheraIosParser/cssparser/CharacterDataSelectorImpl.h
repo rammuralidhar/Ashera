@@ -23,6 +23,8 @@
 
 - (NSString *)getData;
 
+- (NSString *)getRegEx;
+
 - (jshort)getSelectorType;
 
 - (void)setDataWithNSString:(NSString *)data;

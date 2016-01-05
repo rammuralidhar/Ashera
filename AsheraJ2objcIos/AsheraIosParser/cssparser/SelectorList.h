@@ -27,6 +27,8 @@
  */
 - (id<RepackagedOrgW3cCssSacSelector>)itemWithInt:(jint)index;
 
+- (NSString *)getRegEx;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(RepackagedOrgW3cCssSacSelectorList)

@@ -11,7 +11,7 @@
 #include "J2ObjC_source.h"
 #include "PYXScanner.h"
 #include "PYXWriter.h"
-#include "Parser.h"
+#include "TagSoupParser.h"
 #include "XMLWriter.h"
 #include "java/io/FileOutputStream.h"
 #include "java/io/IOException.h"
@@ -49,11 +49,11 @@
 
 @end
 
-static OrgCcilCowanTagsoupParser *OrgCcilCowanTagsoupCommandLine_theParser_ = 
+static OrgCcilCowanTagsoupTagSoupParser *OrgCcilCowanTagsoupCommandLine_theParser_ = 
 #line 121
 nil;
-J2OBJC_STATIC_FIELD_GETTER(OrgCcilCowanTagsoupCommandLine, theParser_, OrgCcilCowanTagsoupParser *)
-J2OBJC_STATIC_FIELD_SETTER(OrgCcilCowanTagsoupCommandLine, theParser_, OrgCcilCowanTagsoupParser *)
+J2OBJC_STATIC_FIELD_GETTER(OrgCcilCowanTagsoupCommandLine, theParser_, OrgCcilCowanTagsoupTagSoupParser *)
+J2OBJC_STATIC_FIELD_SETTER(OrgCcilCowanTagsoupCommandLine, theParser_, OrgCcilCowanTagsoupTagSoupParser *)
 
 static OrgCcilCowanTagsoupHTMLSchema *OrgCcilCowanTagsoupCommandLine_theSchema_ = 
 #line 122
@@ -176,7 +176,7 @@ JavaUtilHashtable *OrgCcilCowanTagsoupCommandLine_options_;
   };
   static const J2ObjcFieldInfo fields[] = {
     { "options_", NULL, 0x8, "Ljava.util.Hashtable;", &OrgCcilCowanTagsoupCommandLine_options_, NULL,  },
-    { "theParser_", NULL, 0xa, "Lorg.ccil.cowan.tagsoup.Parser;", &OrgCcilCowanTagsoupCommandLine_theParser_, NULL,  },
+    { "theParser_", NULL, 0xa, "Lorg.ccil.cowan.tagsoup.TagSoupParser;", &OrgCcilCowanTagsoupCommandLine_theParser_, NULL,  },
     { "theSchema_", NULL, 0xa, "Lorg.ccil.cowan.tagsoup.HTMLSchema;", &OrgCcilCowanTagsoupCommandLine_theSchema_, NULL,  },
     { "theOutputEncoding_", NULL, 0xa, "Ljava.lang.String;", &OrgCcilCowanTagsoupCommandLine_theOutputEncoding_, NULL,  },
   };
@@ -261,64 +261,64 @@ void OrgCcilCowanTagsoupCommandLine_processWithNSString_withJavaIoOutputStream_(
   OrgCcilCowanTagsoupCommandLine_initialize();
   id<OrgXmlSaxXMLReader> r;
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--reuse")) {
-    if (OrgCcilCowanTagsoupCommandLine_theParser_ == nil) OrgCcilCowanTagsoupCommandLine_theParser_ = new_OrgCcilCowanTagsoupParser_init();
+    if (OrgCcilCowanTagsoupCommandLine_theParser_ == nil) OrgCcilCowanTagsoupCommandLine_theParser_ = new_OrgCcilCowanTagsoupTagSoupParser_init();
     r = OrgCcilCowanTagsoupCommandLine_theParser_;
   }
   else {
-    r = new_OrgCcilCowanTagsoupParser_init();
+    r = new_OrgCcilCowanTagsoupTagSoupParser_init();
   }
   OrgCcilCowanTagsoupCommandLine_theSchema_ = new_OrgCcilCowanTagsoupHTMLSchema_init();
-  [((id<OrgXmlSaxXMLReader>) nil_chk(r)) setPropertyWithNSString:OrgCcilCowanTagsoupParser_get_schemaProperty_() withId:OrgCcilCowanTagsoupCommandLine_theSchema_];
+  [((id<OrgXmlSaxXMLReader>) nil_chk(r)) setPropertyWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_schemaProperty_() withId:OrgCcilCowanTagsoupCommandLine_theSchema_];
   
 #line 140
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--nocdata")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_CDATAElementsFeature_() withBoolean:NO];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_CDATAElementsFeature_() withBoolean:NO];
   }
   
 #line 144
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--nons") || OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--html")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_namespacesFeature_() withBoolean:NO];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_namespacesFeature_() withBoolean:NO];
   }
   
 #line 148
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--nobogons")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_ignoreBogonsFeature_() withBoolean:YES];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_ignoreBogonsFeature_() withBoolean:YES];
   }
   
 #line 152
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--any")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_bogonsEmptyFeature_() withBoolean:NO];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_bogonsEmptyFeature_() withBoolean:NO];
   }
   else if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--emptybogons")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_bogonsEmptyFeature_() withBoolean:YES];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_bogonsEmptyFeature_() withBoolean:YES];
   }
   
 #line 159
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--norootbogons")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_rootBogonsFeature_() withBoolean:NO];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_rootBogonsFeature_() withBoolean:NO];
   }
   
 #line 163
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--nodefaults")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_defaultAttributesFeature_() withBoolean:NO];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_defaultAttributesFeature_() withBoolean:NO];
   }
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--nocolons")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_translateColonsFeature_() withBoolean:YES];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_translateColonsFeature_() withBoolean:YES];
   }
   
 #line 170
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--norestart")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_restartElementsFeature_() withBoolean:NO];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_restartElementsFeature_() withBoolean:NO];
   }
   
 #line 174
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--ignorable")) {
-    [r setFeatureWithNSString:OrgCcilCowanTagsoupParser_get_ignorableWhitespaceFeature_() withBoolean:YES];
+    [r setFeatureWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_ignorableWhitespaceFeature_() withBoolean:YES];
   }
   
 #line 178
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--pyxin")) {
-    [r setPropertyWithNSString:OrgCcilCowanTagsoupParser_get_scannerProperty_() withId:new_OrgCcilCowanTagsoupPYXScanner_init()];
+    [r setPropertyWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_scannerProperty_() withId:new_OrgCcilCowanTagsoupPYXScanner_init()];
   }
   
 #line 182
@@ -332,7 +332,7 @@ void OrgCcilCowanTagsoupCommandLine_processWithNSString_withJavaIoOutputStream_(
   id<OrgXmlSaxContentHandler> h = OrgCcilCowanTagsoupCommandLine_chooseContentHandlerWithJavaIoWriter_(w);
   [r setContentHandlerWithOrgXmlSaxContentHandler:h];
   if (OrgCcilCowanTagsoupCommandLine_hasOptionWithJavaUtilHashtable_withNSString_(OrgCcilCowanTagsoupCommandLine_options_, @"--lexical") && [OrgXmlSaxExtLexicalHandler_class_() isInstance:h]) {
-    [r setPropertyWithNSString:OrgCcilCowanTagsoupParser_get_lexicalHandlerProperty_() withId:h];
+    [r setPropertyWithNSString:OrgCcilCowanTagsoupTagSoupParser_get_lexicalHandlerProperty_() withId:h];
   }
   OrgXmlSaxInputSource *s = new_OrgXmlSaxInputSource_init();
   if (![@"" isEqual:src]) {

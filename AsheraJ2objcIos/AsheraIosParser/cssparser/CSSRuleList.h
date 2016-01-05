@@ -8,6 +8,7 @@
 
 #include "J2ObjC_header.h"
 
+@class ComSteadystateCssUtilMultiMap;
 @protocol RepackagedOrgW3cDomCssCSSRule;
 
 /**
@@ -30,6 +31,8 @@
  @return The style rule at the <code>index</code> position in the <code>CSSRuleList</code>, or <code>null</code> if that is not a valid index.
  */
 - (id<RepackagedOrgW3cDomCssCSSRule>)itemWithInt:(jint)index;
+
+- (ComSteadystateCssUtilMultiMap *)getRulesCachedByTagName;
 
 @end
 

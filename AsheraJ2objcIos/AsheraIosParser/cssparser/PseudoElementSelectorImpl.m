@@ -59,6 +59,12 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsPseudoElementSelector
   return localName__;
 }
 
+
+#line 73
+- (NSString *)getRegEx {
+  return nil;
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "setLocaleNameWithNSString:", "setLocaleName", "V", 0x1, NULL, NULL },
@@ -67,12 +73,13 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsPseudoElementSelector
     { "getNamespaceURI", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "getLocalName", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "getRegEx", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComSteadystateCssParserSelectorsPseudoElementSelectorImpl_serialVersionUID },
     { "localName__", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsPseudoElementSelectorImpl = { 2, "PseudoElementSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 6, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsPseudoElementSelectorImpl = { 2, "PseudoElementSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 7, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComSteadystateCssParserSelectorsPseudoElementSelectorImpl;
 }
 

@@ -76,6 +76,12 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsChildSelectorImpl, se
   return JreStrcat("$$$", [((id<RepackagedOrgW3cCssSacSelector>) nil_chk(ancestorSelector__)) description], @" > ", [((id<RepackagedOrgW3cCssSacSimpleSelector>) nil_chk(simpleSelector__)) description]);
 }
 
+
+#line 86
+- (NSString *)getRegEx {
+  return JreStrcat("$C$", [((id<RepackagedOrgW3cCssSacSelector>) nil_chk(ancestorSelector__)) getRegEx], '>', [((id<RepackagedOrgW3cCssSacSimpleSelector>) nil_chk(simpleSelector__)) getRegEx]);
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "setAncestorSelectorWithRepackagedOrgW3cCssSacSelector:", "setAncestorSelector", "V", 0x1, NULL, NULL },
@@ -85,13 +91,14 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsChildSelectorImpl, se
     { "getAncestorSelector", NULL, "Lrepackaged.org.w3c.css.sac.Selector;", 0x1, NULL, NULL },
     { "getSimpleSelector", NULL, "Lrepackaged.org.w3c.css.sac.SimpleSelector;", 0x1, NULL, NULL },
     { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "getRegEx", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComSteadystateCssParserSelectorsChildSelectorImpl_serialVersionUID },
     { "ancestorSelector__", NULL, 0x2, "Lrepackaged.org.w3c.css.sac.Selector;", NULL, NULL,  },
     { "simpleSelector__", NULL, 0x2, "Lrepackaged.org.w3c.css.sac.SimpleSelector;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsChildSelectorImpl = { 2, "ChildSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 7, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsChildSelectorImpl = { 2, "ChildSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 8, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComSteadystateCssParserSelectorsChildSelectorImpl;
 }
 

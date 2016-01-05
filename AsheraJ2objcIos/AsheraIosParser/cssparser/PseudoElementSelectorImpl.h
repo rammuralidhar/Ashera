@@ -25,6 +25,8 @@
 
 - (NSString *)getNamespaceURI;
 
+- (NSString *)getRegEx;
+
 - (jshort)getSelectorType;
 
 - (void)setLocaleNameWithNSString:(NSString *)localName;

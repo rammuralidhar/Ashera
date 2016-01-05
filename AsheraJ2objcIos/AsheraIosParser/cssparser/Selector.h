@@ -35,6 +35,8 @@
  */
 - (jshort)getSelectorType;
 
+- (NSString *)getRegEx;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(RepackagedOrgW3cCssSacSelector)
@@ -64,6 +66,18 @@ J2OBJC_STATIC_FIELD_GETTER(RepackagedOrgW3cCssSacSelector, SAC_DESCENDANT_SELECT
 J2OBJC_STATIC_FIELD_GETTER(RepackagedOrgW3cCssSacSelector, SAC_CHILD_SELECTOR, jshort)
 
 J2OBJC_STATIC_FIELD_GETTER(RepackagedOrgW3cCssSacSelector, SAC_DIRECT_ADJACENT_SELECTOR, jshort)
+
+FOUNDATION_EXPORT NSString *RepackagedOrgW3cCssSacSelector_TAG_REGEX_;
+J2OBJC_STATIC_FIELD_GETTER(RepackagedOrgW3cCssSacSelector, TAG_REGEX_, NSString *)
+
+FOUNDATION_EXPORT NSString *RepackagedOrgW3cCssSacSelector_ID_CLASS_REGEX_;
+J2OBJC_STATIC_FIELD_GETTER(RepackagedOrgW3cCssSacSelector, ID_CLASS_REGEX_, NSString *)
+
+FOUNDATION_EXPORT NSString *RepackagedOrgW3cCssSacSelector_SIMPLE_ID_CLASS_REGEX_;
+J2OBJC_STATIC_FIELD_GETTER(RepackagedOrgW3cCssSacSelector, SIMPLE_ID_CLASS_REGEX_, NSString *)
+
+FOUNDATION_EXPORT NSString *RepackagedOrgW3cCssSacSelector_ALL_OTHER_CHARS_;
+J2OBJC_STATIC_FIELD_GETTER(RepackagedOrgW3cCssSacSelector, ALL_OTHER_CHARS_, NSString *)
 
 J2OBJC_TYPE_LITERAL_HEADER(RepackagedOrgW3cCssSacSelector)
 

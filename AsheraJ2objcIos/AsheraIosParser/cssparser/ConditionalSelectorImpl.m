@@ -7,12 +7,15 @@
 #include "Condition.h"
 #include "ConditionalSelectorImpl.h"
 #include "IOSClass.h"
+#include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "Locatable.h"
 #include "LocatableImpl.h"
 #include "Locator.h"
 #include "Selector.h"
 #include "SimpleSelector.h"
+#include "java/io/PrintStream.h"
+#include "java/lang/System.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/cssparser/com/steadystate/css/parser/selectors/ConditionalSelectorImpl.java"
 
@@ -85,6 +88,25 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsConditionalSelectorIm
   return JreStrcat("$$", [((id<RepackagedOrgW3cCssSacSimpleSelector>) nil_chk(simpleSelector__)) description], [((id<RepackagedOrgW3cCssSacCondition>) nil_chk(condition__)) description]);
 }
 
+
+#line 96
+- (NSString *)getRegEx {
+  if ([((NSString *) nil_chk([((id<RepackagedOrgW3cCssSacSimpleSelector>) nil_chk(simpleSelector__)) description])) isEqual:@"*"]) {
+    NSString *selector = NSString_formatWithNSString_withNSObjectArray_(RepackagedOrgW3cCssSacSelector_get_ID_CLASS_REGEX_(), [IOSObjectArray newArrayWithObjects:(id[]){ RepackagedOrgW3cCssSacSelector_get_TAG_REGEX_(), [((NSString *) nil_chk([((id<RepackagedOrgW3cCssSacCondition>) nil_chk(condition__)) description])) replaceAll:@"\\." withReplacement:@"\\\\."] } count:2 type:NSObject_class_()]);
+    [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:selector];
+    return selector;
+  }
+  else {
+    
+#line 102
+    [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:[simpleSelector__ description]];
+    [JavaLangSystem_get_out_() printlnWithNSString:[((id<RepackagedOrgW3cCssSacCondition>) nil_chk(condition__)) description]];
+    return NSString_formatWithNSString_withNSObjectArray_(RepackagedOrgW3cCssSacSelector_get_ID_CLASS_REGEX_(), [IOSObjectArray newArrayWithObjects:(id[]){ [simpleSelector__ description],
+#line 105
+    [((NSString *) nil_chk([condition__ description])) replaceAll:@"\\." withReplacement:@"\\\\."] } count:2 type:NSObject_class_()]);
+  }
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "setSimpleSelectorWithRepackagedOrgW3cCssSacSimpleSelector:", "setSimpleSelector", "V", 0x1, NULL, NULL },
@@ -94,13 +116,14 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsConditionalSelectorIm
     { "getSimpleSelector", NULL, "Lrepackaged.org.w3c.css.sac.SimpleSelector;", 0x1, NULL, NULL },
     { "getCondition", NULL, "Lrepackaged.org.w3c.css.sac.Condition;", 0x1, NULL, NULL },
     { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "getRegEx", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComSteadystateCssParserSelectorsConditionalSelectorImpl_serialVersionUID },
     { "simpleSelector__", NULL, 0x2, "Lrepackaged.org.w3c.css.sac.SimpleSelector;", NULL, NULL,  },
     { "condition__", NULL, 0x2, "Lrepackaged.org.w3c.css.sac.Condition;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsConditionalSelectorImpl = { 2, "ConditionalSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 7, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsConditionalSelectorImpl = { 2, "ConditionalSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 8, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComSteadystateCssParserSelectorsConditionalSelectorImpl;
 }
 

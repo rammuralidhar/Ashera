@@ -27,6 +27,8 @@
 
 - (id<RepackagedOrgW3cCssSacSelector>)getAncestorSelector;
 
+- (NSString *)getRegEx;
+
 - (jshort)getSelectorType;
 
 - (id<RepackagedOrgW3cCssSacSimpleSelector>)getSimpleSelector;

@@ -67,6 +67,18 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorListImpl, serialVersio
   return [sb description];
 }
 
+
+#line 82
+- (NSString *)getRegEx {
+  NSString *regEx = @"";
+  for (jint j = [((id<JavaUtilList>) nil_chk(selectors__)) size] - 1; j >= 0; j--) {
+    regEx = JreStrcat("$$", regEx, [((id<RepackagedOrgW3cCssSacSelector>) nil_chk([selectors__ getWithInt:j])) getRegEx]);
+  }
+  
+#line 88
+  return JreStrcat("$$", regEx, RepackagedOrgW3cCssSacSelector_get_ALL_OTHER_CHARS_());
+}
+
 - (instancetype)init {
   ComSteadystateCssParserSelectorListImpl_init(self);
   return self;
@@ -80,13 +92,14 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorListImpl, serialVersio
     { "itemWithInt:", "item", "Lrepackaged.org.w3c.css.sac.Selector;", 0x1, NULL, NULL },
     { "addWithRepackagedOrgW3cCssSacSelector:", "add", "V", 0x1, NULL, NULL },
     { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "getRegEx", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComSteadystateCssParserSelectorListImpl_serialVersionUID },
     { "selectors__", NULL, 0x2, "Ljava.util.List;", NULL, "Ljava/util/List<Lrepackaged/org/w3c/css/sac/Selector;>;",  },
   };
-  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorListImpl = { 2, "SelectorListImpl", "com.steadystate.css.parser", NULL, 0x1, 7, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorListImpl = { 2, "SelectorListImpl", "com.steadystate.css.parser", NULL, 0x1, 8, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComSteadystateCssParserSelectorListImpl;
 }
 

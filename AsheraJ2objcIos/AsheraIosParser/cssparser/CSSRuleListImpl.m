@@ -9,10 +9,16 @@
 #include "CSSRule.h"
 #include "CSSRuleList.h"
 #include "CSSRuleListImpl.h"
+#include "CSSStyleRuleImpl.h"
 #include "IOSClass.h"
+#include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "LangUtils.h"
+#include "MultiMap.h"
+#include "SelectorList.h"
+#include "java/io/PrintStream.h"
 #include "java/lang/StringBuilder.h"
+#include "java/lang/System.h"
 #include "java/util/ArrayList.h"
 #include "java/util/List.h"
 
@@ -22,25 +28,35 @@
 
 @interface ComSteadystateCssDomCSSRuleListImpl () {
  @public
+  ComSteadystateCssUtilMultiMap *ruleMap__;
   id<JavaUtilList> rules__;
 }
+
+- (void)updateMapWithComSteadystateCssDomCSSStyleRuleImpl:(ComSteadystateCssDomCSSStyleRuleImpl *)cssRule;
 
 - (jboolean)equalsRulesWithRepackagedOrgW3cDomCssCSSRuleList:(id<RepackagedOrgW3cDomCssCSSRuleList>)crl;
 
 @end
 
+J2OBJC_FIELD_SETTER(ComSteadystateCssDomCSSRuleListImpl, ruleMap__, ComSteadystateCssUtilMultiMap *)
 J2OBJC_FIELD_SETTER(ComSteadystateCssDomCSSRuleListImpl, rules__, id<JavaUtilList>)
 
 J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssDomCSSRuleListImpl, serialVersionUID, jlong)
 
+__attribute__((unused)) static void ComSteadystateCssDomCSSRuleListImpl_updateMapWithComSteadystateCssDomCSSStyleRuleImpl_(ComSteadystateCssDomCSSRuleListImpl *self, ComSteadystateCssDomCSSStyleRuleImpl *cssRule);
+
 __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equalsRulesWithRepackagedOrgW3cDomCssCSSRuleList_(ComSteadystateCssDomCSSRuleListImpl *self, id<RepackagedOrgW3cDomCssCSSRuleList> crl);
 
 
-#line 46
+#line 48
 @implementation ComSteadystateCssDomCSSRuleListImpl
 
 
-#line 52
+#line 54
+- (ComSteadystateCssUtilMultiMap *)getRulesCachedByTagName {
+  return ruleMap__;
+}
+
 - (id<JavaUtilList>)getRules {
   if (rules__ == nil) {
     rules__ = new_JavaUtilArrayList_init();
@@ -58,7 +74,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
 }
 
 
-#line 67
+#line 73
 - (jint)getLength {
   return [((id<JavaUtilList>) nil_chk([self getRules])) size];
 }
@@ -72,6 +88,9 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
 
 - (void)addWithRepackagedOrgW3cDomCssCSSRule:(id<RepackagedOrgW3cDomCssCSSRule>)rule {
   [((id<JavaUtilList>) nil_chk([self getRules])) addWithId:rule];
+  if ([rule isKindOfClass:[ComSteadystateCssDomCSSStyleRuleImpl class]]) {
+    ComSteadystateCssDomCSSRuleListImpl_updateMapWithComSteadystateCssDomCSSStyleRuleImpl_(self, (ComSteadystateCssDomCSSStyleRuleImpl *) check_class_cast(rule, [ComSteadystateCssDomCSSStyleRuleImpl class]));
+  }
 }
 
 - (void)insertWithRepackagedOrgW3cDomCssCSSRule:(id<RepackagedOrgW3cDomCssCSSRule>)rule
@@ -80,19 +99,25 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
 }
 
 
-#line 86
+#line 95
 - (void)delete__WithInt:(jint)index {
   (void) [((id<JavaUtilList>) nil_chk([self getRules])) removeWithInt:index];
 }
 
 
-#line 95
+#line 104
 - (NSString *)getCssText {
   return [self getCssTextWithComSteadystateCssFormatCSSFormat:nil];
 }
 
 
-#line 102
+#line 109
+- (void)updateMapWithComSteadystateCssDomCSSStyleRuleImpl:(ComSteadystateCssDomCSSStyleRuleImpl *)cssRule {
+  ComSteadystateCssDomCSSRuleListImpl_updateMapWithComSteadystateCssDomCSSStyleRuleImpl_(self, cssRule);
+}
+
+
+#line 143
 - (NSString *)getCssTextWithComSteadystateCssFormatCSSFormat:(ComSteadystateCssFormatCSSFormat *)format {
   JavaLangStringBuilder *sb = new_JavaLangStringBuilder_init();
   for (jint i = 0; i < [self getLength]; i++) {
@@ -100,7 +125,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
       (void) [sb appendWithNSString:@"\x0d\n"];
     }
     
-#line 109
+#line 150
     id<RepackagedOrgW3cDomCssCSSRule> rule = [self itemWithInt:i];
     if ([ComSteadystateCssFormatCSSFormatable_class_() isInstance:rule]) {
       (void) [sb appendWithNSString:[((id<ComSteadystateCssFormatCSSFormatable>) nil_chk(((id<ComSteadystateCssFormatCSSFormatable>) check_protocol_cast(rule, @protocol(ComSteadystateCssFormatCSSFormatable))))) getCssTextWithComSteadystateCssFormatCSSFormat:format]];
@@ -117,7 +142,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
 }
 
 
-#line 126
+#line 167
 - (jboolean)isEqual:(id)obj {
   if (self == obj) {
     return YES;
@@ -134,7 +159,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
 }
 
 
-#line 152
+#line 193
 - (NSUInteger)hash {
   jint hash_ = ComSteadystateCssUtilLangUtils_HASH_SEED;
   hash_ = ComSteadystateCssUtilLangUtils_hashCodeWithInt_withId_(hash_, rules__);
@@ -143,6 +168,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
+    { "getRulesCachedByTagName", NULL, "Lcom.steadystate.css.util.MultiMap;", 0x1, NULL, NULL },
     { "getRules", NULL, "Ljava.util.List;", 0x1, NULL, NULL },
     { "setRulesWithJavaUtilList:", "setRules", "V", 0x1, NULL, NULL },
     { "init", "CSSRuleListImpl", NULL, 0x1, NULL, NULL },
@@ -152,6 +178,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
     { "insertWithRepackagedOrgW3cDomCssCSSRule:withInt:", "insert", "V", 0x1, NULL, NULL },
     { "delete__WithInt:", "delete", "V", 0x1, NULL, NULL },
     { "getCssText", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "updateMapWithComSteadystateCssDomCSSStyleRuleImpl:", "updateMap", "V", 0x2, NULL, NULL },
     { "getCssTextWithComSteadystateCssFormatCSSFormat:", "getCssText", "Ljava.lang.String;", 0x1, NULL, NULL },
     { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
     { "isEqual:", "equals", "Z", 0x1, NULL, NULL },
@@ -160,22 +187,24 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
   };
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComSteadystateCssDomCSSRuleListImpl_serialVersionUID },
+    { "ruleMap__", NULL, 0x2, "Lcom.steadystate.css.util.MultiMap;", NULL, "Lcom/steadystate/css/util/MultiMap<Ljava/lang/String;Lrepackaged/org/w3c/dom/css/CSSRule;>;",  },
     { "rules__", NULL, 0x2, "Ljava.util.List;", NULL, "Ljava/util/List<Lrepackaged/org/w3c/dom/css/CSSRule;>;",  },
   };
-  static const J2ObjcClassInfo _ComSteadystateCssDomCSSRuleListImpl = { 2, "CSSRuleListImpl", "com.steadystate.css.dom", NULL, 0x1, 14, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComSteadystateCssDomCSSRuleListImpl = { 2, "CSSRuleListImpl", "com.steadystate.css.dom", NULL, 0x1, 16, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComSteadystateCssDomCSSRuleListImpl;
 }
 
 @end
 
 
-#line 63
+#line 69
 void ComSteadystateCssDomCSSRuleListImpl_init(ComSteadystateCssDomCSSRuleListImpl *self) {
   (void) NSObject_init(self);
+  self->ruleMap__ = new_ComSteadystateCssUtilMultiMap_init();
 }
 
 
-#line 63
+#line 69
 ComSteadystateCssDomCSSRuleListImpl *new_ComSteadystateCssDomCSSRuleListImpl_init() {
   ComSteadystateCssDomCSSRuleListImpl *self = [ComSteadystateCssDomCSSRuleListImpl alloc];
   ComSteadystateCssDomCSSRuleListImpl_init(self);
@@ -183,7 +212,48 @@ ComSteadystateCssDomCSSRuleListImpl *new_ComSteadystateCssDomCSSRuleListImpl_ini
 }
 
 
-#line 137
+#line 109
+void ComSteadystateCssDomCSSRuleListImpl_updateMapWithComSteadystateCssDomCSSStyleRuleImpl_(ComSteadystateCssDomCSSRuleListImpl *self, ComSteadystateCssDomCSSStyleRuleImpl *cssRule) {
+  id<RepackagedOrgW3cCssSacSelectorList> selectors = [((ComSteadystateCssDomCSSStyleRuleImpl *) nil_chk(cssRule)) getSelectors];
+  
+#line 112
+  NSString *selctorText = [((id<RepackagedOrgW3cCssSacSelectorList>) nil_chk(selectors)) description];
+  IOSObjectArray *whiteSpaceSplit = [((NSString *) nil_chk(selctorText)) split:@"\\s"];
+  if (((IOSObjectArray *) nil_chk(whiteSpaceSplit))->size_ > 0) {
+    NSString *key = IOSObjectArray_Get(whiteSpaceSplit, whiteSpaceSplit->size_ - 1);
+    [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$$", @"key", key)];
+    
+#line 118
+    if ([((NSString *) nil_chk(key)) contains:@"."]) {
+      IOSObjectArray *keys = [key split:@"\\."];
+      if (![((NSString *) nil_chk(IOSObjectArray_Get(nil_chk(keys), 0))) isEqual:@"*"]) {
+        (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:IOSObjectArray_Get(keys, 0) withId:cssRule];
+      }
+      if (keys->size_ > 1) {
+        (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:JreStrcat("C$", '.', IOSObjectArray_Get(keys, 1)) withId:cssRule];
+      }
+    }
+    else
+#line 126
+    if ([key contains:@".#"]) {
+      IOSObjectArray *keys = [key split:@"#"];
+      if (![((NSString *) nil_chk(IOSObjectArray_Get(nil_chk(keys), 0))) isEqual:@"*"]) {
+        (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:IOSObjectArray_Get(keys, 0) withId:cssRule];
+      }
+      if (keys->size_ > 1) {
+        (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:JreStrcat("C$", '#', IOSObjectArray_Get(keys, 1)) withId:cssRule];
+      }
+    }
+    else {
+      
+#line 135
+      (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:key withId:cssRule];
+    }
+  }
+}
+
+
+#line 178
 jboolean ComSteadystateCssDomCSSRuleListImpl_equalsRulesWithRepackagedOrgW3cDomCssCSSRuleList_(ComSteadystateCssDomCSSRuleListImpl *self, id<RepackagedOrgW3cDomCssCSSRuleList> crl) {
   if ((crl == nil) || ([self getLength] != [crl getLength])) {
     return NO;

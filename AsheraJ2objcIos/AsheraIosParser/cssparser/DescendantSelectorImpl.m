@@ -85,6 +85,22 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsDescendantSelectorImp
   return [result description];
 }
 
+
+#line 94
+- (NSString *)getRegEx {
+  JavaLangStringBuilder *result = new_JavaLangStringBuilder_initWithNSString_([((id<RepackagedOrgW3cCssSacSelector>) nil_chk([self getAncestorSelector])) getRegEx]);
+  if (RepackagedOrgW3cCssSacSelector_SAC_PSEUDO_ELEMENT_SELECTOR == [((id<RepackagedOrgW3cCssSacSimpleSelector>) nil_chk([self getSimpleSelector])) getSelectorType]) {
+    (void) [result appendWithNSString:@"\\:"];
+  }
+  else {
+    
+#line 99
+    (void) [result appendWithNSString:RepackagedOrgW3cCssSacSelector_get_ALL_OTHER_CHARS_()];
+  }
+  (void) [result appendWithNSString:[((id<RepackagedOrgW3cCssSacSimpleSelector>) nil_chk([self getSimpleSelector])) getRegEx]];
+  return [result description];
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "setAncestorSelectorWithRepackagedOrgW3cCssSacSelector:", "setAncestorSelector", "V", 0x1, NULL, NULL },
@@ -94,13 +110,14 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsDescendantSelectorImp
     { "getAncestorSelector", NULL, "Lrepackaged.org.w3c.css.sac.Selector;", 0x1, NULL, NULL },
     { "getSimpleSelector", NULL, "Lrepackaged.org.w3c.css.sac.SimpleSelector;", 0x1, NULL, NULL },
     { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "getRegEx", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComSteadystateCssParserSelectorsDescendantSelectorImpl_serialVersionUID },
     { "ancestorSelector__", NULL, 0x2, "Lrepackaged.org.w3c.css.sac.Selector;", NULL, NULL,  },
     { "simpleSelector__", NULL, 0x2, "Lrepackaged.org.w3c.css.sac.SimpleSelector;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsDescendantSelectorImpl = { 2, "DescendantSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 7, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsDescendantSelectorImpl = { 2, "DescendantSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 8, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComSteadystateCssParserSelectorsDescendantSelectorImpl;
 }
 

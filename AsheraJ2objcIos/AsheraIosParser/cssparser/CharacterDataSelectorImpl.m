@@ -55,6 +55,12 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsCharacterDataSelector
   return [self getData];
 }
 
+
+#line 69
+- (NSString *)getRegEx {
+  return nil;
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "setDataWithNSString:", "setData", "V", 0x1, NULL, NULL },
@@ -62,12 +68,13 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsCharacterDataSelector
     { "getSelectorType", NULL, "S", 0x1, NULL, NULL },
     { "getData", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "getRegEx", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComSteadystateCssParserSelectorsCharacterDataSelectorImpl_serialVersionUID },
     { "data__", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsCharacterDataSelectorImpl = { 2, "CharacterDataSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 5, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsCharacterDataSelectorImpl = { 2, "CharacterDataSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 6, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComSteadystateCssParserSelectorsCharacterDataSelectorImpl;
 }
 

@@ -21,8 +21,9 @@
   static const J2ObjcMethodInfo methods[] = {
     { "getLength", NULL, "I", 0x401, NULL, NULL },
     { "itemWithInt:", "item", "Lrepackaged.org.w3c.css.sac.Selector;", 0x401, NULL, NULL },
+    { "getRegEx", NULL, "Ljava.lang.String;", 0x401, NULL, NULL },
   };
-  static const J2ObjcClassInfo _RepackagedOrgW3cCssSacSelectorList = { 2, "SelectorList", "repackaged.org.w3c.css.sac", NULL, 0x609, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _RepackagedOrgW3cCssSacSelectorList = { 2, "SelectorList", "repackaged.org.w3c.css.sac", NULL, 0x609, 3, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_RepackagedOrgW3cCssSacSelectorList;
 }
 

@@ -28,6 +28,8 @@ withRepackagedOrgW3cCssSacSimpleSelector:(id<RepackagedOrgW3cCssSacSimpleSelecto
 
 - (jshort)getNodeType;
 
+- (NSString *)getRegEx;
+
 - (id<RepackagedOrgW3cCssSacSelector>)getSelector;
 
 - (jshort)getSelectorType;

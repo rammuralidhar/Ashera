@@ -29,6 +29,8 @@
 
 - (jint)getLength;
 
+- (NSString *)getRegEx;
+
 - (id<JavaUtilList>)getSelectors;
 
 - (id<RepackagedOrgW3cCssSacSelector>)itemWithInt:(jint)index;

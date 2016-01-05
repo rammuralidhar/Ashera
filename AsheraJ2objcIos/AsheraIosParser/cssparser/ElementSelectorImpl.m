@@ -5,9 +5,12 @@
 
 
 #include "ElementSelectorImpl.h"
+#include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "LocatableImpl.h"
 #include "Selector.h"
+#include "java/io/PrintStream.h"
+#include "java/lang/System.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/cssparser/com/steadystate/css/parser/selectors/ElementSelectorImpl.java"
 
@@ -59,6 +62,13 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsElementSelectorImpl, 
   return ([self getLocalName] != nil) ? [self getLocalName] : @"*";
 }
 
+
+#line 72
+- (NSString *)getRegEx {
+  [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$$", @"localName:   ", localName__)];
+  return NSString_formatWithNSString_withNSObjectArray_(RepackagedOrgW3cCssSacSelector_get_SIMPLE_ID_CLASS_REGEX_(), [IOSObjectArray newArrayWithObjects:(id[]){ localName__, @"" } count:2 type:NSObject_class_()]);
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "setLocalNameWithNSString:", "setLocalName", "V", 0x1, NULL, NULL },
@@ -67,12 +77,13 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsElementSelectorImpl, 
     { "getNamespaceURI", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "getLocalName", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "getRegEx", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID_", NULL, 0x1a, "J", NULL, NULL, .constantValue.asLong = ComSteadystateCssParserSelectorsElementSelectorImpl_serialVersionUID },
     { "localName__", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsElementSelectorImpl = { 2, "ElementSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 6, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComSteadystateCssParserSelectorsElementSelectorImpl = { 2, "ElementSelectorImpl", "com.steadystate.css.parser.selectors", NULL, 0x1, 7, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComSteadystateCssParserSelectorsElementSelectorImpl;
 }
 
