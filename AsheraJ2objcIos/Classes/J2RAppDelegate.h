@@ -16,8 +16,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AsheraIosParser/CssParserFactory.h>
-#import <AsheraIosParser/CssParser.h>
 
 @class J2RViewController;
 
@@ -25,7 +23,5 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) J2RViewController *viewController;
-@property (strong)  id<ComAsheraAndroidParserFactoryCssParser> parser;
-@property (strong)  id<JavaUtilMap> result1;
 
 @end

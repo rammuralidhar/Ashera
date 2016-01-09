@@ -37,6 +37,10 @@
 		0683A314163DE1C800407C3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0683A313163DE1C800407C3A /* CoreGraphics.framework */; };
 		277460021BDA93BB00BAFD75 /* prefixes in Resources */ = {isa = PBXBuildFile; fileRef = 277460001BDA93BB00BAFD75 /* prefixes */; };
 		27746AEF1BDB59EC00BAFD75 /* libAsheraIosParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277463991BDB318300BAFD75 /* libAsheraIosParser.a */; };
+		27E701441C40AE1B0043E295 /* LabelImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E701421C40AE1B0043E295 /* LabelImpl.m */; };
+		27E7014A1C40BF4E0043E295 /* ComponentImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E701491C40BF4E0043E295 /* ComponentImpl.m */; };
+		27E701501C40C8440043E295 /* HtmlViewerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E7014F1C40C8440043E295 /* HtmlViewerUtils.m */; };
+		27E7015B1C40CE1F0043E295 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 27E7015A1C40CE1F0043E295 /* www */; };
 		3D9F90491934DA2F00738699 /* J2RViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F90451934DA2F00738699 /* J2RViewController_iPad.xib */; };
 		3D9F904A1934DA2F00738699 /* J2RViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F90471934DA2F00738699 /* J2RViewController_iPhone.xib */; };
 /* End PBXBuildFile section */
@@ -130,6 +134,13 @@
 		0683A313163DE1C800407C3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		277460001BDA93BB00BAFD75 /* prefixes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prefixes; sourceTree = "<group>"; };
 		277463931BDB318200BAFD75 /* AsheraIosParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AsheraIosParser.xcodeproj; path = AsheraIosParser/AsheraIosParser.xcodeproj; sourceTree = "<group>"; };
+		27E7013F1C40AE1B0043E295 /* HtmlViewerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HtmlViewerUtils.h; path = AsheraIosParser/src/HtmlViewerUtils.h; sourceTree = "<group>"; };
+		27E701411C40AE1B0043E295 /* LabelImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelImpl.h; path = AsheraIosParser/src/LabelImpl.h; sourceTree = "<group>"; };
+		27E701421C40AE1B0043E295 /* LabelImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelImpl.m; path = AsheraIosParser/src/LabelImpl.m; sourceTree = "<group>"; };
+		27E701481C40BF4E0043E295 /* ComponentImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComponentImpl.h; path = AsheraIosParser/src/ComponentImpl.h; sourceTree = "<group>"; };
+		27E701491C40BF4E0043E295 /* ComponentImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComponentImpl.m; path = AsheraIosParser/src/ComponentImpl.m; sourceTree = "<group>"; };
+		27E7014F1C40C8440043E295 /* HtmlViewerUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HtmlViewerUtils.m; path = AsheraIosParser/src/HtmlViewerUtils.m; sourceTree = "<group>"; };
+		27E7015A1C40CE1F0043E295 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		3D9F90461934DA2F00738699 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Classes/en.lproj/J2RViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
 		3D9F90481934DA2F00738699 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Classes/en.lproj/J2RViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -203,6 +214,8 @@
 		0683A300163DE1C800407C3A = {
 			isa = PBXGroup;
 			children = (
+				27E701451C40BCA20043E295 /* assets */,
+				27E7013E1C40ADFF0043E295 /* widgets */,
 				277463931BDB318200BAFD75 /* AsheraIosParser.xcodeproj */,
 				27745FFE1BDA93BA00BAFD75 /* j2objc */,
 				064E070718E90A3600F5DF6B /* Settings.xcconfig */,
@@ -277,6 +290,27 @@
 				2774639B1BDB318300BAFD75 /* AsheraIosParserTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		27E7013E1C40ADFF0043E295 /* widgets */ = {
+			isa = PBXGroup;
+			children = (
+				27E7014F1C40C8440043E295 /* HtmlViewerUtils.m */,
+				27E701481C40BF4E0043E295 /* ComponentImpl.h */,
+				27E701491C40BF4E0043E295 /* ComponentImpl.m */,
+				27E7013F1C40AE1B0043E295 /* HtmlViewerUtils.h */,
+				27E701411C40AE1B0043E295 /* LabelImpl.h */,
+				27E701421C40AE1B0043E295 /* LabelImpl.m */,
+			);
+			name = widgets;
+			sourceTree = "<group>";
+		};
+		27E701451C40BCA20043E295 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				27E7015A1C40CE1F0043E295 /* www */,
+			);
+			name = assets;
 			sourceTree = "<group>";
 		};
 		3D441D721934BE230063E6FD /* Resources */ = {
@@ -376,6 +410,7 @@
 				064E071518E90A4B00F5DF6B /* empty-square.png in Resources */,
 				3D9F90491934DA2F00738699 /* J2RViewController_iPad.xib in Resources */,
 				064E071618E90A4B00F5DF6B /* reversi.png in Resources */,
+				27E7015B1C40CE1F0043E295 /* www in Resources */,
 				3D9F904A1934DA2F00738699 /* J2RViewController_iPhone.xib in Resources */,
 				064E071A18E90A4B00F5DF6B /* white-stone.png in Resources */,
 				064E073818E90BD400F5DF6B /* InfoPlist.strings in Resources */,
@@ -401,15 +436,18 @@
 				064E074318E90BD400F5DF6B /* Engine.java in Sources */,
 				064E074818E90BD400F5DF6B /* Score.java in Sources */,
 				064E074518E90BD400F5DF6B /* Move.java in Sources */,
+				27E701501C40C8440043E295 /* HtmlViewerUtils.m in Sources */,
 				064E073F18E90BD400F5DF6B /* J2RViewController.m in Sources */,
 				064E073E18E90BD400F5DF6B /* J2RSquare.m in Sources */,
 				064E074118E90BD400F5DF6B /* CommandInterface.java in Sources */,
+				27E701441C40AE1B0043E295 /* LabelImpl.m in Sources */,
 				064E073B18E90BD400F5DF6B /* J2RAppDelegate.m in Sources */,
 				064E074618E90BD400F5DF6B /* Position.java in Sources */,
 				064E074918E90BD400F5DF6B /* SuperEngine.java in Sources */,
 				064E074018E90BD400F5DF6B /* main.m in Sources */,
 				064E074218E90BD400F5DF6B /* CommandInterfaceListener.java in Sources */,
 				064E074418E90BD400F5DF6B /* Game.java in Sources */,
+				27E7014A1C40BF4E0043E295 /* ComponentImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
