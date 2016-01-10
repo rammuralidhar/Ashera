@@ -698,8 +698,6 @@
 		274720B51C423FC00058F1D7 /* IBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720921C423FC00058F1D7 /* IBody.m */; };
 		274720B61C423FC00058F1D7 /* IButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720941C423FC00058F1D7 /* IButton.m */; };
 		274720B71C423FC00058F1D7 /* IHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720961C423FC00058F1D7 /* IHtml.m */; };
-		274720B81C423FC00058F1D7 /* ILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720981C423FC00058F1D7 /* ILabel.m */; };
-		274720B91C423FC00058F1D7 /* ILinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747209A1C423FC00058F1D7 /* ILinearLayout.m */; };
 		274720BA1C423FC00058F1D7 /* ILink.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747209C1C423FC00058F1D7 /* ILink.m */; };
 		274720BB1C423FC00058F1D7 /* IStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747209E1C423FC00058F1D7 /* IStyle.m */; };
 		274720BC1C423FC00058F1D7 /* IsWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720A01C423FC00058F1D7 /* IsWidget.m */; };
@@ -735,9 +733,7 @@
 		274720DA1C423FD80058F1D7 /* IHtml.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720951C423FC00058F1D7 /* IHtml.h */; };
 		274720DB1C423FD80058F1D7 /* IHtml.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720961C423FC00058F1D7 /* IHtml.m */; };
 		274720DC1C423FD80058F1D7 /* ILabel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720971C423FC00058F1D7 /* ILabel.h */; };
-		274720DD1C423FD80058F1D7 /* ILabel.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720981C423FC00058F1D7 /* ILabel.m */; };
 		274720DE1C423FD80058F1D7 /* ILinearLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720991C423FC00058F1D7 /* ILinearLayout.h */; };
-		274720DF1C423FD80058F1D7 /* ILinearLayout.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209A1C423FC00058F1D7 /* ILinearLayout.m */; };
 		274720E01C423FD80058F1D7 /* ILink.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209B1C423FC00058F1D7 /* ILink.h */; };
 		274720E11C423FD80058F1D7 /* ILink.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209C1C423FC00058F1D7 /* ILink.m */; };
 		274720E21C423FD80058F1D7 /* IStyle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209D1C423FC00058F1D7 /* IStyle.h */; };
@@ -1303,9 +1299,7 @@
 				274720DA1C423FD80058F1D7 /* IHtml.h in CopyFiles */,
 				274720DB1C423FD80058F1D7 /* IHtml.m in CopyFiles */,
 				274720DC1C423FD80058F1D7 /* ILabel.h in CopyFiles */,
-				274720DD1C423FD80058F1D7 /* ILabel.m in CopyFiles */,
 				274720DE1C423FD80058F1D7 /* ILinearLayout.h in CopyFiles */,
-				274720DF1C423FD80058F1D7 /* ILinearLayout.m in CopyFiles */,
 				274720E01C423FD80058F1D7 /* ILink.h in CopyFiles */,
 				274720E11C423FD80058F1D7 /* ILink.m in CopyFiles */,
 				274720E21C423FD80058F1D7 /* IStyle.h in CopyFiles */,
@@ -2652,9 +2646,7 @@
 		274720951C423FC00058F1D7 /* IHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHtml.h; sourceTree = "<group>"; };
 		274720961C423FC00058F1D7 /* IHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHtml.m; sourceTree = "<group>"; };
 		274720971C423FC00058F1D7 /* ILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILabel.h; sourceTree = "<group>"; };
-		274720981C423FC00058F1D7 /* ILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILabel.m; sourceTree = "<group>"; };
 		274720991C423FC00058F1D7 /* ILinearLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILinearLayout.h; sourceTree = "<group>"; };
-		2747209A1C423FC00058F1D7 /* ILinearLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILinearLayout.m; sourceTree = "<group>"; };
 		2747209B1C423FC00058F1D7 /* ILink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILink.h; sourceTree = "<group>"; };
 		2747209C1C423FC00058F1D7 /* ILink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILink.m; sourceTree = "<group>"; };
 		2747209D1C423FC00058F1D7 /* IStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IStyle.h; sourceTree = "<group>"; };
@@ -3294,9 +3286,7 @@
 				274720951C423FC00058F1D7 /* IHtml.h */,
 				274720961C423FC00058F1D7 /* IHtml.m */,
 				274720971C423FC00058F1D7 /* ILabel.h */,
-				274720981C423FC00058F1D7 /* ILabel.m */,
 				274720991C423FC00058F1D7 /* ILinearLayout.h */,
-				2747209A1C423FC00058F1D7 /* ILinearLayout.m */,
 				2747209B1C423FC00058F1D7 /* ILink.h */,
 				2747209C1C423FC00058F1D7 /* ILink.m */,
 				2747209D1C423FC00058F1D7 /* IStyle.h */,
@@ -3853,7 +3843,6 @@
 				2708F8261C39963200FFB46F /* AccessibilityIterators.m in Sources */,
 				2708F8271C39963200FFB46F /* AccessibilityManager.h in Sources */,
 				2708F8281C39963200FFB46F /* AccessibilityManager.m in Sources */,
-				274720B81C423FC00058F1D7 /* ILabel.m in Sources */,
 				2708F8291C39963200FFB46F /* AccessibilityNodeInfo.h in Sources */,
 				2708F82A1C39963200FFB46F /* AccessibilityNodeInfo.m in Sources */,
 				2708F82B1C39963200FFB46F /* AccessibilityNodeProvider.h in Sources */,
@@ -4006,7 +3995,6 @@
 				2708F8A51C39963200FFB46F /* EmptyArray.h in Sources */,
 				2708F8A61C39963200FFB46F /* EmptyArray.m in Sources */,
 				2708F8A71C39963200FFB46F /* EventLogTags.h in Sources */,
-				274720B91C423FC00058F1D7 /* ILinearLayout.m in Sources */,
 				2708F8A81C39963200FFB46F /* EventLogTags.m in Sources */,
 				2708F8A91C39963200FFB46F /* ExceptionUtils.h in Sources */,
 				270B6D4C1C3B60F2002CB39A /* DocumentStyle.m in Sources */,

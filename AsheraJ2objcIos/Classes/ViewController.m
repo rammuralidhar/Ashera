@@ -13,7 +13,7 @@
 #import <AsheraIosParser/WidgetFactory.h>
 #import "HtmlViewerUtils.h"
 #import <IOSClass.h>
-#include <AsheraIosParser/Widget.h>
+#include <AsheraIosParser/IWidget.h>
 
 @interface ViewController ()
 

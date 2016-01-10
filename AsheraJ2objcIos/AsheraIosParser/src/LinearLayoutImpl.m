@@ -90,6 +90,7 @@ UIView* uiView;
 }
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
+    uiView = [UIView new];
 }
 
 
