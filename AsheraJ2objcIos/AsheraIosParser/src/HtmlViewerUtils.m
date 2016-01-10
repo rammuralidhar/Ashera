@@ -4,13 +4,14 @@
 //
 
 
-#include "AsheraIosParser/ComponentFactory.h"
+#include "ComponentFactory.h"
 #include "ComponentImpl.h"
 #include "HtmlViewerUtils.h"
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "LabelImpl.h"
-#include "AsheraIosParser/WidgetFactory.h"
+#include "LinearLayoutImpl.h"
+#include "WidgetFactory.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/HtmlViewerUtils.java"
 
@@ -31,6 +32,7 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
       
 #line 8
       ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"label", IosLabelImpl_class_());
+      ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"linear-layout", IosLinearLayoutImpl_class_());
       ComAsheraAndroidComponentFactoryComponentFactory_register__WithComAsheraAndroidComponentFactoryComponent_(new_IosComponentImpl_init());
     }
     J2OBJC_SET_INITIALIZED(IosHtmlViewerUtils)

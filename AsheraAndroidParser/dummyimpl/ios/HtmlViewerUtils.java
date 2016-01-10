@@ -6,6 +6,7 @@ import com.ashera.android.widget.factory.WidgetFactory;
 public class HtmlViewerUtils {
 	static {
 		WidgetFactory.register("label", LabelImpl.class);
+		WidgetFactory.register("linear-layout", LinearLayoutImpl.class);
 		ComponentFactory.register(new ComponentImpl());
 	}
 	

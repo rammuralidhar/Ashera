@@ -6,7 +6,7 @@
 #ifndef _IosComponentImpl_H_
 #define _IosComponentImpl_H_
 
-#include "AsheraIosParser/Component.h"
+#include "Component.h"
 #include "J2ObjC_header.h"
 
 @protocol JavaUtilMap;

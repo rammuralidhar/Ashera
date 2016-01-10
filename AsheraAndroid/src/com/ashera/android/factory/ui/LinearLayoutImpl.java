@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 
-import com.ashera.android.widget.factory.LinearLayout;
+import com.ashera.android.widget.factory.ILinearLayout;
 
-public class LinearLayoutImpl extends BaseStyledHasWidgets implements LinearLayout{
+public class LinearLayoutImpl extends BaseStyledHasWidgets implements ILinearLayout{
 	private Context context;
 	private android.widget.LinearLayout linearLayout;
 	public LinearLayoutImpl() {

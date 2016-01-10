@@ -560,7 +560,6 @@
 		270B6BBC1C3B5F69002CB39A /* HtmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6B9C1C3B5F69002CB39A /* HtmlParser.m */; };
 		270B6BBD1C3B5F69002CB39A /* IsWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6B9E1C3B5F69002CB39A /* IsWidget.m */; };
 		270B6BBF1C3B5F69002CB39A /* LabelSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6BA21C3B5F69002CB39A /* LabelSetter.m */; };
-		270B6BC01C3B5F69002CB39A /* LinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6BA41C3B5F69002CB39A /* LinearLayout.m */; };
 		270B6BC11C3B5F69002CB39A /* LinearlayoutSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6BA61C3B5F69002CB39A /* LinearlayoutSetter.m */; };
 		270B6BC21C3B5F69002CB39A /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6BA81C3B5F69002CB39A /* Link.m */; };
 		270B6BC31C3B5F69002CB39A /* PageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6BAA1C3B5F69002CB39A /* PageData.m */; };
@@ -595,8 +594,6 @@
 		270B6BE11C3B5F86002CB39A /* Label.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 270B6B9F1C3B5F69002CB39A /* Label.h */; };
 		270B6BE31C3B5F86002CB39A /* LabelSetter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 270B6BA11C3B5F69002CB39A /* LabelSetter.h */; };
 		270B6BE41C3B5F86002CB39A /* LabelSetter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 270B6BA21C3B5F69002CB39A /* LabelSetter.m */; };
-		270B6BE51C3B5F86002CB39A /* LinearLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 270B6BA31C3B5F69002CB39A /* LinearLayout.h */; };
-		270B6BE61C3B5F86002CB39A /* LinearLayout.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 270B6BA41C3B5F69002CB39A /* LinearLayout.m */; };
 		270B6BE71C3B5F86002CB39A /* LinearlayoutSetter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 270B6BA51C3B5F69002CB39A /* LinearlayoutSetter.h */; };
 		270B6BE81C3B5F86002CB39A /* LinearlayoutSetter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 270B6BA61C3B5F69002CB39A /* LinearlayoutSetter.m */; };
 		270B6BE91C3B5F86002CB39A /* Link.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 270B6BA71C3B5F69002CB39A /* Link.h */; };
@@ -751,6 +748,511 @@
 		270B6D981C3B60F2002CB39A /* UserDataConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6D0A1C3B60F2002CB39A /* UserDataConstants.m */; };
 		270B6D991C3B60F2002CB39A /* ViewCSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6D0C1C3B60F2002CB39A /* ViewCSS.m */; };
 		270B6D9C1C3B6468002CB39A /* TagSoupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6D9B1C3B6468002CB39A /* TagSoupParser.m */; };
+		27715DC91C4185EE00F6DD5F /* AbsSavedState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4271C3982CC00FFB46F /* AbsSavedState.h */; };
+		27715DCA1C4185EE00F6DD5F /* AbsSavedState.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4281C3982CC00FFB46F /* AbsSavedState.m */; };
+		27715DCB1C4185EE00F6DD5F /* AbstractMessageParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4291C3982CC00FFB46F /* AbstractMessageParser.h */; };
+		27715DCC1C4185EE00F6DD5F /* AbstractMessageParser.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F42A1C3982CC00FFB46F /* AbstractMessageParser.m */; };
+		27715DCD1C4185EE00F6DD5F /* AccessibilityEvent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F42B1C3982CC00FFB46F /* AccessibilityEvent.h */; };
+		27715DCE1C4185EE00F6DD5F /* AccessibilityEvent.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F42C1C3982CC00FFB46F /* AccessibilityEvent.m */; };
+		27715DCF1C4185EE00F6DD5F /* AccessibilityEventSource.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F42D1C3982CC00FFB46F /* AccessibilityEventSource.h */; };
+		27715DD01C4185EE00F6DD5F /* AccessibilityEventSource.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F42E1C3982CC00FFB46F /* AccessibilityEventSource.m */; };
+		27715DD11C4185EE00F6DD5F /* AccessibilityInteractionClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F42F1C3982CC00FFB46F /* AccessibilityInteractionClient.h */; };
+		27715DD21C4185EE00F6DD5F /* AccessibilityInteractionClient.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4301C3982CC00FFB46F /* AccessibilityInteractionClient.m */; };
+		27715DD31C4185EE00F6DD5F /* AccessibilityIterators.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4311C3982CC00FFB46F /* AccessibilityIterators.h */; };
+		27715DD41C4185EE00F6DD5F /* AccessibilityIterators.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4321C3982CC00FFB46F /* AccessibilityIterators.m */; };
+		27715DD51C4185EE00F6DD5F /* AccessibilityManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4331C3982CC00FFB46F /* AccessibilityManager.h */; };
+		27715DD61C4185EE00F6DD5F /* AccessibilityManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4341C3982CC00FFB46F /* AccessibilityManager.m */; };
+		27715DD71C4185EE00F6DD5F /* AccessibilityNodeInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4351C3982CC00FFB46F /* AccessibilityNodeInfo.h */; };
+		27715DD81C4185EE00F6DD5F /* AccessibilityNodeInfo.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4361C3982CC00FFB46F /* AccessibilityNodeInfo.m */; };
+		27715DD91C4185EE00F6DD5F /* AccessibilityNodeProvider.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4371C3982CC00FFB46F /* AccessibilityNodeProvider.h */; };
+		27715DDA1C4185EE00F6DD5F /* AccessibilityNodeProvider.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4381C3982CC00FFB46F /* AccessibilityNodeProvider.m */; };
+		27715DDB1C4185EE00F6DD5F /* AccessibilityRecord.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4391C3982CC00FFB46F /* AccessibilityRecord.h */; };
+		27715DDC1C4185EE00F6DD5F /* AccessibilityRecord.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F43A1C3982CC00FFB46F /* AccessibilityRecord.m */; };
+		27715DDD1C4185EE00F6DD5F /* AccessibilityServiceInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F43B1C3982CC00FFB46F /* AccessibilityServiceInfo.h */; };
+		27715DDE1C4185EE00F6DD5F /* AccessibilityServiceInfo.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F43C1C3982CC00FFB46F /* AccessibilityServiceInfo.m */; };
+		27715DDF1C4185EE00F6DD5F /* AccessibilityWindowInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F43D1C3982CC00FFB46F /* AccessibilityWindowInfo.h */; };
+		27715DE01C4185EE00F6DD5F /* AccessibilityWindowInfo.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F43E1C3982CC00FFB46F /* AccessibilityWindowInfo.m */; };
+		27715DE11C4185EE00F6DD5F /* ActionMode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F43F1C3982CC00FFB46F /* ActionMode.h */; };
+		27715DE21C4185EE00F6DD5F /* ActionMode.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4401C3982CC00FFB46F /* ActionMode.m */; };
+		27715DE31C4185EE00F6DD5F /* AndroidException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4411C3982CC00FFB46F /* AndroidException.h */; };
+		27715DE41C4185EE00F6DD5F /* AndroidException.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4421C3982CC00FFB46F /* AndroidException.m */; };
+		27715DE51C4185EE00F6DD5F /* AndroidRuntimeException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4431C3982CC00FFB46F /* AndroidRuntimeException.h */; };
+		27715DE61C4185EE00F6DD5F /* AndroidRuntimeException.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4441C3982CC00FFB46F /* AndroidRuntimeException.m */; };
+		27715DE71C4185EE00F6DD5F /* Animation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4451C3982CC00FFB46F /* Animation.h */; };
+		27715DE81C4185EE00F6DD5F /* Animation.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4461C3982CC00FFB46F /* Animation.m */; };
+		27715DE91C4185EE00F6DD5F /* AnimationUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4471C3982CC00FFB46F /* AnimationUtils.h */; };
+		27715DEA1C4185EE00F6DD5F /* AnimationUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4481C3982CC00FFB46F /* AnimationUtils.m */; };
+		27715DEB1C4185EE00F6DD5F /* AnimatorInflater.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4491C3982CC00FFB46F /* AnimatorInflater.h */; };
+		27715DEC1C4185EE00F6DD5F /* AnimatorInflater.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F44A1C3982CC00FFB46F /* AnimatorInflater.m */; };
+		27715DED1C4185EE00F6DD5F /* AnimatorRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F44B1C3982CC00FFB46F /* AnimatorRes.h */; };
+		27715DEE1C4185EE00F6DD5F /* AnimatorRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F44C1C3982CC00FFB46F /* AnimatorRes.m */; };
+		27715DEF1C4185EE00F6DD5F /* AnimRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F44D1C3982CC00FFB46F /* AnimRes.h */; };
+		27715DF01C4185EE00F6DD5F /* AnimRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F44E1C3982CC00FFB46F /* AnimRes.m */; };
+		27715DF11C4185EE00F6DD5F /* AnyRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F44F1C3982CC00FFB46F /* AnyRes.h */; };
+		27715DF21C4185EE00F6DD5F /* AnyRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4501C3982CC00FFB46F /* AnyRes.m */; };
+		27715DF31C4185EE00F6DD5F /* ApplicationInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4511C3982CC00FFB46F /* ApplicationInfo.h */; };
+		27715DF41C4185EE00F6DD5F /* ApplicationInfo.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4521C3982CC00FFB46F /* ApplicationInfo.m */; };
+		27715DF51C4185EE00F6DD5F /* ArrayMap.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4531C3982CC00FFB46F /* ArrayMap.h */; };
+		27715DF61C4185EE00F6DD5F /* ArrayMap.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4541C3982CC00FFB46F /* ArrayMap.m */; };
+		27715DF71C4185EE00F6DD5F /* ArrayRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4551C3982CC00FFB46F /* ArrayRes.h */; };
+		27715DF81C4185EE00F6DD5F /* ArrayRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4561C3982CC00FFB46F /* ArrayRes.m */; };
+		27715DF91C4185EE00F6DD5F /* ArraySet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4571C3982CC00FFB46F /* ArraySet.h */; };
+		27715DFA1C4185EE00F6DD5F /* ArraySet.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4581C3982CC00FFB46F /* ArraySet.m */; };
+		27715DFB1C4185EE00F6DD5F /* ArrayUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4591C3982CC00FFB46F /* ArrayUtils.h */; };
+		27715DFC1C4185EE00F6DD5F /* ArrayUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F45A1C3982CC00FFB46F /* ArrayUtils.m */; };
+		27715DFD1C4185EE00F6DD5F /* AttributeSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F45B1C3982CC00FFB46F /* AttributeSet.h */; };
+		27715DFE1C4185EE00F6DD5F /* AttributeSet.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F45C1C3982CC00FFB46F /* AttributeSet.m */; };
+		27715DFF1C4185EE00F6DD5F /* AttrRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F45D1C3982CC00FFB46F /* AttrRes.h */; };
+		27715E001C4185EE00F6DD5F /* AttrRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F45E1C3982CC00FFB46F /* AttrRes.m */; };
+		27715E011C4185EE00F6DD5F /* Base64.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F45F1C3982CC00FFB46F /* Base64.h */; };
+		27715E021C4185EE00F6DD5F /* Base64.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4601C3982CC00FFB46F /* Base64.m */; };
+		27715E031C4185EE00F6DD5F /* Base64DataException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4611C3982CC00FFB46F /* Base64DataException.h */; };
+		27715E041C4185EE00F6DD5F /* Base64DataException.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4621C3982CC00FFB46F /* Base64DataException.m */; };
+		27715E051C4185EE00F6DD5F /* Base64InputStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4631C3982CC00FFB46F /* Base64InputStream.h */; };
+		27715E061C4185EE00F6DD5F /* Base64InputStream.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4641C3982CC00FFB46F /* Base64InputStream.m */; };
+		27715E071C4185EE00F6DD5F /* Base64OutputStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4651C3982CC00FFB46F /* Base64OutputStream.h */; };
+		27715E081C4185EE00F6DD5F /* Base64OutputStream.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4661C3982CC00FFB46F /* Base64OutputStream.m */; };
+		27715E091C4185EE00F6DD5F /* Binder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4691C3982CC00FFB46F /* Binder.h */; };
+		27715E0A1C4185EE00F6DD5F /* Binder.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F46A1C3982CC00FFB46F /* Binder.m */; };
+		27715E0B1C4185EE00F6DD5F /* BinderThread.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F46B1C3982CC00FFB46F /* BinderThread.h */; };
+		27715E0C1C4185EE00F6DD5F /* BinderThread.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F46C1C3982CC00FFB46F /* BinderThread.m */; };
+		27715E0D1C4185EE00F6DD5F /* Bitmap.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F46D1C3982CC00FFB46F /* Bitmap.h */; };
+		27715E0E1C4185EE00F6DD5F /* Bitmap.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F46E1C3982CC00FFB46F /* Bitmap.m */; };
+		27715E0F1C4185EE00F6DD5F /* BoolRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F46F1C3982CC00FFB46F /* BoolRes.h */; };
+		27715E101C4185EE00F6DD5F /* BoolRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4701C3982CC00FFB46F /* BoolRes.m */; };
+		27715E111C4185EE00F6DD5F /* Build.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4711C3982CC00FFB46F /* Build.h */; };
+		27715E121C4185EE00F6DD5F /* Build.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4721C3982CC00FFB46F /* Build.m */; };
+		27715E131C4185EE00F6DD5F /* Bundle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4731C3982CC00FFB46F /* Bundle.h */; };
+		27715E141C4185EE00F6DD5F /* Bundle.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4741C3982CC00FFB46F /* Bundle.m */; };
+		27715E151C4185EE00F6DD5F /* CallSuper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4751C3982CC00FFB46F /* CallSuper.h */; };
+		27715E161C4185EE00F6DD5F /* CallSuper.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4761C3982CC00FFB46F /* CallSuper.m */; };
+		27715E171C4185EE00F6DD5F /* Canvas.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4771C3982CC00FFB46F /* Canvas.h */; };
+		27715E181C4185EE00F6DD5F /* Canvas.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4781C3982CC00FFB46F /* Canvas.m */; };
+		27715E191C4185EE00F6DD5F /* Checkable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4791C3982CC00FFB46F /* Checkable.h */; };
+		27715E1A1C4185EE00F6DD5F /* Checkable.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F47A1C3982CC00FFB46F /* Checkable.m */; };
+		27715E1B1C4185EE00F6DD5F /* CheckResult.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F47B1C3982CC00FFB46F /* CheckResult.h */; };
+		27715E1C1C4185EE00F6DD5F /* CheckResult.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F47C1C3982CC00FFB46F /* CheckResult.m */; };
+		27715E1D1C4185EE00F6DD5F /* Choreographer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F47D1C3982CC00FFB46F /* Choreographer.h */; };
+		27715E1E1C4185EE00F6DD5F /* Choreographer.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F47E1C3982CC00FFB46F /* Choreographer.m */; };
+		27715E1F1C4185EE00F6DD5F /* ClipData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F47F1C3982CC00FFB46F /* ClipData.h */; };
+		27715E201C4185EE00F6DD5F /* ClipData.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4801C3982CC00FFB46F /* ClipData.m */; };
+		27715E211C4185EE00F6DD5F /* Color.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4811C3982CC00FFB46F /* Color.h */; };
+		27715E221C4185EE00F6DD5F /* Color.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4821C3982CC00FFB46F /* Color.m */; };
+		27715E231C4185EE00F6DD5F /* ColorDrawable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4831C3982CC00FFB46F /* ColorDrawable.h */; };
+		27715E241C4185EE00F6DD5F /* ColorDrawable.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4841C3982CC00FFB46F /* ColorDrawable.m */; };
+		27715E251C4185EE00F6DD5F /* ColorFilter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4851C3982CC00FFB46F /* ColorFilter.h */; };
+		27715E261C4185EE00F6DD5F /* ColorFilter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4861C3982CC00FFB46F /* ColorFilter.m */; };
+		27715E271C4185EE00F6DD5F /* ColorInt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4871C3982CC00FFB46F /* ColorInt.h */; };
+		27715E281C4185EE00F6DD5F /* ColorInt.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4881C3982CC00FFB46F /* ColorInt.m */; };
+		27715E291C4185EE00F6DD5F /* ColorMatrix.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4891C3982CC00FFB46F /* ColorMatrix.h */; };
+		27715E2A1C4185EE00F6DD5F /* ColorMatrix.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F48A1C3982CC00FFB46F /* ColorMatrix.m */; };
+		27715E2B1C4185EE00F6DD5F /* ColorRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F48B1C3982CC00FFB46F /* ColorRes.h */; };
+		27715E2C1C4185EE00F6DD5F /* ColorRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F48C1C3982CC00FFB46F /* ColorRes.m */; };
+		27715E2D1C4185EE00F6DD5F /* ColorStateList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F48D1C3982CC00FFB46F /* ColorStateList.h */; };
+		27715E2E1C4185EE00F6DD5F /* ColorStateList.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F48E1C3982CC00FFB46F /* ColorStateList.m */; };
+		27715E2F1C4185EE00F6DD5F /* Config.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F48F1C3982CC00FFB46F /* Config.h */; };
+		27715E301C4185EE00F6DD5F /* Config.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4901C3982CC00FFB46F /* Config.m */; };
+		27715E311C4185EE00F6DD5F /* Configuration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4911C3982CC00FFB46F /* Configuration.h */; };
+		27715E321C4185EE00F6DD5F /* Configuration.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4921C3982CC00FFB46F /* Configuration.m */; };
+		27715E331C4185EE00F6DD5F /* ContainerHelpers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4931C3982CC00FFB46F /* ContainerHelpers.h */; };
+		27715E341C4185EE00F6DD5F /* ContainerHelpers.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4941C3982CC00FFB46F /* ContainerHelpers.m */; };
+		27715E351C4185EE00F6DD5F /* Context.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4951C3982CC00FFB46F /* Context.h */; };
+		27715E361C4185EE00F6DD5F /* Context.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4961C3982CC00FFB46F /* Context.m */; };
+		27715E371C4185EE00F6DD5F /* ContextMenu.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4971C3982CC00FFB46F /* ContextMenu.h */; };
+		27715E381C4185EE00F6DD5F /* ContextMenu.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4981C3982CC00FFB46F /* ContextMenu.m */; };
+		27715E391C4185EE00F6DD5F /* ContextWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4991C3982CC00FFB46F /* ContextWrapper.h */; };
+		27715E3A1C4185EE00F6DD5F /* ContextWrapper.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F49A1C3982CC00FFB46F /* ContextWrapper.m */; };
+		27715E3B1C4185EE00F6DD5F /* DayOfMonthCursor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F49B1C3982CC00FFB46F /* DayOfMonthCursor.h */; };
+		27715E3C1C4185EE00F6DD5F /* DayOfMonthCursor.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F49C1C3982CC00FFB46F /* DayOfMonthCursor.m */; };
+		27715E3D1C4185EE00F6DD5F /* DebugUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F49D1C3982CC00FFB46F /* DebugUtils.h */; };
+		27715E3E1C4185EE00F6DD5F /* DebugUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F49E1C3982CC00FFB46F /* DebugUtils.m */; };
+		27715E3F1C4185EE00F6DD5F /* DimenRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F49F1C3982CC00FFB46F /* DimenRes.h */; };
+		27715E401C4185EE00F6DD5F /* DimenRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A01C3982CC00FFB46F /* DimenRes.m */; };
+		27715E411C4185EE00F6DD5F /* Display.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A11C3982CC00FFB46F /* Display.h */; };
+		27715E421C4185EE00F6DD5F /* Display.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A21C3982CC00FFB46F /* Display.m */; };
+		27715E431C4185EE00F6DD5F /* DisplayListCanvas.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A31C3982CC00FFB46F /* DisplayListCanvas.h */; };
+		27715E441C4185EE00F6DD5F /* DisplayListCanvas.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A41C3982CC00FFB46F /* DisplayListCanvas.m */; };
+		27715E451C4185EE00F6DD5F /* DisplayManagerGlobal.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A51C3982CC00FFB46F /* DisplayManagerGlobal.h */; };
+		27715E461C4185EE00F6DD5F /* DisplayManagerGlobal.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A61C3982CC00FFB46F /* DisplayManagerGlobal.m */; };
+		27715E471C4185EE00F6DD5F /* DisplayMetrics.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A71C3982CC00FFB46F /* DisplayMetrics.h */; };
+		27715E481C4185EE00F6DD5F /* DisplayMetrics.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A81C3982CC00FFB46F /* DisplayMetrics.m */; };
+		27715E491C4185EE00F6DD5F /* DragEvent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4A91C3982CC00FFB46F /* DragEvent.h */; };
+		27715E4A1C4185EE00F6DD5F /* DragEvent.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4AA1C3982CC00FFB46F /* DragEvent.m */; };
+		27715E4B1C4185EE00F6DD5F /* Drawable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4AB1C3982CC00FFB46F /* Drawable.h */; };
+		27715E4C1C4185EE00F6DD5F /* Drawable.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4AC1C3982CC00FFB46F /* Drawable.m */; };
+		27715E4D1C4185EE00F6DD5F /* DrawableRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4AD1C3982CC00FFB46F /* DrawableRes.h */; };
+		27715E4E1C4185EE00F6DD5F /* DrawableRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4AE1C3982CC00FFB46F /* DrawableRes.m */; };
+		27715E4F1C4185EE00F6DD5F /* EditorInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4AF1C3982CC00FFB46F /* EditorInfo.h */; };
+		27715E501C4185EE00F6DD5F /* EditorInfo.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B01C3982CC00FFB46F /* EditorInfo.m */; };
+		27715E511C4185EE00F6DD5F /* EmptyArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B11C3982CC00FFB46F /* EmptyArray.h */; };
+		27715E521C4185EE00F6DD5F /* EmptyArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B21C3982CC00FFB46F /* EmptyArray.m */; };
+		27715E531C4185EE00F6DD5F /* EventLogTags.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B31C3982CC00FFB46F /* EventLogTags.h */; };
+		27715E541C4185EE00F6DD5F /* EventLogTags.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B41C3982CC00FFB46F /* EventLogTags.m */; };
+		27715E551C4185EE00F6DD5F /* ExceptionUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B51C3982CC00FFB46F /* ExceptionUtils.h */; };
+		27715E561C4185EE00F6DD5F /* ExceptionUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B61C3982CC00FFB46F /* ExceptionUtils.m */; };
+		27715E571C4185EE00F6DD5F /* FastImmutableArraySet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B71C3982CC00FFB46F /* FastImmutableArraySet.h */; };
+		27715E581C4185EE00F6DD5F /* FastImmutableArraySet.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B81C3982CC00FFB46F /* FastImmutableArraySet.m */; };
+		27715E591C4185EE00F6DD5F /* FastMath.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4B91C3982CC00FFB46F /* FastMath.h */; };
+		27715E5A1C4185EE00F6DD5F /* FastMath.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4BA1C3982CC00FFB46F /* FastMath.m */; };
+		27715E5B1C4185EE00F6DD5F /* FastPrintWriter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4BB1C3982CC00FFB46F /* FastPrintWriter.h */; };
+		27715E5C1C4185EE00F6DD5F /* FastPrintWriter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4BC1C3982CC00FFB46F /* FastPrintWriter.m */; };
+		27715E5D1C4185EE00F6DD5F /* FloatMath.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4BD1C3982CC00FFB46F /* FloatMath.h */; };
+		27715E5E1C4185EE00F6DD5F /* FloatMath.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4BE1C3982CC00FFB46F /* FloatMath.m */; };
+		27715E5F1C4185EE00F6DD5F /* FloatProperty.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4BF1C3982CC00FFB46F /* FloatProperty.h */; };
+		27715E601C4185EE00F6DD5F /* FloatProperty.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C01C3982CC00FFB46F /* FloatProperty.m */; };
+		27715E611C4185EE00F6DD5F /* FloatRange.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C11C3982CC00FFB46F /* FloatRange.h */; };
+		27715E621C4185EE00F6DD5F /* FloatRange.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C21C3982CC00FFB46F /* FloatRange.m */; };
+		27715E631C4185EE00F6DD5F /* FocusFinder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C31C3982CC00FFB46F /* FocusFinder.h */; };
+		27715E641C4185EE00F6DD5F /* FocusFinder.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C41C3982CC00FFB46F /* FocusFinder.m */; };
+		27715E651C4185EE00F6DD5F /* FractionRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C51C3982CC00FFB46F /* FractionRes.h */; };
+		27715E661C4185EE00F6DD5F /* FractionRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C61C3982CC00FFB46F /* FractionRes.m */; };
+		27715E671C4185EE00F6DD5F /* FrameLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C71C3982CC00FFB46F /* FrameLayout.h */; };
+		27715E681C4185EE00F6DD5F /* FrameLayout.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C81C3982CC00FFB46F /* FrameLayout.m */; };
+		27715E691C4185EE00F6DD5F /* GhostView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4C91C3982CC00FFB46F /* GhostView.h */; };
+		27715E6A1C4185EE00F6DD5F /* GhostView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4CA1C3982CC00FFB46F /* GhostView.m */; };
+		27715E6B1C4185EE00F6DD5F /* Gravity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4CB1C3982CC00FFB46F /* Gravity.h */; };
+		27715E6C1C4185EE00F6DD5F /* Gravity.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4CC1C3982CC00FFB46F /* Gravity.m */; };
+		27715E6D1C4185EE00F6DD5F /* GridLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4CD1C3982CC00FFB46F /* GridLayout.h */; };
+		27715E6E1C4185EE00F6DD5F /* GridLayout.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4CE1C3982CC00FFB46F /* GridLayout.m */; };
+		27715E6F1C4185EE00F6DD5F /* GrowingArrayUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4CF1C3982CC00FFB46F /* GrowingArrayUtils.h */; };
+		27715E701C4185EE00F6DD5F /* GrowingArrayUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D01C3982CC00FFB46F /* GrowingArrayUtils.m */; };
+		27715E711C4185EE00F6DD5F /* Handler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D11C3982CC00FFB46F /* Handler.h */; };
+		27715E721C4185EE00F6DD5F /* Handler.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D21C3982CC00FFB46F /* Handler.m */; };
+		27715E731C4185EE00F6DD5F /* HapticFeedbackConstants.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D31C3982CC00FFB46F /* HapticFeedbackConstants.h */; };
+		27715E741C4185EE00F6DD5F /* HapticFeedbackConstants.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D41C3982CC00FFB46F /* HapticFeedbackConstants.m */; };
+		27715E751C4185EE00F6DD5F /* HardwareLayer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D51C3982CC00FFB46F /* HardwareLayer.h */; };
+		27715E761C4185EE00F6DD5F /* HardwareLayer.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D61C3982CC00FFB46F /* HardwareLayer.m */; };
+		27715E771C4185EE00F6DD5F /* HardwareRenderer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D71C3982CC00FFB46F /* HardwareRenderer.h */; };
+		27715E781C4185EE00F6DD5F /* HardwareRenderer.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D81C3982CC00FFB46F /* HardwareRenderer.m */; };
+		27715E791C4185EE00F6DD5F /* HashCodeHelpers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4D91C3982CC00FFB46F /* HashCodeHelpers.h */; };
+		27715E7A1C4185EE00F6DD5F /* HashCodeHelpers.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4DA1C3982CC00FFB46F /* HashCodeHelpers.m */; };
+		27715E7D1C4185EE00F6DD5F /* IAccessibilityInteractionConnectionCallback.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4DD1C3982CC00FFB46F /* IAccessibilityInteractionConnectionCallback.h */; };
+		27715E7E1C4185EE00F6DD5F /* IAccessibilityInteractionConnectionCallback.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4DE1C3982CC00FFB46F /* IAccessibilityInteractionConnectionCallback.m */; };
+		27715E7F1C4185EE00F6DD5F /* IAccessibilityServiceConnection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4DF1C3982CC00FFB46F /* IAccessibilityServiceConnection.h */; };
+		27715E801C4185EE00F6DD5F /* IAccessibilityServiceConnection.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E01C3982CC00FFB46F /* IAccessibilityServiceConnection.m */; };
+		27715E811C4185EE00F6DD5F /* IBinder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E11C3982CC00FFB46F /* IBinder.h */; };
+		27715E821C4185EE00F6DD5F /* IBinder.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E21C3982CC00FFB46F /* IBinder.m */; };
+		27715E831C4185EE00F6DD5F /* IdRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E31C3982CC00FFB46F /* IdRes.h */; };
+		27715E841C4185EE00F6DD5F /* IdRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E41C3982CC00FFB46F /* IdRes.m */; };
+		27715E851C4185EE00F6DD5F /* ImageSpan.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E51C3982CC00FFB46F /* ImageSpan.h */; };
+		27715E861C4185EE00F6DD5F /* ImageSpan.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E61C3982CC00FFB46F /* ImageSpan.m */; };
+		27715E871C4185EE00F6DD5F /* InputConnection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E71C3982CC00FFB46F /* InputConnection.h */; };
+		27715E881C4185EE00F6DD5F /* InputConnection.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E81C3982CC00FFB46F /* InputConnection.m */; };
+		27715E891C4185EE00F6DD5F /* InputDevice.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4E91C3982CC00FFB46F /* InputDevice.h */; };
+		27715E8A1C4185EE00F6DD5F /* InputDevice.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4EA1C3982CC00FFB46F /* InputDevice.m */; };
+		27715E8B1C4185EE00F6DD5F /* InputEventConsistencyVerifier.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4EB1C3982CC00FFB46F /* InputEventConsistencyVerifier.h */; };
+		27715E8C1C4185EE00F6DD5F /* InputEventConsistencyVerifier.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4EC1C3982CC00FFB46F /* InputEventConsistencyVerifier.m */; };
+		27715E8D1C4185EE00F6DD5F /* InputMethodManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4ED1C3982CC00FFB46F /* InputMethodManager.h */; };
+		27715E8E1C4185EE00F6DD5F /* InputMethodManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4EE1C3982CC00FFB46F /* InputMethodManager.m */; };
+		27715E8F1C4185EE00F6DD5F /* InputType.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4EF1C3982CC00FFB46F /* InputType.h */; };
+		27715E901C4185EE00F6DD5F /* InputType.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F01C3982CC00FFB46F /* InputType.m */; };
+		27715E911C4185EE00F6DD5F /* Insets.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F11C3982CC00FFB46F /* Insets.h */; };
+		27715E921C4185EE00F6DD5F /* Insets.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F21C3982CC00FFB46F /* Insets.m */; };
+		27715E931C4185EE00F6DD5F /* IntArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F31C3982CC00FFB46F /* IntArray.h */; };
+		27715E941C4185EE00F6DD5F /* IntArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F41C3982CC00FFB46F /* IntArray.m */; };
+		27715E951C4185EE00F6DD5F /* IntDef.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F51C3982CC00FFB46F /* IntDef.h */; };
+		27715E961C4185EE00F6DD5F /* IntDef.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F61C3982CC00FFB46F /* IntDef.m */; };
+		27715E971C4185EE00F6DD5F /* IntegerRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F71C3982CC00FFB46F /* IntegerRes.h */; };
+		27715E981C4185EE00F6DD5F /* IntegerRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F81C3982CC00FFB46F /* IntegerRes.m */; };
+		27715E991C4185EE00F6DD5F /* Intent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4F91C3982CC00FFB46F /* Intent.h */; };
+		27715E9A1C4185EE00F6DD5F /* Intent.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4FA1C3982CC00FFB46F /* Intent.m */; };
+		27715E9B1C4185EE00F6DD5F /* Interpolator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4FB1C3982CC00FFB46F /* Interpolator.h */; };
+		27715E9C1C4185EE00F6DD5F /* Interpolator.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4FC1C3982CC00FFB46F /* Interpolator.m */; };
+		27715E9D1C4185EE00F6DD5F /* InterpolatorRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4FD1C3982CC00FFB46F /* InterpolatorRes.h */; };
+		27715E9E1C4185EE00F6DD5F /* InterpolatorRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4FE1C3982CC00FFB46F /* InterpolatorRes.m */; };
+		27715E9F1C4185EE00F6DD5F /* IntProperty.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F4FF1C3982CC00FFB46F /* IntProperty.h */; };
+		27715EA01C4185EE00F6DD5F /* IntProperty.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5001C3982CC00FFB46F /* IntProperty.m */; };
+		27715EA11C4185EE00F6DD5F /* IntRange.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5011C3982CC00FFB46F /* IntRange.h */; };
+		27715EA21C4185EE00F6DD5F /* IntRange.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5021C3982CC00FFB46F /* IntRange.m */; };
+		27715EA31C4185EE00F6DD5F /* IWindow.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5031C3982CC00FFB46F /* IWindow.h */; };
+		27715EA41C4185EE00F6DD5F /* IWindow.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5041C3982CC00FFB46F /* IWindow.m */; };
+		27715EA51C4185EE00F6DD5F /* IWindowId.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5051C3982CC00FFB46F /* IWindowId.h */; };
+		27715EA61C4185EE00F6DD5F /* IWindowId.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5061C3982CC00FFB46F /* IWindowId.m */; };
+		27715EA71C4185EE00F6DD5F /* IWindowSession.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5071C3982CC00FFB46F /* IWindowSession.h */; };
+		27715EA81C4185EE00F6DD5F /* IWindowSession.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5081C3982CC00FFB46F /* IWindowSession.m */; };
+		27715EA91C4185EE00F6DD5F /* KeyEvent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5091C3982CC00FFB46F /* KeyEvent.h */; };
+		27715EAA1C4185EE00F6DD5F /* KeyEvent.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F50A1C3982CC00FFB46F /* KeyEvent.m */; };
+		27715EAB1C4185EE00F6DD5F /* LayoutAnimationController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F50B1C3982CC00FFB46F /* LayoutAnimationController.h */; };
+		27715EAC1C4185EE00F6DD5F /* LayoutAnimationController.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F50C1C3982CC00FFB46F /* LayoutAnimationController.m */; };
+		27715EAD1C4185EE00F6DD5F /* LayoutDirection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F50D1C3982CC00FFB46F /* LayoutDirection.h */; };
+		27715EAE1C4185EE00F6DD5F /* LayoutDirection.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F50E1C3982CC00FFB46F /* LayoutDirection.m */; };
+		27715EAF1C4185EE00F6DD5F /* LayoutInflater.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F50F1C3982CC00FFB46F /* LayoutInflater.h */; };
+		27715EB01C4185EE00F6DD5F /* LayoutInflater.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5101C3982CC00FFB46F /* LayoutInflater.m */; };
+		27715EB11C4185EE00F6DD5F /* LayoutRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5111C3982CC00FFB46F /* LayoutRes.h */; };
+		27715EB21C4185EE00F6DD5F /* LayoutRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5121C3982CC00FFB46F /* LayoutRes.m */; };
+		27715EB31C4185EE00F6DD5F /* LayoutTransition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5131C3982CC00FFB46F /* LayoutTransition.h */; };
+		27715EB41C4185EE00F6DD5F /* LayoutTransition.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5141C3982CC00FFB46F /* LayoutTransition.m */; };
+		27715EB51C4185EE00F6DD5F /* LinearGradient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5151C3982CC00FFB46F /* LinearGradient.h */; };
+		27715EB61C4185EE00F6DD5F /* LinearGradient.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5161C3982CC00FFB46F /* LinearGradient.m */; };
+		27715EB71C4185EE00F6DD5F /* LinearLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5171C3982CC00FFB46F /* LinearLayout.h */; };
+		27715EB81C4185EE00F6DD5F /* LinearLayout.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5181C3982CC00FFB46F /* LinearLayout.m */; };
+		27715EB91C4185EE00F6DD5F /* Lists.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5191C3982CC00FFB46F /* Lists.h */; };
+		27715EBA1C4185EE00F6DD5F /* Lists.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F51A1C3982CC00FFB46F /* Lists.m */; };
+		27715EBB1C4185EE00F6DD5F /* LocalLog.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F51B1C3982CC00FFB46F /* LocalLog.h */; };
+		27715EBC1C4185EE00F6DD5F /* LocalLog.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F51C1C3982CC00FFB46F /* LocalLog.m */; };
+		27715EBD1C4185EE00F6DD5F /* Log.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F51D1C3982CC00FFB46F /* Log.h */; };
+		27715EBE1C4185EE00F6DD5F /* Log.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F51E1C3982CC00FFB46F /* Log.m */; };
+		27715EBF1C4185EE00F6DD5F /* LogPrinter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F51F1C3982CC00FFB46F /* LogPrinter.h */; };
+		27715EC01C4185EE00F6DD5F /* LogPrinter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5201C3982CC00FFB46F /* LogPrinter.m */; };
+		27715EC11C4185EE00F6DD5F /* LongArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5211C3982CC00FFB46F /* LongArray.h */; };
+		27715EC21C4185EE00F6DD5F /* LongArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5221C3982CC00FFB46F /* LongArray.m */; };
+		27715EC31C4185EE00F6DD5F /* LongSparseArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5231C3982CC00FFB46F /* LongSparseArray.h */; };
+		27715EC41C4185EE00F6DD5F /* LongSparseArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5241C3982CC00FFB46F /* LongSparseArray.m */; };
+		27715EC51C4185EE00F6DD5F /* LongSparseLongArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5251C3982CC00FFB46F /* LongSparseLongArray.h */; };
+		27715EC61C4185EE00F6DD5F /* LongSparseLongArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5261C3982CC00FFB46F /* LongSparseLongArray.m */; };
+		27715EC71C4185EE00F6DD5F /* LruCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5271C3982CC00FFB46F /* LruCache.h */; };
+		27715EC81C4185EE00F6DD5F /* LruCache.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5281C3982CC00FFB46F /* LruCache.m */; };
+		27715EC91C4185EE00F6DD5F /* MainThread.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5291C3982CC00FFB46F /* MainThread.h */; };
+		27715ECA1C4185EE00F6DD5F /* MainThread.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F52A1C3982CC00FFB46F /* MainThread.m */; };
+		27715ECB1C4185EE00F6DD5F /* MalformedJsonException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F52B1C3982CC00FFB46F /* MalformedJsonException.h */; };
+		27715ECC1C4185EE00F6DD5F /* MalformedJsonException.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F52C1C3982CC00FFB46F /* MalformedJsonException.m */; };
+		27715ECD1C4185EE00F6DD5F /* MapCollections.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F52D1C3982CC00FFB46F /* MapCollections.h */; };
+		27715ECE1C4185EE00F6DD5F /* MapCollections.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F52E1C3982CC00FFB46F /* MapCollections.m */; };
+		27715ECF1C4185EE00F6DD5F /* Maps.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F52F1C3982CC00FFB46F /* Maps.h */; };
+		27715ED01C4185EE00F6DD5F /* Maps.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5301C3982CC00FFB46F /* Maps.m */; };
+		27715ED11C4185EE00F6DD5F /* MathUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5311C3982CC00FFB46F /* MathUtils.h */; };
+		27715ED21C4185EE00F6DD5F /* MathUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5321C3982CC00FFB46F /* MathUtils.m */; };
+		27715ED31C4185EE00F6DD5F /* Matrix.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5331C3982CC00FFB46F /* Matrix.h */; };
+		27715ED41C4185EE00F6DD5F /* Matrix.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5341C3982CC00FFB46F /* Matrix.m */; };
+		27715ED51C4185EE00F6DD5F /* Menu.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5351C3982CC00FFB46F /* Menu.h */; };
+		27715ED61C4185EE00F6DD5F /* Menu.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5361C3982CC00FFB46F /* Menu.m */; };
+		27715ED71C4185EE00F6DD5F /* MenuBuilder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5371C3982CC00FFB46F /* MenuBuilder.h */; };
+		27715ED81C4185EE00F6DD5F /* MenuBuilder.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5381C3982CC00FFB46F /* MenuBuilder.m */; };
+		27715ED91C4185EE00F6DD5F /* MenuInflater.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5391C3982CC00FFB46F /* MenuInflater.h */; };
+		27715EDA1C4185EE00F6DD5F /* MenuInflater.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F53A1C3982CC00FFB46F /* MenuInflater.m */; };
+		27715EDB1C4185EE00F6DD5F /* MenuRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F53B1C3982CC00FFB46F /* MenuRes.h */; };
+		27715EDC1C4185EE00F6DD5F /* MenuRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F53C1C3982CC00FFB46F /* MenuRes.m */; };
+		27715EDD1C4185EE00F6DD5F /* Message.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F53D1C3982CC00FFB46F /* Message.h */; };
+		27715EDE1C4185EE00F6DD5F /* Message.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F53E1C3982CC00FFB46F /* Message.m */; };
+		27715EDF1C4185EE00F6DD5F /* MonthDisplayHelper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F53F1C3982CC00FFB46F /* MonthDisplayHelper.h */; };
+		27715EE01C4185EE00F6DD5F /* MonthDisplayHelper.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5401C3982CC00FFB46F /* MonthDisplayHelper.m */; };
+		27715EE11C4185EE00F6DD5F /* MotionEvent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5411C3982CC00FFB46F /* MotionEvent.h */; };
+		27715EE21C4185EE00F6DD5F /* MotionEvent.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5421C3982CC00FFB46F /* MotionEvent.m */; };
+		27715EE31C4185EE00F6DD5F /* NonNull.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5431C3982CC00FFB46F /* NonNull.h */; };
+		27715EE41C4185EE00F6DD5F /* NonNull.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5441C3982CC00FFB46F /* NonNull.m */; };
+		27715EE51C4185EE00F6DD5F /* NoSuchPropertyException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5451C3982CC00FFB46F /* NoSuchPropertyException.h */; };
+		27715EE61C4185EE00F6DD5F /* NoSuchPropertyException.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5461C3982CC00FFB46F /* NoSuchPropertyException.m */; };
+		27715EE71C4185EE00F6DD5F /* Nullable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5471C3982CC00FFB46F /* Nullable.h */; };
+		27715EE81C4185EE00F6DD5F /* Nullable.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5481C3982CC00FFB46F /* Nullable.m */; };
+		27715EE91C4185EE00F6DD5F /* Objects.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5491C3982CC00FFB46F /* Objects.h */; };
+		27715EEA1C4185EE00F6DD5F /* Objects.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F54A1C3982CC00FFB46F /* Objects.m */; };
+		27715EEB1C4185EE00F6DD5F /* Outline.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F54B1C3982CC00FFB46F /* Outline.h */; };
+		27715EEC1C4185EE00F6DD5F /* Outline.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F54C1C3982CC00FFB46F /* Outline.m */; };
+		27715EED1C4185EE00F6DD5F /* PackageManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F54D1C3982CC00FFB46F /* PackageManager.h */; };
+		27715EEE1C4185EE00F6DD5F /* PackageManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F54E1C3982CC00FFB46F /* PackageManager.m */; };
+		27715EEF1C4185EE00F6DD5F /* Paint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F54F1C3982CC00FFB46F /* Paint.h */; };
+		27715EF01C4185EE00F6DD5F /* Paint.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5501C3982CC00FFB46F /* Paint.m */; };
+		27715EF11C4185EE00F6DD5F /* Pair.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5511C3982CC00FFB46F /* Pair.h */; };
+		27715EF21C4185EE00F6DD5F /* Pair.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5521C3982CC00FFB46F /* Pair.m */; };
+		27715EF31C4185EE00F6DD5F /* Parcel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5531C3982CC00FFB46F /* Parcel.h */; };
+		27715EF41C4185EE00F6DD5F /* Parcel.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5541C3982CC00FFB46F /* Parcel.m */; };
+		27715EF51C4185EE00F6DD5F /* Parcelable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5551C3982CC00FFB46F /* Parcelable.h */; };
+		27715EF61C4185EE00F6DD5F /* Parcelable.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5561C3982CC00FFB46F /* Parcelable.m */; };
+		27715EF71C4185EE00F6DD5F /* Path.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5571C3982CC00FFB46F /* Path.h */; };
+		27715EF81C4185EE00F6DD5F /* Path.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5581C3982CC00FFB46F /* Path.m */; };
+		27715EF91C4185EE00F6DD5F /* Patterns.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5591C3982CC00FFB46F /* Patterns.h */; };
+		27715EFA1C4185EE00F6DD5F /* Patterns.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F55A1C3982CC00FFB46F /* Patterns.m */; };
+		27715EFB1C4185EE00F6DD5F /* PixelFormat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F55B1C3982CC00FFB46F /* PixelFormat.h */; };
+		27715EFC1C4185EE00F6DD5F /* PixelFormat.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F55C1C3982CD00FFB46F /* PixelFormat.m */; };
+		27715EFD1C4185EE00F6DD5F /* PluralsRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F55D1C3982CD00FFB46F /* PluralsRes.h */; };
+		27715EFE1C4185EE00F6DD5F /* PluralsRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F55E1C3982CD00FFB46F /* PluralsRes.m */; };
+		27715EFF1C4185EE00F6DD5F /* Point.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F55F1C3982CD00FFB46F /* Point.h */; };
+		27715F001C4185EE00F6DD5F /* Point.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5601C3982CD00FFB46F /* Point.m */; };
+		27715F011C4185EE00F6DD5F /* PointF.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5611C3982CD00FFB46F /* PointF.h */; };
+		27715F021C4185EE00F6DD5F /* PointF.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5621C3982CD00FFB46F /* PointF.m */; };
+		27715F031C4185EE00F6DD5F /* Pools.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5631C3982CD00FFB46F /* Pools.h */; };
+		27715F041C4185EE00F6DD5F /* Pools.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5641C3982CD00FFB46F /* Pools.m */; };
+		27715F051C4185EE00F6DD5F /* PorterDuff.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5651C3982CD00FFB46F /* PorterDuff.h */; };
+		27715F061C4185EE00F6DD5F /* PorterDuff.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5661C3982CD00FFB46F /* PorterDuff.m */; };
+		27715F071C4185EE00F6DD5F /* PorterDuffColorFilter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5671C3982CD00FFB46F /* PorterDuffColorFilter.h */; };
+		27715F081C4185EE00F6DD5F /* PorterDuffColorFilter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5681C3982CD00FFB46F /* PorterDuffColorFilter.m */; };
+		27715F091C4185EE00F6DD5F /* PorterDuffXfermode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5691C3982CD00FFB46F /* PorterDuffXfermode.h */; };
+		27715F0A1C4185EE00F6DD5F /* PorterDuffXfermode.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F56A1C3982CD00FFB46F /* PorterDuffXfermode.m */; };
+		27715F0B1C4185EE00F6DD5F /* Preconditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F56B1C3982CD00FFB46F /* Preconditions.h */; };
+		27715F0C1C4185EE00F6DD5F /* Preconditions.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F56C1C3982CD00FFB46F /* Preconditions.m */; };
+		27715F0D1C4185EE00F6DD5F /* Predicate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F56D1C3982CD00FFB46F /* Predicate.h */; };
+		27715F0E1C4185EE00F6DD5F /* Predicate.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F56E1C3982CD00FFB46F /* Predicate.m */; };
+		27715F0F1C4185EE00F6DD5F /* Predicates.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F56F1C3982CD00FFB46F /* Predicates.h */; };
+		27715F101C4185EE00F6DD5F /* Predicates.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5701C3982CD00FFB46F /* Predicates.m */; };
+		27715F111C4185EE00F6DD5F /* PrefixPrinter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5711C3982CD00FFB46F /* PrefixPrinter.h */; };
+		27715F121C4185EE00F6DD5F /* PrefixPrinter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5721C3982CD00FFB46F /* PrefixPrinter.m */; };
+		27715F131C4185EE00F6DD5F /* Printer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5731C3982CD00FFB46F /* Printer.h */; };
+		27715F141C4185EE00F6DD5F /* Printer.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5741C3982CD00FFB46F /* Printer.m */; };
+		27715F151C4185EE00F6DD5F /* PrintStreamPrinter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5751C3982CD00FFB46F /* PrintStreamPrinter.h */; };
+		27715F161C4185EE00F6DD5F /* PrintStreamPrinter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5761C3982CD00FFB46F /* PrintStreamPrinter.m */; };
+		27715F171C4185EE00F6DD5F /* PrintWriterPrinter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5771C3982CD00FFB46F /* PrintWriterPrinter.h */; };
+		27715F181C4185EE00F6DD5F /* PrintWriterPrinter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5781C3982CD00FFB46F /* PrintWriterPrinter.m */; };
+		27715F191C4185EE00F6DD5F /* Procedure.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5791C3982CD00FFB46F /* Procedure.h */; };
+		27715F1A1C4185EE00F6DD5F /* Procedure.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F57A1C3982CD00FFB46F /* Procedure.m */; };
+		27715F1B1C4185EE00F6DD5F /* Process.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F57B1C3982CD00FFB46F /* Process.h */; };
+		27715F1C1C4185EE00F6DD5F /* Process.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F57C1C3982CD00FFB46F /* Process.m */; };
+		27715F1D1C4185EE00F6DD5F /* Property.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F57D1C3982CD00FFB46F /* Property.h */; };
+		27715F1E1C4185EE00F6DD5F /* Property.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F57E1C3982CD00FFB46F /* Property.m */; };
+		27715F1F1C4185EE00F6DD5F /* R.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F57F1C3982CD00FFB46F /* R.h */; };
+		27715F201C4185EE00F6DD5F /* R.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5801C3982CD00FFB46F /* R.m */; };
+		27715F211C4185EE00F6DD5F /* Range.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5811C3982CD00FFB46F /* Range.h */; };
+		27715F221C4185EE00F6DD5F /* Range.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5821C3982CD00FFB46F /* Range.m */; };
+		27715F231C4185EE00F6DD5F /* Rational.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5831C3982CD00FFB46F /* Rational.h */; };
+		27715F241C4185EE00F6DD5F /* Rational.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5841C3982CD00FFB46F /* Rational.m */; };
+		27715F251C4185EE00F6DD5F /* RawRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5851C3982CD00FFB46F /* RawRes.h */; };
+		27715F261C4185EE00F6DD5F /* RawRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5861C3982CD00FFB46F /* RawRes.m */; };
+		27715F271C4185EE00F6DD5F /* Rect.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5871C3982CD00FFB46F /* Rect.h */; };
+		27715F281C4185EE00F6DD5F /* Rect.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5881C3982CD00FFB46F /* Rect.m */; };
+		27715F291C4185EE00F6DD5F /* RectF.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5891C3982CD00FFB46F /* RectF.h */; };
+		27715F2A1C4185EE00F6DD5F /* RectF.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F58A1C3982CD00FFB46F /* RectF.m */; };
+		27715F2B1C4185EE00F6DD5F /* ReflectiveProperty.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F58B1C3982CD00FFB46F /* ReflectiveProperty.h */; };
+		27715F2C1C4185EE00F6DD5F /* ReflectiveProperty.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F58C1C3982CD00FFB46F /* ReflectiveProperty.m */; };
+		27715F2D1C4185EE00F6DD5F /* Region.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F58D1C3982CD00FFB46F /* Region.h */; };
+		27715F2E1C4185EE00F6DD5F /* Region.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F58E1C3982CD00FFB46F /* Region.m */; };
+		27715F2F1C4185EE00F6DD5F /* RelativeLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F58F1C3982CD00FFB46F /* RelativeLayout.h */; };
+		27715F301C4185EE00F6DD5F /* RelativeLayout.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5901C3982CD00FFB46F /* RelativeLayout.m */; };
+		27715F311C4185EE00F6DD5F /* RemotableViewMethod.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5911C3982CD00FFB46F /* RemotableViewMethod.h */; };
+		27715F321C4185EE00F6DD5F /* RemotableViewMethod.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5921C3982CD00FFB46F /* RemotableViewMethod.m */; };
+		27715F331C4185EE00F6DD5F /* RemoteException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5931C3982CD00FFB46F /* RemoteException.h */; };
+		27715F341C4185EE00F6DD5F /* RemoteException.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5941C3982CD00FFB46F /* RemoteException.m */; };
+		27715F351C4185EE00F6DD5F /* RemoteView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5951C3982CD00FFB46F /* RemoteView.h */; };
+		27715F361C4185EE00F6DD5F /* RemoteView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5961C3982CD00FFB46F /* RemoteView.m */; };
+		27715F371C4185EE00F6DD5F /* RenderNode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5971C3982CD00FFB46F /* RenderNode.h */; };
+		27715F381C4185EE00F6DD5F /* RenderNode.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5981C3982CD00FFB46F /* RenderNode.m */; };
+		27715F391C4185EE00F6DD5F /* RenderNodeAnimator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5991C3982CD00FFB46F /* RenderNodeAnimator.h */; };
+		27715F3A1C4185EE00F6DD5F /* RenderNodeAnimator.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F59A1C3982CD00FFB46F /* RenderNodeAnimator.m */; };
+		27715F3B1C4185EE00F6DD5F /* RequiresPermission.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F59B1C3982CD00FFB46F /* RequiresPermission.h */; };
+		27715F3C1C4185EE00F6DD5F /* RequiresPermission.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F59C1C3982CD00FFB46F /* RequiresPermission.m */; };
+		27715F3D1C4185EE00F6DD5F /* Resources.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F59D1C3982CD00FFB46F /* Resources.h */; };
+		27715F3E1C4185EE00F6DD5F /* Resources.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F59E1C3982CD00FFB46F /* Resources.m */; };
+		27715F3F1C4185EE00F6DD5F /* ScrollBarDrawable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F59F1C3982CD00FFB46F /* ScrollBarDrawable.h */; };
+		27715F401C4185EE00F6DD5F /* ScrollBarDrawable.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A01C3982CD00FFB46F /* ScrollBarDrawable.m */; };
+		27715F411C4185EE00F6DD5F /* SdkConstant.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A11C3982CD00FFB46F /* SdkConstant.h */; };
+		27715F421C4185EE00F6DD5F /* SdkConstant.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A21C3982CD00FFB46F /* SdkConstant.m */; };
+		27715F431C4185EE00F6DD5F /* Sets.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A31C3982CD00FFB46F /* Sets.h */; };
+		27715F441C4185EE00F6DD5F /* Sets.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A41C3982CD00FFB46F /* Sets.m */; };
+		27715F451C4185EE00F6DD5F /* Shader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A51C3982CD00FFB46F /* Shader.h */; };
+		27715F461C4185EE00F6DD5F /* Shader.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A61C3982CD00FFB46F /* Shader.m */; };
+		27715F471C4185EE00F6DD5F /* Singleton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A71C3982CD00FFB46F /* Singleton.h */; };
+		27715F481C4185EE00F6DD5F /* Singleton.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A81C3982CD00FFB46F /* Singleton.m */; };
+		27715F491C4185EE00F6DD5F /* Size.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5A91C3982CD00FFB46F /* Size.h */; };
+		27715F4A1C4185EE00F6DD5F /* Size.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5AA1C3982CD00FFB46F /* Size.m */; };
+		27715F4B1C4185EE00F6DD5F /* SizeF.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5AB1C3982CD00FFB46F /* SizeF.h */; };
+		27715F4C1C4185EE00F6DD5F /* SizeF.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5AC1C3982CD00FFB46F /* SizeF.m */; };
+		27715F4D1C4185EE00F6DD5F /* Slog.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5AD1C3982CD00FFB46F /* Slog.h */; };
+		27715F4E1C4185EE00F6DD5F /* Slog.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5AE1C3982CD00FFB46F /* Slog.m */; };
+		27715F4F1C4185EE00F6DD5F /* SmileyParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5AF1C3982CD00FFB46F /* SmileyParser.h */; };
+		27715F501C4185EE00F6DD5F /* SmileyParser.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B01C3982CD00FFB46F /* SmileyParser.m */; };
+		27715F511C4185EE00F6DD5F /* SmileyResources.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B11C3982CD00FFB46F /* SmileyResources.h */; };
+		27715F521C4185EE00F6DD5F /* SmileyResources.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B21C3982CD00FFB46F /* SmileyResources.m */; };
+		27715F531C4185EE00F6DD5F /* SoundEffectConstants.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B31C3982CD00FFB46F /* SoundEffectConstants.h */; };
+		27715F541C4185EE00F6DD5F /* SoundEffectConstants.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B41C3982CD00FFB46F /* SoundEffectConstants.m */; };
+		27715F551C4185EE00F6DD5F /* Space.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B51C3982CD00FFB46F /* Space.h */; };
+		27715F561C4185EE00F6DD5F /* Space.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B61C3982CD00FFB46F /* Space.m */; };
+		27715F571C4185EE00F6DD5F /* Spannable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B71C3982CD00FFB46F /* Spannable.h */; };
+		27715F581C4185EE00F6DD5F /* Spannable.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B81C3982CD00FFB46F /* Spannable.m */; };
+		27715F591C4185EE00F6DD5F /* SpannableStringBuilder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5B91C3982CD00FFB46F /* SpannableStringBuilder.h */; };
+		27715F5A1C4185EE00F6DD5F /* SpannableStringBuilder.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5BA1C3982CD00FFB46F /* SpannableStringBuilder.m */; };
+		27715F5B1C4185EE00F6DD5F /* SparseArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5BB1C3982CD00FFB46F /* SparseArray.h */; };
+		27715F5C1C4185EE00F6DD5F /* SparseArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5BC1C3982CD00FFB46F /* SparseArray.m */; };
+		27715F5D1C4185EE00F6DD5F /* SparseBooleanArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5BD1C3982CD00FFB46F /* SparseBooleanArray.h */; };
+		27715F5E1C4185EE00F6DD5F /* SparseBooleanArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5BE1C3982CD00FFB46F /* SparseBooleanArray.m */; };
+		27715F5F1C4185EE00F6DD5F /* SparseIntArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5BF1C3982CD00FFB46F /* SparseIntArray.h */; };
+		27715F601C4185EE00F6DD5F /* SparseIntArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C01C3982CD00FFB46F /* SparseIntArray.m */; };
+		27715F611C4185EE00F6DD5F /* SparseLongArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C11C3982CD00FFB46F /* SparseLongArray.h */; };
+		27715F621C4185EE00F6DD5F /* SparseLongArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C21C3982CD00FFB46F /* SparseLongArray.m */; };
+		27715F631C4185EE00F6DD5F /* Spline.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C31C3982CD00FFB46F /* Spline.h */; };
+		27715F641C4185EE00F6DD5F /* Spline.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C41C3982CD00FFB46F /* Spline.m */; };
+		27715F651C4185EE00F6DD5F /* StateListAnimator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C51C3982CD00FFB46F /* StateListAnimator.h */; };
+		27715F661C4185EE00F6DD5F /* StateListAnimator.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C61C3982CD00FFB46F /* StateListAnimator.m */; };
+		27715F671C4185EE00F6DD5F /* StateSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C71C3982CD00FFB46F /* StateSet.h */; };
+		27715F681C4185EE00F6DD5F /* StateSet.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C81C3982CD00FFB46F /* StateSet.m */; };
+		27715F691C4185EE00F6DD5F /* StringBuilderPrinter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5C91C3982CD00FFB46F /* StringBuilderPrinter.h */; };
+		27715F6A1C4185EE00F6DD5F /* StringBuilderPrinter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5CA1C3982CD00FFB46F /* StringBuilderPrinter.m */; };
+		27715F6B1C4185EE00F6DD5F /* StringDef.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5CB1C3982CD00FFB46F /* StringDef.h */; };
+		27715F6C1C4185EE00F6DD5F /* StringDef.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5CC1C3982CD00FFB46F /* StringDef.m */; };
+		27715F6D1C4185EE00F6DD5F /* StringRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5CD1C3982CD00FFB46F /* StringRes.h */; };
+		27715F6E1C4185EE00F6DD5F /* StringRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5CE1C3982CD00FFB46F /* StringRes.m */; };
+		27715F6F1C4185EE00F6DD5F /* StyleableRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5CF1C3982CD00FFB46F /* StyleableRes.h */; };
+		27715F701C4185EE00F6DD5F /* StyleableRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D01C3982CD00FFB46F /* StyleableRes.m */; };
+		27715F711C4185EE00F6DD5F /* StyleRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D11C3982CD00FFB46F /* StyleRes.h */; };
+		27715F721C4185EE00F6DD5F /* StyleRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D21C3982CD00FFB46F /* StyleRes.m */; };
+		27715F731C4185EE00F6DD5F /* SuperNotCalledException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D31C3982CD00FFB46F /* SuperNotCalledException.h */; };
+		27715F741C4185EE00F6DD5F /* SuperNotCalledException.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D41C3982CD00FFB46F /* SuperNotCalledException.m */; };
+		27715F751C4185EE00F6DD5F /* SuppressLint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D51C3982CD00FFB46F /* SuppressLint.h */; };
+		27715F761C4185EE00F6DD5F /* SuppressLint.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D61C3982CD00FFB46F /* SuppressLint.m */; };
+		27715F771C4185EE00F6DD5F /* Surface.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D71C3982CD00FFB46F /* Surface.h */; };
+		27715F781C4185EE00F6DD5F /* Surface.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D81C3982CD00FFB46F /* Surface.m */; };
+		27715F791C4185EE00F6DD5F /* SystemApi.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5D91C3982CD00FFB46F /* SystemApi.h */; };
+		27715F7A1C4185EE00F6DD5F /* SystemApi.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5DA1C3982CD00FFB46F /* SystemApi.m */; };
+		27715F7B1C4185EE00F6DD5F /* SystemClock.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5DB1C3982CD00FFB46F /* SystemClock.h */; };
+		27715F7C1C4185EE00F6DD5F /* SystemClock.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5DC1C3982CD00FFB46F /* SystemClock.m */; };
+		27715F7D1C4185EE00F6DD5F /* SystemProperties.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5DD1C3982CD00FFB46F /* SystemProperties.h */; };
+		27715F7E1C4185EE00F6DD5F /* SystemProperties.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5DE1C3982CD00FFB46F /* SystemProperties.m */; };
+		27715F7F1C4185EE00F6DD5F /* TargetApi.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5DF1C3982CD00FFB46F /* TargetApi.h */; };
+		27715F801C4185EE00F6DD5F /* TargetApi.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E01C3982CD00FFB46F /* TargetApi.m */; };
+		27715F811C4185EE00F6DD5F /* TextUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E11C3982CD00FFB46F /* TextUtils.h */; };
+		27715F821C4185EE00F6DD5F /* TextUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E21C3982CD00FFB46F /* TextUtils.m */; };
+		27715F831C4185EE00F6DD5F /* TimeFormatException.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E31C3982CD00FFB46F /* TimeFormatException.h */; };
+		27715F841C4185EE00F6DD5F /* TimeFormatException.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E41C3982CD00FFB46F /* TimeFormatException.m */; };
+		27715F851C4185EE00F6DD5F /* TouchDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E51C3982CD00FFB46F /* TouchDelegate.h */; };
+		27715F861C4185EE00F6DD5F /* TouchDelegate.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E61C3982CD00FFB46F /* TouchDelegate.m */; };
+		27715F871C4185EE00F6DD5F /* Trace.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E71C3982CD00FFB46F /* Trace.h */; };
+		27715F881C4185EE00F6DD5F /* Trace.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E81C3982CD00FFB46F /* Trace.m */; };
+		27715F891C4185EE00F6DD5F /* Transformation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5E91C3982CD00FFB46F /* Transformation.h */; };
+		27715F8A1C4185EE00F6DD5F /* Transformation.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5EA1C3982CD00FFB46F /* Transformation.m */; };
+		27715F8B1C4185EE00F6DD5F /* TransitionRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5EB1C3982CD00FFB46F /* TransitionRes.h */; };
+		27715F8C1C4185EE00F6DD5F /* TransitionRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5EC1C3982CD00FFB46F /* TransitionRes.m */; };
+		27715F8D1C4185EE00F6DD5F /* TrustedTime.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5ED1C3982CD00FFB46F /* TrustedTime.h */; };
+		27715F8E1C4185EE00F6DD5F /* TrustedTime.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5EE1C3982CD00FFB46F /* TrustedTime.m */; };
+		27715F8F1C4185EE00F6DD5F /* TypedArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5EF1C3982CD00FFB46F /* TypedArray.h */; };
+		27715F901C4185EE00F6DD5F /* TypedArray.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F01C3982CD00FFB46F /* TypedArray.m */; };
+		27715F911C4185EE00F6DD5F /* TypedArrayWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F11C3982CD00FFB46F /* TypedArrayWrapper.h */; };
+		27715F921C4185EE00F6DD5F /* TypedArrayWrapper.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F21C3982CD00FFB46F /* TypedArrayWrapper.m */; };
+		27715F931C4185EE00F6DD5F /* TypedValue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F31C3982CD00FFB46F /* TypedValue.h */; };
+		27715F941C4185EE00F6DD5F /* TypedValue.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F41C3982CD00FFB46F /* TypedValue.m */; };
+		27715F951C4185EE00F6DD5F /* UiThread.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F51C3982CD00FFB46F /* UiThread.h */; };
+		27715F961C4185EE00F6DD5F /* UiThread.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F61C3982CD00FFB46F /* UiThread.m */; };
+		27715F971C4185EE00F6DD5F /* View.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F71C3982CD00FFB46F /* View.h */; };
+		27715F981C4185EE00F6DD5F /* View.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F81C3982CD00FFB46F /* View.m */; };
+		27715F991C4185EE00F6DD5F /* ViewConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5F91C3982CD00FFB46F /* ViewConfiguration.h */; };
+		27715F9A1C4185EE00F6DD5F /* ViewConfiguration.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5FA1C3982CD00FFB46F /* ViewConfiguration.m */; };
+		27715F9B1C4185EE00F6DD5F /* ViewDebug.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5FB1C3982CD00FFB46F /* ViewDebug.h */; };
+		27715F9C1C4185EE00F6DD5F /* ViewDebug.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5FC1C3982CD00FFB46F /* ViewDebug.m */; };
+		27715F9D1C4185EE00F6DD5F /* ViewGroup.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5FD1C3982CD00FFB46F /* ViewGroup.h */; };
+		27715F9E1C4185EE00F6DD5F /* ViewGroup.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5FE1C3982CD00FFB46F /* ViewGroup.m */; };
+		27715F9F1C4185EE00F6DD5F /* ViewGroupOverlay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F5FF1C3982CD00FFB46F /* ViewGroupOverlay.h */; };
+		27715FA01C4185EE00F6DD5F /* ViewGroupOverlay.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6001C3982CD00FFB46F /* ViewGroupOverlay.m */; };
+		27715FA11C4185EE00F6DD5F /* ViewHierarchyEncoder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6011C3982CD00FFB46F /* ViewHierarchyEncoder.h */; };
+		27715FA21C4185EE00F6DD5F /* ViewHierarchyEncoder.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6021C3982CD00FFB46F /* ViewHierarchyEncoder.m */; };
+		27715FA31C4185EE00F6DD5F /* ViewManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6031C3982CD00FFB46F /* ViewManager.h */; };
+		27715FA41C4185EE00F6DD5F /* ViewManager.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6041C3982CD00FFB46F /* ViewManager.m */; };
+		27715FA51C4185EE00F6DD5F /* ViewOutlineProvider.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6051C3982CD00FFB46F /* ViewOutlineProvider.h */; };
+		27715FA61C4185EE00F6DD5F /* ViewOutlineProvider.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6061C3982CD00FFB46F /* ViewOutlineProvider.m */; };
+		27715FA71C4185EE00F6DD5F /* ViewOverlay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6071C3982CD00FFB46F /* ViewOverlay.h */; };
+		27715FA81C4185EE00F6DD5F /* ViewOverlay.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6081C3982CD00FFB46F /* ViewOverlay.m */; };
+		27715FA91C4185EE00F6DD5F /* ViewParent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6091C3982CD00FFB46F /* ViewParent.h */; };
+		27715FAA1C4185EE00F6DD5F /* ViewParent.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F60A1C3982CD00FFB46F /* ViewParent.m */; };
+		27715FAB1C4185EE00F6DD5F /* ViewPropertyAnimator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F60B1C3982CD00FFB46F /* ViewPropertyAnimator.h */; };
+		27715FAC1C4185EE00F6DD5F /* ViewPropertyAnimator.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F60C1C3982CD00FFB46F /* ViewPropertyAnimator.m */; };
+		27715FAD1C4185EE00F6DD5F /* ViewRootImpl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F60D1C3982CD00FFB46F /* ViewRootImpl.h */; };
+		27715FAE1C4185EE00F6DD5F /* ViewRootImpl.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F60E1C3982CD00FFB46F /* ViewRootImpl.m */; };
+		27715FAF1C4185EE00F6DD5F /* ViewStructure.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F60F1C3982CD00FFB46F /* ViewStructure.h */; };
+		27715FB01C4185EE00F6DD5F /* ViewStructure.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6101C3982CD00FFB46F /* ViewStructure.m */; };
+		27715FB11C4185EE00F6DD5F /* ViewTreeObserver.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6111C3982CD00FFB46F /* ViewTreeObserver.h */; };
+		27715FB21C4185EE00F6DD5F /* ViewTreeObserver.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6121C3982CD00FFB46F /* ViewTreeObserver.m */; };
+		27715FB31C4185EE00F6DD5F /* Widget.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6131C3982CD00FFB46F /* Widget.h */; };
+		27715FB41C4185EE00F6DD5F /* Widget.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6141C3982CD00FFB46F /* Widget.m */; };
+		27715FB51C4185EE00F6DD5F /* WindowId.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6151C3982CD00FFB46F /* WindowId.h */; };
+		27715FB61C4185EE00F6DD5F /* WindowId.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6161C3982CD00FFB46F /* WindowId.m */; };
+		27715FB71C4185EE00F6DD5F /* WindowInsets.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6171C3982CD00FFB46F /* WindowInsets.h */; };
+		27715FB81C4185EE00F6DD5F /* WindowInsets.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6181C3982CD00FFB46F /* WindowInsets.m */; };
+		27715FB91C4185EE00F6DD5F /* WorkerThread.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6191C3982CD00FFB46F /* WorkerThread.h */; };
+		27715FBA1C4185EE00F6DD5F /* WorkerThread.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F61A1C3982CD00FFB46F /* WorkerThread.m */; };
+		27715FBB1C4185EE00F6DD5F /* Xfermode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F61B1C3982CD00FFB46F /* Xfermode.h */; };
+		27715FBC1C4185EE00F6DD5F /* Xfermode.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F61C1C3982CD00FFB46F /* Xfermode.m */; };
+		27715FBD1C4185EE00F6DD5F /* XmlRes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F61D1C3982CD00FFB46F /* XmlRes.h */; };
+		27715FBE1C4185EE00F6DD5F /* XmlRes.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F61E1C3982CD00FFB46F /* XmlRes.m */; };
+		27715FBF1C4185EE00F6DD5F /* XmlUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F61F1C3982CD00FFB46F /* XmlUtils.h */; };
+		27715FC01C4185EE00F6DD5F /* XmlUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6201C3982CD00FFB46F /* XmlUtils.m */; };
+		27715FC71C421C9700F6DD5F /* ILinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 27715FC61C421C9700F6DD5F /* ILinearLayout.m */; };
+		27715FC81C421D0400F6DD5F /* ILinearLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27715FC51C421C9700F6DD5F /* ILinearLayout.h */; };
+		27715FC91C421D0400F6DD5F /* ILinearLayout.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27715FC61C421C9700F6DD5F /* ILinearLayout.m */; };
 		277463851BDB318200BAFD75 /* libAsheraIosParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277463791BDB318200BAFD75 /* libAsheraIosParser.a */; };
 /* End PBXBuildFile section */
 
@@ -771,6 +1273,510 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				27715FC81C421D0400F6DD5F /* ILinearLayout.h in CopyFiles */,
+				27715FC91C421D0400F6DD5F /* ILinearLayout.m in CopyFiles */,
+				27715DC91C4185EE00F6DD5F /* AbsSavedState.h in CopyFiles */,
+				27715DCA1C4185EE00F6DD5F /* AbsSavedState.m in CopyFiles */,
+				27715DCB1C4185EE00F6DD5F /* AbstractMessageParser.h in CopyFiles */,
+				27715DCC1C4185EE00F6DD5F /* AbstractMessageParser.m in CopyFiles */,
+				27715DCD1C4185EE00F6DD5F /* AccessibilityEvent.h in CopyFiles */,
+				27715DCE1C4185EE00F6DD5F /* AccessibilityEvent.m in CopyFiles */,
+				27715DCF1C4185EE00F6DD5F /* AccessibilityEventSource.h in CopyFiles */,
+				27715DD01C4185EE00F6DD5F /* AccessibilityEventSource.m in CopyFiles */,
+				27715DD11C4185EE00F6DD5F /* AccessibilityInteractionClient.h in CopyFiles */,
+				27715DD21C4185EE00F6DD5F /* AccessibilityInteractionClient.m in CopyFiles */,
+				27715DD31C4185EE00F6DD5F /* AccessibilityIterators.h in CopyFiles */,
+				27715DD41C4185EE00F6DD5F /* AccessibilityIterators.m in CopyFiles */,
+				27715DD51C4185EE00F6DD5F /* AccessibilityManager.h in CopyFiles */,
+				27715DD61C4185EE00F6DD5F /* AccessibilityManager.m in CopyFiles */,
+				27715DD71C4185EE00F6DD5F /* AccessibilityNodeInfo.h in CopyFiles */,
+				27715DD81C4185EE00F6DD5F /* AccessibilityNodeInfo.m in CopyFiles */,
+				27715DD91C4185EE00F6DD5F /* AccessibilityNodeProvider.h in CopyFiles */,
+				27715DDA1C4185EE00F6DD5F /* AccessibilityNodeProvider.m in CopyFiles */,
+				27715DDB1C4185EE00F6DD5F /* AccessibilityRecord.h in CopyFiles */,
+				27715DDC1C4185EE00F6DD5F /* AccessibilityRecord.m in CopyFiles */,
+				27715DDD1C4185EE00F6DD5F /* AccessibilityServiceInfo.h in CopyFiles */,
+				27715DDE1C4185EE00F6DD5F /* AccessibilityServiceInfo.m in CopyFiles */,
+				27715DDF1C4185EE00F6DD5F /* AccessibilityWindowInfo.h in CopyFiles */,
+				27715DE01C4185EE00F6DD5F /* AccessibilityWindowInfo.m in CopyFiles */,
+				27715DE11C4185EE00F6DD5F /* ActionMode.h in CopyFiles */,
+				27715DE21C4185EE00F6DD5F /* ActionMode.m in CopyFiles */,
+				27715DE31C4185EE00F6DD5F /* AndroidException.h in CopyFiles */,
+				27715DE41C4185EE00F6DD5F /* AndroidException.m in CopyFiles */,
+				27715DE51C4185EE00F6DD5F /* AndroidRuntimeException.h in CopyFiles */,
+				27715DE61C4185EE00F6DD5F /* AndroidRuntimeException.m in CopyFiles */,
+				27715DE71C4185EE00F6DD5F /* Animation.h in CopyFiles */,
+				27715DE81C4185EE00F6DD5F /* Animation.m in CopyFiles */,
+				27715DE91C4185EE00F6DD5F /* AnimationUtils.h in CopyFiles */,
+				27715DEA1C4185EE00F6DD5F /* AnimationUtils.m in CopyFiles */,
+				27715DEB1C4185EE00F6DD5F /* AnimatorInflater.h in CopyFiles */,
+				27715DEC1C4185EE00F6DD5F /* AnimatorInflater.m in CopyFiles */,
+				27715DED1C4185EE00F6DD5F /* AnimatorRes.h in CopyFiles */,
+				27715DEE1C4185EE00F6DD5F /* AnimatorRes.m in CopyFiles */,
+				27715DEF1C4185EE00F6DD5F /* AnimRes.h in CopyFiles */,
+				27715DF01C4185EE00F6DD5F /* AnimRes.m in CopyFiles */,
+				27715DF11C4185EE00F6DD5F /* AnyRes.h in CopyFiles */,
+				27715DF21C4185EE00F6DD5F /* AnyRes.m in CopyFiles */,
+				27715DF31C4185EE00F6DD5F /* ApplicationInfo.h in CopyFiles */,
+				27715DF41C4185EE00F6DD5F /* ApplicationInfo.m in CopyFiles */,
+				27715DF51C4185EE00F6DD5F /* ArrayMap.h in CopyFiles */,
+				27715DF61C4185EE00F6DD5F /* ArrayMap.m in CopyFiles */,
+				27715DF71C4185EE00F6DD5F /* ArrayRes.h in CopyFiles */,
+				27715DF81C4185EE00F6DD5F /* ArrayRes.m in CopyFiles */,
+				27715DF91C4185EE00F6DD5F /* ArraySet.h in CopyFiles */,
+				27715DFA1C4185EE00F6DD5F /* ArraySet.m in CopyFiles */,
+				27715DFB1C4185EE00F6DD5F /* ArrayUtils.h in CopyFiles */,
+				27715DFC1C4185EE00F6DD5F /* ArrayUtils.m in CopyFiles */,
+				27715DFD1C4185EE00F6DD5F /* AttributeSet.h in CopyFiles */,
+				27715DFE1C4185EE00F6DD5F /* AttributeSet.m in CopyFiles */,
+				27715DFF1C4185EE00F6DD5F /* AttrRes.h in CopyFiles */,
+				27715E001C4185EE00F6DD5F /* AttrRes.m in CopyFiles */,
+				27715E011C4185EE00F6DD5F /* Base64.h in CopyFiles */,
+				27715E021C4185EE00F6DD5F /* Base64.m in CopyFiles */,
+				27715E031C4185EE00F6DD5F /* Base64DataException.h in CopyFiles */,
+				27715E041C4185EE00F6DD5F /* Base64DataException.m in CopyFiles */,
+				27715E051C4185EE00F6DD5F /* Base64InputStream.h in CopyFiles */,
+				27715E061C4185EE00F6DD5F /* Base64InputStream.m in CopyFiles */,
+				27715E071C4185EE00F6DD5F /* Base64OutputStream.h in CopyFiles */,
+				27715E081C4185EE00F6DD5F /* Base64OutputStream.m in CopyFiles */,
+				27715E091C4185EE00F6DD5F /* Binder.h in CopyFiles */,
+				27715E0A1C4185EE00F6DD5F /* Binder.m in CopyFiles */,
+				27715E0B1C4185EE00F6DD5F /* BinderThread.h in CopyFiles */,
+				27715E0C1C4185EE00F6DD5F /* BinderThread.m in CopyFiles */,
+				27715E0D1C4185EE00F6DD5F /* Bitmap.h in CopyFiles */,
+				27715E0E1C4185EE00F6DD5F /* Bitmap.m in CopyFiles */,
+				27715E0F1C4185EE00F6DD5F /* BoolRes.h in CopyFiles */,
+				27715E101C4185EE00F6DD5F /* BoolRes.m in CopyFiles */,
+				27715E111C4185EE00F6DD5F /* Build.h in CopyFiles */,
+				27715E121C4185EE00F6DD5F /* Build.m in CopyFiles */,
+				27715E131C4185EE00F6DD5F /* Bundle.h in CopyFiles */,
+				27715E141C4185EE00F6DD5F /* Bundle.m in CopyFiles */,
+				27715E151C4185EE00F6DD5F /* CallSuper.h in CopyFiles */,
+				27715E161C4185EE00F6DD5F /* CallSuper.m in CopyFiles */,
+				27715E171C4185EE00F6DD5F /* Canvas.h in CopyFiles */,
+				27715E181C4185EE00F6DD5F /* Canvas.m in CopyFiles */,
+				27715E191C4185EE00F6DD5F /* Checkable.h in CopyFiles */,
+				27715E1A1C4185EE00F6DD5F /* Checkable.m in CopyFiles */,
+				27715E1B1C4185EE00F6DD5F /* CheckResult.h in CopyFiles */,
+				27715E1C1C4185EE00F6DD5F /* CheckResult.m in CopyFiles */,
+				27715E1D1C4185EE00F6DD5F /* Choreographer.h in CopyFiles */,
+				27715E1E1C4185EE00F6DD5F /* Choreographer.m in CopyFiles */,
+				27715E1F1C4185EE00F6DD5F /* ClipData.h in CopyFiles */,
+				27715E201C4185EE00F6DD5F /* ClipData.m in CopyFiles */,
+				27715E211C4185EE00F6DD5F /* Color.h in CopyFiles */,
+				27715E221C4185EE00F6DD5F /* Color.m in CopyFiles */,
+				27715E231C4185EE00F6DD5F /* ColorDrawable.h in CopyFiles */,
+				27715E241C4185EE00F6DD5F /* ColorDrawable.m in CopyFiles */,
+				27715E251C4185EE00F6DD5F /* ColorFilter.h in CopyFiles */,
+				27715E261C4185EE00F6DD5F /* ColorFilter.m in CopyFiles */,
+				27715E271C4185EE00F6DD5F /* ColorInt.h in CopyFiles */,
+				27715E281C4185EE00F6DD5F /* ColorInt.m in CopyFiles */,
+				27715E291C4185EE00F6DD5F /* ColorMatrix.h in CopyFiles */,
+				27715E2A1C4185EE00F6DD5F /* ColorMatrix.m in CopyFiles */,
+				27715E2B1C4185EE00F6DD5F /* ColorRes.h in CopyFiles */,
+				27715E2C1C4185EE00F6DD5F /* ColorRes.m in CopyFiles */,
+				27715E2D1C4185EE00F6DD5F /* ColorStateList.h in CopyFiles */,
+				27715E2E1C4185EE00F6DD5F /* ColorStateList.m in CopyFiles */,
+				27715E2F1C4185EE00F6DD5F /* Config.h in CopyFiles */,
+				27715E301C4185EE00F6DD5F /* Config.m in CopyFiles */,
+				27715E311C4185EE00F6DD5F /* Configuration.h in CopyFiles */,
+				27715E321C4185EE00F6DD5F /* Configuration.m in CopyFiles */,
+				27715E331C4185EE00F6DD5F /* ContainerHelpers.h in CopyFiles */,
+				27715E341C4185EE00F6DD5F /* ContainerHelpers.m in CopyFiles */,
+				27715E351C4185EE00F6DD5F /* Context.h in CopyFiles */,
+				27715E361C4185EE00F6DD5F /* Context.m in CopyFiles */,
+				27715E371C4185EE00F6DD5F /* ContextMenu.h in CopyFiles */,
+				27715E381C4185EE00F6DD5F /* ContextMenu.m in CopyFiles */,
+				27715E391C4185EE00F6DD5F /* ContextWrapper.h in CopyFiles */,
+				27715E3A1C4185EE00F6DD5F /* ContextWrapper.m in CopyFiles */,
+				27715E3B1C4185EE00F6DD5F /* DayOfMonthCursor.h in CopyFiles */,
+				27715E3C1C4185EE00F6DD5F /* DayOfMonthCursor.m in CopyFiles */,
+				27715E3D1C4185EE00F6DD5F /* DebugUtils.h in CopyFiles */,
+				27715E3E1C4185EE00F6DD5F /* DebugUtils.m in CopyFiles */,
+				27715E3F1C4185EE00F6DD5F /* DimenRes.h in CopyFiles */,
+				27715E401C4185EE00F6DD5F /* DimenRes.m in CopyFiles */,
+				27715E411C4185EE00F6DD5F /* Display.h in CopyFiles */,
+				27715E421C4185EE00F6DD5F /* Display.m in CopyFiles */,
+				27715E431C4185EE00F6DD5F /* DisplayListCanvas.h in CopyFiles */,
+				27715E441C4185EE00F6DD5F /* DisplayListCanvas.m in CopyFiles */,
+				27715E451C4185EE00F6DD5F /* DisplayManagerGlobal.h in CopyFiles */,
+				27715E461C4185EE00F6DD5F /* DisplayManagerGlobal.m in CopyFiles */,
+				27715E471C4185EE00F6DD5F /* DisplayMetrics.h in CopyFiles */,
+				27715E481C4185EE00F6DD5F /* DisplayMetrics.m in CopyFiles */,
+				27715E491C4185EE00F6DD5F /* DragEvent.h in CopyFiles */,
+				27715E4A1C4185EE00F6DD5F /* DragEvent.m in CopyFiles */,
+				27715E4B1C4185EE00F6DD5F /* Drawable.h in CopyFiles */,
+				27715E4C1C4185EE00F6DD5F /* Drawable.m in CopyFiles */,
+				27715E4D1C4185EE00F6DD5F /* DrawableRes.h in CopyFiles */,
+				27715E4E1C4185EE00F6DD5F /* DrawableRes.m in CopyFiles */,
+				27715E4F1C4185EE00F6DD5F /* EditorInfo.h in CopyFiles */,
+				27715E501C4185EE00F6DD5F /* EditorInfo.m in CopyFiles */,
+				27715E511C4185EE00F6DD5F /* EmptyArray.h in CopyFiles */,
+				27715E521C4185EE00F6DD5F /* EmptyArray.m in CopyFiles */,
+				27715E531C4185EE00F6DD5F /* EventLogTags.h in CopyFiles */,
+				27715E541C4185EE00F6DD5F /* EventLogTags.m in CopyFiles */,
+				27715E551C4185EE00F6DD5F /* ExceptionUtils.h in CopyFiles */,
+				27715E561C4185EE00F6DD5F /* ExceptionUtils.m in CopyFiles */,
+				27715E571C4185EE00F6DD5F /* FastImmutableArraySet.h in CopyFiles */,
+				27715E581C4185EE00F6DD5F /* FastImmutableArraySet.m in CopyFiles */,
+				27715E591C4185EE00F6DD5F /* FastMath.h in CopyFiles */,
+				27715E5A1C4185EE00F6DD5F /* FastMath.m in CopyFiles */,
+				27715E5B1C4185EE00F6DD5F /* FastPrintWriter.h in CopyFiles */,
+				27715E5C1C4185EE00F6DD5F /* FastPrintWriter.m in CopyFiles */,
+				27715E5D1C4185EE00F6DD5F /* FloatMath.h in CopyFiles */,
+				27715E5E1C4185EE00F6DD5F /* FloatMath.m in CopyFiles */,
+				27715E5F1C4185EE00F6DD5F /* FloatProperty.h in CopyFiles */,
+				27715E601C4185EE00F6DD5F /* FloatProperty.m in CopyFiles */,
+				27715E611C4185EE00F6DD5F /* FloatRange.h in CopyFiles */,
+				27715E621C4185EE00F6DD5F /* FloatRange.m in CopyFiles */,
+				27715E631C4185EE00F6DD5F /* FocusFinder.h in CopyFiles */,
+				27715E641C4185EE00F6DD5F /* FocusFinder.m in CopyFiles */,
+				27715E651C4185EE00F6DD5F /* FractionRes.h in CopyFiles */,
+				27715E661C4185EE00F6DD5F /* FractionRes.m in CopyFiles */,
+				27715E671C4185EE00F6DD5F /* FrameLayout.h in CopyFiles */,
+				27715E681C4185EE00F6DD5F /* FrameLayout.m in CopyFiles */,
+				27715E691C4185EE00F6DD5F /* GhostView.h in CopyFiles */,
+				27715E6A1C4185EE00F6DD5F /* GhostView.m in CopyFiles */,
+				27715E6B1C4185EE00F6DD5F /* Gravity.h in CopyFiles */,
+				27715E6C1C4185EE00F6DD5F /* Gravity.m in CopyFiles */,
+				27715E6D1C4185EE00F6DD5F /* GridLayout.h in CopyFiles */,
+				27715E6E1C4185EE00F6DD5F /* GridLayout.m in CopyFiles */,
+				27715E6F1C4185EE00F6DD5F /* GrowingArrayUtils.h in CopyFiles */,
+				27715E701C4185EE00F6DD5F /* GrowingArrayUtils.m in CopyFiles */,
+				27715E711C4185EE00F6DD5F /* Handler.h in CopyFiles */,
+				27715E721C4185EE00F6DD5F /* Handler.m in CopyFiles */,
+				27715E731C4185EE00F6DD5F /* HapticFeedbackConstants.h in CopyFiles */,
+				27715E741C4185EE00F6DD5F /* HapticFeedbackConstants.m in CopyFiles */,
+				27715E751C4185EE00F6DD5F /* HardwareLayer.h in CopyFiles */,
+				27715E761C4185EE00F6DD5F /* HardwareLayer.m in CopyFiles */,
+				27715E771C4185EE00F6DD5F /* HardwareRenderer.h in CopyFiles */,
+				27715E781C4185EE00F6DD5F /* HardwareRenderer.m in CopyFiles */,
+				27715E791C4185EE00F6DD5F /* HashCodeHelpers.h in CopyFiles */,
+				27715E7A1C4185EE00F6DD5F /* HashCodeHelpers.m in CopyFiles */,
+				27715E7D1C4185EE00F6DD5F /* IAccessibilityInteractionConnectionCallback.h in CopyFiles */,
+				27715E7E1C4185EE00F6DD5F /* IAccessibilityInteractionConnectionCallback.m in CopyFiles */,
+				27715E7F1C4185EE00F6DD5F /* IAccessibilityServiceConnection.h in CopyFiles */,
+				27715E801C4185EE00F6DD5F /* IAccessibilityServiceConnection.m in CopyFiles */,
+				27715E811C4185EE00F6DD5F /* IBinder.h in CopyFiles */,
+				27715E821C4185EE00F6DD5F /* IBinder.m in CopyFiles */,
+				27715E831C4185EE00F6DD5F /* IdRes.h in CopyFiles */,
+				27715E841C4185EE00F6DD5F /* IdRes.m in CopyFiles */,
+				27715E851C4185EE00F6DD5F /* ImageSpan.h in CopyFiles */,
+				27715E861C4185EE00F6DD5F /* ImageSpan.m in CopyFiles */,
+				27715E871C4185EE00F6DD5F /* InputConnection.h in CopyFiles */,
+				27715E881C4185EE00F6DD5F /* InputConnection.m in CopyFiles */,
+				27715E891C4185EE00F6DD5F /* InputDevice.h in CopyFiles */,
+				27715E8A1C4185EE00F6DD5F /* InputDevice.m in CopyFiles */,
+				27715E8B1C4185EE00F6DD5F /* InputEventConsistencyVerifier.h in CopyFiles */,
+				27715E8C1C4185EE00F6DD5F /* InputEventConsistencyVerifier.m in CopyFiles */,
+				27715E8D1C4185EE00F6DD5F /* InputMethodManager.h in CopyFiles */,
+				27715E8E1C4185EE00F6DD5F /* InputMethodManager.m in CopyFiles */,
+				27715E8F1C4185EE00F6DD5F /* InputType.h in CopyFiles */,
+				27715E901C4185EE00F6DD5F /* InputType.m in CopyFiles */,
+				27715E911C4185EE00F6DD5F /* Insets.h in CopyFiles */,
+				27715E921C4185EE00F6DD5F /* Insets.m in CopyFiles */,
+				27715E931C4185EE00F6DD5F /* IntArray.h in CopyFiles */,
+				27715E941C4185EE00F6DD5F /* IntArray.m in CopyFiles */,
+				27715E951C4185EE00F6DD5F /* IntDef.h in CopyFiles */,
+				27715E961C4185EE00F6DD5F /* IntDef.m in CopyFiles */,
+				27715E971C4185EE00F6DD5F /* IntegerRes.h in CopyFiles */,
+				27715E981C4185EE00F6DD5F /* IntegerRes.m in CopyFiles */,
+				27715E991C4185EE00F6DD5F /* Intent.h in CopyFiles */,
+				27715E9A1C4185EE00F6DD5F /* Intent.m in CopyFiles */,
+				27715E9B1C4185EE00F6DD5F /* Interpolator.h in CopyFiles */,
+				27715E9C1C4185EE00F6DD5F /* Interpolator.m in CopyFiles */,
+				27715E9D1C4185EE00F6DD5F /* InterpolatorRes.h in CopyFiles */,
+				27715E9E1C4185EE00F6DD5F /* InterpolatorRes.m in CopyFiles */,
+				27715E9F1C4185EE00F6DD5F /* IntProperty.h in CopyFiles */,
+				27715EA01C4185EE00F6DD5F /* IntProperty.m in CopyFiles */,
+				27715EA11C4185EE00F6DD5F /* IntRange.h in CopyFiles */,
+				27715EA21C4185EE00F6DD5F /* IntRange.m in CopyFiles */,
+				27715EA31C4185EE00F6DD5F /* IWindow.h in CopyFiles */,
+				27715EA41C4185EE00F6DD5F /* IWindow.m in CopyFiles */,
+				27715EA51C4185EE00F6DD5F /* IWindowId.h in CopyFiles */,
+				27715EA61C4185EE00F6DD5F /* IWindowId.m in CopyFiles */,
+				27715EA71C4185EE00F6DD5F /* IWindowSession.h in CopyFiles */,
+				27715EA81C4185EE00F6DD5F /* IWindowSession.m in CopyFiles */,
+				27715EA91C4185EE00F6DD5F /* KeyEvent.h in CopyFiles */,
+				27715EAA1C4185EE00F6DD5F /* KeyEvent.m in CopyFiles */,
+				27715EAB1C4185EE00F6DD5F /* LayoutAnimationController.h in CopyFiles */,
+				27715EAC1C4185EE00F6DD5F /* LayoutAnimationController.m in CopyFiles */,
+				27715EAD1C4185EE00F6DD5F /* LayoutDirection.h in CopyFiles */,
+				27715EAE1C4185EE00F6DD5F /* LayoutDirection.m in CopyFiles */,
+				27715EAF1C4185EE00F6DD5F /* LayoutInflater.h in CopyFiles */,
+				27715EB01C4185EE00F6DD5F /* LayoutInflater.m in CopyFiles */,
+				27715EB11C4185EE00F6DD5F /* LayoutRes.h in CopyFiles */,
+				27715EB21C4185EE00F6DD5F /* LayoutRes.m in CopyFiles */,
+				27715EB31C4185EE00F6DD5F /* LayoutTransition.h in CopyFiles */,
+				27715EB41C4185EE00F6DD5F /* LayoutTransition.m in CopyFiles */,
+				27715EB51C4185EE00F6DD5F /* LinearGradient.h in CopyFiles */,
+				27715EB61C4185EE00F6DD5F /* LinearGradient.m in CopyFiles */,
+				27715EB71C4185EE00F6DD5F /* LinearLayout.h in CopyFiles */,
+				27715EB81C4185EE00F6DD5F /* LinearLayout.m in CopyFiles */,
+				27715EB91C4185EE00F6DD5F /* Lists.h in CopyFiles */,
+				27715EBA1C4185EE00F6DD5F /* Lists.m in CopyFiles */,
+				27715EBB1C4185EE00F6DD5F /* LocalLog.h in CopyFiles */,
+				27715EBC1C4185EE00F6DD5F /* LocalLog.m in CopyFiles */,
+				27715EBD1C4185EE00F6DD5F /* Log.h in CopyFiles */,
+				27715EBE1C4185EE00F6DD5F /* Log.m in CopyFiles */,
+				27715EBF1C4185EE00F6DD5F /* LogPrinter.h in CopyFiles */,
+				27715EC01C4185EE00F6DD5F /* LogPrinter.m in CopyFiles */,
+				27715EC11C4185EE00F6DD5F /* LongArray.h in CopyFiles */,
+				27715EC21C4185EE00F6DD5F /* LongArray.m in CopyFiles */,
+				27715EC31C4185EE00F6DD5F /* LongSparseArray.h in CopyFiles */,
+				27715EC41C4185EE00F6DD5F /* LongSparseArray.m in CopyFiles */,
+				27715EC51C4185EE00F6DD5F /* LongSparseLongArray.h in CopyFiles */,
+				27715EC61C4185EE00F6DD5F /* LongSparseLongArray.m in CopyFiles */,
+				27715EC71C4185EE00F6DD5F /* LruCache.h in CopyFiles */,
+				27715EC81C4185EE00F6DD5F /* LruCache.m in CopyFiles */,
+				27715EC91C4185EE00F6DD5F /* MainThread.h in CopyFiles */,
+				27715ECA1C4185EE00F6DD5F /* MainThread.m in CopyFiles */,
+				27715ECB1C4185EE00F6DD5F /* MalformedJsonException.h in CopyFiles */,
+				27715ECC1C4185EE00F6DD5F /* MalformedJsonException.m in CopyFiles */,
+				27715ECD1C4185EE00F6DD5F /* MapCollections.h in CopyFiles */,
+				27715ECE1C4185EE00F6DD5F /* MapCollections.m in CopyFiles */,
+				27715ECF1C4185EE00F6DD5F /* Maps.h in CopyFiles */,
+				27715ED01C4185EE00F6DD5F /* Maps.m in CopyFiles */,
+				27715ED11C4185EE00F6DD5F /* MathUtils.h in CopyFiles */,
+				27715ED21C4185EE00F6DD5F /* MathUtils.m in CopyFiles */,
+				27715ED31C4185EE00F6DD5F /* Matrix.h in CopyFiles */,
+				27715ED41C4185EE00F6DD5F /* Matrix.m in CopyFiles */,
+				27715ED51C4185EE00F6DD5F /* Menu.h in CopyFiles */,
+				27715ED61C4185EE00F6DD5F /* Menu.m in CopyFiles */,
+				27715ED71C4185EE00F6DD5F /* MenuBuilder.h in CopyFiles */,
+				27715ED81C4185EE00F6DD5F /* MenuBuilder.m in CopyFiles */,
+				27715ED91C4185EE00F6DD5F /* MenuInflater.h in CopyFiles */,
+				27715EDA1C4185EE00F6DD5F /* MenuInflater.m in CopyFiles */,
+				27715EDB1C4185EE00F6DD5F /* MenuRes.h in CopyFiles */,
+				27715EDC1C4185EE00F6DD5F /* MenuRes.m in CopyFiles */,
+				27715EDD1C4185EE00F6DD5F /* Message.h in CopyFiles */,
+				27715EDE1C4185EE00F6DD5F /* Message.m in CopyFiles */,
+				27715EDF1C4185EE00F6DD5F /* MonthDisplayHelper.h in CopyFiles */,
+				27715EE01C4185EE00F6DD5F /* MonthDisplayHelper.m in CopyFiles */,
+				27715EE11C4185EE00F6DD5F /* MotionEvent.h in CopyFiles */,
+				27715EE21C4185EE00F6DD5F /* MotionEvent.m in CopyFiles */,
+				27715EE31C4185EE00F6DD5F /* NonNull.h in CopyFiles */,
+				27715EE41C4185EE00F6DD5F /* NonNull.m in CopyFiles */,
+				27715EE51C4185EE00F6DD5F /* NoSuchPropertyException.h in CopyFiles */,
+				27715EE61C4185EE00F6DD5F /* NoSuchPropertyException.m in CopyFiles */,
+				27715EE71C4185EE00F6DD5F /* Nullable.h in CopyFiles */,
+				27715EE81C4185EE00F6DD5F /* Nullable.m in CopyFiles */,
+				27715EE91C4185EE00F6DD5F /* Objects.h in CopyFiles */,
+				27715EEA1C4185EE00F6DD5F /* Objects.m in CopyFiles */,
+				27715EEB1C4185EE00F6DD5F /* Outline.h in CopyFiles */,
+				27715EEC1C4185EE00F6DD5F /* Outline.m in CopyFiles */,
+				27715EED1C4185EE00F6DD5F /* PackageManager.h in CopyFiles */,
+				27715EEE1C4185EE00F6DD5F /* PackageManager.m in CopyFiles */,
+				27715EEF1C4185EE00F6DD5F /* Paint.h in CopyFiles */,
+				27715EF01C4185EE00F6DD5F /* Paint.m in CopyFiles */,
+				27715EF11C4185EE00F6DD5F /* Pair.h in CopyFiles */,
+				27715EF21C4185EE00F6DD5F /* Pair.m in CopyFiles */,
+				27715EF31C4185EE00F6DD5F /* Parcel.h in CopyFiles */,
+				27715EF41C4185EE00F6DD5F /* Parcel.m in CopyFiles */,
+				27715EF51C4185EE00F6DD5F /* Parcelable.h in CopyFiles */,
+				27715EF61C4185EE00F6DD5F /* Parcelable.m in CopyFiles */,
+				27715EF71C4185EE00F6DD5F /* Path.h in CopyFiles */,
+				27715EF81C4185EE00F6DD5F /* Path.m in CopyFiles */,
+				27715EF91C4185EE00F6DD5F /* Patterns.h in CopyFiles */,
+				27715EFA1C4185EE00F6DD5F /* Patterns.m in CopyFiles */,
+				27715EFB1C4185EE00F6DD5F /* PixelFormat.h in CopyFiles */,
+				27715EFC1C4185EE00F6DD5F /* PixelFormat.m in CopyFiles */,
+				27715EFD1C4185EE00F6DD5F /* PluralsRes.h in CopyFiles */,
+				27715EFE1C4185EE00F6DD5F /* PluralsRes.m in CopyFiles */,
+				27715EFF1C4185EE00F6DD5F /* Point.h in CopyFiles */,
+				27715F001C4185EE00F6DD5F /* Point.m in CopyFiles */,
+				27715F011C4185EE00F6DD5F /* PointF.h in CopyFiles */,
+				27715F021C4185EE00F6DD5F /* PointF.m in CopyFiles */,
+				27715F031C4185EE00F6DD5F /* Pools.h in CopyFiles */,
+				27715F041C4185EE00F6DD5F /* Pools.m in CopyFiles */,
+				27715F051C4185EE00F6DD5F /* PorterDuff.h in CopyFiles */,
+				27715F061C4185EE00F6DD5F /* PorterDuff.m in CopyFiles */,
+				27715F071C4185EE00F6DD5F /* PorterDuffColorFilter.h in CopyFiles */,
+				27715F081C4185EE00F6DD5F /* PorterDuffColorFilter.m in CopyFiles */,
+				27715F091C4185EE00F6DD5F /* PorterDuffXfermode.h in CopyFiles */,
+				27715F0A1C4185EE00F6DD5F /* PorterDuffXfermode.m in CopyFiles */,
+				27715F0B1C4185EE00F6DD5F /* Preconditions.h in CopyFiles */,
+				27715F0C1C4185EE00F6DD5F /* Preconditions.m in CopyFiles */,
+				27715F0D1C4185EE00F6DD5F /* Predicate.h in CopyFiles */,
+				27715F0E1C4185EE00F6DD5F /* Predicate.m in CopyFiles */,
+				27715F0F1C4185EE00F6DD5F /* Predicates.h in CopyFiles */,
+				27715F101C4185EE00F6DD5F /* Predicates.m in CopyFiles */,
+				27715F111C4185EE00F6DD5F /* PrefixPrinter.h in CopyFiles */,
+				27715F121C4185EE00F6DD5F /* PrefixPrinter.m in CopyFiles */,
+				27715F131C4185EE00F6DD5F /* Printer.h in CopyFiles */,
+				27715F141C4185EE00F6DD5F /* Printer.m in CopyFiles */,
+				27715F151C4185EE00F6DD5F /* PrintStreamPrinter.h in CopyFiles */,
+				27715F161C4185EE00F6DD5F /* PrintStreamPrinter.m in CopyFiles */,
+				27715F171C4185EE00F6DD5F /* PrintWriterPrinter.h in CopyFiles */,
+				27715F181C4185EE00F6DD5F /* PrintWriterPrinter.m in CopyFiles */,
+				27715F191C4185EE00F6DD5F /* Procedure.h in CopyFiles */,
+				27715F1A1C4185EE00F6DD5F /* Procedure.m in CopyFiles */,
+				27715F1B1C4185EE00F6DD5F /* Process.h in CopyFiles */,
+				27715F1C1C4185EE00F6DD5F /* Process.m in CopyFiles */,
+				27715F1D1C4185EE00F6DD5F /* Property.h in CopyFiles */,
+				27715F1E1C4185EE00F6DD5F /* Property.m in CopyFiles */,
+				27715F1F1C4185EE00F6DD5F /* R.h in CopyFiles */,
+				27715F201C4185EE00F6DD5F /* R.m in CopyFiles */,
+				27715F211C4185EE00F6DD5F /* Range.h in CopyFiles */,
+				27715F221C4185EE00F6DD5F /* Range.m in CopyFiles */,
+				27715F231C4185EE00F6DD5F /* Rational.h in CopyFiles */,
+				27715F241C4185EE00F6DD5F /* Rational.m in CopyFiles */,
+				27715F251C4185EE00F6DD5F /* RawRes.h in CopyFiles */,
+				27715F261C4185EE00F6DD5F /* RawRes.m in CopyFiles */,
+				27715F271C4185EE00F6DD5F /* Rect.h in CopyFiles */,
+				27715F281C4185EE00F6DD5F /* Rect.m in CopyFiles */,
+				27715F291C4185EE00F6DD5F /* RectF.h in CopyFiles */,
+				27715F2A1C4185EE00F6DD5F /* RectF.m in CopyFiles */,
+				27715F2B1C4185EE00F6DD5F /* ReflectiveProperty.h in CopyFiles */,
+				27715F2C1C4185EE00F6DD5F /* ReflectiveProperty.m in CopyFiles */,
+				27715F2D1C4185EE00F6DD5F /* Region.h in CopyFiles */,
+				27715F2E1C4185EE00F6DD5F /* Region.m in CopyFiles */,
+				27715F2F1C4185EE00F6DD5F /* RelativeLayout.h in CopyFiles */,
+				27715F301C4185EE00F6DD5F /* RelativeLayout.m in CopyFiles */,
+				27715F311C4185EE00F6DD5F /* RemotableViewMethod.h in CopyFiles */,
+				27715F321C4185EE00F6DD5F /* RemotableViewMethod.m in CopyFiles */,
+				27715F331C4185EE00F6DD5F /* RemoteException.h in CopyFiles */,
+				27715F341C4185EE00F6DD5F /* RemoteException.m in CopyFiles */,
+				27715F351C4185EE00F6DD5F /* RemoteView.h in CopyFiles */,
+				27715F361C4185EE00F6DD5F /* RemoteView.m in CopyFiles */,
+				27715F371C4185EE00F6DD5F /* RenderNode.h in CopyFiles */,
+				27715F381C4185EE00F6DD5F /* RenderNode.m in CopyFiles */,
+				27715F391C4185EE00F6DD5F /* RenderNodeAnimator.h in CopyFiles */,
+				27715F3A1C4185EE00F6DD5F /* RenderNodeAnimator.m in CopyFiles */,
+				27715F3B1C4185EE00F6DD5F /* RequiresPermission.h in CopyFiles */,
+				27715F3C1C4185EE00F6DD5F /* RequiresPermission.m in CopyFiles */,
+				27715F3D1C4185EE00F6DD5F /* Resources.h in CopyFiles */,
+				27715F3E1C4185EE00F6DD5F /* Resources.m in CopyFiles */,
+				27715F3F1C4185EE00F6DD5F /* ScrollBarDrawable.h in CopyFiles */,
+				27715F401C4185EE00F6DD5F /* ScrollBarDrawable.m in CopyFiles */,
+				27715F411C4185EE00F6DD5F /* SdkConstant.h in CopyFiles */,
+				27715F421C4185EE00F6DD5F /* SdkConstant.m in CopyFiles */,
+				27715F431C4185EE00F6DD5F /* Sets.h in CopyFiles */,
+				27715F441C4185EE00F6DD5F /* Sets.m in CopyFiles */,
+				27715F451C4185EE00F6DD5F /* Shader.h in CopyFiles */,
+				27715F461C4185EE00F6DD5F /* Shader.m in CopyFiles */,
+				27715F471C4185EE00F6DD5F /* Singleton.h in CopyFiles */,
+				27715F481C4185EE00F6DD5F /* Singleton.m in CopyFiles */,
+				27715F491C4185EE00F6DD5F /* Size.h in CopyFiles */,
+				27715F4A1C4185EE00F6DD5F /* Size.m in CopyFiles */,
+				27715F4B1C4185EE00F6DD5F /* SizeF.h in CopyFiles */,
+				27715F4C1C4185EE00F6DD5F /* SizeF.m in CopyFiles */,
+				27715F4D1C4185EE00F6DD5F /* Slog.h in CopyFiles */,
+				27715F4E1C4185EE00F6DD5F /* Slog.m in CopyFiles */,
+				27715F4F1C4185EE00F6DD5F /* SmileyParser.h in CopyFiles */,
+				27715F501C4185EE00F6DD5F /* SmileyParser.m in CopyFiles */,
+				27715F511C4185EE00F6DD5F /* SmileyResources.h in CopyFiles */,
+				27715F521C4185EE00F6DD5F /* SmileyResources.m in CopyFiles */,
+				27715F531C4185EE00F6DD5F /* SoundEffectConstants.h in CopyFiles */,
+				27715F541C4185EE00F6DD5F /* SoundEffectConstants.m in CopyFiles */,
+				27715F551C4185EE00F6DD5F /* Space.h in CopyFiles */,
+				27715F561C4185EE00F6DD5F /* Space.m in CopyFiles */,
+				27715F571C4185EE00F6DD5F /* Spannable.h in CopyFiles */,
+				27715F581C4185EE00F6DD5F /* Spannable.m in CopyFiles */,
+				27715F591C4185EE00F6DD5F /* SpannableStringBuilder.h in CopyFiles */,
+				27715F5A1C4185EE00F6DD5F /* SpannableStringBuilder.m in CopyFiles */,
+				27715F5B1C4185EE00F6DD5F /* SparseArray.h in CopyFiles */,
+				27715F5C1C4185EE00F6DD5F /* SparseArray.m in CopyFiles */,
+				27715F5D1C4185EE00F6DD5F /* SparseBooleanArray.h in CopyFiles */,
+				27715F5E1C4185EE00F6DD5F /* SparseBooleanArray.m in CopyFiles */,
+				27715F5F1C4185EE00F6DD5F /* SparseIntArray.h in CopyFiles */,
+				27715F601C4185EE00F6DD5F /* SparseIntArray.m in CopyFiles */,
+				27715F611C4185EE00F6DD5F /* SparseLongArray.h in CopyFiles */,
+				27715F621C4185EE00F6DD5F /* SparseLongArray.m in CopyFiles */,
+				27715F631C4185EE00F6DD5F /* Spline.h in CopyFiles */,
+				27715F641C4185EE00F6DD5F /* Spline.m in CopyFiles */,
+				27715F651C4185EE00F6DD5F /* StateListAnimator.h in CopyFiles */,
+				27715F661C4185EE00F6DD5F /* StateListAnimator.m in CopyFiles */,
+				27715F671C4185EE00F6DD5F /* StateSet.h in CopyFiles */,
+				27715F681C4185EE00F6DD5F /* StateSet.m in CopyFiles */,
+				27715F691C4185EE00F6DD5F /* StringBuilderPrinter.h in CopyFiles */,
+				27715F6A1C4185EE00F6DD5F /* StringBuilderPrinter.m in CopyFiles */,
+				27715F6B1C4185EE00F6DD5F /* StringDef.h in CopyFiles */,
+				27715F6C1C4185EE00F6DD5F /* StringDef.m in CopyFiles */,
+				27715F6D1C4185EE00F6DD5F /* StringRes.h in CopyFiles */,
+				27715F6E1C4185EE00F6DD5F /* StringRes.m in CopyFiles */,
+				27715F6F1C4185EE00F6DD5F /* StyleableRes.h in CopyFiles */,
+				27715F701C4185EE00F6DD5F /* StyleableRes.m in CopyFiles */,
+				27715F711C4185EE00F6DD5F /* StyleRes.h in CopyFiles */,
+				27715F721C4185EE00F6DD5F /* StyleRes.m in CopyFiles */,
+				27715F731C4185EE00F6DD5F /* SuperNotCalledException.h in CopyFiles */,
+				27715F741C4185EE00F6DD5F /* SuperNotCalledException.m in CopyFiles */,
+				27715F751C4185EE00F6DD5F /* SuppressLint.h in CopyFiles */,
+				27715F761C4185EE00F6DD5F /* SuppressLint.m in CopyFiles */,
+				27715F771C4185EE00F6DD5F /* Surface.h in CopyFiles */,
+				27715F781C4185EE00F6DD5F /* Surface.m in CopyFiles */,
+				27715F791C4185EE00F6DD5F /* SystemApi.h in CopyFiles */,
+				27715F7A1C4185EE00F6DD5F /* SystemApi.m in CopyFiles */,
+				27715F7B1C4185EE00F6DD5F /* SystemClock.h in CopyFiles */,
+				27715F7C1C4185EE00F6DD5F /* SystemClock.m in CopyFiles */,
+				27715F7D1C4185EE00F6DD5F /* SystemProperties.h in CopyFiles */,
+				27715F7E1C4185EE00F6DD5F /* SystemProperties.m in CopyFiles */,
+				27715F7F1C4185EE00F6DD5F /* TargetApi.h in CopyFiles */,
+				27715F801C4185EE00F6DD5F /* TargetApi.m in CopyFiles */,
+				27715F811C4185EE00F6DD5F /* TextUtils.h in CopyFiles */,
+				27715F821C4185EE00F6DD5F /* TextUtils.m in CopyFiles */,
+				27715F831C4185EE00F6DD5F /* TimeFormatException.h in CopyFiles */,
+				27715F841C4185EE00F6DD5F /* TimeFormatException.m in CopyFiles */,
+				27715F851C4185EE00F6DD5F /* TouchDelegate.h in CopyFiles */,
+				27715F861C4185EE00F6DD5F /* TouchDelegate.m in CopyFiles */,
+				27715F871C4185EE00F6DD5F /* Trace.h in CopyFiles */,
+				27715F881C4185EE00F6DD5F /* Trace.m in CopyFiles */,
+				27715F891C4185EE00F6DD5F /* Transformation.h in CopyFiles */,
+				27715F8A1C4185EE00F6DD5F /* Transformation.m in CopyFiles */,
+				27715F8B1C4185EE00F6DD5F /* TransitionRes.h in CopyFiles */,
+				27715F8C1C4185EE00F6DD5F /* TransitionRes.m in CopyFiles */,
+				27715F8D1C4185EE00F6DD5F /* TrustedTime.h in CopyFiles */,
+				27715F8E1C4185EE00F6DD5F /* TrustedTime.m in CopyFiles */,
+				27715F8F1C4185EE00F6DD5F /* TypedArray.h in CopyFiles */,
+				27715F901C4185EE00F6DD5F /* TypedArray.m in CopyFiles */,
+				27715F911C4185EE00F6DD5F /* TypedArrayWrapper.h in CopyFiles */,
+				27715F921C4185EE00F6DD5F /* TypedArrayWrapper.m in CopyFiles */,
+				27715F931C4185EE00F6DD5F /* TypedValue.h in CopyFiles */,
+				27715F941C4185EE00F6DD5F /* TypedValue.m in CopyFiles */,
+				27715F951C4185EE00F6DD5F /* UiThread.h in CopyFiles */,
+				27715F961C4185EE00F6DD5F /* UiThread.m in CopyFiles */,
+				27715F971C4185EE00F6DD5F /* View.h in CopyFiles */,
+				27715F981C4185EE00F6DD5F /* View.m in CopyFiles */,
+				27715F991C4185EE00F6DD5F /* ViewConfiguration.h in CopyFiles */,
+				27715F9A1C4185EE00F6DD5F /* ViewConfiguration.m in CopyFiles */,
+				27715F9B1C4185EE00F6DD5F /* ViewDebug.h in CopyFiles */,
+				27715F9C1C4185EE00F6DD5F /* ViewDebug.m in CopyFiles */,
+				27715F9D1C4185EE00F6DD5F /* ViewGroup.h in CopyFiles */,
+				27715F9E1C4185EE00F6DD5F /* ViewGroup.m in CopyFiles */,
+				27715F9F1C4185EE00F6DD5F /* ViewGroupOverlay.h in CopyFiles */,
+				27715FA01C4185EE00F6DD5F /* ViewGroupOverlay.m in CopyFiles */,
+				27715FA11C4185EE00F6DD5F /* ViewHierarchyEncoder.h in CopyFiles */,
+				27715FA21C4185EE00F6DD5F /* ViewHierarchyEncoder.m in CopyFiles */,
+				27715FA31C4185EE00F6DD5F /* ViewManager.h in CopyFiles */,
+				27715FA41C4185EE00F6DD5F /* ViewManager.m in CopyFiles */,
+				27715FA51C4185EE00F6DD5F /* ViewOutlineProvider.h in CopyFiles */,
+				27715FA61C4185EE00F6DD5F /* ViewOutlineProvider.m in CopyFiles */,
+				27715FA71C4185EE00F6DD5F /* ViewOverlay.h in CopyFiles */,
+				27715FA81C4185EE00F6DD5F /* ViewOverlay.m in CopyFiles */,
+				27715FA91C4185EE00F6DD5F /* ViewParent.h in CopyFiles */,
+				27715FAA1C4185EE00F6DD5F /* ViewParent.m in CopyFiles */,
+				27715FAB1C4185EE00F6DD5F /* ViewPropertyAnimator.h in CopyFiles */,
+				27715FAC1C4185EE00F6DD5F /* ViewPropertyAnimator.m in CopyFiles */,
+				27715FAD1C4185EE00F6DD5F /* ViewRootImpl.h in CopyFiles */,
+				27715FAE1C4185EE00F6DD5F /* ViewRootImpl.m in CopyFiles */,
+				27715FAF1C4185EE00F6DD5F /* ViewStructure.h in CopyFiles */,
+				27715FB01C4185EE00F6DD5F /* ViewStructure.m in CopyFiles */,
+				27715FB11C4185EE00F6DD5F /* ViewTreeObserver.h in CopyFiles */,
+				27715FB21C4185EE00F6DD5F /* ViewTreeObserver.m in CopyFiles */,
+				27715FB31C4185EE00F6DD5F /* Widget.h in CopyFiles */,
+				27715FB41C4185EE00F6DD5F /* Widget.m in CopyFiles */,
+				27715FB51C4185EE00F6DD5F /* WindowId.h in CopyFiles */,
+				27715FB61C4185EE00F6DD5F /* WindowId.m in CopyFiles */,
+				27715FB71C4185EE00F6DD5F /* WindowInsets.h in CopyFiles */,
+				27715FB81C4185EE00F6DD5F /* WindowInsets.m in CopyFiles */,
+				27715FB91C4185EE00F6DD5F /* WorkerThread.h in CopyFiles */,
+				27715FBA1C4185EE00F6DD5F /* WorkerThread.m in CopyFiles */,
+				27715FBB1C4185EE00F6DD5F /* Xfermode.h in CopyFiles */,
+				27715FBC1C4185EE00F6DD5F /* Xfermode.m in CopyFiles */,
+				27715FBD1C4185EE00F6DD5F /* XmlRes.h in CopyFiles */,
+				27715FBE1C4185EE00F6DD5F /* XmlRes.m in CopyFiles */,
+				27715FBF1C4185EE00F6DD5F /* XmlUtils.h in CopyFiles */,
+				27715FC01C4185EE00F6DD5F /* XmlUtils.m in CopyFiles */,
 				270B6BC71C3B5F86002CB39A /* AttributeSetter.h in CopyFiles */,
 				270B6BC81C3B5F86002CB39A /* AttributeSetter.m in CopyFiles */,
 				270B6BC91C3B5F86002CB39A /* AttributeSetterFactory.h in CopyFiles */,
@@ -799,8 +1805,6 @@
 				270B6BE11C3B5F86002CB39A /* Label.h in CopyFiles */,
 				270B6BE31C3B5F86002CB39A /* LabelSetter.h in CopyFiles */,
 				270B6BE41C3B5F86002CB39A /* LabelSetter.m in CopyFiles */,
-				270B6BE51C3B5F86002CB39A /* LinearLayout.h in CopyFiles */,
-				270B6BE61C3B5F86002CB39A /* LinearLayout.m in CopyFiles */,
 				270B6BE71C3B5F86002CB39A /* LinearlayoutSetter.h in CopyFiles */,
 				270B6BE81C3B5F86002CB39A /* LinearlayoutSetter.m in CopyFiles */,
 				270B6BE91C3B5F86002CB39A /* Link.h in CopyFiles */,
@@ -1008,8 +2012,6 @@
 		2708F4D81C3982CC00FFB46F /* HardwareRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HardwareRenderer.m; sourceTree = "<group>"; };
 		2708F4D91C3982CC00FFB46F /* HashCodeHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashCodeHelpers.h; sourceTree = "<group>"; };
 		2708F4DA1C3982CC00FFB46F /* HashCodeHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashCodeHelpers.m; sourceTree = "<group>"; };
-		2708F4DB1C3982CC00FFB46F /* HtmlSaxHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlSaxHandler.h; sourceTree = "<group>"; };
-		2708F4DC1C3982CC00FFB46F /* HtmlSaxHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlSaxHandler.m; sourceTree = "<group>"; };
 		2708F4DD1C3982CC00FFB46F /* IAccessibilityInteractionConnectionCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAccessibilityInteractionConnectionCallback.h; sourceTree = "<group>"; };
 		2708F4DE1C3982CC00FFB46F /* IAccessibilityInteractionConnectionCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAccessibilityInteractionConnectionCallback.m; sourceTree = "<group>"; };
 		2708F4DF1C3982CC00FFB46F /* IAccessibilityServiceConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAccessibilityServiceConnection.h; sourceTree = "<group>"; };
@@ -1362,8 +2364,6 @@
 		270B6B9F1C3B5F69002CB39A /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
 		270B6BA11C3B5F69002CB39A /* LabelSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelSetter.h; sourceTree = "<group>"; };
 		270B6BA21C3B5F69002CB39A /* LabelSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelSetter.m; sourceTree = "<group>"; };
-		270B6BA31C3B5F69002CB39A /* LinearLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearLayout.h; sourceTree = "<group>"; };
-		270B6BA41C3B5F69002CB39A /* LinearLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinearLayout.m; sourceTree = "<group>"; };
 		270B6BA51C3B5F69002CB39A /* LinearlayoutSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearlayoutSetter.h; sourceTree = "<group>"; };
 		270B6BA61C3B5F69002CB39A /* LinearlayoutSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinearlayoutSetter.m; sourceTree = "<group>"; };
 		270B6BA71C3B5F69002CB39A /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
@@ -1660,6 +2660,8 @@
 		270B6D0C1C3B60F2002CB39A /* ViewCSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCSS.m; sourceTree = "<group>"; };
 		270B6D9A1C3B6468002CB39A /* TagSoupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagSoupParser.h; sourceTree = "<group>"; };
 		270B6D9B1C3B6468002CB39A /* TagSoupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagSoupParser.m; sourceTree = "<group>"; };
+		27715FC51C421C9700F6DD5F /* ILinearLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILinearLayout.h; sourceTree = "<group>"; };
+		27715FC61C421C9700F6DD5F /* ILinearLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILinearLayout.m; sourceTree = "<group>"; };
 		277463791BDB318200BAFD75 /* libAsheraIosParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAsheraIosParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		277463841BDB318200BAFD75 /* AsheraIosParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsheraIosParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2774638A1BDB318200BAFD75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1905,8 +2907,6 @@
 				2708F4D81C3982CC00FFB46F /* HardwareRenderer.m */,
 				2708F4D91C3982CC00FFB46F /* HashCodeHelpers.h */,
 				2708F4DA1C3982CC00FFB46F /* HashCodeHelpers.m */,
-				2708F4DB1C3982CC00FFB46F /* HtmlSaxHandler.h */,
-				2708F4DC1C3982CC00FFB46F /* HtmlSaxHandler.m */,
 				2708F4DD1C3982CC00FFB46F /* IAccessibilityInteractionConnectionCallback.h */,
 				2708F4DE1C3982CC00FFB46F /* IAccessibilityInteractionConnectionCallback.m */,
 				2708F4DF1C3982CC00FFB46F /* IAccessibilityServiceConnection.h */,
@@ -2260,6 +3260,8 @@
 		2774637B1BDB318200BAFD75 /* AsheraIosParser */ = {
 			isa = PBXGroup;
 			children = (
+				27715FC51C421C9700F6DD5F /* ILinearLayout.h */,
+				27715FC61C421C9700F6DD5F /* ILinearLayout.m */,
 				270B6B851C3B5F69002CB39A /* AttributeSetter.h */,
 				270B6B861C3B5F69002CB39A /* AttributeSetter.m */,
 				270B6B871C3B5F69002CB39A /* AttributeSetterFactory.h */,
@@ -2288,8 +3290,6 @@
 				270B6B9F1C3B5F69002CB39A /* Label.h */,
 				270B6BA11C3B5F69002CB39A /* LabelSetter.h */,
 				270B6BA21C3B5F69002CB39A /* LabelSetter.m */,
-				270B6BA31C3B5F69002CB39A /* LinearLayout.h */,
-				270B6BA41C3B5F69002CB39A /* LinearLayout.m */,
 				270B6BA51C3B5F69002CB39A /* LinearlayoutSetter.h */,
 				270B6BA61C3B5F69002CB39A /* LinearlayoutSetter.m */,
 				270B6BA71C3B5F69002CB39A /* Link.h */,
@@ -3276,6 +4276,7 @@
 				270B6D1C1C3B60F2002CB39A /* ConditionalSelector.m in Sources */,
 				2708F97B1C39963300FFB46F /* Rect.h in Sources */,
 				2708F97C1C39963300FFB46F /* Rect.m in Sources */,
+				27715FC71C421C9700F6DD5F /* ILinearLayout.m in Sources */,
 				270B6D7D1C3B60F2002CB39A /* SACParserCSS1TokenManager.m in Sources */,
 				270B6D651C3B60F2002CB39A /* MediaQuery.m in Sources */,
 				2708F97D1C39963300FFB46F /* RectF.h in Sources */,
@@ -3476,7 +4477,6 @@
 				2708FA131C39963300FFB46F /* XmlUtils.h in Sources */,
 				2708FA141C39963300FFB46F /* XmlUtils.m in Sources */,
 				270B6BB41C3B5F69002CB39A /* Body.m in Sources */,
-				270B6BC01C3B5F69002CB39A /* LinearLayout.m in Sources */,
 				270B6BBA1C3B5F69002CB39A /* HasWidgets.m in Sources */,
 				270B6BBD1C3B5F69002CB39A /* IsWidget.m in Sources */,
 				270B6BC21C3B5F69002CB39A /* Link.m in Sources */,

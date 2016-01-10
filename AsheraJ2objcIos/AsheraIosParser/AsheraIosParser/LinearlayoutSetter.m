@@ -4,8 +4,8 @@
 //
 
 
+#include "ILinearLayout.h"
 #include "J2ObjC_source.h"
-#include "LinearLayout.h"
 #include "LinearlayoutSetter.h"
 #include "Widget.h"
 #include "java/util/Map.h"
@@ -20,7 +20,7 @@
 - (void)setAttributeWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)linearLayout
                                             withJavaUtilMap:(id<JavaUtilMap>)cssProps
                                     withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
-  [((id<ComAsheraAndroidWidgetFactoryLinearLayout>) nil_chk(((id<ComAsheraAndroidWidgetFactoryLinearLayout>) check_protocol_cast(linearLayout, @protocol(ComAsheraAndroidWidgetFactoryLinearLayout))))) setOrientationWithNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"orientation"]];
+  [((id<ComAsheraAndroidWidgetFactoryILinearLayout>) nil_chk(((id<ComAsheraAndroidWidgetFactoryILinearLayout>) check_protocol_cast(linearLayout, @protocol(ComAsheraAndroidWidgetFactoryILinearLayout))))) setOrientationWithNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"orientation"]];
 }
 
 - (instancetype)init {

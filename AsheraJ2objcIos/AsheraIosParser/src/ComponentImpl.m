@@ -16,11 +16,7 @@
 
 - (NSString *)getFileAssetWithNSString:(NSString *)path
                        withJavaUtilMap:(id<JavaUtilMap>)metadata {
-    NSError* error = nil;
-    NSString *resPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path];
-//    NSString *path = [[NSBundle mainBundle] pathForResource: path ofType: @"css"];
-    NSString *res = [NSString stringWithContentsOfFile: resPath encoding:NSUTF8StringEncoding error: &error];
-  return res;
+  return @"";
 }
 
 - (instancetype)init {

@@ -1,32 +1,28 @@
 package ios;
 
+import java.util.Iterator;
 import java.util.Map;
 
-import repackaged.android.content.Context;
 import repackaged.android.content.ContextWrapper;
 import repackaged.android.view.View;
-import repackaged.android.widget.LinearLayout.LayoutParams;
 
 import com.ashera.android.widget.factory.HasWidgets;
-import com.ashera.android.widget.factory.Label;
+import com.ashera.android.widget.factory.ILinearLayout;
+import com.ashera.android.widget.factory.Widget;
 
-public class LabelImpl extends View implements Label{
+public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  implements ILinearLayout{
 
-	public LabelImpl() {
+	public LinearLayoutImpl() {
 		super(new ContextWrapper());
 		setLayoutParams(new LayoutParams(10, 10));
 	}
 
 	@Override
 	public void setOpacity(float opacity) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void setBackgroundColor(String color) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -91,8 +87,6 @@ public class LabelImpl extends View implements Label{
 
 	@Override
 	public void create(Map<String, Object> metadata) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -102,21 +96,34 @@ public class LabelImpl extends View implements Label{
 	}
 
 	@Override
-	public String getText() {
+	public void setOrientation(String orientation) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void add(Widget w) {
+		if (w instanceof View) {
+			addView(((View) w));
+		}
+	}
+
+	@Override
+	public void clear() {
+		removeAllViews();
+	}
+
+	@Override
+	public Iterator<Widget> iterate() {
 		return null;
 	}
 
 	@Override
-	public void setText(String text) {
-		// TODO Auto-generated method stub
-		
+	public boolean remove(Widget w) {
+		if (w instanceof View) {
+			removeView(((View) w));
+			return true;
+		}
+		return false;
 	}
-
-	@Override
-	public void setColor(String color) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
