@@ -103,6 +103,15 @@ UIView* uiView;
 
 #line 99
 - (void)setOrientationWithNSString:(NSString *)orientation {
+     [self setOrientationWithInt:1];
+    if (orientation != nil) {
+        if ([orientation isEqualToString:@"h"]) {
+             [self setOrientationWithInt:0];
+        } else {
+             [self setOrientationWithInt:1];
+        }
+    }
+   
 }
 
 

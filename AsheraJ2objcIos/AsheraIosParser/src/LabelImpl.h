@@ -14,6 +14,7 @@
 @protocol JavaUtilMap;
 
 @interface IosLabelImpl : RepackagedAndroidViewView < ComAsheraAndroidWidgetFactoryILabel >
+@property UILabel *uiLabel;
 
 #pragma mark Public
 

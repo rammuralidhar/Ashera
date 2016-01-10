@@ -19,7 +19,7 @@
 
 #line 13
 @implementation IosLabelImpl
-UILabel* uiLabel;
+
 - (instancetype)init {
   IosLabelImpl_init(self);
   return self;
@@ -85,11 +85,12 @@ UILabel* uiLabel;
 - (id)asWidget {
   
 #line 89
-  return uiLabel;
+  return self.uiLabel;
 }
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
-    uiLabel = [UILabel new];
+    self.uiLabel = [UILabel new];
+    self.uiLabel.numberOfLines = 3;
 }
 
 
@@ -106,7 +107,7 @@ UILabel* uiLabel;
 }
 
 - (void)setTextWithNSString:(NSString *)text {
-    [uiLabel setText:text];
+    [self.uiLabel setText:text];
 }
 
 
@@ -122,7 +123,9 @@ UILabel* uiLabel;
                     withInt:(jint)r
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
-    [uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
+    [self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
+    NSLog(@"%d l1l %d", l, t);
+
   
 #line 126
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("ICICICI", l, ' ', t, ' ', r, ' ', b)];
@@ -160,7 +163,7 @@ UILabel* uiLabel;
 #line 15
 void IosLabelImpl_init(IosLabelImpl *self) {
   (void) RepackagedAndroidViewView_initWithRepackagedAndroidContentContext_(self, new_RepackagedAndroidContentContextWrapper_init());
-  [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetLinearLayout_LayoutParams_initWithInt_withInt_(100, 100)];
+  [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetLinearLayout_LayoutParams_initWithInt_withInt_(50, 50)];
 }
 
 
