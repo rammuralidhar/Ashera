@@ -106,6 +106,7 @@ UILabel* uiLabel;
 }
 
 - (void)setTextWithNSString:(NSString *)text {
+    [uiLabel setText:text];
 }
 
 
@@ -121,6 +122,7 @@ UILabel* uiLabel;
                     withInt:(jint)r
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
+    [uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
   
 #line 126
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("ICICICI", l, ' ', t, ' ', r, ' ', b)];
@@ -158,7 +160,7 @@ UILabel* uiLabel;
 #line 15
 void IosLabelImpl_init(IosLabelImpl *self) {
   (void) RepackagedAndroidViewView_initWithRepackagedAndroidContentContext_(self, new_RepackagedAndroidContentContextWrapper_init());
-  [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetLinearLayout_LayoutParams_initWithInt_withInt_(10, 10)];
+  [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetLinearLayout_LayoutParams_initWithInt_withInt_(100, 100)];
 }
 
 

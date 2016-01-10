@@ -109,7 +109,10 @@ UIView* uiView;
 #line 105
 - (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
+      NSLog(@"test1111");
     [self addViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
+    uiView.backgroundColor = [UIColor greenColor];
+      [uiView addSubview:[w asWidget]];
   }
 }
 
@@ -143,6 +146,8 @@ UIView* uiView;
                     withInt:(jint)r
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
+    [uiView setFrame:CGRectMake(l, t, r-l, b-t)];
+    NSLog(@"%d ll %d", r-l, b-t);
   
 #line 134
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("ICICICI", l, ' ', t, ' ', r, ' ', b)];
@@ -182,7 +187,7 @@ UIView* uiView;
 #line 15
 void IosLinearLayoutImpl_init(IosLinearLayoutImpl *self) {
   (void) RepackagedAndroidWidgetLinearLayout_initWithRepackagedAndroidContentContext_(self, new_RepackagedAndroidContentContextWrapper_init());
-  [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetLinearLayout_LayoutParams_initWithInt_withInt_(10, 10)];
+  [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetLinearLayout_LayoutParams_initWithInt_withInt_(200, 200)];
 }
 
 

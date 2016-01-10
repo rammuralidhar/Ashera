@@ -33,6 +33,7 @@ UIView* htmlView;
 - (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
     [self addViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
+      [htmlView addSubview:[w asWidget]];
   }
 }
 
@@ -85,7 +86,7 @@ UIView* htmlView;
   [self measureWithInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(w, wmeasureSpec) withInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(
 #line 65
   h, hmeasureSpec)];
-  [self layoutWithInt:0 withInt:0 withInt:50 withInt:50];
+  [self layoutWithInt:0 withInt:0 withInt:500 withInt:500];
 }
 
 
