@@ -85,7 +85,7 @@ UIView* htmlView;
   [self measureWithInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(w, wmeasureSpec) withInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(
 #line 65
   h, hmeasureSpec)];
-  [self layoutWithInt:0 withInt:0 withInt:1000 withInt:1000];
+  [self layoutWithInt:0 withInt:0 withInt:50 withInt:50];
 }
 
 
@@ -97,6 +97,14 @@ UIView* htmlView;
                     withInt:(jint)bottom {
   [super onLayoutWithBoolean:changed withInt:left withInt:top withInt:right withInt:bottom];
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("ICICICI", left, ' ', top, ' ', right, ' ', bottom)];
+    htmlView.backgroundColor = [UIColor redColor];
+    [htmlView setFrame:CGRectMake(left, top, right-left, bottom-top)];
+    
+    UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
+    [window.rootViewController.view addSubview:htmlView];
+//    [window addSubview:htmlView];
+//    [window bringSubviewToFront:htmlView];
+
 }
 
 + (const J2ObjcClassInfo *)__metadata {
