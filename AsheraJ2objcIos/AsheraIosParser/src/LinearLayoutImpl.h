@@ -16,7 +16,7 @@
 @protocol JavaUtilMap;
 
 @interface IosLinearLayoutImpl : RepackagedAndroidWidgetLinearLayout < ComAsheraAndroidWidgetFactoryILinearLayout >
-
+@property UIView* uiView;
 #pragma mark Public
 
 - (instancetype)init;

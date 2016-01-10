@@ -22,7 +22,7 @@
 
 #line 13
 @implementation IosLinearLayoutImpl
-UIView* uiView;
+
 - (instancetype)init {
   IosLinearLayoutImpl_init(self);
   return self;
@@ -88,11 +88,11 @@ UIView* uiView;
 - (id)asWidget {
   
 #line 85
-  return uiView;
+  return self.uiView;
 }
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
-    uiView = [UIView new];
+    self.uiView = [UIView new];
 }
 
 
@@ -118,10 +118,9 @@ UIView* uiView;
 #line 105
 - (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
-      NSLog(@"test1111");
     [self addViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
-    uiView.backgroundColor = [UIColor greenColor];
-      [uiView addSubview:[w asWidget]];
+    self.uiView.backgroundColor = [UIColor greenColor];
+    [self.uiView addSubview:[w asWidget]];
   }
 }
 
@@ -155,7 +154,7 @@ UIView* uiView;
                     withInt:(jint)r
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
-    [uiView setFrame:CGRectMake(l, t, r-l, b-t)];
+    [self.uiView setFrame:CGRectMake(l, t, r-l, b-t)];
     NSLog(@"%d ll %d", r-l, b-t);
   
 #line 134
