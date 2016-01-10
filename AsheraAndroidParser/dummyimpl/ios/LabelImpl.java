@@ -8,9 +8,9 @@ import repackaged.android.view.View;
 import repackaged.android.widget.LinearLayout.LayoutParams;
 
 import com.ashera.android.widget.factory.HasWidgets;
-import com.ashera.android.widget.factory.Label;
+import com.ashera.android.widget.factory.ILabel;
 
-public class LabelImpl extends View implements Label{
+public class LabelImpl extends View implements ILabel{
 
 	public LabelImpl() {
 		super(new ContextWrapper());

@@ -4,16 +4,16 @@ import java.util.Map;
 
 import org.xml.sax.Attributes;
 
-import com.ashera.android.widget.factory.Label;
-import com.ashera.android.widget.factory.Widget;
+import com.ashera.android.widget.factory.ILabel;
+import com.ashera.android.widget.factory.IWidget;
 
 public class LabelSetter implements AttributeSetter{
 
 	@Override
-	public void setAttribute(Widget widget, Map<String, String> cssProps,
+	public void setAttribute(IWidget widget, Map<String, String> cssProps,
 			Attributes atts) {
 		String color = cssProps.get("color");
-		Label label = (Label) widget;
+		ILabel label = (ILabel) widget;
 		if (color != null) {
 			label.setColor(color);
 		}

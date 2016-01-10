@@ -1,9 +1,9 @@
 package com.ashera.android.factory.ui;
 
 import com.ashera.android.widget.factory.HasWidgets;
-import com.ashera.android.widget.factory.Widget;
+import com.ashera.android.widget.factory.IWidget;
 
-public abstract class BaseWidget implements Widget{
+public abstract class BaseWidget implements IWidget{
 	protected HasWidgets parent;
 
 	@Override

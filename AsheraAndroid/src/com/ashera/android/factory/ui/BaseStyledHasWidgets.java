@@ -8,10 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ashera.android.widget.factory.HasWidgets;
-import com.ashera.android.widget.factory.Widget;
+import com.ashera.android.widget.factory.IWidget;
 
-public abstract class BaseStyledHasWidgets extends BaseStyle implements HasWidgets, Widget{
-	protected List<Widget> widgets = new ArrayList<Widget>();
+public abstract class BaseStyledHasWidgets extends BaseStyle implements HasWidgets, IWidget{
+	protected List<IWidget> widgets = new ArrayList<IWidget>();
 	protected HasWidgets parent;
 
 	@Override
@@ -21,7 +21,7 @@ public abstract class BaseStyledHasWidgets extends BaseStyle implements HasWidge
 
 
 	@Override
-	public void add(Widget w) {
+	public void add(IWidget w) {
 		widgets.add(w);
 		getViewGroup().addView((View) w.asWidget());
 	}
@@ -32,12 +32,12 @@ public abstract class BaseStyledHasWidgets extends BaseStyle implements HasWidge
 	}
 
 	@Override
-	public Iterator<Widget> iterate() {
+	public Iterator<IWidget> iterate() {
 		return widgets.iterator();
 	}
 
 	@Override
-	public boolean remove(Widget w) {
+	public boolean remove(IWidget w) {
 		getViewGroup().removeView((View) w.asWidget());
 		return widgets.remove(w);
 	}

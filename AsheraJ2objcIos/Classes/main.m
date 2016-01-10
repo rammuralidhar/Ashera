@@ -17,12 +17,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "J2RAppDelegate.h"
+#import "AppDelegate.h"
 
 int main(int argc, char *argv[])
 {
   @autoreleasepool {
       NSLog(@"main.m");
-      return UIApplicationMain(argc, argv, nil, NSStringFromClass([J2RAppDelegate class]));
+      return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
   }
 }

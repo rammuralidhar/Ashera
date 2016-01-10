@@ -7,9 +7,9 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
-import com.ashera.android.widget.factory.Label;
+import com.ashera.android.widget.factory.ILabel;
 
-public class LabelImpl extends BaseStyledWidget implements Label{
+public class LabelImpl extends BaseStyledWidget implements ILabel{
 	private TextView label;
 	private Context context;
 	private String text;

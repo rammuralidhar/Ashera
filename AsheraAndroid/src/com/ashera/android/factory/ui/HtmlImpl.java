@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 
-import com.ashera.android.widget.factory.Html;
+import com.ashera.android.widget.factory.IHtml;
 
-public class HtmlImpl extends BaseHasWidgets implements Html {
+public class HtmlImpl extends BaseHasWidgets implements IHtml {
 	private Context context;
 	private FrameLayout frameLayout;
 	public HtmlImpl() {

@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.view.animation.AlphaAnimation;
 
-import com.ashera.android.widget.factory.Style;
+import com.ashera.android.widget.factory.IStyle;
 
-public abstract class BaseStyle implements Style{
+public abstract class BaseStyle implements IStyle{
 	private String paddingTop = "0";
 	private String paddingBottom  = "0";
 	private String paddingLeft = "0";

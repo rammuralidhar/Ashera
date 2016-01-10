@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
 
-import com.ashera.android.widget.factory.Body;
+import com.ashera.android.widget.factory.IBody;
 
-public class BodyImpl extends BaseStyledHasWidgets implements Body{
+public class BodyImpl extends BaseStyledHasWidgets implements IBody{
 	private Context context;
 	private RelativeLayout relativeLayout;
 	public BodyImpl() {

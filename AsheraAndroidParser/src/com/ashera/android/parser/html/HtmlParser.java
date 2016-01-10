@@ -9,11 +9,11 @@ import org.ccil.cowan.tagsoup.TagSoupParser;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import com.ashera.android.widget.factory.Widget;
+import com.ashera.android.widget.factory.IWidget;
 
 public class HtmlParser {
 	private static final HTMLSchema schema = new HTMLSchema();
-	public static Widget parse(String contentHtml, Map<String, Object> metadata) {
+	public static IWidget parse(String contentHtml, Map<String, Object> metadata) {
 		TagSoupParser parser = new TagSoupParser();
 	    try {
 	        parser.setProperty(TagSoupParser.schemaProperty, schema);

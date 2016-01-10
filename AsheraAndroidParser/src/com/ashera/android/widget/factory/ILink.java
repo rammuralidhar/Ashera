@@ -7,7 +7,7 @@ import org.xml.sax.Attributes;
 import com.ashera.android.component.factory.Component;
 import com.ashera.android.component.factory.ComponentFactory;
 
-public class Link implements Widget{
+public class ILink implements IWidget{
 	@Override
 	public Object asWidget() {
 		return null;

@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WidgetFactory {
-	private static Map<String, Class<? extends Widget>> registrationMap = new HashMap<String, Class<? extends Widget>>();
+	private static Map<String, Class<? extends IWidget>> registrationMap = new HashMap<String, Class<? extends IWidget>>();
 	static {
-		WidgetFactory.register("link", Link.class);
+		WidgetFactory.register("link", ILink.class);
 	}
 
-	public static Widget get(String localname) {
+	public static IWidget get(String localname) {
 		try {
-			Class<? extends Widget> class1 = registrationMap.get(localname);
+			Class<? extends IWidget> class1 = registrationMap.get(localname);
 			if (class1 != null) {
 				return class1.newInstance();
 			} 
@@ -24,7 +24,7 @@ public class WidgetFactory {
 		}
 	}
 	
-	public static void register(String localname, Class<? extends Widget> ui) {
+	public static void register(String localname, Class<? extends IWidget> ui) {
 		registrationMap.put(localname, ui);
 	}
 }

@@ -1,6 +1,6 @@
 package com.ashera.android.widget.factory;
 
-public interface Style {
+public interface IStyle {
 	public void setOpacity(float opacity);
 	public void setBackgroundColor(String color);
 	public void setBackgroundImage(String backgroundImage);

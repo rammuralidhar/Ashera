@@ -8,7 +8,7 @@ import repackaged.android.view.View;
 
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.ILinearLayout;
-import com.ashera.android.widget.factory.Widget;
+import com.ashera.android.widget.factory.IWidget;
 
 public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  implements ILinearLayout{
 
@@ -102,7 +102,7 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 	}
 
 	@Override
-	public void add(Widget w) {
+	public void add(IWidget w) {
 		if (w instanceof View) {
 			addView(((View) w));
 		}
@@ -114,12 +114,12 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 	}
 
 	@Override
-	public Iterator<Widget> iterate() {
+	public Iterator<IWidget> iterate() {
 		return null;
 	}
 
 	@Override
-	public boolean remove(Widget w) {
+	public boolean remove(IWidget w) {
 		if (w instanceof View) {
 			removeView(((View) w));
 			return true;

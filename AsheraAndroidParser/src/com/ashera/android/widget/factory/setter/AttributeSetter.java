@@ -4,8 +4,8 @@ import java.util.Map;
 
 import org.xml.sax.Attributes;
 
-import com.ashera.android.widget.factory.Widget;
+import com.ashera.android.widget.factory.IWidget;
 
 public interface AttributeSetter {
-	public void setAttribute(Widget widget, Map<String, String> cssProps, Attributes atts);
+	public void setAttribute(IWidget widget, Map<String, String> cssProps, Attributes atts);
 }

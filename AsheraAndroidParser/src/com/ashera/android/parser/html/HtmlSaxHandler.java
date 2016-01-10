@@ -15,15 +15,15 @@ import android.util.Log;
 import com.ashera.android.widget.factory.HasText;
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.PageData;
-import com.ashera.android.widget.factory.Style;
-import com.ashera.android.widget.factory.Widget;
+import com.ashera.android.widget.factory.IStyle;
+import com.ashera.android.widget.factory.IWidget;
 import com.ashera.android.widget.factory.WidgetFactory;
 import com.ashera.android.widget.factory.setter.AttributeSetterFactory;
 
 public class HtmlSaxHandler implements ContentHandler{
 	private PageData pageData = new PageData();
-	private Widget root;
-	private Widget widget;
+	private IWidget root;
+	private IWidget widget;
 	private Stack<HasWidgets> hasWidgets = new Stack<HasWidgets>();
 	private Stack<Boolean> pushParent = new Stack<Boolean>();
 	private Map<String, Object> metadata;
@@ -156,11 +156,11 @@ public class HtmlSaxHandler implements ContentHandler{
 		return stringBuffer.toString();
 	}
 
-	private void updateStyleOnWidget(Widget widget, String localName, Attributes atts) {
-		if (widget instanceof Style) {
+	private void updateStyleOnWidget(IWidget widget, String localName, Attributes atts) {
+		if (widget instanceof IStyle) {
 			Map<String, String> cssProperties = pageData.getCss(
 					getNodeExpression(), localName, atts.getValue("class"), atts.getValue("id"));
-			Style style = (Style) widget;
+			IStyle style = (IStyle) widget;
 			
 			if (cssProperties.containsKey("background-color")) {
 				style.setBackgroundColor(cssProperties.get("background-color"));
@@ -192,7 +192,7 @@ public class HtmlSaxHandler implements ContentHandler{
 		}
 	}
 
-	public Widget getRoot() {
+	public IWidget getRoot() {
 		return root;
 	}
 }

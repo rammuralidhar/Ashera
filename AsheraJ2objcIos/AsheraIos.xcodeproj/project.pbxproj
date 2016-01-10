@@ -35,6 +35,9 @@
 		0683A310163DE1C800407C3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0683A30F163DE1C800407C3A /* UIKit.framework */; };
 		0683A312163DE1C800407C3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0683A311163DE1C800407C3A /* Foundation.framework */; };
 		0683A314163DE1C800407C3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0683A313163DE1C800407C3A /* CoreGraphics.framework */; };
+		274720781C4239EF0058F1D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720761C4239EF0058F1D7 /* ViewController.m */; };
+		274720791C4239EF0058F1D7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274720771C4239EF0058F1D7 /* ViewController.xib */; };
+		2747207C1C423A550058F1D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747207B1C423A550058F1D7 /* AppDelegate.m */; };
 		27715FCC1C421F9200F6DD5F /* LinearLayoutImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27715FCB1C421F9200F6DD5F /* LinearLayoutImpl.m */; };
 		277460021BDA93BB00BAFD75 /* prefixes in Resources */ = {isa = PBXBuildFile; fileRef = 277460001BDA93BB00BAFD75 /* prefixes */; };
 		27746AEF1BDB59EC00BAFD75 /* libAsheraIosParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277463991BDB318300BAFD75 /* libAsheraIosParser.a */; };
@@ -133,6 +136,11 @@
 		0683A30F163DE1C800407C3A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0683A311163DE1C800407C3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0683A313163DE1C800407C3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		274720751C4239EF0058F1D7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/ViewController.h; sourceTree = "<group>"; };
+		274720761C4239EF0058F1D7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/ViewController.m; sourceTree = "<group>"; };
+		274720771C4239EF0058F1D7 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = Classes/ViewController.xib; sourceTree = "<group>"; };
+		2747207A1C423A550058F1D7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		2747207B1C423A550058F1D7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		27715FCA1C421F9200F6DD5F /* LinearLayoutImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinearLayoutImpl.h; path = AsheraIosParser/src/LinearLayoutImpl.h; sourceTree = "<group>"; };
 		27715FCB1C421F9200F6DD5F /* LinearLayoutImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinearLayoutImpl.m; path = AsheraIosParser/src/LinearLayoutImpl.m; sourceTree = "<group>"; };
 		277460001BDA93BB00BAFD75 /* prefixes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prefixes; sourceTree = "<group>"; };
@@ -217,6 +225,7 @@
 		0683A300163DE1C800407C3A = {
 			isa = PBXGroup;
 			children = (
+				274720741C4239C00058F1D7 /* test */,
 				27E701451C40BCA20043E295 /* assets */,
 				27E7013E1C40ADFF0043E295 /* widgets */,
 				277463931BDB318200BAFD75 /* AsheraIosParser.xcodeproj */,
@@ -276,6 +285,18 @@
 				064E072C18E90BD400F5DF6B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		274720741C4239C00058F1D7 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				274720751C4239EF0058F1D7 /* ViewController.h */,
+				274720761C4239EF0058F1D7 /* ViewController.m */,
+				274720771C4239EF0058F1D7 /* ViewController.xib */,
+				2747207A1C423A550058F1D7 /* AppDelegate.h */,
+				2747207B1C423A550058F1D7 /* AppDelegate.m */,
+			);
+			name = test;
 			sourceTree = "<group>";
 		};
 		27745FFE1BDA93BA00BAFD75 /* j2objc */ = {
@@ -414,6 +435,7 @@
 			files = (
 				064E071518E90A4B00F5DF6B /* empty-square.png in Resources */,
 				3D9F90491934DA2F00738699 /* J2RViewController_iPad.xib in Resources */,
+				274720791C4239EF0058F1D7 /* ViewController.xib in Resources */,
 				064E071618E90A4B00F5DF6B /* reversi.png in Resources */,
 				27E7015B1C40CE1F0043E295 /* www in Resources */,
 				3D9F904A1934DA2F00738699 /* J2RViewController_iPhone.xib in Resources */,
@@ -437,6 +459,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2747207C1C423A550058F1D7 /* AppDelegate.m in Sources */,
+				274720781C4239EF0058F1D7 /* ViewController.m in Sources */,
 				064E073C18E90BD400F5DF6B /* J2RBoard.m in Sources */,
 				064E074318E90BD400F5DF6B /* Engine.java in Sources */,
 				064E074818E90BD400F5DF6B /* Score.java in Sources */,

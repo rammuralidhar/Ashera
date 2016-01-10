@@ -1,4 +1,4 @@
 package com.ashera.android.widget.factory;
 
-public interface Widget extends IsWidget{
+public interface IWidget extends IsWidget{
 }
