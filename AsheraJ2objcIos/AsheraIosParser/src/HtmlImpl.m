@@ -103,9 +103,6 @@ UIView* htmlView;
     
     UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
     [window.rootViewController.view addSubview:htmlView];
-//    [window addSubview:htmlView];
-//    [window bringSubviewToFront:htmlView];
-
 }
 
 + (const J2ObjcClassInfo *)__metadata {
