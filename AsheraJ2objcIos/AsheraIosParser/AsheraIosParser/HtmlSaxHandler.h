@@ -10,7 +10,7 @@
 #include "org/xml/sax/ContentHandler.h"
 
 @class IOSCharArray;
-@protocol ComAsheraAndroidWidgetFactoryWidget;
+@protocol ComAsheraAndroidWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 @protocol OrgXmlSaxAttributes;
 @protocol OrgXmlSaxLocator;
@@ -33,7 +33,7 @@
 
 - (void)endPrefixMappingWithNSString:(NSString *)prefix;
 
-- (id<ComAsheraAndroidWidgetFactoryWidget>)getRoot;
+- (id<ComAsheraAndroidWidgetFactoryIWidget>)getRoot;
 
 - (void)ignorableWhitespaceWithCharArray:(IOSCharArray *)ch
                                  withInt:(jint)start

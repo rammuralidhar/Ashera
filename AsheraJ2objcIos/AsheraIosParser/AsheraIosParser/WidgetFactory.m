@@ -4,10 +4,10 @@
 //
 
 
+#include "ILink.h"
 #include "IOSClass.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
-#include "Link.h"
-#include "Widget.h"
 #include "WidgetFactory.h"
 #include "java/lang/IllegalAccessException.h"
 #include "java/lang/InstantiationException.h"
@@ -29,7 +29,7 @@ J2OBJC_INITIALIZED_DEFN(ComAsheraAndroidWidgetFactoryWidgetFactory)
 
 
 #line 12
-+ (id<ComAsheraAndroidWidgetFactoryWidget>)getWithNSString:(NSString *)localname {
++ (id<ComAsheraAndroidWidgetFactoryIWidget>)getWithNSString:(NSString *)localname {
   return ComAsheraAndroidWidgetFactoryWidgetFactory_getWithNSString_(localname);
 }
 
@@ -51,7 +51,7 @@ J2OBJC_INITIALIZED_DEFN(ComAsheraAndroidWidgetFactoryWidgetFactory)
     {
       
 #line 9
-      ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"link", ComAsheraAndroidWidgetFactoryLink_class_());
+      ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"link", ComAsheraAndroidWidgetFactoryILink_class_());
     }
     J2OBJC_SET_INITIALIZED(ComAsheraAndroidWidgetFactoryWidgetFactory)
   }
@@ -59,12 +59,12 @@ J2OBJC_INITIALIZED_DEFN(ComAsheraAndroidWidgetFactoryWidgetFactory)
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "getWithNSString:", "get", "Lcom.ashera.android.widget.factory.Widget;", 0x9, NULL, NULL },
+    { "getWithNSString:", "get", "Lcom.ashera.android.widget.factory.IWidget;", 0x9, NULL, NULL },
     { "register__WithNSString:withIOSClass:", "register", "V", 0x9, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "registrationMap_", NULL, 0xa, "Ljava.util.Map;", &ComAsheraAndroidWidgetFactoryWidgetFactory_registrationMap_, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Class<+Lcom/ashera/android/widget/factory/Widget;>;>;",  },
+    { "registrationMap_", NULL, 0xa, "Ljava.util.Map;", &ComAsheraAndroidWidgetFactoryWidgetFactory_registrationMap_, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Class<+Lcom/ashera/android/widget/factory/IWidget;>;>;",  },
   };
   static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryWidgetFactory = { 2, "WidgetFactory", "com.ashera.android.widget.factory", NULL, 0x1, 3, methods, 1, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraAndroidWidgetFactoryWidgetFactory;
@@ -74,7 +74,7 @@ J2OBJC_INITIALIZED_DEFN(ComAsheraAndroidWidgetFactoryWidgetFactory)
 
 
 #line 12
-id<ComAsheraAndroidWidgetFactoryWidget> ComAsheraAndroidWidgetFactoryWidgetFactory_getWithNSString_(NSString *localname) {
+id<ComAsheraAndroidWidgetFactoryIWidget> ComAsheraAndroidWidgetFactoryWidgetFactory_getWithNSString_(NSString *localname) {
   ComAsheraAndroidWidgetFactoryWidgetFactory_initialize();
   
 #line 13

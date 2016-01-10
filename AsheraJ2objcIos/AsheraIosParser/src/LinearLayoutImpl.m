@@ -6,12 +6,12 @@
 
 #include "ContextWrapper.h"
 #include "HasWidgets.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "LinearLayout.h"
 #include "LinearLayoutImpl.h"
 #include "View.h"
 #include "ViewGroup.h"
-#include "Widget.h"
 #include "java/util/Iterator.h"
 #include "java/util/Map.h"
 
@@ -90,7 +90,6 @@ UIView* uiView;
 }
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
-    uiView = [UIView new];
 }
 
 
@@ -105,7 +104,7 @@ UIView* uiView;
 
 
 #line 105
-- (void)addWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)w {
+- (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
     [self addViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
   }
@@ -125,7 +124,7 @@ UIView* uiView;
 
 
 #line 122
-- (jboolean)removeWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)w {
+- (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
     [self removeViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
     return YES;
@@ -151,10 +150,10 @@ UIView* uiView;
     { "createWithJavaUtilMap:", "create", "V", 0x1, NULL, NULL },
     { "setParentWithComAsheraAndroidWidgetFactoryHasWidgets:", "setParent", "V", 0x1, NULL, NULL },
     { "setOrientationWithNSString:", "setOrientation", "V", 0x1, NULL, NULL },
-    { "addWithComAsheraAndroidWidgetFactoryWidget:", "add", "V", 0x1, NULL, NULL },
+    { "addWithComAsheraAndroidWidgetFactoryIWidget:", "add", "V", 0x1, NULL, NULL },
     { "clear", NULL, "V", 0x1, NULL, NULL },
     { "iterate", NULL, "Ljava.util.Iterator;", 0x1, NULL, NULL },
-    { "removeWithComAsheraAndroidWidgetFactoryWidget:", "remove", "Z", 0x1, NULL, NULL },
+    { "removeWithComAsheraAndroidWidgetFactoryIWidget:", "remove", "Z", 0x1, NULL, NULL },
   };
   static const J2ObjcClassInfo _IosLinearLayoutImpl = { 2, "LinearLayoutImpl", "ios", NULL, 0x1, 20, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosLinearLayoutImpl;

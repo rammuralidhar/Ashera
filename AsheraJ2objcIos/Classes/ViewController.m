@@ -31,7 +31,7 @@
     
     NSString *res = [NSString stringWithContentsOfFile: path encoding:NSUTF8StringEncoding error: &error];
     
-    ComAsheraAndroidWidgetFactoryWidget* w = [ComAsheraAndroidParserHtmlHtmlParser parseWithNSString:res withJavaUtilMap:[[JavaUtilHashMap alloc] init]] ;
+    [ComAsheraAndroidParserHtmlHtmlParser parseWithNSString:res withJavaUtilMap:[[JavaUtilHashMap alloc] init]] ;
 }
 
 - (void)didReceiveMemoryWarning {

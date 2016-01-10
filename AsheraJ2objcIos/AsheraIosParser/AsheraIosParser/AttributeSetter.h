@@ -8,15 +8,15 @@
 
 #include "J2ObjC_header.h"
 
-@protocol ComAsheraAndroidWidgetFactoryWidget;
+@protocol ComAsheraAndroidWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 @protocol OrgXmlSaxAttributes;
 
 @protocol ComAsheraAndroidWidgetFactorySetterAttributeSetter < NSObject, JavaObject >
 
-- (void)setAttributeWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)widget
-                                            withJavaUtilMap:(id<JavaUtilMap>)cssProps
-                                    withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
+- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
+                                             withJavaUtilMap:(id<JavaUtilMap>)cssProps
+                                     withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
 
 @end
 

@@ -4,10 +4,10 @@
 //
 
 
+#include "ILabel.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
-#include "Label.h"
 #include "LabelSetter.h"
-#include "Widget.h"
 #include "java/util/Map.h"
 #include "org/xml/sax/Attributes.h"
 
@@ -19,15 +19,15 @@
 
 
 #line 13
-- (void)setAttributeWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)widget
-                                            withJavaUtilMap:(id<JavaUtilMap>)cssProps
-                                    withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
+- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
+                                             withJavaUtilMap:(id<JavaUtilMap>)cssProps
+                                     withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
   
 #line 15
   NSString *color = [((id<JavaUtilMap>) nil_chk(cssProps)) getWithId:@"color"];
-  id<ComAsheraAndroidWidgetFactoryLabel> label = (id<ComAsheraAndroidWidgetFactoryLabel>) check_protocol_cast(widget, @protocol(ComAsheraAndroidWidgetFactoryLabel));
+  id<ComAsheraAndroidWidgetFactoryILabel> label = (id<ComAsheraAndroidWidgetFactoryILabel>) check_protocol_cast(widget, @protocol(ComAsheraAndroidWidgetFactoryILabel));
   if (color != nil) {
-    [((id<ComAsheraAndroidWidgetFactoryLabel>) nil_chk(label)) setColorWithNSString:color];
+    [((id<ComAsheraAndroidWidgetFactoryILabel>) nil_chk(label)) setColorWithNSString:color];
   }
 }
 
@@ -38,7 +38,7 @@
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "setAttributeWithComAsheraAndroidWidgetFactoryWidget:withJavaUtilMap:withOrgXmlSaxAttributes:", "setAttribute", "V", 0x1, NULL, NULL },
+    { "setAttributeWithComAsheraAndroidWidgetFactoryIWidget:withJavaUtilMap:withOrgXmlSaxAttributes:", "setAttribute", "V", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactorySetterLabelSetter = { 2, "LabelSetter", "com.ashera.android.widget.factory.setter", NULL, 0x1, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };

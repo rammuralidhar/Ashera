@@ -11,7 +11,7 @@
 #include "LinearLayout.h"
 
 @protocol ComAsheraAndroidWidgetFactoryHasWidgets;
-@protocol ComAsheraAndroidWidgetFactoryWidget;
+@protocol ComAsheraAndroidWidgetFactoryIWidget;
 @protocol JavaUtilIterator;
 @protocol JavaUtilMap;
 
@@ -21,7 +21,7 @@
 
 - (instancetype)init;
 
-- (void)addWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)w;
+- (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
 
 - (id)asWidget;
 
@@ -31,7 +31,7 @@
 
 - (id<JavaUtilIterator>)iterate;
 
-- (jboolean)removeWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)w;
+- (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
 
 - (void)setBackgroundColorWithNSString:(NSString *)color;
 

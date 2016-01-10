@@ -6,14 +6,14 @@
 #ifndef _IosLabelImpl_H_
 #define _IosLabelImpl_H_
 
+#include "ILabel.h"
 #include "J2ObjC_header.h"
-#include "Label.h"
 #include "View.h"
 
 @protocol ComAsheraAndroidWidgetFactoryHasWidgets;
 @protocol JavaUtilMap;
 
-@interface IosLabelImpl : RepackagedAndroidViewView < ComAsheraAndroidWidgetFactoryLabel >
+@interface IosLabelImpl : RepackagedAndroidViewView < ComAsheraAndroidWidgetFactoryILabel >
 
 #pragma mark Public
 

@@ -8,18 +8,18 @@
 
 #include "J2ObjC_header.h"
 
-@protocol ComAsheraAndroidWidgetFactoryWidget;
+@protocol ComAsheraAndroidWidgetFactoryIWidget;
 @protocol JavaUtilIterator;
 
 @protocol ComAsheraAndroidWidgetFactoryHasWidgets < NSObject, JavaObject >
 
-- (void)addWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)w;
+- (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
 
 - (void)clear;
 
 - (id<JavaUtilIterator>)iterate;
 
-- (jboolean)removeWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)w;
+- (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
 
 @end
 

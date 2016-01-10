@@ -9,7 +9,7 @@
 #include "AttributeSetter.h"
 #include "J2ObjC_header.h"
 
-@protocol ComAsheraAndroidWidgetFactoryWidget;
+@protocol ComAsheraAndroidWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 @protocol OrgXmlSaxAttributes;
 
@@ -19,9 +19,9 @@
 
 - (instancetype)init;
 
-- (void)setAttributeWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)linearLayout
-                                            withJavaUtilMap:(id<JavaUtilMap>)cssProps
-                                    withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
+- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)linearLayout
+                                             withJavaUtilMap:(id<JavaUtilMap>)cssProps
+                                     withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
 
 @end
 

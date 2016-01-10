@@ -5,8 +5,8 @@
 
 
 #include "HasWidgets.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
-#include "Widget.h"
 #include "java/util/Iterator.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/src/com/ashera/android/widget/factory/HasWidgets.java"
@@ -18,10 +18,10 @@
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "addWithComAsheraAndroidWidgetFactoryWidget:", "add", "V", 0x401, NULL, NULL },
+    { "addWithComAsheraAndroidWidgetFactoryIWidget:", "add", "V", 0x401, NULL, NULL },
     { "clear", NULL, "V", 0x401, NULL, NULL },
     { "iterate", NULL, "Ljava.util.Iterator;", 0x401, NULL, NULL },
-    { "removeWithComAsheraAndroidWidgetFactoryWidget:", "remove", "Z", 0x401, NULL, NULL },
+    { "removeWithComAsheraAndroidWidgetFactoryIWidget:", "remove", "Z", 0x401, NULL, NULL },
   };
   static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryHasWidgets = { 2, "HasWidgets", "com.ashera.android.widget.factory", NULL, 0x609, 4, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraAndroidWidgetFactoryHasWidgets;

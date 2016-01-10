@@ -12,10 +12,10 @@
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
+#include "IStyle.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "PageData.h"
-#include "Style.h"
-#include "Widget.h"
 #include "WidgetFactory.h"
 #include "android/util/Log.h"
 #include "java/io/PrintStream.h"
@@ -35,8 +35,8 @@
 @interface ComAsheraAndroidParserHtmlHtmlSaxHandler () {
  @public
   ComAsheraAndroidWidgetFactoryPageData *pageData_;
-  id<ComAsheraAndroidWidgetFactoryWidget> root_;
-  id<ComAsheraAndroidWidgetFactoryWidget> widget_;
+  id<ComAsheraAndroidWidgetFactoryIWidget> root_;
+  id<ComAsheraAndroidWidgetFactoryIWidget> widget_;
   JavaUtilStack *hasWidgets_;
   JavaUtilStack *pushParent_;
   id<JavaUtilMap> metadata_;
@@ -46,17 +46,17 @@
 - (NSString *)getNPathWithNSString:(NSString *)localName
            withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
 
-- (void)updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)widget
-                                                      withNSString:(NSString *)localName
-                                           withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
+- (void)updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
+                                                       withNSString:(NSString *)localName
+                                            withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
 
 - (NSString *)getNodeExpression;
 
 @end
 
 J2OBJC_FIELD_SETTER(ComAsheraAndroidParserHtmlHtmlSaxHandler, pageData_, ComAsheraAndroidWidgetFactoryPageData *)
-J2OBJC_FIELD_SETTER(ComAsheraAndroidParserHtmlHtmlSaxHandler, root_, id<ComAsheraAndroidWidgetFactoryWidget>)
-J2OBJC_FIELD_SETTER(ComAsheraAndroidParserHtmlHtmlSaxHandler, widget_, id<ComAsheraAndroidWidgetFactoryWidget>)
+J2OBJC_FIELD_SETTER(ComAsheraAndroidParserHtmlHtmlSaxHandler, root_, id<ComAsheraAndroidWidgetFactoryIWidget>)
+J2OBJC_FIELD_SETTER(ComAsheraAndroidParserHtmlHtmlSaxHandler, widget_, id<ComAsheraAndroidWidgetFactoryIWidget>)
 J2OBJC_FIELD_SETTER(ComAsheraAndroidParserHtmlHtmlSaxHandler, hasWidgets_, JavaUtilStack *)
 J2OBJC_FIELD_SETTER(ComAsheraAndroidParserHtmlHtmlSaxHandler, pushParent_, JavaUtilStack *)
 J2OBJC_FIELD_SETTER(ComAsheraAndroidParserHtmlHtmlSaxHandler, metadata_, id<JavaUtilMap>)
@@ -64,7 +64,7 @@ J2OBJC_FIELD_SETTER(ComAsheraAndroidParserHtmlHtmlSaxHandler, htmlElements_, id<
 
 __attribute__((unused)) static NSString *ComAsheraAndroidParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgXmlSaxAttributes_(ComAsheraAndroidParserHtmlHtmlSaxHandler *self, NSString *localName, id<OrgXmlSaxAttributes> atts);
 
-__attribute__((unused)) static void ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryWidget_withNSString_withOrgXmlSaxAttributes_(ComAsheraAndroidParserHtmlHtmlSaxHandler *self, id<ComAsheraAndroidWidgetFactoryWidget> widget, NSString *localName, id<OrgXmlSaxAttributes> atts);
+__attribute__((unused)) static void ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget_withNSString_withOrgXmlSaxAttributes_(ComAsheraAndroidParserHtmlHtmlSaxHandler *self, id<ComAsheraAndroidWidgetFactoryIWidget> widget, NSString *localName, id<OrgXmlSaxAttributes> atts);
 
 __attribute__((unused)) static NSString *ComAsheraAndroidParserHtmlHtmlSaxHandler_getNodeExpression(ComAsheraAndroidParserHtmlHtmlSaxHandler *self);
 
@@ -176,12 +176,12 @@ __attribute__((unused)) static NSString *ComAsheraAndroidParserHtmlHtmlSaxHandle
       
 #line 113
       if ([widget_ asWidget] != nil) {
-        [((id<ComAsheraAndroidWidgetFactoryHasWidgets>) nil_chk(parent)) addWithComAsheraAndroidWidgetFactoryWidget:widget_];
+        [((id<ComAsheraAndroidWidgetFactoryHasWidgets>) nil_chk(parent)) addWithComAsheraAndroidWidgetFactoryIWidget:widget_];
       }
     }
     
 #line 118
-    ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryWidget_withNSString_withOrgXmlSaxAttributes_(self, widget_, localName, atts);
+    ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget_withNSString_withOrgXmlSaxAttributes_(self, widget_, localName, atts);
     
 #line 120
     [widget_ setParentWithComAsheraAndroidWidgetFactoryHasWidgets:parent];
@@ -206,10 +206,10 @@ __attribute__((unused)) static NSString *ComAsheraAndroidParserHtmlHtmlSaxHandle
 
 
 #line 159
-- (void)updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)widget
-                                                      withNSString:(NSString *)localName
-                                           withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
-  ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryWidget_withNSString_withOrgXmlSaxAttributes_(self, widget, localName, atts);
+- (void)updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
+                                                       withNSString:(NSString *)localName
+                                            withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
+  ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget_withNSString_withOrgXmlSaxAttributes_(self, widget, localName, atts);
 }
 
 
@@ -233,7 +233,7 @@ __attribute__((unused)) static NSString *ComAsheraAndroidParserHtmlHtmlSaxHandle
 
 
 #line 195
-- (id<ComAsheraAndroidWidgetFactoryWidget>)getRoot {
+- (id<ComAsheraAndroidWidgetFactoryIWidget>)getRoot {
   return root_;
 }
 
@@ -251,15 +251,15 @@ __attribute__((unused)) static NSString *ComAsheraAndroidParserHtmlHtmlSaxHandle
     { "charactersWithCharArray:withInt:withInt:", "characters", "V", 0x1, "Lorg.xml.sax.SAXException;", NULL },
     { "startElementWithNSString:withNSString:withNSString:withOrgXmlSaxAttributes:", "startElement", "V", 0x1, "Lorg.xml.sax.SAXException;", NULL },
     { "getNPathWithNSString:withOrgXmlSaxAttributes:", "getNPath", "Ljava.lang.String;", 0x2, NULL, NULL },
-    { "updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryWidget:withNSString:withOrgXmlSaxAttributes:", "updateStyleOnWidget", "V", 0x2, NULL, NULL },
+    { "updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget:withNSString:withOrgXmlSaxAttributes:", "updateStyleOnWidget", "V", 0x2, NULL, NULL },
     { "getNodeExpression", NULL, "Ljava.lang.String;", 0x2, NULL, NULL },
     { "endElementWithNSString:withNSString:withNSString:", "endElement", "V", 0x1, "Lorg.xml.sax.SAXException;", NULL },
-    { "getRoot", NULL, "Lcom.ashera.android.widget.factory.Widget;", 0x1, NULL, NULL },
+    { "getRoot", NULL, "Lcom.ashera.android.widget.factory.IWidget;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "pageData_", NULL, 0x2, "Lcom.ashera.android.widget.factory.PageData;", NULL, NULL,  },
-    { "root_", NULL, 0x2, "Lcom.ashera.android.widget.factory.Widget;", NULL, NULL,  },
-    { "widget_", NULL, 0x2, "Lcom.ashera.android.widget.factory.Widget;", NULL, NULL,  },
+    { "root_", NULL, 0x2, "Lcom.ashera.android.widget.factory.IWidget;", NULL, NULL,  },
+    { "widget_", NULL, 0x2, "Lcom.ashera.android.widget.factory.IWidget;", NULL, NULL,  },
     { "hasWidgets_", NULL, 0x2, "Ljava.util.Stack;", NULL, "Ljava/util/Stack<Lcom/ashera/android/widget/factory/HasWidgets;>;",  },
     { "pushParent_", NULL, 0x2, "Ljava.util.Stack;", NULL, "Ljava/util/Stack<Ljava/lang/Boolean;>;",  },
     { "metadata_", NULL, 0x2, "Ljava.util.Map;", NULL, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;",  },
@@ -328,25 +328,25 @@ NSString *ComAsheraAndroidParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgX
 
 
 #line 159
-void ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryWidget_withNSString_withOrgXmlSaxAttributes_(ComAsheraAndroidParserHtmlHtmlSaxHandler *self, id<ComAsheraAndroidWidgetFactoryWidget> widget, NSString *localName, id<OrgXmlSaxAttributes> atts) {
-  if ([ComAsheraAndroidWidgetFactoryStyle_class_() isInstance:widget]) {
+void ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget_withNSString_withOrgXmlSaxAttributes_(ComAsheraAndroidParserHtmlHtmlSaxHandler *self, id<ComAsheraAndroidWidgetFactoryIWidget> widget, NSString *localName, id<OrgXmlSaxAttributes> atts) {
+  if ([ComAsheraAndroidWidgetFactoryIStyle_class_() isInstance:widget]) {
     id<JavaUtilMap> cssProperties = [((ComAsheraAndroidWidgetFactoryPageData *) nil_chk(self->pageData_)) getCssWithNSString:ComAsheraAndroidParserHtmlHtmlSaxHandler_getNodeExpression(self) withNSString:
 #line 162
     localName withNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"class"] withNSString:[atts getValueWithNSString:@"id"]];
-    id<ComAsheraAndroidWidgetFactoryStyle> style = (id<ComAsheraAndroidWidgetFactoryStyle>) check_protocol_cast(widget, @protocol(ComAsheraAndroidWidgetFactoryStyle));
+    id<ComAsheraAndroidWidgetFactoryIStyle> style = (id<ComAsheraAndroidWidgetFactoryIStyle>) check_protocol_cast(widget, @protocol(ComAsheraAndroidWidgetFactoryIStyle));
     
 #line 165
     if ([((id<JavaUtilMap>) nil_chk(cssProperties)) containsKeyWithId:@"background-color"]) {
-      [((id<ComAsheraAndroidWidgetFactoryStyle>) nil_chk(style)) setBackgroundColorWithNSString:[cssProperties getWithId:@"background-color"]];
+      [((id<ComAsheraAndroidWidgetFactoryIStyle>) nil_chk(style)) setBackgroundColorWithNSString:[cssProperties getWithId:@"background-color"]];
     }
     
 #line 169
-    [((id<ComAsheraAndroidWidgetFactorySetterAttributeSetter>) nil_chk(ComAsheraAndroidWidgetFactorySetterAttributeSetterFactory_getWithNSString_(localName))) setAttributeWithComAsheraAndroidWidgetFactoryWidget:widget withJavaUtilMap:cssProperties withOrgXmlSaxAttributes:atts];
+    [((id<ComAsheraAndroidWidgetFactorySetterAttributeSetter>) nil_chk(ComAsheraAndroidWidgetFactorySetterAttributeSetterFactory_getWithNSString_(localName))) setAttributeWithComAsheraAndroidWidgetFactoryIWidget:widget withJavaUtilMap:cssProperties withOrgXmlSaxAttributes:atts];
   }
   else {
     
 #line 171
-    [((id<ComAsheraAndroidWidgetFactorySetterAttributeSetter>) nil_chk(ComAsheraAndroidWidgetFactorySetterAttributeSetterFactory_getWithNSString_(localName))) setAttributeWithComAsheraAndroidWidgetFactoryWidget:widget withJavaUtilMap:nil withOrgXmlSaxAttributes:atts];
+    [((id<ComAsheraAndroidWidgetFactorySetterAttributeSetter>) nil_chk(ComAsheraAndroidWidgetFactorySetterAttributeSetterFactory_getWithNSString_(localName))) setAttributeWithComAsheraAndroidWidgetFactoryIWidget:widget withJavaUtilMap:nil withOrgXmlSaxAttributes:atts];
   }
 }
 

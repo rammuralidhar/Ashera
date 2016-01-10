@@ -7,9 +7,9 @@
 #include "HTMLSchema.h"
 #include "HtmlParser.h"
 #include "HtmlSaxHandler.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "TagSoupParser.h"
-#include "Widget.h"
 #include "java/io/IOException.h"
 #include "java/io/StringReader.h"
 #include "java/lang/RuntimeException.h"
@@ -30,8 +30,8 @@ J2OBJC_INITIALIZED_DEFN(ComAsheraAndroidParserHtmlHtmlParser)
 #line 14
 @implementation ComAsheraAndroidParserHtmlHtmlParser
 
-+ (id<ComAsheraAndroidWidgetFactoryWidget>)parseWithNSString:(NSString *)contentHtml
-                                             withJavaUtilMap:(id<JavaUtilMap>)metadata {
++ (id<ComAsheraAndroidWidgetFactoryIWidget>)parseWithNSString:(NSString *)contentHtml
+                                              withJavaUtilMap:(id<JavaUtilMap>)metadata {
   return ComAsheraAndroidParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(contentHtml, metadata);
 }
 
@@ -49,7 +49,7 @@ J2OBJC_INITIALIZED_DEFN(ComAsheraAndroidParserHtmlHtmlParser)
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "parseWithNSString:withJavaUtilMap:", "parse", "Lcom.ashera.android.widget.factory.Widget;", 0x9, NULL, NULL },
+    { "parseWithNSString:withJavaUtilMap:", "parse", "Lcom.ashera.android.widget.factory.IWidget;", 0x9, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
@@ -63,7 +63,7 @@ J2OBJC_INITIALIZED_DEFN(ComAsheraAndroidParserHtmlHtmlParser)
 
 
 #line 16
-id<ComAsheraAndroidWidgetFactoryWidget> ComAsheraAndroidParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(NSString *contentHtml, id<JavaUtilMap> metadata) {
+id<ComAsheraAndroidWidgetFactoryIWidget> ComAsheraAndroidParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(NSString *contentHtml, id<JavaUtilMap> metadata) {
   ComAsheraAndroidParserHtmlHtmlParser_initialize();
   
 #line 17

@@ -8,7 +8,7 @@
 
 #include "J2ObjC_header.h"
 
-@protocol ComAsheraAndroidWidgetFactoryWidget;
+@protocol ComAsheraAndroidWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 
 @interface ComAsheraAndroidParserHtmlHtmlParser : NSObject
@@ -17,14 +17,14 @@
 
 - (instancetype)init;
 
-+ (id<ComAsheraAndroidWidgetFactoryWidget>)parseWithNSString:(NSString *)contentHtml
-                                             withJavaUtilMap:(id<JavaUtilMap>)metadata;
++ (id<ComAsheraAndroidWidgetFactoryIWidget>)parseWithNSString:(NSString *)contentHtml
+                                              withJavaUtilMap:(id<JavaUtilMap>)metadata;
 
 @end
 
 J2OBJC_STATIC_INIT(ComAsheraAndroidParserHtmlHtmlParser)
 
-FOUNDATION_EXPORT id<ComAsheraAndroidWidgetFactoryWidget> ComAsheraAndroidParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(NSString *contentHtml, id<JavaUtilMap> metadata);
+FOUNDATION_EXPORT id<ComAsheraAndroidWidgetFactoryIWidget> ComAsheraAndroidParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(NSString *contentHtml, id<JavaUtilMap> metadata);
 
 FOUNDATION_EXPORT void ComAsheraAndroidParserHtmlHtmlParser_init(ComAsheraAndroidParserHtmlHtmlParser *self);
 

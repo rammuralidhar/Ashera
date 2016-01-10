@@ -9,7 +9,7 @@
 #include "J2ObjC_header.h"
 
 @class IOSClass;
-@protocol ComAsheraAndroidWidgetFactoryWidget;
+@protocol ComAsheraAndroidWidgetFactoryIWidget;
 
 @interface ComAsheraAndroidWidgetFactoryWidgetFactory : NSObject
 
@@ -17,7 +17,7 @@
 
 - (instancetype)init;
 
-+ (id<ComAsheraAndroidWidgetFactoryWidget>)getWithNSString:(NSString *)localname;
++ (id<ComAsheraAndroidWidgetFactoryIWidget>)getWithNSString:(NSString *)localname;
 
 + (void)register__WithNSString:(NSString *)localname
                   withIOSClass:(IOSClass *)ui;
@@ -26,7 +26,7 @@
 
 J2OBJC_STATIC_INIT(ComAsheraAndroidWidgetFactoryWidgetFactory)
 
-FOUNDATION_EXPORT id<ComAsheraAndroidWidgetFactoryWidget> ComAsheraAndroidWidgetFactoryWidgetFactory_getWithNSString_(NSString *localname);
+FOUNDATION_EXPORT id<ComAsheraAndroidWidgetFactoryIWidget> ComAsheraAndroidWidgetFactoryWidgetFactory_getWithNSString_(NSString *localname);
 
 FOUNDATION_EXPORT void ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(NSString *localname, IOSClass *ui);
 

@@ -5,8 +5,8 @@
 
 
 #include "DefaultAttributeSetter.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
-#include "Widget.h"
 #include "java/util/Map.h"
 #include "org/xml/sax/Attributes.h"
 
@@ -18,9 +18,9 @@
 
 
 #line 12
-- (void)setAttributeWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)widget
-                                            withJavaUtilMap:(id<JavaUtilMap>)cssProps
-                                    withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
+- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
+                                             withJavaUtilMap:(id<JavaUtilMap>)cssProps
+                                     withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
 }
 
 - (instancetype)init {
@@ -30,7 +30,7 @@
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "setAttributeWithComAsheraAndroidWidgetFactoryWidget:withJavaUtilMap:withOrgXmlSaxAttributes:", "setAttribute", "V", 0x1, NULL, NULL },
+    { "setAttributeWithComAsheraAndroidWidgetFactoryIWidget:withJavaUtilMap:withOrgXmlSaxAttributes:", "setAttribute", "V", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactorySetterDefaultAttributeSetter = { 2, "DefaultAttributeSetter", "com.ashera.android.widget.factory.setter", NULL, 0x1, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };

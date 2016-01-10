@@ -5,9 +5,9 @@
 
 
 #include "ILinearLayout.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "LinearlayoutSetter.h"
-#include "Widget.h"
 #include "java/util/Map.h"
 #include "org/xml/sax/Attributes.h"
 
@@ -17,9 +17,9 @@
 #line 10
 @implementation ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter
 
-- (void)setAttributeWithComAsheraAndroidWidgetFactoryWidget:(id<ComAsheraAndroidWidgetFactoryWidget>)linearLayout
-                                            withJavaUtilMap:(id<JavaUtilMap>)cssProps
-                                    withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
+- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)linearLayout
+                                             withJavaUtilMap:(id<JavaUtilMap>)cssProps
+                                     withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
   [((id<ComAsheraAndroidWidgetFactoryILinearLayout>) nil_chk(((id<ComAsheraAndroidWidgetFactoryILinearLayout>) check_protocol_cast(linearLayout, @protocol(ComAsheraAndroidWidgetFactoryILinearLayout))))) setOrientationWithNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"orientation"]];
 }
 
@@ -30,7 +30,7 @@
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "setAttributeWithComAsheraAndroidWidgetFactoryWidget:withJavaUtilMap:withOrgXmlSaxAttributes:", "setAttribute", "V", 0x1, NULL, NULL },
+    { "setAttributeWithComAsheraAndroidWidgetFactoryIWidget:withJavaUtilMap:withOrgXmlSaxAttributes:", "setAttribute", "V", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter = { 2, "LinearlayoutSetter", "com.ashera.android.widget.factory.setter", NULL, 0x1, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
