@@ -4,22 +4,33 @@
 //
 
 
+#include "Component.h"
 #include "ComponentFactory.h"
 #include "ComponentImpl.h"
+#include "HtmlParser.h"
 #include "HtmlViewerUtils.h"
 #include "IOSClass.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "LabelImpl.h"
 #include "LinearLayoutImpl.h"
 #include "WidgetFactory.h"
+#include "java/util/Map.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/HtmlViewerUtils.java"
 
 J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 
 
-#line 6
+#line 10
 @implementation IosHtmlViewerUtils
+
+
+#line 17
++ (id)displayHtmlWithNSString:(NSString *)assetHtml
+              withJavaUtilMap:(id<JavaUtilMap>)metadata {
+  return IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(assetHtml, metadata);
+}
 
 - (instancetype)init {
   IosHtmlViewerUtils_init(self);
@@ -30,7 +41,7 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
   if (self == [IosHtmlViewerUtils class]) {
     {
       
-#line 8
+#line 12
       ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"label", IosLabelImpl_class_());
       ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"linear-layout", IosLinearLayoutImpl_class_());
       ComAsheraAndroidComponentFactoryComponentFactory_register__WithComAsheraAndroidComponentFactoryComponent_(new_IosComponentImpl_init());
@@ -41,13 +52,25 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
+    { "displayHtmlWithNSString:withJavaUtilMap:", "displayHtml", "Ljava.lang.Object;", 0x9, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
-  static const J2ObjcClassInfo _IosHtmlViewerUtils = { 2, "HtmlViewerUtils", "ios", NULL, 0x1, 1, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosHtmlViewerUtils = { 2, "HtmlViewerUtils", "ios", NULL, 0x1, 2, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosHtmlViewerUtils;
 }
 
 @end
+
+
+#line 17
+id IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(NSString *assetHtml, id<JavaUtilMap> metadata) {
+  IosHtmlViewerUtils_initialize();
+  
+#line 18
+  NSString *html = [((id<ComAsheraAndroidComponentFactoryComponent>) nil_chk(ComAsheraAndroidComponentFactoryComponentFactory_get())) getFileAssetWithNSString:assetHtml withJavaUtilMap:metadata];
+  id<ComAsheraAndroidWidgetFactoryIWidget> parse = ComAsheraAndroidParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(html, metadata);
+  return [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(parse)) asWidget];
+}
 
 void IosHtmlViewerUtils_init(IosHtmlViewerUtils *self) {
   (void) NSObject_init(self);

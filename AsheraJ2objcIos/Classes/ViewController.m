@@ -24,14 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[IosHtmlViewerUtils alloc] init];
-    
-    NSError* error = nil;
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"www/index.html"];
-    
-    NSString *res = [NSString stringWithContentsOfFile: path encoding:NSUTF8StringEncoding error: &error];
-    
-    [ComAsheraAndroidParserHtmlHtmlParser parseWithNSString:res withJavaUtilMap:[[JavaUtilHashMap alloc] init]] ;
+    JavaUtilHashMap* metadata = [JavaUtilHashMap new];
+    [IosHtmlViewerUtils displayHtmlWithNSString:@"www/index.html" withJavaUtilMap: metadata];
 }
 
 - (void)didReceiveMemoryWarning {

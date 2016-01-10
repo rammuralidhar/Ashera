@@ -8,15 +8,22 @@
 
 #include "J2ObjC_header.h"
 
+@protocol JavaUtilMap;
+
 @interface IosHtmlViewerUtils : NSObject
 
 #pragma mark Public
 
 - (instancetype)init;
 
++ (id)displayHtmlWithNSString:(NSString *)assetHtml
+              withJavaUtilMap:(id<JavaUtilMap>)metadata;
+
 @end
 
 J2OBJC_STATIC_INIT(IosHtmlViewerUtils)
+
+FOUNDATION_EXPORT id IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(NSString *assetHtml, id<JavaUtilMap> metadata);
 
 FOUNDATION_EXPORT void IosHtmlViewerUtils_init(IosHtmlViewerUtils *self);
 

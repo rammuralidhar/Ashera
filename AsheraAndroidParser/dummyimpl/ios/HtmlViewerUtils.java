@@ -1,6 +1,10 @@
 package ios;
 
+import java.util.Map;
+
 import com.ashera.android.component.factory.ComponentFactory;
+import com.ashera.android.parser.html.HtmlParser;
+import com.ashera.android.widget.factory.IWidget;
 import com.ashera.android.widget.factory.WidgetFactory;
 
 public class HtmlViewerUtils {
@@ -10,10 +14,9 @@ public class HtmlViewerUtils {
 		ComponentFactory.register(new ComponentImpl());
 	}
 	
-//	public static View displayHtml(String assetHtml, Map<String, Object> metadata, Context context) {
-//		metadata.put("context", context);
-//		String html = ComponentFactory.get().getFileAsset("www/index.html", metadata);
-//		Widget parse = HtmlParser.parse(html, metadata);
-//		return ((View) parse.asWidget());
-//	}
+	public static Object displayHtml(String assetHtml, Map<String, Object> metadata) {
+		String html = ComponentFactory.get().getFileAsset(assetHtml, metadata);
+		IWidget parse = HtmlParser.parse(html, metadata);
+		return parse.asWidget();
+	}
 }

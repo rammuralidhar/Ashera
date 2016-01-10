@@ -16,7 +16,11 @@
 
 - (NSString *)getFileAssetWithNSString:(NSString *)path
                        withJavaUtilMap:(id<JavaUtilMap>)metadata {
-  return @"";
+    NSError* error = nil;
+    NSString *abspath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path];
+    
+    NSString *res = [NSString stringWithContentsOfFile: abspath encoding:NSUTF8StringEncoding error: &error];
+    return res;
 }
 
 - (instancetype)init {
