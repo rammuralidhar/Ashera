@@ -697,7 +697,6 @@
 		274720B41C423FC00058F1D7 /* HtmlSaxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720901C423FC00058F1D7 /* HtmlSaxHandler.m */; };
 		274720B51C423FC00058F1D7 /* IBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720921C423FC00058F1D7 /* IBody.m */; };
 		274720B61C423FC00058F1D7 /* IButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720941C423FC00058F1D7 /* IButton.m */; };
-		274720B71C423FC00058F1D7 /* IHtml.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720961C423FC00058F1D7 /* IHtml.m */; };
 		274720BA1C423FC00058F1D7 /* ILink.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747209C1C423FC00058F1D7 /* ILink.m */; };
 		274720BB1C423FC00058F1D7 /* IStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747209E1C423FC00058F1D7 /* IStyle.m */; };
 		274720BC1C423FC00058F1D7 /* IsWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720A01C423FC00058F1D7 /* IsWidget.m */; };
@@ -731,7 +730,6 @@
 		274720D81C423FD80058F1D7 /* IButton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720931C423FC00058F1D7 /* IButton.h */; };
 		274720D91C423FD80058F1D7 /* IButton.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720941C423FC00058F1D7 /* IButton.m */; };
 		274720DA1C423FD80058F1D7 /* IHtml.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720951C423FC00058F1D7 /* IHtml.h */; };
-		274720DB1C423FD80058F1D7 /* IHtml.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720961C423FC00058F1D7 /* IHtml.m */; };
 		274720DC1C423FD80058F1D7 /* ILabel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720971C423FC00058F1D7 /* ILabel.h */; };
 		274720DE1C423FD80058F1D7 /* ILinearLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720991C423FC00058F1D7 /* ILinearLayout.h */; };
 		274720E01C423FD80058F1D7 /* ILink.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209B1C423FC00058F1D7 /* ILink.h */; };
@@ -1297,7 +1295,6 @@
 				274720D81C423FD80058F1D7 /* IButton.h in CopyFiles */,
 				274720D91C423FD80058F1D7 /* IButton.m in CopyFiles */,
 				274720DA1C423FD80058F1D7 /* IHtml.h in CopyFiles */,
-				274720DB1C423FD80058F1D7 /* IHtml.m in CopyFiles */,
 				274720DC1C423FD80058F1D7 /* ILabel.h in CopyFiles */,
 				274720DE1C423FD80058F1D7 /* ILinearLayout.h in CopyFiles */,
 				274720E01C423FD80058F1D7 /* ILink.h in CopyFiles */,
@@ -2644,7 +2641,6 @@
 		274720931C423FC00058F1D7 /* IButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IButton.h; sourceTree = "<group>"; };
 		274720941C423FC00058F1D7 /* IButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IButton.m; sourceTree = "<group>"; };
 		274720951C423FC00058F1D7 /* IHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHtml.h; sourceTree = "<group>"; };
-		274720961C423FC00058F1D7 /* IHtml.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHtml.m; sourceTree = "<group>"; };
 		274720971C423FC00058F1D7 /* ILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILabel.h; sourceTree = "<group>"; };
 		274720991C423FC00058F1D7 /* ILinearLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILinearLayout.h; sourceTree = "<group>"; };
 		2747209B1C423FC00058F1D7 /* ILink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILink.h; sourceTree = "<group>"; };
@@ -3284,7 +3280,6 @@
 				274720931C423FC00058F1D7 /* IButton.h */,
 				274720941C423FC00058F1D7 /* IButton.m */,
 				274720951C423FC00058F1D7 /* IHtml.h */,
-				274720961C423FC00058F1D7 /* IHtml.m */,
 				274720971C423FC00058F1D7 /* ILabel.h */,
 				274720991C423FC00058F1D7 /* ILinearLayout.h */,
 				2747209B1C423FC00058F1D7 /* ILink.h */,
@@ -4113,7 +4108,6 @@
 				270B6D541C3B60F2002CB39A /* ExceptionResource.m in Sources */,
 				274720B41C423FC00058F1D7 /* HtmlSaxHandler.m in Sources */,
 				2708F9001C39963300FFB46F /* LayoutAnimationController.m in Sources */,
-				274720B71C423FC00058F1D7 /* IHtml.m in Sources */,
 				2708F9011C39963300FFB46F /* LayoutDirection.h in Sources */,
 				2708F9021C39963300FFB46F /* LayoutDirection.m in Sources */,
 				2708F9031C39963300FFB46F /* LayoutInflater.h in Sources */,

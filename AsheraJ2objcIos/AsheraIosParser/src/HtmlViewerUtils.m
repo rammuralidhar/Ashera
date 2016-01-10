@@ -7,6 +7,7 @@
 #include "Component.h"
 #include "ComponentFactory.h"
 #include "ComponentImpl.h"
+#include "HtmlImpl.h"
 #include "HtmlParser.h"
 #include "HtmlViewerUtils.h"
 #include "IOSClass.h"
@@ -15,6 +16,8 @@
 #include "LabelImpl.h"
 #include "LinearLayoutImpl.h"
 #include "WidgetFactory.h"
+#include "java/io/PrintStream.h"
+#include "java/lang/System.h"
 #include "java/util/Map.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/HtmlViewerUtils.java"
@@ -22,11 +25,11 @@
 J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 
 
-#line 10
+#line 11
 @implementation IosHtmlViewerUtils
 
 
-#line 17
+#line 19
 + (id)displayHtmlWithNSString:(NSString *)assetHtml
               withJavaUtilMap:(id<JavaUtilMap>)metadata {
   return IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(assetHtml, metadata);
@@ -41,9 +44,10 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
   if (self == [IosHtmlViewerUtils class]) {
     {
       
-#line 12
+#line 13
       ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"label", IosLabelImpl_class_());
       ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"linear-layout", IosLinearLayoutImpl_class_());
+      ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"html", IosHtmlImpl_class_());
       ComAsheraAndroidComponentFactoryComponentFactory_register__WithComAsheraAndroidComponentFactoryComponent_(new_IosComponentImpl_init());
     }
     J2OBJC_SET_INITIALIZED(IosHtmlViewerUtils)
@@ -62,14 +66,18 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 @end
 
 
-#line 17
+#line 19
 id IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(NSString *assetHtml, id<JavaUtilMap> metadata) {
   IosHtmlViewerUtils_initialize();
   
-#line 18
+#line 20
   NSString *html = [((id<ComAsheraAndroidComponentFactoryComponent>) nil_chk(ComAsheraAndroidComponentFactoryComponentFactory_get())) getFileAssetWithNSString:assetHtml withJavaUtilMap:metadata];
-  id<ComAsheraAndroidWidgetFactoryIWidget> parse = ComAsheraAndroidParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(html, metadata);
-  return [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(parse)) asWidget];
+  IosHtmlImpl *widget = (IosHtmlImpl *) check_class_cast(ComAsheraAndroidParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(html, metadata), [IosHtmlImpl class]);
+  [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithId:[((IosHtmlImpl *) nil_chk(widget)) getClass]];
+  
+#line 24
+  [widget measure];
+  return widget;
 }
 
 void IosHtmlViewerUtils_init(IosHtmlViewerUtils *self) {

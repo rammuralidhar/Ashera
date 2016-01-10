@@ -59,6 +59,14 @@
 
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
 
+#pragma mark Protected
+
+- (void)onLayoutWithBoolean:(jboolean)changed
+                    withInt:(jint)l
+                    withInt:(jint)t
+                    withInt:(jint)r
+                    withInt:(jint)b;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(IosLinearLayoutImpl)

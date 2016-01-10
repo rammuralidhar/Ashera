@@ -175,7 +175,7 @@ public class FrameLayout extends ViewGroup {
      * {@inheritDoc}
      */
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int count = getChildCount();
 
         final boolean measureMatchParentChildren =

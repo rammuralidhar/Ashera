@@ -10,6 +10,8 @@
 #include "LabelImpl.h"
 #include "LinearLayout.h"
 #include "View.h"
+#include "java/io/PrintStream.h"
+#include "java/lang/System.h"
 #include "java/util/Map.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/LabelImpl.java"
@@ -111,6 +113,19 @@ UILabel* uiLabel;
 - (void)setColorWithNSString:(NSString *)color {
 }
 
+
+#line 123
+- (void)onLayoutWithBoolean:(jboolean)changed
+                    withInt:(jint)l
+                    withInt:(jint)t
+                    withInt:(jint)r
+                    withInt:(jint)b {
+  [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
+  
+#line 126
+  [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("ICICICI", l, ' ', t, ' ', r, ' ', b)];
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "init", "LabelImpl", NULL, 0x1, NULL, NULL },
@@ -131,8 +146,9 @@ UILabel* uiLabel;
     { "getText", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "setTextWithNSString:", "setText", "V", 0x1, NULL, NULL },
     { "setColorWithNSString:", "setColor", "V", 0x1, NULL, NULL },
+    { "onLayoutWithBoolean:withInt:withInt:withInt:withInt:", "onLayout", "V", 0x4, NULL, NULL },
   };
-  static const J2ObjcClassInfo _IosLabelImpl = { 2, "LabelImpl", "ios", NULL, 0x1, 18, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosLabelImpl = { 2, "LabelImpl", "ios", NULL, 0x1, 19, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosLabelImpl;
 }
 

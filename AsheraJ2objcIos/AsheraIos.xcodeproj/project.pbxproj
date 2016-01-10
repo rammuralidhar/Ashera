@@ -38,6 +38,7 @@
 		274720781C4239EF0058F1D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720761C4239EF0058F1D7 /* ViewController.m */; };
 		274720791C4239EF0058F1D7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274720771C4239EF0058F1D7 /* ViewController.xib */; };
 		2747207C1C423A550058F1D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747207B1C423A550058F1D7 /* AppDelegate.m */; };
+		274720F21C4248A00058F1D7 /* HtmlImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720F11C4248A00058F1D7 /* HtmlImpl.m */; };
 		27715FCC1C421F9200F6DD5F /* LinearLayoutImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27715FCB1C421F9200F6DD5F /* LinearLayoutImpl.m */; };
 		277460021BDA93BB00BAFD75 /* prefixes in Resources */ = {isa = PBXBuildFile; fileRef = 277460001BDA93BB00BAFD75 /* prefixes */; };
 		27746AEF1BDB59EC00BAFD75 /* libAsheraIosParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277463991BDB318300BAFD75 /* libAsheraIosParser.a */; };
@@ -141,6 +142,8 @@
 		274720771C4239EF0058F1D7 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = Classes/ViewController.xib; sourceTree = "<group>"; };
 		2747207A1C423A550058F1D7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		2747207B1C423A550058F1D7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
+		274720F01C4248A00058F1D7 /* HtmlImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HtmlImpl.h; path = AsheraIosParser/src/HtmlImpl.h; sourceTree = "<group>"; };
+		274720F11C4248A00058F1D7 /* HtmlImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HtmlImpl.m; path = AsheraIosParser/src/HtmlImpl.m; sourceTree = "<group>"; };
 		27715FCA1C421F9200F6DD5F /* LinearLayoutImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinearLayoutImpl.h; path = AsheraIosParser/src/LinearLayoutImpl.h; sourceTree = "<group>"; };
 		27715FCB1C421F9200F6DD5F /* LinearLayoutImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinearLayoutImpl.m; path = AsheraIosParser/src/LinearLayoutImpl.m; sourceTree = "<group>"; };
 		277460001BDA93BB00BAFD75 /* prefixes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prefixes; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 		27E7013E1C40ADFF0043E295 /* widgets */ = {
 			isa = PBXGroup;
 			children = (
+				274720F01C4248A00058F1D7 /* HtmlImpl.h */,
+				274720F11C4248A00058F1D7 /* HtmlImpl.m */,
 				27715FCA1C421F9200F6DD5F /* LinearLayoutImpl.h */,
 				27715FCB1C421F9200F6DD5F /* LinearLayoutImpl.m */,
 				27E701481C40BF4E0043E295 /* ComponentImpl.h */,
@@ -459,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274720F21C4248A00058F1D7 /* HtmlImpl.m in Sources */,
 				2747207C1C423A550058F1D7 /* AppDelegate.m in Sources */,
 				274720781C4239EF0058F1D7 /* ViewController.m in Sources */,
 				064E073C18E90BD400F5DF6B /* J2RBoard.m in Sources */,

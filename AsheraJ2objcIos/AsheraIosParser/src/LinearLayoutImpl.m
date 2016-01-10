@@ -12,6 +12,8 @@
 #include "LinearLayoutImpl.h"
 #include "View.h"
 #include "ViewGroup.h"
+#include "java/io/PrintStream.h"
+#include "java/lang/System.h"
 #include "java/util/Iterator.h"
 #include "java/util/Map.h"
 
@@ -133,6 +135,19 @@ UIView* uiView;
   return NO;
 }
 
+
+#line 131
+- (void)onLayoutWithBoolean:(jboolean)changed
+                    withInt:(jint)l
+                    withInt:(jint)t
+                    withInt:(jint)r
+                    withInt:(jint)b {
+  [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
+  
+#line 134
+  [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("ICICICI", l, ' ', t, ' ', r, ' ', b)];
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "init", "LinearLayoutImpl", NULL, 0x1, NULL, NULL },
@@ -155,8 +170,9 @@ UIView* uiView;
     { "clear", NULL, "V", 0x1, NULL, NULL },
     { "iterate", NULL, "Ljava.util.Iterator;", 0x1, NULL, NULL },
     { "removeWithComAsheraAndroidWidgetFactoryIWidget:", "remove", "Z", 0x1, NULL, NULL },
+    { "onLayoutWithBoolean:withInt:withInt:withInt:withInt:", "onLayout", "V", 0x4, NULL, NULL },
   };
-  static const J2ObjcClassInfo _IosLinearLayoutImpl = { 2, "LinearLayoutImpl", "ios", NULL, 0x1, 20, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosLinearLayoutImpl = { 2, "LinearLayoutImpl", "ios", NULL, 0x1, 21, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosLinearLayoutImpl;
 }
 
