@@ -5,6 +5,7 @@ import java.util.Map;
 
 import repackaged.android.content.ContextWrapper;
 import repackaged.android.view.View;
+import repackaged.android.view.ViewGroup;
 import repackaged.android.widget.FrameLayout;
 
 import com.ashera.android.widget.factory.HasWidgets;
@@ -14,12 +15,14 @@ import com.ashera.android.widget.factory.IWidget;
 public class HtmlImpl extends FrameLayout implements IHtml{
 	public HtmlImpl() {
 		super(new ContextWrapper());
-		setLayoutParams(new LayoutParams(100, 100));
+		setLayoutParams(new LayoutParams(nativeGetScreenWidth(), nativeGetScreenHeight()));
 	}
+
 	@Override
 	public void add(IWidget w) {
 		if (w instanceof View) {
 			addView(((View) w));
+			nativeAddView(w);
 		}
 	}
 
@@ -44,16 +47,17 @@ public class HtmlImpl extends FrameLayout implements IHtml{
 
 	@Override
 	public Object asWidget() {
-		return null;
+		return nativeAsWidget();
 	}
 
 	@Override
 	public void create(Map<String, Object> metadata) {
+		nativeCreate();
 	}
 
 	@Override
 	public void setParent(HasWidgets widget) {
-		
+		mParent = (ViewGroup) widget;
 	}
 	
 	public void measure() {
@@ -63,12 +67,50 @@ public class HtmlImpl extends FrameLayout implements IHtml{
 		int hmeasureSpec = MeasureSpec.EXACTLY;
 		measure(View.MeasureSpec.makeMeasureSpec( w, wmeasureSpec ),
 			View.MeasureSpec.makeMeasureSpec( h, hmeasureSpec  ));
-		layout(0, 0, 1000, 1000);
+		layout(0, 0, nativeGetScreenWidth(), nativeGetScreenHeight());
 	}
 	
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 		super.onLayout(changed, left, top, right, bottom);
 		System.out.println(left + " " + top + " " + right + " " + bottom);
+		
+		addToRootViewController(left, top, right, bottom);
 	}
 
+	@Override
+	public void setWidth(int width) {
+	}
+
+	@Override
+	public void setHeight(int height) {
+	}
+	
+	private native void addToRootViewController(int left, int top, int right, int bottom)/*-[
+		self.htmlView.backgroundColor = [UIColor redColor];
+	    [self.htmlView setFrame:CGRectMake(left, top, right-left, bottom-top)];
+	    
+	    UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
+	    [window.rootViewController.view addSubview:self.htmlView];
+	]-*/;
+
+	private native int nativeGetScreenHeight()/*-[
+		return [UIScreen mainScreen].bounds.size.height;
+	]-*/;
+	private native int nativeGetScreenWidth()/*-[
+		return [UIScreen mainScreen].bounds.size.width;
+	]-*/;
+	
+	private native void nativeAddView(IWidget w)/*-[ 
+		self.htmlView.backgroundColor = [UIColor greenColor];
+    	[self.htmlView addSubview:[w asWidget]];
+	]-*/;	
+	
+	
+	public native void nativeCreate()/*-[
+		self.htmlView = [UIView new];
+	]-*/;	
+	
+	public native Object nativeAsWidget()/*-[
+		return self.htmlView;
+	]-*/;	
 }

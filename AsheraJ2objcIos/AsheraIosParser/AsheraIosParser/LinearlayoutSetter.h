@@ -6,20 +6,20 @@
 #ifndef _ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter_H_
 #define _ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter_H_
 
-#include "AttributeSetter.h"
+#include "BaseAttributeSetter.h"
 #include "J2ObjC_header.h"
 
 @protocol ComAsheraAndroidWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 @protocol OrgXmlSaxAttributes;
 
-@interface ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter : NSObject < ComAsheraAndroidWidgetFactorySetterAttributeSetter >
+@interface ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter : ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter
 
 #pragma mark Public
 
 - (instancetype)init;
 
-- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)linearLayout
+- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
                                              withJavaUtilMap:(id<JavaUtilMap>)cssProps
                                      withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
 

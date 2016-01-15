@@ -5,6 +5,7 @@ import java.util.Map;
 
 import repackaged.android.content.ContextWrapper;
 import repackaged.android.view.View;
+import repackaged.android.view.ViewGroup;
 
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.ILinearLayout;
@@ -12,9 +13,12 @@ import com.ashera.android.widget.factory.IWidget;
 
 public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  implements ILinearLayout{
 
+	private int width;
+	private int height;
+
 	public LinearLayoutImpl() {
 		super(new ContextWrapper());
-		setLayoutParams(new LayoutParams(10, 10));
+		setLayoutParams(new LayoutParams(200, 200));
 	}
 
 	@Override
@@ -81,30 +85,54 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 
 	@Override
 	public Object asWidget() {
-		// TODO Auto-generated method stub
-		return null;
+		return nativeAsWidget();
 	}
+	
+	public native Object nativeAsWidget()/*-[
+		return self.uiView;
+	]-*/;
 
 	@Override
 	public void create(Map<String, Object> metadata) {
+		nativeCreate();
 	}
+	
+	public native void nativeCreate()/*-[
+		self.uiView = [UIView new];
+	]-*/;
 
 	@Override
 	public void setParent(HasWidgets widget) {
-		// TODO Auto-generated method stub
-		
+		mParent = (ViewGroup) widget;
 	}
 
 	@Override
 	public void setOrientation(String orientation) {
-		// TODO Auto-generated method stub
+		setOrientation(0);
 		
+		if (orientation != null && orientation.equals("h")) {
+			setOrientation(0);
+		} else {
+			setOrientation(1);
+		}
 	}
 
 	@Override
 	public void add(IWidget w) {
 		if (w instanceof View) {
+			View view = (View) w;
+//			w.setParent(this);
+			System.out.println(getParent() + "3333333");
+			ViewGroup parent = ((ViewGroup) getParent());
+			if (view.getLayoutParams() == null) {
+				repackaged.android.view.ViewGroup.LayoutParams layoutParams = parent.generateLayoutParams(null);
+				view.setLayoutParams(layoutParams);
+			}
+			
+			view.getLayoutParams().width = w.getWidth();
+			view.getLayoutParams().height = w.getHeight();
 			addView(((View) w));
+			nativeAddView(w);
 		}
 	}
 
@@ -132,5 +160,24 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 		super.onLayout(changed, l, t , r, b);
 		
 		System.out.println(l + " " + t + " " + r + " " + b);
+		nativeMakeFrame(l, t, r, b);
 	}
+	public native void nativeMakeFrame(int l, int t, int r, int b)/*-[
+		[self.uiView setFrame:CGRectMake(l, t, r-l, b-t)];
+	]-*/;
+
+	@Override
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	@Override
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	
+	private native void nativeAddView(IWidget w)/*-[ 
+		self.uiView.backgroundColor = [UIColor greenColor];
+    	[self.uiView addSubview:[w asWidget]];
+	]-*/;
 }

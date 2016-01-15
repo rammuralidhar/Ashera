@@ -5,7 +5,6 @@ import java.util.Map;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 
 import com.ashera.android.widget.factory.ILinearLayout;
 
@@ -19,7 +18,6 @@ public class LinearLayoutImpl extends BaseStyledHasWidgets implements ILinearLay
 	public void create(Map<String, Object> metadata) {
 		this.context = (Context) metadata.get("context");
 		linearLayout = new android.widget.LinearLayout(context);
-		linearLayout.setLayoutParams(new android.widget.LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 	}
 
 	@Override

@@ -10,125 +10,167 @@
 #include "LabelImpl.h"
 #include "LinearLayout.h"
 #include "View.h"
-#include "java/io/PrintStream.h"
-#include "java/lang/System.h"
+#include "ViewGroup.h"
 #include "java/util/Map.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/LabelImpl.java"
 
+@interface IosLabelImpl () {
+ @public
+  jint width_;
+  jint height_;
+}
 
-#line 13
+@end
+
+
+#line 14
 @implementation IosLabelImpl
 
+
+#line 18
 - (instancetype)init {
   IosLabelImpl_init(self);
   return self;
 }
 
 
-#line 21
+#line 24
 - (void)setOpacityWithFloat:(jfloat)opacity {
 }
 
 
-#line 27
+#line 30
 - (void)setBackgroundColorWithNSString:(NSString *)color {
 }
 
 
-#line 33
+#line 36
 - (void)setBackgroundImageWithNSString:(NSString *)backgroundImage {
 }
 
 
-#line 39
+#line 42
 - (void)setPaddingTopWithNSString:(NSString *)paddingTop {
 }
 
 
-#line 45
+#line 48
 - (void)setPaddingBottomWithNSString:(NSString *)paddingBottom {
 }
 
 
-#line 51
+#line 54
 - (void)setPaddingLeftWithNSString:(NSString *)paddingLeft {
 }
 
 
-#line 57
+#line 60
 - (void)setPaddingRightWithNSString:(NSString *)paddingRight {
 }
 
 
-#line 63
+#line 66
 - (void)setMarginTopWithNSString:(NSString *)marginTop {
 }
 
 
-#line 69
+#line 72
 - (void)setMarginBottomWithNSString:(NSString *)marginBottom {
 }
 
 
-#line 75
+#line 78
 - (void)setMarginLeftWithNSString:(NSString *)marginLeft {
 }
 
 
-#line 81
+#line 84
 - (void)setMarginRightWithNSString:(NSString *)marginRight {
 }
 
 
-#line 87
+#line 90
 - (id)asWidget {
-  
-#line 89
-  return self.uiLabel;
+  return [self nativeAsWidget];
 }
 
-- (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
-    self.uiLabel = [UILabel new];
-    self.uiLabel.numberOfLines = 3;
+- (id)nativeAsWidget {
+  return self.uiLabel;
 }
 
 
 #line 99
-- (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
+- (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
+  [self nativeCreate];
+}
+
+- (void)nativeCreate {
+  self.uiLabel = [UILabel new];
+  self.uiLabel.numberOfLines = 3;
 }
 
 
-#line 105
+#line 110
+- (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
+  mParent_ = (RepackagedAndroidViewViewGroup *) check_class_cast(widget, [RepackagedAndroidViewViewGroup class]);
+}
+
+
+#line 115
 - (NSString *)getText {
   
-#line 107
+#line 117
   return nil;
 }
 
 - (void)setTextWithNSString:(NSString *)text {
-    [self.uiLabel setText:text];
+  [self nativeSetTextWithNSString:text];
 }
 
 
-#line 117
+#line 126
+- (void)nativeSetTextWithNSString:(NSString *)text {
+  [self.uiLabel setText:text];
+}
+
+
+#line 131
 - (void)setColorWithNSString:(NSString *)color {
 }
 
 
-#line 123
+#line 137
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)l
                     withInt:(jint)t
                     withInt:(jint)r
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
-    [self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
-    NSLog(@"%d l1l %d", l, t);
-
   
-#line 126
-  [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("ICICICI", l, ' ', t, ' ', r, ' ', b)];
+#line 140
+  [self nativeMakeFrameWithInt:l withInt:t withInt:r withInt:b];
+}
+
+
+#line 143
+- (void)nativeMakeFrameWithInt:(jint)l
+                       withInt:(jint)t
+                       withInt:(jint)r
+                       withInt:(jint)b {
+  [self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
+}
+
+
+#line 148
+- (void)setWidthWithInt:(jint)width {
+  self->width_ = width;
+}
+
+
+#line 153
+- (void)setHeightWithInt:(jint)height {
+  self->height_ = height;
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -146,28 +188,38 @@
     { "setMarginLeftWithNSString:", "setMarginLeft", "V", 0x1, NULL, NULL },
     { "setMarginRightWithNSString:", "setMarginRight", "V", 0x1, NULL, NULL },
     { "asWidget", NULL, "Ljava.lang.Object;", 0x1, NULL, NULL },
+    { "nativeAsWidget", NULL, "Ljava.lang.Object;", 0x101, NULL, NULL },
     { "createWithJavaUtilMap:", "create", "V", 0x1, NULL, NULL },
+    { "nativeCreate", NULL, "V", 0x101, NULL, NULL },
     { "setParentWithComAsheraAndroidWidgetFactoryHasWidgets:", "setParent", "V", 0x1, NULL, NULL },
     { "getText", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "setTextWithNSString:", "setText", "V", 0x1, NULL, NULL },
+    { "nativeSetTextWithNSString:", "nativeSetText", "V", 0x101, NULL, NULL },
     { "setColorWithNSString:", "setColor", "V", 0x1, NULL, NULL },
     { "onLayoutWithBoolean:withInt:withInt:withInt:withInt:", "onLayout", "V", 0x4, NULL, NULL },
+    { "nativeMakeFrameWithInt:withInt:withInt:withInt:", "nativeMakeFrame", "V", 0x101, NULL, NULL },
+    { "setWidthWithInt:", "setWidth", "V", 0x1, NULL, NULL },
+    { "setHeightWithInt:", "setHeight", "V", 0x1, NULL, NULL },
   };
-  static const J2ObjcClassInfo _IosLabelImpl = { 2, "LabelImpl", "ios", NULL, 0x1, 19, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcFieldInfo fields[] = {
+    { "width_", NULL, 0x2, "I", NULL, NULL,  },
+    { "height_", NULL, 0x2, "I", NULL, NULL,  },
+  };
+  static const J2ObjcClassInfo _IosLabelImpl = { 2, "LabelImpl", "ios", NULL, 0x1, 25, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosLabelImpl;
 }
 
 @end
 
 
-#line 15
+#line 18
 void IosLabelImpl_init(IosLabelImpl *self) {
   (void) RepackagedAndroidViewView_initWithRepackagedAndroidContentContext_(self, new_RepackagedAndroidContentContextWrapper_init());
   [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetLinearLayout_LayoutParams_initWithInt_withInt_(50, 50)];
 }
 
 
-#line 15
+#line 18
 IosLabelImpl *new_IosLabelImpl_init() {
   IosLabelImpl *self = [IosLabelImpl alloc];
   IosLabelImpl_init(self);

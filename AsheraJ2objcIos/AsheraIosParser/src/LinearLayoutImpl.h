@@ -31,11 +31,22 @@
 
 - (id<JavaUtilIterator>)iterate;
 
+- (id)nativeAsWidget;
+
+- (void)nativeCreate;
+
+- (void)nativeMakeFrameWithInt:(jint)l
+                       withInt:(jint)t
+                       withInt:(jint)r
+                       withInt:(jint)b;
+
 - (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
 
 - (void)setBackgroundColorWithNSString:(NSString *)color;
 
 - (void)setBackgroundImageWithNSString:(NSString *)backgroundImage;
+
+- (void)setHeightWithInt:(jint)height;
 
 - (void)setMarginBottomWithNSString:(NSString *)marginBottom;
 
@@ -58,6 +69,8 @@
 - (void)setPaddingTopWithNSString:(NSString *)paddingTop;
 
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
+
+- (void)setWidthWithInt:(jint)width;
 
 #pragma mark Protected
 

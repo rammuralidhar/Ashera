@@ -4,6 +4,7 @@
 //
 
 
+#include "BaseAttributeSetter.h"
 #include "ILabel.h"
 #include "IWidget.h"
 #include "J2ObjC_source.h"
@@ -24,6 +25,7 @@
                                      withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
   
 #line 15
+  [super setAttributeWithComAsheraAndroidWidgetFactoryIWidget:widget withJavaUtilMap:cssProps withOrgXmlSaxAttributes:atts];
   NSString *color = [((id<JavaUtilMap>) nil_chk(cssProps)) getWithId:@"color"];
   id<ComAsheraAndroidWidgetFactoryILabel> label = (id<ComAsheraAndroidWidgetFactoryILabel>) check_protocol_cast(widget, @protocol(ComAsheraAndroidWidgetFactoryILabel));
   if (color != nil) {
@@ -48,7 +50,7 @@
 @end
 
 void ComAsheraAndroidWidgetFactorySetterLabelSetter_init(ComAsheraAndroidWidgetFactorySetterLabelSetter *self) {
-  (void) NSObject_init(self);
+  (void) ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_init(self);
 }
 
 ComAsheraAndroidWidgetFactorySetterLabelSetter *new_ComAsheraAndroidWidgetFactorySetterLabelSetter_init() {

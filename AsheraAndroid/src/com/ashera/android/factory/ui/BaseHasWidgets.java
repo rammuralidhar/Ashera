@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.IWidget;
@@ -13,6 +14,8 @@ import com.ashera.android.widget.factory.IWidget;
 public abstract class BaseHasWidgets implements HasWidgets, IWidget{
 	protected List<IWidget> widgets = new ArrayList<IWidget>();
 	protected HasWidgets parent;
+	private int width;
+	private int height;
 
 	@Override
 	public void setParent(HasWidgets parent) {
@@ -22,7 +25,18 @@ public abstract class BaseHasWidgets implements HasWidgets, IWidget{
 	@Override
 	public void add(IWidget w) {
 		widgets.add(w);
-		getViewGroup().addView((View) w.asWidget());
+		w.setParent(this);
+		View view = (View) w.asWidget();
+		ViewGroup parent = getViewGroup();
+		parent.addView(view);
+		
+		if (view.getLayoutParams() == null) {
+			LayoutParams layoutParams = parent.generateLayoutParams(null);
+			view.setLayoutParams(layoutParams);
+		}
+		
+		view.getLayoutParams().width = w.getWidth();
+		view.getLayoutParams().height = w.getHeight();
 	}
 
 	@Override
@@ -42,5 +56,22 @@ public abstract class BaseHasWidgets implements HasWidgets, IWidget{
 	}
 
 	public abstract ViewGroup getViewGroup();
+	
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
 
 }

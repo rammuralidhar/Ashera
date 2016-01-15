@@ -16,7 +16,7 @@
 @protocol JavaUtilMap;
 
 @interface IosHtmlImpl : RepackagedAndroidWidgetFrameLayout < ComAsheraAndroidWidgetFactoryIHtml >
-
+@property UIView* htmlView;
 #pragma mark Public
 
 - (instancetype)init;
@@ -33,9 +33,17 @@
 
 - (void)measure;
 
+- (id)nativeAsWidget;
+
+- (void)nativeCreate;
+
 - (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
 
+- (void)setHeightWithInt:(jint)height;
+
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
+
+- (void)setWidthWithInt:(jint)width;
 
 #pragma mark Protected
 

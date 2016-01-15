@@ -6,14 +6,14 @@
 #ifndef _ComAsheraAndroidWidgetFactorySetterDefaultAttributeSetter_H_
 #define _ComAsheraAndroidWidgetFactorySetterDefaultAttributeSetter_H_
 
-#include "AttributeSetter.h"
+#include "BaseAttributeSetter.h"
 #include "J2ObjC_header.h"
 
 @protocol ComAsheraAndroidWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 @protocol OrgXmlSaxAttributes;
 
-@interface ComAsheraAndroidWidgetFactorySetterDefaultAttributeSetter : NSObject < ComAsheraAndroidWidgetFactorySetterAttributeSetter >
+@interface ComAsheraAndroidWidgetFactorySetterDefaultAttributeSetter : ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter
 
 #pragma mark Public
 

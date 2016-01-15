@@ -45,4 +45,5 @@ public class LabelImpl extends BaseStyledWidget implements ILabel{
 		label.setTextColor(Color.parseColor(color));
 		
 	}
+
 }

@@ -106,6 +106,10 @@ public class HtmlSaxHandler implements ContentHandler{
 			metadata.put("attributes", atts);
 			this.widget.create(metadata);
 			
+			
+
+			updateStyleOnWidget(widget, localName, atts);
+			
 			HasWidgets parent = null;
 			if (!hasWidgets.isEmpty()) {
 				parent = hasWidgets.peek();
@@ -114,9 +118,6 @@ public class HtmlSaxHandler implements ContentHandler{
 					parent.add(widget);
 				}
 			}
-			
-			updateStyleOnWidget(widget, localName, atts);
-
 			widget.setParent(parent);
 
 			if (widget instanceof HasWidgets) {

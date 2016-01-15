@@ -4,6 +4,7 @@
 //
 
 
+#include "BaseAttributeSetter.h"
 #include "DefaultAttributeSetter.h"
 #include "IWidget.h"
 #include "J2ObjC_source.h"
@@ -21,6 +22,9 @@
 - (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
                                              withJavaUtilMap:(id<JavaUtilMap>)cssProps
                                      withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
+  
+#line 14
+  [super setAttributeWithComAsheraAndroidWidgetFactoryIWidget:widget withJavaUtilMap:cssProps withOrgXmlSaxAttributes:atts];
 }
 
 - (instancetype)init {
@@ -40,7 +44,7 @@
 @end
 
 void ComAsheraAndroidWidgetFactorySetterDefaultAttributeSetter_init(ComAsheraAndroidWidgetFactorySetterDefaultAttributeSetter *self) {
-  (void) NSObject_init(self);
+  (void) ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_init(self);
 }
 
 ComAsheraAndroidWidgetFactorySetterDefaultAttributeSetter *new_ComAsheraAndroidWidgetFactorySetterDefaultAttributeSetter_init() {

@@ -11,6 +11,14 @@
 
 @protocol ComAsheraAndroidWidgetFactoryIWidget < ComAsheraAndroidWidgetFactoryIsWidget, NSObject, JavaObject >
 
+- (void)setWidthWithInt:(jint)width;
+
+- (void)setHeightWithInt:(jint)width;
+
+- (jint)getWidth;
+
+- (jint)getHeight;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComAsheraAndroidWidgetFactoryIWidget)

@@ -19,38 +19,64 @@
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/HtmlImpl.java"
 
+@interface IosHtmlImpl ()
 
-#line 14
-@implementation IosHtmlImpl
-UIView* htmlView;
+- (void)addToRootViewControllerWithInt:(jint)left
+                               withInt:(jint)top
+                               withInt:(jint)right
+                               withInt:(jint)bottom;
+
+- (jint)nativeGetScreenHeight;
+
+- (jint)nativeGetScreenWidth;
+
+- (void)nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
+
+@end
+
+__attribute__((unused)) static void IosHtmlImpl_addToRootViewControllerWithInt_withInt_withInt_withInt_(IosHtmlImpl *self, jint left, jint top, jint right, jint bottom);
+
+__attribute__((unused)) static jint IosHtmlImpl_nativeGetScreenHeight(IosHtmlImpl *self);
+
+__attribute__((unused)) static jint IosHtmlImpl_nativeGetScreenWidth(IosHtmlImpl *self);
+
+__attribute__((unused)) static void IosHtmlImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(IosHtmlImpl *self, id<ComAsheraAndroidWidgetFactoryIWidget> w);
+
 
 #line 15
+@implementation IosHtmlImpl
+
+
+#line 16
 - (instancetype)init {
   IosHtmlImpl_init(self);
   return self;
 }
 
+
+#line 22
 - (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
+//    [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(w)) setParentWithComAsheraAndroidWidgetFactoryHasWidgets:self];
     [self addViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
-      [htmlView addSubview:[w asWidget]];
+    IosHtmlImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(self, w);
   }
 }
 
 
-#line 27
+#line 31
 - (void)clear {
   [self removeAllViews];
 }
 
 
-#line 32
+#line 36
 - (id<JavaUtilIterator>)iterate {
   return nil;
 }
 
 
-#line 37
+#line 41
 - (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
     [self removeViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
@@ -60,37 +86,36 @@ UIView* htmlView;
 }
 
 
-#line 46
+#line 50
 - (id)asWidget {
-  return htmlView;
-}
-
-
-#line 51
-- (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
-    htmlView = [UIView new];
+  return [self nativeAsWidget];
 }
 
 
 #line 55
-- (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
+- (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
+  [self nativeCreate];
 }
 
 
-#line 59
+#line 60
+- (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
+  mParent_ = (RepackagedAndroidViewViewGroup *) check_class_cast(widget, [RepackagedAndroidViewViewGroup class]);
+}
+
 - (void)measure {
   jint w = ((RepackagedAndroidViewViewGroup_LayoutParams *) nil_chk([self getLayoutParams]))->width_;
   jint h = ((RepackagedAndroidViewViewGroup_LayoutParams *) nil_chk([self getLayoutParams]))->height_;
   jint wmeasureSpec = RepackagedAndroidViewView_MeasureSpec_EXACTLY;
   jint hmeasureSpec = RepackagedAndroidViewView_MeasureSpec_EXACTLY;
   [self measureWithInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(w, wmeasureSpec) withInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(
-#line 65
+#line 70
   h, hmeasureSpec)];
-  [self layoutWithInt:0 withInt:0 withInt:500 withInt:500];
+  [self layoutWithInt:0 withInt:0 withInt:IosHtmlImpl_nativeGetScreenWidth(self) withInt:IosHtmlImpl_nativeGetScreenHeight(self)];
 }
 
 
-#line 69
+#line 74
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)left
                     withInt:(jint)top
@@ -98,11 +123,52 @@ UIView* htmlView;
                     withInt:(jint)bottom {
   [super onLayoutWithBoolean:changed withInt:left withInt:top withInt:right withInt:bottom];
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("ICICICI", left, ' ', top, ' ', right, ' ', bottom)];
-    htmlView.backgroundColor = [UIColor redColor];
-    [htmlView setFrame:CGRectMake(left, top, right-left, bottom-top)];
-    
-    UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
-    [window.rootViewController.view addSubview:htmlView];
+  
+#line 78
+  IosHtmlImpl_addToRootViewControllerWithInt_withInt_withInt_withInt_(self, left, top, right, bottom);
+}
+
+
+#line 82
+- (void)setWidthWithInt:(jint)width {
+}
+
+
+#line 86
+- (void)setHeightWithInt:(jint)height {
+}
+
+- (void)addToRootViewControllerWithInt:(jint)left
+                               withInt:(jint)top
+                               withInt:(jint)right
+                               withInt:(jint)bottom {
+  IosHtmlImpl_addToRootViewControllerWithInt_withInt_withInt_withInt_(self, left, top, right, bottom);
+}
+
+
+#line 97
+- (jint)nativeGetScreenHeight {
+  return IosHtmlImpl_nativeGetScreenHeight(self);
+}
+
+
+#line 100
+- (jint)nativeGetScreenWidth {
+  return IosHtmlImpl_nativeGetScreenWidth(self);
+}
+
+- (void)nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
+  IosHtmlImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(self, w);
+}
+
+
+#line 110
+- (void)nativeCreate {
+  self.htmlView = [UIView new];
+}
+
+- (id)nativeAsWidget {
+  return self.htmlView;
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -117,26 +183,59 @@ UIView* htmlView;
     { "setParentWithComAsheraAndroidWidgetFactoryHasWidgets:", "setParent", "V", 0x1, NULL, NULL },
     { "measure", NULL, "V", 0x1, NULL, NULL },
     { "onLayoutWithBoolean:withInt:withInt:withInt:withInt:", "onLayout", "V", 0x4, NULL, NULL },
+    { "setWidthWithInt:", "setWidth", "V", 0x1, NULL, NULL },
+    { "setHeightWithInt:", "setHeight", "V", 0x1, NULL, NULL },
+    { "addToRootViewControllerWithInt:withInt:withInt:withInt:", "addToRootViewController", "V", 0x102, NULL, NULL },
+    { "nativeGetScreenHeight", NULL, "I", 0x102, NULL, NULL },
+    { "nativeGetScreenWidth", NULL, "I", 0x102, NULL, NULL },
+    { "nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget:", "nativeAddView", "V", 0x102, NULL, NULL },
+    { "nativeCreate", NULL, "V", 0x101, NULL, NULL },
+    { "nativeAsWidget", NULL, "Ljava.lang.Object;", 0x101, NULL, NULL },
   };
-  static const J2ObjcClassInfo _IosHtmlImpl = { 2, "HtmlImpl", "ios", NULL, 0x1, 10, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosHtmlImpl = { 2, "HtmlImpl", "ios", NULL, 0x1, 18, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosHtmlImpl;
 }
 
 @end
 
 
-#line 15
+#line 16
 void IosHtmlImpl_init(IosHtmlImpl *self) {
   (void) RepackagedAndroidWidgetFrameLayout_initWithRepackagedAndroidContentContext_(self, new_RepackagedAndroidContentContextWrapper_init());
-  [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetFrameLayout_LayoutParams_initWithInt_withInt_(100, 100)];
+  [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetFrameLayout_LayoutParams_initWithInt_withInt_(IosHtmlImpl_nativeGetScreenWidth(self), IosHtmlImpl_nativeGetScreenHeight(self))];
 }
 
 
-#line 15
+#line 16
 IosHtmlImpl *new_IosHtmlImpl_init() {
   IosHtmlImpl *self = [IosHtmlImpl alloc];
   IosHtmlImpl_init(self);
   return self;
+}
+
+
+#line 89
+void IosHtmlImpl_addToRootViewControllerWithInt_withInt_withInt_withInt_(IosHtmlImpl *self, jint left, jint top, jint right, jint bottom) {
+  self.htmlView.backgroundColor = [UIColor redColor];
+  [self.htmlView setFrame:CGRectMake(left, top, right-left, bottom-top)];
+  
+  UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
+  [window.rootViewController.view addSubview:self.htmlView];
+}
+
+jint IosHtmlImpl_nativeGetScreenHeight(IosHtmlImpl *self) {
+  return [UIScreen mainScreen].bounds.size.height;
+}
+
+
+#line 100
+jint IosHtmlImpl_nativeGetScreenWidth(IosHtmlImpl *self) {
+  return [UIScreen mainScreen].bounds.size.width;
+}
+
+void IosHtmlImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(IosHtmlImpl *self, id<ComAsheraAndroidWidgetFactoryIWidget> w) {
+  self.htmlView.backgroundColor = [UIColor greenColor];
+  [self.htmlView addSubview:[w asWidget]];
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosHtmlImpl)

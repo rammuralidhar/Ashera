@@ -17,12 +17,16 @@
 
 - (instancetype)init;
 
++ (NSString *)getFileAssetWithNSString:(NSString *)path;
+
 - (NSString *)getFileAssetWithNSString:(NSString *)path
                        withJavaUtilMap:(id<JavaUtilMap>)metadata;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(IosComponentImpl)
+
+FOUNDATION_EXPORT NSString *IosComponentImpl_getFileAssetWithNSString_(NSString *path);
 
 FOUNDATION_EXPORT void IosComponentImpl_init(IosComponentImpl *self);
 

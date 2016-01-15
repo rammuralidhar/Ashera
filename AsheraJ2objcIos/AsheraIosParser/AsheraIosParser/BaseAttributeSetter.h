@@ -6,17 +6,30 @@
 #ifndef _ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_H_
 #define _ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_H_
 
+#include "AttributeSetter.h"
 #include "J2ObjC_header.h"
 
-@interface ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter : NSObject
+@protocol ComAsheraAndroidWidgetFactoryIWidget;
+@protocol JavaUtilMap;
+@protocol OrgXmlSaxAttributes;
+
+#define ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT -2
+
+@interface ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter : NSObject < ComAsheraAndroidWidgetFactorySetterAttributeSetter >
 
 #pragma mark Public
 
 - (instancetype)init;
 
+- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
+                                             withJavaUtilMap:(id<JavaUtilMap>)cssProps
+                                     withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter)
+
+J2OBJC_STATIC_FIELD_GETTER(ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter, WRAP_CONTENT, jint)
 
 FOUNDATION_EXPORT void ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_init(ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter *self);
 

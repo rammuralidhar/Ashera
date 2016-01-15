@@ -5,16 +5,19 @@ import java.util.Map;
 import repackaged.android.content.Context;
 import repackaged.android.content.ContextWrapper;
 import repackaged.android.view.View;
+import repackaged.android.view.ViewGroup;
 import repackaged.android.widget.LinearLayout.LayoutParams;
 
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.ILabel;
 
 public class LabelImpl extends View implements ILabel{
+	private int width;
+	private int height;
 
 	public LabelImpl() {
 		super(new ContextWrapper());
-		setLayoutParams(new LayoutParams(10, 10));
+		setLayoutParams(new LayoutParams(50, 50));
 	}
 
 	@Override
@@ -85,20 +88,27 @@ public class LabelImpl extends View implements ILabel{
 
 	@Override
 	public Object asWidget() {
-		// TODO Auto-generated method stub
-		return null;
+		return nativeAsWidget();
 	}
+	
+	public native Object nativeAsWidget()/*-[
+		return self.uiLabel;
+	]-*/;
 
 	@Override
 	public void create(Map<String, Object> metadata) {
-		// TODO Auto-generated method stub
-		
+		nativeCreate();
 	}
+	
+	public native void nativeCreate()/*-[
+		self.uiLabel = [UILabel new];
+		self.uiLabel.numberOfLines = 3;
+	]-*/;
+	
 
 	@Override
 	public void setParent(HasWidgets widget) {
-		// TODO Auto-generated method stub
-		
+		mParent = (ViewGroup) widget;
 	}
 
 	@Override
@@ -109,9 +119,13 @@ public class LabelImpl extends View implements ILabel{
 
 	@Override
 	public void setText(String text) {
-		// TODO Auto-generated method stub
+		nativeSetText(text);
 		
 	}
+	
+	public native void nativeSetText(String text)/*-[
+		[self.uiLabel setText:text];
+	]-*/;
 
 	@Override
 	public void setColor(String color) {
@@ -123,6 +137,21 @@ public class LabelImpl extends View implements ILabel{
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
 		super.onLayout(changed, l, t, r, b);
 		
-		System.out.println(l + " " + t + " " + r + " " + b);
+		nativeMakeFrame(l, t, r, b);
+	}
+	
+	public native void nativeMakeFrame(int l, int t, int r, int b)/*-[
+		[self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
+	]-*/;
+
+	@Override
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	@Override
+	public void setHeight(int height) {
+		this.height = height;
+		
 	}
 }

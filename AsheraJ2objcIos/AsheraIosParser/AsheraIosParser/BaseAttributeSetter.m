@@ -5,13 +5,68 @@
 
 
 #include "BaseAttributeSetter.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
+#include "java/lang/Integer.h"
+#include "java/util/Map.h"
+#include "org/xml/sax/Attributes.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/src/com/ashera/android/widget/factory/setter/BaseAttributeSetter.java"
 
+#define ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_MATCH_PARENT -1
 
-#line 3
+J2OBJC_STATIC_FIELD_GETTER(ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter, MATCH_PARENT, jint)
+
+
+#line 9
 @implementation ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter
+
+
+#line 14
+- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
+                                             withJavaUtilMap:(id<JavaUtilMap>)cssProps
+                                     withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
+  
+#line 16
+  NSString *width = [((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"width"];
+  [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(widget)) setWidthWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
+  if (width != nil) {
+    width = [width trim];
+    if ([((NSString *) nil_chk(width)) equalsIgnoreCase:@"match_parent"]) {
+      [widget setWidthWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_MATCH_PARENT];
+    }
+    else
+#line 22
+    if ([width equalsIgnoreCase:@"wrap_content"]) {
+      [widget setWidthWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
+    }
+    else
+#line 24
+    if ([width hasSuffix:@"px"]) {
+      [widget setWidthWithInt:JavaLangInteger_parseIntWithNSString_([width replace:@"px" withSequence:@""])];
+    }
+  }
+  
+#line 29
+  NSString *height = [atts getValueWithNSString:@"height"];
+  [widget setHeightWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
+  if (height != nil) {
+    height = [height trim];
+    if ([((NSString *) nil_chk(height)) equalsIgnoreCase:@"match_parent"]) {
+      [widget setHeightWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_MATCH_PARENT];
+    }
+    else
+#line 35
+    if ([height equalsIgnoreCase:@"wrap_content"]) {
+      [widget setHeightWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
+    }
+    else
+#line 37
+    if ([height hasSuffix:@"px"]) {
+      [widget setHeightWithInt:JavaLangInteger_parseIntWithNSString_([height replace:@"px" withSequence:@""])];
+    }
+  }
+}
 
 - (instancetype)init {
   ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_init(self);
@@ -20,9 +75,14 @@
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
+    { "setAttributeWithComAsheraAndroidWidgetFactoryIWidget:withJavaUtilMap:withOrgXmlSaxAttributes:", "setAttribute", "V", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
-  static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter = { 2, "BaseAttributeSetter", "com.ashera.android.widget.factory.setter", NULL, 0x1, 1, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcFieldInfo fields[] = {
+    { "MATCH_PARENT_", NULL, 0x1a, "I", NULL, NULL, .constantValue.asInt = ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_MATCH_PARENT },
+    { "WRAP_CONTENT_", NULL, 0x1c, "I", NULL, NULL, .constantValue.asInt = ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT },
+  };
+  static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter = { 2, "BaseAttributeSetter", "com.ashera.android.widget.factory.setter", NULL, 0x1, 2, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter;
 }
 

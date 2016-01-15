@@ -38,6 +38,28 @@
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
 }
 
+
+#line 31
+- (void)setWidthWithInt:(jint)width {
+}
+
+
+#line 35
+- (void)setHeightWithInt:(jint)width {
+}
+
+
+#line 39
+- (jint)getWidth {
+  return 0;
+}
+
+
+#line 44
+- (jint)getHeight {
+  return 0;
+}
+
 - (instancetype)init {
   ComAsheraAndroidWidgetFactoryILink_init(self);
   return self;
@@ -48,9 +70,13 @@
     { "asWidget", NULL, "Ljava.lang.Object;", 0x1, NULL, NULL },
     { "createWithJavaUtilMap:", "create", "V", 0x1, NULL, NULL },
     { "setParentWithComAsheraAndroidWidgetFactoryHasWidgets:", "setParent", "V", 0x1, NULL, NULL },
+    { "setWidthWithInt:", "setWidth", "V", 0x1, NULL, NULL },
+    { "setHeightWithInt:", "setHeight", "V", 0x1, NULL, NULL },
+    { "getWidth", NULL, "I", 0x1, NULL, NULL },
+    { "getHeight", NULL, "I", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
-  static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryILink = { 2, "ILink", "com.ashera.android.widget.factory", NULL, 0x1, 4, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryILink = { 2, "ILink", "com.ashera.android.widget.factory", NULL, 0x1, 8, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraAndroidWidgetFactoryILink;
 }
 

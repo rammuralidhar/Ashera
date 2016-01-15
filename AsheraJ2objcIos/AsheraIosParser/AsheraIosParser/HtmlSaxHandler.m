@@ -169,43 +169,41 @@ __attribute__((unused)) static NSString *ComAsheraAndroidParserHtmlHtmlSaxHandle
     (void) [metadata_ putWithId:@"attributes" withId:atts];
     [self->widget_ createWithJavaUtilMap:metadata_];
     
-#line 109
+#line 111
+    ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget_withNSString_withOrgXmlSaxAttributes_(self, widget_, localName, atts);
+    
+#line 113
     id<ComAsheraAndroidWidgetFactoryHasWidgets> parent = nil;
     if (![((JavaUtilStack *) nil_chk(hasWidgets_)) isEmpty]) {
       parent = [hasWidgets_ peek];
       
-#line 113
+#line 117
       if ([widget_ asWidget] != nil) {
         [((id<ComAsheraAndroidWidgetFactoryHasWidgets>) nil_chk(parent)) addWithComAsheraAndroidWidgetFactoryIWidget:widget_];
       }
     }
-    
-#line 118
-    ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget_withNSString_withOrgXmlSaxAttributes_(self, widget_, localName, atts);
-    
-#line 120
     [widget_ setParentWithComAsheraAndroidWidgetFactoryHasWidgets:parent];
     
-#line 122
+#line 123
     if ([ComAsheraAndroidWidgetFactoryHasWidgets_class_() isInstance:widget_]) {
       parentPushed = YES;
       (void) [hasWidgets_ pushWithId:(id<ComAsheraAndroidWidgetFactoryHasWidgets>) check_protocol_cast(widget_, @protocol(ComAsheraAndroidWidgetFactoryHasWidgets))];
     }
   }
   
-#line 128
+#line 129
   [((JavaUtilStack *) nil_chk(pushParent_)) addWithId:JavaLangBoolean_valueOfWithBoolean_(parentPushed)];
 }
 
 
-#line 131
+#line 132
 - (NSString *)getNPathWithNSString:(NSString *)localName
            withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
   return ComAsheraAndroidParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgXmlSaxAttributes_(self, localName, atts);
 }
 
 
-#line 159
+#line 160
 - (void)updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
                                                        withNSString:(NSString *)localName
                                             withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
@@ -213,18 +211,18 @@ __attribute__((unused)) static NSString *ComAsheraAndroidParserHtmlHtmlSaxHandle
 }
 
 
-#line 175
+#line 176
 - (NSString *)getNodeExpression {
   return ComAsheraAndroidParserHtmlHtmlSaxHandler_getNodeExpression(self);
 }
 
 
-#line 187
+#line 188
 - (void)endElementWithNSString:(NSString *)uri
                   withNSString:(NSString *)localName
                   withNSString:(NSString *)qName {
   
-#line 189
+#line 190
   (void) [htmlElements_ removeWithInt:[((id<JavaUtilList>) nil_chk(htmlElements_)) size] - 1];
   if ([((JavaLangBoolean *) nil_chk([((JavaUtilStack *) nil_chk(pushParent_)) pop])) booleanValue]) {
     (void) [((JavaUtilStack *) nil_chk(hasWidgets_)) pop];
@@ -232,7 +230,7 @@ __attribute__((unused)) static NSString *ComAsheraAndroidParserHtmlHtmlSaxHandle
 }
 
 
-#line 195
+#line 196
 - (id<ComAsheraAndroidWidgetFactoryIWidget>)getRoot {
   return root_;
 }
@@ -294,13 +292,13 @@ ComAsheraAndroidParserHtmlHtmlSaxHandler *new_ComAsheraAndroidParserHtmlHtmlSaxH
 }
 
 
-#line 131
+#line 132
 NSString *ComAsheraAndroidParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgXmlSaxAttributes_(ComAsheraAndroidParserHtmlHtmlSaxHandler *self, NSString *localName, id<OrgXmlSaxAttributes> atts) {
   JavaLangStringBuffer *stringBuffer = new_JavaLangStringBuffer_init();
   (void) [stringBuffer appendWithNSString:localName];
   NSString *classStr = [((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"class"];
   
-#line 136
+#line 137
   JavaLangStringBuffer *classBuffer = new_JavaLangStringBuffer_initWithNSString_(@"");
   if (classStr != nil && ![((NSString *) nil_chk([classStr trim])) isEqual:@""]) {
     IOSObjectArray *classes = [classStr split:@"\\s"];
@@ -309,14 +307,14 @@ NSString *ComAsheraAndroidParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgX
     }
   }
   
-#line 144
+#line 145
   NSString *idStr = [atts getValueWithNSString:@"id"];
   JavaLangStringBuffer *idBuffer = new_JavaLangStringBuffer_initWithNSString_(@"");
   if (idStr != nil && ![((NSString *) nil_chk([idStr trim])) isEqual:@""]) {
     (void) [idBuffer appendWithNSString:JreStrcat("C$C", '#', [idStr trim], '|')];
   }
   
-#line 150
+#line 151
   if ([idBuffer length] > 0 || [classBuffer length] > 0) {
     (void) [stringBuffer appendWithNSString:@"["];
     (void) [stringBuffer appendWithNSString:[classBuffer description]];
@@ -327,38 +325,38 @@ NSString *ComAsheraAndroidParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgX
 }
 
 
-#line 159
+#line 160
 void ComAsheraAndroidParserHtmlHtmlSaxHandler_updateStyleOnWidgetWithComAsheraAndroidWidgetFactoryIWidget_withNSString_withOrgXmlSaxAttributes_(ComAsheraAndroidParserHtmlHtmlSaxHandler *self, id<ComAsheraAndroidWidgetFactoryIWidget> widget, NSString *localName, id<OrgXmlSaxAttributes> atts) {
   if ([ComAsheraAndroidWidgetFactoryIStyle_class_() isInstance:widget]) {
     id<JavaUtilMap> cssProperties = [((ComAsheraAndroidWidgetFactoryPageData *) nil_chk(self->pageData_)) getCssWithNSString:ComAsheraAndroidParserHtmlHtmlSaxHandler_getNodeExpression(self) withNSString:
-#line 162
+#line 163
     localName withNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"class"] withNSString:[atts getValueWithNSString:@"id"]];
     id<ComAsheraAndroidWidgetFactoryIStyle> style = (id<ComAsheraAndroidWidgetFactoryIStyle>) check_protocol_cast(widget, @protocol(ComAsheraAndroidWidgetFactoryIStyle));
     
-#line 165
+#line 166
     if ([((id<JavaUtilMap>) nil_chk(cssProperties)) containsKeyWithId:@"background-color"]) {
       [((id<ComAsheraAndroidWidgetFactoryIStyle>) nil_chk(style)) setBackgroundColorWithNSString:[cssProperties getWithId:@"background-color"]];
     }
     
-#line 169
+#line 170
     [((id<ComAsheraAndroidWidgetFactorySetterAttributeSetter>) nil_chk(ComAsheraAndroidWidgetFactorySetterAttributeSetterFactory_getWithNSString_(localName))) setAttributeWithComAsheraAndroidWidgetFactoryIWidget:widget withJavaUtilMap:cssProperties withOrgXmlSaxAttributes:atts];
   }
   else {
     
-#line 171
+#line 172
     [((id<ComAsheraAndroidWidgetFactorySetterAttributeSetter>) nil_chk(ComAsheraAndroidWidgetFactorySetterAttributeSetterFactory_getWithNSString_(localName))) setAttributeWithComAsheraAndroidWidgetFactoryIWidget:widget withJavaUtilMap:nil withOrgXmlSaxAttributes:atts];
   }
 }
 
 
-#line 175
+#line 176
 NSString *ComAsheraAndroidParserHtmlHtmlSaxHandler_getNodeExpression(ComAsheraAndroidParserHtmlHtmlSaxHandler *self) {
   JavaLangStringBuffer *stringBuffer = new_JavaLangStringBuffer_init();
   for (NSString * __strong htmlElement in nil_chk(self->htmlElements_)) {
     (void) [stringBuffer insertWithInt:0 withNSString:JreStrcat("$C", htmlElement, '>')];
   }
   
-#line 181
+#line 182
   stringBuffer = [stringBuffer deleteCharAtWithInt:[stringBuffer length] - 1];
   AndroidUtilLog_eWithNSString_withNSString_(@"test", JreStrcat("@", stringBuffer));
   return [((JavaLangStringBuffer *) nil_chk(stringBuffer)) description];

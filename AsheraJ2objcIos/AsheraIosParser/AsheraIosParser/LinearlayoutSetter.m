@@ -4,6 +4,7 @@
 //
 
 
+#include "BaseAttributeSetter.h"
 #include "ILinearLayout.h"
 #include "IWidget.h"
 #include "J2ObjC_source.h"
@@ -17,10 +18,11 @@
 #line 10
 @implementation ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter
 
-- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)linearLayout
+- (void)setAttributeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)widget
                                              withJavaUtilMap:(id<JavaUtilMap>)cssProps
                                      withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
-  [((id<ComAsheraAndroidWidgetFactoryILinearLayout>) nil_chk(((id<ComAsheraAndroidWidgetFactoryILinearLayout>) check_protocol_cast(linearLayout, @protocol(ComAsheraAndroidWidgetFactoryILinearLayout))))) setOrientationWithNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"orientation"]];
+  [super setAttributeWithComAsheraAndroidWidgetFactoryIWidget:widget withJavaUtilMap:cssProps withOrgXmlSaxAttributes:atts];
+  [((id<ComAsheraAndroidWidgetFactoryILinearLayout>) nil_chk(((id<ComAsheraAndroidWidgetFactoryILinearLayout>) check_protocol_cast(widget, @protocol(ComAsheraAndroidWidgetFactoryILinearLayout))))) setOrientationWithNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"orientation"]];
 }
 
 - (instancetype)init {
@@ -40,7 +42,7 @@
 @end
 
 void ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter_init(ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter *self) {
-  (void) NSObject_init(self);
+  (void) ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_init(self);
 }
 
 ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter *new_ComAsheraAndroidWidgetFactorySetterLinearlayoutSetter_init() {

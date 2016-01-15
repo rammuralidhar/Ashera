@@ -14,8 +14,7 @@
 @protocol JavaUtilMap;
 
 @interface IosLabelImpl : RepackagedAndroidViewView < ComAsheraAndroidWidgetFactoryILabel >
-@property UILabel *uiLabel;
-
+@property UILabel* uiLabel;
 #pragma mark Public
 
 - (instancetype)init;
@@ -26,11 +25,24 @@
 
 - (NSString *)getText;
 
+- (id)nativeAsWidget;
+
+- (void)nativeCreate;
+
+- (void)nativeMakeFrameWithInt:(jint)l
+                       withInt:(jint)t
+                       withInt:(jint)r
+                       withInt:(jint)b;
+
+- (void)nativeSetTextWithNSString:(NSString *)text;
+
 - (void)setBackgroundColorWithNSString:(NSString *)color;
 
 - (void)setBackgroundImageWithNSString:(NSString *)backgroundImage;
 
 - (void)setColorWithNSString:(NSString *)color;
+
+- (void)setHeightWithInt:(jint)height;
 
 - (void)setMarginBottomWithNSString:(NSString *)marginBottom;
 
@@ -53,6 +65,8 @@
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
 
 - (void)setTextWithNSString:(NSString *)text;
+
+- (void)setWidthWithInt:(jint)width;
 
 #pragma mark Protected
 

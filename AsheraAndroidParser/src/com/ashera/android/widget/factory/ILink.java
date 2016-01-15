@@ -26,5 +26,23 @@ public class ILink implements IWidget{
 	public void setParent(HasWidgets widget) {
 		
 	}
+
+	@Override
+	public void setWidth(int width) {
+	}
+
+	@Override
+	public void setHeight(int width) {
+	}
+
+	@Override
+	public int getWidth() {
+		return 0;
+	}
+
+	@Override
+	public int getHeight() {
+		return 0;
+	}
 	
 }
