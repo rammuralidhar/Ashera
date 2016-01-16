@@ -11,6 +11,12 @@ public class LinearlayoutSetter extends BaseAttributeSetter {
 	@Override
 	public void setAttribute(IWidget widget, Map<String, String> cssProps, Attributes atts) {
 		super.setAttribute(widget, cssProps, atts);
-		((ILinearLayout) widget).setOrientation(atts.getValue("orientation"));
+		ILinearLayout linearLayout = (ILinearLayout) widget;
+		linearLayout.setOrientation(atts.getValue("orientation"));
+		String weightSum = atts.getValue("weightSum");
+		
+		if (weightSum != null) {
+			linearLayout.setWeightSum(Integer.parseInt(weightSum));
+		}
 	}
 }

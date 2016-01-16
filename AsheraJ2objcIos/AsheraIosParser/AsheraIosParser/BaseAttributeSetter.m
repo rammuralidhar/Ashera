@@ -66,6 +66,14 @@ J2OBJC_STATIC_FIELD_GETTER(ComAsheraAndroidWidgetFactorySetterBaseAttributeSette
       [widget setParamHeightWithInt:JavaLangInteger_parseIntWithNSString_([height replace:@"px" withSequence:@""])];
     }
   }
+  
+#line 42
+  NSString *weightSum = [atts getValueWithNSString:@"weight"];
+  
+#line 44
+  if (weightSum != nil) {
+    [widget setWeigthWithInt:JavaLangInteger_parseIntWithNSString_(weightSum)];
+  }
 }
 
 - (instancetype)init {

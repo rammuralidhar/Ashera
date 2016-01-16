@@ -15,6 +15,8 @@
 
 - (void)setOrientationWithNSString:(NSString *)orientation;
 
+- (void)setWeightSumWithInt:(jint)weightSum;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComAsheraAndroidWidgetFactoryILinearLayout)

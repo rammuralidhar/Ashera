@@ -40,4 +40,9 @@ public class LinearLayoutImpl extends BaseStyledHasWidgets implements ILinearLay
 			linearLayout.setOrientation(android.widget.LinearLayout.VERTICAL);
 		}
 	}
+
+	@Override
+	public void setWeightSum(int weightSum) {
+		linearLayout.setWeightSum(weightSum);
+	}
 }

@@ -5,5 +5,7 @@ public interface IWidget extends IsWidget{
 	public void setParamHeight(int width);
 	public int getParamWidth();
 	public int getParamHeight();
+	public int getWeigth();
+	public void setWeigth(int width);
 }
 

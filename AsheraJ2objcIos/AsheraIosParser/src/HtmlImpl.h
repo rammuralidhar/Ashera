@@ -33,6 +33,8 @@
 
 - (jint)getParamWidth;
 
+- (jint)getWeigth;
+
 - (id<JavaUtilIterator>)iterate;
 
 - (void)measure;
@@ -48,6 +50,8 @@
 - (void)setParamWidthWithInt:(jint)width;
 
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
+
+- (void)setWeigthWithInt:(jint)width;
 
 #pragma mark Protected
 

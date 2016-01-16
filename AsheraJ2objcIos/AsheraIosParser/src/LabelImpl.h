@@ -29,6 +29,8 @@
 
 - (NSString *)getText;
 
+- (jint)getWeigth;
+
 - (id)nativeAsWidget;
 
 - (void)nativeCreate;
@@ -71,6 +73,8 @@
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
 
 - (void)setTextWithNSString:(NSString *)text;
+
+- (void)setWeigthWithInt:(jint)weight;
 
 #pragma mark Protected
 

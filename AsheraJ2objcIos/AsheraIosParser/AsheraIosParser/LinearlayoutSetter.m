@@ -9,6 +9,7 @@
 #include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "LinearlayoutSetter.h"
+#include "java/lang/Integer.h"
 #include "java/util/Map.h"
 #include "org/xml/sax/Attributes.h"
 
@@ -22,7 +23,14 @@
                                              withJavaUtilMap:(id<JavaUtilMap>)cssProps
                                      withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
   [super setAttributeWithComAsheraAndroidWidgetFactoryIWidget:widget withJavaUtilMap:cssProps withOrgXmlSaxAttributes:atts];
-  [((id<ComAsheraAndroidWidgetFactoryILinearLayout>) nil_chk(((id<ComAsheraAndroidWidgetFactoryILinearLayout>) check_protocol_cast(widget, @protocol(ComAsheraAndroidWidgetFactoryILinearLayout))))) setOrientationWithNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"orientation"]];
+  id<ComAsheraAndroidWidgetFactoryILinearLayout> linearLayout = (id<ComAsheraAndroidWidgetFactoryILinearLayout>) check_protocol_cast(widget, @protocol(ComAsheraAndroidWidgetFactoryILinearLayout));
+  [((id<ComAsheraAndroidWidgetFactoryILinearLayout>) nil_chk(linearLayout)) setOrientationWithNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"orientation"]];
+  NSString *weightSum = [atts getValueWithNSString:@"weightSum"];
+  
+#line 18
+  if (weightSum != nil) {
+    [linearLayout setWeightSumWithInt:JavaLangInteger_parseIntWithNSString_(weightSum)];
+  }
 }
 
 - (instancetype)init {

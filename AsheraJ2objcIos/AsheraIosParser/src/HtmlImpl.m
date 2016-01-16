@@ -168,22 +168,31 @@ __attribute__((unused)) static void IosHtmlImpl_nativeAddViewWithComAsheraAndroi
 }
 
 
-#line 115
+#line 113
 - (void)setParamHeightWithInt:(jint)width {
 }
 
 
-#line 121
+#line 117
 - (jint)getParamWidth {
-  
-#line 123
   return 0;
 }
 
+
+#line 122
 - (jint)getParamHeight {
-  
-#line 129
   return 0;
+}
+
+
+#line 127
+- (jint)getWeigth {
+  return 0;
+}
+
+
+#line 132
+- (void)setWeigthWithInt:(jint)width {
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -208,8 +217,10 @@ __attribute__((unused)) static void IosHtmlImpl_nativeAddViewWithComAsheraAndroi
     { "setParamHeightWithInt:", "setParamHeight", "V", 0x1, NULL, NULL },
     { "getParamWidth", NULL, "I", 0x1, NULL, NULL },
     { "getParamHeight", NULL, "I", 0x1, NULL, NULL },
+    { "getWeigth", NULL, "I", 0x1, NULL, NULL },
+    { "setWeigthWithInt:", "setWeigth", "V", 0x1, NULL, NULL },
   };
-  static const J2ObjcClassInfo _IosHtmlImpl = { 2, "HtmlImpl", "ios", NULL, 0x1, 20, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosHtmlImpl = { 2, "HtmlImpl", "ios", NULL, 0x1, 22, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosHtmlImpl;
 }
 

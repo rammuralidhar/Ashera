@@ -107,25 +107,28 @@ public class HtmlImpl extends FrameLayout implements IHtml{
 
 	@Override
 	public void setParamWidth(int width) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void setParamHeight(int width) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public int getParamWidth() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int getParamHeight() {
-		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public int getWeigth() {
+		return 0;
+	}
+
+	@Override
+	public void setWeigth(int width) {
 	}	
 }

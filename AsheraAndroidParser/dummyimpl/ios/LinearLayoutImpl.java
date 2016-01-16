@@ -6,6 +6,7 @@ import java.util.Map;
 import repackaged.android.content.ContextWrapper;
 import repackaged.android.view.View;
 import repackaged.android.view.ViewGroup;
+import repackaged.android.widget.LinearLayout;
 
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.ILinearLayout;
@@ -14,6 +15,7 @@ import com.ashera.android.widget.factory.IWidget;
 public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  implements ILinearLayout{
 	private int width;
 	private int height;
+	private int weight;
 
 	public LinearLayoutImpl() {
 		super(new ContextWrapper());
@@ -127,6 +129,10 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 			
 			view.getLayoutParams().width = w.getParamWidth();
 			view.getLayoutParams().height = w.getParamHeight();
+			
+			if (view.getLayoutParams() instanceof LinearLayout.LayoutParams) {
+				((LinearLayout.LayoutParams) view.getLayoutParams()).weight = w.getWeigth();
+			}
 			addView(((View) w));
 			nativeAddView(w);
 		}
@@ -186,4 +192,21 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 		self.uiView.backgroundColor = [UIColor greenColor];
     	[self.uiView addSubview:[w asWidget]];
 	]-*/;
+
+	@Override
+	public void setWeightSum(int weightSum) {
+		setWeightSum(weightSum);
+	}
+	
+
+	@Override
+	public int getWeigth() {
+		return weight;
+	}
+
+	@Override
+	public void setWeigth(int weight) {
+		this.weight = weight;
+		
+	}
 }

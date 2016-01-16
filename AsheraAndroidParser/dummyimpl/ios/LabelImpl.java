@@ -13,6 +13,7 @@ import com.ashera.android.widget.factory.ILabel;
 public class LabelImpl extends View implements ILabel{
 	private int width;
 	private int height;
+	private int weight;
 
 	public LabelImpl() {
 		super(new ContextWrapper());
@@ -201,5 +202,16 @@ public class LabelImpl extends View implements ILabel{
 	@Override
 	public int getParamHeight() {
 		return height;
+	}
+
+	@Override
+	public int getWeigth() {
+		return weight;
+	}
+
+	@Override
+	public void setWeigth(int weight) {
+		this.weight = weight;
+		
 	}
 }

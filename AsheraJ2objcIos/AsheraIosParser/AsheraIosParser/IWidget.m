@@ -22,8 +22,10 @@
     { "setParamHeightWithInt:", "setParamHeight", "V", 0x401, NULL, NULL },
     { "getParamWidth", NULL, "I", 0x401, NULL, NULL },
     { "getParamHeight", NULL, "I", 0x401, NULL, NULL },
+    { "getWeigth", NULL, "I", 0x401, NULL, NULL },
+    { "setWeigthWithInt:", "setWeigth", "V", 0x401, NULL, NULL },
   };
-  static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryIWidget = { 2, "IWidget", "com.ashera.android.widget.factory", NULL, 0x609, 4, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryIWidget = { 2, "IWidget", "com.ashera.android.widget.factory", NULL, 0x609, 6, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraAndroidWidgetFactoryIWidget;
 }
 

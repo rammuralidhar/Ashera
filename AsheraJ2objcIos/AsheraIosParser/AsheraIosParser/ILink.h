@@ -26,11 +26,15 @@
 
 - (jint)getParamWidth;
 
+- (jint)getWeigth;
+
 - (void)setParamHeightWithInt:(jint)width;
 
 - (void)setParamWidthWithInt:(jint)width;
 
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
+
+- (void)setWeigthWithInt:(jint)width;
 
 @end
 

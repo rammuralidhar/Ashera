@@ -25,6 +25,7 @@
  @public
   jint width_;
   jint height_;
+  jint weight_;
 }
 
 - (void)nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
@@ -34,11 +35,11 @@
 __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(IosLinearLayoutImpl *self, id<ComAsheraAndroidWidgetFactoryIWidget> w);
 
 
-#line 14
+#line 15
 @implementation IosLinearLayoutImpl
 
 
-#line 18
+#line 20
 - (instancetype)init {
   IosLinearLayoutImpl_init(self);
   return self;
@@ -48,57 +49,57 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
 }
 
 
-#line 27
+#line 29
 - (void)setBackgroundColorWithNSString:(NSString *)color {
 }
 
 
-#line 31
+#line 33
 - (void)setBackgroundImageWithNSString:(NSString *)backgroundImage {
 }
 
 
-#line 37
+#line 39
 - (void)setPaddingTopWithNSString:(NSString *)paddingTop {
 }
 
 
-#line 43
+#line 45
 - (void)setPaddingBottomWithNSString:(NSString *)paddingBottom {
 }
 
 
-#line 49
+#line 51
 - (void)setPaddingLeftWithNSString:(NSString *)paddingLeft {
 }
 
 
-#line 55
+#line 57
 - (void)setPaddingRightWithNSString:(NSString *)paddingRight {
 }
 
 
-#line 61
+#line 63
 - (void)setMarginTopWithNSString:(NSString *)marginTop {
 }
 
 
-#line 67
+#line 69
 - (void)setMarginBottomWithNSString:(NSString *)marginBottom {
 }
 
 
-#line 73
+#line 75
 - (void)setMarginLeftWithNSString:(NSString *)marginLeft {
 }
 
 
-#line 79
+#line 81
 - (void)setMarginRightWithNSString:(NSString *)marginRight {
 }
 
 
-#line 85
+#line 87
 - (id)asWidget {
   return [self nativeAsWidget];
 }
@@ -108,7 +109,7 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
 }
 
 
-#line 94
+#line 96
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   [self nativeCreate];
 }
@@ -118,29 +119,29 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
 }
 
 
-#line 103
+#line 105
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
   mParent_ = (RepackagedAndroidViewViewGroup *) check_class_cast(widget, [RepackagedAndroidViewViewGroup class]);
 }
 
 
-#line 108
+#line 110
 - (void)setOrientationWithNSString:(NSString *)orientation {
   [self setOrientationWithInt:0];
   
-#line 111
+#line 113
   if (orientation != nil && [orientation isEqual:@"h"]) {
     [self setOrientationWithInt:0];
   }
   else {
     
-#line 114
+#line 116
     [self setOrientationWithInt:1];
   }
 }
 
 
-#line 119
+#line 121
 - (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
     RepackagedAndroidViewView *view = (RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]);
@@ -150,26 +151,33 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
       [view setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:layoutParams];
     }
     
-#line 128
+#line 130
     ((RepackagedAndroidViewViewGroup_LayoutParams *) nil_chk([view getLayoutParams]))->width_ = [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(w)) getParamWidth];
     ((RepackagedAndroidViewViewGroup_LayoutParams *) nil_chk([view getLayoutParams]))->height_ = [w getParamHeight];
+    
+#line 133
+    if ([[view getLayoutParams] isKindOfClass:[RepackagedAndroidWidgetLinearLayout_LayoutParams class]]) {
+      ((RepackagedAndroidWidgetLinearLayout_LayoutParams *) nil_chk(((RepackagedAndroidWidgetLinearLayout_LayoutParams *) check_class_cast([view getLayoutParams], [RepackagedAndroidWidgetLinearLayout_LayoutParams class]))))->weight_ = [w getWeigth];
+    }
     [self addViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
     IosLinearLayoutImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(self, w);
   }
 }
 
+
+#line 142
 - (void)clear {
   [self removeAllViews];
 }
 
 
-#line 141
+#line 147
 - (id<JavaUtilIterator>)iterate {
   return nil;
 }
 
 
-#line 146
+#line 152
 - (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
     [self removeViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
@@ -179,7 +187,7 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
 }
 
 
-#line 155
+#line 161
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)l
                     withInt:(jint)t
@@ -187,13 +195,13 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
   
-#line 158
+#line 164
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("ICICICI", l, ' ', t, ' ', r, ' ', b)];
   [self nativeMakeFrameWithInt:l withInt:t withInt:r withInt:b];
 }
 
 
-#line 161
+#line 167
 - (void)nativeMakeFrameWithInt:(jint)l
                        withInt:(jint)t
                        withInt:(jint)r
@@ -202,31 +210,49 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
 }
 
 
-#line 166
+#line 172
 - (void)setParamWidthWithInt:(jint)width {
   self->width_ = width;
 }
 
 
-#line 171
+#line 177
 - (void)setParamHeightWithInt:(jint)height {
   self->height_ = height;
 }
 
 
-#line 176
+#line 182
 - (jint)getParamWidth {
   return width_;
 }
 
 
-#line 181
+#line 187
 - (jint)getParamHeight {
   return height_;
 }
 
 - (void)nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   IosLinearLayoutImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(self, w);
+}
+
+
+#line 197
+- (void)setWeightSumWithInt:(jint)weightSum {
+  [self setWeightSumWithInt:weightSum];
+}
+
+
+#line 203
+- (jint)getWeigth {
+  return weight_;
+}
+
+
+#line 208
+- (void)setWeigthWithInt:(jint)weight {
+  self->weight_ = weight;
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -260,25 +286,29 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
     { "getParamWidth", NULL, "I", 0x1, NULL, NULL },
     { "getParamHeight", NULL, "I", 0x1, NULL, NULL },
     { "nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget:", "nativeAddView", "V", 0x102, NULL, NULL },
+    { "setWeightSumWithInt:", "setWeightSum", "V", 0x1, NULL, NULL },
+    { "getWeigth", NULL, "I", 0x1, NULL, NULL },
+    { "setWeigthWithInt:", "setWeigth", "V", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "width_", NULL, 0x2, "I", NULL, NULL,  },
     { "height_", NULL, 0x2, "I", NULL, NULL,  },
+    { "weight_", NULL, 0x2, "I", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _IosLinearLayoutImpl = { 2, "LinearLayoutImpl", "ios", NULL, 0x1, 29, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosLinearLayoutImpl = { 2, "LinearLayoutImpl", "ios", NULL, 0x1, 32, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosLinearLayoutImpl;
 }
 
 @end
 
 
-#line 18
+#line 20
 void IosLinearLayoutImpl_init(IosLinearLayoutImpl *self) {
   (void) RepackagedAndroidWidgetLinearLayout_initWithRepackagedAndroidContentContext_(self, new_RepackagedAndroidContentContextWrapper_init());
 }
 
 
-#line 18
+#line 20
 IosLinearLayoutImpl *new_IosLinearLayoutImpl_init() {
   IosLinearLayoutImpl *self = [IosLinearLayoutImpl alloc];
   IosLinearLayoutImpl_init(self);
@@ -286,7 +316,7 @@ IosLinearLayoutImpl *new_IosLinearLayoutImpl_init() {
 }
 
 
-#line 185
+#line 191
 void IosLinearLayoutImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(IosLinearLayoutImpl *self, id<ComAsheraAndroidWidgetFactoryIWidget> w) {
   self.uiView.backgroundColor = [UIColor greenColor];
   [self.uiView addSubview:[w asWidget]];

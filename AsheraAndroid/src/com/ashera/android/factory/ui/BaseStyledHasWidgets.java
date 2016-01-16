@@ -7,6 +7,7 @@ import java.util.List;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
 
 import com.ashera.android.widget.factory.HasWidgets;
 import com.ashera.android.widget.factory.IWidget;
@@ -16,6 +17,7 @@ public abstract class BaseStyledHasWidgets extends BaseStyle implements HasWidge
 	protected HasWidgets parent;
 	private int width;
 	private int height;
+	private int weight;
 
 	@Override
 	public void setParent(HasWidgets parent) {
@@ -38,6 +40,10 @@ public abstract class BaseStyledHasWidgets extends BaseStyle implements HasWidge
 		
 		view.getLayoutParams().width = w.getParamWidth();
 		view.getLayoutParams().height = w.getParamHeight();
+		
+		if (view.getLayoutParams() instanceof LinearLayout.LayoutParams) {
+			((LinearLayout.LayoutParams) view.getLayoutParams()).weight = w.getWeigth();
+		}
 
 	}
 
@@ -75,5 +81,15 @@ public abstract class BaseStyledHasWidgets extends BaseStyle implements HasWidge
 
 	public int getParamHeight() {
 		return height;
+	}
+	
+
+	public int getWeigth() {
+		return weight;
+	}
+
+	public void setWeigth(int weight) {
+		this.weight = weight;
+		
 	}
 }

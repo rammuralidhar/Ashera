@@ -7,6 +7,7 @@ public abstract class BaseStyledWidget extends BaseStyle implements IWidget{
 	protected HasWidgets parent;
 	private int width;
 	private int height;
+	private int weight;
 
 	@Override
 	public void setParent(HasWidgets parent) {
@@ -27,6 +28,15 @@ public abstract class BaseStyledWidget extends BaseStyle implements IWidget{
 
 	public int getParamHeight() {
 		return height;
+	}
+	
+	public int getWeigth() {
+		return weight;
+	}
+
+	public void setWeigth(int weight) {
+		this.weight = weight;
+		
 	}
 
 }

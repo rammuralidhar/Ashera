@@ -44,5 +44,15 @@ public class ILink implements IWidget{
 	public int getParamHeight() {
 		return 0;
 	}
+
+	@Override
+	public int getWeigth() {
+		return 0;
+	}
+
+	@Override
+	public void setWeigth(int width) {
+		
+	}
 	
 }

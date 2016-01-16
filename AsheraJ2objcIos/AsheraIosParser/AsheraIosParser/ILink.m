@@ -60,6 +60,17 @@
   return 0;
 }
 
+
+#line 49
+- (jint)getWeigth {
+  return 0;
+}
+
+
+#line 54
+- (void)setWeigthWithInt:(jint)width {
+}
+
 - (instancetype)init {
   ComAsheraAndroidWidgetFactoryILink_init(self);
   return self;
@@ -74,9 +85,11 @@
     { "setParamHeightWithInt:", "setParamHeight", "V", 0x1, NULL, NULL },
     { "getParamWidth", NULL, "I", 0x1, NULL, NULL },
     { "getParamHeight", NULL, "I", 0x1, NULL, NULL },
+    { "getWeigth", NULL, "I", 0x1, NULL, NULL },
+    { "setWeigthWithInt:", "setWeigth", "V", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
-  static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryILink = { 2, "ILink", "com.ashera.android.widget.factory", NULL, 0x1, 8, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryILink = { 2, "ILink", "com.ashera.android.widget.factory", NULL, 0x1, 10, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraAndroidWidgetFactoryILink;
 }
 

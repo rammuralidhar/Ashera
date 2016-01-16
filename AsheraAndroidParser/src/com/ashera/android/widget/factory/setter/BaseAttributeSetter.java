@@ -38,6 +38,12 @@ public class BaseAttributeSetter implements AttributeSetter {
 				widget.setParamHeight(Integer.parseInt(height.replace("px", "")));
 			}
 		}
+		
+		String weightSum = atts.getValue("weight");
+		
+		if (weightSum != null) {
+			widget.setWeigth(Integer.parseInt(weightSum));
+		}
 	}
 
 }
