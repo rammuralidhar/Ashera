@@ -13,19 +13,19 @@ public abstract class BaseStyledWidget extends BaseStyle implements IWidget{
 		this.parent = parent;
 	}
 	
-	public void setWidth(int width) {
+	public void setParamWidth(int width) {
 		this.width = width;
 	}
 
-	public void setHeight(int height) {
+	public void setParamHeight(int height) {
 		this.height = height;
 	}
 	
-	public int getWidth() {
+	public int getParamWidth() {
 		return width;
 	}
 
-	public int getHeight() {
+	public int getParamHeight() {
 		return height;
 	}
 

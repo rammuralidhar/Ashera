@@ -35,8 +35,8 @@ public abstract class BaseHasWidgets implements HasWidgets, IWidget{
 			view.setLayoutParams(layoutParams);
 		}
 		
-		view.getLayoutParams().width = w.getWidth();
-		view.getLayoutParams().height = w.getHeight();
+		view.getLayoutParams().width = w.getParamWidth();
+		view.getLayoutParams().height = w.getParamHeight();
 	}
 
 	@Override
@@ -57,20 +57,20 @@ public abstract class BaseHasWidgets implements HasWidgets, IWidget{
 
 	public abstract ViewGroup getViewGroup();
 	
-	public int getWidth() {
+	public int getParamWidth() {
 		return width;
 	}
 
-	public int getHeight() {
+	public int getParamHeight() {
 		return height;
 	}
 
-	public void setWidth(int width) {
+	public void setParamWidth(int width) {
 		this.width = width;
 	}
 
 
-	public void setHeight(int height) {
+	public void setParamHeight(int height) {
 		this.height = height;
 	}
 

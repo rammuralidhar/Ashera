@@ -36,8 +36,8 @@ public abstract class BaseStyledHasWidgets extends BaseStyle implements HasWidge
 			view.setLayoutParams(layoutParams);
 		}
 		
-		view.getLayoutParams().width = w.getWidth();
-		view.getLayoutParams().height = w.getHeight();
+		view.getLayoutParams().width = w.getParamWidth();
+		view.getLayoutParams().height = w.getParamHeight();
 
 	}
 
@@ -60,20 +60,20 @@ public abstract class BaseStyledHasWidgets extends BaseStyle implements HasWidge
 	public abstract ViewGroup getViewGroup();
 	
 	
-	public void setWidth(int width) {
+	public void setParamWidth(int width) {
 		this.width = width;
 	}
 
 
-	public void setHeight(int height) {
+	public void setParamHeight(int height) {
 		this.height = height;
 	}
 	
-	public int getWidth() {
+	public int getParamWidth() {
 		return width;
 	}
 
-	public int getHeight() {
+	public int getParamHeight() {
 		return height;
 	}
 }
