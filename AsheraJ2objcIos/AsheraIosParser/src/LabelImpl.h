@@ -23,6 +23,10 @@
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
 
+- (jint)getParamHeight;
+
+- (jint)getParamWidth;
+
 - (NSString *)getText;
 
 - (id)nativeAsWidget;
@@ -42,8 +46,6 @@
 
 - (void)setColorWithNSString:(NSString *)color;
 
-- (void)setHeightWithInt:(jint)height;
-
 - (void)setMarginBottomWithNSString:(NSString *)marginBottom;
 
 - (void)setMarginLeftWithNSString:(NSString *)marginLeft;
@@ -62,11 +64,13 @@
 
 - (void)setPaddingTopWithNSString:(NSString *)paddingTop;
 
+- (void)setParamHeightWithInt:(jint)height;
+
+- (void)setParamWidthWithInt:(jint)width;
+
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
 
 - (void)setTextWithNSString:(NSString *)text;
-
-- (void)setWidthWithInt:(jint)width;
 
 #pragma mark Protected
 
@@ -75,6 +79,9 @@
                     withInt:(jint)t
                     withInt:(jint)r
                     withInt:(jint)b;
+
+- (void)onMeasureWithInt:(jint)widthMeasureSpec
+                 withInt:(jint)heightMeasureSpec;
 
 @end
 

@@ -29,6 +29,10 @@
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
 
+- (jint)getParamHeight;
+
+- (jint)getParamWidth;
+
 - (id<JavaUtilIterator>)iterate;
 
 - (id)nativeAsWidget;
@@ -45,8 +49,6 @@
 - (void)setBackgroundColorWithNSString:(NSString *)color;
 
 - (void)setBackgroundImageWithNSString:(NSString *)backgroundImage;
-
-- (void)setHeightWithInt:(jint)height;
 
 - (void)setMarginBottomWithNSString:(NSString *)marginBottom;
 
@@ -68,9 +70,11 @@
 
 - (void)setPaddingTopWithNSString:(NSString *)paddingTop;
 
-- (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
+- (void)setParamHeightWithInt:(jint)height;
 
-- (void)setWidthWithInt:(jint)width;
+- (void)setParamWidthWithInt:(jint)width;
+
+- (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
 
 #pragma mark Protected
 

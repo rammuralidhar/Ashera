@@ -29,6 +29,10 @@
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
 
+- (jint)getParamHeight;
+
+- (jint)getParamWidth;
+
 - (id<JavaUtilIterator>)iterate;
 
 - (void)measure;
@@ -39,11 +43,11 @@
 
 - (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
 
-- (void)setHeightWithInt:(jint)height;
+- (void)setParamHeightWithInt:(jint)width;
+
+- (void)setParamWidthWithInt:(jint)width;
 
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
-
-- (void)setWidthWithInt:(jint)width;
 
 #pragma mark Protected
 

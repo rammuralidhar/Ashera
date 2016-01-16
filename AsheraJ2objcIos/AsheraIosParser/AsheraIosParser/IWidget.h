@@ -11,13 +11,13 @@
 
 @protocol ComAsheraAndroidWidgetFactoryIWidget < ComAsheraAndroidWidgetFactoryIsWidget, NSObject, JavaObject >
 
-- (void)setWidthWithInt:(jint)width;
+- (void)setParamWidthWithInt:(jint)width;
 
-- (void)setHeightWithInt:(jint)width;
+- (void)setParamHeightWithInt:(jint)width;
 
-- (jint)getWidth;
+- (jint)getParamWidth;
 
-- (jint)getHeight;
+- (jint)getParamHeight;
 
 @end
 

@@ -8,9 +8,10 @@
 #include "HasWidgets.h"
 #include "J2ObjC_source.h"
 #include "LabelImpl.h"
-#include "LinearLayout.h"
 #include "View.h"
 #include "ViewGroup.h"
+#include "java/io/PrintStream.h"
+#include "java/lang/System.h"
 #include "java/util/Map.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/LabelImpl.java"
@@ -21,76 +22,82 @@
   jint height_;
 }
 
+- (jint)nativeMeasureWidth;
+
+- (jint)nativeMeasureHeight;
+
 @end
 
+__attribute__((unused)) static jint IosLabelImpl_nativeMeasureWidth(IosLabelImpl *self);
 
-#line 14
+__attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImpl *self);
+
+
+#line 13
 @implementation IosLabelImpl
 
 
-#line 18
+#line 17
 - (instancetype)init {
   IosLabelImpl_init(self);
   return self;
 }
 
-
-#line 24
 - (void)setOpacityWithFloat:(jfloat)opacity {
 }
 
 
-#line 30
+#line 28
 - (void)setBackgroundColorWithNSString:(NSString *)color {
 }
 
 
-#line 36
+#line 34
 - (void)setBackgroundImageWithNSString:(NSString *)backgroundImage {
 }
 
 
-#line 42
+#line 40
 - (void)setPaddingTopWithNSString:(NSString *)paddingTop {
 }
 
 
-#line 48
+#line 46
 - (void)setPaddingBottomWithNSString:(NSString *)paddingBottom {
 }
 
 
-#line 54
+#line 52
 - (void)setPaddingLeftWithNSString:(NSString *)paddingLeft {
 }
 
 
-#line 60
+#line 58
 - (void)setPaddingRightWithNSString:(NSString *)paddingRight {
 }
 
 
-#line 66
+#line 64
 - (void)setMarginTopWithNSString:(NSString *)marginTop {
 }
 
 
-#line 72
+#line 70
 - (void)setMarginBottomWithNSString:(NSString *)marginBottom {
 }
 
 
-#line 78
+#line 76
 - (void)setMarginLeftWithNSString:(NSString *)marginLeft {
 }
 
 
-#line 84
+#line 82
 - (void)setMarginRightWithNSString:(NSString *)marginRight {
 }
 
 
-#line 90
+#line 88
 - (id)asWidget {
   return [self nativeAsWidget];
 }
@@ -100,7 +107,7 @@
 }
 
 
-#line 99
+#line 97
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   [self nativeCreate];
 }
@@ -111,16 +118,16 @@
 }
 
 
-#line 110
+#line 108
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
   mParent_ = (RepackagedAndroidViewViewGroup *) check_class_cast(widget, [RepackagedAndroidViewViewGroup class]);
 }
 
 
-#line 115
+#line 113
 - (NSString *)getText {
   
-#line 117
+#line 115
   return nil;
 }
 
@@ -129,18 +136,70 @@
 }
 
 
-#line 126
+#line 124
 - (void)nativeSetTextWithNSString:(NSString *)text {
   [self.uiLabel setText:text];
 }
 
 
-#line 131
+#line 129
 - (void)setColorWithNSString:(NSString *)color {
 }
 
 
-#line 137
+#line 135
+- (void)onMeasureWithInt:(jint)widthMeasureSpec
+                 withInt:(jint)heightMeasureSpec {
+  jint widthMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(widthMeasureSpec);
+  jint heightMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(heightMeasureSpec);
+  jint widthSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(widthMeasureSpec);
+  jint heightSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(heightMeasureSpec);
+  
+#line 141
+  jint width;
+  jint height;
+  if (widthMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
+    
+#line 145
+    width = widthSize;
+  }
+  else {
+    
+#line 147
+    width = IosLabelImpl_nativeMeasureWidth(self);
+  }
+  
+#line 150
+  if (heightMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
+    
+#line 152
+    height = heightSize;
+  }
+  else {
+    
+#line 154
+    height = IosLabelImpl_nativeMeasureHeight(self);
+  }
+  
+#line 157
+  [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$ICI", @"label :", height, ' ', width)];
+  [self setMeasuredDimensionWithInt:width withInt:height];
+}
+
+
+#line 161
+- (jint)nativeMeasureWidth {
+  return IosLabelImpl_nativeMeasureWidth(self);
+}
+
+
+#line 167
+- (jint)nativeMeasureHeight {
+  return IosLabelImpl_nativeMeasureHeight(self);
+}
+
+
+#line 174
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)l
                     withInt:(jint)t
@@ -148,12 +207,12 @@
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
   
-#line 140
+#line 177
   [self nativeMakeFrameWithInt:l withInt:t withInt:r withInt:b];
 }
 
 
-#line 143
+#line 180
 - (void)nativeMakeFrameWithInt:(jint)l
                        withInt:(jint)t
                        withInt:(jint)r
@@ -162,15 +221,27 @@
 }
 
 
-#line 148
-- (void)setWidthWithInt:(jint)width {
+#line 186
+- (void)setParamWidthWithInt:(jint)width {
   self->width_ = width;
 }
 
 
-#line 153
-- (void)setHeightWithInt:(jint)height {
+#line 191
+- (void)setParamHeightWithInt:(jint)height {
   self->height_ = height;
+}
+
+
+#line 196
+- (jint)getParamWidth {
+  return width_;
+}
+
+
+#line 201
+- (jint)getParamHeight {
+  return height_;
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -196,34 +267,52 @@
     { "setTextWithNSString:", "setText", "V", 0x1, NULL, NULL },
     { "nativeSetTextWithNSString:", "nativeSetText", "V", 0x101, NULL, NULL },
     { "setColorWithNSString:", "setColor", "V", 0x1, NULL, NULL },
+    { "onMeasureWithInt:withInt:", "onMeasure", "V", 0x4, NULL, NULL },
+    { "nativeMeasureWidth", NULL, "I", 0x102, NULL, NULL },
+    { "nativeMeasureHeight", NULL, "I", 0x102, NULL, NULL },
     { "onLayoutWithBoolean:withInt:withInt:withInt:withInt:", "onLayout", "V", 0x4, NULL, NULL },
     { "nativeMakeFrameWithInt:withInt:withInt:withInt:", "nativeMakeFrame", "V", 0x101, NULL, NULL },
-    { "setWidthWithInt:", "setWidth", "V", 0x1, NULL, NULL },
-    { "setHeightWithInt:", "setHeight", "V", 0x1, NULL, NULL },
+    { "setParamWidthWithInt:", "setParamWidth", "V", 0x1, NULL, NULL },
+    { "setParamHeightWithInt:", "setParamHeight", "V", 0x1, NULL, NULL },
+    { "getParamWidth", NULL, "I", 0x1, NULL, NULL },
+    { "getParamHeight", NULL, "I", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "width_", NULL, 0x2, "I", NULL, NULL,  },
     { "height_", NULL, 0x2, "I", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _IosLabelImpl = { 2, "LabelImpl", "ios", NULL, 0x1, 25, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosLabelImpl = { 2, "LabelImpl", "ios", NULL, 0x1, 30, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosLabelImpl;
 }
 
 @end
 
 
-#line 18
+#line 17
 void IosLabelImpl_init(IosLabelImpl *self) {
   (void) RepackagedAndroidViewView_initWithRepackagedAndroidContentContext_(self, new_RepackagedAndroidContentContextWrapper_init());
-  [self setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:new_RepackagedAndroidWidgetLinearLayout_LayoutParams_initWithInt_withInt_(50, 50)];
 }
 
 
-#line 18
+#line 17
 IosLabelImpl *new_IosLabelImpl_init() {
   IosLabelImpl *self = [IosLabelImpl alloc];
   IosLabelImpl_init(self);
   return self;
+}
+
+
+#line 161
+jint IosLabelImpl_nativeMeasureWidth(IosLabelImpl *self) {
+  CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
+  CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
+  return requiredSize.width;
+}
+
+jint IosLabelImpl_nativeMeasureHeight(IosLabelImpl *self) {
+  CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
+  CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
+  return requiredSize.height;
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosLabelImpl)

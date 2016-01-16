@@ -29,41 +29,41 @@ J2OBJC_STATIC_FIELD_GETTER(ComAsheraAndroidWidgetFactorySetterBaseAttributeSette
   
 #line 16
   NSString *width = [((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"width"];
-  [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(widget)) setWidthWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
+  [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(widget)) setParamWidthWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
   if (width != nil) {
     width = [width trim];
     if ([((NSString *) nil_chk(width)) equalsIgnoreCase:@"match_parent"]) {
-      [widget setWidthWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_MATCH_PARENT];
+      [widget setParamWidthWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_MATCH_PARENT];
     }
     else
 #line 22
     if ([width equalsIgnoreCase:@"wrap_content"]) {
-      [widget setWidthWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
+      [widget setParamWidthWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
     }
     else
 #line 24
     if ([width hasSuffix:@"px"]) {
-      [widget setWidthWithInt:JavaLangInteger_parseIntWithNSString_([width replace:@"px" withSequence:@""])];
+      [widget setParamWidthWithInt:JavaLangInteger_parseIntWithNSString_([width replace:@"px" withSequence:@""])];
     }
   }
   
 #line 29
   NSString *height = [atts getValueWithNSString:@"height"];
-  [widget setHeightWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
+  [widget setParamHeightWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
   if (height != nil) {
     height = [height trim];
     if ([((NSString *) nil_chk(height)) equalsIgnoreCase:@"match_parent"]) {
-      [widget setHeightWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_MATCH_PARENT];
+      [widget setParamHeightWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_MATCH_PARENT];
     }
     else
 #line 35
     if ([height equalsIgnoreCase:@"wrap_content"]) {
-      [widget setHeightWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
+      [widget setParamHeightWithInt:ComAsheraAndroidWidgetFactorySetterBaseAttributeSetter_WRAP_CONTENT];
     }
     else
 #line 37
     if ([height hasSuffix:@"px"]) {
-      [widget setHeightWithInt:JavaLangInteger_parseIntWithNSString_([height replace:@"px" withSequence:@""])];
+      [widget setParamHeightWithInt:JavaLangInteger_parseIntWithNSString_([height replace:@"px" withSequence:@""])];
     }
   }
 }

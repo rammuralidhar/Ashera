@@ -18,10 +18,10 @@
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "setWidthWithInt:", "setWidth", "V", 0x401, NULL, NULL },
-    { "setHeightWithInt:", "setHeight", "V", 0x401, NULL, NULL },
-    { "getWidth", NULL, "I", 0x401, NULL, NULL },
-    { "getHeight", NULL, "I", 0x401, NULL, NULL },
+    { "setParamWidthWithInt:", "setParamWidth", "V", 0x401, NULL, NULL },
+    { "setParamHeightWithInt:", "setParamHeight", "V", 0x401, NULL, NULL },
+    { "getParamWidth", NULL, "I", 0x401, NULL, NULL },
+    { "getParamHeight", NULL, "I", 0x401, NULL, NULL },
   };
   static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryIWidget = { 2, "IWidget", "com.ashera.android.widget.factory", NULL, 0x609, 4, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraAndroidWidgetFactoryIWidget;

@@ -2,7 +2,6 @@ package ios;
 
 import java.util.Map;
 
-import repackaged.android.content.Context;
 import repackaged.android.content.ContextWrapper;
 import repackaged.android.view.View;
 import repackaged.android.view.ViewGroup;
@@ -17,7 +16,6 @@ public class LabelImpl extends View implements ILabel{
 
 	public LabelImpl() {
 		super(new ContextWrapper());
-		setLayoutParams(new LayoutParams(50, 50));
 	}
 
 	@Override
@@ -132,6 +130,45 @@ public class LabelImpl extends View implements ILabel{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+
+        int width;
+        int height;
+        if (widthMode == MeasureSpec.EXACTLY) {
+            // Parent has told us how big to be. So be it.
+            width = widthSize;
+        } else {
+        	width = nativeMeasureWidth();
+        }
+        
+        if (heightMode == MeasureSpec.EXACTLY) {
+            // Parent has told us how big to be. So be it.
+            height = heightSize;
+        } else {
+        	height = nativeMeasureHeight();
+        }
+        
+        System.out.println("label :" + height + " " + width);
+        setMeasuredDimension(width, height);
+	}
+
+	private native int nativeMeasureWidth()/*-[
+	    CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
+	    CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
+	    return requiredSize.width;
+	]-*/;
+
+	private native int nativeMeasureHeight()/*-[
+	    CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
+	    CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
+	    return requiredSize.height;
+	]-*/;
 
 	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -144,14 +181,24 @@ public class LabelImpl extends View implements ILabel{
 		[self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
 	]-*/;
 
+
 	@Override
-	public void setWidth(int width) {
+	public void setParamWidth(int width) {
 		this.width = width;
 	}
 
 	@Override
-	public void setHeight(int height) {
+	public void setParamHeight(int height) {
 		this.height = height;
-		
+	}
+
+	@Override
+	public int getParamWidth() {
+		return width;
+	}
+
+	@Override
+	public int getParamHeight() {
+		return height;
 	}
 }

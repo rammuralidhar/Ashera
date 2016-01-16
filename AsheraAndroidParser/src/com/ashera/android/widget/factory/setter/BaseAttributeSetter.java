@@ -14,28 +14,28 @@ public class BaseAttributeSetter implements AttributeSetter {
 	public void setAttribute(IWidget widget, Map<String, String> cssProps,
 			Attributes atts) {
 		String width = atts.getValue("width");
-		widget.setWidth(WRAP_CONTENT);
+		widget.setParamWidth(WRAP_CONTENT);
 		if (width != null) {
 			width = width.trim();
 			if (width.equalsIgnoreCase("match_parent")) {
-				widget.setWidth(MATCH_PARENT);
+				widget.setParamWidth(MATCH_PARENT);
 			} else if (width.equalsIgnoreCase("wrap_content")) {
-				widget.setWidth(WRAP_CONTENT);
+				widget.setParamWidth(WRAP_CONTENT);
 			} else if (width.endsWith("px")) {
-				widget.setWidth(Integer.parseInt(width.replace("px", "")));
+				widget.setParamWidth(Integer.parseInt(width.replace("px", "")));
 			}
 		}
 		
 		String height = atts.getValue("height");
-		widget.setHeight(WRAP_CONTENT);
+		widget.setParamHeight(WRAP_CONTENT);
 		if (height != null) {
 			height = height.trim();
 			if (height.equalsIgnoreCase("match_parent")) {
-				widget.setHeight(MATCH_PARENT);
+				widget.setParamHeight(MATCH_PARENT);
 			} else if (height.equalsIgnoreCase("wrap_content")) {
-				widget.setHeight(WRAP_CONTENT);
+				widget.setParamHeight(WRAP_CONTENT);
 			} else if (height.endsWith("px")) {
-				widget.setHeight(Integer.parseInt(height.replace("px", "")));
+				widget.setParamHeight(Integer.parseInt(height.replace("px", "")));
 			}
 		}
 	}

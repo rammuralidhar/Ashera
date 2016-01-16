@@ -76,14 +76,6 @@ public class HtmlImpl extends FrameLayout implements IHtml{
 		
 		addToRootViewController(left, top, right, bottom);
 	}
-
-	@Override
-	public void setWidth(int width) {
-	}
-
-	@Override
-	public void setHeight(int height) {
-	}
 	
 	private native void addToRootViewController(int left, int top, int right, int bottom)/*-[
 		self.htmlView.backgroundColor = [UIColor redColor];
@@ -101,7 +93,6 @@ public class HtmlImpl extends FrameLayout implements IHtml{
 	]-*/;
 	
 	private native void nativeAddView(IWidget w)/*-[ 
-		self.htmlView.backgroundColor = [UIColor greenColor];
     	[self.htmlView addSubview:[w asWidget]];
 	]-*/;	
 	
@@ -112,5 +103,29 @@ public class HtmlImpl extends FrameLayout implements IHtml{
 	
 	public native Object nativeAsWidget()/*-[
 		return self.htmlView;
-	]-*/;	
+	]-*/;
+
+	@Override
+	public void setParamWidth(int width) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setParamHeight(int width) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getParamWidth() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getParamHeight() {
+		// TODO Auto-generated method stub
+		return 0;
+	}	
 }

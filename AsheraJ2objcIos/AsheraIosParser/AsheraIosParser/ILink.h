@@ -22,15 +22,15 @@
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
 
-- (jint)getHeight;
+- (jint)getParamHeight;
 
-- (jint)getWidth;
+- (jint)getParamWidth;
 
-- (void)setHeightWithInt:(jint)width;
+- (void)setParamHeightWithInt:(jint)width;
+
+- (void)setParamWidthWithInt:(jint)width;
 
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
-
-- (void)setWidthWithInt:(jint)width;
 
 @end
 

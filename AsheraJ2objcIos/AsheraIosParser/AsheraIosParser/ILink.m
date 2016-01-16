@@ -40,23 +40,23 @@
 
 
 #line 31
-- (void)setWidthWithInt:(jint)width {
+- (void)setParamWidthWithInt:(jint)width {
 }
 
 
 #line 35
-- (void)setHeightWithInt:(jint)width {
+- (void)setParamHeightWithInt:(jint)width {
 }
 
 
 #line 39
-- (jint)getWidth {
+- (jint)getParamWidth {
   return 0;
 }
 
 
 #line 44
-- (jint)getHeight {
+- (jint)getParamHeight {
   return 0;
 }
 
@@ -70,10 +70,10 @@
     { "asWidget", NULL, "Ljava.lang.Object;", 0x1, NULL, NULL },
     { "createWithJavaUtilMap:", "create", "V", 0x1, NULL, NULL },
     { "setParentWithComAsheraAndroidWidgetFactoryHasWidgets:", "setParent", "V", 0x1, NULL, NULL },
-    { "setWidthWithInt:", "setWidth", "V", 0x1, NULL, NULL },
-    { "setHeightWithInt:", "setHeight", "V", 0x1, NULL, NULL },
-    { "getWidth", NULL, "I", 0x1, NULL, NULL },
-    { "getHeight", NULL, "I", 0x1, NULL, NULL },
+    { "setParamWidthWithInt:", "setParamWidth", "V", 0x1, NULL, NULL },
+    { "setParamHeightWithInt:", "setParamHeight", "V", 0x1, NULL, NULL },
+    { "getParamWidth", NULL, "I", 0x1, NULL, NULL },
+    { "getParamHeight", NULL, "I", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcClassInfo _ComAsheraAndroidWidgetFactoryILink = { 2, "ILink", "com.ashera.android.widget.factory", NULL, 0x1, 8, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };

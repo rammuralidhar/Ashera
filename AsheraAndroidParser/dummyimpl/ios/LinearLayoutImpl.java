@@ -12,13 +12,11 @@ import com.ashera.android.widget.factory.ILinearLayout;
 import com.ashera.android.widget.factory.IWidget;
 
 public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  implements ILinearLayout{
-
 	private int width;
 	private int height;
 
 	public LinearLayoutImpl() {
 		super(new ContextWrapper());
-		setLayoutParams(new LayoutParams(200, 200));
 	}
 
 	@Override
@@ -121,16 +119,14 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 	public void add(IWidget w) {
 		if (w instanceof View) {
 			View view = (View) w;
-//			w.setParent(this);
-			System.out.println(getParent() + "3333333");
 			ViewGroup parent = ((ViewGroup) getParent());
 			if (view.getLayoutParams() == null) {
 				repackaged.android.view.ViewGroup.LayoutParams layoutParams = parent.generateLayoutParams(null);
 				view.setLayoutParams(layoutParams);
 			}
 			
-			view.getLayoutParams().width = w.getWidth();
-			view.getLayoutParams().height = w.getHeight();
+			view.getLayoutParams().width = w.getParamWidth();
+			view.getLayoutParams().height = w.getParamHeight();
 			addView(((View) w));
 			nativeAddView(w);
 		}
@@ -167,13 +163,23 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 	]-*/;
 
 	@Override
-	public void setWidth(int width) {
+	public void setParamWidth(int width) {
 		this.width = width;
 	}
 
 	@Override
-	public void setHeight(int height) {
+	public void setParamHeight(int height) {
 		this.height = height;
+	}
+
+	@Override
+	public int getParamWidth() {
+		return width;
+	}
+
+	@Override
+	public int getParamHeight() {
+		return height;
 	}
 	
 	private native void nativeAddView(IWidget w)/*-[ 

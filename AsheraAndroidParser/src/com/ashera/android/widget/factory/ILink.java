@@ -28,20 +28,20 @@ public class ILink implements IWidget{
 	}
 
 	@Override
-	public void setWidth(int width) {
+	public void setParamWidth(int width) {
 	}
 
 	@Override
-	public void setHeight(int width) {
+	public void setParamHeight(int width) {
 	}
 
 	@Override
-	public int getWidth() {
+	public int getParamWidth() {
 		return 0;
 	}
 
 	@Override
-	public int getHeight() {
+	public int getParamHeight() {
 		return 0;
 	}
 	
