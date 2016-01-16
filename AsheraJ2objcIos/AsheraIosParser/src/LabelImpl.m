@@ -128,7 +128,7 @@ __attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImp
 - (NSString *)getText {
   
 #line 115
-  return nil;
+  return [self.uiLabel text];
 }
 
 - (void)setTextWithNSString:(NSString *)text {
@@ -182,7 +182,7 @@ __attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImp
   }
   
 #line 157
-  [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$ICI", @"label :", height, ' ', width)];
+  [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$ICIC$", @"label :", height, ' ', width, ' ', [self getText])];
   [self setMeasuredDimensionWithInt:width withInt:height];
 }
 
@@ -306,13 +306,13 @@ IosLabelImpl *new_IosLabelImpl_init() {
 jint IosLabelImpl_nativeMeasureWidth(IosLabelImpl *self) {
   CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
   CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
-  return requiredSize.width;
+  return ceil(requiredSize.width);
 }
 
 jint IosLabelImpl_nativeMeasureHeight(IosLabelImpl *self) {
   CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
   CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
-  return requiredSize.height;
+  return ceil(requiredSize.height);
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosLabelImpl)

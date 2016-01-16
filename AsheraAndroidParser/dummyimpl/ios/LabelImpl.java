@@ -110,10 +110,11 @@ public class LabelImpl extends View implements ILabel{
 	}
 
 	@Override
-	public String getText() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public native String getText()/*-[
+ 		return [self.uiLabel text];
+	]-*/;
+	
+	
 
 	@Override
 	public void setText(String text) {
@@ -154,20 +155,20 @@ public class LabelImpl extends View implements ILabel{
         	height = nativeMeasureHeight();
         }
         
-        System.out.println("label :" + height + " " + width);
+        System.out.println("label :" + height + " " + width + " " + getText());
         setMeasuredDimension(width, height);
 	}
 
 	private native int nativeMeasureWidth()/*-[
 	    CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
 	    CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
-	    return requiredSize.width;
+	    return ceil(requiredSize.width);
 	]-*/;
 
 	private native int nativeMeasureHeight()/*-[
 	    CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
 	    CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
-	    return requiredSize.height;
+	    return ceil(requiredSize.height);
 	]-*/;
 
 	@Override
