@@ -100,7 +100,9 @@ public class LabelImpl extends View implements ILabel{
 	}
 	
 	public native void nativeCreate()/*-[
-		self.uiLabel = [UILabel new];
+	    self.uiLabel = [UILabel new];
+	    self.uiLabel.backgroundColor = [UIColor blueColor];
+	    self.uiLabel.numberOfLines = 0;
 	]-*/;
 	
 
@@ -152,7 +154,7 @@ public class LabelImpl extends View implements ILabel{
             // Parent has told us how big to be. So be it.
             height = heightSize;
         } else {
-        	height = nativeMeasureHeight();
+        	height = nativeMeasureHeight(width);
         }
         
         System.out.println("label :" + height + " " + width + " " + getText());
@@ -165,8 +167,8 @@ public class LabelImpl extends View implements ILabel{
 	    return ceil(requiredSize.width);
 	]-*/;
 
-	private native int nativeMeasureHeight()/*-[
-	    CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
+	private native int nativeMeasureHeight(int width)/*-[
+	    CGSize maximumLabelSize = CGSizeMake(width,CGFLOAT_MAX);
 	    CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
 	    return ceil(requiredSize.height);
 	]-*/;

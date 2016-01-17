@@ -25,13 +25,13 @@
 
 - (jint)nativeMeasureWidth;
 
-- (jint)nativeMeasureHeight;
+- (jint)nativeMeasureHeightWithInt:(jint)width;
 
 @end
 
 __attribute__((unused)) static jint IosLabelImpl_nativeMeasureWidth(IosLabelImpl *self);
 
-__attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImpl *self);
+__attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeightWithInt_(IosLabelImpl *self, jint width);
 
 
 #line 13
@@ -111,48 +111,45 @@ __attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImp
 #line 98
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   [self nativeCreate];
-    self.uiLabel.backgroundColor = [UIColor blueColor];
-    self.uiLabel.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    self.uiLabel.userInteractionEnabled = NO; // Don't allow interaction
-    //[self.uiLabel setNumberOfLines:0];
-
 }
 
 - (void)nativeCreate {
-  self.uiLabel = [UITextField new];
+  self.uiLabel = [UILabel new];
+  self.uiLabel.backgroundColor = [UIColor blueColor];
+  self.uiLabel.numberOfLines = 0;
 }
 
 
-#line 108
+#line 110
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
   mParent_ = (RepackagedAndroidViewViewGroup *) check_class_cast(widget, [RepackagedAndroidViewViewGroup class]);
 }
 
 
-#line 113
+#line 115
 - (NSString *)getText {
   return [self.uiLabel text];
 }
 
 
-#line 120
+#line 122
 - (void)setTextWithNSString:(NSString *)text {
   [self nativeSetTextWithNSString:text];
 }
 
 
-#line 125
+#line 127
 - (void)nativeSetTextWithNSString:(NSString *)text {
   [self.uiLabel setText:text];
 }
 
 
-#line 130
+#line 132
 - (void)setColorWithNSString:(NSString *)color {
 }
 
 
-#line 136
+#line 138
 - (void)onMeasureWithInt:(jint)widthMeasureSpec
                  withInt:(jint)heightMeasureSpec {
   jint widthMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(widthMeasureSpec);
@@ -160,51 +157,51 @@ __attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImp
   jint widthSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(widthMeasureSpec);
   jint heightSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(heightMeasureSpec);
   
-#line 142
+#line 144
   jint width;
   jint height;
   if (widthMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 146
+#line 148
     width = widthSize;
   }
   else {
     
-#line 148
+#line 150
     width = IosLabelImpl_nativeMeasureWidth(self);
   }
   
-#line 151
+#line 153
   if (heightMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 153
+#line 155
     height = heightSize;
   }
   else {
     
-#line 155
-    height = IosLabelImpl_nativeMeasureHeight(self);
+#line 157
+    height = IosLabelImpl_nativeMeasureHeightWithInt_(self, width);
   }
   
-#line 158
+#line 160
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$ICIC$", @"label :", height, ' ', width, ' ', [self getText])];
   [self setMeasuredDimensionWithInt:width withInt:height];
 }
 
 
-#line 162
+#line 164
 - (jint)nativeMeasureWidth {
   return IosLabelImpl_nativeMeasureWidth(self);
 }
 
 
-#line 168
-- (jint)nativeMeasureHeight {
-  return IosLabelImpl_nativeMeasureHeight(self);
+#line 170
+- (jint)nativeMeasureHeightWithInt:(jint)width {
+  return IosLabelImpl_nativeMeasureHeightWithInt_(self, width);
 }
 
 
-#line 175
+#line 177
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)l
                     withInt:(jint)t
@@ -212,52 +209,51 @@ __attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImp
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
   
-#line 178
+#line 180
   [self nativeMakeFrameWithInt:l withInt:t withInt:r withInt:b];
 }
 
 
-#line 181
+#line 183
 - (void)nativeMakeFrameWithInt:(jint)l
                        withInt:(jint)t
                        withInt:(jint)r
                        withInt:(jint)b {
-  [self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t-5)];
-
+  [self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
 }
 
 
-#line 187
+#line 189
 - (void)setParamWidthWithInt:(jint)width {
   self->width_ = width;
 }
 
 
-#line 192
+#line 194
 - (void)setParamHeightWithInt:(jint)height {
   self->height_ = height;
 }
 
 
-#line 197
+#line 199
 - (jint)getParamWidth {
   return width_;
 }
 
 
-#line 202
+#line 204
 - (jint)getParamHeight {
   return height_;
 }
 
 
-#line 207
+#line 209
 - (jint)getWeigth {
   return weight_;
 }
 
 
-#line 212
+#line 214
 - (void)setWeigthWithInt:(jint)weight {
   self->weight_ = weight;
 }
@@ -287,7 +283,7 @@ __attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImp
     { "setColorWithNSString:", "setColor", "V", 0x1, NULL, NULL },
     { "onMeasureWithInt:withInt:", "onMeasure", "V", 0x4, NULL, NULL },
     { "nativeMeasureWidth", NULL, "I", 0x102, NULL, NULL },
-    { "nativeMeasureHeight", NULL, "I", 0x102, NULL, NULL },
+    { "nativeMeasureHeightWithInt:", "nativeMeasureHeight", "I", 0x102, NULL, NULL },
     { "onLayoutWithBoolean:withInt:withInt:withInt:withInt:", "onLayout", "V", 0x4, NULL, NULL },
     { "nativeMakeFrameWithInt:withInt:withInt:withInt:", "nativeMakeFrame", "V", 0x101, NULL, NULL },
     { "setParamWidthWithInt:", "setParamWidth", "V", 0x1, NULL, NULL },
@@ -323,15 +319,15 @@ IosLabelImpl *new_IosLabelImpl_init() {
 }
 
 
-#line 162
+#line 164
 jint IosLabelImpl_nativeMeasureWidth(IosLabelImpl *self) {
   CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
   CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
   return ceil(requiredSize.width);
 }
 
-jint IosLabelImpl_nativeMeasureHeight(IosLabelImpl *self) {
-  CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
+jint IosLabelImpl_nativeMeasureHeightWithInt_(IosLabelImpl *self, jint width) {
+  CGSize maximumLabelSize = CGSizeMake(width,CGFLOAT_MAX);
   CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
   return ceil(requiredSize.height);
 }

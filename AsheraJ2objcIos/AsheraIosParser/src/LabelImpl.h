@@ -14,7 +14,7 @@
 @protocol JavaUtilMap;
 
 @interface IosLabelImpl : RepackagedAndroidViewView < ComAsheraAndroidWidgetFactoryILabel >
-@property UITextField* uiLabel;
+@property UILabel* uiLabel;
 #pragma mark Public
 
 - (instancetype)init;
