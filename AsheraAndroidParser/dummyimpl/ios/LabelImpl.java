@@ -101,7 +101,6 @@ public class LabelImpl extends View implements ILabel{
 	
 	public native void nativeCreate()/*-[
 		self.uiLabel = [UILabel new];
-		self.uiLabel.numberOfLines = 3;
 	]-*/;
 	
 

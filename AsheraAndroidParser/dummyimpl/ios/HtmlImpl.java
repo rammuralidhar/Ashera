@@ -21,7 +21,18 @@ public class HtmlImpl extends FrameLayout implements IHtml{
 	@Override
 	public void add(IWidget w) {
 		if (w instanceof View) {
-			addView(((View) w));
+			View view = (View) w;
+			addView(view);
+			
+			FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
+			if (layoutParams == null) {
+				layoutParams = new FrameLayout.LayoutParams(w.getParamWidth(), w.getParamHeight());
+				view.setLayoutParams(layoutParams);
+			} else {
+				layoutParams.width = w.getParamWidth();
+				layoutParams.height = w.getParamHeight();
+			}
+
 			nativeAddView(w);
 		}
 	}

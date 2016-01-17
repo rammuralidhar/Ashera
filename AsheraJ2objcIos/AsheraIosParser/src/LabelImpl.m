@@ -111,44 +111,48 @@ __attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImp
 #line 98
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   [self nativeCreate];
+    self.uiLabel.backgroundColor = [UIColor blueColor];
+    self.uiLabel.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    self.uiLabel.userInteractionEnabled = NO; // Don't allow interaction
+    //[self.uiLabel setNumberOfLines:0];
+
 }
 
 - (void)nativeCreate {
-  self.uiLabel = [UILabel new];
-  self.uiLabel.numberOfLines = 3;
+  self.uiLabel = [UITextField new];
 }
 
 
-#line 109
+#line 108
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
   mParent_ = (RepackagedAndroidViewViewGroup *) check_class_cast(widget, [RepackagedAndroidViewViewGroup class]);
 }
 
 
-#line 114
+#line 113
 - (NSString *)getText {
   return [self.uiLabel text];
 }
 
 
-#line 121
+#line 120
 - (void)setTextWithNSString:(NSString *)text {
   [self nativeSetTextWithNSString:text];
 }
 
 
-#line 126
+#line 125
 - (void)nativeSetTextWithNSString:(NSString *)text {
   [self.uiLabel setText:text];
 }
 
 
-#line 131
+#line 130
 - (void)setColorWithNSString:(NSString *)color {
 }
 
 
-#line 137
+#line 136
 - (void)onMeasureWithInt:(jint)widthMeasureSpec
                  withInt:(jint)heightMeasureSpec {
   jint widthMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(widthMeasureSpec);
@@ -156,51 +160,51 @@ __attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImp
   jint widthSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(widthMeasureSpec);
   jint heightSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(heightMeasureSpec);
   
-#line 143
+#line 142
   jint width;
   jint height;
   if (widthMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 147
+#line 146
     width = widthSize;
   }
   else {
     
-#line 149
+#line 148
     width = IosLabelImpl_nativeMeasureWidth(self);
   }
   
-#line 152
+#line 151
   if (heightMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 154
+#line 153
     height = heightSize;
   }
   else {
     
-#line 156
+#line 155
     height = IosLabelImpl_nativeMeasureHeight(self);
   }
   
-#line 159
+#line 158
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$ICIC$", @"label :", height, ' ', width, ' ', [self getText])];
   [self setMeasuredDimensionWithInt:width withInt:height];
 }
 
 
-#line 163
+#line 162
 - (jint)nativeMeasureWidth {
   return IosLabelImpl_nativeMeasureWidth(self);
 }
 
 
-#line 169
+#line 168
 - (jint)nativeMeasureHeight {
   return IosLabelImpl_nativeMeasureHeight(self);
 }
 
 
-#line 176
+#line 175
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)l
                     withInt:(jint)t
@@ -208,51 +212,52 @@ __attribute__((unused)) static jint IosLabelImpl_nativeMeasureHeight(IosLabelImp
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
   
-#line 179
+#line 178
   [self nativeMakeFrameWithInt:l withInt:t withInt:r withInt:b];
 }
 
 
-#line 182
+#line 181
 - (void)nativeMakeFrameWithInt:(jint)l
                        withInt:(jint)t
                        withInt:(jint)r
                        withInt:(jint)b {
-  [self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
+  [self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t-5)];
+
 }
 
 
-#line 188
+#line 187
 - (void)setParamWidthWithInt:(jint)width {
   self->width_ = width;
 }
 
 
-#line 193
+#line 192
 - (void)setParamHeightWithInt:(jint)height {
   self->height_ = height;
 }
 
 
-#line 198
+#line 197
 - (jint)getParamWidth {
   return width_;
 }
 
 
-#line 203
+#line 202
 - (jint)getParamHeight {
   return height_;
 }
 
 
-#line 208
+#line 207
 - (jint)getWeigth {
   return weight_;
 }
 
 
-#line 213
+#line 212
 - (void)setWeigthWithInt:(jint)weight {
   self->weight_ = weight;
 }
@@ -318,7 +323,7 @@ IosLabelImpl *new_IosLabelImpl_init() {
 }
 
 
-#line 163
+#line 162
 jint IosLabelImpl_nativeMeasureWidth(IosLabelImpl *self) {
   CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
   CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];

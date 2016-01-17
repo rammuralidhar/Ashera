@@ -1,18 +1,20 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" language="javascript" src="bower_components/gwtcomponents/asheragwtbuilder.nocache.js"></script>
-	<link rel="import" href="bower_components/ashera/basic-components.html">
+	
 </head>
-<body class="body" id="body" width="match_parent" height="match_parent">
-    <linear-layout orientation="vertical" width="match_parent"> 
-	        <label  width="match_parent">Hi!  dsf dsf dsfds fdsfdsfds dsfd d</label>
-	        
-	        <label>Hi1!  dsf dsf dsfds fdsfdsfds dsfd d</label>
-	      	<linear-layout orientation="h" class="red">
-	          	<label>Hi! </label>
-	        	<label>H2i! </label>	        	
-	     	</linear-layout>
-    </linear-layout>
+<body class="body" id="body"  width="match_parent" height="wrap_content">
+<linear-layout orientation="v" class="red" weightSum="4" height="match_parent" width="wrap_content">
+
+                <label weight="1">Hi!</label>
+                <label weight="1">Hi!</label>
+                <label weight="1">Hi!</label>
+<linear-layout orientation="h" class="red" weightSum="3"  width="match_parent"  weight="1">
+    <label weight="1">Hi21!</label>
+    <label  weight="1">Hi1!</label>
+    <label weight="1">Hi2!</label>
+</linear-layout>
+
+</linear-layout>
 </body>
 </html>

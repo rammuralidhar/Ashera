@@ -36,7 +36,9 @@ public class LinearLayoutImpl extends BaseStyledHasWidgets implements ILinearLay
 	}
 	@Override
 	public void setOrientation(String orientation) {
-		if (orientation.equals("vertical")) {
+		if (orientation.equals("h")) {
+			linearLayout.setOrientation(android.widget.LinearLayout.HORIZONTAL);
+		} else {
 			linearLayout.setOrientation(android.widget.LinearLayout.VERTICAL);
 		}
 	}

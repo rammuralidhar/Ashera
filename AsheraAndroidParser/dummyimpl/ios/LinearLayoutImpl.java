@@ -99,6 +99,7 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 	
 	public native void nativeCreate()/*-[
 		self.uiView = [UIView new];
+		self.uiView.backgroundColor = [UIColor greenColor];
 	]-*/;
 
 	@Override
@@ -121,18 +122,17 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 	public void add(IWidget w) {
 		if (w instanceof View) {
 			View view = (View) w;
-			ViewGroup parent = ((ViewGroup) getParent());
-			if (view.getLayoutParams() == null) {
-				repackaged.android.view.ViewGroup.LayoutParams layoutParams = parent.generateLayoutParams(null);
+			
+			LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) view.getLayoutParams();
+			if (layoutParams == null) {
+				layoutParams = new LinearLayout.LayoutParams(w.getParamWidth(), w.getParamHeight());
 				view.setLayoutParams(layoutParams);
+			} else {
+				layoutParams.width = w.getParamWidth();
+				layoutParams.height = w.getParamHeight();
 			}
 			
-			view.getLayoutParams().width = w.getParamWidth();
-			view.getLayoutParams().height = w.getParamHeight();
-			
-			if (view.getLayoutParams() instanceof LinearLayout.LayoutParams) {
-				((LinearLayout.LayoutParams) view.getLayoutParams()).weight = w.getWeigth();
-			}
+			layoutParams.weight = w.getWeigth();
 			addView(((View) w));
 			nativeAddView(w);
 		}
@@ -189,7 +189,6 @@ public class LinearLayoutImpl extends repackaged.android.widget.LinearLayout  im
 	}
 	
 	private native void nativeAddView(IWidget w)/*-[ 
-		self.uiView.backgroundColor = [UIColor greenColor];
     	[self.uiView addSubview:[w asWidget]];
 	]-*/;
 

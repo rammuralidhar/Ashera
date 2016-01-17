@@ -6,14 +6,12 @@
 
 #include "ContextWrapper.h"
 #include "HasWidgets.h"
-#include "IOSClass.h"
 #include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "LinearLayout.h"
 #include "LinearLayoutImpl.h"
 #include "View.h"
 #include "ViewGroup.h"
-#include "ViewParent.h"
 #include "java/io/PrintStream.h"
 #include "java/lang/System.h"
 #include "java/util/Iterator.h"
@@ -116,49 +114,52 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
 
 - (void)nativeCreate {
   self.uiView = [UIView new];
+  self.uiView.backgroundColor = [UIColor greenColor];
 }
 
 
-#line 105
+#line 106
 - (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget {
   mParent_ = (RepackagedAndroidViewViewGroup *) check_class_cast(widget, [RepackagedAndroidViewViewGroup class]);
 }
 
 
-#line 110
+#line 111
 - (void)setOrientationWithNSString:(NSString *)orientation {
   [self setOrientationWithInt:0];
   
-#line 113
+#line 114
   if (orientation != nil && [orientation isEqual:@"h"]) {
     [self setOrientationWithInt:0];
   }
   else {
     
-#line 116
+#line 117
     [self setOrientationWithInt:1];
   }
 }
 
 
-#line 121
+#line 122
 - (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w {
   if ([w isKindOfClass:[RepackagedAndroidViewView class]]) {
     RepackagedAndroidViewView *view = (RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]);
-    RepackagedAndroidViewViewGroup *parent = ((RepackagedAndroidViewViewGroup *) check_class_cast([self getParent], [RepackagedAndroidViewViewGroup class]));
-    if ([((RepackagedAndroidViewView *) nil_chk(view)) getLayoutParams] == nil) {
-      RepackagedAndroidViewViewGroup_LayoutParams *layoutParams = [((RepackagedAndroidViewViewGroup *) nil_chk(parent)) generateLayoutParamsWithRepackagedAndroidUtilAttributeSet:nil];
+    
+#line 126
+    RepackagedAndroidWidgetLinearLayout_LayoutParams *layoutParams = (RepackagedAndroidWidgetLinearLayout_LayoutParams *) check_class_cast([((RepackagedAndroidViewView *) nil_chk(view)) getLayoutParams], [RepackagedAndroidWidgetLinearLayout_LayoutParams class]);
+    if (layoutParams == nil) {
+      layoutParams = new_RepackagedAndroidWidgetLinearLayout_LayoutParams_initWithInt_withInt_([((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(w)) getParamWidth], [w getParamHeight]);
       [view setLayoutParamsWithRepackagedAndroidViewViewGroup_LayoutParams:layoutParams];
     }
-    
-#line 130
-    ((RepackagedAndroidViewViewGroup_LayoutParams *) nil_chk([view getLayoutParams]))->width_ = [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(w)) getParamWidth];
-    ((RepackagedAndroidViewViewGroup_LayoutParams *) nil_chk([view getLayoutParams]))->height_ = [w getParamHeight];
-    
-#line 133
-    if ([[view getLayoutParams] isKindOfClass:[RepackagedAndroidWidgetLinearLayout_LayoutParams class]]) {
-      ((RepackagedAndroidWidgetLinearLayout_LayoutParams *) nil_chk(((RepackagedAndroidWidgetLinearLayout_LayoutParams *) check_class_cast([view getLayoutParams], [RepackagedAndroidWidgetLinearLayout_LayoutParams class]))))->weight_ = [w getWeigth];
+    else {
+      
+#line 131
+      layoutParams->width_ = [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(w)) getParamWidth];
+      layoutParams->height_ = [w getParamHeight];
     }
+    
+#line 135
+    ((RepackagedAndroidWidgetLinearLayout_LayoutParams *) nil_chk(layoutParams))->weight_ = [((id<ComAsheraAndroidWidgetFactoryIWidget>) nil_chk(w)) getWeigth];
     [self addViewWithRepackagedAndroidViewView:((RepackagedAndroidViewView *) check_class_cast(w, [RepackagedAndroidViewView class]))];
     IosLinearLayoutImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(self, w);
   }
@@ -238,19 +239,19 @@ __attribute__((unused)) static void IosLinearLayoutImpl_nativeAddViewWithComAshe
 }
 
 
-#line 197
+#line 196
 - (void)setWeightSumWithInt:(jint)weightSum {
   [self setWeightSumWithInt:weightSum];
 }
 
 
-#line 203
+#line 202
 - (jint)getWeigth {
   return weight_;
 }
 
 
-#line 208
+#line 207
 - (void)setWeigthWithInt:(jint)weight {
   self->weight_ = weight;
 }
@@ -318,7 +319,6 @@ IosLinearLayoutImpl *new_IosLinearLayoutImpl_init() {
 
 #line 191
 void IosLinearLayoutImpl_nativeAddViewWithComAsheraAndroidWidgetFactoryIWidget_(IosLinearLayoutImpl *self, id<ComAsheraAndroidWidgetFactoryIWidget> w) {
-  self.uiView.backgroundColor = [UIColor greenColor];
   [self.uiView addSubview:[w asWidget]];
 }
 
