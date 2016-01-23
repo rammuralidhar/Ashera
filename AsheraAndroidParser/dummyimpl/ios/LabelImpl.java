@@ -148,6 +148,10 @@ public class LabelImpl extends View implements ILabel{
             width = widthSize;
         } else {
         	width = nativeMeasureWidth();
+        	
+        	if (width > widthSize) {
+        		width = widthSize;
+        	}
         }
         
         if (heightMode == MeasureSpec.EXACTLY) {

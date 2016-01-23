@@ -78,7 +78,13 @@ public class HtmlSaxHandler implements ContentHandler{
 
 			if (content != null && !content.trim().equals("")) {
 				if (widget instanceof HasText) {
-					((HasText) widget).setText(content);
+					HasText widget2 = (HasText) widget;
+					
+					if (widget2.getText() == null) {
+						widget2.setText(content);
+					} else {
+						widget2.setText(widget2.getText() + content);
+					}
 				}
 			}
 			
