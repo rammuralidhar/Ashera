@@ -2,7 +2,7 @@ package ios;
 
 import java.util.Map;
 
-import com.ashera.android.component.factory.Component;
+import com.ashera.component.factory.Component;
 
 public class ComponentImpl implements Component{
 	@Override

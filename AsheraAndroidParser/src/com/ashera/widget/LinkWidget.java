@@ -1,13 +1,16 @@
-package com.ashera.android.widget.factory;
+package com.ashera.widget;
 
 import java.util.Map;
 
 import org.xml.sax.Attributes;
 
-import com.ashera.android.component.factory.Component;
-import com.ashera.android.component.factory.ComponentFactory;
+import com.ashera.component.factory.Component;
+import com.ashera.component.factory.ComponentFactory;
+import com.ashera.widget.factory.HasWidgets;
+import com.ashera.widget.factory.IWidget;
+import com.ashera.widget.factory.PageData;
 
-public class ILink implements IWidget{
+public class LinkWidget implements IWidget{
 	@Override
 	public Object asWidget() {
 		return null;
@@ -28,31 +31,26 @@ public class ILink implements IWidget{
 	}
 
 	@Override
-	public void setParamWidth(int width) {
+	public String[] getAttributes() {
+		return null;
 	}
 
 	@Override
-	public void setParamHeight(int width) {
+	public void setUpStyle(Map<String, Object> styles) {
 	}
 
 	@Override
-	public int getParamWidth() {
-		return 0;
+	public void setUpAttribute(Map<String, String> attributes) {
 	}
 
 	@Override
-	public int getParamHeight() {
-		return 0;
+	public IWidget newInstance() {
+		return null;
 	}
 
 	@Override
-	public int getWeigth() {
-		return 0;
-	}
-
-	@Override
-	public void setWeigth(int width) {
-		
+	public Object getAttributeValue(String attr) {
+		return null;
 	}
 	
 }

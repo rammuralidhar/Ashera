@@ -1,4 +1,4 @@
-package com.ashera.android.component.factory;
+package com.ashera.component.factory;
 
 
 public class ComponentFactory {

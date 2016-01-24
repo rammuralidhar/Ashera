@@ -1,6 +1,7 @@
-package com.ashera.android.parser.html;
+package com.ashera.parser.html;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
@@ -12,13 +13,11 @@ import org.xml.sax.SAXException;
 
 import android.util.Log;
 
-import com.ashera.android.widget.factory.HasText;
-import com.ashera.android.widget.factory.HasWidgets;
-import com.ashera.android.widget.factory.PageData;
-import com.ashera.android.widget.factory.IStyle;
-import com.ashera.android.widget.factory.IWidget;
-import com.ashera.android.widget.factory.WidgetFactory;
-import com.ashera.android.widget.factory.setter.AttributeSetterFactory;
+import com.ashera.widget.factory.HasText;
+import com.ashera.widget.factory.HasWidgets;
+import com.ashera.widget.factory.IWidget;
+import com.ashera.widget.factory.PageData;
+import com.ashera.widget.factory.WidgetFactory;
 
 public class HtmlSaxHandler implements ContentHandler{
 	private PageData pageData = new PageData();
@@ -101,8 +100,12 @@ public class HtmlSaxHandler implements ContentHandler{
 		this.widget = WidgetFactory.get(localName);
 		
 		//set root
-		if (root == null && widget != null) {
+		if (localName.equals("body") && root == null && widget != null) {
 			this.root = this.widget;
+			
+			if (!"root".equals(atts.getValue("id"))) {
+				throw new RuntimeException("Id of the root has to be root");
+			}
 		}
 		boolean parentPushed = false;
 		if (widget != null) {
@@ -111,10 +114,8 @@ public class HtmlSaxHandler implements ContentHandler{
 			metadata.put("qName", qName);
 			metadata.put("attributes", atts);
 			this.widget.create(metadata);
-			
-			
 
-			updateStyleOnWidget(widget, localName, atts);
+			setUpStyleAndAttributes(widget, localName, atts);
 			
 			HasWidgets parent = null;
 			if (!hasWidgets.isEmpty()) {
@@ -163,20 +164,19 @@ public class HtmlSaxHandler implements ContentHandler{
 		return stringBuffer.toString();
 	}
 
-	private void updateStyleOnWidget(IWidget widget, String localName, Attributes atts) {
-		if (widget instanceof IStyle) {
-			Map<String, String> cssProperties = pageData.getCss(
-					getNodeExpression(), localName, atts.getValue("class"), atts.getValue("id"));
-			IStyle style = (IStyle) widget;
-			
-			if (cssProperties.containsKey("background-color")) {
-				style.setBackgroundColor(cssProperties.get("background-color"));
+	private void setUpStyleAndAttributes(IWidget widget, String localName, Attributes atts) {
+		Map<String, Object> cssProperties = pageData.getCss(
+				getNodeExpression(), localName, atts.getValue("class"), atts.getValue("id"));
+		widget.setUpStyle(cssProperties);
+		String[] attr = widget.getAttributes();
+		
+		Map<String, String> attributes = new HashMap<String, String>();
+		if (attr != null) {
+			for (int i = 0; i < attr.length; i++) {
+				attributes.put(attr[i], atts.getValue(attr[i]));
 			}
-			
-			AttributeSetterFactory.get(localName).setAttribute(widget, cssProperties, atts);
-		} else {
-			AttributeSetterFactory.get(localName).setAttribute(widget, null, atts);
 		}
+		widget.setUpAttribute(attributes);
 	}
 	
 	private String getNodeExpression() {

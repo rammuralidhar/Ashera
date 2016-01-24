@@ -1,4 +1,4 @@
-package com.ashera.android.widget.factory;
+package com.ashera.widget.factory;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,9 +19,9 @@ public class PageData {
 	}
 
 
-	public Map<String, String> getCss(String nodePathExpression,
+	public Map<String, Object> getCss(String nodePathExpression,
 			String tag, String classNames, String id) {
-		Map<String, String> finalattributes = new HashMap<String, String>();
+		Map<String, Object> finalattributes = new HashMap<String, Object>();
 		List<CSSRule> cssRules = parser.findRulesByCssPath(nodePathExpression,
 				tag, classNames, id);
 		for (int i = 0; i < cssRules.size(); i++) {

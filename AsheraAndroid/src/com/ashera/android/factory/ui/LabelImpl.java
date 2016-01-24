@@ -3,13 +3,13 @@ package com.ashera.android.factory.ui;
 import java.util.Map;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.view.View;
 import android.widget.TextView;
 
-import com.ashera.android.widget.factory.ILabel;
+import com.ashera.widget.BaseWidget;
+import com.ashera.widget.factory.ILabel;
+import com.ashera.widget.factory.IWidget;
 
-public class LabelImpl extends BaseStyledWidget implements ILabel{
+public class LabelImpl extends BaseWidget implements ILabel{
 	private TextView label;
 	private Context context;
 	private String text;
@@ -36,14 +36,13 @@ public class LabelImpl extends BaseStyledWidget implements ILabel{
 	}
 
 	@Override
-	public View getView() {
-		return label;
+	public IWidget newInstance() {
+		return new LabelImpl();
 	}
 
 	@Override
-	public void setColor(String color) {
-		label.setTextColor(Color.parseColor(color));
-		
+	public String[] getAttributes() {
+		return new String [] { "width", "height", "weight"};
 	}
 
 }

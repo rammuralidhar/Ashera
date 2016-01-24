@@ -1,4 +1,4 @@
-package com.ashera.android.parser.html;
+package com.ashera.parser.html;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -9,7 +9,7 @@ import org.ccil.cowan.tagsoup.TagSoupParser;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import com.ashera.android.widget.factory.IWidget;
+import com.ashera.widget.factory.IWidget;
 
 public class HtmlParser {
 	private static final HTMLSchema schema = new HTMLSchema();

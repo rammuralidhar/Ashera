@@ -1,4 +1,4 @@
-package com.ashera.android.widget.factory;
+package com.ashera.widget.factory;
 
 public interface HasText {
 	java.lang.String getText();
