@@ -81,4 +81,10 @@ public class RootImpl extends BaseHasWidgets implements IRoot{
 			relativeLayout.setBackgroundColor(Color.parseColor(bgColor));
 		}
 	}
+
+
+	@Override
+	public String[] getLayoutAttributes() {
+		return null;
+	}
 }

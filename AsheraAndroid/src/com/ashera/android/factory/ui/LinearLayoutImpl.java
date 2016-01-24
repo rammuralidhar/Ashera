@@ -4,7 +4,6 @@ import java.util.Map;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 
 import com.ashera.widget.BaseHasWidgets;
 import com.ashera.widget.factory.ILinearLayout;
@@ -37,7 +36,7 @@ public class LinearLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 
 	@Override
 	public String[] getAttributes() {
-		return new String[] {"width", "height", "orientation", "weightsum", "weight"};
+		return new String[] {"width", "height", "orientation", "weightsum"};
 	}
 
 	@Override
@@ -86,5 +85,11 @@ public class LinearLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 		} else {
 			linearLayout.setOrientation(android.widget.LinearLayout.VERTICAL);
 		}
+	}
+
+
+	@Override
+	public String[] getLayoutAttributes() {
+		return new String[] {"weight"};
 	}
 }

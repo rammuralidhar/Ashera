@@ -12,6 +12,9 @@ public abstract class BaseWidget implements IWidget{
 	private int paramWidth;
 	private int weight;
 	private boolean alignParentBottom;
+	private boolean alignParentRight;
+	private Map<String, String> attributes;
+	
 	
 
 	/**
@@ -40,10 +43,12 @@ public abstract class BaseWidget implements IWidget{
 
 	@Override
 	public void setUpAttribute(Map<String, String> attributes) {
+		this.attributes = attributes;
 		this.paramWidth = WidgetAttributeHelper.getWidth(attributes.get("width"));
-		this.paramHeight = WidgetAttributeHelper.getWidth(attributes.get("height"));
+		this.paramHeight = WidgetAttributeHelper.getHeight(attributes.get("height"));
 		this.weight = WidgetAttributeHelper.getInt(attributes, "weight");
 		this.alignParentBottom = WidgetAttributeHelper.getBoolean(attributes, "align_parentbottom");
+		this.alignParentRight = WidgetAttributeHelper.getBoolean(attributes, "align_parentright");
 	}
 	
 
@@ -57,8 +62,11 @@ public abstract class BaseWidget implements IWidget{
 			return weight;
 		} else if (attr.equals("align_parentbottom")) {
 			return alignParentBottom;
+		} else if (attr.equals("align_parentright")) {
+			return alignParentRight;
+		} else {
+			return attributes.get(attr);
 		}
-		return null;
 	}
 
 }

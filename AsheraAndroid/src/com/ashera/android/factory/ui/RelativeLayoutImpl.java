@@ -36,7 +36,7 @@ public class RelativeLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 
 	@Override
 	public String[] getAttributes() {
-		return new String[] {"width", "height", "align_parentBottom", "weight"};
+		return new String[] {"width", "height"};
 	}
 
 	@Override
@@ -64,6 +64,15 @@ public class RelativeLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 		if ((boolean) w.getAttributeValue("align_parentbottom")) {
 			layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 		}
+		
+		if ((boolean) w.getAttributeValue("align_parentright")) {
+			layoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+		}
+		
+		if (w.getAttributeValue("left_of") != null) {
+			layoutParams.addRule(RelativeLayout.LEFT_OF,
+					w.getAttributeValue("left_of").hashCode());
+		}
 	}
 
 	@Override
@@ -77,6 +86,12 @@ public class RelativeLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 		boolean remove = super.remove(w);
 		relativeLayout.removeView((View) w.asWidget());
 		return remove;
+	}
+
+
+	@Override
+	public String[] getLayoutAttributes() {
+		return new String[] {"align_parentbottom", "align_parentright", "left_of"};
 	}
 
 }

@@ -14,6 +14,7 @@ public class LabelImpl extends BaseWidget implements ILabel{
 	private TextView label;
 	private Context context;
 	private String text;
+	private Map<String, String> attributes;
 	@Override
 	public Object asWidget() {
 		return label;
@@ -43,7 +44,7 @@ public class LabelImpl extends BaseWidget implements ILabel{
 
 	@Override
 	public String[] getAttributes() {
-		return new String [] { "width", "height", "weight", "align_parentbottom"};
+		return new String [] { "width", "height", "id"};
 	}
 
 	@Override
@@ -56,6 +57,15 @@ public class LabelImpl extends BaseWidget implements ILabel{
 		if (color != null) {
 			label.setTextColor(Color.parseColor(color));
 		}
+	}
 	
+	@Override
+	public void setUpAttribute(Map<String, String> attributes) {
+		super.setUpAttribute(attributes);
+		
+		String id = attributes.get("id");
+		if (id != null) {
+			label.setId(id.hashCode());
+		}
 	}
 }

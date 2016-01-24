@@ -6,4 +6,5 @@ public interface HasWidgets {
 	void clear();
 	java.util.Iterator<IWidget> iterate();
 	boolean remove(IWidget w);
+	public String[] getLayoutAttributes();
 }

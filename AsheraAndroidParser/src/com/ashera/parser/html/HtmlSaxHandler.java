@@ -115,12 +115,14 @@ public class HtmlSaxHandler implements ContentHandler{
 			metadata.put("attributes", atts);
 			this.widget.create(metadata);
 
-			setUpStyleAndAttributes(widget, localName, atts);
-			
 			HasWidgets parent = null;
 			if (!hasWidgets.isEmpty()) {
 				parent = hasWidgets.peek();
-				
+			}
+			
+			setUpStyleAndAttributes(widget, parent, localName, atts);
+			
+			if (parent != null) {
 				if (widget.asWidget() != null) {
 					parent.add(widget);
 				}
@@ -164,16 +166,25 @@ public class HtmlSaxHandler implements ContentHandler{
 		return stringBuffer.toString();
 	}
 
-	private void setUpStyleAndAttributes(IWidget widget, String localName, Attributes atts) {
+	private void setUpStyleAndAttributes(IWidget widget, HasWidgets parent, String localName, Attributes atts) {
 		Map<String, String> cssProperties = pageData.getCss(
 				getNodeExpression(), localName, atts.getValue("class"), atts.getValue("id"));
 		widget.setUpStyle(cssProperties);
 		String[] attr = widget.getAttributes();
+		String[] layoutAttrs = null;
+		if (parent != null) {
+			layoutAttrs = parent.getLayoutAttributes();
+		}
 		
 		Map<String, String> attributes = new HashMap<String, String>();
 		if (attr != null) {
 			for (int i = 0; i < attr.length; i++) {
 				attributes.put(attr[i], atts.getValue(attr[i]));
+			}
+		}
+		if (layoutAttrs != null) {
+			for (int i = 0; i < layoutAttrs.length; i++) {
+				attributes.put(layoutAttrs[i], atts.getValue(layoutAttrs[i]));
 			}
 		}
 		widget.setUpAttribute(attributes);
