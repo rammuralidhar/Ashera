@@ -19,9 +19,9 @@ public class PageData {
 	}
 
 
-	public Map<String, Object> getCss(String nodePathExpression,
+	public Map<String, String> getCss(String nodePathExpression,
 			String tag, String classNames, String id) {
-		Map<String, Object> finalattributes = new HashMap<String, Object>();
+		Map<String, String> finalattributes = new HashMap<String, String>();
 		List<CSSRule> cssRules = parser.findRulesByCssPath(nodePathExpression,
 				tag, classNames, id);
 		for (int i = 0; i < cssRules.size(); i++) {

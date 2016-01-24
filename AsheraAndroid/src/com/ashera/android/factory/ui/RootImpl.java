@@ -3,6 +3,7 @@ package com.ashera.android.factory.ui;
 import java.util.Map;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
@@ -72,4 +73,12 @@ public class RootImpl extends BaseHasWidgets implements IRoot{
 		return remove;
 	}
 
+	@Override
+	public void setUpStyle(Map<String, String> styles) {
+		super.setUpStyle(styles);
+		String bgColor = styles.get("background-color");
+		if (bgColor != null) {
+			relativeLayout.setBackgroundColor(Color.parseColor(bgColor));
+		}
+	}
 }

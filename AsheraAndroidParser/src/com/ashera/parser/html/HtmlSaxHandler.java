@@ -165,7 +165,7 @@ public class HtmlSaxHandler implements ContentHandler{
 	}
 
 	private void setUpStyleAndAttributes(IWidget widget, String localName, Attributes atts) {
-		Map<String, Object> cssProperties = pageData.getCss(
+		Map<String, String> cssProperties = pageData.getCss(
 				getNodeExpression(), localName, atts.getValue("class"), atts.getValue("id"));
 		widget.setUpStyle(cssProperties);
 		String[] attr = widget.getAttributes();

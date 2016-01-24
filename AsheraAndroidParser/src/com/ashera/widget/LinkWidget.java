@@ -36,7 +36,7 @@ public class LinkWidget implements IWidget{
 	}
 
 	@Override
-	public void setUpStyle(Map<String, Object> styles) {
+	public void setUpStyle(Map<String, String> styles) {
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class LinkWidget implements IWidget{
 
 	@Override
 	public IWidget newInstance() {
-		return null;
+		return new LinkWidget();
 	}
 
 	@Override

@@ -11,6 +11,20 @@ public abstract class BaseWidget implements IWidget{
 	private int paramHeight;
 	private int paramWidth;
 	private int weight;
+	
+
+	/**
+	 * 
+	 * @param colorStr e.g. "#FFFFFF"
+	 * @return 
+	 */
+	public static int[] hex2Rgb(String colorStr) {
+	    return new int[] {
+	            Integer.valueOf( colorStr.substring( 1, 3 ), 16 ),
+	            Integer.valueOf( colorStr.substring( 3, 5 ), 16 ),
+	            Integer.valueOf( colorStr.substring( 5, 7 ), 16 ) 
+	            };
+	}
 
 	@Override
 	public void setParent(HasWidgets parent) {
@@ -19,7 +33,7 @@ public abstract class BaseWidget implements IWidget{
 	
 
 	@Override
-	public void setUpStyle(Map<String, Object> styles) {
+	public void setUpStyle(Map<String, String> styles) {
 		
 	}
 
