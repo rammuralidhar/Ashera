@@ -3,6 +3,7 @@ package com.ashera.android.factory.ui;
 import java.util.Map;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.widget.TextView;
 
 import com.ashera.widget.BaseWidget;
@@ -45,4 +46,16 @@ public class LabelImpl extends BaseWidget implements ILabel{
 		return new String [] { "width", "height", "weight"};
 	}
 
+	@Override
+	public void setUpStyle(Map<String, String> styles) {
+		super.setUpStyle(styles);
+		
+
+		String color = styles.get("color");
+		
+		if (color != null) {
+			label.setTextColor(Color.parseColor(color));
+		}
+	
+	}
 }
