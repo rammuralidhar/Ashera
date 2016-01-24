@@ -8,6 +8,7 @@ import android.view.View;
 import com.ashera.android.factory.ComponentImpl;
 import com.ashera.android.factory.ui.LabelImpl;
 import com.ashera.android.factory.ui.LinearLayoutImpl;
+import com.ashera.android.factory.ui.RelativeLayoutImpl;
 import com.ashera.android.factory.ui.RootImpl;
 import com.ashera.component.factory.ComponentFactory;
 import com.ashera.parser.html.HtmlParser;
@@ -18,6 +19,7 @@ public class HtmlViewerUtils {
 	static {
 		WidgetFactory.register("body", new RootImpl());
 		WidgetFactory.register("linear-layout", new LinearLayoutImpl());
+		WidgetFactory.register("relative-layout", new RelativeLayoutImpl());
 		WidgetFactory.register("label", new LabelImpl());
 		ComponentFactory.register(new ComponentImpl());
 	}

@@ -46,4 +46,8 @@ public class WidgetAttributeHelper {
 			return 0;
 		}
 	}
+	
+	public static boolean getBoolean(Map<String, String> attributes, String key) {
+		return Boolean.parseBoolean(attributes.get(key));
+	}
 }

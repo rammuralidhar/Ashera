@@ -37,14 +37,14 @@ public class LinearLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 
 	@Override
 	public String[] getAttributes() {
-		return new String[] {"width", "height", "orientation", "weightSum", "weight"};
+		return new String[] {"width", "height", "orientation", "weightsum", "weight"};
 	}
 
 	@Override
 	public void setUpAttribute(Map<String, String> attributes) {
 		super.setUpAttribute(attributes);
 		setOrientation(attributes.get("orientation"));
-		linearLayout.setWeightSum(WidgetAttributeHelper.getInt(attributes, "weightSum"));
+		linearLayout.setWeightSum(WidgetAttributeHelper.getInt(attributes, "weightsum"));
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class LinearLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 		View view = (View) w.asWidget();
 		linearLayout.addView(view);
 		
-		LayoutParams layoutParams = view.getLayoutParams();
+		android.widget.LinearLayout.LayoutParams layoutParams = (android.widget.LinearLayout.LayoutParams) view.getLayoutParams();
 		int widgetWidth = (Integer) w.getAttributeValue("width");
 		int heightWidth = (Integer) w.getAttributeValue("height");
 		if (layoutParams == null) {
@@ -63,6 +63,8 @@ public class LinearLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 			layoutParams.width = widgetWidth;
 			layoutParams.height = heightWidth;
 		}
+		
+		layoutParams.weight = (Integer) w.getAttributeValue("weight");
 	}
 
 	@Override

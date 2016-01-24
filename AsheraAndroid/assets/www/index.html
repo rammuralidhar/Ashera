@@ -4,19 +4,13 @@
             
     </head>
     <body id="root" class="body" width="match_parent" height="wrap_content">
-    <linear-layout orientation="v" width="match_parent" height="match_parent" id="1"> 
-	          	<label  >Hi! asd as sad sada </label>
-	          	<label>Hi1! asd asd asd asd as dsad sa sad sadd sadsad sad sad</label>
-	          	<label>Hi1! asd asd asd asd as dsad sa sad sadd sadsad sad sad</label>
-	          	
-	          	<linear-layout orientation="h" width="match_parent" style="background: yellow"> 
-	          	<label>Hi1! </label>
-	          	<label>Hi1! </label>
-	          	<linear-layout orientation="v" id="90"  width="match_parent"> 
-	          	<label >Hi1! </label>
-	          	<label>Hi1! </label>
+    	<linear-layout orientation="v" weightsum="2" width="match_parent" height="match_parent" id="1"> 
+	          	<linear-layout orientation="h" width="match_parent" weight="1"> 
+	          		<label>Hi1! </label>
 	          	</linear-layout>
-	          	</linear-layout>
-    </linear-layout>
+	          	<relative-layout weight="1" width="match_parent">
+	          		<label align_parentbottom="true">Hi1! </label>
+	          	</relative-layout>
+    	</linear-layout>
     </body>
 </html>

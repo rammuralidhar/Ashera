@@ -43,7 +43,7 @@ public class LabelImpl extends BaseWidget implements ILabel{
 
 	@Override
 	public String[] getAttributes() {
-		return new String [] { "width", "height", "weight"};
+		return new String [] { "width", "height", "weight", "align_parentbottom"};
 	}
 
 	@Override
