@@ -1,10 +1,8 @@
 package com.ashera.android.utils;
 
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 
 import android.content.Context;
@@ -38,26 +36,35 @@ public class HtmlViewerUtils {
 	public static View displayHtml(String assetHtml, Map<String, Object> metadata, Context context) {
 		metadata.put("context", context);
 		String html = ComponentFactory.get().getFileAsset("www/index.html", metadata);
-		StringWriter stringWriter = new StringWriter();
+		
 
-        try {
+        String result = executeFreeMarkerTemplate(html); 
+		IWidget parse = HtmlParser.parse(result, metadata);
+		return ((View) parse.asWidget());
+	}
+
+	private static String executeFreeMarkerTemplate(String html) {
+		StringWriter stringWriter = new StringWriter();
+		try {
             //Load template from source folder
             Template template = new Template("name", new StringReader(html),
                     new Configuration());
             // Console output
             template.process(null, stringWriter);
             stringWriter.flush();
-            stringWriter.close();
+            
              
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         } catch (TemplateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-	
+        	throw new RuntimeException(e);
+		} finally {
+			try {
+				stringWriter.close();
+			} catch (IOException e) {
+			}
+		}
 		
-		IWidget parse = HtmlParser.parse(stringWriter.toString(), metadata);
-		return ((View) parse.asWidget());
+		return stringWriter.toString();
 	}
 }
