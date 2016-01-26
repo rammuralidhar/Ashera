@@ -33,8 +33,7 @@ public class HtmlViewerUtils {
 		ComponentFactory.register(new ComponentImpl());
 	}
 	
-	public static View displayHtml(String assetHtml, Map<String, Object> metadata, Context context) {
-		metadata.put("context", context);
+	public static View displayHtml(String assetHtml, Map<String, Object> metadata) {
 		String html = ComponentFactory.get().getFileAsset("www/index.html", metadata);
 		
 

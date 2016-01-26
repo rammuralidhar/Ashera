@@ -22,31 +22,27 @@ public class HtmlViewerActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Map<String, Object> obj = new HashMap<String, Object>();
-		RelativeLayout root = (RelativeLayout) HtmlViewerUtils.displayHtml(
-				"www/index.html", obj, this);
+		obj.put("context", this);
+
+		// Get the default JockeyImpl
 		final WebView webView = new WebView(this);
 		webView.setWebViewClient(myWebViewClient);
 		webView.setLayoutParams(new RelativeLayout.LayoutParams(0, 0));
-		root.addView(webView);
-		setContentView(root);
 
-		// Get the default JockeyImpl
 		final Jockey jockey = JockeyImpl.getDefault();
-
 		// Configure your webView to be used with Jockey
 		jockey.configure(webView);
-
+		obj.put("jockey", jockey);
+		obj.put("webView", webView);
 		// Pass Jockey your custom WebViewClient
 		// Notice we can do this even after our webView has been configured.
 		jockey.setWebViewClient(myWebViewClient);
-
-		Button b = (Button) root.findViewWithTag("test");
-		b.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				jockey.send("test", webView);
-			}
-		});
+		RelativeLayout root = (RelativeLayout) HtmlViewerUtils.displayHtml(
+				"www/index.html", obj);
+		
+		root.addView(webView);
+		setContentView(root);
+		
 		// Load your webPage
 		webView.loadUrl("file:///android_asset/www/webview.html");
 
