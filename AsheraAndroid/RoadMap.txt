@@ -1,6 +1,6 @@
 V1:
 
-Layout POC/Jockey integration/Phone Gap
+Layout POC/Jockey integration/Phone Gap/Jelly/Velocity Template
 
 v2:
 implement wide range of widgets + listview + grid view + phone gap integration
