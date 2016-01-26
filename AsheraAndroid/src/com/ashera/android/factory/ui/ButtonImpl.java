@@ -20,7 +20,7 @@ public class ButtonImpl extends BaseWidget implements IButton{
 
 	@Override
 	public String[] getAttributes() {
-		return new String[] {"width", "height"};
+		return new String[] {"width", "height", "id"};
 	}
 
 	@Override
@@ -42,6 +42,12 @@ public class ButtonImpl extends BaseWidget implements IButton{
 	@Override
 	public void setText(String text) {
 		button.setText(text);
+	}
+	
+	@Override
+	public void setUpAttribute(Map<String, String> attributes) {
+		super.setUpAttribute(attributes);
+		button.setTag(attributes.get("id"));
 	}
 
 }
