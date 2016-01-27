@@ -6,19 +6,37 @@ import repackaged.android.content.Context;
 import repackaged.android.view.View;
 
 import com.ashera.widget.BaseWidget;
-import com.ashera.widget.factory.ILabel;
+import com.ashera.widget.factory.IButton;
 import com.ashera.widget.factory.IWidget;
 
-public class LabelImpl extends BaseWidget implements ILabel{
+public class ButtonImpl  extends BaseWidget implements IButton{
+	private View button;
 	private Context context;
-	private String text;
-	private Map<String, String> attributes;
-	private View label;
+
+	@Override
+	public IWidget newInstance() {
+		return new ButtonImpl();
+	}
+
+	@Override
+	public String[] getAttributes() {
+		return new String[] {"width", "height", "id", "event_name"};
+	}
+
+	@Override
+	public Object asWidget() {
+		return button;
+	}
 	
+	@Override
+	public Object asNativeWidget() {
+		return nativeAsWidget();
+	}
+
 	@Override
 	public void create(Map<String, Object> metadata) {
 		this.context = (Context) metadata.get("context");
-		label = new View(context) {
+		button = new View(context) {
 			@Override
 			protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 				super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -48,7 +66,7 @@ public class LabelImpl extends BaseWidget implements ILabel{
 		        	height = nativeMeasureHeight(width);
 		        }
 		        
-		        System.out.println("label :" + height + " " + width + " " + getText());
+		        System.out.println("button :" + height + " " + width + " " + getText());
 		        setMeasuredDimension(width, height);
 			
 			}
@@ -65,89 +83,49 @@ public class LabelImpl extends BaseWidget implements ILabel{
 	}
 
 	@Override
-	public Object asWidget() {
-		return label;
-	}
-	
-
-	@Override
-	public Object asNativeWidget() {
-		return nativeAsWidget();
-	}
-
-
-	@Override
 	public String getText() {
-		return text;
+		return null;
 	}
 
 	@Override
 	public void setText(String text) {
-		this.text = text;
 		nativeSetText(text);
-	}
-
-	@Override
-	public IWidget newInstance() {
-		return new LabelImpl();
-	}
-
-	@Override
-	public String[] getAttributes() {
-		return new String [] { "width", "height", "id"};
-	}
-
-	@Override
-	public void setUpStyle(Map<String, String> styles) {
-		super.setUpStyle(styles);
-		
-
-		String color = styles.get("color");
-		
-		if (color != null) {
-//			label.setTextColor(Color.parseColor(color));
-		}
 	}
 	
 	@Override
 	public void setUpAttribute(Map<String, String> attributes) {
 		super.setUpAttribute(attributes);
-		
-		String id = attributes.get("id");
-		if (id != null) {
-			label.setId(id.hashCode());
-		}
+		button.setTag(attributes.get("id"));
 	}
-		
-	public native Object nativeAsWidget()/*-[
-		return self.uiLabel;
-	]-*/;
 	
-	public native void nativeCreate()/*-[
-	    self.uiLabel = [UILabel new];
-	    self.uiLabel.backgroundColor = [UIColor blueColor];
-	    self.uiLabel.numberOfLines = 0;
+	public native Object nativeAsWidget()/*-[
+		return self.uiButton;
 	]-*/;
 
+	public native void nativeCreate()/*-[
+	    self.uiButton = [UIButton new];
+	    self.uiButton.backgroundColor = [UIColor blackColor];
+	]-*/;
+	
 	
 	public native void nativeSetText(String text)/*-[
-		[self.uiLabel setText:text];
+		[self.uiButton setTitle:text forState:UIControlStateNormal];
 	]-*/;
-
+	
 	private native int nativeMeasureWidth()/*-[
 	    CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
-	    CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
+	    CGSize requiredSize = [self.uiButton sizeThatFits:maximumLabelSize];
 	    return ceil(requiredSize.width);
 	]-*/;
-
+	
 	private native int nativeMeasureHeight(int width)/*-[
 	    CGSize maximumLabelSize = CGSizeMake(width,CGFLOAT_MAX);
-	    CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
+	    CGSize requiredSize = [self.uiButton sizeThatFits:maximumLabelSize];
 	    return ceil(requiredSize.height);
 	]-*/;
-
+	
 	public native void nativeMakeFrame(int l, int t, int r, int b)/*-[
-		[self.uiLabel setFrame:CGRectMake(l, t, r-l, b-t)];
+		[self.uiButton setFrame:CGRectMake(l, t, r-l, b-t)];
 	]-*/;
 
 }

@@ -4,6 +4,7 @@
 //
 
 
+#include "ButtonImpl.h"
 #include "Component.h"
 #include "ComponentFactory.h"
 #include "ComponentImpl.h"
@@ -29,7 +30,7 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 @implementation IosHtmlViewerUtils
 
 
-#line 17
+#line 18
 + (id)displayHtmlWithNSString:(NSString *)assetHtml
               withJavaUtilMap:(id<JavaUtilMap>)metadata {
   return IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(assetHtml, metadata);
@@ -48,6 +49,7 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
       ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"label", new_IosLabelImpl_init());
       ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"linear-layout", new_IosLinearLayoutImpl_init());
       ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"body", new_IosHtmlImpl_init());
+      ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"button", new_IosButtonImpl_init());
       ComAsheraComponentFactoryComponentFactory_register__WithComAsheraComponentFactoryComponent_(new_IosComponentImpl_init());
     }
     J2OBJC_SET_INITIALIZED(IosHtmlViewerUtils)
@@ -66,16 +68,16 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 @end
 
 
-#line 17
+#line 18
 id IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(NSString *assetHtml, id<JavaUtilMap> metadata) {
   IosHtmlViewerUtils_initialize();
   
-#line 18
+#line 19
   NSString *html = [((id<ComAsheraComponentFactoryComponent>) nil_chk(ComAsheraComponentFactoryComponentFactory_get())) getFileAssetWithNSString:assetHtml withJavaUtilMap:metadata];
   IosHtmlImpl *widget = (IosHtmlImpl *) check_class_cast(ComAsheraParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(html, metadata), [IosHtmlImpl class]);
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithId:[((IosHtmlImpl *) nil_chk(widget)) getClass]];
   
-#line 22
+#line 23
   [widget measure];
   return widget;
 }

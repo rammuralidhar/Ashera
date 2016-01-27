@@ -11,6 +11,7 @@ public class HtmlViewerUtils {
 		WidgetFactory.register("label", new LabelImpl());
 		WidgetFactory.register("linear-layout", new LinearLayoutImpl());
 		WidgetFactory.register("body", new HtmlImpl()); 
+		WidgetFactory.register("button", new ButtonImpl()); 
 		ComponentFactory.register(new ComponentImpl());
 	}
 	
