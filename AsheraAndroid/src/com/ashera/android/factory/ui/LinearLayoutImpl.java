@@ -33,6 +33,11 @@ public class LinearLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 	public Object asWidget() {
 		return linearLayout;
 	}
+	
+	@Override
+	public Object asNativeWidget() {
+		return linearLayout;
+	}
 
 	@Override
 	public String[] getAttributes() {

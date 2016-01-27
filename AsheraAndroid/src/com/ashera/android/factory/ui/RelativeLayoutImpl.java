@@ -33,6 +33,11 @@ public class RelativeLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 	public Object asWidget() {
 		return relativeLayout;
 	}
+	
+	@Override
+	public Object asNativeWidget() {
+		return relativeLayout;
+	}
 
 	@Override
 	public String[] getAttributes() {

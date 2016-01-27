@@ -32,6 +32,11 @@ public class ButtonImpl extends BaseWidget implements IButton{
 	public Object asWidget() {
 		return button;
 	}
+	
+	@Override
+	public Object asNativeWidget() {
+		return button;
+	}
 
 	@Override
 	public void create(Map<String, Object> metadata) {

@@ -35,6 +35,11 @@ public class RootImpl extends BaseHasWidgets implements IRoot{
 	public Object asWidget() {
 		return relativeLayout;
 	}
+	
+	@Override
+	public Object asNativeWidget() {
+		return relativeLayout;
+	}
 
 	@Override
 	public String[] getAttributes() {

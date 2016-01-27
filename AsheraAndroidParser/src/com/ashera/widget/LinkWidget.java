@@ -52,5 +52,10 @@ public class LinkWidget implements IWidget{
 	public Object getAttributeValue(String attr) {
 		return null;
 	}
+
+	@Override
+	public Object asNativeWidget() {
+		return null;
+	}
 	
 }

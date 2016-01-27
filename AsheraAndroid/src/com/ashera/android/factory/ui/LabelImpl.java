@@ -19,6 +19,11 @@ public class LabelImpl extends BaseWidget implements ILabel{
 	public Object asWidget() {
 		return label;
 	}
+	
+	@Override
+	public Object asNativeWidget() {
+		return label;
+	}
 
 	@Override
 	public void create(Map<String, Object> metadata) {
