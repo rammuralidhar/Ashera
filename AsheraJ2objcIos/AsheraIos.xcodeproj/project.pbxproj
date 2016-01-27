@@ -36,6 +36,7 @@
 		0683A312163DE1C800407C3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0683A311163DE1C800407C3A /* Foundation.framework */; };
 		0683A314163DE1C800407C3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0683A313163DE1C800407C3A /* CoreGraphics.framework */; };
 		273E37521C593ABD002C4B42 /* ButtonImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E37511C593ABD002C4B42 /* ButtonImpl.m */; };
+		273E3F771C594B29002C4B42 /* freemarker in Resources */ = {isa = PBXBuildFile; fileRef = 273E3F761C594B29002C4B42 /* freemarker */; };
 		274720781C4239EF0058F1D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720761C4239EF0058F1D7 /* ViewController.m */; };
 		274720791C4239EF0058F1D7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274720771C4239EF0058F1D7 /* ViewController.xib */; };
 		2747207C1C423A550058F1D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747207B1C423A550058F1D7 /* AppDelegate.m */; };
@@ -140,6 +141,7 @@
 		0683A313163DE1C800407C3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		273E37501C593ABD002C4B42 /* ButtonImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonImpl.h; path = AsheraIosParser/src/ButtonImpl.h; sourceTree = "<group>"; };
 		273E37511C593ABD002C4B42 /* ButtonImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonImpl.m; path = AsheraIosParser/src/ButtonImpl.m; sourceTree = "<group>"; };
+		273E3F761C594B29002C4B42 /* freemarker */ = {isa = PBXFileReference; lastKnownFileType = folder; path = freemarker; sourceTree = "<group>"; };
 		274720751C4239EF0058F1D7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/ViewController.h; sourceTree = "<group>"; };
 		274720761C4239EF0058F1D7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/ViewController.m; sourceTree = "<group>"; };
 		274720771C4239EF0058F1D7 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = Classes/ViewController.xib; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		27E701451C40BCA20043E295 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				273E3F761C594B29002C4B42 /* freemarker */,
 				27E7015A1C40CE1F0043E295 /* www */,
 			);
 			name = assets;
@@ -456,6 +459,7 @@
 				064E071918E90A4B00F5DF6B /* white-score.png in Resources */,
 				064E074718E90BD400F5DF6B /* README in Resources */,
 				064E071318E90A4B00F5DF6B /* black-stone.png in Resources */,
+				273E3F771C594B29002C4B42 /* freemarker in Resources */,
 				064E071718E90A4B00F5DF6B /* reversi@2x.png in Resources */,
 				064E071218E90A4B00F5DF6B /* black-score.png in Resources */,
 				064E071418E90A4B00F5DF6B /* Default-568h@2x.png in Resources */,

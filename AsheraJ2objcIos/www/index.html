@@ -7,7 +7,7 @@
         <linear-layout orientation="v" width="match_parent" height="match_parent" id="1" weightSum="3">
 	          	<label weight="1" id="lb11" >Hi! asd as sad sada </label>
                 <label weight="1" id="lb14" >Hi1! </label>
-                <button width="match_parent" weight="1" id="lb15" >Hi1! </button>
+                <button width="match_parent" weight="1" id="lb15" ><#assign test = '{"foo":"bar", "f":4, "text":"bla bla"}'><#assign m = test?eval>${m.text}  <#-- prints: bar --></button>
         </linear-layout>
     </body>
 </html>

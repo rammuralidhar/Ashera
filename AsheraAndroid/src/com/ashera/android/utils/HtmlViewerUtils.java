@@ -5,7 +5,6 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.Map;
 
-import android.content.Context;
 import android.view.View;
 
 import com.ashera.android.factory.ComponentImpl;

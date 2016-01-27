@@ -16,10 +16,6 @@
 
 package freemarker.template.utility;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.List;
 
 import freemarker.template.TemplateModelException;
@@ -67,36 +63,36 @@ public class Execute implements freemarker.template.TemplateMethodModel {
      * @return the <tt>TemplateModel</tt> produced by the method, or null.
      */
     public Object exec (List arguments) throws TemplateModelException {
-        String aExecute;
-        StringBuffer    aOutputBuffer = new StringBuffer();
-
-        if( arguments.size() < 1 ) {
-            throw new TemplateModelException( "Need an argument to execute" );
-        }
-
-        aExecute = (String)(arguments.get(0));
-
-        try {
-            Process exec = Runtime.getRuntime().exec( aExecute );
-
-            // stdout from the process comes in here
-            InputStream execOut = exec.getInputStream();
-            try {
-                Reader execReader = new InputStreamReader( execOut );
-    
-                char[] buffer = new char[ OUTPUT_BUFFER_SIZE ];
-                int bytes_read = execReader.read( buffer );
-                while( bytes_read > 0 ) {
-                    aOutputBuffer.append( buffer, 0, bytes_read );
-                    bytes_read = execReader.read( buffer );
-                }
-            } finally {
-                execOut.close();
-            }
-        }
-        catch( IOException ioe ) {
-            throw new TemplateModelException( ioe.getMessage() );
-        }
-        return aOutputBuffer.toString();
+//        String aExecute;
+//        StringBuffer    aOutputBuffer = new StringBuffer();
+//
+//        if( arguments.size() < 1 ) {
+//            throw new TemplateModelException( "Need an argument to execute" );
+//        }
+//
+//        aExecute = (String)(arguments.get(0));
+//
+//        try {
+//            Process exec = Runtime.getRuntime().exec( aExecute );
+//
+//            // stdout from the process comes in here
+//            InputStream execOut = exec.getInputStream();
+//            try {
+//                Reader execReader = new InputStreamReader( execOut );
+//    
+//                char[] buffer = new char[ OUTPUT_BUFFER_SIZE ];
+//                int bytes_read = execReader.read( buffer );
+//                while( bytes_read > 0 ) {
+//                    aOutputBuffer.append( buffer, 0, bytes_read );
+//                    bytes_read = execReader.read( buffer );
+//                }
+//            } finally {
+//                execOut.close();
+//            }
+//        }
+//        catch( IOException ioe ) {
+//            throw new TemplateModelException( ioe.getMessage() );
+//        }
+        return "";
     }
 }
