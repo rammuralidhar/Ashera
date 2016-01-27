@@ -40,11 +40,11 @@
     NSError* error = nil;
 //    NSString* path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"assets/www"];
 
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"www/index.html"];
+//    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"www/index.html"];
 
-    NSString *res = [NSString stringWithContentsOfFile: path encoding:NSUTF8StringEncoding error: &error];
+//    NSString *res = [NSString stringWithContentsOfFile: path encoding:NSUTF8StringEncoding error: &error];
 
-    [ComAsheraAndroidParserHtmlHtmlParser parseWithNSString:res withJavaUtilMap:[[JavaUtilHashMap alloc] init]] ;
+//    [ComAsheraAndroidParserHtmlHtmlParser parseWithNSString:res withJavaUtilMap:[[JavaUtilHashMap alloc] init]] ;
     
   return YES;
 }

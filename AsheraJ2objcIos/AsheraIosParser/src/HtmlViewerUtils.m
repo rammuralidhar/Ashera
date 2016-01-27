@@ -25,11 +25,11 @@
 J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 
 
-#line 11
+#line 9
 @implementation IosHtmlViewerUtils
 
 
-#line 19
+#line 17
 + (id)displayHtmlWithNSString:(NSString *)assetHtml
               withJavaUtilMap:(id<JavaUtilMap>)metadata {
   return IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(assetHtml, metadata);
@@ -44,11 +44,11 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
   if (self == [IosHtmlViewerUtils class]) {
     {
       
-#line 13
-      ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"label", IosLabelImpl_class_());
-      ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"linear-layout", IosLinearLayoutImpl_class_());
-      ComAsheraAndroidWidgetFactoryWidgetFactory_register__WithNSString_withIOSClass_(@"html", IosHtmlImpl_class_());
-      ComAsheraAndroidComponentFactoryComponentFactory_register__WithComAsheraAndroidComponentFactoryComponent_(new_IosComponentImpl_init());
+#line 11
+      ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"label", new_IosLabelImpl_init());
+      ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"linear-layout", new_IosLinearLayoutImpl_init());
+      ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"body", new_IosHtmlImpl_init());
+      ComAsheraComponentFactoryComponentFactory_register__WithComAsheraComponentFactoryComponent_(new_IosComponentImpl_init());
     }
     J2OBJC_SET_INITIALIZED(IosHtmlViewerUtils)
   }
@@ -66,16 +66,16 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 @end
 
 
-#line 19
+#line 17
 id IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(NSString *assetHtml, id<JavaUtilMap> metadata) {
   IosHtmlViewerUtils_initialize();
   
-#line 20
-  NSString *html = [((id<ComAsheraAndroidComponentFactoryComponent>) nil_chk(ComAsheraAndroidComponentFactoryComponentFactory_get())) getFileAssetWithNSString:assetHtml withJavaUtilMap:metadata];
-  IosHtmlImpl *widget = (IosHtmlImpl *) check_class_cast(ComAsheraAndroidParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(html, metadata), [IosHtmlImpl class]);
+#line 18
+  NSString *html = [((id<ComAsheraComponentFactoryComponent>) nil_chk(ComAsheraComponentFactoryComponentFactory_get())) getFileAssetWithNSString:assetHtml withJavaUtilMap:metadata];
+  IosHtmlImpl *widget = (IosHtmlImpl *) check_class_cast(ComAsheraParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(html, metadata), [IosHtmlImpl class]);
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithId:[((IosHtmlImpl *) nil_chk(widget)) getClass]];
   
-#line 24
+#line 22
   [widget measure];
   return widget;
 }

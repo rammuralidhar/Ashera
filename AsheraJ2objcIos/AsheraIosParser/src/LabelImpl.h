@@ -6,30 +6,29 @@
 #ifndef _IosLabelImpl_H_
 #define _IosLabelImpl_H_
 
+#include "BaseWidget.h"
 #include "ILabel.h"
 #include "J2ObjC_header.h"
-#include "View.h"
 
-@protocol ComAsheraAndroidWidgetFactoryHasWidgets;
+@class IOSObjectArray;
+@protocol ComAsheraWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 
-@interface IosLabelImpl : RepackagedAndroidViewView < ComAsheraAndroidWidgetFactoryILabel >
+@interface IosLabelImpl : ComAsheraWidgetBaseWidget < ComAsheraWidgetFactoryILabel >
 @property UILabel* uiLabel;
 #pragma mark Public
 
 - (instancetype)init;
 
+- (id)asNativeWidget;
+
 - (id)asWidget;
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
 
-- (jint)getParamHeight;
-
-- (jint)getParamWidth;
+- (IOSObjectArray *)getAttributes;
 
 - (NSString *)getText;
-
-- (jint)getWeigth;
 
 - (id)nativeAsWidget;
 
@@ -42,49 +41,17 @@
 
 - (void)nativeSetTextWithNSString:(NSString *)text;
 
-- (void)setBackgroundColorWithNSString:(NSString *)color;
-
-- (void)setBackgroundImageWithNSString:(NSString *)backgroundImage;
-
-- (void)setColorWithNSString:(NSString *)color;
-
-- (void)setMarginBottomWithNSString:(NSString *)marginBottom;
-
-- (void)setMarginLeftWithNSString:(NSString *)marginLeft;
-
-- (void)setMarginRightWithNSString:(NSString *)marginRight;
-
-- (void)setMarginTopWithNSString:(NSString *)marginTop;
-
-- (void)setOpacityWithFloat:(jfloat)opacity;
-
-- (void)setPaddingBottomWithNSString:(NSString *)paddingBottom;
-
-- (void)setPaddingLeftWithNSString:(NSString *)paddingLeft;
-
-- (void)setPaddingRightWithNSString:(NSString *)paddingRight;
-
-- (void)setPaddingTopWithNSString:(NSString *)paddingTop;
-
-- (void)setParamHeightWithInt:(jint)height;
-
-- (void)setParamWidthWithInt:(jint)width;
-
-- (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
+- (id<ComAsheraWidgetFactoryIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
 
 - (void)setTextWithNSString:(NSString *)text;
 
-- (void)setWeigthWithInt:(jint)weight;
+- (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes;
+
+- (void)setUpStyleWithJavaUtilMap:(id<JavaUtilMap>)styles;
 
 #pragma mark Protected
 
-- (void)onLayoutWithBoolean:(jboolean)changed
-                    withInt:(jint)l
-                    withInt:(jint)t
-                    withInt:(jint)r
-                    withInt:(jint)b;
-
-- (void)onMeasureWithInt:(jint)widthMeasureSpec
+- (void)measureMeWithInt:(jint)widthMeasureSpec
                  withInt:(jint)heightMeasureSpec;
 
 @end

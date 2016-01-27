@@ -11,7 +11,7 @@
 
 @protocol JavaUtilMap;
 
-@interface IosComponentImpl : NSObject < ComAsheraAndroidComponentFactoryComponent >
+@interface IosComponentImpl : NSObject < ComAsheraComponentFactoryComponent >
 
 #pragma mark Public
 

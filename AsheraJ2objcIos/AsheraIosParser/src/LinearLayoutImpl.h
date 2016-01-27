@@ -6,22 +6,23 @@
 #ifndef _IosLinearLayoutImpl_H_
 #define _IosLinearLayoutImpl_H_
 
+#include "BaseHasWidgets.h"
 #include "ILinearLayout.h"
 #include "J2ObjC_header.h"
-#include "LinearLayout.h"
 
-@protocol ComAsheraAndroidWidgetFactoryHasWidgets;
-@protocol ComAsheraAndroidWidgetFactoryIWidget;
-@protocol JavaUtilIterator;
+@class IOSObjectArray;
+@protocol ComAsheraWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 
-@interface IosLinearLayoutImpl : RepackagedAndroidWidgetLinearLayout < ComAsheraAndroidWidgetFactoryILinearLayout >
+@interface IosLinearLayoutImpl : ComAsheraWidgetBaseHasWidgets < ComAsheraWidgetFactoryILinearLayout >
 @property UIView* uiView;
 #pragma mark Public
 
 - (instancetype)init;
 
-- (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
+- (void)addWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)w;
+
+- (id)asNativeWidget;
 
 - (id)asWidget;
 
@@ -29,13 +30,9 @@
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
 
-- (jint)getParamHeight;
+- (IOSObjectArray *)getAttributes;
 
-- (jint)getParamWidth;
-
-- (jint)getWeigth;
-
-- (id<JavaUtilIterator>)iterate;
+- (IOSObjectArray *)getLayoutAttributes;
 
 - (id)nativeAsWidget;
 
@@ -46,49 +43,13 @@
                        withInt:(jint)r
                        withInt:(jint)b;
 
-- (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
+- (id<ComAsheraWidgetFactoryIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
 
-- (void)setBackgroundColorWithNSString:(NSString *)color;
-
-- (void)setBackgroundImageWithNSString:(NSString *)backgroundImage;
-
-- (void)setMarginBottomWithNSString:(NSString *)marginBottom;
-
-- (void)setMarginLeftWithNSString:(NSString *)marginLeft;
-
-- (void)setMarginRightWithNSString:(NSString *)marginRight;
-
-- (void)setMarginTopWithNSString:(NSString *)marginTop;
-
-- (void)setOpacityWithFloat:(jfloat)opacity;
+- (jboolean)removeWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)w;
 
 - (void)setOrientationWithNSString:(NSString *)orientation;
 
-- (void)setPaddingBottomWithNSString:(NSString *)paddingBottom;
-
-- (void)setPaddingLeftWithNSString:(NSString *)paddingLeft;
-
-- (void)setPaddingRightWithNSString:(NSString *)paddingRight;
-
-- (void)setPaddingTopWithNSString:(NSString *)paddingTop;
-
-- (void)setParamHeightWithInt:(jint)height;
-
-- (void)setParamWidthWithInt:(jint)width;
-
-- (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
-
-- (void)setWeightSumWithInt:(jint)weightSum;
-
-- (void)setWeigthWithInt:(jint)weight;
-
-#pragma mark Protected
-
-- (void)onLayoutWithBoolean:(jboolean)changed
-                    withInt:(jint)l
-                    withInt:(jint)t
-                    withInt:(jint)r
-                    withInt:(jint)b;
+- (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes;
 
 @end
 

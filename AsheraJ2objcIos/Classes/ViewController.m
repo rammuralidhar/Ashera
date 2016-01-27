@@ -13,6 +13,7 @@
 #import <AsheraIosParser/WidgetFactory.h>
 #import "HtmlViewerUtils.h"
 #import <IOSClass.h>
+#import <ContextWrapper.h>
 #include <AsheraIosParser/IWidget.h>
 
 @interface ViewController ()
@@ -25,6 +26,7 @@
     [super viewDidLoad];
     
     JavaUtilHashMap* metadata = [JavaUtilHashMap new];
+    [metadata putWithId: @"context" withId: [RepackagedAndroidContentContextWrapper new]];
     [IosHtmlViewerUtils displayHtmlWithNSString:@"www/index.html" withJavaUtilMap: metadata];
 }
 

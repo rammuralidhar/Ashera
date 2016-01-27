@@ -685,38 +685,28 @@
 		270B6D981C3B60F2002CB39A /* UserDataConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6D0A1C3B60F2002CB39A /* UserDataConstants.m */; };
 		270B6D991C3B60F2002CB39A /* ViewCSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6D0C1C3B60F2002CB39A /* ViewCSS.m */; };
 		270B6D9C1C3B6468002CB39A /* TagSoupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B6D9B1C3B6468002CB39A /* TagSoupParser.m */; };
-		274720AB1C423FC00058F1D7 /* AttributeSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747207E1C423FC00058F1D7 /* AttributeSetter.m */; };
-		274720AC1C423FC00058F1D7 /* AttributeSetterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720801C423FC00058F1D7 /* AttributeSetterFactory.m */; };
-		274720AD1C423FC00058F1D7 /* BaseAttributeSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720821C423FC00058F1D7 /* BaseAttributeSetter.m */; };
+		273E37471C592FDD002C4B42 /* BaseHasWidgets.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E373E1C592FDD002C4B42 /* BaseHasWidgets.m */; };
+		273E37481C592FDD002C4B42 /* BaseWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E37401C592FDD002C4B42 /* BaseWidget.m */; };
+		273E37491C592FDD002C4B42 /* ILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E37411C592FDD002C4B42 /* ILabel.m */; };
+		273E374A1C592FDD002C4B42 /* ILinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E37421C592FDD002C4B42 /* ILinearLayout.m */; };
+		273E374B1C592FDD002C4B42 /* IRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E37441C592FDD002C4B42 /* IRoot.m */; };
+		273E374C1C592FDD002C4B42 /* LinkWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E37461C592FDD002C4B42 /* LinkWidget.m */; };
+		273E374F1C59302D002C4B42 /* WidgetAttributeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E374E1C59302D002C4B42 /* WidgetAttributeHelper.m */; };
 		274720AE1C423FC00058F1D7 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720841C423FC00058F1D7 /* Component.m */; };
 		274720AF1C423FC00058F1D7 /* ComponentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720861C423FC00058F1D7 /* ComponentFactory.m */; };
-		274720B01C423FC00058F1D7 /* DefaultAttributeSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720881C423FC00058F1D7 /* DefaultAttributeSetter.m */; };
 		274720B11C423FC00058F1D7 /* HasText.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747208A1C423FC00058F1D7 /* HasText.m */; };
 		274720B21C423FC00058F1D7 /* HasWidgets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747208C1C423FC00058F1D7 /* HasWidgets.m */; };
 		274720B31C423FC00058F1D7 /* HtmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747208E1C423FC00058F1D7 /* HtmlParser.m */; };
 		274720B41C423FC00058F1D7 /* HtmlSaxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720901C423FC00058F1D7 /* HtmlSaxHandler.m */; };
-		274720B51C423FC00058F1D7 /* IBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720921C423FC00058F1D7 /* IBody.m */; };
 		274720B61C423FC00058F1D7 /* IButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720941C423FC00058F1D7 /* IButton.m */; };
-		274720BA1C423FC00058F1D7 /* ILink.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747209C1C423FC00058F1D7 /* ILink.m */; };
-		274720BB1C423FC00058F1D7 /* IStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747209E1C423FC00058F1D7 /* IStyle.m */; };
 		274720BC1C423FC00058F1D7 /* IsWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720A01C423FC00058F1D7 /* IsWidget.m */; };
 		274720BD1C423FC00058F1D7 /* IWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720A21C423FC00058F1D7 /* IWidget.m */; };
-		274720BE1C423FC00058F1D7 /* LabelSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720A41C423FC00058F1D7 /* LabelSetter.m */; };
-		274720BF1C423FC00058F1D7 /* LinearlayoutSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720A61C423FC00058F1D7 /* LinearlayoutSetter.m */; };
 		274720C01C423FC00058F1D7 /* PageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720A81C423FC00058F1D7 /* PageData.m */; };
 		274720C11C423FC00058F1D7 /* WidgetFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720AA1C423FC00058F1D7 /* WidgetFactory.m */; };
-		274720C21C423FD80058F1D7 /* AttributeSetter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747207D1C423FC00058F1D7 /* AttributeSetter.h */; };
-		274720C31C423FD80058F1D7 /* AttributeSetter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747207E1C423FC00058F1D7 /* AttributeSetter.m */; };
-		274720C41C423FD80058F1D7 /* AttributeSetterFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747207F1C423FC00058F1D7 /* AttributeSetterFactory.h */; };
-		274720C51C423FD80058F1D7 /* AttributeSetterFactory.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720801C423FC00058F1D7 /* AttributeSetterFactory.m */; };
-		274720C61C423FD80058F1D7 /* BaseAttributeSetter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720811C423FC00058F1D7 /* BaseAttributeSetter.h */; };
-		274720C71C423FD80058F1D7 /* BaseAttributeSetter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720821C423FC00058F1D7 /* BaseAttributeSetter.m */; };
 		274720C81C423FD80058F1D7 /* Component.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720831C423FC00058F1D7 /* Component.h */; };
 		274720C91C423FD80058F1D7 /* Component.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720841C423FC00058F1D7 /* Component.m */; };
 		274720CA1C423FD80058F1D7 /* ComponentFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720851C423FC00058F1D7 /* ComponentFactory.h */; };
 		274720CB1C423FD80058F1D7 /* ComponentFactory.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720861C423FC00058F1D7 /* ComponentFactory.m */; };
-		274720CC1C423FD80058F1D7 /* DefaultAttributeSetter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720871C423FC00058F1D7 /* DefaultAttributeSetter.h */; };
-		274720CD1C423FD80058F1D7 /* DefaultAttributeSetter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720881C423FC00058F1D7 /* DefaultAttributeSetter.m */; };
 		274720CE1C423FD80058F1D7 /* HasText.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720891C423FC00058F1D7 /* HasText.h */; };
 		274720CF1C423FD80058F1D7 /* HasText.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747208A1C423FC00058F1D7 /* HasText.m */; };
 		274720D01C423FD80058F1D7 /* HasWidgets.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747208B1C423FC00058F1D7 /* HasWidgets.h */; };
@@ -725,25 +715,14 @@
 		274720D31C423FD80058F1D7 /* HtmlParser.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747208E1C423FC00058F1D7 /* HtmlParser.m */; };
 		274720D41C423FD80058F1D7 /* HtmlSaxHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747208F1C423FC00058F1D7 /* HtmlSaxHandler.h */; };
 		274720D51C423FD80058F1D7 /* HtmlSaxHandler.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720901C423FC00058F1D7 /* HtmlSaxHandler.m */; };
-		274720D61C423FD80058F1D7 /* IBody.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720911C423FC00058F1D7 /* IBody.h */; };
-		274720D71C423FD80058F1D7 /* IBody.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720921C423FC00058F1D7 /* IBody.m */; };
 		274720D81C423FD80058F1D7 /* IButton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720931C423FC00058F1D7 /* IButton.h */; };
 		274720D91C423FD80058F1D7 /* IButton.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720941C423FC00058F1D7 /* IButton.m */; };
-		274720DA1C423FD80058F1D7 /* IHtml.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720951C423FC00058F1D7 /* IHtml.h */; };
 		274720DC1C423FD80058F1D7 /* ILabel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720971C423FC00058F1D7 /* ILabel.h */; };
 		274720DE1C423FD80058F1D7 /* ILinearLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720991C423FC00058F1D7 /* ILinearLayout.h */; };
-		274720E01C423FD80058F1D7 /* ILink.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209B1C423FC00058F1D7 /* ILink.h */; };
-		274720E11C423FD80058F1D7 /* ILink.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209C1C423FC00058F1D7 /* ILink.m */; };
-		274720E21C423FD80058F1D7 /* IStyle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209D1C423FC00058F1D7 /* IStyle.h */; };
-		274720E31C423FD80058F1D7 /* IStyle.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209E1C423FC00058F1D7 /* IStyle.m */; };
 		274720E41C423FD80058F1D7 /* IsWidget.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2747209F1C423FC00058F1D7 /* IsWidget.h */; };
 		274720E51C423FD80058F1D7 /* IsWidget.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A01C423FC00058F1D7 /* IsWidget.m */; };
 		274720E61C423FD80058F1D7 /* IWidget.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A11C423FC00058F1D7 /* IWidget.h */; };
 		274720E71C423FD80058F1D7 /* IWidget.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A21C423FC00058F1D7 /* IWidget.m */; };
-		274720E81C423FD80058F1D7 /* LabelSetter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A31C423FC00058F1D7 /* LabelSetter.h */; };
-		274720E91C423FD80058F1D7 /* LabelSetter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A41C423FC00058F1D7 /* LabelSetter.m */; };
-		274720EA1C423FD80058F1D7 /* LinearlayoutSetter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A51C423FC00058F1D7 /* LinearlayoutSetter.h */; };
-		274720EB1C423FD80058F1D7 /* LinearlayoutSetter.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A61C423FC00058F1D7 /* LinearlayoutSetter.m */; };
 		274720EC1C423FD80058F1D7 /* PageData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A71C423FC00058F1D7 /* PageData.h */; };
 		274720ED1C423FD80058F1D7 /* PageData.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A81C423FC00058F1D7 /* PageData.m */; };
 		274720EE1C423FD80058F1D7 /* WidgetFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 274720A91C423FC00058F1D7 /* WidgetFactory.h */; };
@@ -1270,18 +1249,10 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				274720C21C423FD80058F1D7 /* AttributeSetter.h in CopyFiles */,
-				274720C31C423FD80058F1D7 /* AttributeSetter.m in CopyFiles */,
-				274720C41C423FD80058F1D7 /* AttributeSetterFactory.h in CopyFiles */,
-				274720C51C423FD80058F1D7 /* AttributeSetterFactory.m in CopyFiles */,
-				274720C61C423FD80058F1D7 /* BaseAttributeSetter.h in CopyFiles */,
-				274720C71C423FD80058F1D7 /* BaseAttributeSetter.m in CopyFiles */,
 				274720C81C423FD80058F1D7 /* Component.h in CopyFiles */,
 				274720C91C423FD80058F1D7 /* Component.m in CopyFiles */,
 				274720CA1C423FD80058F1D7 /* ComponentFactory.h in CopyFiles */,
 				274720CB1C423FD80058F1D7 /* ComponentFactory.m in CopyFiles */,
-				274720CC1C423FD80058F1D7 /* DefaultAttributeSetter.h in CopyFiles */,
-				274720CD1C423FD80058F1D7 /* DefaultAttributeSetter.m in CopyFiles */,
 				274720CE1C423FD80058F1D7 /* HasText.h in CopyFiles */,
 				274720CF1C423FD80058F1D7 /* HasText.m in CopyFiles */,
 				274720D01C423FD80058F1D7 /* HasWidgets.h in CopyFiles */,
@@ -1290,25 +1261,14 @@
 				274720D31C423FD80058F1D7 /* HtmlParser.m in CopyFiles */,
 				274720D41C423FD80058F1D7 /* HtmlSaxHandler.h in CopyFiles */,
 				274720D51C423FD80058F1D7 /* HtmlSaxHandler.m in CopyFiles */,
-				274720D61C423FD80058F1D7 /* IBody.h in CopyFiles */,
-				274720D71C423FD80058F1D7 /* IBody.m in CopyFiles */,
 				274720D81C423FD80058F1D7 /* IButton.h in CopyFiles */,
 				274720D91C423FD80058F1D7 /* IButton.m in CopyFiles */,
-				274720DA1C423FD80058F1D7 /* IHtml.h in CopyFiles */,
 				274720DC1C423FD80058F1D7 /* ILabel.h in CopyFiles */,
 				274720DE1C423FD80058F1D7 /* ILinearLayout.h in CopyFiles */,
-				274720E01C423FD80058F1D7 /* ILink.h in CopyFiles */,
-				274720E11C423FD80058F1D7 /* ILink.m in CopyFiles */,
-				274720E21C423FD80058F1D7 /* IStyle.h in CopyFiles */,
-				274720E31C423FD80058F1D7 /* IStyle.m in CopyFiles */,
 				274720E41C423FD80058F1D7 /* IsWidget.h in CopyFiles */,
 				274720E51C423FD80058F1D7 /* IsWidget.m in CopyFiles */,
 				274720E61C423FD80058F1D7 /* IWidget.h in CopyFiles */,
 				274720E71C423FD80058F1D7 /* IWidget.m in CopyFiles */,
-				274720E81C423FD80058F1D7 /* LabelSetter.h in CopyFiles */,
-				274720E91C423FD80058F1D7 /* LabelSetter.m in CopyFiles */,
-				274720EA1C423FD80058F1D7 /* LinearlayoutSetter.h in CopyFiles */,
-				274720EB1C423FD80058F1D7 /* LinearlayoutSetter.m in CopyFiles */,
 				274720EC1C423FD80058F1D7 /* PageData.h in CopyFiles */,
 				274720ED1C423FD80058F1D7 /* PageData.m in CopyFiles */,
 				274720EE1C423FD80058F1D7 /* WidgetFactory.h in CopyFiles */,
@@ -2616,18 +2576,22 @@
 		270B6D0C1C3B60F2002CB39A /* ViewCSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCSS.m; sourceTree = "<group>"; };
 		270B6D9A1C3B6468002CB39A /* TagSoupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagSoupParser.h; sourceTree = "<group>"; };
 		270B6D9B1C3B6468002CB39A /* TagSoupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagSoupParser.m; sourceTree = "<group>"; };
-		2747207D1C423FC00058F1D7 /* AttributeSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeSetter.h; sourceTree = "<group>"; };
-		2747207E1C423FC00058F1D7 /* AttributeSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeSetter.m; sourceTree = "<group>"; };
-		2747207F1C423FC00058F1D7 /* AttributeSetterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeSetterFactory.h; sourceTree = "<group>"; };
-		274720801C423FC00058F1D7 /* AttributeSetterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeSetterFactory.m; sourceTree = "<group>"; };
-		274720811C423FC00058F1D7 /* BaseAttributeSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAttributeSetter.h; sourceTree = "<group>"; };
-		274720821C423FC00058F1D7 /* BaseAttributeSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAttributeSetter.m; sourceTree = "<group>"; };
+		273E373D1C592FDD002C4B42 /* BaseHasWidgets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHasWidgets.h; sourceTree = "<group>"; };
+		273E373E1C592FDD002C4B42 /* BaseHasWidgets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHasWidgets.m; sourceTree = "<group>"; };
+		273E373F1C592FDD002C4B42 /* BaseWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWidget.h; sourceTree = "<group>"; };
+		273E37401C592FDD002C4B42 /* BaseWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWidget.m; sourceTree = "<group>"; };
+		273E37411C592FDD002C4B42 /* ILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILabel.m; sourceTree = "<group>"; };
+		273E37421C592FDD002C4B42 /* ILinearLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILinearLayout.m; sourceTree = "<group>"; };
+		273E37431C592FDD002C4B42 /* IRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRoot.h; sourceTree = "<group>"; };
+		273E37441C592FDD002C4B42 /* IRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRoot.m; sourceTree = "<group>"; };
+		273E37451C592FDD002C4B42 /* LinkWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkWidget.h; sourceTree = "<group>"; };
+		273E37461C592FDD002C4B42 /* LinkWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkWidget.m; sourceTree = "<group>"; };
+		273E374D1C59302D002C4B42 /* WidgetAttributeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetAttributeHelper.h; sourceTree = "<group>"; };
+		273E374E1C59302D002C4B42 /* WidgetAttributeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WidgetAttributeHelper.m; sourceTree = "<group>"; };
 		274720831C423FC00058F1D7 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		274720841C423FC00058F1D7 /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Component.m; sourceTree = "<group>"; };
 		274720851C423FC00058F1D7 /* ComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentFactory.h; sourceTree = "<group>"; };
 		274720861C423FC00058F1D7 /* ComponentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentFactory.m; sourceTree = "<group>"; };
-		274720871C423FC00058F1D7 /* DefaultAttributeSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultAttributeSetter.h; sourceTree = "<group>"; };
-		274720881C423FC00058F1D7 /* DefaultAttributeSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultAttributeSetter.m; sourceTree = "<group>"; };
 		274720891C423FC00058F1D7 /* HasText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HasText.h; sourceTree = "<group>"; };
 		2747208A1C423FC00058F1D7 /* HasText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HasText.m; sourceTree = "<group>"; };
 		2747208B1C423FC00058F1D7 /* HasWidgets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HasWidgets.h; sourceTree = "<group>"; };
@@ -2636,25 +2600,14 @@
 		2747208E1C423FC00058F1D7 /* HtmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlParser.m; sourceTree = "<group>"; };
 		2747208F1C423FC00058F1D7 /* HtmlSaxHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlSaxHandler.h; sourceTree = "<group>"; };
 		274720901C423FC00058F1D7 /* HtmlSaxHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlSaxHandler.m; sourceTree = "<group>"; };
-		274720911C423FC00058F1D7 /* IBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBody.h; sourceTree = "<group>"; };
-		274720921C423FC00058F1D7 /* IBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBody.m; sourceTree = "<group>"; };
 		274720931C423FC00058F1D7 /* IButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IButton.h; sourceTree = "<group>"; };
 		274720941C423FC00058F1D7 /* IButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IButton.m; sourceTree = "<group>"; };
-		274720951C423FC00058F1D7 /* IHtml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHtml.h; sourceTree = "<group>"; };
 		274720971C423FC00058F1D7 /* ILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILabel.h; sourceTree = "<group>"; };
 		274720991C423FC00058F1D7 /* ILinearLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILinearLayout.h; sourceTree = "<group>"; };
-		2747209B1C423FC00058F1D7 /* ILink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILink.h; sourceTree = "<group>"; };
-		2747209C1C423FC00058F1D7 /* ILink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILink.m; sourceTree = "<group>"; };
-		2747209D1C423FC00058F1D7 /* IStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IStyle.h; sourceTree = "<group>"; };
-		2747209E1C423FC00058F1D7 /* IStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IStyle.m; sourceTree = "<group>"; };
 		2747209F1C423FC00058F1D7 /* IsWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsWidget.h; sourceTree = "<group>"; };
 		274720A01C423FC00058F1D7 /* IsWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsWidget.m; sourceTree = "<group>"; };
 		274720A11C423FC00058F1D7 /* IWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWidget.h; sourceTree = "<group>"; };
 		274720A21C423FC00058F1D7 /* IWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWidget.m; sourceTree = "<group>"; };
-		274720A31C423FC00058F1D7 /* LabelSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelSetter.h; sourceTree = "<group>"; };
-		274720A41C423FC00058F1D7 /* LabelSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelSetter.m; sourceTree = "<group>"; };
-		274720A51C423FC00058F1D7 /* LinearlayoutSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearlayoutSetter.h; sourceTree = "<group>"; };
-		274720A61C423FC00058F1D7 /* LinearlayoutSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinearlayoutSetter.m; sourceTree = "<group>"; };
 		274720A71C423FC00058F1D7 /* PageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageData.h; sourceTree = "<group>"; };
 		274720A81C423FC00058F1D7 /* PageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageData.m; sourceTree = "<group>"; };
 		274720A91C423FC00058F1D7 /* WidgetFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetFactory.h; sourceTree = "<group>"; };
@@ -3255,18 +3208,22 @@
 		2774637B1BDB318200BAFD75 /* AsheraIosParser */ = {
 			isa = PBXGroup;
 			children = (
-				2747207D1C423FC00058F1D7 /* AttributeSetter.h */,
-				2747207E1C423FC00058F1D7 /* AttributeSetter.m */,
-				2747207F1C423FC00058F1D7 /* AttributeSetterFactory.h */,
-				274720801C423FC00058F1D7 /* AttributeSetterFactory.m */,
-				274720811C423FC00058F1D7 /* BaseAttributeSetter.h */,
-				274720821C423FC00058F1D7 /* BaseAttributeSetter.m */,
+				273E374D1C59302D002C4B42 /* WidgetAttributeHelper.h */,
+				273E374E1C59302D002C4B42 /* WidgetAttributeHelper.m */,
+				273E373D1C592FDD002C4B42 /* BaseHasWidgets.h */,
+				273E373E1C592FDD002C4B42 /* BaseHasWidgets.m */,
+				273E373F1C592FDD002C4B42 /* BaseWidget.h */,
+				273E37401C592FDD002C4B42 /* BaseWidget.m */,
+				273E37411C592FDD002C4B42 /* ILabel.m */,
+				273E37421C592FDD002C4B42 /* ILinearLayout.m */,
+				273E37431C592FDD002C4B42 /* IRoot.h */,
+				273E37441C592FDD002C4B42 /* IRoot.m */,
+				273E37451C592FDD002C4B42 /* LinkWidget.h */,
+				273E37461C592FDD002C4B42 /* LinkWidget.m */,
 				274720831C423FC00058F1D7 /* Component.h */,
 				274720841C423FC00058F1D7 /* Component.m */,
 				274720851C423FC00058F1D7 /* ComponentFactory.h */,
 				274720861C423FC00058F1D7 /* ComponentFactory.m */,
-				274720871C423FC00058F1D7 /* DefaultAttributeSetter.h */,
-				274720881C423FC00058F1D7 /* DefaultAttributeSetter.m */,
 				274720891C423FC00058F1D7 /* HasText.h */,
 				2747208A1C423FC00058F1D7 /* HasText.m */,
 				2747208B1C423FC00058F1D7 /* HasWidgets.h */,
@@ -3275,25 +3232,14 @@
 				2747208E1C423FC00058F1D7 /* HtmlParser.m */,
 				2747208F1C423FC00058F1D7 /* HtmlSaxHandler.h */,
 				274720901C423FC00058F1D7 /* HtmlSaxHandler.m */,
-				274720911C423FC00058F1D7 /* IBody.h */,
-				274720921C423FC00058F1D7 /* IBody.m */,
 				274720931C423FC00058F1D7 /* IButton.h */,
 				274720941C423FC00058F1D7 /* IButton.m */,
-				274720951C423FC00058F1D7 /* IHtml.h */,
 				274720971C423FC00058F1D7 /* ILabel.h */,
 				274720991C423FC00058F1D7 /* ILinearLayout.h */,
-				2747209B1C423FC00058F1D7 /* ILink.h */,
-				2747209C1C423FC00058F1D7 /* ILink.m */,
-				2747209D1C423FC00058F1D7 /* IStyle.h */,
-				2747209E1C423FC00058F1D7 /* IStyle.m */,
 				2747209F1C423FC00058F1D7 /* IsWidget.h */,
 				274720A01C423FC00058F1D7 /* IsWidget.m */,
 				274720A11C423FC00058F1D7 /* IWidget.h */,
 				274720A21C423FC00058F1D7 /* IWidget.m */,
-				274720A31C423FC00058F1D7 /* LabelSetter.h */,
-				274720A41C423FC00058F1D7 /* LabelSetter.m */,
-				274720A51C423FC00058F1D7 /* LinearlayoutSetter.h */,
-				274720A61C423FC00058F1D7 /* LinearlayoutSetter.m */,
 				274720A71C423FC00058F1D7 /* PageData.h */,
 				274720A81C423FC00058F1D7 /* PageData.m */,
 				274720A91C423FC00058F1D7 /* WidgetFactory.h */,
@@ -3838,6 +3784,7 @@
 				2708F8261C39963200FFB46F /* AccessibilityIterators.m in Sources */,
 				2708F8271C39963200FFB46F /* AccessibilityManager.h in Sources */,
 				2708F8281C39963200FFB46F /* AccessibilityManager.m in Sources */,
+				273E37491C592FDD002C4B42 /* ILabel.m in Sources */,
 				2708F8291C39963200FFB46F /* AccessibilityNodeInfo.h in Sources */,
 				2708F82A1C39963200FFB46F /* AccessibilityNodeInfo.m in Sources */,
 				2708F82B1C39963200FFB46F /* AccessibilityNodeProvider.h in Sources */,
@@ -3901,6 +3848,7 @@
 				2708F85A1C39963200FFB46F /* Base64OutputStream.m in Sources */,
 				270B6D411C3B60F2002CB39A /* CSSUnknownRule.m in Sources */,
 				2708F85D1C39963200FFB46F /* Binder.h in Sources */,
+				273E374C1C592FDD002C4B42 /* LinkWidget.m in Sources */,
 				2708F85E1C39963200FFB46F /* Binder.m in Sources */,
 				2708F85F1C39963200FFB46F /* BinderThread.h in Sources */,
 				270B6D991C3B60F2002CB39A /* ViewCSS.m in Sources */,
@@ -3948,7 +3896,6 @@
 				2708F8801C39963200FFB46F /* ColorRes.m in Sources */,
 				2708F8811C39963200FFB46F /* ColorStateList.h in Sources */,
 				2708F8821C39963200FFB46F /* ColorStateList.m in Sources */,
-				274720AB1C423FC00058F1D7 /* AttributeSetter.m in Sources */,
 				2708F8831C39963200FFB46F /* Config.h in Sources */,
 				2708F8841C39963200FFB46F /* Config.m in Sources */,
 				2708F8851C39963200FFB46F /* Configuration.h in Sources */,
@@ -3990,6 +3937,7 @@
 				2708F8A51C39963200FFB46F /* EmptyArray.h in Sources */,
 				2708F8A61C39963200FFB46F /* EmptyArray.m in Sources */,
 				2708F8A71C39963200FFB46F /* EventLogTags.h in Sources */,
+				273E374A1C592FDD002C4B42 /* ILinearLayout.m in Sources */,
 				2708F8A81C39963200FFB46F /* EventLogTags.m in Sources */,
 				2708F8A91C39963200FFB46F /* ExceptionUtils.h in Sources */,
 				270B6D4C1C3B60F2002CB39A /* DocumentStyle.m in Sources */,
@@ -4016,7 +3964,6 @@
 				2708F8BA1C39963200FFB46F /* FractionRes.m in Sources */,
 				2708F8BB1C39963200FFB46F /* FrameLayout.h in Sources */,
 				2708F8BC1C39963200FFB46F /* FrameLayout.m in Sources */,
-				274720AC1C423FC00058F1D7 /* AttributeSetterFactory.m in Sources */,
 				2708F8BD1C39963200FFB46F /* GhostView.h in Sources */,
 				270B6D4B1C3B60F2002CB39A /* DocumentHandlerExt.m in Sources */,
 				2708F8BE1C39963200FFB46F /* GhostView.m in Sources */,
@@ -4084,7 +4031,6 @@
 				2708F8EB1C39963200FFB46F /* IntegerRes.h in Sources */,
 				2708F8EC1C39963200FFB46F /* IntegerRes.m in Sources */,
 				2708F8ED1C39963300FFB46F /* Intent.h in Sources */,
-				274720B01C423FC00058F1D7 /* DefaultAttributeSetter.m in Sources */,
 				2708F8EE1C39963300FFB46F /* Intent.m in Sources */,
 				2708F8EF1C39963300FFB46F /* Interpolator.h in Sources */,
 				270B6D141C3B60F2002CB39A /* CachedCSSParser.m in Sources */,
@@ -4100,7 +4046,6 @@
 				2708F8F91C39963300FFB46F /* IWindowId.h in Sources */,
 				2708F8FA1C39963300FFB46F /* IWindowId.m in Sources */,
 				2708F8FB1C39963300FFB46F /* IWindowSession.h in Sources */,
-				274720BB1C423FC00058F1D7 /* IStyle.m in Sources */,
 				2708F8FC1C39963300FFB46F /* IWindowSession.m in Sources */,
 				2708F8FD1C39963300FFB46F /* KeyEvent.h in Sources */,
 				2708F8FE1C39963300FFB46F /* KeyEvent.m in Sources */,
@@ -4130,7 +4075,6 @@
 				2708F9101C39963300FFB46F /* LocalLog.m in Sources */,
 				2708F9111C39963300FFB46F /* Log.h in Sources */,
 				2708F9121C39963300FFB46F /* Log.m in Sources */,
-				274720BE1C423FC00058F1D7 /* LabelSetter.m in Sources */,
 				2708F9131C39963300FFB46F /* LogPrinter.h in Sources */,
 				2708F9141C39963300FFB46F /* LogPrinter.m in Sources */,
 				2708F9151C39963300FFB46F /* LongArray.h in Sources */,
@@ -4144,6 +4088,7 @@
 				2708F91A1C39963300FFB46F /* LongSparseLongArray.m in Sources */,
 				2708F91B1C39963300FFB46F /* LruCache.h in Sources */,
 				2708F91C1C39963300FFB46F /* LruCache.m in Sources */,
+				273E374B1C592FDD002C4B42 /* IRoot.m in Sources */,
 				2708F91D1C39963300FFB46F /* MainThread.h in Sources */,
 				2708F91E1C39963300FFB46F /* MainThread.m in Sources */,
 				2708F91F1C39963300FFB46F /* MalformedJsonException.h in Sources */,
@@ -4190,7 +4135,6 @@
 				2708F9401C39963300FFB46F /* Outline.m in Sources */,
 				2708F9411C39963300FFB46F /* PackageManager.h in Sources */,
 				2708F9421C39963300FFB46F /* PackageManager.m in Sources */,
-				274720BA1C423FC00058F1D7 /* ILink.m in Sources */,
 				2708F9431C39963300FFB46F /* Paint.h in Sources */,
 				274720C11C423FC00058F1D7 /* WidgetFactory.m in Sources */,
 				2708F9441C39963300FFB46F /* Paint.m in Sources */,
@@ -4319,6 +4263,7 @@
 				2708F9A41C39963300FFB46F /* SmileyParser.m in Sources */,
 				2708F9A51C39963300FFB46F /* SmileyResources.h in Sources */,
 				270B6D981C3B60F2002CB39A /* UserDataConstants.m in Sources */,
+				273E37471C592FDD002C4B42 /* BaseHasWidgets.m in Sources */,
 				2708F9A61C39963300FFB46F /* SmileyResources.m in Sources */,
 				270B6D861C3B60F2002CB39A /* SACParserCSS21TokenManager.m in Sources */,
 				2708F9A71C39963300FFB46F /* SoundEffectConstants.h in Sources */,
@@ -4346,7 +4291,6 @@
 				2708F9B51C39963300FFB46F /* SparseLongArray.h in Sources */,
 				2708F9B61C39963300FFB46F /* SparseLongArray.m in Sources */,
 				2708F9B71C39963300FFB46F /* Spline.h in Sources */,
-				274720B51C423FC00058F1D7 /* IBody.m in Sources */,
 				2708F9B81C39963300FFB46F /* Spline.m in Sources */,
 				2708F9B91C39963300FFB46F /* StateListAnimator.h in Sources */,
 				2708F9BA1C39963300FFB46F /* StateListAnimator.m in Sources */,
@@ -4354,6 +4298,7 @@
 				270B6D2E1C3B60F2002CB39A /* CSSMediaRule.m in Sources */,
 				270B6D721C3B60F2002CB39A /* Property.m in Sources */,
 				2708F9BB1C39963300FFB46F /* StateSet.h in Sources */,
+				273E37481C592FDD002C4B42 /* BaseWidget.m in Sources */,
 				270B6D8C1C3B60F2002CB39A /* SelectorFactoryImpl.m in Sources */,
 				270B6D7F1C3B60F2002CB39A /* SACParserCSS2Constants.m in Sources */,
 				2708F9BC1C39963300FFB46F /* StateSet.m in Sources */,
@@ -4413,7 +4358,6 @@
 				2708F9E51C39963300FFB46F /* TypedArrayWrapper.h in Sources */,
 				270B6D3D1C3B60F2002CB39A /* CSSStyleRuleImpl.m in Sources */,
 				2708F9E61C39963300FFB46F /* TypedArrayWrapper.m in Sources */,
-				274720AD1C423FC00058F1D7 /* BaseAttributeSetter.m in Sources */,
 				2708F9E71C39963300FFB46F /* TypedValue.h in Sources */,
 				2708F9E81C39963300FFB46F /* TypedValue.m in Sources */,
 				2708F9E91C39963300FFB46F /* UiThread.h in Sources */,
@@ -4428,7 +4372,6 @@
 				2708F9EF1C39963300FFB46F /* ViewDebug.h in Sources */,
 				2708F9F01C39963300FFB46F /* ViewDebug.m in Sources */,
 				2708F9F11C39963300FFB46F /* ViewGroup.h in Sources */,
-				274720BF1C423FC00058F1D7 /* LinearlayoutSetter.m in Sources */,
 				2708F9F21C39963300FFB46F /* ViewGroup.m in Sources */,
 				2708F9F31C39963300FFB46F /* ViewGroupOverlay.h in Sources */,
 				270B6D6A1C3B60F2002CB39A /* Output.m in Sources */,
@@ -4443,6 +4386,7 @@
 				2708F9FA1C39963300FFB46F /* ViewOutlineProvider.m in Sources */,
 				2708F9FB1C39963300FFB46F /* ViewOverlay.h in Sources */,
 				270B6D7A1C3B60F2002CB39A /* SACMediaListImpl.m in Sources */,
+				273E374F1C59302D002C4B42 /* WidgetAttributeHelper.m in Sources */,
 				2708F9FC1C39963300FFB46F /* ViewOverlay.m in Sources */,
 				270B6D381C3B60F2002CB39A /* CSSRuleList.m in Sources */,
 				2708F9FD1C39963300FFB46F /* ViewParent.h in Sources */,

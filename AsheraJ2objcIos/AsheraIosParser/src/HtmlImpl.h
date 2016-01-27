@@ -6,22 +6,23 @@
 #ifndef _IosHtmlImpl_H_
 #define _IosHtmlImpl_H_
 
-#include "FrameLayout.h"
-#include "IHtml.h"
+#include "BaseHasWidgets.h"
+#include "IRoot.h"
 #include "J2ObjC_header.h"
 
-@protocol ComAsheraAndroidWidgetFactoryHasWidgets;
-@protocol ComAsheraAndroidWidgetFactoryIWidget;
-@protocol JavaUtilIterator;
+@class IOSObjectArray;
+@protocol ComAsheraWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 
-@interface IosHtmlImpl : RepackagedAndroidWidgetFrameLayout < ComAsheraAndroidWidgetFactoryIHtml >
+@interface IosHtmlImpl : ComAsheraWidgetBaseHasWidgets < ComAsheraWidgetFactoryIRoot >
 @property UIView* htmlView;
 #pragma mark Public
 
 - (instancetype)init;
 
-- (void)addWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
+- (void)addWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)w;
+
+- (id)asNativeWidget;
 
 - (id)asWidget;
 
@@ -29,13 +30,9 @@
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
 
-- (jint)getParamHeight;
+- (IOSObjectArray *)getAttributes;
 
-- (jint)getParamWidth;
-
-- (jint)getWeigth;
-
-- (id<JavaUtilIterator>)iterate;
+- (IOSObjectArray *)getLayoutAttributes;
 
 - (void)measure;
 
@@ -43,23 +40,11 @@
 
 - (void)nativeCreate;
 
-- (jboolean)removeWithComAsheraAndroidWidgetFactoryIWidget:(id<ComAsheraAndroidWidgetFactoryIWidget>)w;
+- (id<ComAsheraWidgetFactoryIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
 
-- (void)setParamHeightWithInt:(jint)width;
+- (jboolean)removeWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)w;
 
-- (void)setParamWidthWithInt:(jint)width;
-
-- (void)setParentWithComAsheraAndroidWidgetFactoryHasWidgets:(id<ComAsheraAndroidWidgetFactoryHasWidgets>)widget;
-
-- (void)setWeigthWithInt:(jint)width;
-
-#pragma mark Protected
-
-- (void)onLayoutWithBoolean:(jboolean)changed
-                    withInt:(jint)left
-                    withInt:(jint)top
-                    withInt:(jint)right
-                    withInt:(jint)bottom;
+- (void)setUpStyleWithJavaUtilMap:(id<JavaUtilMap>)styles;
 
 @end
 
