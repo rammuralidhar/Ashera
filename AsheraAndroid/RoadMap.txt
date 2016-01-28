@@ -1,6 +1,9 @@
-V1:
+VPOC:
 
 Layout POC/Jockey integration/Phone Gap/Free Marker
+
+v1:
+Create components and layouts (complete it)
 
 v2:
 implement wide range of widgets + listview + grid view + phone gap integration
