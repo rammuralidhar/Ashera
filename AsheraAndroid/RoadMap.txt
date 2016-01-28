@@ -1,6 +1,8 @@
-VPOC:
-
+VPOC1:
 Layout POC/Jockey integration/Phone Gap/Free Marker
+
+VPOC2:
+Image view (9-patch), drwable interface, List view, recycle view
 
 v1:
 Create components and layouts (complete it)
@@ -9,7 +11,7 @@ v2:
 implement wide range of widgets + listview + grid view + phone gap integration
 
 v3:
-advanced components, gcm
+advanced components, gcm, data binding
 
 v4:
 canvas (mario game in ios and android)
