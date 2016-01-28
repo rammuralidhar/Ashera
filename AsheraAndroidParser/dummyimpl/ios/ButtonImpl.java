@@ -12,6 +12,7 @@ import com.ashera.widget.factory.IWidget;
 public class ButtonImpl  extends BaseWidget implements IButton{
 	private View button;
 	private Context context;
+	private Object webView;
 
 	@Override
 	public IWidget newInstance() {
@@ -36,6 +37,7 @@ public class ButtonImpl  extends BaseWidget implements IButton{
 	@Override
 	public void create(Map<String, Object> metadata) {
 		this.context = (Context) metadata.get("context");
+		this.webView = (Object) metadata.get("webView");
 		button = new View(context) {
 			@Override
 			protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -96,7 +98,21 @@ public class ButtonImpl  extends BaseWidget implements IButton{
 	public void setUpAttribute(Map<String, String> attributes) {
 		super.setUpAttribute(attributes);
 		button.setTag(attributes.get("id"));
+		
+		final String eventName = attributes.get("event_name");
+		if (eventName != null) {
+			button.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					sendEvent(eventName, webView);
+				}
+			});
+		}
 	}
+	
+	public native void sendEvent(String eventName, Object webView)/*-[
+		[Jockey send:eventName withPayload:payload toWebView:webView];
+	]-*/;
 	
 	public native Object nativeAsWidget()/*-[
 		return self.uiButton;

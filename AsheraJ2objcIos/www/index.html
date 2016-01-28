@@ -10,7 +10,7 @@
                     <label id="lbl_1"  align_parentright="true">Hi1! </label>
                     <label id="lbl_2" left_of="lbl_1">Hi1! </label>
                 </relative-layout>
-                <button width="match_parent" weight="1" id="lb15" ><#assign test = '{"foo":"bar", "f":4, "text":"bla bla"}'><#assign m = test?eval>${m.text}  <#-- prints: bar --></button>
+                <button width="match_parent" weight="1" id="lb15"  event_name="test22"><#assign test = '{"foo":"bar", "f":4, "text":"bla bla"}'><#assign m = test?eval>${m.text}  <#-- prints: bar --></button>
         </linear-layout>
     </body>
 </html>

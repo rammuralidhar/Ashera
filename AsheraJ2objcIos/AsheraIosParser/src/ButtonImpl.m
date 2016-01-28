@@ -14,6 +14,7 @@
 #include "java/io/PrintStream.h"
 #include "java/lang/System.h"
 #include "java/util/Map.h"
+#include "Jockey.h"
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/ButtonImpl.java"
 
@@ -21,6 +22,7 @@
  @public
   RepackagedAndroidViewView *button_;
   id<RepackagedAndroidContentContext> context_;
+  id webView_;
 }
 
 - (jint)nativeMeasureWidth;
@@ -31,6 +33,7 @@
 
 J2OBJC_FIELD_SETTER(IosButtonImpl, button_, RepackagedAndroidViewView *)
 J2OBJC_FIELD_SETTER(IosButtonImpl, context_, id<RepackagedAndroidContentContext>)
+J2OBJC_FIELD_SETTER(IosButtonImpl, webView_, id)
 
 __attribute__((unused)) static jint IosButtonImpl_nativeMeasureWidth(IosButtonImpl *self);
 
@@ -65,63 +68,114 @@ __attribute__((unused)) static IosButtonImpl_$1 *new_IosButtonImpl_$1_initWithIo
 
 J2OBJC_TYPE_LITERAL_HEADER(IosButtonImpl_$1)
 
+@interface IosButtonImpl_$2 : NSObject < RepackagedAndroidViewView_OnClickListener > {
+ @public
+  IosButtonImpl *this$0_;
+  NSString *val$eventName_;
+}
+
+- (void)onClickWithRepackagedAndroidViewView:(RepackagedAndroidViewView *)v;
+
+- (instancetype)initWithIosButtonImpl:(IosButtonImpl *)outer$
+                         withNSString:(NSString *)capture$0;
+
+@end
+
+J2OBJC_EMPTY_STATIC_INIT(IosButtonImpl_$2)
+
+J2OBJC_FIELD_SETTER(IosButtonImpl_$2, this$0_, IosButtonImpl *)
+J2OBJC_FIELD_SETTER(IosButtonImpl_$2, val$eventName_, NSString *)
+
+__attribute__((unused)) static void IosButtonImpl_$2_initWithIosButtonImpl_withNSString_(IosButtonImpl_$2 *self, IosButtonImpl *outer$, NSString *capture$0);
+
+__attribute__((unused)) static IosButtonImpl_$2 *new_IosButtonImpl_$2_initWithIosButtonImpl_withNSString_(IosButtonImpl *outer$, NSString *capture$0) NS_RETURNS_RETAINED;
+
+J2OBJC_TYPE_LITERAL_HEADER(IosButtonImpl_$2)
+
 
 #line 12
 @implementation IosButtonImpl
 
 
-#line 17
+#line 18
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance {
   return new_IosButtonImpl_init();
 }
 
 
-#line 22
+#line 23
 - (IOSObjectArray *)getAttributes {
   return [IOSObjectArray newArrayWithObjects:(id[]){ @"width", @"height", @"id", @"event_name" } count:4 type:NSString_class_()];
 }
 
 
-#line 27
+#line 28
 - (id)asWidget {
   return button_;
 }
 
 
-#line 32
+#line 33
 - (id)asNativeWidget {
   return [self nativeAsWidget];
 }
 
 
-#line 37
+#line 38
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   self->context_ = (id<RepackagedAndroidContentContext>) check_protocol_cast([((id<JavaUtilMap>) nil_chk(metadata)) getWithId:@"context"], @protocol(RepackagedAndroidContentContext));
+  self->webView_ = [metadata getWithId:@"webView"];
   button_ = new_IosButtonImpl_$1_initWithIosButtonImpl_withRepackagedAndroidContentContext_(self, context_);
   
-#line 82
+#line 84
   [self nativeCreate];
 }
 
 
-#line 86
+#line 88
 - (NSString *)getText {
   return nil;
 }
 
 
-#line 91
+#line 93
 - (void)setTextWithNSString:(NSString *)text {
   [self nativeSetTextWithNSString:text];
 }
 
 
-#line 96
+#line 98
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes {
   [super setUpAttributeWithJavaUtilMap:attributes];
   [((RepackagedAndroidViewView *) nil_chk(button_)) setTagWithId:[((id<JavaUtilMap>) nil_chk(attributes)) getWithId:@"id"]];
+  
+#line 102
+  NSString *eventName = [attributes getWithId:@"event_name"];
+  if (eventName != nil) {
+      [self.uiButton setAccessibilityValue:eventName];
+
+      [self.uiButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+  }
 }
 
+-(void) buttonClicked:(UIButton*)sender
+{
+    NSDictionary *payload = [NSDictionary new];
+    NSString* eventName = [sender accessibilityValue];
+    [Jockey send:eventName withPayload:payload toWebView: (UIWebView *) webView_];
+}
+
+
+#line 113
+- (void)sendEventWithNSString:(NSString *)eventName
+                       withId:(id)webView {
+NSDictionary *payload = [NSDictionary new];
+  [Jockey send:eventName withPayload:payload toWebView: (UIWebView *)webView];
+}
+
+
+#line 117
 - (id)nativeAsWidget {
   return self.uiButton;
 }
@@ -132,7 +186,7 @@ J2OBJC_TYPE_LITERAL_HEADER(IosButtonImpl_$1)
 }
 
 
-#line 111
+#line 127
 - (void)nativeSetTextWithNSString:(NSString *)text {
   [self.uiButton setTitle:text forState:UIControlStateNormal];
 }
@@ -142,13 +196,13 @@ J2OBJC_TYPE_LITERAL_HEADER(IosButtonImpl_$1)
 }
 
 
-#line 121
+#line 137
 - (jint)nativeMeasureHeightWithInt:(jint)width {
   return IosButtonImpl_nativeMeasureHeightWithInt_(self, width);
 }
 
 
-#line 127
+#line 143
 - (void)nativeMakeFrameWithInt:(jint)l
                        withInt:(jint)t
                        withInt:(jint)r
@@ -171,6 +225,7 @@ J2OBJC_TYPE_LITERAL_HEADER(IosButtonImpl_$1)
     { "getText", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "setTextWithNSString:", "setText", "V", 0x1, NULL, NULL },
     { "setUpAttributeWithJavaUtilMap:", "setUpAttribute", "V", 0x1, NULL, NULL },
+    { "sendEventWithNSString:withId:", "sendEvent", "V", 0x101, NULL, NULL },
     { "nativeAsWidget", NULL, "Ljava.lang.Object;", 0x101, NULL, NULL },
     { "nativeCreate", NULL, "V", 0x101, NULL, NULL },
     { "nativeSetTextWithNSString:", "nativeSetText", "V", 0x101, NULL, NULL },
@@ -182,15 +237,16 @@ J2OBJC_TYPE_LITERAL_HEADER(IosButtonImpl_$1)
   static const J2ObjcFieldInfo fields[] = {
     { "button_", NULL, 0x2, "Lrepackaged.android.view.View;", NULL, NULL,  },
     { "context_", NULL, 0x2, "Lrepackaged.android.content.Context;", NULL, NULL,  },
+    { "webView_", NULL, 0x2, "Ljava.lang.Object;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _IosButtonImpl = { 2, "ButtonImpl", "ios", NULL, 0x1, 15, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosButtonImpl = { 2, "ButtonImpl", "ios", NULL, 0x1, 16, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosButtonImpl;
 }
 
 @end
 
 
-#line 115
+#line 131
 jint IosButtonImpl_nativeMeasureWidth(IosButtonImpl *self) {
   CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
   CGSize requiredSize = [self.uiButton sizeThatFits:maximumLabelSize];
@@ -218,62 +274,62 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosButtonImpl)
 @implementation IosButtonImpl_$1
 
 
-#line 41
+#line 43
 - (void)onMeasureWithInt:(jint)widthMeasureSpec
                  withInt:(jint)heightMeasureSpec {
   [super onMeasureWithInt:widthMeasureSpec withInt:heightMeasureSpec];
   
-#line 44
+#line 46
   jint widthMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(widthMeasureSpec);
   jint heightMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(heightMeasureSpec);
   jint widthSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(widthMeasureSpec);
   jint heightSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(heightMeasureSpec);
   
-#line 49
+#line 51
   jint width;
   jint height;
   if (widthMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 53
+#line 55
     width = widthSize;
   }
   else {
     
-#line 55
+#line 57
     width = IosButtonImpl_nativeMeasureWidth(this$0_);
     
-#line 57
+#line 59
     if (width > widthSize) {
       width = widthSize;
     }
   }
   
-#line 62
+#line 64
   if (heightMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 64
+#line 66
     height = heightSize;
   }
   else {
     
-#line 66
+#line 68
     height = IosButtonImpl_nativeMeasureHeightWithInt_(this$0_, width);
   }
   
-#line 69
+#line 71
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$ICIC$", @"button :", height, ' ', width, ' ', [this$0_ getText])];
   [self setMeasuredDimensionWithInt:width withInt:height];
 }
 
 
-#line 75
+#line 77
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)left
                     withInt:(jint)top
                     withInt:(jint)right
                     withInt:(jint)bottom {
   
-#line 77
+#line 79
   [super onLayoutWithBoolean:changed withInt:left withInt:top withInt:right withInt:bottom];
   [this$0_ nativeMakeFrameWithInt:left withInt:top withInt:right withInt:bottom];
 }
@@ -312,3 +368,47 @@ IosButtonImpl_$1 *new_IosButtonImpl_$1_initWithIosButtonImpl_withRepackagedAndro
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosButtonImpl_$1)
+
+@implementation IosButtonImpl_$2
+
+
+#line 106
+- (void)onClickWithRepackagedAndroidViewView:(RepackagedAndroidViewView *)v {
+  [this$0_ sendEventWithNSString:val$eventName_ withId:this$0_->webView_];
+}
+
+- (instancetype)initWithIosButtonImpl:(IosButtonImpl *)outer$
+                         withNSString:(NSString *)capture$0 {
+  IosButtonImpl_$2_initWithIosButtonImpl_withNSString_(self, outer$, capture$0);
+  return self;
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static const J2ObjcMethodInfo methods[] = {
+    { "onClickWithRepackagedAndroidViewView:", "onClick", "V", 0x1, NULL, NULL },
+    { "initWithIosButtonImpl:withNSString:", "", NULL, 0x0, NULL, NULL },
+  };
+  static const J2ObjcFieldInfo fields[] = {
+    { "this$0_", NULL, 0x1012, "Lios.ButtonImpl;", NULL, NULL,  },
+    { "val$eventName_", NULL, 0x1012, "Ljava.lang.String;", NULL, NULL,  },
+  };
+  static const J2ObjCEnclosingMethodInfo enclosing_method = { "IosButtonImpl", "setUpAttributeWithJavaUtilMap:" };
+  static const J2ObjcClassInfo _IosButtonImpl_$2 = { 2, "", "ios", "ButtonImpl", 0x8008, 2, methods, 2, fields, 0, NULL, 0, NULL, &enclosing_method, NULL };
+  return &_IosButtonImpl_$2;
+}
+
+@end
+
+void IosButtonImpl_$2_initWithIosButtonImpl_withNSString_(IosButtonImpl_$2 *self, IosButtonImpl *outer$, NSString *capture$0) {
+  self->this$0_ = outer$;
+  self->val$eventName_ = capture$0;
+  (void) NSObject_init(self);
+}
+
+IosButtonImpl_$2 *new_IosButtonImpl_$2_initWithIosButtonImpl_withNSString_(IosButtonImpl *outer$, NSString *capture$0) {
+  IosButtonImpl_$2 *self = [IosButtonImpl_$2 alloc];
+  IosButtonImpl_$2_initWithIosButtonImpl_withNSString_(self, outer$, capture$0);
+  return self;
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosButtonImpl_$2)

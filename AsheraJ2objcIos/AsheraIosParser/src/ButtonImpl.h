@@ -43,6 +43,9 @@
 
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
 
+- (void)sendEventWithNSString:(NSString *)eventName
+                       withId:(id)webView;
+
 - (void)setTextWithNSString:(NSString *)text;
 
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes;
