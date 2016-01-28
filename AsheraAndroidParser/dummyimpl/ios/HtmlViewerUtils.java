@@ -19,6 +19,7 @@ public class HtmlViewerUtils {
 		WidgetFactory.register("linear-layout", new LinearLayoutImpl());
 		WidgetFactory.register("body", new HtmlImpl()); 
 		WidgetFactory.register("button", new ButtonImpl()); 
+		WidgetFactory.register("relative-layout", new RelativeLayoutImpl()); 
 		ComponentFactory.register(new ComponentImpl());
 	}
 	
