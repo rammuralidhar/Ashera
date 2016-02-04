@@ -11,6 +11,7 @@ import com.ashera.android.factory.ComponentImpl;
 import com.ashera.android.factory.ui.ButtonImpl;
 import com.ashera.android.factory.ui.LabelImpl;
 import com.ashera.android.factory.ui.LinearLayoutImpl;
+import com.ashera.android.factory.ui.ListViewImpl;
 import com.ashera.android.factory.ui.RelativeLayoutImpl;
 import com.ashera.android.factory.ui.RootImpl;
 import com.ashera.component.factory.ComponentFactory;
@@ -29,6 +30,7 @@ public class HtmlViewerUtils {
 		WidgetFactory.register("relative-layout", new RelativeLayoutImpl());
 		WidgetFactory.register("label", new LabelImpl());
 		WidgetFactory.register("button", new ButtonImpl());
+		WidgetFactory.register("list-view", new ListViewImpl());
 		ComponentFactory.register(new ComponentImpl());
 	}
 	

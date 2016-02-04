@@ -27,6 +27,7 @@ public class HtmlSaxHandler implements ContentHandler{
 	private Stack<Boolean> pushParent = new Stack<Boolean>();
 	private Map<String, Object> metadata;
 	private List<String> htmlElements = new ArrayList<String>();
+	private boolean isTemplate = false;
 	
 	public HtmlSaxHandler(Map<String, Object> metadata) {
 		this.metadata = metadata;
@@ -95,9 +96,12 @@ public class HtmlSaxHandler implements ContentHandler{
 	public void startElement(String uri, String localName, String qName,
 			Attributes atts) throws SAXException {
 		Log.e("layout", localName);
+		if (!isTemplate && localName.equals("template")) {
+			isTemplate = true;
+		}
 		htmlElements.add(getNPath(localName, atts));
 
-		this.widget = WidgetFactory.get(localName);
+		this.widget = WidgetFactory.get(localName, isTemplate);
 		
 		//set root
 		if (localName.equals("body") && root == null && widget != null) {
@@ -207,6 +211,10 @@ public class HtmlSaxHandler implements ContentHandler{
 		htmlElements.remove(htmlElements.size() - 1);
 		if (pushParent.pop()) {
 			hasWidgets.pop();
+		}
+		
+		if (localName.equals("template")) {
+			isTemplate = false;
 		}
 	}
 

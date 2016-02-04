@@ -4,16 +4,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.ashera.widget.LinkWidget;
+import com.ashera.widget.TemplateWidget;
 
 public class WidgetFactory {
 	private static Map<String, IWidget> registrationMap = new HashMap<String, IWidget>();
 	static {
 		WidgetFactory.register("link", new LinkWidget());
+		WidgetFactory.register("template", new TemplateWidget());
 	}
 
-	public static IWidget get(String localname) {
+	public static IWidget get(String localname, boolean isLazy) {
 		IWidget widgetPrototype = registrationMap.get(localname);
+		
 		if (widgetPrototype != null) {
+			if (isLazy) {
+				return widgetPrototype.newLazyInstance();
+			}
 			return widgetPrototype.newInstance();
 		} 
 		

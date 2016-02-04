@@ -57,5 +57,11 @@ public class LinkWidget implements IWidget{
 	public Object asNativeWidget() {
 		return null;
 	}
+
+	@Override
+	public IWidget newLazyInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

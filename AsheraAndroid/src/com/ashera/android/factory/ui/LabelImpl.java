@@ -14,7 +14,6 @@ public class LabelImpl extends BaseWidget implements ILabel{
 	private TextView label;
 	private Context context;
 	private String text;
-	private Map<String, String> attributes;
 	@Override
 	public Object asWidget() {
 		return label;
@@ -72,5 +71,10 @@ public class LabelImpl extends BaseWidget implements ILabel{
 		if (id != null) {
 			label.setId(id.hashCode());
 		}
+	}
+	
+	@Override
+	public IWidget newLazyInstance() {
+		return super.newLazyInstance();
 	}
 }

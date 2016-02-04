@@ -50,7 +50,7 @@ public class Resources {
 
 	public DisplayMetrics getDisplayMetrics() {
 		// TODO Auto-generated method stub
-		return null;
+		return new DisplayMetrics();
 	}
 
 	public int getDimensionPixelOffset(int defaultGap) {
