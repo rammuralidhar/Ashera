@@ -1,8 +1,10 @@
 package com.ashera.android.factory.ui;
 
+import java.util.Iterator;
 import java.util.Map;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -20,6 +22,9 @@ public class ListViewImpl extends BaseHasWidgets implements IListView {
 	private ListView listView;
 	private Context context;
 	private String templateId;
+	private String headerTemplateId;
+	private String footerTemplateId;
+	
 	@Override
 	public String[] getLayoutAttributes() {
 		return null;
@@ -32,7 +37,7 @@ public class ListViewImpl extends BaseHasWidgets implements IListView {
 
 	@Override
 	public String[] getAttributes() {
-		return new String[] {"width", "height", "templateid"};
+		return new String[] {"width", "height", "templateid", "headertemplateid", "footertemplateid"};
 	}
 
 	@Override
@@ -49,13 +54,36 @@ public class ListViewImpl extends BaseHasWidgets implements IListView {
 	public void setUpAttribute(Map<String, String> attributes) {
 		super.setUpAttribute(attributes);
 		this.templateId = attributes.get("templateid");
+		this.headerTemplateId = attributes.get("headertemplateid");
+		this.footerTemplateId = attributes.get("footertemplateid");
 	}
 
 	@Override
 	public void create(Map<String, Object> metadata) {
 		this.context = (Context) metadata.get("context");
-		listView = new ListView(context);
+		listView = new ListView(context) {
+			@Override
+			protected void onAttachedToWindow() {
+				super.onAttachedToWindow();
+				Iterator<IWidget> iterate = iterate();
+				while (iterate.hasNext()) {
+					ITemplate widget = (ITemplate) iterate.next();
+					
+					if (widget.getId().equals(headerTemplateId)) {
+						listView.addHeaderView((View) ((ITemplate) widget).loadWidgets());
+					}
+					if (widget.getId().equals(footerTemplateId)) {
+						listView.addFooterView((View) ((ITemplate) widget).loadWidgets());
+					}
+				}
+			}
+		};
 		listView.setAdapter(new Adapter1());
+	}
+	
+	@Override
+	public void add(IWidget w) {
+		super.add(w);
 	}
 	
 	class Adapter1 extends BaseAdapter{
@@ -64,7 +92,7 @@ public class ListViewImpl extends BaseHasWidgets implements IListView {
 
 		@Override
 		public int getCount() {
-			return 10;
+			return 100;
 		}
 
 		@Override
@@ -82,8 +110,17 @@ public class ListViewImpl extends BaseHasWidgets implements IListView {
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// create clone
 			
-			ITemplate widget = (ITemplate) iterate().next();
-			return (View) widget.loadWidgets();
+			Iterator<IWidget> iterate = iterate();
+			ITemplate rootWidget = null;
+			while (iterate.hasNext()) {
+				ITemplate widget = (ITemplate) iterate.next();
+				
+				if (widget.getId().equals(templateId)) {
+					rootWidget = widget;
+					break;
+				}
+			}
+			return (View) rootWidget.loadWidgets();
 		}
 		
 	}	
