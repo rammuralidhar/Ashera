@@ -16,6 +16,7 @@
 #import <ContextWrapper.h>
 #include <AsheraIosParser/IWidget.h>
 #include "Jockey.h"
+#include "EventBus.h"
 #include "ComponentImpl.h"
 
 @interface ViewController ()
@@ -45,6 +46,11 @@
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     return [Jockey webView:webView withUrl:[request URL]];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [[ComAsheraWidgetBusEventBus getDefault] notifyObservers];
 }
 
 - (void)didReceiveMemoryWarning {

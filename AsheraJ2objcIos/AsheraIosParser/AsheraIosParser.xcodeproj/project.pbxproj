@@ -2609,6 +2609,11 @@
 		27715FBF1C4185EE00F6DD5F /* XmlUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F61F1C3982CD00FFB46F /* XmlUtils.h */; };
 		27715FC01C4185EE00F6DD5F /* XmlUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6201C3982CD00FFB46F /* XmlUtils.m */; };
 		277463851BDB318200BAFD75 /* libAsheraIosParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277463791BDB318200BAFD75 /* libAsheraIosParser.a */; };
+		27AB34091C673B27004FA226 /* EventBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB34081C673B27004FA226 /* EventBus.m */; };
+		27AB340A1C673C5D004FA226 /* EventBus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AB34071C673B27004FA226 /* EventBus.h */; };
+		27AB340B1C673C5D004FA226 /* EventBus.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AB34081C673B27004FA226 /* EventBus.m */; };
+		27AB340C1C673C5D004FA226 /* IListView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27F9CD071C6703FC00A7AE3D /* IListView.h */; };
+		27AB340D1C673C5D004FA226 /* IListView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27F9CD081C6703FC00A7AE3D /* IListView.m */; };
 		27F9CD091C6703FC00A7AE3D /* IListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F9CD081C6703FC00A7AE3D /* IListView.m */; };
 /* End PBXBuildFile section */
 
@@ -2629,6 +2634,10 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				27AB340A1C673C5D004FA226 /* EventBus.h in CopyFiles */,
+				27AB340B1C673C5D004FA226 /* EventBus.m in CopyFiles */,
+				27AB340C1C673C5D004FA226 /* IListView.h in CopyFiles */,
+				27AB340D1C673C5D004FA226 /* IListView.m in CopyFiles */,
 				273E3F751C59493B002C4B42 /* version.properties in CopyFiles */,
 				273E3B6C1C594360002C4B42 /* Execute.h in CopyFiles */,
 				273E3B6D1C594360002C4B42 /* Execute.m in CopyFiles */,
@@ -5759,6 +5768,8 @@
 		27746EF91BDBBF9D00BAFD75 /* Schema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schema.m; sourceTree = "<group>"; };
 		27746EFA1BDBBF9D00BAFD75 /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLWriter.h; sourceTree = "<group>"; };
 		27746EFB1BDBBF9D00BAFD75 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
+		27AB34071C673B27004FA226 /* EventBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBus.h; sourceTree = "<group>"; };
+		27AB34081C673B27004FA226 /* EventBus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventBus.m; sourceTree = "<group>"; };
 		27F9CD071C6703FC00A7AE3D /* IListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IListView.h; sourceTree = "<group>"; };
 		27F9CD081C6703FC00A7AE3D /* IListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IListView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -7023,6 +7034,8 @@
 		2774637B1BDB318200BAFD75 /* AsheraIosParser */ = {
 			isa = PBXGroup;
 			children = (
+				27AB34071C673B27004FA226 /* EventBus.h */,
+				27AB34081C673B27004FA226 /* EventBus.m */,
 				27F9CD071C6703FC00A7AE3D /* IListView.h */,
 				27F9CD081C6703FC00A7AE3D /* IListView.m */,
 				273E374D1C59302D002C4B42 /* WidgetAttributeHelper.h */,
@@ -8440,6 +8453,7 @@
 				273E3B541C5941CC002C4B42 /* UnaryPlusMinusExpression.m in Sources */,
 				2708F9D81C39963300FFB46F /* TimeFormatException.m in Sources */,
 				270B6D481C3B60F2002CB39A /* DirectAdjacentSelectorImpl.m in Sources */,
+				27AB34091C673B27004FA226 /* EventBus.m in Sources */,
 				2708F9D91C39963300FFB46F /* TouchDelegate.h in Sources */,
 				2708F9DA1C39963300FFB46F /* TouchDelegate.m in Sources */,
 				273E3A611C5941CB002C4B42 /* Case.m in Sources */,

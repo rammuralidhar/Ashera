@@ -6,12 +6,14 @@
 
 #include "BaseHasWidgets.h"
 #include "Context.h"
+#include "EventBus.h"
 #include "IOSObjectArray.h"
 #include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "ListViewImpl.h"
 #include "View.h"
 #include "java/util/Map.h"
+#include "java/util/Observable.h"
 #include <Jockey.h>
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/ListViewImpl.java"
@@ -21,6 +23,10 @@
   id<RepackagedAndroidContentContext> context_;
   id webView_;
   RepackagedAndroidViewView *view_;
+  NSString *templateId_;
+  NSString *headerTemplateId_;
+  NSString *footerTemplateId_;
+  NSString *eventId_;
 }
 
 - (jint)nativeMeasureWidth;
@@ -32,12 +38,16 @@
 J2OBJC_FIELD_SETTER(IosListViewImpl, context_, id<RepackagedAndroidContentContext>)
 J2OBJC_FIELD_SETTER(IosListViewImpl, webView_, id)
 J2OBJC_FIELD_SETTER(IosListViewImpl, view_, RepackagedAndroidViewView *)
+J2OBJC_FIELD_SETTER(IosListViewImpl, templateId_, NSString *)
+J2OBJC_FIELD_SETTER(IosListViewImpl, headerTemplateId_, NSString *)
+J2OBJC_FIELD_SETTER(IosListViewImpl, footerTemplateId_, NSString *)
+J2OBJC_FIELD_SETTER(IosListViewImpl, eventId_, NSString *)
 
 __attribute__((unused)) static jint IosListViewImpl_nativeMeasureWidth(IosListViewImpl *self);
 
 __attribute__((unused)) static jint IosListViewImpl_nativeMeasureHeightWithInt_(IosListViewImpl *self, jint width);
 
-@interface IosListViewImpl_$1 : RepackagedAndroidViewView<UITableViewDelegate, UITableViewDataSource> {
+@interface IosListViewImpl_$1 : RepackagedAndroidViewView {
  @public
   IosListViewImpl *this$0_;
 }
@@ -67,15 +77,14 @@ __attribute__((unused)) static IosListViewImpl_$1 *new_IosListViewImpl_$1_initWi
 J2OBJC_TYPE_LITERAL_HEADER(IosListViewImpl_$1)
 
 
-#line 12
+#line 15
 @implementation IosListViewImpl
-
 NSArray *tableData;
-#line 18
+
+#line 25
 - (IOSObjectArray *)getLayoutAttributes {
   return nil;
 }
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -111,63 +120,88 @@ NSArray *tableData;
     return cell;
 }
 
-
-#line 23
+#line 30
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance {
   return new_IosListViewImpl_init();
 }
 
 
-#line 28
+#line 35
 - (IOSObjectArray *)getAttributes {
   return [IOSObjectArray newArrayWithObjects:(id[]){ @"width", @"height", @"templateid", @"headertemplateid", @"footertemplateid", @"load-data-event" } count:6 type:NSString_class_()];
 }
 
 
-#line 34
+#line 41
 - (id)asWidget {
   return view_;
 }
 
 
-#line 39
+#line 46
 - (id)asNativeWidget {
   return [self nativeAsWidget];
 }
 
 
-#line 44
+#line 51
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   self->context_ = (id<RepackagedAndroidContentContext>) check_protocol_cast([((id<JavaUtilMap>) nil_chk(metadata)) getWithId:@"context"], @protocol(RepackagedAndroidContentContext));
   self->webView_ = [metadata getWithId:@"webView"];
+  [((ComAsheraWidgetBusEventBus *) nil_chk(ComAsheraWidgetBusEventBus_getDefault())) addObserverWithJavaUtilObserver:self];
   view_ = new_IosListViewImpl_$1_initWithIosListViewImpl_withRepackagedAndroidContentContext_(self, context_);
   
-#line 88
+#line 96
   [self nativeCreate];
-    self.tableView.backgroundColor = [UIColor redColor];
-    [self.tableView  setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0,0,0,0)]];
-
 }
 
 
-#line 91
+#line 100
+- (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes {
+  [super setUpAttributeWithJavaUtilMap:attributes];
+  self->templateId_ = [((id<JavaUtilMap>) nil_chk(attributes)) getWithId:@"templateid"];
+  self->headerTemplateId_ = [attributes getWithId:@"headertemplateid"];
+  self->footerTemplateId_ = [attributes getWithId:@"footertemplateid"];
+  
+#line 106
+  if ([attributes containsKeyWithId:@"load-data-event"]) {
+    self->eventId_ = [attributes getWithId:@"load-data-event"];
+  }
+}
+
 - (void)nativeCreate {
     tableData = [NSArray arrayWithObjects:@"Egg Benedict",@"Egg Benedict", nil];
-
   self.tableView = [UITableView new];
- //   self.tableView.style = UITableViewStylePlain;
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
+  [self.tableView  setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0,0,0,0)]];
+}
+
+
+#line 120
+- (void)updateWithJavaUtilObservable:(JavaUtilObservable *)observable
+                              withId:(id)data {
+    NSDictionary* d = [NSDictionary new];
+    NSString* recieveEventId = [NSString formatWithNSString:@"@%-recieve" withNSObjectArray:eventId_  ];
     
-    }
+    [Jockey on:recieveEventId perform:^(NSDictionary *payload) {
+        NSLog(@"payload");
+    }];
+    
+    [Jockey send:eventId_ withPayload:d toWebView:webView_];
+
+}
 
 - (void)sendEventWithNSString:(NSString *)eventName
                        withId:(id)webView {
   //[Jockey send:eventName withPayload:payload toWebView:webView];
 }
 
+- (void) receiveCallBack : (NSDictionary*) payload {
+    NSLog(@"test12222");
+}
 
-#line 101
+#line 128
 - (id)nativeAsWidget {
   return self.tableView;
 }
@@ -177,25 +211,17 @@ NSArray *tableData;
 }
 
 
-#line 111
+#line 138
 - (jint)nativeMeasureHeightWithInt:(jint)width {
   return IosListViewImpl_nativeMeasureHeightWithInt_(self, width);
 }
 
 
-#line 117
+#line 144
 - (void)nativeMakeFrameWithInt:(jint)l
                        withInt:(jint)t
                        withInt:(jint)r
                        withInt:(jint)b {
-    NSLog(@"listview frame %d %d %d %d", l, t, r-l, b-t);
-    //CGRect tbFrame = [self.tableView frame];
-    //tbFrame.size.height = r-l;
-    //tbFrame.size.width = b-t;
-    //tbFrame.origin.x = l;
-    //tbFrame.origin.y = t;
-    //[self.tableView setFrame:tbFrame];
-    
   [self.tableView setFrame:CGRectMake(l, t, r-l, b-t)];
 }
 
@@ -212,7 +238,9 @@ NSArray *tableData;
     { "asWidget", NULL, "Ljava.lang.Object;", 0x1, NULL, NULL },
     { "asNativeWidget", NULL, "Ljava.lang.Object;", 0x1, NULL, NULL },
     { "createWithJavaUtilMap:", "create", "V", 0x1, NULL, NULL },
+    { "setUpAttributeWithJavaUtilMap:", "setUpAttribute", "V", 0x1, NULL, NULL },
     { "nativeCreate", NULL, "V", 0x101, NULL, NULL },
+    { "updateWithJavaUtilObservable:withId:", "update", "V", 0x1, NULL, NULL },
     { "sendEventWithNSString:withId:", "sendEvent", "V", 0x101, NULL, NULL },
     { "nativeAsWidget", NULL, "Ljava.lang.Object;", 0x101, NULL, NULL },
     { "nativeMeasureWidth", NULL, "I", 0x102, NULL, NULL },
@@ -224,15 +252,19 @@ NSArray *tableData;
     { "context_", NULL, 0x2, "Lrepackaged.android.content.Context;", NULL, NULL,  },
     { "webView_", NULL, 0x2, "Ljava.lang.Object;", NULL, NULL,  },
     { "view_", NULL, 0x2, "Lrepackaged.android.view.View;", NULL, NULL,  },
+    { "templateId_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
+    { "headerTemplateId_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
+    { "footerTemplateId_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
+    { "eventId_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _IosListViewImpl = { 2, "ListViewImpl", "ios", NULL, 0x1, 13, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosListViewImpl = { 2, "ListViewImpl", "ios", NULL, 0x1, 15, methods, 7, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosListViewImpl;
 }
 
 @end
 
 
-#line 105
+#line 132
 jint IosListViewImpl_nativeMeasureWidth(IosListViewImpl *self) {
   CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
   CGSize requiredSize = [self.tableView sizeThatFits:maximumLabelSize];
@@ -260,61 +292,61 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosListViewImpl)
 @implementation IosListViewImpl_$1
 
 
-#line 49
+#line 57
 - (void)onMeasureWithInt:(jint)widthMeasureSpec
                  withInt:(jint)heightMeasureSpec {
   [super onMeasureWithInt:widthMeasureSpec withInt:heightMeasureSpec];
   
-#line 52
+#line 60
   jint widthMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(widthMeasureSpec);
   jint heightMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(heightMeasureSpec);
   jint widthSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(widthMeasureSpec);
   jint heightSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(heightMeasureSpec);
   
-#line 57
+#line 65
   jint width;
   jint height;
   if (widthMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 61
+#line 69
     width = widthSize;
   }
   else {
     
-#line 63
+#line 71
     width = IosListViewImpl_nativeMeasureWidth(this$0_);
     
-#line 65
+#line 73
     if (width > widthSize) {
       width = widthSize;
     }
   }
   
-#line 70
+#line 78
   if (heightMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 72
+#line 80
     height = heightSize;
   }
   else {
     
-#line 74
+#line 82
     height = IosListViewImpl_nativeMeasureHeightWithInt_(this$0_, width);
   }
   
-#line 77
+#line 85
   [self setMeasuredDimensionWithInt:width withInt:height];
 }
 
 
-#line 82
+#line 90
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)left
                     withInt:(jint)top
                     withInt:(jint)right
                     withInt:(jint)bottom {
   
-#line 84
+#line 92
   [super onLayoutWithBoolean:changed withInt:left withInt:top withInt:right withInt:bottom];
   [this$0_ nativeMakeFrameWithInt:left withInt:top withInt:right withInt:bottom];
 }
@@ -339,11 +371,6 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosListViewImpl)
   return &_IosListViewImpl_$1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [tableData count];
-}
-
 @end
 
 void IosListViewImpl_$1_initWithIosListViewImpl_withRepackagedAndroidContentContext_(IosListViewImpl_$1 *self, IosListViewImpl *outer$, id<RepackagedAndroidContentContext> arg$0) {
@@ -356,7 +383,5 @@ IosListViewImpl_$1 *new_IosListViewImpl_$1_initWithIosListViewImpl_withRepackage
   IosListViewImpl_$1_initWithIosListViewImpl_withRepackagedAndroidContentContext_(self, outer$, arg$0);
   return self;
 }
-
-
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosListViewImpl_$1)

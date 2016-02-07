@@ -9,13 +9,16 @@
 #include "BaseHasWidgets.h"
 #include "IListView.h"
 #include "J2ObjC_header.h"
+#include "java/util/Observer.h"
 
 @class IOSObjectArray;
+@class JavaUtilObservable;
 @protocol ComAsheraWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 
-@interface IosListViewImpl : ComAsheraWidgetBaseHasWidgets < ComAsheraWidgetFactoryIListView,UITableViewDelegate, UITableViewDataSource>
+@interface IosListViewImpl : ComAsheraWidgetBaseHasWidgets < ComAsheraWidgetFactoryIListView, JavaUtilObserver, UITableViewDelegate, UITableViewDataSource>
 @property UITableView* tableView;
+
 #pragma mark Public
 
 - (instancetype)init;
@@ -43,6 +46,11 @@
 
 - (void)sendEventWithNSString:(NSString *)eventName
                        withId:(id)webView;
+
+- (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes;
+
+- (void)updateWithJavaUtilObservable:(JavaUtilObservable *)observable
+                              withId:(id)data;
 
 @end
 

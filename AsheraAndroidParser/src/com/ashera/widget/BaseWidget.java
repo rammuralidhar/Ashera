@@ -76,7 +76,7 @@ public abstract class BaseWidget implements IWidget{
 		return new LazyBaseWidget();
 	}
 	
-	class LazyBaseWidget extends BaseWidget implements HasText{
+	public class LazyBaseWidget extends BaseWidget implements HasText{
 		Map<String, String> attributes = new HashMap<String, String>();
 		public Map<String, String> getStyles() {
 			return styles;

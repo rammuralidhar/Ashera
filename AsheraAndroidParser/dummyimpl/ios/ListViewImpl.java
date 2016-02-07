@@ -1,18 +1,25 @@
 package ios;
 
 import java.util.Map;
+import java.util.Observable;
+import java.util.Observer;
 
 import repackaged.android.content.Context;
 import repackaged.android.view.View;
 
 import com.ashera.widget.BaseHasWidgets;
+import com.ashera.widget.bus.EventBus;
 import com.ashera.widget.factory.IListView;
 import com.ashera.widget.factory.IWidget;
 
-public class ListViewImpl extends BaseHasWidgets implements IListView{
+public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
 	private Context context;
 	private Object webView;
 	private View view;
+	private String templateId;
+	private String headerTemplateId;
+	private String footerTemplateId;
+	private String eventId;
 
 	@Override
 	public String[] getLayoutAttributes() {
@@ -44,6 +51,7 @@ public class ListViewImpl extends BaseHasWidgets implements IListView{
 	public void create(Map<String, Object> metadata) {
 		this.context = (Context) metadata.get("context");
 		this.webView = (Object) metadata.get("webView");
+		EventBus.getDefault().addObserver(this);
 		view = new View(context) {
 			@Override
 			protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -88,14 +96,33 @@ public class ListViewImpl extends BaseHasWidgets implements IListView{
 		nativeCreate();
 	}
 	
+	@Override
+	public void setUpAttribute(Map<String, String> attributes) {
+		super.setUpAttribute(attributes);
+		this.templateId = attributes.get("templateid");
+		this.headerTemplateId = attributes.get("headertemplateid");
+		this.footerTemplateId = attributes.get("footertemplateid");
+		
+		if (attributes.containsKey("load-data-event")) {
+			this.eventId = attributes.get("load-data-event");
+			
+		}
+	}
+	
 	public native void nativeCreate()/*-[
     	self.tableView = [UITableView new];
     	self.tableView.dataSource = self;
 		self.tableView.delegate = self;
+		[self.tableView  setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0,0,0,0)]];
 	]-*/;
 	
+	@Override
+	public void update(Observable observable, Object data) {
+		
+	}
+	
 	public native void sendEvent(String eventName, Object webView)/*-[
-	[Jockey send:eventName withPayload:payload toWebView:webView];
+	//[Jockey send:eventName withPayload:payload toWebView:webView];
 ]-*/;
 
 public native Object nativeAsWidget()/*-[
@@ -117,5 +144,7 @@ private native int nativeMeasureHeight(int width)/*-[
 public native void nativeMakeFrame(int l, int t, int r, int b)/*-[
 	[self.tableView setFrame:CGRectMake(l, t, r-l, b-t)];
 ]-*/;
+
+
 
 }
