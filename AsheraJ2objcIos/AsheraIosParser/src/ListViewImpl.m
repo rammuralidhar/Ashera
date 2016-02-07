@@ -111,11 +111,14 @@ NSArray *tableData;
         //countryLabel.font = [UIFont boldSystemFontOfSize:17.0];
         //countryLabel.backgroundColor = [UIColor clearColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [countryLabel setText:[tableData objectAtIndex:indexPath.row]];
+        
+        NSDictionary* obj = [tableData objectAtIndex:indexPath.row];
+        [countryLabel setText: obj[@"value"]];
         [cell.contentView addSubview:countryLabel];
     } else {
         UILabel* countryLabel = (UILabel *)[cell.contentView viewWithTag:101];
-        [countryLabel setText:[tableData objectAtIndex:indexPath.row]];
+        NSDictionary* obj = [tableData objectAtIndex:indexPath.row];
+        [countryLabel setText: obj[@"value"]];
     }
     return cell;
 }
@@ -170,7 +173,6 @@ NSArray *tableData;
 }
 
 - (void)nativeCreate {
-    tableData = [NSArray arrayWithObjects:@"Egg Benedict",@"Egg Benedict", nil];
   self.tableView = [UITableView new];
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
@@ -182,10 +184,11 @@ NSArray *tableData;
 - (void)updateWithJavaUtilObservable:(JavaUtilObservable *)observable
                               withId:(id)data {
     NSDictionary* d = [NSDictionary new];
-    NSString* recieveEventId = [NSString formatWithNSString:@"@%-recieve" withNSObjectArray:eventId_  ];
+    NSString* recieveEventId = [NSString stringWithFormat:@"%@-recieve", eventId_];
     
     [Jockey on:recieveEventId perform:^(NSDictionary *payload) {
-        NSLog(@"payload");
+        tableData = payload[@"data"];
+        [self.tableView reloadData];
     }];
     
     [Jockey send:eventId_ withPayload:d toWebView:webView_];
