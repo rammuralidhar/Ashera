@@ -5,6 +5,19 @@
 		Jockey.on("test22", function(payload, complete) {
 			    alert("test");
 		});
+		Jockey.on("load-data", function(payload, complete) {
+			console.log("test");
+			Jockey.send("load-data-recieve", {
+				  data: [{"id":"test1","value":"test0"}, {"id":"test1","value":"test1"}
+				         , {"id":"test1","value":"test1"}
+				         , {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}
+				         , {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}
+				         , {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"}, {"id":"test1","value":"test1"},
+				         {"id":"test1","value":"test1"},{"id":"test1","value":"test1"},{"id":"test1","value":"test1"},{"id":"test1","value":"test1"},{"id":"test1","value":"test1"},
+				         {"id":"test1","value":"test1"},{"id":"test1","value":"test1"},{"id":"test1","value":"test1"},{"id":"test1","value":"test1"},{"id":"test1","value":"test1"},{"id":"test1","value":"test1"}]
+				});
+
+		});
 		</script>
 	</head>
 	<body>

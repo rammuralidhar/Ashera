@@ -1,19 +1,26 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-            
     </head>
     <body id="root" class="body" width="match_parent" height="wrap_content">
-    	<list-view width="match_parent" height="match_parent" templateid="test" headertemplateid="header" footertemplateid="footer">
-	    	<template id="test">
-				<label>test999 SASD DSFDS</label>
-			</template>
-			<template id="header">
-				<label>Header</label>
-			</template>
-			<template id="footer">
-				<label>footer</label>
-			</template>
-    	</list-view>
+    	<linear-layout width="match_parent" height="match_parent" orientation="v" weightsum="2">
+    		<linear-layout width="wrap_content" height="match_parent" orientation="v" weight="1">
+   				<button width="wrap_content" ></button>
+   			</linear-layout>
+   			<linear-layout width="wrap_content" height="match_parent" orientation="v" weight="1">
+		    	<list-view width="match_parent" height="match_parent" templateid="test" headertemplateid="header" footertemplateid="footer"
+		    			load-data-event="load-data">
+			    	<template id="test">
+						<label id="test1">test999 SASD DSFDS</label>
+					</template>
+					<template id="header">
+						<label>Header</label>
+					</template>
+					<template id="footer">
+						<label>footer</label>
+					</template>
+		    	</list-view>
+	    	</linear-layout>
+    	</linear-layout>
     </body>
 </html>

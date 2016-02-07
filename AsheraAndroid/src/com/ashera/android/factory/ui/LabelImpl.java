@@ -28,6 +28,7 @@ public class LabelImpl extends BaseWidget implements ILabel{
 	public void create(Map<String, Object> metadata) {
 		this.context = (Context) metadata.get("context");
 		label = new TextView(context);
+		label.setTag(this);
 	}
 
 	@Override
