@@ -2609,6 +2609,7 @@
 		27715FBF1C4185EE00F6DD5F /* XmlUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F61F1C3982CD00FFB46F /* XmlUtils.h */; };
 		27715FC01C4185EE00F6DD5F /* XmlUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6201C3982CD00FFB46F /* XmlUtils.m */; };
 		277463851BDB318200BAFD75 /* libAsheraIosParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277463791BDB318200BAFD75 /* libAsheraIosParser.a */; };
+		27F9CD091C6703FC00A7AE3D /* IListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F9CD081C6703FC00A7AE3D /* IListView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -5758,6 +5759,8 @@
 		27746EF91BDBBF9D00BAFD75 /* Schema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schema.m; sourceTree = "<group>"; };
 		27746EFA1BDBBF9D00BAFD75 /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLWriter.h; sourceTree = "<group>"; };
 		27746EFB1BDBBF9D00BAFD75 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
+		27F9CD071C6703FC00A7AE3D /* IListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IListView.h; sourceTree = "<group>"; };
+		27F9CD081C6703FC00A7AE3D /* IListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IListView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -7020,6 +7023,8 @@
 		2774637B1BDB318200BAFD75 /* AsheraIosParser */ = {
 			isa = PBXGroup;
 			children = (
+				27F9CD071C6703FC00A7AE3D /* IListView.h */,
+				27F9CD081C6703FC00A7AE3D /* IListView.m */,
 				273E374D1C59302D002C4B42 /* WidgetAttributeHelper.h */,
 				273E374E1C59302D002C4B42 /* WidgetAttributeHelper.m */,
 				273E373D1C592FDD002C4B42 /* BaseHasWidgets.h */,
@@ -7607,6 +7612,7 @@
 				2708F8341C39963200FFB46F /* ActionMode.m in Sources */,
 				2708F8351C39963200FFB46F /* AndroidException.h in Sources */,
 				273E3AD71C5941CB002C4B42 /* NonSequenceOrCollectionException.m in Sources */,
+				27F9CD091C6703FC00A7AE3D /* IListView.m in Sources */,
 				273E3AAB1C5941CB002C4B42 /* ISOTemplateDateFormatFactory.m in Sources */,
 				273E3A721C5941CB002C4B42 /* ConcurrentCacheStorage.m in Sources */,
 				270B6D3E1C3B60F2002CB39A /* CSSStyleSheet.m in Sources */,

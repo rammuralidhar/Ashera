@@ -20,6 +20,7 @@ public class HtmlViewerUtils {
 		WidgetFactory.register("body", new HtmlImpl()); 
 		WidgetFactory.register("button", new ButtonImpl()); 
 		WidgetFactory.register("relative-layout", new RelativeLayoutImpl()); 
+		WidgetFactory.register("list-view", new ListViewImpl()); 
 		ComponentFactory.register(new ComponentImpl());
 	}
 	

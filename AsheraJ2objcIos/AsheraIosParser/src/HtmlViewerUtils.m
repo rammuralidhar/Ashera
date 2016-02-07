@@ -17,6 +17,7 @@
 #include "J2ObjC_source.h"
 #include "LabelImpl.h"
 #include "LinearLayoutImpl.h"
+#include "ListViewImpl.h"
 #include "RelativeLayoutImpl.h"
 #include "Template.h"
 #include "TemplateException.h"
@@ -46,14 +47,14 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 @implementation IosHtmlViewerUtils
 
 
-#line 26
+#line 27
 + (id)displayHtmlWithNSString:(NSString *)assetHtml
               withJavaUtilMap:(id<JavaUtilMap>)metadata {
   return IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(assetHtml, metadata);
 }
 
 
-#line 36
+#line 37
 + (NSString *)executeFreeMarkerTemplateWithNSString:(NSString *)html {
   return IosHtmlViewerUtils_executeFreeMarkerTemplateWithNSString_(html);
 }
@@ -73,6 +74,7 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
       ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"body", new_IosHtmlImpl_init());
       ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"button", new_IosButtonImpl_init());
       ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"relative-layout", new_IosRelativeLayoutImpl_init());
+      ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(@"list-view", new_IosListViewImpl_init());
       ComAsheraComponentFactoryComponentFactory_register__WithComAsheraComponentFactoryComponent_(new_IosComponentImpl_init());
     }
     J2OBJC_SET_INITIALIZED(IosHtmlViewerUtils)
@@ -92,62 +94,62 @@ J2OBJC_INITIALIZED_DEFN(IosHtmlViewerUtils)
 @end
 
 
-#line 26
+#line 27
 id IosHtmlViewerUtils_displayHtmlWithNSString_withJavaUtilMap_(NSString *assetHtml, id<JavaUtilMap> metadata) {
   IosHtmlViewerUtils_initialize();
   
-#line 27
+#line 28
   NSString *html = [((id<ComAsheraComponentFactoryComponent>) nil_chk(ComAsheraComponentFactoryComponentFactory_get())) getFileAssetWithNSString:assetHtml withJavaUtilMap:metadata];
   NSString *result = IosHtmlViewerUtils_executeFreeMarkerTemplateWithNSString_(html);
   IosHtmlImpl *widget = (IosHtmlImpl *) check_class_cast(ComAsheraParserHtmlHtmlParser_parseWithNSString_withJavaUtilMap_(result, metadata), [IosHtmlImpl class]);
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithId:[((IosHtmlImpl *) nil_chk(widget)) getClass]];
   
-#line 32
+#line 33
   [widget measure];
   return widget;
 }
 
 
-#line 36
+#line 37
 NSString *IosHtmlViewerUtils_executeFreeMarkerTemplateWithNSString_(NSString *html) {
   IosHtmlViewerUtils_initialize();
   
-#line 37
+#line 38
   JavaIoStringWriter *stringWriter = new_JavaIoStringWriter_init();
   @try {
     
-#line 40
+#line 41
     JavaIoStringReader *reader = new_JavaIoStringReader_initWithNSString_(html);
     FreemarkerTemplateConfiguration *cfg = new_FreemarkerTemplateConfiguration_init();
     FreemarkerTemplateTemplate *template_ = new_FreemarkerTemplateTemplate_initWithNSString_withJavaIoReader_withFreemarkerTemplateConfiguration_(@"name", reader, cfg);
     
-#line 44
+#line 45
     [template_ processWithId:nil withJavaIoWriter:stringWriter];
     [stringWriter flush];
   }
   @catch (
-#line 48
+#line 49
   JavaIoIOException *e) {
     @throw new_JavaLangRuntimeException_initWithJavaLangThrowable_(e);
   }
   @catch (
-#line 50
+#line 51
   FreemarkerTemplateTemplateException *e) {
     @throw new_JavaLangRuntimeException_initWithJavaLangThrowable_(e);
   }
   @finally {
     
-#line 53
+#line 54
     @try {
       [stringWriter close];
     }
     @catch (
-#line 55
+#line 56
     JavaIoIOException *e) {
     }
   }
   
-#line 59
+#line 60
   return [stringWriter description];
 }
 
