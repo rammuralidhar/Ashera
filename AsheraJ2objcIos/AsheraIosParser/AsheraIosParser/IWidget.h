@@ -16,6 +16,8 @@
 
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
 
+- (id<ComAsheraWidgetFactoryIWidget>)newLazyInstance OBJC_METHOD_FAMILY_NONE;
+
 - (IOSObjectArray *)getAttributes;
 
 - (void)setUpStyleWithJavaUtilMap:(id<JavaUtilMap>)styles;

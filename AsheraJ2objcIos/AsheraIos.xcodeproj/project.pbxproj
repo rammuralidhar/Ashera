@@ -46,6 +46,7 @@
 		27715FCC1C421F9200F6DD5F /* LinearLayoutImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27715FCB1C421F9200F6DD5F /* LinearLayoutImpl.m */; };
 		277460021BDA93BB00BAFD75 /* prefixes in Resources */ = {isa = PBXBuildFile; fileRef = 277460001BDA93BB00BAFD75 /* prefixes */; };
 		27746AEF1BDB59EC00BAFD75 /* libAsheraIosParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277463991BDB318300BAFD75 /* libAsheraIosParser.a */; };
+		27AB34101C6775A5004FA226 /* TemplateWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB340F1C6775A5004FA226 /* TemplateWidget.m */; };
 		27E701441C40AE1B0043E295 /* LabelImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E701421C40AE1B0043E295 /* LabelImpl.m */; };
 		27E7014A1C40BF4E0043E295 /* ComponentImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E701491C40BF4E0043E295 /* ComponentImpl.m */; };
 		27E701501C40C8440043E295 /* HtmlViewerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E7014F1C40C8440043E295 /* HtmlViewerUtils.m */; };
@@ -160,6 +161,8 @@
 		27715FCB1C421F9200F6DD5F /* LinearLayoutImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LinearLayoutImpl.m; path = AsheraIosParser/src/LinearLayoutImpl.m; sourceTree = "<group>"; };
 		277460001BDA93BB00BAFD75 /* prefixes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prefixes; sourceTree = "<group>"; };
 		277463931BDB318200BAFD75 /* AsheraIosParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AsheraIosParser.xcodeproj; path = AsheraIosParser/AsheraIosParser.xcodeproj; sourceTree = "<group>"; };
+		27AB340E1C6775A5004FA226 /* TemplateWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TemplateWidget.h; path = AsheraIosParser/src/TemplateWidget.h; sourceTree = "<group>"; };
+		27AB340F1C6775A5004FA226 /* TemplateWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TemplateWidget.m; path = AsheraIosParser/src/TemplateWidget.m; sourceTree = "<group>"; };
 		27E7013F1C40AE1B0043E295 /* HtmlViewerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HtmlViewerUtils.h; path = AsheraIosParser/src/HtmlViewerUtils.h; sourceTree = "<group>"; };
 		27E701411C40AE1B0043E295 /* LabelImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelImpl.h; path = AsheraIosParser/src/LabelImpl.h; sourceTree = "<group>"; };
 		27E701421C40AE1B0043E295 /* LabelImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelImpl.m; path = AsheraIosParser/src/LabelImpl.m; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 		27E7013E1C40ADFF0043E295 /* widgets */ = {
 			isa = PBXGroup;
 			children = (
+				27AB340E1C6775A5004FA226 /* TemplateWidget.h */,
+				27AB340F1C6775A5004FA226 /* TemplateWidget.m */,
 				27F9CD031C6703A900A7AE3D /* ListViewImpl.h */,
 				27F9CD041C6703A900A7AE3D /* ListViewImpl.m */,
 				273E3F781C5A5AA3002C4B42 /* RelativeLayoutImpl.h */,
@@ -510,6 +515,7 @@
 				064E073F18E90BD400F5DF6B /* J2RViewController.m in Sources */,
 				064E073E18E90BD400F5DF6B /* J2RSquare.m in Sources */,
 				064E074118E90BD400F5DF6B /* CommandInterface.java in Sources */,
+				27AB34101C6775A5004FA226 /* TemplateWidget.m in Sources */,
 				27E701441C40AE1B0043E295 /* LabelImpl.m in Sources */,
 				064E073B18E90BD400F5DF6B /* J2RAppDelegate.m in Sources */,
 				064E074618E90BD400F5DF6B /* Position.java in Sources */,

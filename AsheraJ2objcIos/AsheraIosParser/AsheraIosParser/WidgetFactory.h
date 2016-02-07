@@ -16,7 +16,8 @@
 
 - (instancetype)init;
 
-+ (id<ComAsheraWidgetFactoryIWidget>)getWithNSString:(NSString *)localname;
++ (id<ComAsheraWidgetFactoryIWidget>)getWithNSString:(NSString *)localname
+                                         withBoolean:(jboolean)isLazy;
 
 + (void)register__WithNSString:(NSString *)localname
 withComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)ui;
@@ -25,7 +26,7 @@ withComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)ui;
 
 J2OBJC_STATIC_INIT(ComAsheraWidgetFactoryWidgetFactory)
 
-FOUNDATION_EXPORT id<ComAsheraWidgetFactoryIWidget> ComAsheraWidgetFactoryWidgetFactory_getWithNSString_(NSString *localname);
+FOUNDATION_EXPORT id<ComAsheraWidgetFactoryIWidget> ComAsheraWidgetFactoryWidgetFactory_getWithNSString_withBoolean_(NSString *localname, jboolean isLazy);
 
 FOUNDATION_EXPORT void ComAsheraWidgetFactoryWidgetFactory_register__WithNSString_withComAsheraWidgetFactoryIWidget_(NSString *localname, id<ComAsheraWidgetFactoryIWidget> ui);
 

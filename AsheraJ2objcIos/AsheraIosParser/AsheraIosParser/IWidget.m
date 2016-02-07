@@ -21,12 +21,13 @@
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
     { "newInstance", NULL, "Lcom.ashera.widget.factory.IWidget;", 0x401, NULL, NULL },
+    { "newLazyInstance", NULL, "Lcom.ashera.widget.factory.IWidget;", 0x401, NULL, NULL },
     { "getAttributes", NULL, "[Ljava.lang.String;", 0x401, NULL, NULL },
     { "setUpStyleWithJavaUtilMap:", "setUpStyle", "V", 0x401, NULL, NULL },
     { "setUpAttributeWithJavaUtilMap:", "setUpAttribute", "V", 0x401, NULL, NULL },
     { "getAttributeValueWithNSString:", "getAttributeValue", "Ljava.lang.Object;", 0x401, NULL, NULL },
   };
-  static const J2ObjcClassInfo _ComAsheraWidgetFactoryIWidget = { 2, "IWidget", "com.ashera.widget.factory", NULL, 0x609, 5, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComAsheraWidgetFactoryIWidget = { 2, "IWidget", "com.ashera.widget.factory", NULL, 0x609, 6, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraWidgetFactoryIWidget;
 }
 

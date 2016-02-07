@@ -2614,6 +2614,9 @@
 		27AB340B1C673C5D004FA226 /* EventBus.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AB34081C673B27004FA226 /* EventBus.m */; };
 		27AB340C1C673C5D004FA226 /* IListView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27F9CD071C6703FC00A7AE3D /* IListView.h */; };
 		27AB340D1C673C5D004FA226 /* IListView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27F9CD081C6703FC00A7AE3D /* IListView.m */; };
+		27AB34141C677631004FA226 /* ITemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB34131C677631004FA226 /* ITemplate.m */; };
+		27AB34151C67763C004FA226 /* ITemplate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AB34121C677631004FA226 /* ITemplate.h */; };
+		27AB34161C67763C004FA226 /* ITemplate.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AB34131C677631004FA226 /* ITemplate.m */; };
 		27F9CD091C6703FC00A7AE3D /* IListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F9CD081C6703FC00A7AE3D /* IListView.m */; };
 /* End PBXBuildFile section */
 
@@ -2634,6 +2637,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				27AB34151C67763C004FA226 /* ITemplate.h in CopyFiles */,
+				27AB34161C67763C004FA226 /* ITemplate.m in CopyFiles */,
 				27AB340A1C673C5D004FA226 /* EventBus.h in CopyFiles */,
 				27AB340B1C673C5D004FA226 /* EventBus.m in CopyFiles */,
 				27AB340C1C673C5D004FA226 /* IListView.h in CopyFiles */,
@@ -5770,6 +5775,8 @@
 		27746EFB1BDBBF9D00BAFD75 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
 		27AB34071C673B27004FA226 /* EventBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBus.h; sourceTree = "<group>"; };
 		27AB34081C673B27004FA226 /* EventBus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventBus.m; sourceTree = "<group>"; };
+		27AB34121C677631004FA226 /* ITemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITemplate.h; sourceTree = "<group>"; };
+		27AB34131C677631004FA226 /* ITemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITemplate.m; sourceTree = "<group>"; };
 		27F9CD071C6703FC00A7AE3D /* IListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IListView.h; sourceTree = "<group>"; };
 		27F9CD081C6703FC00A7AE3D /* IListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IListView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -7034,6 +7041,8 @@
 		2774637B1BDB318200BAFD75 /* AsheraIosParser */ = {
 			isa = PBXGroup;
 			children = (
+				27AB34121C677631004FA226 /* ITemplate.h */,
+				27AB34131C677631004FA226 /* ITemplate.m */,
 				27AB34071C673B27004FA226 /* EventBus.h */,
 				27AB34081C673B27004FA226 /* EventBus.m */,
 				27F9CD071C6703FC00A7AE3D /* IListView.h */,
@@ -8550,6 +8559,7 @@
 				2708FA0E1C39963300FFB46F /* WorkerThread.m in Sources */,
 				270B6D0D1C3B60F2002CB39A /* AbstractCSSRuleImpl.m in Sources */,
 				2708FA0F1C39963300FFB46F /* Xfermode.h in Sources */,
+				27AB34141C677631004FA226 /* ITemplate.m in Sources */,
 				2708FA101C39963300FFB46F /* Xfermode.m in Sources */,
 				273E3B201C5941CB002C4B42 /* StrongCacheStorage.m in Sources */,
 				273E3B1B1C5941CB002C4B42 /* StringArraySequence.m in Sources */,

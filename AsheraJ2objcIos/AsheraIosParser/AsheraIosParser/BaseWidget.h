@@ -6,10 +6,12 @@
 #ifndef _ComAsheraWidgetBaseWidget_H_
 #define _ComAsheraWidgetBaseWidget_H_
 
+#include "HasText.h"
 #include "IWidget.h"
 #include "J2ObjC_header.h"
 
 @class IOSIntArray;
+@class IOSObjectArray;
 @protocol ComAsheraWidgetFactoryHasWidgets;
 @protocol JavaUtilMap;
 
@@ -30,6 +32,8 @@
  */
 + (IOSIntArray *)hex2RgbWithNSString:(NSString *)colorStr;
 
+- (id<ComAsheraWidgetFactoryIWidget>)newLazyInstance OBJC_METHOD_FAMILY_NONE;
+
 - (void)setParentWithComAsheraWidgetFactoryHasWidgets:(id<ComAsheraWidgetFactoryHasWidgets>)parent;
 
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes;
@@ -47,5 +51,52 @@ FOUNDATION_EXPORT IOSIntArray *ComAsheraWidgetBaseWidget_hex2RgbWithNSString_(NS
 FOUNDATION_EXPORT void ComAsheraWidgetBaseWidget_init(ComAsheraWidgetBaseWidget *self);
 
 J2OBJC_TYPE_LITERAL_HEADER(ComAsheraWidgetBaseWidget)
+
+@interface ComAsheraWidgetBaseWidget_LazyBaseWidget : ComAsheraWidgetBaseWidget < ComAsheraWidgetFactoryHasText > {
+ @public
+  id<JavaUtilMap> attributes_LazyBaseWidget_;
+  id<JavaUtilMap> styles_;
+}
+
+#pragma mark Public
+
+- (id)asNativeWidget;
+
+- (id)asWidget;
+
+- (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
+
+- (IOSObjectArray *)getAttributes;
+
+- (id<JavaUtilMap>)getStyles;
+
+- (NSString *)getText;
+
+- (void)loadDataWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)instance;
+
+- (id<ComAsheraWidgetFactoryIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
+
+- (void)setTextWithNSString:(NSString *)text;
+
+- (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes;
+
+- (void)setUpStyleWithJavaUtilMap:(id<JavaUtilMap>)styles;
+
+#pragma mark Package-Private
+
+- (instancetype)initWithComAsheraWidgetBaseWidget:(ComAsheraWidgetBaseWidget *)outer$;
+
+@end
+
+J2OBJC_EMPTY_STATIC_INIT(ComAsheraWidgetBaseWidget_LazyBaseWidget)
+
+J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget_LazyBaseWidget, attributes_LazyBaseWidget_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget_LazyBaseWidget, styles_, id<JavaUtilMap>)
+
+FOUNDATION_EXPORT void ComAsheraWidgetBaseWidget_LazyBaseWidget_initWithComAsheraWidgetBaseWidget_(ComAsheraWidgetBaseWidget_LazyBaseWidget *self, ComAsheraWidgetBaseWidget *outer$);
+
+FOUNDATION_EXPORT ComAsheraWidgetBaseWidget_LazyBaseWidget *new_ComAsheraWidgetBaseWidget_LazyBaseWidget_initWithComAsheraWidgetBaseWidget_(ComAsheraWidgetBaseWidget *outer$) NS_RETURNS_RETAINED;
+
+J2OBJC_TYPE_LITERAL_HEADER(ComAsheraWidgetBaseWidget_LazyBaseWidget)
 
 #endif // _ComAsheraWidgetBaseWidget_H_

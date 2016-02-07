@@ -10,10 +10,16 @@
 #include "HasWidgets.h"
 #include "J2ObjC_header.h"
 
+@class IOSObjectArray;
 @protocol ComAsheraWidgetFactoryIWidget;
 @protocol JavaUtilIterator;
+@protocol JavaUtilList;
+@protocol JavaUtilMap;
 
-@interface ComAsheraWidgetBaseHasWidgets : ComAsheraWidgetBaseWidget < ComAsheraWidgetFactoryHasWidgets >
+@interface ComAsheraWidgetBaseHasWidgets : ComAsheraWidgetBaseWidget < ComAsheraWidgetFactoryHasWidgets > {
+ @public
+  id<JavaUtilList> widgets_;
+}
 
 #pragma mark Public
 
@@ -25,14 +31,48 @@
 
 - (id<JavaUtilIterator>)iterate;
 
+- (id<ComAsheraWidgetFactoryIWidget>)newLazyInstance OBJC_METHOD_FAMILY_NONE;
+
 - (jboolean)removeWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)w;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComAsheraWidgetBaseHasWidgets)
 
+J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseHasWidgets, widgets_, id<JavaUtilList>)
+
 FOUNDATION_EXPORT void ComAsheraWidgetBaseHasWidgets_init(ComAsheraWidgetBaseHasWidgets *self);
 
 J2OBJC_TYPE_LITERAL_HEADER(ComAsheraWidgetBaseHasWidgets)
+
+@interface ComAsheraWidgetBaseHasWidgets_LazyBaseWidget : ComAsheraWidgetBaseHasWidgets
+
+#pragma mark Public
+
+- (id)asNativeWidget;
+
+- (id)asWidget;
+
+- (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
+
+- (IOSObjectArray *)getAttributes;
+
+- (IOSObjectArray *)getLayoutAttributes;
+
+- (id<ComAsheraWidgetFactoryIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
+
+#pragma mark Package-Private
+
+- (instancetype)initWithComAsheraWidgetBaseHasWidgets:(ComAsheraWidgetBaseHasWidgets *)outer$;
+
+@end
+
+J2OBJC_EMPTY_STATIC_INIT(ComAsheraWidgetBaseHasWidgets_LazyBaseWidget)
+
+FOUNDATION_EXPORT void ComAsheraWidgetBaseHasWidgets_LazyBaseWidget_initWithComAsheraWidgetBaseHasWidgets_(ComAsheraWidgetBaseHasWidgets_LazyBaseWidget *self, ComAsheraWidgetBaseHasWidgets *outer$);
+
+FOUNDATION_EXPORT ComAsheraWidgetBaseHasWidgets_LazyBaseWidget *new_ComAsheraWidgetBaseHasWidgets_LazyBaseWidget_initWithComAsheraWidgetBaseHasWidgets_(ComAsheraWidgetBaseHasWidgets *outer$) NS_RETURNS_RETAINED;
+
+J2OBJC_TYPE_LITERAL_HEADER(ComAsheraWidgetBaseHasWidgets_LazyBaseWidget)
 
 #endif // _ComAsheraWidgetBaseHasWidgets_H_

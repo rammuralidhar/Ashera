@@ -5,12 +5,16 @@
 
 
 #include "BaseWidget.h"
+#include "HasText.h"
 #include "HasWidgets.h"
+#include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
+#include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "WidgetAttributeHelper.h"
 #include "java/lang/Boolean.h"
 #include "java/lang/Integer.h"
+#include "java/util/HashMap.h"
 #include "java/util/Map.h"
 
 #pragma clang diagnostic ignored "-Wprotocol"
@@ -31,29 +35,40 @@
 
 J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget, attributes_, id<JavaUtilMap>)
 
+@interface ComAsheraWidgetBaseWidget_LazyBaseWidget () {
+ @public
+  ComAsheraWidgetBaseWidget *this$0_;
+  NSString *text_;
+}
 
-#line 9
+@end
+
+J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget_LazyBaseWidget, this$0_, ComAsheraWidgetBaseWidget *)
+J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget_LazyBaseWidget, text_, NSString *)
+
+
+#line 11
 @implementation ComAsheraWidgetBaseWidget
 
 
-#line 25
+#line 27
 + (IOSIntArray *)hex2RgbWithNSString:(NSString *)colorStr {
   return ComAsheraWidgetBaseWidget_hex2RgbWithNSString_(colorStr);
 }
 
 
-#line 34
+#line 36
 - (void)setParentWithComAsheraWidgetFactoryHasWidgets:(id<ComAsheraWidgetFactoryHasWidgets>)parent {
   self->parent_ = parent;
 }
 
 
-#line 40
+#line 42
 - (void)setUpStyleWithJavaUtilMap:(id<JavaUtilMap>)styles {
 }
 
 
-#line 45
+#line 47
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes {
   self->attributes_ = attributes;
   self->paramWidth_ = ComAsheraWidgetHelperWidgetAttributeHelper_getWidthWithNSString_([((id<JavaUtilMap>) nil_chk(attributes)) getWithId:@"width"]);
@@ -64,36 +79,42 @@ J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget, attributes_, id<JavaUtilMap>)
 }
 
 
-#line 56
+#line 58
 - (id)getAttributeValueWithNSString:(NSString *)attr {
   if ([((NSString *) nil_chk(attr)) isEqual:@"width"]) {
     return JavaLangInteger_valueOfWithInt_(paramWidth_);
   }
   else
-#line 59
+#line 61
   if ([attr isEqual:@"height"]) {
     return JavaLangInteger_valueOfWithInt_(paramHeight_);
   }
   else
-#line 61
+#line 63
   if ([attr isEqual:@"weight"]) {
     return JavaLangInteger_valueOfWithInt_(weight_);
   }
   else
-#line 63
+#line 65
   if ([attr isEqual:@"align_parentbottom"]) {
     return JavaLangBoolean_valueOfWithBoolean_(alignParentBottom_);
   }
   else
-#line 65
+#line 67
   if ([attr isEqual:@"align_parentright"]) {
     return JavaLangBoolean_valueOfWithBoolean_(alignParentRight_);
   }
   else {
     
-#line 68
+#line 70
     return [((id<JavaUtilMap>) nil_chk(attributes_)) getWithId:attr];
   }
+}
+
+
+#line 75
+- (id<ComAsheraWidgetFactoryIWidget>)newLazyInstance {
+  return new_ComAsheraWidgetBaseWidget_LazyBaseWidget_initWithComAsheraWidgetBaseWidget_(self);
 }
 
 - (instancetype)init {
@@ -108,6 +129,7 @@ J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget, attributes_, id<JavaUtilMap>)
     { "setUpStyleWithJavaUtilMap:", "setUpStyle", "V", 0x1, NULL, NULL },
     { "setUpAttributeWithJavaUtilMap:", "setUpAttribute", "V", 0x1, NULL, NULL },
     { "getAttributeValueWithNSString:", "getAttributeValue", "Ljava.lang.Object;", 0x1, NULL, NULL },
+    { "newLazyInstance", NULL, "Lcom.ashera.widget.factory.IWidget;", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
@@ -119,24 +141,25 @@ J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget, attributes_, id<JavaUtilMap>)
     { "alignParentRight_", NULL, 0x2, "Z", NULL, NULL,  },
     { "attributes_", NULL, 0x2, "Ljava.util.Map;", NULL, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;",  },
   };
-  static const J2ObjcClassInfo _ComAsheraWidgetBaseWidget = { 2, "BaseWidget", "com.ashera.widget", NULL, 0x401, 6, methods, 7, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const char *inner_classes[] = {"Lcom.ashera.widget.BaseWidget$LazyBaseWidget;"};
+  static const J2ObjcClassInfo _ComAsheraWidgetBaseWidget = { 2, "BaseWidget", "com.ashera.widget", NULL, 0x401, 7, methods, 7, fields, 0, NULL, 1, inner_classes, NULL, NULL };
   return &_ComAsheraWidgetBaseWidget;
 }
 
 @end
 
 
-#line 25
+#line 27
 IOSIntArray *ComAsheraWidgetBaseWidget_hex2RgbWithNSString_(NSString *colorStr) {
   ComAsheraWidgetBaseWidget_initialize();
   
-#line 26
-  return [IOSIntArray newArrayWithInts:(jint[]){ [JavaLangInteger_valueOfWithNSString_withInt_(
-#line 27
-  [((NSString *) nil_chk(colorStr)) substring:1 endIndex:3], 16) intValue], [JavaLangInteger_valueOfWithNSString_withInt_(
 #line 28
-  [colorStr substring:3 endIndex:5], 16) intValue], [JavaLangInteger_valueOfWithNSString_withInt_(
+  return [IOSIntArray newArrayWithInts:(jint[]){ [JavaLangInteger_valueOfWithNSString_withInt_(
 #line 29
+  [((NSString *) nil_chk(colorStr)) substring:1 endIndex:3], 16) intValue], [JavaLangInteger_valueOfWithNSString_withInt_(
+#line 30
+  [colorStr substring:3 endIndex:5], 16) intValue], [JavaLangInteger_valueOfWithNSString_withInt_(
+#line 31
   [colorStr substring:5 endIndex:7], 16) intValue] } count:3];
 }
 
@@ -145,3 +168,117 @@ void ComAsheraWidgetBaseWidget_init(ComAsheraWidgetBaseWidget *self) {
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComAsheraWidgetBaseWidget)
+
+
+#line 79
+@implementation ComAsheraWidgetBaseWidget_LazyBaseWidget
+
+- (id<JavaUtilMap>)getStyles {
+  return styles_;
+}
+
+
+#line 88
+- (id<ComAsheraWidgetFactoryIWidget>)newInstance {
+  return [this$0_ newInstance];
+}
+
+
+#line 93
+- (IOSObjectArray *)getAttributes {
+  return [this$0_ getAttributes];
+}
+
+
+#line 98
+- (id)asWidget {
+  return self;
+}
+
+
+#line 103
+- (id)asNativeWidget {
+  return nil;
+}
+
+
+#line 108
+- (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
+}
+
+
+#line 112
+- (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes {
+  [((id<JavaUtilMap>) nil_chk(self->attributes_LazyBaseWidget_)) putAllWithJavaUtilMap:attributes];
+}
+
+- (void)setUpStyleWithJavaUtilMap:(id<JavaUtilMap>)styles {
+  [((id<JavaUtilMap>) nil_chk(self->styles_)) putAllWithJavaUtilMap:styles];
+}
+
+- (void)loadDataWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)instance {
+  [((id<ComAsheraWidgetFactoryIWidget>) nil_chk(instance)) setUpAttributeWithJavaUtilMap:attributes_LazyBaseWidget_];
+  [instance setUpStyleWithJavaUtilMap:styles_];
+  if ([ComAsheraWidgetFactoryHasText_class_() isInstance:instance]) {
+    [((id<ComAsheraWidgetFactoryHasText>) check_protocol_cast(instance, @protocol(ComAsheraWidgetFactoryHasText))) setTextWithNSString:text_];
+  }
+}
+
+
+#line 129
+- (NSString *)getText {
+  return self->text_;
+}
+
+
+#line 134
+- (void)setTextWithNSString:(NSString *)text {
+  self->text_ = text;
+}
+
+- (instancetype)initWithComAsheraWidgetBaseWidget:(ComAsheraWidgetBaseWidget *)outer$ {
+  ComAsheraWidgetBaseWidget_LazyBaseWidget_initWithComAsheraWidgetBaseWidget_(self, outer$);
+  return self;
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static const J2ObjcMethodInfo methods[] = {
+    { "getStyles", NULL, "Ljava.util.Map;", 0x1, NULL, NULL },
+    { "newInstance", NULL, "Lcom.ashera.widget.factory.IWidget;", 0x1, NULL, NULL },
+    { "getAttributes", NULL, "[Ljava.lang.String;", 0x1, NULL, NULL },
+    { "asWidget", NULL, "Ljava.lang.Object;", 0x1, NULL, NULL },
+    { "asNativeWidget", NULL, "Ljava.lang.Object;", 0x1, NULL, NULL },
+    { "createWithJavaUtilMap:", "create", "V", 0x1, NULL, NULL },
+    { "setUpAttributeWithJavaUtilMap:", "setUpAttribute", "V", 0x1, NULL, NULL },
+    { "setUpStyleWithJavaUtilMap:", "setUpStyle", "V", 0x1, NULL, NULL },
+    { "loadDataWithComAsheraWidgetFactoryIWidget:", "loadData", "V", 0x1, NULL, NULL },
+    { "getText", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "setTextWithNSString:", "setText", "V", 0x1, NULL, NULL },
+    { "initWithComAsheraWidgetBaseWidget:", "init", NULL, 0x0, NULL, NULL },
+  };
+  static const J2ObjcFieldInfo fields[] = {
+    { "this$0_", NULL, 0x1012, "Lcom.ashera.widget.BaseWidget;", NULL, NULL,  },
+    { "attributes_LazyBaseWidget_", "attributes", 0x0, "Ljava.util.Map;", NULL, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;",  },
+    { "styles_", NULL, 0x0, "Ljava.util.Map;", NULL, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;",  },
+    { "text_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
+  };
+  static const J2ObjcClassInfo _ComAsheraWidgetBaseWidget_LazyBaseWidget = { 2, "LazyBaseWidget", "com.ashera.widget", "BaseWidget", 0x1, 12, methods, 4, fields, 0, NULL, 0, NULL, NULL, NULL };
+  return &_ComAsheraWidgetBaseWidget_LazyBaseWidget;
+}
+
+@end
+
+void ComAsheraWidgetBaseWidget_LazyBaseWidget_initWithComAsheraWidgetBaseWidget_(ComAsheraWidgetBaseWidget_LazyBaseWidget *self, ComAsheraWidgetBaseWidget *outer$) {
+  self->this$0_ = outer$;
+  (void) ComAsheraWidgetBaseWidget_init(self);
+  self->attributes_LazyBaseWidget_ = new_JavaUtilHashMap_init();
+  self->styles_ = new_JavaUtilHashMap_init();
+}
+
+ComAsheraWidgetBaseWidget_LazyBaseWidget *new_ComAsheraWidgetBaseWidget_LazyBaseWidget_initWithComAsheraWidgetBaseWidget_(ComAsheraWidgetBaseWidget *outer$) {
+  ComAsheraWidgetBaseWidget_LazyBaseWidget *self = [ComAsheraWidgetBaseWidget_LazyBaseWidget alloc];
+  ComAsheraWidgetBaseWidget_LazyBaseWidget_initWithComAsheraWidgetBaseWidget_(self, outer$);
+  return self;
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComAsheraWidgetBaseWidget_LazyBaseWidget)
