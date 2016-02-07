@@ -12,11 +12,12 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.ashera.android.utils.HtmlViewerUtils;
+import com.ashera.widget.bus.EventBus;
 import com.jockeyjs.Jockey;
 import com.jockeyjs.JockeyImpl;
 
 public class HtmlViewerActivity extends Activity {
-	WebViewClient myWebViewClient = new WebViewClient();
+	WebViewClient myWebViewClient;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,13 @@ public class HtmlViewerActivity extends Activity {
 		Map<String, Object> obj = new HashMap<String, Object>();
 		obj.put("context", this);
 
+		myWebViewClient = new WebViewClient() {
+			@Override
+			public void onPageFinished(WebView view, String url) {
+				super.onPageFinished(view, url);
+				EventBus.getDefault().notifyObservers();
+			}
+		};
 		// Get the default JockeyImpl
 		final WebView webView = new WebView(this);
 		webView.setWebViewClient(myWebViewClient);

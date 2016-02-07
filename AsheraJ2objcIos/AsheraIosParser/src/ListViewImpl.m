@@ -12,6 +12,7 @@
 #include "ListViewImpl.h"
 #include "View.h"
 #include "java/util/Map.h"
+#include <Jockey.h>
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/ListViewImpl.java"
 

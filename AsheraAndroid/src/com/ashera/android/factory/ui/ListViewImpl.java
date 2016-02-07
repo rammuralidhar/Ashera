@@ -3,18 +3,17 @@ package com.ashera.android.factory.ui;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Observer;
 
 import android.content.Context;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.ashera.widget.BaseHasWidgets;
+import com.ashera.widget.bus.EventBus;
 import com.ashera.widget.factory.HasText;
 import com.ashera.widget.factory.IListView;
 import com.ashera.widget.factory.ITemplate;
@@ -22,7 +21,7 @@ import com.ashera.widget.factory.IWidget;
 import com.jockeyjs.Jockey;
 import com.jockeyjs.JockeyHandler;
 
-public class ListViewImpl extends BaseHasWidgets implements IListView {
+public class ListViewImpl extends BaseHasWidgets implements IListView, Observer {
 	private ListView listView;
 	private Context context;
 	private String templateId;
@@ -31,6 +30,30 @@ public class ListViewImpl extends BaseHasWidgets implements IListView {
 	private Jockey jockey;
 	private WebView webView;
 	private String eventId;
+	
+	public void update(java.util.Observable observable, Object data) {
+		if (observable instanceof EventBus) {
+			Iterator<IWidget> iterate = iterate();
+			while (iterate.hasNext()) {
+				ITemplate widget = (ITemplate) iterate.next();
+				
+				if (widget.getId().equals(headerTemplateId)) {
+					listView.addHeaderView((View) ((ITemplate) widget).loadWidgets());
+				}
+				if (widget.getId().equals(footerTemplateId)) {
+					listView.addFooterView((View) ((ITemplate) widget).loadWidgets());
+				}
+			}
+			
+			jockey.send(eventId, webView);
+			jockey.on(eventId + "-recieve", new JockeyHandler() {
+				@Override
+				protected void doPerform(Map<Object, Object> payload) {
+					listView.setAdapter(new Adapter1((List<Map<String, String>>) payload.get("data")));
+				}
+			});
+		}
+	}
 	
 	@Override
 	public String[] getLayoutAttributes() {
@@ -75,39 +98,8 @@ public class ListViewImpl extends BaseHasWidgets implements IListView {
 		this.context = (Context) metadata.get("context");
 		this.jockey = (Jockey) metadata.get("jockey");
 		this.webView = (WebView) metadata.get("webView");
-		listView = new ListView(context) {
-			@Override
-			protected void onAttachedToWindow() {
-				super.onAttachedToWindow();
-				Iterator<IWidget> iterate = iterate();
-				while (iterate.hasNext()) {
-					ITemplate widget = (ITemplate) iterate.next();
-					
-					if (widget.getId().equals(headerTemplateId)) {
-						listView.addHeaderView((View) ((ITemplate) widget).loadWidgets());
-					}
-					if (widget.getId().equals(footerTemplateId)) {
-						listView.addFooterView((View) ((ITemplate) widget).loadWidgets());
-					}
-				}
-				
-				new Handler().postDelayed(new Runnable() {
-					
-					@Override
-					public void run() {
-						jockey.send(eventId, webView);
-						jockey.on(eventId + "-recieve", new JockeyHandler() {
-							@Override
-							protected void doPerform(Map<Object, Object> payload) {
-								listView.setAdapter(new Adapter1((List<Map<String, String>>) payload.get("data")));
-							}
-						});
-						
-					}
-				}, 1000);
-
-			}
-		};
+		listView = new ListView(context);
+		EventBus.getDefault().addObserver(this);
 	}
 	
 	@Override
