@@ -62,6 +62,7 @@ public class TemplateWidget extends BaseHasWidgets implements ITemplate{
 	public Object loadWidgets() {
 		// create widget by cloning and initializing the data
 		LinearLayoutImpl frameLayout = new LinearLayoutImpl();
+		frameLayout.create(metadata);
 		int size = widgets.size();
 	
 		for (int i = 0; i < size; i++) {

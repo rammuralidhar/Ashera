@@ -91,6 +91,7 @@ J2OBJC_FIELD_SETTER(IosTemplateWidget, attributes_TemplateWidget_, id<JavaUtilMa
   
 #line 64
   IosLinearLayoutImpl *frameLayout = new_IosLinearLayoutImpl_init();
+    [frameLayout createWithJavaUtilMap:metadata_];
   jint size = [((id<JavaUtilList>) nil_chk(widgets_)) size];
   
 #line 67
@@ -99,7 +100,7 @@ J2OBJC_FIELD_SETTER(IosTemplateWidget, attributes_TemplateWidget_, id<JavaUtilMa
     id<ComAsheraWidgetFactoryIWidget> widgetClone = [((ComAsheraWidgetBaseWidget_LazyBaseWidget *) nil_chk(widget)) newInstance];
     [((id<ComAsheraWidgetFactoryIWidget>) nil_chk(widgetClone)) createWithJavaUtilMap:metadata_];
     [widget loadDataWithComAsheraWidgetFactoryIWidget:widgetClone];
-    [frameLayout addWithComAsheraWidgetFactoryIWidget:widget];
+    [frameLayout addWithComAsheraWidgetFactoryIWidget:widgetClone];
   }
   return frameLayout;
 }

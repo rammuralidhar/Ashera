@@ -1,5 +1,6 @@
 package ios;
 
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
@@ -10,6 +11,7 @@ import repackaged.android.view.View;
 import com.ashera.widget.BaseHasWidgets;
 import com.ashera.widget.bus.EventBus;
 import com.ashera.widget.factory.IListView;
+import com.ashera.widget.factory.ITemplate;
 import com.ashera.widget.factory.IWidget;
 
 public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
@@ -118,7 +120,18 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
 	
 	@Override
 	public void update(Observable observable, Object data) {
-		
+		if (observable instanceof EventBus) {
+			Iterator<IWidget> iterate = iterate();
+			while (iterate.hasNext()) {
+				ITemplate widget = (ITemplate) iterate.next();
+				
+				if (widget.getId().equals(headerTemplateId)) {
+				}
+				if (widget.getId().equals(footerTemplateId)) {
+				}
+			}
+
+		}
 	}
 	
 	public native void sendEvent(String eventName, Object webView)/*-[

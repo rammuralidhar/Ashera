@@ -19,6 +19,7 @@
 @interface IosListViewImpl : ComAsheraWidgetBaseHasWidgets < ComAsheraWidgetFactoryIListView, JavaUtilObserver, UITableViewDelegate, UITableViewDataSource>
 @property UITableView* tableView;
 
+
 #pragma mark Public
 
 - (instancetype)init;
