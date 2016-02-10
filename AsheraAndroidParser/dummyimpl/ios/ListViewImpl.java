@@ -7,6 +7,8 @@ import java.util.Observer;
 
 import repackaged.android.content.Context;
 import repackaged.android.view.View;
+import repackaged.android.view.View.MeasureSpec;
+import repackaged.android.view.ViewGroup;
 
 import com.ashera.widget.BaseHasWidgets;
 import com.ashera.widget.bus.EventBus;
@@ -159,5 +161,14 @@ public native void nativeMakeFrame(int l, int t, int r, int b)/*-[
 ]-*/;
 
 
+public void measure(ViewGroup layout) {
+	int w = -2;
+	int h = -2;
+	int wmeasureSpec = MeasureSpec.EXACTLY;
+	int hmeasureSpec = MeasureSpec.EXACTLY;
+	layout.measure(View.MeasureSpec.makeMeasureSpec( w, wmeasureSpec ),
+		View.MeasureSpec.makeMeasureSpec( h, hmeasureSpec  ));
+	layout.layout(0, 0, layout.getMeasuredWidth(), layout.getMeasuredHeight());
+}
 
 }

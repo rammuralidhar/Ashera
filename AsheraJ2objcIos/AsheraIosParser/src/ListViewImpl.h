@@ -8,8 +8,10 @@
 
 #include "BaseHasWidgets.h"
 #include "IListView.h"
+#include <ITemplate.h>
 #include "J2ObjC_header.h"
 #include "java/util/Observer.h"
+
 
 @class IOSObjectArray;
 @class JavaUtilObservable;
@@ -18,7 +20,8 @@
 
 @interface IosListViewImpl : ComAsheraWidgetBaseHasWidgets < ComAsheraWidgetFactoryIListView, JavaUtilObserver, UITableViewDelegate, UITableViewDataSource>
 @property UITableView* tableView;
-
+@property id<ComAsheraWidgetFactoryITemplate> template;
+@property ComAsheraWidgetBaseHasWidgets* protoType;
 
 #pragma mark Public
 

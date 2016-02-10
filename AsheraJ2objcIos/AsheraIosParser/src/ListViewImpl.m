@@ -17,6 +17,11 @@
 #include "java/util/Map.h"
 #include "java/util/Observable.h"
 #include "Jockey.h"
+#include "ViewGroup.h"
+#include <BaseHasWidgets.h>
+#include <LabelImpl.h>
+#include <AutoSizeCell.h>
+#import <objc/runtime.h>
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/ListViewImpl.java"
 
@@ -92,39 +97,105 @@ NSArray *tableData;
     return [tableData count];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
-}
+    if (self.template == nil) {
+        id<JavaUtilIterator> iterate = [self iterate];
+        while ([((id<JavaUtilIterator>) nil_chk(iterate)) hasNext]) {
+            id<ComAsheraWidgetFactoryITemplate> widget = (id<ComAsheraWidgetFactoryITemplate>) check_protocol_cast([iterate next], @protocol(ComAsheraWidgetFactoryITemplate));
+            
+            if ([((NSString *) nil_chk([((id<ComAsheraWidgetFactoryITemplate>) nil_chk(widget)) getId])) isEqual:templateId_]) {
+                self.template = widget;
+                
+                break;
+            }
+        }
+    }
+    
+    self.protoType = [self.template  loadWidgets];
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    NSDictionary* obj = [tableData objectAtIndex:indexPath.row];
+    UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    ComAsheraWidgetBaseHasWidgets* layout = self.protoType;
+    IosLabelImpl* label = [[layout iterate] next];
+    [label setTextWithNSString:obj[@"value"]];
+    [self measureWithRepackagedAndroidViewViewGroup: [layout asWidget]];
+    
+    // Get the actual height required for the cell
+    UIView* uiView = [layout asNativeWidget];
+    CGFloat height = uiView.frame.size.height;
+    
+    // Add an extra point to the height to account for the cell separator, which is added between the bottom
+    // of the cell's contentView and the bottom of the table view cell.
+    height += 1;
+
+    return height;
+}*/
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    if (self.template == nil) {
+        id<JavaUtilIterator> iterate = [self iterate];
+        while ([((id<JavaUtilIterator>) nil_chk(iterate)) hasNext]) {
+            id<ComAsheraWidgetFactoryITemplate> widget = (id<ComAsheraWidgetFactoryITemplate>) check_protocol_cast([iterate next], @protocol(ComAsheraWidgetFactoryITemplate));
+            
+            if ([((NSString *) nil_chk([((id<ComAsheraWidgetFactoryITemplate>) nil_chk(widget)) getId])) isEqual:templateId_]) {
+                self.template = widget;
+                
+                break;
+            }
+        }
+    }
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     NSDictionary* obj = [tableData objectAtIndex:indexPath.row];
+    
+    static char kThumbnailButtonAssociatedPhotoKey;
+
 
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-
-        id<JavaUtilIterator> iterate = [self iterate];
-        while ([((id<JavaUtilIterator>) nil_chk(iterate)) hasNext]) {
-            id<ComAsheraWidgetFactoryITemplate> widget = (id<ComAsheraWidgetFactoryITemplate>) check_protocol_cast([iterate next], @protocol(ComAsheraWidgetFactoryITemplate));
-            if ([((NSString *) nil_chk([((id<ComAsheraWidgetFactoryITemplate>) nil_chk(widget)) getId])) isEqual:templateId_]) {
-                UIView* countryLabel = [[widget loadWidgets] asNativeWidget];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                
-                UILabel* label = [countryLabel subviews][0];
-                label.frame = cell.frame;
-                [label setText: obj[@"value"]];
-                countryLabel.tag = 101;
-                [cell.contentView addSubview:countryLabel];
-            }
-        }
+        ComAsheraWidgetBaseHasWidgets* layout = [self.template loadWidgets];
+        
+        IosLabelImpl* label = [[layout iterate] next];
+        
+        [label setTextWithNSString:obj[@"value"]];
+       [self measureWithRepackagedAndroidViewViewGroup: [layout asWidget]];
+        UIView* countryLabel = [layout asNativeWidget];
+        countryLabel.tag = 101;
+        [cell.contentView addSubview:countryLabel];
+        countryLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bodyLabel]-0-|" options:0 metrics:nil views:@{ @"bodyLabel": countryLabel }]];
+        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bodyLabel]-0-|" options:0 metrics:nil views:@{ @"bodyLabel": countryLabel }]];
+        
+        
+        objc_setAssociatedObject(countryLabel,
+                                 &kThumbnailButtonAssociatedPhotoKey,
+                                 layout,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
+        UILabel* label1 = [countryLabel subviews][0];
+        label1.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [countryLabel addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bodyLabel]-0-|" options:0 metrics:nil views:@{ @"bodyLabel": label1 }]];
+        [countryLabel addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bodyLabel]-0-|" options:0 metrics:nil views:@{ @"bodyLabel": label1 }]];
+        //cell.frame.size.width = tableView.frame.size.width;
     } else {
+
         UILabel* countryLabel = (UILabel *)[cell.contentView viewWithTag:101];
-        UILabel* label = [countryLabel subviews][0];
-       [label setText: obj[@"value"]];
+        ComAsheraWidgetBaseHasWidgets* layout = objc_getAssociatedObject(countryLabel,
+                                 &kThumbnailButtonAssociatedPhotoKey);
+        IosLabelImpl* label = [[layout iterate] next];
+        
+        [label setTextWithNSString:obj[@"value"]];
+//        [self measureWithRepackagedAndroidViewViewGroup: [layout asWidget]];
+//        UILabel* label = [countryLabel subviews][0];
+//       [label setText: obj[@"value"]];
+
+
     }
     return cell;
 }
@@ -185,9 +256,14 @@ NSArray *tableData;
 }
 
 - (void)nativeCreate {
+
+    
   self.tableView = [UITableView new];
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 44.0; // set to whatever your "average" cell height is
+
   [self.tableView  setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0,0,0,0)]];
 }
 
@@ -260,6 +336,17 @@ NSArray *tableData;
   IosListViewImpl_init(self);
   return self;
 }
+                 
+                 
+#line 164
+                 - (void)measureWithRepackagedAndroidViewViewGroup:(RepackagedAndroidViewViewGroup *)layout {
+                     jint w = self.tableView.frame.size.width;
+                     jint h = -2;
+                     jint wmeasureSpec = RepackagedAndroidViewView_MeasureSpec_EXACTLY;
+                     jint hmeasureSpec = RepackagedAndroidViewView_MeasureSpec_UNSPECIFIED;
+                     [((RepackagedAndroidViewViewGroup *) nil_chk(layout)) measureWithInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(w, wmeasureSpec) withInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(h, hmeasureSpec)];
+                     [layout layoutWithInt:0 withInt:0 withInt:w withInt:[layout getMeasuredHeight]];
+                 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
@@ -291,6 +378,7 @@ NSArray *tableData;
   static const J2ObjcClassInfo _IosListViewImpl = { 2, "ListViewImpl", "ios", NULL, 0x1, 15, methods, 7, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosListViewImpl;
 }
+
 
 @end
 
@@ -401,6 +489,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosListViewImpl)
   static const J2ObjcClassInfo _IosListViewImpl_$1 = { 2, "", "ios", "ListViewImpl", 0x8008, 3, methods, 1, fields, 0, NULL, 0, NULL, &enclosing_method, NULL };
   return &_IosListViewImpl_$1;
 }
+
 
 @end
 
