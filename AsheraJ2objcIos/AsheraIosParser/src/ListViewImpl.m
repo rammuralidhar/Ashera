@@ -20,7 +20,6 @@
 #include "ViewGroup.h"
 #include <BaseHasWidgets.h>
 #include <LabelImpl.h>
-#include <AutoSizeCell.h>
 #import <objc/runtime.h>
 
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/ListViewImpl.java"
