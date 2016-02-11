@@ -27,6 +27,7 @@ public class HtmlSaxHandler implements ContentHandler{
 	private Stack<Boolean> pushParent = new Stack<Boolean>();
 	private Map<String, Object> metadata;
 	private List<String> htmlElements = new ArrayList<String>();
+	private Stack<IWidget> widgetsStack = new Stack<IWidget>();
 	private boolean isTemplate = false;
 	
 	public HtmlSaxHandler(Map<String, Object> metadata) {
@@ -140,6 +141,7 @@ public class HtmlSaxHandler implements ContentHandler{
 		}
 
 		pushParent.add(parentPushed);
+		widgetsStack.add(widget);
 	}
 	
 	private String getNPath(String localName, Attributes atts) {
@@ -215,6 +217,11 @@ public class HtmlSaxHandler implements ContentHandler{
 		
 		if (localName.equals("template")) {
 			isTemplate = false;
+		}
+		
+		this.widget = widgetsStack.pop();
+		if (widget != null) {
+			widget.initialized();
 		}
 	}
 

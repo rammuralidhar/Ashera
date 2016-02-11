@@ -134,6 +134,10 @@ public abstract class BaseWidget implements IWidget{
 		public void setText(String text) {
 			this.text = text;
 		}
+	}
+	
+	@Override
+	public void initialized() {
 		
 	}
 }

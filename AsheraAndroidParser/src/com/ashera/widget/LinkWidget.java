@@ -60,8 +60,11 @@ public class LinkWidget implements IWidget{
 
 	@Override
 	public IWidget newLazyInstance() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
+	@Override
+	public void initialized() {
+		
+	}
 }

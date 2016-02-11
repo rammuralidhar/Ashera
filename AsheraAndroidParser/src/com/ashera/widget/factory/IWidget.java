@@ -9,5 +9,6 @@ public interface IWidget extends IsWidget{
 	public void setUpStyle(Map<String, String> styles);
 	public void setUpAttribute(Map<String, String> attributes);
 	public Object getAttributeValue(String attr);
+	public void initialized();
 }
 

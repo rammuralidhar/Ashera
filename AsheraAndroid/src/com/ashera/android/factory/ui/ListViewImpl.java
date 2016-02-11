@@ -30,28 +30,27 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer 
 	private Jockey jockey;
 	private WebView webView;
 	private String eventId;
+	private ITemplate headerWidget;
+	private ITemplate footerWidget;
+	private ITemplate rootWidget;
 	
 	public void update(java.util.Observable observable, Object data) {
 		if (observable instanceof EventBus) {
-			Iterator<IWidget> iterate = iterate();
-			while (iterate.hasNext()) {
-				ITemplate widget = (ITemplate) iterate.next();
-				
-				if (widget.getId().equals(headerTemplateId)) {
-					listView.addHeaderView((View) ((ITemplate) widget).loadWidgets());
-				}
-				if (widget.getId().equals(footerTemplateId)) {
-					listView.addFooterView((View) ((ITemplate) widget).loadWidgets());
-				}
+			if (headerWidget != null) {
+				listView.addHeaderView((View) (headerWidget).loadWidgets());
 			}
 			
-			jockey.send(eventId, webView);
+			if (footerWidget != null) {
+				listView.addFooterView((View) (footerWidget).loadWidgets());
+			}
+			
 			jockey.on(eventId + "-recieve", new JockeyHandler() {
 				@Override
 				protected void doPerform(Map<Object, Object> payload) {
 					listView.setAdapter(new Adapter1((List<Map<String, String>>) payload.get("data")));
 				}
 			});
+			jockey.send(eventId, webView);
 		}
 	}
 	
@@ -134,18 +133,7 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer 
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// create clone
 			Map<String, String> data = dataList.get(position);
-			Iterator<IWidget> iterate = iterate();
-			ITemplate rootWidget = null;
-			while (iterate.hasNext()) {
-				ITemplate widget = (ITemplate) iterate.next();
-				
-				if (widget.getId().equals(templateId)) {
-					rootWidget = widget;
-					break;
-				}
-			}
 			View loadWidgets = (View) rootWidget.loadWidgets();
-			
 			View view = loadWidgets.findViewById(data.get("id").hashCode());
 			
 			if (view.getTag() instanceof HasText) {
@@ -155,5 +143,26 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer 
 		}
 		
 	}	
+	
+	@Override
+	public void initialized() {
+		super.initialized();
+		
+		Iterator<IWidget> iterate = iterate();
+		while (iterate.hasNext()) {
+			ITemplate widget = (ITemplate) iterate.next();
+			
+			if (widget.getId().equals(headerTemplateId)) {
+				this.headerWidget = (ITemplate) widget;
+			}
+			if (widget.getId().equals(footerTemplateId)) {
+				this.footerWidget = (ITemplate) widget;
+			}
+			
+			if (widget.getId().equals(templateId)) {
+				this.rootWidget = widget;
+			}
+		}
+	}
 
 }
