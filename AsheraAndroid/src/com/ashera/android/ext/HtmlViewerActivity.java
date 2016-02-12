@@ -55,4 +55,11 @@ public class HtmlViewerActivity extends Activity {
 		webView.loadUrl("file:///android_asset/www/webview.html");
 
 	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		
+		EventBus.getDefault().deleteObservers();
+	}
 }
