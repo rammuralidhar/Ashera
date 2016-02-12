@@ -117,6 +117,11 @@ J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget_LazyBaseWidget, text_, NSString *)
   return new_ComAsheraWidgetBaseWidget_LazyBaseWidget_initWithComAsheraWidgetBaseWidget_(self);
 }
 
+
+#line 140
+- (void)initialized {
+}
+
 - (instancetype)init {
   ComAsheraWidgetBaseWidget_init(self);
   return self;
@@ -130,6 +135,7 @@ J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget_LazyBaseWidget, text_, NSString *)
     { "setUpAttributeWithJavaUtilMap:", "setUpAttribute", "V", 0x1, NULL, NULL },
     { "getAttributeValueWithNSString:", "getAttributeValue", "Ljava.lang.Object;", 0x1, NULL, NULL },
     { "newLazyInstance", NULL, "Lcom.ashera.widget.factory.IWidget;", 0x1, NULL, NULL },
+    { "initialized", NULL, "V", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
@@ -142,7 +148,7 @@ J2OBJC_FIELD_SETTER(ComAsheraWidgetBaseWidget_LazyBaseWidget, text_, NSString *)
     { "attributes_", NULL, 0x2, "Ljava.util.Map;", NULL, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;",  },
   };
   static const char *inner_classes[] = {"Lcom.ashera.widget.BaseWidget$LazyBaseWidget;"};
-  static const J2ObjcClassInfo _ComAsheraWidgetBaseWidget = { 2, "BaseWidget", "com.ashera.widget", NULL, 0x401, 7, methods, 7, fields, 0, NULL, 1, inner_classes, NULL, NULL };
+  static const J2ObjcClassInfo _ComAsheraWidgetBaseWidget = { 2, "BaseWidget", "com.ashera.widget", NULL, 0x401, 8, methods, 7, fields, 0, NULL, 1, inner_classes, NULL, NULL };
   return &_ComAsheraWidgetBaseWidget;
 }
 

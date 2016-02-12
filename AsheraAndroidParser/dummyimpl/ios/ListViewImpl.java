@@ -12,6 +12,9 @@ import repackaged.android.view.ViewGroup;
 
 import com.ashera.widget.BaseHasWidgets;
 import com.ashera.widget.bus.EventBus;
+import com.ashera.widget.factory.HasWidgets;
+import com.ashera.widget.factory.ILabel;
+import com.ashera.widget.factory.ILinearLayout;
 import com.ashera.widget.factory.IListView;
 import com.ashera.widget.factory.ITemplate;
 import com.ashera.widget.factory.IWidget;
@@ -24,6 +27,10 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
 	private String headerTemplateId;
 	private String footerTemplateId;
 	private String eventId;
+	private ITemplate headerWidget;
+	private ITemplate footerWidget;
+	private ITemplate rootWidget;
+	private HasWidgets referenceWidget;
 
 	@Override
 	public String[] getLayoutAttributes() {
@@ -123,52 +130,178 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
 	@Override
 	public void update(Observable observable, Object data) {
 		if (observable instanceof EventBus) {
-			Iterator<IWidget> iterate = iterate();
-			while (iterate.hasNext()) {
-				ITemplate widget = (ITemplate) iterate.next();
-				
-				if (widget.getId().equals(headerTemplateId)) {
-				}
-				if (widget.getId().equals(footerTemplateId)) {
-				}
+			if (headerWidget != null) {
+				addHeaderWidget(((IWidget) headerWidget.loadWidgets()).asNativeWidget());
 			}
-
+			
+			if (footerWidget != null) {
+				addFooterWidget(((IWidget) footerWidget.loadWidgets()).asNativeWidget());
+			}
+			
+			if (eventId != null) {
+				nativeLoadData(eventId, eventId + "-recieve", webView);
+			}
 		}
 	}
+
+	private native void nativeLoadData(String eventId, String recieveEventId, Object webView)/*-[
+	      NSDictionary* d = [NSDictionary new];
+	      
+	      [Jockey on:recieveEventId perform:^(NSDictionary *payload) {
+	          self.tableData = payload[@"data"];
+	          [self.tableView reloadData];
+	      }];
+	      
+	      [Jockey send:eventId withPayload:d toWebView:webView];
+	]-*/;
+
+	public native void addHeaderWidget(Object headerView)/*-[
+		[self.tableView setTableHeaderView:headerView];
+	]-*/;
 	
-	public native void sendEvent(String eventName, Object webView)/*-[
-	//[Jockey send:eventName withPayload:payload toWebView:webView];
-]-*/;
+	public native void addFooterWidget(Object view)/*-[
+		[self.tableView setTableFooterView:view];
+	]-*/;
+	
 
-public native Object nativeAsWidget()/*-[
-	return self.tableView;
-]-*/;
+	public native Object nativeAsWidget()/*-[
+		return self.tableView;
+	]-*/;
 
-private native int nativeMeasureWidth()/*-[
-    CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
-    CGSize requiredSize = [self.tableView sizeThatFits:maximumLabelSize];
-    return ceil(requiredSize.width);
-]-*/;
+	private native int nativeMeasureWidth()/*-[
+	    CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
+	    CGSize requiredSize = [self.tableView sizeThatFits:maximumLabelSize];
+	    return ceil(requiredSize.width);
+	]-*/;
 
-private native int nativeMeasureHeight(int width)/*-[
-    CGSize maximumLabelSize = CGSizeMake(width,CGFLOAT_MAX);
-    CGSize requiredSize = [self.tableView sizeThatFits:maximumLabelSize];
-    return ceil(requiredSize.height);
-]-*/;
+	private native int nativeMeasureHeight(int width)/*-[
+	    CGSize maximumLabelSize = CGSizeMake(width,CGFLOAT_MAX);
+	    CGSize requiredSize = [self.tableView sizeThatFits:maximumLabelSize];
+	    return ceil(requiredSize.height);
+	]-*/;
 
-public native void nativeMakeFrame(int l, int t, int r, int b)/*-[
-	[self.tableView setFrame:CGRectMake(l, t, r-l, b-t)];
-]-*/;
+	public native void nativeMakeFrame(int l, int t, int r, int b)/*-[
+		[self.tableView setFrame:CGRectMake(l, t, r-l, b-t)];
+	]-*/;
 
 
-public void measure(ViewGroup layout) {
-	int w = -2;
-	int h = -2;
-	int wmeasureSpec = MeasureSpec.EXACTLY;
-	int hmeasureSpec = MeasureSpec.EXACTLY;
-	layout.measure(View.MeasureSpec.makeMeasureSpec( w, wmeasureSpec ),
-		View.MeasureSpec.makeMeasureSpec( h, hmeasureSpec  ));
-	layout.layout(0, 0, layout.getMeasuredWidth(), layout.getMeasuredHeight());
-}
+	public void measure(ViewGroup layout) {
+		int w = nativeGetWidth();
+		int h = -2;
+		int wmeasureSpec = MeasureSpec.EXACTLY;
+		int hmeasureSpec = MeasureSpec.UNSPECIFIED;
+		layout.measure(View.MeasureSpec.makeMeasureSpec( w, wmeasureSpec ),
+			View.MeasureSpec.makeMeasureSpec( h, hmeasureSpec  ));
+		layout.layout(0, 0, w, layout.getMeasuredHeight());
+	}
+
+	private native int nativeGetWidth()/*-[
+		return self.tableView.frame.size.width;
+	]-*/;
+
+	public int calculateHeightOfRow(int index) {
+		ViewGroup group = updateLayoutAndCalculateText(referenceWidget, index);
+	    // Add an extra point to the height to account for the cell separator, which is added between the bottom
+	    // of the cell's contentView and the bottom of the table view cell.
+	    int height = group.getMeasuredHeight() + 1;
+	    return height;
+	}
+
+	private ViewGroup updateLayoutAndCalculateText(HasWidgets hasWidgets, int index) {
+	    ILabel label = (ILabel) hasWidgets.iterate().next();
+	    label.setText(nativeGetValue(index, "value"));
+	    ViewGroup layout = (ViewGroup) ((ILinearLayout) hasWidgets).asWidget();
+	    layout.forceLayout();
+	    measure(layout);
+	    return layout;
+	}
+	
+	private native String nativeGetValue(int index, String key)/*-[
+		NSDictionary* obj = [self.tableData objectAtIndex:index];
+		return obj[key];
+	]-*/;
+
+
+	final static String simpleTableIdentifier = "SimpleTableItem";
+	static char titleKey;
+	private Object getCell(int index) {
+		Object cell = getReusableCell(simpleTableIdentifier);
+		
+		if (cell == null) {
+			cell = newCell(simpleTableIdentifier);
+			HasWidgets hasWidgets = (HasWidgets) rootWidget.loadWidgets();
+			updateLayoutAndCalculateText(hasWidgets, index);
+			objc_setAssociatedObject(cell, hasWidgets, titleKey);
+			Object asNativeWidget = ((IWidget) hasWidgets).asNativeWidget();
+			addSubView(cell, asNativeWidget);
+		} else {
+			HasWidgets hasWidgets = objc_getAssociatedObject(cell, titleKey);
+			updateLayoutAndCalculateText(hasWidgets, index);
+		}
+		
+		return cell;
+	}
+	
+	private native HasWidgets objc_getAssociatedObject(Object cell, char titleKey)/*-[
+		return objc_getAssociatedObject(cell, &titleKey);
+	]-*/;
+
+	private native void objc_setAssociatedObject(Object cell, HasWidgets layout, char titleKey)/*-[
+		objc_setAssociatedObject(cell,
+	                                 &titleKey,
+	                                 layout,
+	                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	]-*/;
+	
+	private native Object getReusableCell(String simpleTableIdentifier)/*-[
+    	return [self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+	]-*/;
+	
+	private native Object newCell(String simpleTableIdentifier)/*-[
+		return  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+	]-*/;
+	
+	private native void addSubView(Object cell, Object layout)/*-[
+		[((UITableViewCell*)cell).contentView addSubview:layout];
+	]-*/;
+	
+//	- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//	    return 1;
+//	}
+//
+//	- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//	{
+//	    return [self.tableData count];
+//	}
+//	- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//	{
+//	    return (UITableViewCell *)[self getCellWithInt:indexPath.row];
+//	}
+//
+//	- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//	{
+//	    return (CGFloat)[self calculateHeightOfRowWithInt:indexPath.row];
+//	}
+	@Override
+	public void initialized() {
+		super.initialized();
+		
+		Iterator<IWidget> iterate = iterate();
+		while (iterate.hasNext()) {
+			ITemplate widget = (ITemplate) iterate.next();
+			
+			if (widget.getId().equals(headerTemplateId)) {
+				this.headerWidget = (ITemplate) widget;
+			}
+			if (widget.getId().equals(footerTemplateId)) {
+				this.footerWidget = (ITemplate) widget;
+			}
+			
+			if (widget.getId().equals(templateId)) {
+				this.rootWidget = widget;
+				this.referenceWidget = (HasWidgets) rootWidget.loadWidgets();
+			}
+		}
+	}
 
 }

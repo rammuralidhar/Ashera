@@ -74,6 +74,17 @@
   return nil;
 }
 
+
+#line 62
+- (id<ComAsheraWidgetFactoryIWidget>)newLazyInstance {
+  return nil;
+}
+
+
+#line 67
+- (void)initialized {
+}
+
 - (instancetype)init {
   ComAsheraWidgetLinkWidget_init(self);
   return self;
@@ -90,9 +101,11 @@
     { "newInstance", NULL, "Lcom.ashera.widget.factory.IWidget;", 0x1, NULL, NULL },
     { "getAttributeValueWithNSString:", "getAttributeValue", "Ljava.lang.Object;", 0x1, NULL, NULL },
     { "asNativeWidget", NULL, "Ljava.lang.Object;", 0x1, NULL, NULL },
+    { "newLazyInstance", NULL, "Lcom.ashera.widget.factory.IWidget;", 0x1, NULL, NULL },
+    { "initialized", NULL, "V", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
   };
-  static const J2ObjcClassInfo _ComAsheraWidgetLinkWidget = { 2, "LinkWidget", "com.ashera.widget", NULL, 0x1, 10, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComAsheraWidgetLinkWidget = { 2, "LinkWidget", "com.ashera.widget", NULL, 0x1, 12, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraWidgetLinkWidget;
 }
 

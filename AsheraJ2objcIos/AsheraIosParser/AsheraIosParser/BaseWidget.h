@@ -32,6 +32,8 @@
  */
 + (IOSIntArray *)hex2RgbWithNSString:(NSString *)colorStr;
 
+- (void)initialized OBJC_METHOD_FAMILY_NONE;
+
 - (id<ComAsheraWidgetFactoryIWidget>)newLazyInstance OBJC_METHOD_FAMILY_NONE;
 
 - (void)setParentWithComAsheraWidgetFactoryHasWidgets:(id<ComAsheraWidgetFactoryHasWidgets>)parent;

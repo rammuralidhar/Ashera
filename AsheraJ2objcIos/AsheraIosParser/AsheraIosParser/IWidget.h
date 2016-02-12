@@ -26,6 +26,8 @@
 
 - (id)getAttributeValueWithNSString:(NSString *)attr;
 
+- (void)initialized OBJC_METHOD_FAMILY_NONE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(ComAsheraWidgetFactoryIWidget)

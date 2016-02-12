@@ -26,8 +26,9 @@
     { "setUpStyleWithJavaUtilMap:", "setUpStyle", "V", 0x401, NULL, NULL },
     { "setUpAttributeWithJavaUtilMap:", "setUpAttribute", "V", 0x401, NULL, NULL },
     { "getAttributeValueWithNSString:", "getAttributeValue", "Ljava.lang.Object;", 0x401, NULL, NULL },
+    { "initialized", NULL, "V", 0x401, NULL, NULL },
   };
-  static const J2ObjcClassInfo _ComAsheraWidgetFactoryIWidget = { 2, "IWidget", "com.ashera.widget.factory", NULL, 0x609, 6, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComAsheraWidgetFactoryIWidget = { 2, "IWidget", "com.ashera.widget.factory", NULL, 0x609, 7, methods, 0, NULL, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraWidgetFactoryIWidget;
 }
 

@@ -8,34 +8,42 @@
 
 #include "BaseHasWidgets.h"
 #include "IListView.h"
-#include <ITemplate.h>
 #include "J2ObjC_header.h"
 #include "java/util/Observer.h"
 
-
 @class IOSObjectArray;
 @class JavaUtilObservable;
+@class RepackagedAndroidViewViewGroup;
 @protocol ComAsheraWidgetFactoryIWidget;
 @protocol JavaUtilMap;
 
 @interface IosListViewImpl : ComAsheraWidgetBaseHasWidgets < ComAsheraWidgetFactoryIListView, JavaUtilObserver, UITableViewDelegate, UITableViewDataSource>
 @property UITableView* tableView;
-@property id<ComAsheraWidgetFactoryITemplate> template;
-@property ComAsheraWidgetBaseHasWidgets* protoType;
+@property NSArray* tableData;
 
 #pragma mark Public
 
 - (instancetype)init;
 
+- (void)addFooterWidgetWithId:(id)view;
+
+- (void)addHeaderWidgetWithId:(id)headerView;
+
 - (id)asNativeWidget;
 
 - (id)asWidget;
+
+- (jint)calculateHeightOfRowWithInt:(jint)index;
 
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata;
 
 - (IOSObjectArray *)getAttributes;
 
 - (IOSObjectArray *)getLayoutAttributes;
+
+- (void)initialized OBJC_METHOD_FAMILY_NONE;
+
+- (void)measureWithRepackagedAndroidViewViewGroup:(RepackagedAndroidViewViewGroup *)layout;
 
 - (id)nativeAsWidget;
 
@@ -48,9 +56,6 @@
 
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
 
-- (void)sendEventWithNSString:(NSString *)eventName
-                       withId:(id)webView;
-
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes;
 
 - (void)updateWithJavaUtilObservable:(JavaUtilObservable *)observable
@@ -59,6 +64,13 @@
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(IosListViewImpl)
+
+FOUNDATION_EXPORT NSString *IosListViewImpl_simpleTableIdentifier_;
+J2OBJC_STATIC_FIELD_GETTER(IosListViewImpl, simpleTableIdentifier_, NSString *)
+
+FOUNDATION_EXPORT jchar IosListViewImpl_titleKey_;
+J2OBJC_STATIC_FIELD_GETTER(IosListViewImpl, titleKey_, jchar)
+J2OBJC_STATIC_FIELD_REF_GETTER(IosListViewImpl, titleKey_, jchar)
 
 FOUNDATION_EXPORT void IosListViewImpl_init(IosListViewImpl *self);
 

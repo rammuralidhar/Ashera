@@ -40,6 +40,7 @@
   JavaUtilStack *pushParent_;
   id<JavaUtilMap> metadata_;
   id<JavaUtilList> htmlElements_;
+  JavaUtilStack *widgetsStack_;
   jboolean isTemplate_;
 }
 
@@ -62,6 +63,7 @@ J2OBJC_FIELD_SETTER(ComAsheraParserHtmlHtmlSaxHandler, hasWidgets_, JavaUtilStac
 J2OBJC_FIELD_SETTER(ComAsheraParserHtmlHtmlSaxHandler, pushParent_, JavaUtilStack *)
 J2OBJC_FIELD_SETTER(ComAsheraParserHtmlHtmlSaxHandler, metadata_, id<JavaUtilMap>)
 J2OBJC_FIELD_SETTER(ComAsheraParserHtmlHtmlSaxHandler, htmlElements_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(ComAsheraParserHtmlHtmlSaxHandler, widgetsStack_, JavaUtilStack *)
 
 __attribute__((unused)) static NSString *ComAsheraParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgXmlSaxAttributes_(ComAsheraParserHtmlHtmlSaxHandler *self, NSString *localName, id<OrgXmlSaxAttributes> atts);
 
@@ -74,24 +76,24 @@ __attribute__((unused)) static NSString *ComAsheraParserHtmlHtmlSaxHandler_getNo
 @implementation ComAsheraParserHtmlHtmlSaxHandler
 
 
-#line 32
+#line 33
 - (instancetype)initWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   ComAsheraParserHtmlHtmlSaxHandler_initWithJavaUtilMap_(self, metadata);
   return self;
 }
 
 
-#line 38
+#line 39
 - (void)endDocument {
 }
 
 
-#line 42
+#line 43
 - (void)endPrefixMappingWithNSString:(NSString *)prefix {
 }
 
 
-#line 46
+#line 47
 - (void)ignorableWhitespaceWithCharArray:(IOSCharArray *)ch
                                  withInt:(jint)start
                                  withInt:(jint)length {
@@ -102,80 +104,80 @@ __attribute__((unused)) static NSString *ComAsheraParserHtmlHtmlSaxHandler_getNo
 }
 
 
-#line 56
+#line 57
 - (void)setDocumentLocatorWithOrgXmlSaxLocator:(id<OrgXmlSaxLocator>)locator {
 }
 
 
-#line 60
+#line 61
 - (void)skippedEntityWithNSString:(NSString *)name {
 }
 
 
-#line 64
+#line 65
 - (void)startDocument {
 }
 
 
-#line 68
+#line 69
 - (void)startPrefixMappingWithNSString:(NSString *)prefix
                           withNSString:(NSString *)uri {
 }
 
 
-#line 74
+#line 75
 - (void)charactersWithCharArray:(IOSCharArray *)ch
                         withInt:(jint)start
                         withInt:(jint)length {
   
-#line 76
+#line 77
   if (widget_ != nil) {
     NSString *content = [NSString stringWithCharacters:ch offset:start length:length];
     
-#line 79
+#line 80
     if (content != nil && ![((NSString *) nil_chk([content trim])) isEqual:@""]) {
       if ([ComAsheraWidgetFactoryHasText_class_() isInstance:widget_]) {
         id<ComAsheraWidgetFactoryHasText> widget2 = (id<ComAsheraWidgetFactoryHasText>) check_protocol_cast(widget_, @protocol(ComAsheraWidgetFactoryHasText));
         
-#line 83
+#line 84
         if ([widget2 getText] == nil) {
           [widget2 setTextWithNSString:content];
         }
         else {
           
-#line 86
+#line 87
           [widget2 setTextWithNSString:JreStrcat("$$", [widget2 getText], content)];
         }
       }
     }
     
-#line 91
+#line 92
     [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$$", @"content", content)];
   }
 }
 
 
-#line 96
+#line 97
 - (void)startElementWithNSString:(NSString *)uri
                     withNSString:(NSString *)localName
                     withNSString:(NSString *)qName
          withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
   
-#line 98
+#line 99
   AndroidUtilLog_eWithNSString_withNSString_(@"layout", localName);
   if (!isTemplate_ && [((NSString *) nil_chk(localName)) isEqual:@"template"]) {
     isTemplate_ = YES;
   }
   [((id<JavaUtilList>) nil_chk(htmlElements_)) addWithId:ComAsheraParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgXmlSaxAttributes_(self, localName, atts)];
   
-#line 104
+#line 105
   self->widget_ = ComAsheraWidgetFactoryWidgetFactory_getWithNSString_withBoolean_(localName, isTemplate_);
   
-#line 107
+#line 108
   if ([((NSString *) nil_chk(localName)) isEqual:@"body"] && root_ == nil && widget_ != nil) {
     self->root_ = self->widget_;
     
-#line 110
+#line 111
     if (![@"root" isEqual:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"id"]]) {
       @throw new_JavaLangRuntimeException_initWithNSString_(@"Id of the root has to be root");
     }
@@ -188,16 +190,16 @@ __attribute__((unused)) static NSString *ComAsheraParserHtmlHtmlSaxHandler_getNo
     (void) [metadata_ putWithId:@"attributes" withId:atts];
     [self->widget_ createWithJavaUtilMap:metadata_];
     
-#line 122
+#line 123
     id<ComAsheraWidgetFactoryHasWidgets> parent = nil;
     if (![((JavaUtilStack *) nil_chk(hasWidgets_)) isEmpty]) {
       parent = [hasWidgets_ peek];
     }
     
-#line 127
+#line 128
     ComAsheraParserHtmlHtmlSaxHandler_setUpStyleAndAttributesWithComAsheraWidgetFactoryIWidget_withComAsheraWidgetFactoryHasWidgets_withNSString_withOrgXmlSaxAttributes_(self, widget_, parent, localName, atts);
     
-#line 129
+#line 130
     if (parent != nil) {
       if ([widget_ asWidget] != nil) {
         [parent addWithComAsheraWidgetFactoryIWidget:widget_];
@@ -205,26 +207,27 @@ __attribute__((unused)) static NSString *ComAsheraParserHtmlHtmlSaxHandler_getNo
     }
     [widget_ setParentWithComAsheraWidgetFactoryHasWidgets:parent];
     
-#line 136
+#line 137
     if ([ComAsheraWidgetFactoryHasWidgets_class_() isInstance:widget_]) {
       parentPushed = YES;
       (void) [hasWidgets_ pushWithId:(id<ComAsheraWidgetFactoryHasWidgets>) check_protocol_cast(widget_, @protocol(ComAsheraWidgetFactoryHasWidgets))];
     }
   }
   
-#line 142
+#line 143
   [((JavaUtilStack *) nil_chk(pushParent_)) addWithId:JavaLangBoolean_valueOfWithBoolean_(parentPushed)];
+  [((JavaUtilStack *) nil_chk(widgetsStack_)) addWithId:widget_];
 }
 
 
-#line 145
+#line 147
 - (NSString *)getNPathWithNSString:(NSString *)localName
            withOrgXmlSaxAttributes:(id<OrgXmlSaxAttributes>)atts {
   return ComAsheraParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgXmlSaxAttributes_(self, localName, atts);
 }
 
 
-#line 173
+#line 175
 - (void)setUpStyleAndAttributesWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)widget
                             withComAsheraWidgetFactoryHasWidgets:(id<ComAsheraWidgetFactoryHasWidgets>)parent
                                                     withNSString:(NSString *)localName
@@ -233,31 +236,37 @@ __attribute__((unused)) static NSString *ComAsheraParserHtmlHtmlSaxHandler_getNo
 }
 
 
-#line 197
+#line 199
 - (NSString *)getNodeExpression {
   return ComAsheraParserHtmlHtmlSaxHandler_getNodeExpression(self);
 }
 
 
-#line 209
+#line 211
 - (void)endElementWithNSString:(NSString *)uri
                   withNSString:(NSString *)localName
                   withNSString:(NSString *)qName {
   
-#line 211
+#line 213
   (void) [htmlElements_ removeWithInt:[((id<JavaUtilList>) nil_chk(htmlElements_)) size] - 1];
   if ([((JavaLangBoolean *) nil_chk([((JavaUtilStack *) nil_chk(pushParent_)) pop])) booleanValue]) {
     (void) [((JavaUtilStack *) nil_chk(hasWidgets_)) pop];
   }
   
-#line 216
+#line 218
   if ([((NSString *) nil_chk(localName)) isEqual:@"template"]) {
     isTemplate_ = NO;
+  }
+  
+#line 222
+  self->widget_ = [((JavaUtilStack *) nil_chk(widgetsStack_)) pop];
+  if (widget_ != nil) {
+    [widget_ initialized];
   }
 }
 
 
-#line 221
+#line 228
 - (id<ComAsheraWidgetFactoryIWidget>)getRoot {
   return root_;
 }
@@ -289,33 +298,35 @@ __attribute__((unused)) static NSString *ComAsheraParserHtmlHtmlSaxHandler_getNo
     { "pushParent_", NULL, 0x2, "Ljava.util.Stack;", NULL, "Ljava/util/Stack<Ljava/lang/Boolean;>;",  },
     { "metadata_", NULL, 0x2, "Ljava.util.Map;", NULL, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;",  },
     { "htmlElements_", NULL, 0x2, "Ljava.util.List;", NULL, "Ljava/util/List<Ljava/lang/String;>;",  },
+    { "widgetsStack_", NULL, 0x2, "Ljava.util.Stack;", NULL, "Ljava/util/Stack<Lcom/ashera/widget/factory/IWidget;>;",  },
     { "isTemplate_", NULL, 0x2, "Z", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _ComAsheraParserHtmlHtmlSaxHandler = { 2, "HtmlSaxHandler", "com.ashera.parser.html", NULL, 0x1, 16, methods, 8, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _ComAsheraParserHtmlHtmlSaxHandler = { 2, "HtmlSaxHandler", "com.ashera.parser.html", NULL, 0x1, 16, methods, 9, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_ComAsheraParserHtmlHtmlSaxHandler;
 }
 
 @end
 
 
-#line 32
+#line 33
 void ComAsheraParserHtmlHtmlSaxHandler_initWithJavaUtilMap_(ComAsheraParserHtmlHtmlSaxHandler *self, id<JavaUtilMap> metadata) {
   (void) NSObject_init(self);
   self->pageData_ = new_ComAsheraWidgetFactoryPageData_init();
   self->hasWidgets_ = new_JavaUtilStack_init();
   self->pushParent_ = new_JavaUtilStack_init();
   self->htmlElements_ = new_JavaUtilArrayList_init();
+  self->widgetsStack_ = new_JavaUtilStack_init();
   self->isTemplate_ =
-#line 30
+#line 31
   NO;
   
-#line 33
+#line 34
   self->metadata_ = metadata;
   (void) [((id<JavaUtilMap>) nil_chk(metadata)) putWithId:@"pageData" withId:self->pageData_];
 }
 
 
-#line 32
+#line 33
 ComAsheraParserHtmlHtmlSaxHandler *new_ComAsheraParserHtmlHtmlSaxHandler_initWithJavaUtilMap_(id<JavaUtilMap> metadata) {
   ComAsheraParserHtmlHtmlSaxHandler *self = [ComAsheraParserHtmlHtmlSaxHandler alloc];
   ComAsheraParserHtmlHtmlSaxHandler_initWithJavaUtilMap_(self, metadata);
@@ -323,13 +334,13 @@ ComAsheraParserHtmlHtmlSaxHandler *new_ComAsheraParserHtmlHtmlSaxHandler_initWit
 }
 
 
-#line 145
+#line 147
 NSString *ComAsheraParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgXmlSaxAttributes_(ComAsheraParserHtmlHtmlSaxHandler *self, NSString *localName, id<OrgXmlSaxAttributes> atts) {
   JavaLangStringBuffer *stringBuffer = new_JavaLangStringBuffer_init();
   (void) [stringBuffer appendWithNSString:localName];
   NSString *classStr = [((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"class"];
   
-#line 150
+#line 152
   JavaLangStringBuffer *classBuffer = new_JavaLangStringBuffer_initWithNSString_(@"");
   if (classStr != nil && ![((NSString *) nil_chk([classStr trim])) isEqual:@""]) {
     IOSObjectArray *classes = [classStr split:@"\\s"];
@@ -338,14 +349,14 @@ NSString *ComAsheraParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgXmlSaxAt
     }
   }
   
-#line 158
+#line 160
   NSString *idStr = [atts getValueWithNSString:@"id"];
   JavaLangStringBuffer *idBuffer = new_JavaLangStringBuffer_initWithNSString_(@"");
   if (idStr != nil && ![((NSString *) nil_chk([idStr trim])) isEqual:@""]) {
     (void) [idBuffer appendWithNSString:JreStrcat("C$C", '#', [idStr trim], '|')];
   }
   
-#line 164
+#line 166
   if ([idBuffer length] > 0 || [classBuffer length] > 0) {
     (void) [stringBuffer appendWithNSString:@"["];
     (void) [stringBuffer appendWithNSString:[classBuffer description]];
@@ -356,10 +367,10 @@ NSString *ComAsheraParserHtmlHtmlSaxHandler_getNPathWithNSString_withOrgXmlSaxAt
 }
 
 
-#line 173
+#line 175
 void ComAsheraParserHtmlHtmlSaxHandler_setUpStyleAndAttributesWithComAsheraWidgetFactoryIWidget_withComAsheraWidgetFactoryHasWidgets_withNSString_withOrgXmlSaxAttributes_(ComAsheraParserHtmlHtmlSaxHandler *self, id<ComAsheraWidgetFactoryIWidget> widget, id<ComAsheraWidgetFactoryHasWidgets> parent, NSString *localName, id<OrgXmlSaxAttributes> atts) {
   id<JavaUtilMap> cssProperties = [((ComAsheraWidgetFactoryPageData *) nil_chk(self->pageData_)) getCssWithNSString:ComAsheraParserHtmlHtmlSaxHandler_getNodeExpression(self) withNSString:
-#line 175
+#line 177
   localName withNSString:[((id<OrgXmlSaxAttributes>) nil_chk(atts)) getValueWithNSString:@"class"] withNSString:[atts getValueWithNSString:@"id"]];
   [((id<ComAsheraWidgetFactoryIWidget>) nil_chk(widget)) setUpStyleWithJavaUtilMap:cssProperties];
   IOSObjectArray *attr = [widget getAttributes];
@@ -368,7 +379,7 @@ void ComAsheraParserHtmlHtmlSaxHandler_setUpStyleAndAttributesWithComAsheraWidge
     layoutAttrs = [parent getLayoutAttributes];
   }
   
-#line 183
+#line 185
   id<JavaUtilMap> attributes = new_JavaUtilHashMap_init();
   if (attr != nil) {
     for (jint i = 0; i < attr->size_; i++) {
@@ -384,14 +395,14 @@ void ComAsheraParserHtmlHtmlSaxHandler_setUpStyleAndAttributesWithComAsheraWidge
 }
 
 
-#line 197
+#line 199
 NSString *ComAsheraParserHtmlHtmlSaxHandler_getNodeExpression(ComAsheraParserHtmlHtmlSaxHandler *self) {
   JavaLangStringBuffer *stringBuffer = new_JavaLangStringBuffer_init();
   for (NSString * __strong htmlElement in nil_chk(self->htmlElements_)) {
     (void) [stringBuffer insertWithInt:0 withNSString:JreStrcat("$C", htmlElement, '>')];
   }
   
-#line 203
+#line 205
   stringBuffer = [stringBuffer deleteCharAtWithInt:[stringBuffer length] - 1];
   AndroidUtilLog_eWithNSString_withNSString_(@"test", JreStrcat("@", stringBuffer));
   return [((JavaLangStringBuffer *) nil_chk(stringBuffer)) description];

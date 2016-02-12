@@ -29,7 +29,11 @@
 
 - (id)getAttributeValueWithNSString:(NSString *)attr;
 
+- (void)initialized OBJC_METHOD_FAMILY_NONE;
+
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
+
+- (id<ComAsheraWidgetFactoryIWidget>)newLazyInstance OBJC_METHOD_FAMILY_NONE;
 
 - (void)setParentWithComAsheraWidgetFactoryHasWidgets:(id<ComAsheraWidgetFactoryHasWidgets>)widget;
 
