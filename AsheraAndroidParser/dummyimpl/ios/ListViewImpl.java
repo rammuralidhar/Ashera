@@ -133,11 +133,15 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
 	public void update(Observable observable, Object data) {
 		if (observable instanceof EventBus) {
 			if (headerWidget != null) {
-				addHeaderWidget(((IWidget) headerWidget.loadWidgets()).asNativeWidget());
+				IWidget widget = (IWidget) headerWidget.loadWidgets();
+				measure((ViewGroup) widget.asWidget());
+				addHeaderWidget(widget.asNativeWidget());
 			}
 			
 			if (footerWidget != null) {
-				addFooterWidget(((IWidget) footerWidget.loadWidgets()).asNativeWidget());
+				IWidget widget = (IWidget) footerWidget.loadWidgets();
+				measure((ViewGroup) widget.asWidget());
+				addFooterWidget(widget.asNativeWidget());
 			}
 			
 			if (eventId != null) {
