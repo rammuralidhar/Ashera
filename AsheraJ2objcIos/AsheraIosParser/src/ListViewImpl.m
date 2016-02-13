@@ -17,11 +17,13 @@
 #include "ListViewImpl.h"
 #include "View.h"
 #include "ViewGroup.h"
+#include "java/lang/Integer.h"
+#include "java/util/HashMap.h"
 #include "java/util/Iterator.h"
 #include "java/util/Map.h"
 #include "java/util/Observable.h"
 #include "Jockey.h"
-
+#include "CustomUITableViewCell.h"
 #line 0 "/Users/ramm/git/Ashera/AsheraAndroidParser/dummyimpl/ios/ListViewImpl.java"
 
 @interface IosListViewImpl () {
@@ -36,7 +38,7 @@
   id<ComAsheraWidgetFactoryITemplate> headerWidget_;
   id<ComAsheraWidgetFactoryITemplate> footerWidget_;
   id<ComAsheraWidgetFactoryITemplate> rootWidget_;
-  id<ComAsheraWidgetFactoryHasWidgets> referenceWidget_;
+  id<JavaUtilMap> heightCache_;
 }
 
 - (void)nativeLoadDataWithNSString:(NSString *)eventId
@@ -57,16 +59,12 @@
 
 - (id)getCellWithInt:(jint)index;
 
-- (id<ComAsheraWidgetFactoryHasWidgets>)objc_getAssociatedObjectWithId:(id)cell
-                                                              withChar:(jchar)titleKey;
-
-- (void)objc_setAssociatedObjectWithId:(id)cell
-  withComAsheraWidgetFactoryHasWidgets:(id<ComAsheraWidgetFactoryHasWidgets>)layout
-                              withChar:(jchar)titleKey;
+- (id<ComAsheraWidgetFactoryHasWidgets>)getDataWithId:(id)cell;
 
 - (id)getReusableCellWithNSString:(NSString *)simpleTableIdentifier;
 
-- (id)newCellWithNSString:(NSString *)simpleTableIdentifier OBJC_METHOD_FAMILY_NONE;
+- (id)newCellWithNSString:(NSString *)simpleTableIdentifier
+                   withId:(id)data OBJC_METHOD_FAMILY_NONE;
 
 - (void)addSubViewWithId:(id)cell
                   withId:(id)layout;
@@ -83,7 +81,7 @@ J2OBJC_FIELD_SETTER(IosListViewImpl, eventId_, NSString *)
 J2OBJC_FIELD_SETTER(IosListViewImpl, headerWidget_, id<ComAsheraWidgetFactoryITemplate>)
 J2OBJC_FIELD_SETTER(IosListViewImpl, footerWidget_, id<ComAsheraWidgetFactoryITemplate>)
 J2OBJC_FIELD_SETTER(IosListViewImpl, rootWidget_, id<ComAsheraWidgetFactoryITemplate>)
-J2OBJC_FIELD_SETTER(IosListViewImpl, referenceWidget_, id<ComAsheraWidgetFactoryHasWidgets>)
+J2OBJC_FIELD_SETTER(IosListViewImpl, heightCache_, id<JavaUtilMap>)
 
 __attribute__((unused)) static void IosListViewImpl_nativeLoadDataWithNSString_withNSString_withId_(IosListViewImpl *self, NSString *eventId, NSString *recieveEventId, id webView);
 
@@ -97,13 +95,11 @@ __attribute__((unused)) static RepackagedAndroidViewViewGroup *IosListViewImpl_u
 
 __attribute__((unused)) static NSString *IosListViewImpl_nativeGetValueWithInt_withNSString_(IosListViewImpl *self, jint index, NSString *key);
 
-__attribute__((unused)) static id<ComAsheraWidgetFactoryHasWidgets> IosListViewImpl_objc_getAssociatedObjectWithId_withChar_(IosListViewImpl *self, id cell, jchar titleKey);
-
-__attribute__((unused)) static void IosListViewImpl_objc_setAssociatedObjectWithId_withComAsheraWidgetFactoryHasWidgets_withChar_(IosListViewImpl *self, id cell, id<ComAsheraWidgetFactoryHasWidgets> layout, jchar titleKey);
+__attribute__((unused)) static id<ComAsheraWidgetFactoryHasWidgets> IosListViewImpl_getDataWithId_(IosListViewImpl *self, id cell);
 
 __attribute__((unused)) static id IosListViewImpl_getReusableCellWithNSString_(IosListViewImpl *self, NSString *simpleTableIdentifier);
 
-__attribute__((unused)) static id IosListViewImpl_newCellWithNSString_(IosListViewImpl *self, NSString *simpleTableIdentifier);
+__attribute__((unused)) static id IosListViewImpl_newCellWithNSString_withId_(IosListViewImpl *self, NSString *simpleTableIdentifier, id data);
 
 __attribute__((unused)) static void IosListViewImpl_addSubViewWithId_withId_(IosListViewImpl *self, id cell, id layout);
 
@@ -137,81 +133,81 @@ __attribute__((unused)) static IosListViewImpl_$1 *new_IosListViewImpl_$1_initWi
 J2OBJC_TYPE_LITERAL_HEADER(IosListViewImpl_$1)
 
 NSString *IosListViewImpl_simpleTableIdentifier_ = 
-#line 225
+#line 231
 @"SimpleTableItem";
-jchar IosListViewImpl_titleKey_;
 
 
-#line 22
+#line 23
 @implementation IosListViewImpl
 
-	- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	    return 1;
-	}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 
-	- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-	{
-	    return [self.tableData count];
-	}
-	- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-	{
-	    return (UITableViewCell *)[self getCellWithInt:indexPath.row];
-	}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.tableData count];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return (UITableViewCell *)[self getCellWithInt:indexPath.row];
+}
 
-	- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-	{
-	    return (CGFloat)[self calculateHeightOfRowWithInt:indexPath.row];
-	}
-#line 36
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return (CGFloat)[self calculateHeightOfRowWithInt:indexPath.row];
+}
+
+#line 37
 - (IOSObjectArray *)getLayoutAttributes {
   return nil;
 }
 
 
-#line 41
+#line 42
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance {
   return new_IosListViewImpl_init();
 }
 
 
-#line 46
+#line 47
 - (IOSObjectArray *)getAttributes {
   return [IOSObjectArray newArrayWithObjects:(id[]){ @"width", @"height", @"templateid", @"headertemplateid", @"footertemplateid", @"load-data-event" } count:6 type:NSString_class_()];
 }
 
 
-#line 52
+#line 53
 - (id)asWidget {
   return view_;
 }
 
 
-#line 57
+#line 58
 - (id)asNativeWidget {
   return [self nativeAsWidget];
 }
 
 
-#line 62
+#line 63
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   self->context_ = (id<RepackagedAndroidContentContext>) check_protocol_cast([((id<JavaUtilMap>) nil_chk(metadata)) getWithId:@"context"], @protocol(RepackagedAndroidContentContext));
   self->webView_ = [metadata getWithId:@"webView"];
   [((ComAsheraWidgetBusEventBus *) nil_chk(ComAsheraWidgetBusEventBus_getDefault())) addObserverWithJavaUtilObserver:self];
   view_ = new_IosListViewImpl_$1_initWithIosListViewImpl_withRepackagedAndroidContentContext_(self, context_);
   
-#line 107
+#line 108
   [self nativeCreate];
 }
 
 
-#line 111
+#line 112
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes {
   [super setUpAttributeWithJavaUtilMap:attributes];
   self->templateId_ = [((id<JavaUtilMap>) nil_chk(attributes)) getWithId:@"templateid"];
   self->headerTemplateId_ = [attributes getWithId:@"headertemplateid"];
   self->footerTemplateId_ = [attributes getWithId:@"footertemplateid"];
   
-#line 117
+#line 118
   if ([attributes containsKeyWithId:@"load-data-event"]) {
     self->eventId_ = [attributes getWithId:@"load-data-event"];
   }
@@ -221,11 +217,12 @@ jchar IosListViewImpl_titleKey_;
   self.tableView = [UITableView new];
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
+  self.tableView.estimatedRowHeight = 44.0f;
   [self.tableView  setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0,0,0,0)]];
 }
 
 
-#line 131
+#line 133
 - (void)updateWithJavaUtilObservable:(JavaUtilObservable *)observable
                               withId:(id)data {
   if ([observable isKindOfClass:[ComAsheraWidgetBusEventBus class]]) {
@@ -233,12 +230,12 @@ jchar IosListViewImpl_titleKey_;
       [self addHeaderWidgetWithId:[((id<ComAsheraWidgetFactoryIWidget>) nil_chk(((id<ComAsheraWidgetFactoryIWidget>) check_protocol_cast([headerWidget_ loadWidgets], @protocol(ComAsheraWidgetFactoryIWidget))))) asNativeWidget]];
     }
     
-#line 137
+#line 139
     if (footerWidget_ != nil) {
       [self addFooterWidgetWithId:[((id<ComAsheraWidgetFactoryIWidget>) nil_chk(((id<ComAsheraWidgetFactoryIWidget>) check_protocol_cast([footerWidget_ loadWidgets], @protocol(ComAsheraWidgetFactoryIWidget))))) asNativeWidget]];
     }
     
-#line 141
+#line 143
     if (eventId_ != nil) {
       IosListViewImpl_nativeLoadDataWithNSString_withNSString_withId_(self, eventId_, JreStrcat("$$", eventId_, @"-recieve"), webView_);
     }
@@ -246,7 +243,7 @@ jchar IosListViewImpl_titleKey_;
 }
 
 
-#line 147
+#line 149
 - (void)nativeLoadDataWithNSString:(NSString *)eventId
                       withNSString:(NSString *)recieveEventId
                             withId:(id)webView {
@@ -254,7 +251,7 @@ jchar IosListViewImpl_titleKey_;
 }
 
 
-#line 158
+#line 160
 - (void)addHeaderWidgetWithId:(id)headerView {
   [self.tableView setTableHeaderView:headerView];
 }
@@ -264,7 +261,7 @@ jchar IosListViewImpl_titleKey_;
 }
 
 
-#line 167
+#line 169
 - (id)nativeAsWidget {
   return self.tableView;
 }
@@ -274,13 +271,13 @@ jchar IosListViewImpl_titleKey_;
 }
 
 
-#line 177
+#line 179
 - (jint)nativeMeasureHeightWithInt:(jint)width {
   return IosListViewImpl_nativeMeasureHeightWithInt_(self, width);
 }
 
 
-#line 183
+#line 185
 - (void)nativeMakeFrameWithInt:(jint)l
                        withInt:(jint)t
                        withInt:(jint)r
@@ -289,29 +286,33 @@ jchar IosListViewImpl_titleKey_;
 }
 
 
-#line 188
+#line 190
 - (void)measureWithRepackagedAndroidViewViewGroup:(RepackagedAndroidViewViewGroup *)layout {
   jint w = IosListViewImpl_nativeGetWidth(self);
   jint h = -2;
   jint wmeasureSpec = RepackagedAndroidViewView_MeasureSpec_EXACTLY;
   jint hmeasureSpec = RepackagedAndroidViewView_MeasureSpec_UNSPECIFIED;
   [((RepackagedAndroidViewViewGroup *) nil_chk(layout)) measureWithInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(w, wmeasureSpec) withInt:RepackagedAndroidViewView_MeasureSpec_makeMeasureSpecWithInt_withInt_(
-#line 194
+#line 196
   h, hmeasureSpec)];
   [layout layoutWithInt:0 withInt:0 withInt:w withInt:[layout getMeasuredHeight]];
 }
 
 
-#line 198
+#line 200
 - (jint)nativeGetWidth {
   return IosListViewImpl_nativeGetWidth(self);
 }
 
 - (jint)calculateHeightOfRowWithInt:(jint)index {
-  RepackagedAndroidViewViewGroup *group = IosListViewImpl_updateLayoutAndCalculateTextWithComAsheraWidgetFactoryHasWidgets_withInt_(self, [rootWidget_ loadWidgets], index);
+  if ([((id<JavaUtilMap>) nil_chk(heightCache_)) containsKeyWithId:JavaLangInteger_valueOfWithInt_(index)]) {
+    return [((JavaLangInteger *) nil_chk([heightCache_ getWithId:JavaLangInteger_valueOfWithInt_(index)])) intValue];
+  }
+  RepackagedAndroidViewViewGroup *group = IosListViewImpl_updateLayoutAndCalculateTextWithComAsheraWidgetFactoryHasWidgets_withInt_(self, (id<ComAsheraWidgetFactoryHasWidgets>) check_protocol_cast([((id<ComAsheraWidgetFactoryITemplate>) nil_chk(rootWidget_)) loadWidgets], @protocol(ComAsheraWidgetFactoryHasWidgets)), index);
   
-#line 206
+#line 211
   jint height = [((RepackagedAndroidViewViewGroup *) nil_chk(group)) getMeasuredHeight] + 1;
+  (void) [heightCache_ putWithId:JavaLangInteger_valueOfWithInt_(index) withId:JavaLangInteger_valueOfWithInt_(height)];
   return height;
 }
 
@@ -321,63 +322,56 @@ jchar IosListViewImpl_titleKey_;
 }
 
 
-#line 219
+#line 225
 - (NSString *)nativeGetValueWithInt:(jint)index
                        withNSString:(NSString *)key {
   return IosListViewImpl_nativeGetValueWithInt_withNSString_(self, index, key);
 }
 
 
-#line 227
+#line 232
 - (id)getCellWithInt:(jint)index {
-  id cell = IosListViewImpl_getReusableCellWithNSString_(self, IosListViewImpl_simpleTableIdentifier_);
+  jint height = [self calculateHeightOfRowWithInt:index];
+  NSString *identifier = JreStrcat("$I", IosListViewImpl_simpleTableIdentifier_, height);
+  id cell = IosListViewImpl_getReusableCellWithNSString_(self, identifier);
   
-#line 230
-  if (true) {
-    cell = IosListViewImpl_newCellWithNSString_(self, IosListViewImpl_simpleTableIdentifier_);
+#line 237
+  if (cell == nil) {
     id<ComAsheraWidgetFactoryHasWidgets> hasWidgets = (id<ComAsheraWidgetFactoryHasWidgets>) check_protocol_cast([((id<ComAsheraWidgetFactoryITemplate>) nil_chk(rootWidget_)) loadWidgets], @protocol(ComAsheraWidgetFactoryHasWidgets));
-    (void) IosListViewImpl_updateLayoutAndCalculateTextWithComAsheraWidgetFactoryHasWidgets_withInt_(self, hasWidgets, index);
-    IosListViewImpl_objc_setAssociatedObjectWithId_withComAsheraWidgetFactoryHasWidgets_withChar_(self, cell, hasWidgets, IosListViewImpl_titleKey_);
+    cell = IosListViewImpl_newCellWithNSString_withId_(self, identifier, hasWidgets);
+    RepackagedAndroidViewViewGroup *viewGroup = IosListViewImpl_updateLayoutAndCalculateTextWithComAsheraWidgetFactoryHasWidgets_withInt_(self, hasWidgets, index);
+    (void) [((id<JavaUtilMap>) nil_chk(heightCache_)) putWithId:JavaLangInteger_valueOfWithInt_(index) withId:JavaLangInteger_valueOfWithInt_([((RepackagedAndroidViewViewGroup *) nil_chk(viewGroup)) getMeasuredHeight])];
     id asNativeWidget = [((id<ComAsheraWidgetFactoryIWidget>) nil_chk(((id<ComAsheraWidgetFactoryIWidget>) check_protocol_cast(hasWidgets, @protocol(ComAsheraWidgetFactoryIWidget))))) asNativeWidget];
     IosListViewImpl_addSubViewWithId_withId_(self, cell, asNativeWidget);
-      ((UITableViewCell*) cell).frame = ((UIView *)asNativeWidget).frame;
   }
   else {
     
-#line 238
-    id<ComAsheraWidgetFactoryHasWidgets> hasWidgets = IosListViewImpl_objc_getAssociatedObjectWithId_withChar_(self, cell, IosListViewImpl_titleKey_);
+#line 245
+    id<ComAsheraWidgetFactoryHasWidgets> hasWidgets = IosListViewImpl_getDataWithId_(self, cell);
     (void) IosListViewImpl_updateLayoutAndCalculateTextWithComAsheraWidgetFactoryHasWidgets_withInt_(self, hasWidgets, index);
   }
   
-#line 242
+#line 249
   return cell;
 }
 
 
-#line 245
-- (id<ComAsheraWidgetFactoryHasWidgets>)objc_getAssociatedObjectWithId:(id)cell
-                                                              withChar:(jchar)titleKey {
-  return IosListViewImpl_objc_getAssociatedObjectWithId_withChar_(self, cell, titleKey);
+#line 252
+- (id<ComAsheraWidgetFactoryHasWidgets>)getDataWithId:(id)cell {
+  return IosListViewImpl_getDataWithId_(self, cell);
 }
 
-
-#line 249
-- (void)objc_setAssociatedObjectWithId:(id)cell
-  withComAsheraWidgetFactoryHasWidgets:(id<ComAsheraWidgetFactoryHasWidgets>)layout
-                              withChar:(jchar)titleKey {
-  IosListViewImpl_objc_setAssociatedObjectWithId_withComAsheraWidgetFactoryHasWidgets_withChar_(self, cell, layout, titleKey);
-}
-
-
-#line 256
 - (id)getReusableCellWithNSString:(NSString *)simpleTableIdentifier {
   return IosListViewImpl_getReusableCellWithNSString_(self, simpleTableIdentifier);
 }
 
-- (id)newCellWithNSString:(NSString *)simpleTableIdentifier {
-  return IosListViewImpl_newCellWithNSString_(self, simpleTableIdentifier);
+- (id)newCellWithNSString:(NSString *)simpleTableIdentifier
+                   withId:(id)data {
+  return IosListViewImpl_newCellWithNSString_withId_(self, simpleTableIdentifier, data);
 }
 
+
+#line 264
 - (void)addSubViewWithId:(id)cell
                   withId:(id)layout {
   IosListViewImpl_addSubViewWithId_withId_(self, cell, layout);
@@ -404,7 +398,6 @@ jchar IosListViewImpl_titleKey_;
 #line 300
     if ([((NSString *) nil_chk([widget getId])) isEqual:templateId_]) {
       self->rootWidget_ = widget;
-      self->referenceWidget_ = (id<ComAsheraWidgetFactoryHasWidgets>) check_protocol_cast([rootWidget_ loadWidgets], @protocol(ComAsheraWidgetFactoryHasWidgets));
     }
   }
 }
@@ -438,10 +431,9 @@ jchar IosListViewImpl_titleKey_;
     { "updateLayoutAndCalculateTextWithComAsheraWidgetFactoryHasWidgets:withInt:", "updateLayoutAndCalculateText", "Lrepackaged.android.view.ViewGroup;", 0x2, NULL, NULL },
     { "nativeGetValueWithInt:withNSString:", "nativeGetValue", "Ljava.lang.String;", 0x102, NULL, NULL },
     { "getCellWithInt:", "getCell", "Ljava.lang.Object;", 0x2, NULL, NULL },
-    { "objc_getAssociatedObjectWithId:withChar:", "objc_getAssociatedObject", "Lcom.ashera.widget.factory.HasWidgets;", 0x102, NULL, NULL },
-    { "objc_setAssociatedObjectWithId:withComAsheraWidgetFactoryHasWidgets:withChar:", "objc_setAssociatedObject", "V", 0x102, NULL, NULL },
+    { "getDataWithId:", "getData", "Lcom.ashera.widget.factory.HasWidgets;", 0x102, NULL, NULL },
     { "getReusableCellWithNSString:", "getReusableCell", "Ljava.lang.Object;", 0x102, NULL, NULL },
-    { "newCellWithNSString:", "newCell", "Ljava.lang.Object;", 0x102, NULL, NULL },
+    { "newCellWithNSString:withId:", "newCell", "Ljava.lang.Object;", 0x102, NULL, NULL },
     { "addSubViewWithId:withId:", "addSubView", "V", 0x102, NULL, NULL },
     { "initialized", NULL, "V", 0x1, NULL, NULL },
     { "init", NULL, NULL, 0x1, NULL, NULL },
@@ -457,18 +449,17 @@ jchar IosListViewImpl_titleKey_;
     { "headerWidget_", NULL, 0x2, "Lcom.ashera.widget.factory.ITemplate;", NULL, NULL,  },
     { "footerWidget_", NULL, 0x2, "Lcom.ashera.widget.factory.ITemplate;", NULL, NULL,  },
     { "rootWidget_", NULL, 0x2, "Lcom.ashera.widget.factory.ITemplate;", NULL, NULL,  },
-    { "referenceWidget_", NULL, 0x2, "Lcom.ashera.widget.factory.HasWidgets;", NULL, NULL,  },
+    { "heightCache_", NULL, 0x2, "Ljava.util.Map;", NULL, "Ljava/util/Map<Ljava/lang/Integer;Ljava/lang/Integer;>;",  },
     { "simpleTableIdentifier_", NULL, 0x18, "Ljava.lang.String;", &IosListViewImpl_simpleTableIdentifier_, NULL,  },
-    { "titleKey_", NULL, 0x8, "C", &IosListViewImpl_titleKey_, NULL,  },
   };
-  static const J2ObjcClassInfo _IosListViewImpl = { 2, "ListViewImpl", "ios", NULL, 0x1, 29, methods, 13, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosListViewImpl = { 2, "ListViewImpl", "ios", NULL, 0x1, 28, methods, 12, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosListViewImpl;
 }
 
 @end
 
 
-#line 147
+#line 149
 void IosListViewImpl_nativeLoadDataWithNSString_withNSString_withId_(IosListViewImpl *self, NSString *eventId, NSString *recieveEventId, id webView) {
   NSDictionary* d = [NSDictionary new];
   
@@ -481,7 +472,7 @@ void IosListViewImpl_nativeLoadDataWithNSString_withNSString_withId_(IosListView
 }
 
 
-#line 171
+#line 173
 jint IosListViewImpl_nativeMeasureWidth(IosListViewImpl *self) {
   CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
   CGSize requiredSize = [self.tableView sizeThatFits:maximumLabelSize];
@@ -495,13 +486,13 @@ jint IosListViewImpl_nativeMeasureHeightWithInt_(IosListViewImpl *self, jint wid
 }
 
 
-#line 198
+#line 200
 jint IosListViewImpl_nativeGetWidth(IosListViewImpl *self) {
   return self.tableView.frame.size.width;
 }
 
 
-#line 210
+#line 216
 RepackagedAndroidViewViewGroup *IosListViewImpl_updateLayoutAndCalculateTextWithComAsheraWidgetFactoryHasWidgets_withInt_(IosListViewImpl *self, id<ComAsheraWidgetFactoryHasWidgets> hasWidgets, jint index) {
   id<ComAsheraWidgetFactoryILabel> label = (id<ComAsheraWidgetFactoryILabel>) check_protocol_cast([((id<JavaUtilIterator>) nil_chk([((id<ComAsheraWidgetFactoryHasWidgets>) nil_chk(hasWidgets)) iterate])) next], @protocol(ComAsheraWidgetFactoryILabel));
   [((id<ComAsheraWidgetFactoryILabel>) nil_chk(label)) setTextWithNSString:IosListViewImpl_nativeGetValueWithInt_withNSString_(self, index, @"value")];
@@ -517,24 +508,17 @@ NSString *IosListViewImpl_nativeGetValueWithInt_withNSString_(IosListViewImpl *s
 }
 
 
-#line 245
-id<ComAsheraWidgetFactoryHasWidgets> IosListViewImpl_objc_getAssociatedObjectWithId_withChar_(IosListViewImpl *self, id cell, jchar titleKey) {
-  return objc_getAssociatedObject(cell, &titleKey);
-}
-
-void IosListViewImpl_objc_setAssociatedObjectWithId_withComAsheraWidgetFactoryHasWidgets_withChar_(IosListViewImpl *self, id cell, id<ComAsheraWidgetFactoryHasWidgets> layout, jchar titleKey) {
-  objc_setAssociatedObject(cell,
-  &titleKey,
-  layout,
-  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+#line 252
+id<ComAsheraWidgetFactoryHasWidgets> IosListViewImpl_getDataWithId_(IosListViewImpl *self, id cell) {
+  return ((CustomUITableViewCell*)cell).data;
 }
 
 id IosListViewImpl_getReusableCellWithNSString_(IosListViewImpl *self, NSString *simpleTableIdentifier) {
   return [self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
 }
 
-id IosListViewImpl_newCellWithNSString_(IosListViewImpl *self, NSString *simpleTableIdentifier) {
-  return  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+id IosListViewImpl_newCellWithNSString_withId_(IosListViewImpl *self, NSString *simpleTableIdentifier, id data) {
+  return  [[CustomUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier data:data];
 }
 
 void IosListViewImpl_addSubViewWithId_withId_(IosListViewImpl *self, id cell, id layout) {
@@ -543,6 +527,7 @@ void IosListViewImpl_addSubViewWithId_withId_(IosListViewImpl *self, id cell, id
 
 void IosListViewImpl_init(IosListViewImpl *self) {
   (void) ComAsheraWidgetBaseHasWidgets_init(self);
+  self->heightCache_ = new_JavaUtilHashMap_init();
 }
 
 IosListViewImpl *new_IosListViewImpl_init() {
@@ -556,61 +541,61 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosListViewImpl)
 @implementation IosListViewImpl_$1
 
 
-#line 68
+#line 69
 - (void)onMeasureWithInt:(jint)widthMeasureSpec
                  withInt:(jint)heightMeasureSpec {
   [super onMeasureWithInt:widthMeasureSpec withInt:heightMeasureSpec];
   
-#line 71
+#line 72
   jint widthMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(widthMeasureSpec);
   jint heightMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(heightMeasureSpec);
   jint widthSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(widthMeasureSpec);
   jint heightSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(heightMeasureSpec);
   
-#line 76
+#line 77
   jint width;
   jint height;
   if (widthMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 80
+#line 81
     width = widthSize;
   }
   else {
     
-#line 82
+#line 83
     width = IosListViewImpl_nativeMeasureWidth(this$0_);
     
-#line 84
+#line 85
     if (width > widthSize) {
       width = widthSize;
     }
   }
   
-#line 89
+#line 90
   if (heightMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 91
+#line 92
     height = heightSize;
   }
   else {
     
-#line 93
+#line 94
     height = IosListViewImpl_nativeMeasureHeightWithInt_(this$0_, width);
   }
   
-#line 96
+#line 97
   [self setMeasuredDimensionWithInt:width withInt:height];
 }
 
 
-#line 101
+#line 102
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)left
                     withInt:(jint)top
                     withInt:(jint)right
                     withInt:(jint)bottom {
   
-#line 103
+#line 104
   [super onLayoutWithBoolean:changed withInt:left withInt:top withInt:right withInt:bottom];
   [this$0_ nativeMakeFrameWithInt:left withInt:top withInt:right withInt:bottom];
 }

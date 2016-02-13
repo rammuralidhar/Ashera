@@ -1,5 +1,6 @@
 package ios;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Observable;
@@ -30,7 +31,7 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
 	private ITemplate headerWidget;
 	private ITemplate footerWidget;
 	private ITemplate rootWidget;
-	private HasWidgets referenceWidget;
+	private Map<Integer, Integer> heightCache = new HashMap<Integer, Integer>();
 
 	@Override
 	public String[] getLayoutAttributes() {
@@ -124,6 +125,7 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
     	self.tableView = [UITableView new];
     	self.tableView.dataSource = self;
 		self.tableView.delegate = self;
+		self.tableView.estimatedRowHeight = 44.0f;
 		[self.tableView  setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0,0,0,0)]];
 	]-*/;
 	
@@ -200,10 +202,14 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
 	]-*/;
 
 	public int calculateHeightOfRow(int index) {
-		ViewGroup group = updateLayoutAndCalculateText(referenceWidget, index);
+		if (heightCache.containsKey(index)) {
+			return heightCache.get(index);
+		}
+		ViewGroup group = updateLayoutAndCalculateText((HasWidgets) rootWidget.loadWidgets(), index);
 	    // Add an extra point to the height to account for the cell separator, which is added between the bottom
 	    // of the cell's contentView and the bottom of the table view cell.
 	    int height = group.getMeasuredHeight() + 1;
+	    heightCache.put(index, height);
 	    return height;
 	}
 
@@ -223,42 +229,36 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
 
 
 	final static String simpleTableIdentifier = "SimpleTableItem";
-	static char titleKey;
 	private Object getCell(int index) {
-		Object cell = getReusableCell(simpleTableIdentifier);
+		int height = calculateHeightOfRow(index);
+		String identifier = simpleTableIdentifier + height;
+		Object cell = getReusableCell(identifier);
 		
 		if (cell == null) {
-			cell = newCell(simpleTableIdentifier);
 			HasWidgets hasWidgets = (HasWidgets) rootWidget.loadWidgets();
-			updateLayoutAndCalculateText(hasWidgets, index);
-			objc_setAssociatedObject(cell, hasWidgets, titleKey);
+			cell = newCell(identifier, hasWidgets);
+			ViewGroup viewGroup = updateLayoutAndCalculateText(hasWidgets, index);
+			heightCache.put(index, viewGroup.getMeasuredHeight());
 			Object asNativeWidget = ((IWidget) hasWidgets).asNativeWidget();
 			addSubView(cell, asNativeWidget);
 		} else {
-			HasWidgets hasWidgets = objc_getAssociatedObject(cell, titleKey);
+			HasWidgets hasWidgets = getData(cell);
 			updateLayoutAndCalculateText(hasWidgets, index);
 		}
 		
 		return cell;
 	}
 	
-	private native HasWidgets objc_getAssociatedObject(Object cell, char titleKey)/*-[
-		return objc_getAssociatedObject(cell, &titleKey);
-	]-*/;
-
-	private native void objc_setAssociatedObject(Object cell, HasWidgets layout, char titleKey)/*-[
-		objc_setAssociatedObject(cell,
-	                                 &titleKey,
-	                                 layout,
-	                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+	private native HasWidgets getData(Object cell)/*-[
+		return ((CustomUITableViewCell*)cell).data;
 	]-*/;
 	
 	private native Object getReusableCell(String simpleTableIdentifier)/*-[
     	return [self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
 	]-*/;
 	
-	private native Object newCell(String simpleTableIdentifier)/*-[
-		return  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+	private native Object newCell(String simpleTableIdentifier, Object data)/*-[
+		return  [[CustomUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier data:data];
 	]-*/;
 	
 	private native void addSubView(Object cell, Object layout)/*-[
@@ -299,7 +299,6 @@ public class ListViewImpl extends BaseHasWidgets implements IListView, Observer{
 			
 			if (widget.getId().equals(templateId)) {
 				this.rootWidget = widget;
-				this.referenceWidget = (HasWidgets) rootWidget.loadWidgets();
 			}
 		}
 	}
