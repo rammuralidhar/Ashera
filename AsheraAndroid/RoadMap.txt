@@ -2,7 +2,7 @@ VPOC1:
 Layout POC/Jockey integration/Phone Gap/Free Marker
 
 VPOC2:
-Image view (9-patch), drwable interface, List view, recycle view
+Image view (9-patch), drawable interface, List view
 
 v1:
 Create components and layouts (complete it)
