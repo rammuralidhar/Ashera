@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.ashera.android.factory.ComponentImpl;
 import com.ashera.android.factory.ui.ButtonImpl;
+import com.ashera.android.factory.ui.ImageViewImpl;
 import com.ashera.android.factory.ui.LabelImpl;
 import com.ashera.android.factory.ui.LinearLayoutImpl;
 import com.ashera.android.factory.ui.ListViewImpl;
@@ -33,6 +34,7 @@ public class HtmlViewerUtils {
 		WidgetFactory.register("button", new ButtonImpl());
 		WidgetFactory.register("list-view", new ListViewImpl());
 		WidgetFactory.register("template", new TemplateWidget());
+		WidgetFactory.register("img", new ImageViewImpl());
 		ComponentFactory.register(new ComponentImpl());
 	}
 	

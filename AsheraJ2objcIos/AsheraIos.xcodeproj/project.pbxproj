@@ -40,6 +40,7 @@
 		273E3F7A1C5A5AA3002C4B42 /* RelativeLayoutImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E3F791C5A5AA3002C4B42 /* RelativeLayoutImpl.m */; };
 		273E3F7E1C5A6322002C4B42 /* Jockey.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E3F7D1C5A6322002C4B42 /* Jockey.m */; };
 		2741A6F61C6EC222008A5FE0 /* CustomUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741A6F51C6EC222008A5FE0 /* CustomUITableViewCell.m */; };
+		2741A6FA1C6F08A7008A5FE0 /* ImageViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741A6F91C6F08A7008A5FE0 /* ImageViewImpl.m */; };
 		274720781C4239EF0058F1D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274720761C4239EF0058F1D7 /* ViewController.m */; };
 		274720791C4239EF0058F1D7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 274720771C4239EF0058F1D7 /* ViewController.xib */; };
 		2747207C1C423A550058F1D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747207B1C423A550058F1D7 /* AppDelegate.m */; };
@@ -153,6 +154,8 @@
 		273E3F7D1C5A6322002C4B42 /* Jockey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jockey.m; sourceTree = "<group>"; };
 		2741A6F41C6EC222008A5FE0 /* CustomUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomUITableViewCell.h; path = AsheraIosParser/src/CustomUITableViewCell.h; sourceTree = "<group>"; };
 		2741A6F51C6EC222008A5FE0 /* CustomUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomUITableViewCell.m; path = AsheraIosParser/src/CustomUITableViewCell.m; sourceTree = "<group>"; };
+		2741A6F81C6F08A7008A5FE0 /* ImageViewImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewImpl.h; path = AsheraIosParser/src/ImageViewImpl.h; sourceTree = "<group>"; };
+		2741A6F91C6F08A7008A5FE0 /* ImageViewImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewImpl.m; path = AsheraIosParser/src/ImageViewImpl.m; sourceTree = "<group>"; };
 		274720751C4239EF0058F1D7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/ViewController.h; sourceTree = "<group>"; };
 		274720761C4239EF0058F1D7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/ViewController.m; sourceTree = "<group>"; };
 		274720771C4239EF0058F1D7 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = Classes/ViewController.xib; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 		27E7013E1C40ADFF0043E295 /* widgets */ = {
 			isa = PBXGroup;
 			children = (
+				2741A6F81C6F08A7008A5FE0 /* ImageViewImpl.h */,
+				2741A6F91C6F08A7008A5FE0 /* ImageViewImpl.m */,
 				27AB340E1C6775A5004FA226 /* TemplateWidget.h */,
 				27AB340F1C6775A5004FA226 /* TemplateWidget.m */,
 				27F9CD031C6703A900A7AE3D /* ListViewImpl.h */,
@@ -512,6 +517,7 @@
 				273E3F7A1C5A5AA3002C4B42 /* RelativeLayoutImpl.m in Sources */,
 				064E073C18E90BD400F5DF6B /* J2RBoard.m in Sources */,
 				064E074318E90BD400F5DF6B /* Engine.java in Sources */,
+				2741A6FA1C6F08A7008A5FE0 /* ImageViewImpl.m in Sources */,
 				273E3F7E1C5A6322002C4B42 /* Jockey.m in Sources */,
 				273E37521C593ABD002C4B42 /* ButtonImpl.m in Sources */,
 				2741A6F61C6EC222008A5FE0 /* CustomUITableViewCell.m in Sources */,

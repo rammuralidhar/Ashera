@@ -22,6 +22,7 @@ public class HtmlViewerUtils {
 		WidgetFactory.register("relative-layout", new RelativeLayoutImpl()); 
 		WidgetFactory.register("list-view", new ListViewImpl()); 
 		WidgetFactory.register("template", new TemplateWidget()); 
+		WidgetFactory.register("img", new ImageViewImpl()); 
 		ComponentFactory.register(new ComponentImpl());
 	}
 	
