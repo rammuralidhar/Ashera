@@ -1,9 +1,15 @@
 package com.ashera.android.factory.ui;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
 import android.widget.TextView;
 
 import com.ashera.widget.BaseWidget;
@@ -61,6 +67,38 @@ public class LabelImpl extends BaseWidget implements ILabel{
 		
 		if (color != null) {
 			label.setTextColor(Color.parseColor(color));
+		}
+		
+		String bgColor = styles.get("background-color");
+		
+		if (bgColor != null) {
+			label.setBackgroundColor(Color.parseColor(bgColor));
+		}
+		
+		String bgImage = styles.get("background-image");
+		
+		if (bgImage != null) {
+
+			try {
+				String url = bgImage.replaceAll("url\\(", "www/").replaceAll("\\)", "");
+				InputStream open = context.getAssets().open(url);
+				Bitmap bitmap = BitmapFactory.decodeStream(open);
+				// Assign the bitmap to an ImageView in this layout		            
+				BitmapDrawable bitmapDrawable = new BitmapDrawable(context.getResources(), bitmap);
+				
+				String repeat = styles.get("background-repeat");
+				if ("repeat".equals(repeat)) {
+					bitmapDrawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);
+				}
+				
+				label.setBackgroundDrawable(bitmapDrawable);
+			    
+
+			} catch (IOException e) {
+		            //
+			} 
+		
+			
 		}
 	}
 	
