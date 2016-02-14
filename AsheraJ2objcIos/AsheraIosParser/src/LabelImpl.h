@@ -49,11 +49,6 @@
 
 - (void)setUpStyleWithJavaUtilMap:(id<JavaUtilMap>)styles;
 
-#pragma mark Protected
-
-- (void)measureMeWithInt:(jint)widthMeasureSpec
-                 withInt:(jint)heightMeasureSpec;
-
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(IosLabelImpl)

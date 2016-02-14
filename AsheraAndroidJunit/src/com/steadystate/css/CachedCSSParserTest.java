@@ -11,7 +11,7 @@ import junit.framework.TestCase;
 public class CachedCSSParserTest extends TestCase {
 	public void testCachedCssParser() {
 		CachedCSSParser cachedCSSParser = new CachedCSSParser();
-		cachedCSSParser.addStyleSheet(".red {} ");
+		cachedCSSParser.addStyleSheet(".red { } linearlayout:focus {} ");
 		List<CSSRule> rules = cachedCSSParser.findRulesByCssPath("linearlayout[.red|]>body>html", "linear-layout", 
 				"red", null);
 		for (CSSRule cssRule : rules) {

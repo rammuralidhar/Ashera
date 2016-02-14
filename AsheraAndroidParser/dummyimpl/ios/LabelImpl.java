@@ -105,10 +105,26 @@ public class LabelImpl extends BaseWidget implements ILabel{
 		String color = styles.get("color");
 		
 		if (color != null) {
-//			label.setTextColor(Color.parseColor(color));
+			int[] colorArr = hex2Rgb(color);
+			nativeSetColor(colorArr[0], colorArr[1], colorArr[2]);
+		}
+		
+		String bgColor = styles.get("background-color");
+		
+		if (bgColor != null) {
+			int[] colorArr = hex2Rgb(bgColor);
+			nativeSetBGColor(colorArr[0], colorArr[1], colorArr[2]);
 		}
 	}
 	
+	private native void nativeSetColor(int red, int green, int blue)/*-[
+    	self.uiLabel.textColor = [[UIColor alloc] initWithRed:red green:green blue:blue alpha:1];
+	]-*/;
+	
+	private native void nativeSetBGColor(int red, int green, int blue)/*-[
+	self.uiLabel.backgroundColor = [[UIColor alloc] initWithRed:red green:green blue:blue alpha:1];
+	]-*/;
+
 	@Override
 	public void setUpAttribute(Map<String, String> attributes) {
 		super.setUpAttribute(attributes);
@@ -125,7 +141,6 @@ public class LabelImpl extends BaseWidget implements ILabel{
 	
 	public native void nativeCreate()/*-[
 	    self.uiLabel = [UILabel new];
-	    self.uiLabel.backgroundColor = [UIColor blueColor];
 	    self.uiLabel.numberOfLines = 0;
 	]-*/;
 

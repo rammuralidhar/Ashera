@@ -7,6 +7,7 @@
 #include "BaseWidget.h"
 #include "Context.h"
 #include "IOSObjectArray.h"
+#include "IOSPrimitiveArray.h"
 #include "IWidget.h"
 #include "J2ObjC_source.h"
 #include "LabelImpl.h"
@@ -25,6 +26,14 @@
   RepackagedAndroidViewView *label_;
 }
 
+- (void)nativeSetColorWithInt:(jint)red
+                      withInt:(jint)green
+                      withInt:(jint)blue;
+
+- (void)nativeSetBGColorWithInt:(jint)red
+                        withInt:(jint)green
+                        withInt:(jint)blue;
+
 - (jint)nativeMeasureWidth;
 
 - (jint)nativeMeasureHeightWithInt:(jint)width;
@@ -35,6 +44,10 @@ J2OBJC_FIELD_SETTER(IosLabelImpl, context_, id<RepackagedAndroidContentContext>)
 J2OBJC_FIELD_SETTER(IosLabelImpl, text_, NSString *)
 J2OBJC_FIELD_SETTER(IosLabelImpl, attributes_LabelImpl_, id<JavaUtilMap>)
 J2OBJC_FIELD_SETTER(IosLabelImpl, label_, RepackagedAndroidViewView *)
+
+__attribute__((unused)) static void IosLabelImpl_nativeSetColorWithInt_withInt_withInt_(IosLabelImpl *self, jint red, jint green, jint blue);
+
+__attribute__((unused)) static void IosLabelImpl_nativeSetBGColorWithInt_withInt_withInt_(IosLabelImpl *self, jint red, jint green, jint blue);
 
 __attribute__((unused)) static jint IosLabelImpl_nativeMeasureWidth(IosLabelImpl *self);
 
@@ -70,75 +83,103 @@ __attribute__((unused)) static IosLabelImpl_$1 *new_IosLabelImpl_$1_initWithIosL
 J2OBJC_TYPE_LITERAL_HEADER(IosLabelImpl_$1)
 
 
-#line 18
+#line 12
 @implementation IosLabelImpl
 
 
-#line 25
+#line 19
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   self->context_ = (id<RepackagedAndroidContentContext>) check_protocol_cast([((id<JavaUtilMap>) nil_chk(metadata)) getWithId:@"context"], @protocol(RepackagedAndroidContentContext));
   label_ = new_IosLabelImpl_$1_initWithIosLabelImpl_withRepackagedAndroidContentContext_(self, context_);
   
-#line 70
+#line 64
   [self nativeCreate];
 }
 
 
-#line 74
+#line 68
 - (id)asWidget {
   return label_;
 }
 
 
-#line 80
+#line 74
 - (id)asNativeWidget {
   return [self nativeAsWidget];
 }
 
 
-#line 86
+#line 80
 - (NSString *)getText {
   return text_;
 }
 
 
-#line 91
+#line 85
 - (void)setTextWithNSString:(NSString *)text {
   self->text_ = text;
   [self nativeSetTextWithNSString:text];
 }
 
 
-#line 97
+#line 91
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance {
   return new_IosLabelImpl_init();
 }
 
 
-#line 102
+#line 96
 - (IOSObjectArray *)getAttributes {
   return [IOSObjectArray newArrayWithObjects:(id[]){ @"width", @"height", @"id" } count:3 type:NSString_class_()];
 }
 
 
-#line 107
+#line 101
 - (void)setUpStyleWithJavaUtilMap:(id<JavaUtilMap>)styles {
   [super setUpStyleWithJavaUtilMap:styles];
   
-#line 111
+#line 105
   NSString *color = [((id<JavaUtilMap>) nil_chk(styles)) getWithId:@"color"];
   
-#line 113
+#line 107
   if (color != nil) {
+      NSLog(@" color %@", color);
+    IOSIntArray *colorArr = ComAsheraWidgetBaseWidget_hex2RgbWithNSString_(color);
+    IosLabelImpl_nativeSetColorWithInt_withInt_withInt_(self, IOSIntArray_Get(nil_chk(colorArr), 0), IOSIntArray_Get(colorArr, 1), IOSIntArray_Get(colorArr, 2));
+  }
+  
+#line 112
+  NSString *bgColor = [styles getWithId:@"background-color"];
+  
+#line 114
+  if (bgColor != nil) {
+    IOSIntArray *colorArr = ComAsheraWidgetBaseWidget_hex2RgbWithNSString_(bgColor);
+    IosLabelImpl_nativeSetBGColorWithInt_withInt_withInt_(self, IOSIntArray_Get(nil_chk(colorArr), 0), IOSIntArray_Get(colorArr, 1), IOSIntArray_Get(colorArr, 2));
   }
 }
 
 
-#line 119
+#line 120
+- (void)nativeSetColorWithInt:(jint)red
+                      withInt:(jint)green
+                      withInt:(jint)blue {
+  IosLabelImpl_nativeSetColorWithInt_withInt_withInt_(self, red, green, blue);
+}
+
+
+#line 124
+- (void)nativeSetBGColorWithInt:(jint)red
+                        withInt:(jint)green
+                        withInt:(jint)blue {
+  IosLabelImpl_nativeSetBGColorWithInt_withInt_withInt_(self, red, green, blue);
+}
+
+
+#line 129
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes {
   [super setUpAttributeWithJavaUtilMap:attributes];
   
-#line 122
+#line 132
   NSString *id_ = [((id<JavaUtilMap>) nil_chk(attributes)) getWithId:@"id"];
   if (id_ != nil) {
     [((RepackagedAndroidViewView *) nil_chk(label_)) setIdWithInt:((jint) [id_ hash])];
@@ -146,41 +187,34 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelImpl_$1)
 }
 
 
-#line 128
+#line 138
 - (id)nativeAsWidget {
   return self.uiLabel;
 }
 
 - (void)nativeCreate {
   self.uiLabel = [UILabel new];
-  self.uiLabel.backgroundColor = [UIColor blueColor];
   self.uiLabel.numberOfLines = 0;
 }
 
 
-#line 139
+#line 148
 - (void)nativeSetTextWithNSString:(NSString *)text {
   [self.uiLabel setText:text];
 }
 
-- (void)measureMeWithInt:(jint)widthMeasureSpec
-                 withInt:(jint)heightMeasureSpec {
-}
-
-
-#line 145
 - (jint)nativeMeasureWidth {
   return IosLabelImpl_nativeMeasureWidth(self);
 }
 
 
-#line 151
+#line 158
 - (jint)nativeMeasureHeightWithInt:(jint)width {
   return IosLabelImpl_nativeMeasureHeightWithInt_(self, width);
 }
 
 
-#line 157
+#line 164
 - (void)nativeMakeFrameWithInt:(jint)l
                        withInt:(jint)t
                        withInt:(jint)r
@@ -203,11 +237,12 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelImpl_$1)
     { "newInstance", NULL, "Lcom.ashera.widget.factory.IWidget;", 0x1, NULL, NULL },
     { "getAttributes", NULL, "[Ljava.lang.String;", 0x1, NULL, NULL },
     { "setUpStyleWithJavaUtilMap:", "setUpStyle", "V", 0x1, NULL, NULL },
+    { "nativeSetColorWithInt:withInt:withInt:", "nativeSetColor", "V", 0x102, NULL, NULL },
+    { "nativeSetBGColorWithInt:withInt:withInt:", "nativeSetBGColor", "V", 0x102, NULL, NULL },
     { "setUpAttributeWithJavaUtilMap:", "setUpAttribute", "V", 0x1, NULL, NULL },
     { "nativeAsWidget", NULL, "Ljava.lang.Object;", 0x101, NULL, NULL },
     { "nativeCreate", NULL, "V", 0x101, NULL, NULL },
     { "nativeSetTextWithNSString:", "nativeSetText", "V", 0x101, NULL, NULL },
-    { "measureMeWithInt:withInt:", "measureMe", "V", 0x4, NULL, NULL },
     { "nativeMeasureWidth", NULL, "I", 0x102, NULL, NULL },
     { "nativeMeasureHeightWithInt:", "nativeMeasureHeight", "I", 0x102, NULL, NULL },
     { "nativeMakeFrameWithInt:withInt:withInt:withInt:", "nativeMakeFrame", "V", 0x101, NULL, NULL },
@@ -219,14 +254,24 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelImpl_$1)
     { "attributes_LabelImpl_", "attributes", 0x2, "Ljava.util.Map;", NULL, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;",  },
     { "label_", NULL, 0x2, "Lrepackaged.android.view.View;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _IosLabelImpl = { 2, "LabelImpl", "ios", NULL, 0x1, 17, methods, 4, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosLabelImpl = { 2, "LabelImpl", "ios", NULL, 0x1, 18, methods, 4, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosLabelImpl;
 }
 
 @end
 
 
-#line 145
+#line 120
+void IosLabelImpl_nativeSetColorWithInt_withInt_withInt_(IosLabelImpl *self, jint red, jint green, jint blue) {
+  self.uiLabel.textColor = [[UIColor alloc] initWithRed:red green:green blue:blue alpha:1];
+}
+
+void IosLabelImpl_nativeSetBGColorWithInt_withInt_withInt_(IosLabelImpl *self, jint red, jint green, jint blue) {
+  self.uiLabel.backgroundColor = [[UIColor alloc] initWithRed:red green:green blue:blue alpha:1];
+}
+
+
+#line 152
 jint IosLabelImpl_nativeMeasureWidth(IosLabelImpl *self) {
   CGSize maximumLabelSize = CGSizeMake(CGFLOAT_MAX,CGFLOAT_MAX);
   CGSize requiredSize = [self.uiLabel sizeThatFits:maximumLabelSize];
@@ -254,62 +299,62 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosLabelImpl)
 @implementation IosLabelImpl_$1
 
 
-#line 29
+#line 23
 - (void)onMeasureWithInt:(jint)widthMeasureSpec
                  withInt:(jint)heightMeasureSpec {
   [super onMeasureWithInt:widthMeasureSpec withInt:heightMeasureSpec];
   
-#line 32
+#line 26
   jint widthMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(widthMeasureSpec);
   jint heightMode = RepackagedAndroidViewView_MeasureSpec_getModeWithInt_(heightMeasureSpec);
   jint widthSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(widthMeasureSpec);
   jint heightSize = RepackagedAndroidViewView_MeasureSpec_getSizeWithInt_(heightMeasureSpec);
   
-#line 37
+#line 31
   jint width;
   jint height;
   if (widthMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 41
+#line 35
     width = widthSize;
   }
   else {
     
-#line 43
+#line 37
     width = IosLabelImpl_nativeMeasureWidth(this$0_);
     
-#line 45
+#line 39
     if (width > widthSize) {
       width = widthSize;
     }
   }
   
-#line 50
+#line 44
   if (heightMode == RepackagedAndroidViewView_MeasureSpec_EXACTLY) {
     
-#line 52
+#line 46
     height = heightSize;
   }
   else {
     
-#line 54
+#line 48
     height = IosLabelImpl_nativeMeasureHeightWithInt_(this$0_, width);
   }
   
-#line 57
+#line 51
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:JreStrcat("$ICIC$", @"label :", height, ' ', width, ' ', [this$0_ getText])];
   [self setMeasuredDimensionWithInt:width withInt:height];
 }
 
 
-#line 63
+#line 57
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)left
                     withInt:(jint)top
                     withInt:(jint)right
                     withInt:(jint)bottom {
   
-#line 65
+#line 59
   [super onLayoutWithBoolean:changed withInt:left withInt:top withInt:right withInt:bottom];
   [this$0_ nativeMakeFrameWithInt:left withInt:top withInt:right withInt:bottom];
 }
