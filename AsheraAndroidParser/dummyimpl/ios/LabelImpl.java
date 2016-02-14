@@ -8,6 +8,7 @@ import repackaged.android.view.View;
 import com.ashera.widget.BaseWidget;
 import com.ashera.widget.factory.ILabel;
 import com.ashera.widget.factory.IWidget;
+import com.ashera.widget.helper.ColorUtil;
 
 public class LabelImpl extends BaseWidget implements ILabel{
 	private Context context;
@@ -105,14 +106,14 @@ public class LabelImpl extends BaseWidget implements ILabel{
 		String color = styles.get("color");
 		
 		if (color != null) {
-			int[] colorArr = hex2Rgb(color);
+			int[] colorArr = ColorUtil.hex2Rgb(color);
 			nativeSetColor(colorArr[0], colorArr[1], colorArr[2]);
 		}
 		
 		String bgColor = styles.get("background-color");
 		
 		if (bgColor != null) {
-			int[] colorArr = hex2Rgb(bgColor);
+			int[] colorArr = ColorUtil.hex2Rgb(bgColor);
 			nativeSetBGColor(colorArr[0], colorArr[1], colorArr[2]);
 		}
 	}

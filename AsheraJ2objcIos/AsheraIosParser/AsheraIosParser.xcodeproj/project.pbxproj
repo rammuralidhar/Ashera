@@ -2609,6 +2609,9 @@
 		27715FBF1C4185EE00F6DD5F /* XmlUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F61F1C3982CD00FFB46F /* XmlUtils.h */; };
 		27715FC01C4185EE00F6DD5F /* XmlUtils.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2708F6201C3982CD00FFB46F /* XmlUtils.m */; };
 		277463851BDB318200BAFD75 /* libAsheraIosParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277463791BDB318200BAFD75 /* libAsheraIosParser.a */; };
+		27A805A31C70F45700734CE1 /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A805A21C70F45700734CE1 /* ColorUtil.m */; };
+		27A805A41C70F46000734CE1 /* ColorUtil.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27A805A11C70F45700734CE1 /* ColorUtil.h */; };
+		27A805A51C70F46100734CE1 /* ColorUtil.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27A805A21C70F45700734CE1 /* ColorUtil.m */; };
 		27AB34091C673B27004FA226 /* EventBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB34081C673B27004FA226 /* EventBus.m */; };
 		27AB340A1C673C5D004FA226 /* EventBus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AB34071C673B27004FA226 /* EventBus.h */; };
 		27AB340B1C673C5D004FA226 /* EventBus.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27AB34081C673B27004FA226 /* EventBus.m */; };
@@ -2637,6 +2640,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				27A805A41C70F46000734CE1 /* ColorUtil.h in CopyFiles */,
+				27A805A51C70F46100734CE1 /* ColorUtil.m in CopyFiles */,
 				27AB34151C67763C004FA226 /* ITemplate.h in CopyFiles */,
 				27AB34161C67763C004FA226 /* ITemplate.m in CopyFiles */,
 				27AB340A1C673C5D004FA226 /* EventBus.h in CopyFiles */,
@@ -5773,6 +5778,8 @@
 		27746EF91BDBBF9D00BAFD75 /* Schema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schema.m; sourceTree = "<group>"; };
 		27746EFA1BDBBF9D00BAFD75 /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLWriter.h; sourceTree = "<group>"; };
 		27746EFB1BDBBF9D00BAFD75 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
+		27A805A11C70F45700734CE1 /* ColorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtil.h; sourceTree = "<group>"; };
+		27A805A21C70F45700734CE1 /* ColorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtil.m; sourceTree = "<group>"; };
 		27AB34071C673B27004FA226 /* EventBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBus.h; sourceTree = "<group>"; };
 		27AB34081C673B27004FA226 /* EventBus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventBus.m; sourceTree = "<group>"; };
 		27AB34121C677631004FA226 /* ITemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITemplate.h; sourceTree = "<group>"; };
@@ -7041,6 +7048,8 @@
 		2774637B1BDB318200BAFD75 /* AsheraIosParser */ = {
 			isa = PBXGroup;
 			children = (
+				27A805A11C70F45700734CE1 /* ColorUtil.h */,
+				27A805A21C70F45700734CE1 /* ColorUtil.m */,
 				27AB34121C677631004FA226 /* ITemplate.h */,
 				27AB34131C677631004FA226 /* ITemplate.m */,
 				27AB34071C673B27004FA226 /* EventBus.h */,
@@ -8166,6 +8175,7 @@
 				2708F9481C39963300FFB46F /* Parcel.m in Sources */,
 				2708F9491C39963300FFB46F /* Parcelable.h in Sources */,
 				2708F94A1C39963300FFB46F /* Parcelable.m in Sources */,
+				27A805A31C70F45700734CE1 /* ColorUtil.m in Sources */,
 				2708F94B1C39963300FFB46F /* Path.h in Sources */,
 				2708F94C1C39963300FFB46F /* Path.m in Sources */,
 				273E3ADB1C5941CB002C4B42 /* NotExpression.m in Sources */,

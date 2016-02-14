@@ -14,6 +14,8 @@ linear-layout {
 
 label {
     color: #000000;
+    background-color: blue;
+
 }
 
 #test {
