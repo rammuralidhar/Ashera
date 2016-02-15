@@ -10,16 +10,20 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 
 import com.ashera.widget.BaseWidget;
 import com.ashera.widget.factory.ILabel;
 import com.ashera.widget.factory.IWidget;
+import com.ashera.widget.helper.NinePatchImageUtils;
+import com.ashera.widget.helper.NinePatchImageUtils.CapInsets;
 
 public class LabelImpl extends BaseWidget implements ILabel{
 	private TextView label;
 	private Context context;
 	private String text;
+	private Map<String, String> styles;
 	@Override
 	public Object asWidget() {
 		return label;
@@ -55,14 +59,27 @@ public class LabelImpl extends BaseWidget implements ILabel{
 
 	@Override
 	public String[] getAttributes() {
-		return new String [] { "width", "height", "id"};
+		return new String [] { "width", "height", "id", "capinsets_pad", "capinsets_stretch"};
 	}
 
 	@Override
 	public void setUpStyle(Map<String, String> styles) {
 		super.setUpStyle(styles);
-		
+		this.styles = styles;
 
+		
+	}
+	
+	@Override
+	public void setUpAttribute(Map<String, String> attributes) {
+		super.setUpAttribute(attributes);
+		
+		String id = attributes.get("id");
+		if (id != null) {
+			label.setId(id.hashCode());
+		}
+		
+		String capInsetsPad = attributes.get("capinsets_pad");
 		String color = styles.get("color");
 		
 		if (color != null) {
@@ -83,15 +100,23 @@ public class LabelImpl extends BaseWidget implements ILabel{
 				String url = bgImage.replaceAll("url\\(", "www/").replaceAll("\\)", "");
 				InputStream open = context.getAssets().open(url);
 				Bitmap bitmap = BitmapFactory.decodeStream(open);
-				// Assign the bitmap to an ImageView in this layout		            
-				BitmapDrawable bitmapDrawable = new BitmapDrawable(context.getResources(), bitmap);
 				
-				String repeat = styles.get("background-repeat");
-				if ("repeat".equals(repeat)) {
-					bitmapDrawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);
-				}
+				Drawable drawable = null;
+				if (capInsetsPad != null) {
+					CapInsets capInsets = new CapInsets();
+					capInsets.initPadding(capInsetsPad);
+					drawable = NinePatchImageUtils.createDrawable(bitmap, url, capInsets, context);
+				} else {				
+					// Assign the bitmap to an ImageView in this layout		            
+					drawable = new BitmapDrawable(context.getResources(), bitmap);
+					String repeat = styles.get("background-repeat");
+					if ("repeat".equals(repeat)) {
+						((BitmapDrawable) drawable).setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT);
+					}
+				}				
 				
-				label.setBackgroundDrawable(bitmapDrawable);
+				
+				label.setBackgroundDrawable(drawable);
 			    
 
 			} catch (IOException e) {
@@ -99,16 +124,6 @@ public class LabelImpl extends BaseWidget implements ILabel{
 			} 
 		
 			
-		}
-	}
-	
-	@Override
-	public void setUpAttribute(Map<String, String> attributes) {
-		super.setUpAttribute(attributes);
-		
-		String id = attributes.get("id");
-		if (id != null) {
-			label.setId(id.hashCode());
 		}
 	}
 	

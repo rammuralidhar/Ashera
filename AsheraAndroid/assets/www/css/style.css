@@ -27,7 +27,7 @@ label {
 
 #labeltest {
 	background-color: green;
-	
+	background-image: url("ic_launcher.png");
 }
 
 #labeltest : focus{

@@ -103,8 +103,8 @@ public abstract class BaseWidget implements IWidget{
 		}
 		
 		public void loadData(IWidget instance) {
-			instance.setUpAttribute(attributes);
 			instance.setUpStyle(styles);
+			instance.setUpAttribute(attributes);
 			if (instance instanceof HasText) {
 				((HasText) instance).setText(text);
 			}
