@@ -79,7 +79,6 @@ public class LabelImpl extends BaseWidget implements ILabel{
 			label.setId(id.hashCode());
 		}
 		
-		String capInsetsPad = attributes.get("capinsets_pad");
 		String color = styles.get("color");
 		
 		if (color != null) {
@@ -101,10 +100,13 @@ public class LabelImpl extends BaseWidget implements ILabel{
 				InputStream open = context.getAssets().open(url);
 				Bitmap bitmap = BitmapFactory.decodeStream(open);
 				
+				String capInsetsPad = attributes.get("capinsets_pad");
+				String capInsetsStretch = attributes.get("capinsets_stretch");
 				Drawable drawable = null;
-				if (capInsetsPad != null) {
+				if (capInsetsPad != null || capInsetsStretch != null) {
 					CapInsets capInsets = new CapInsets();
 					capInsets.initPadding(capInsetsPad);
+					capInsets.initStretch(capInsetsStretch);
 					drawable = NinePatchImageUtils.createDrawable(bitmap, url, capInsets, context);
 				} else {				
 					// Assign the bitmap to an ImageView in this layout		            

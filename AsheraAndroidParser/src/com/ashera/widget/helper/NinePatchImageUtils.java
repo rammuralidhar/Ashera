@@ -235,11 +235,24 @@ public class NinePatchImageUtils {
         private int stretchBottom;
         
         public CapInsets initPadding(String paddings) {
-        	String paddingArr[] = paddings.split("\\s");
-        	padTop = Integer.parseInt(paddingArr[0]);
-        	padRight = Integer.parseInt(paddingArr[1]);
-        	padBottom = Integer.parseInt(paddingArr[2]);
-        	padLeft = Integer.parseInt(paddingArr[3]);
+        	if (paddings != null) {
+	        	String paddingArr[] = paddings.split("\\s");
+	        	padTop = Integer.parseInt(paddingArr[0]);
+	        	padRight = Integer.parseInt(paddingArr[1]);
+	        	padBottom = Integer.parseInt(paddingArr[2]);
+	        	padLeft = Integer.parseInt(paddingArr[3]);
+        	}
+        	return this;
+        }
+        
+        public CapInsets initStretch(String stretch) {
+        	if (stretch != null) {
+	        	String stretchArr[] = stretch.split("\\s");
+	        	stretchTop = Integer.parseInt(stretchArr[0]);
+	        	stretchRight = Integer.parseInt(stretchArr[1]);
+	        	stretchBottom = Integer.parseInt(stretchArr[2]);
+	        	stretchLeft = Integer.parseInt(stretchArr[3]);
+        	}
         	return this;
         }
 
