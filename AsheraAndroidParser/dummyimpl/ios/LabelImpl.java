@@ -11,58 +11,75 @@ import com.ashera.widget.factory.IWidget;
 import com.ashera.widget.helper.ColorUtil;
 
 public class LabelImpl extends BaseWidget implements ILabel{
+	private final class LabelView extends View {
+		private LabelView(Context context) {
+			super(context);
+		}
+
+		@Override
+		protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+			super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+		    int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+		    int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+		    int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+		    int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+
+		    int width;
+		    int height;
+		    if (widthMode == MeasureSpec.EXACTLY) {
+		        // Parent has told us how big to be. So be it.
+		        width = widthSize;
+		    } else {
+		    	width = nativeMeasureWidth();
+		    	
+		    	if (width > widthSize) {
+		    		width = widthSize;
+		    	}
+		    }
+		    
+		    if (heightMode == MeasureSpec.EXACTLY) {
+		        // Parent has told us how big to be. So be it.
+		        height = heightSize;
+		    } else {
+		    	height = nativeMeasureHeight(width);
+		    }
+		    
+		    System.out.println("label :" + height + " " + width + " " + getText());
+		    setMeasuredDimension(width, height);
+		    LabelImpl.this.onmeasure(width, height);
+		
+		}
+
+		@Override
+		protected void onLayout(boolean changed, int left, int top,
+				int right, int bottom) {
+			super.onLayout(changed, left, top, right, bottom);
+			nativeMakeFrame(left, top, right, bottom);
+		}
+		
+		public void updateMeasuredDimension(int width, int height){
+			setMeasuredDimension(width, height);
+		}
+	}
 	private Context context;
 	private String text;
 	private Map<String, String> attributes;
-	private View label;
+	private LabelView label;
 	
 	@Override
 	public void create(Map<String, Object> metadata) {
 		this.context = (Context) metadata.get("context");
-		label = new View(context) {
-			@Override
-			protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-				super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
-		        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-		        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-		        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-		        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-
-		        int width;
-		        int height;
-		        if (widthMode == MeasureSpec.EXACTLY) {
-		            // Parent has told us how big to be. So be it.
-		            width = widthSize;
-		        } else {
-		        	width = nativeMeasureWidth();
-		        	
-		        	if (width > widthSize) {
-		        		width = widthSize;
-		        	}
-		        }
-		        
-		        if (heightMode == MeasureSpec.EXACTLY) {
-		            // Parent has told us how big to be. So be it.
-		            height = heightSize;
-		        } else {
-		        	height = nativeMeasureHeight(width);
-		        }
-		        
-		        System.out.println("label :" + height + " " + width + " " + getText());
-		        setMeasuredDimension(width, height);
-			
-			}
-			
-			@Override
-			protected void onLayout(boolean changed, int left, int top,
-					int right, int bottom) {
-				super.onLayout(changed, left, top, right, bottom);
-				nativeMakeFrame(left, top, right, bottom);
-			}
-			
-		};
+		label = new LabelView(context);
 		nativeCreate();
+	}
+
+	protected void onmeasure(int width, int height) {
+
+	}
+	
+	public void updateMeasuredDimension(int width, int height){
+		label.updateMeasuredDimension(width, height);
 	}
 
 	@Override

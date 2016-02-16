@@ -16,6 +16,7 @@ import freemarker.template.TemplateException;
 public class HtmlViewerUtils {
 	static {
 		WidgetFactory.register("label", new LabelImpl());
+		WidgetFactory.register("labelimg", new LabelWithImageImpl());
 		WidgetFactory.register("linear-layout", new LinearLayoutImpl());
 		WidgetFactory.register("body", new HtmlImpl()); 
 		WidgetFactory.register("button", new ButtonImpl()); 

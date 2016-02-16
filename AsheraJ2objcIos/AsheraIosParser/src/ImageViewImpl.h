@@ -43,6 +43,14 @@
 
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes;
 
+- (void)updateMeasuredDimensionWithInt:(jint)width
+                               withInt:(jint)height;
+
+#pragma mark Protected
+
+- (void)onmeasureWithInt:(jint)width
+                 withInt:(jint)height;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(IosImageViewImpl)

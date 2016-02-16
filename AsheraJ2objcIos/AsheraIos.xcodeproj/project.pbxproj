@@ -53,6 +53,7 @@
 		27E7014A1C40BF4E0043E295 /* ComponentImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E701491C40BF4E0043E295 /* ComponentImpl.m */; };
 		27E701501C40C8440043E295 /* HtmlViewerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E7014F1C40C8440043E295 /* HtmlViewerUtils.m */; };
 		27E7015B1C40CE1F0043E295 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 27E7015A1C40CE1F0043E295 /* www */; };
+		27E76F5B1C73143000D46D7D /* LabelWithImageImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E76F5A1C73143000D46D7D /* LabelWithImageImpl.m */; };
 		27F9CD051C6703A900A7AE3D /* ListViewImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F9CD041C6703A900A7AE3D /* ListViewImpl.m */; };
 		3D9F90491934DA2F00738699 /* J2RViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F90451934DA2F00738699 /* J2RViewController_iPad.xib */; };
 		3D9F904A1934DA2F00738699 /* J2RViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D9F90471934DA2F00738699 /* J2RViewController_iPhone.xib */; };
@@ -176,6 +177,8 @@
 		27E701491C40BF4E0043E295 /* ComponentImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComponentImpl.m; path = AsheraIosParser/src/ComponentImpl.m; sourceTree = "<group>"; };
 		27E7014F1C40C8440043E295 /* HtmlViewerUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HtmlViewerUtils.m; path = AsheraIosParser/src/HtmlViewerUtils.m; sourceTree = "<group>"; };
 		27E7015A1C40CE1F0043E295 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		27E76F591C73143000D46D7D /* LabelWithImageImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelWithImageImpl.h; path = AsheraIosParser/src/LabelWithImageImpl.h; sourceTree = "<group>"; };
+		27E76F5A1C73143000D46D7D /* LabelWithImageImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelWithImageImpl.m; path = AsheraIosParser/src/LabelWithImageImpl.m; sourceTree = "<group>"; };
 		27F9CD031C6703A900A7AE3D /* ListViewImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewImpl.h; path = AsheraIosParser/src/ListViewImpl.h; sourceTree = "<group>"; };
 		27F9CD041C6703A900A7AE3D /* ListViewImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewImpl.m; path = AsheraIosParser/src/ListViewImpl.m; sourceTree = "<group>"; };
 		3D9F90461934DA2F00738699 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Classes/en.lproj/J2RViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
@@ -355,6 +358,8 @@
 		27E7013E1C40ADFF0043E295 /* widgets */ = {
 			isa = PBXGroup;
 			children = (
+				27E76F591C73143000D46D7D /* LabelWithImageImpl.h */,
+				27E76F5A1C73143000D46D7D /* LabelWithImageImpl.m */,
 				2741A6F81C6F08A7008A5FE0 /* ImageViewImpl.h */,
 				2741A6F91C6F08A7008A5FE0 /* ImageViewImpl.m */,
 				27AB340E1C6775A5004FA226 /* TemplateWidget.h */,
@@ -523,6 +528,7 @@
 				2741A6F61C6EC222008A5FE0 /* CustomUITableViewCell.m in Sources */,
 				064E074818E90BD400F5DF6B /* Score.java in Sources */,
 				064E074518E90BD400F5DF6B /* Move.java in Sources */,
+				27E76F5B1C73143000D46D7D /* LabelWithImageImpl.m in Sources */,
 				27E701501C40C8440043E295 /* HtmlViewerUtils.m in Sources */,
 				064E073F18E90BD400F5DF6B /* J2RViewController.m in Sources */,
 				064E073E18E90BD400F5DF6B /* J2RSquare.m in Sources */,
