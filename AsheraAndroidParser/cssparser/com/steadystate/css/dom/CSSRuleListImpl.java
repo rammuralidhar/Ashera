@@ -116,7 +116,7 @@ public class CSSRuleListImpl implements CSSRuleList, CSSFormatable, Serializable
 			System.out.println("key" + key);
 
 			if (key.contains(".")) {
-				String[] keys = key.split("\\.");
+				String[] keys = key.split("\\.|\\:");
 				if (!keys[0].equals("*")) {
 					ruleMap_.put(keys[0], cssRule);
 				}
@@ -124,14 +124,17 @@ public class CSSRuleListImpl implements CSSRuleList, CSSFormatable, Serializable
 					ruleMap_.put("." + keys[1], cssRule);
 				}
 			} else if (key.contains(".#")) {
-				String[] keys = key.split("#");
+				String[] keys = key.split("#|\\:");
 				if (!keys[0].equals("*")) {
 					ruleMap_.put(keys[0], cssRule);
 				}
 				if (keys.length > 1) {
 					ruleMap_.put("#" + keys[1], cssRule);
 				}
-			} else {
+			} else if (key.contains(":")) {
+				String[] keys = key.split("\\:");
+				ruleMap_.put(keys[0], cssRule);
+			}else {
 				ruleMap_.put(key, cssRule);
 			}
 		}

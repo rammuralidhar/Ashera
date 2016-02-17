@@ -30,7 +30,7 @@ label {
 	background-image: url("button.png");
 }
 
-#labeltest : focus{
+#labeltest : active{
 	background-color: yellow;
 	
 }

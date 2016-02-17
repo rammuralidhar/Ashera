@@ -39,7 +39,6 @@ public class CachedCSSParser {
     		
     		for (String className : classNames) {
     			rules.addAll(getCssRules("." + className));
-    			rules.addAll(getCssRules("." + className + ":focus"));
 			}
     		
     	}
