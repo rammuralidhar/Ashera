@@ -4,13 +4,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.StateListDrawable;
 import android.widget.TextView;
 
 import com.ashera.widget.BaseWidget;
@@ -117,16 +120,29 @@ public class LabelImpl extends BaseWidget implements ILabel{
 					}
 				}				
 				
+				StateListDrawable stateListDrawable = new StateListDrawable();
+				String bgColorActive = styles.get("active:background-color");
 				
-				label.setBackgroundDrawable(drawable);
+				if (bgColorActive != null) {
+					ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor(bgColor));
+					stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, colorDrawable);
+				}
+				
+				
+				
+				
+				stateListDrawable.addState(new int[]{}, drawable);
+//				label.setActivated(true);
+				label.setClickable(true);
+				label.setBackgroundDrawable(stateListDrawable);
 			    
 
 			} catch (IOException e) {
 		            //
 			} 
-		
-			
+
 		}
+
 	}
 	
 	@Override

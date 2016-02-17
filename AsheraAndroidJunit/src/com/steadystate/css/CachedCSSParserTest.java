@@ -14,9 +14,9 @@ public class CachedCSSParserTest extends TestCase {
 	static CachedCSSParser parser = new CachedCSSParser();
 	public void testCachedCssParser() {
 		
-		parser.addStyleSheet(".red {color:red } linearlayout.red:focus {x:y;} ");
-		Map<String, String> map = getCss("linearlayout[.red|]>body>html", "linearlayout", 
-				"red", null);
+		parser.addStyleSheet(".red {color:red } linearlayout.red:focus {x:y;}  #labeltest:active{	background-color: yellow; }");
+		Map<String, String> map = getCss("label[#labeltest|]>body>html", "label", 
+				"labeltest", "labeltest");
 		System.out.println(map);
 	}	
 	
