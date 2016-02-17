@@ -31,6 +31,6 @@ label {
 }
 
 #labeltest:active{
-	background-color: yellow;
+	background-image: url("ic_launcher.png");
 	
 }

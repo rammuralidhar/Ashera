@@ -14,6 +14,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
+import android.view.View;
 import android.widget.TextView;
 
 import com.ashera.widget.BaseWidget;
@@ -128,6 +129,16 @@ public class LabelImpl extends BaseWidget implements ILabel{
 					stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, colorDrawable);
 				}
 				
+				String bgImageActive = styles.get("active:background-image");
+				
+				if (bgImageActive != null) {
+					String url1 = bgImageActive.replaceAll("url\\(", "www/").replaceAll("\\)", "");
+					InputStream open1 = context.getAssets().open(url1);
+					Bitmap bitmap1 = BitmapFactory.decodeStream(open1);
+					BitmapDrawable colorDrawable = new BitmapDrawable(bitmap1);
+					stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, colorDrawable);
+				}
+				
 				
 				
 				
@@ -135,6 +146,13 @@ public class LabelImpl extends BaseWidget implements ILabel{
 //				label.setActivated(true);
 				label.setClickable(true);
 				label.setBackgroundDrawable(stateListDrawable);
+				
+				label.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+//						label.setText("aaa");
+					}
+				});
 			    
 
 			} catch (IOException e) {
