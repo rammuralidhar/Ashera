@@ -178,7 +178,6 @@ J2OBJC_TYPE_LITERAL_HEADER(IosImageViewImpl_$1)
       jint stretchBottom = JavaLangInteger_parseIntWithNSString_(IOSObjectArray_Get(stretchArr, 2));
       jint stretchLeft = JavaLangInteger_parseIntWithNSString_(IOSObjectArray_Get(stretchArr, 3));
       IosImageViewImpl_nativeLoadResizableImageWithInt_withInt_withInt_withInt_withNSString_(self, stretchTop, stretchRight, stretchBottom, stretchLeft, JreStrcat("$$", @"www/", [attributes getWithId:@"src"]));
-        NSLog(@"pppppppppppppppp");
     }
     else {
       
@@ -220,7 +219,7 @@ J2OBJC_TYPE_LITERAL_HEADER(IosImageViewImpl_$1)
 
 - (void)nativeCreate {
   self.imageView = [UIImageView new];
-  self.imageView.backgroundColor = [UIColor blackColor];
+  self.imageView.backgroundColor = [UIColor clearColor];
 }
 
 - (jint)nativeMeasureWidth {
@@ -283,7 +282,8 @@ J2OBJC_TYPE_LITERAL_HEADER(IosImageViewImpl_$1)
 #line 140
 void IosImageViewImpl_nativeLoadResizableImageWithInt_withInt_withInt_withInt_withNSString_(IosImageViewImpl *self, jint t, jint r, jint b, jint l, NSString *path) {
   NSString *abspath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path];
-  self.imageView.image=[[UIImage imageWithContentsOfFile:abspath] resizableImageWithCapInsets:UIEdgeInsetsMake(t, r, b, l) resizingMode:UIImageResizingModeStretch];
+  self.imageView.image=[UIImage imageWithContentsOfFile:abspath];
+  [[UIImage imageNamed:path] resizableImageWithCapInsets:UIEdgeInsetsMake(t, r, b, l) resizingMode:UIImageResizingModeStretch];
 }
 
 void IosImageViewImpl_nativeLoadImageWithNSString_(IosImageViewImpl *self, NSString *path) {

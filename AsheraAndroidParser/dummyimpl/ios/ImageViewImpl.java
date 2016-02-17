@@ -159,7 +159,7 @@ public class ImageViewImpl  extends BaseWidget {
 
 	public native void nativeCreate()/*-[
 	    self.imageView = [UIImageView new];
-	    self.imageView.backgroundColor = [UIColor blackColor];
+	    self.imageView.backgroundColor = [UIColor clearColor];
 	]-*/;
 	
 	private native int nativeMeasureWidth()/*-[

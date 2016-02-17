@@ -28,6 +28,7 @@
   IosLabelImpl *label_;
   IosImageViewImpl *imageView_;
   IosRelativeLayoutImpl *frame_;
+  NSString *text_;
 }
 
 - (void)updateImageViewWidthWithInt:(jint)width
@@ -38,6 +39,7 @@
 J2OBJC_FIELD_SETTER(IosLabelWithImageImpl, label_, IosLabelImpl *)
 J2OBJC_FIELD_SETTER(IosLabelWithImageImpl, imageView_, IosImageViewImpl *)
 J2OBJC_FIELD_SETTER(IosLabelWithImageImpl, frame_, IosRelativeLayoutImpl *)
+J2OBJC_FIELD_SETTER(IosLabelWithImageImpl, text_, NSString *)
 
 __attribute__((unused)) static void IosLabelWithImageImpl_updateImageViewWidthWithInt_withInt_(IosLabelWithImageImpl *self, jint width, jint height);
 
@@ -97,19 +99,19 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelWithImageImpl_$2)
 }
 
 
-#line 50
+#line 51
 - (IOSObjectArray *)getLayoutAttributes {
   return nil;
 }
 
 
-#line 55
+#line 56
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance {
   return new_IosLabelWithImageImpl_init();
 }
 
 
-#line 60
+#line 61
 - (IOSObjectArray *)getAttributes {
   id<JavaUtilList> asList = new_JavaUtilArrayList_initWithJavaUtilCollection_(JavaUtilArrays_asListWithNSObjectArray_([((IosLabelImpl *) nil_chk(label_)) getAttributes]));
   [asList addAllWithJavaUtilCollection:JavaUtilArrays_asListWithNSObjectArray_([((IosImageViewImpl *) nil_chk(imageView_)) getAttributes])];
@@ -117,19 +119,19 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelWithImageImpl_$2)
 }
 
 
-#line 67
+#line 68
 - (id)asWidget {
   return [((IosRelativeLayoutImpl *) nil_chk(frame_)) asWidget];
 }
 
 
-#line 72
+#line 73
 - (id)asNativeWidget {
   return [((IosRelativeLayoutImpl *) nil_chk(frame_)) asNativeWidget];
 }
 
 
-#line 77
+#line 78
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   [((IosRelativeLayoutImpl *) nil_chk(frame_)) createWithJavaUtilMap:metadata];
   [((IosLabelImpl *) nil_chk(label_)) createWithJavaUtilMap:metadata];
@@ -137,11 +139,11 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelWithImageImpl_$2)
 }
 
 
-#line 85
+#line 86
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes {
   [super setUpAttributeWithJavaUtilMap:attributes];
   
-#line 88
+#line 89
   [((IosLabelImpl *) nil_chk(label_)) setUpAttributeWithJavaUtilMap:attributes];
   [((IosImageViewImpl *) nil_chk(imageView_)) setUpAttributeWithJavaUtilMap:attributes];
   [((IosRelativeLayoutImpl *) nil_chk(frame_)) setUpAttributeWithJavaUtilMap:attributes];
@@ -150,31 +152,32 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelWithImageImpl_$2)
 - (void)setUpStyleWithJavaUtilMap:(id<JavaUtilMap>)styles {
   [super setUpStyleWithJavaUtilMap:styles];
   
-#line 98
+#line 99
   [((IosLabelImpl *) nil_chk(label_)) setUpStyleWithJavaUtilMap:styles];
   [((IosImageViewImpl *) nil_chk(imageView_)) setUpStyleWithJavaUtilMap:styles];
   [((IosRelativeLayoutImpl *) nil_chk(frame_)) setUpStyleWithJavaUtilMap:styles];
 }
 
 
-#line 104
+#line 105
 - (void)initialized {
   [super initialized];
   
-#line 108
+#line 109
   [((IosRelativeLayoutImpl *) nil_chk(frame_)) addWithComAsheraWidgetFactoryIWidget:imageView_];
   [frame_ addWithComAsheraWidgetFactoryIWidget:label_];
 }
 
 
-#line 113
+#line 114
 - (NSString *)getText {
-  return nil;
+  return self->text_;
 }
 
 
-#line 118
+#line 119
 - (void)setTextWithNSString:(NSString *)text {
+  self->text_ = text;
   [((IosLabelImpl *) nil_chk(label_)) setTextWithNSString:text];
 }
 
@@ -207,8 +210,9 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelWithImageImpl_$2)
     { "label_", NULL, 0x2, "Lios.LabelImpl;", NULL, NULL,  },
     { "imageView_", NULL, 0x2, "Lios.ImageViewImpl;", NULL, NULL,  },
     { "frame_", NULL, 0x2, "Lios.RelativeLayoutImpl;", NULL, NULL,  },
+    { "text_", NULL, 0x2, "Ljava.lang.String;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _IosLabelWithImageImpl = { 2, "LabelWithImageImpl", "ios", NULL, 0x1, 13, methods, 7, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosLabelWithImageImpl = { 2, "LabelWithImageImpl", "ios", NULL, 0x1, 13, methods, 8, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosLabelWithImageImpl;
 }
 
