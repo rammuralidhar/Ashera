@@ -26,16 +26,24 @@ public class PageData {
 				tag, classNames, id);
 		for (int i = 0; i < cssRules.size(); i++) {
 			CSSRule cssRule = (CSSRule) cssRules.get(i);
-
+			
 			if (cssRule instanceof CSSStyleRule) {
 				CSSStyleRule cssStyleRule = (CSSStyleRule) cssRule;
+				
+				String selectorText = cssStyleRule.getSelectorText();
 				int styles = cssStyleRule.getStyle().getLength();
+				
+				String[] selectorArr =selectorText.split("\\:");
+				String prefix = "";
+				if (selectorArr.length == 2) {
+					prefix = selectorArr[1] + ":";
+				}
 
 				for (int j = 0; j < styles; j++) {
 					String key = cssStyleRule.getStyle().item(j);
 					String value = cssStyleRule.getStyle()
 							.getPropertyValue(key);
-					finalattributes.put(key, value);
+					finalattributes.put(prefix + key, value);
 				}
 			}
 		}
