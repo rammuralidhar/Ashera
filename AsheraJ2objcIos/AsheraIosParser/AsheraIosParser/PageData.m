@@ -8,6 +8,7 @@
 #include "CSSStyleDeclaration.h"
 #include "CSSStyleRule.h"
 #include "CachedCSSParser.h"
+#include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "PageData.h"
 #include "java/util/HashMap.h"
@@ -53,20 +54,30 @@ J2OBJC_FIELD_SETTER(ComAsheraWidgetFactoryPageData, parser_, ComSteadystateCssPa
 #line 30
     if ([RepackagedOrgW3cDomCssCSSStyleRule_class_() isInstance:cssRule]) {
       id<RepackagedOrgW3cDomCssCSSStyleRule> cssStyleRule = (id<RepackagedOrgW3cDomCssCSSStyleRule>) check_protocol_cast(cssRule, @protocol(RepackagedOrgW3cDomCssCSSStyleRule));
-      jint styles = [((id<RepackagedOrgW3cDomCssCSSStyleDeclaration>) nil_chk([((id<RepackagedOrgW3cDomCssCSSStyleRule>) nil_chk(cssStyleRule)) getStyle])) getLength];
       
-#line 34
+#line 33
+      NSString *selectorText = [((id<RepackagedOrgW3cDomCssCSSStyleRule>) nil_chk(cssStyleRule)) getSelectorText];
+      jint styles = [((id<RepackagedOrgW3cDomCssCSSStyleDeclaration>) nil_chk([cssStyleRule getStyle])) getLength];
+      
+#line 36
+      IOSObjectArray *selectorArr = [((NSString *) nil_chk(selectorText)) split:@"\\:"];
+      NSString *prefix = @"";
+      if (((IOSObjectArray *) nil_chk(selectorArr))->size_ == 2) {
+        prefix = JreStrcat("$C", IOSObjectArray_Get(selectorArr, 1), ':');
+      }
+      
+#line 42
       for (jint j = 0; j < styles; j++) {
         NSString *key = [((id<RepackagedOrgW3cDomCssCSSStyleDeclaration>) nil_chk([cssStyleRule getStyle])) itemWithInt:j];
         NSString *value = [((id<RepackagedOrgW3cDomCssCSSStyleDeclaration>) nil_chk([cssStyleRule getStyle])) getPropertyValueWithNSString:
-#line 37
+#line 45
         key];
-        (void) [finalattributes putWithId:key withId:value];
+        (void) [finalattributes putWithId:JreStrcat("$$", prefix, key) withId:value];
       }
     }
   }
   
-#line 43
+#line 51
   return finalattributes;
 }
 

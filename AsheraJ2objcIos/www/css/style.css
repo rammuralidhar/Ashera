@@ -22,3 +22,9 @@ label {
     color: #000000;
     background-image: url("button.png");
 }
+
+#test:active {
+    color: #000000;
+    background-image: url("button.png");
+}
+

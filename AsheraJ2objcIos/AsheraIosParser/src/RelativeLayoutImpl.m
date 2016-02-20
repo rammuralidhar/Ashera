@@ -23,14 +23,18 @@
  @public
   id<RepackagedAndroidContentContext> context_;
   RepackagedAndroidWidgetRelativeLayout *relativeLayout_;
+  id<RepackagedAndroidViewView_OnClickListener> onClickListener_;
 }
 
 - (void)nativeAddViewWithId:(id)w;
+
+- (void)clickMeWithRepackagedAndroidViewView_OnClickListener:(id<RepackagedAndroidViewView_OnClickListener>)onClickListener;
 
 @end
 
 J2OBJC_FIELD_SETTER(IosRelativeLayoutImpl, context_, id<RepackagedAndroidContentContext>)
 J2OBJC_FIELD_SETTER(IosRelativeLayoutImpl, relativeLayout_, RepackagedAndroidWidgetRelativeLayout *)
+J2OBJC_FIELD_SETTER(IosRelativeLayoutImpl, onClickListener_, id<RepackagedAndroidViewView_OnClickListener>)
 
 __attribute__((unused)) static void IosRelativeLayoutImpl_nativeAddViewWithId_(IosRelativeLayoutImpl *self, id w);
 
@@ -61,30 +65,30 @@ __attribute__((unused)) static IosRelativeLayoutImpl_$1 *new_IosRelativeLayoutIm
 J2OBJC_TYPE_LITERAL_HEADER(IosRelativeLayoutImpl_$1)
 
 
-#line 13
+#line 15
 @implementation IosRelativeLayoutImpl
 
 
-#line 17
+#line 20
 - (instancetype)init {
   IosRelativeLayoutImpl_init(self);
   return self;
 }
 
 
-#line 21
+#line 24
 - (id<ComAsheraWidgetFactoryIWidget>)newInstance {
   return new_IosRelativeLayoutImpl_init();
 }
 
 
-#line 27
+#line 30
 - (id)asWidget {
   return relativeLayout_;
 }
 
 
-#line 33
+#line 36
 - (id)asNativeWidget {
   return [self nativeAsWidget];
 }
@@ -94,42 +98,42 @@ J2OBJC_TYPE_LITERAL_HEADER(IosRelativeLayoutImpl_$1)
 }
 
 
-#line 42
+#line 45
 - (void)createWithJavaUtilMap:(id<JavaUtilMap>)metadata {
   self->context_ = (id<RepackagedAndroidContentContext>) check_protocol_cast([((id<JavaUtilMap>) nil_chk(metadata)) getWithId:@"context"], @protocol(RepackagedAndroidContentContext));
   relativeLayout_ = new_IosRelativeLayoutImpl_$1_initWithIosRelativeLayoutImpl_withRepackagedAndroidContentContext_(self, context_);
   
-#line 53
+#line 56
   [self nativeCreate];
 }
 
 
-#line 56
+#line 59
 - (void)nativeCreate {
   self.uiView = [UIView new];
   self.uiView.backgroundColor = [UIColor greenColor];
 }
 
 
-#line 62
+#line 65
 - (IOSObjectArray *)getAttributes {
   return [IOSObjectArray newArrayWithObjects:(id[]){ @"width", @"height" } count:2 type:NSString_class_()];
 }
 
 
-#line 67
+#line 70
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes {
   [super setUpAttributeWithJavaUtilMap:attributes];
 }
 
 
-#line 72
+#line 75
 - (void)addWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)w {
   [super addWithComAsheraWidgetFactoryIWidget:w];
   RepackagedAndroidViewView *view = (RepackagedAndroidViewView *) check_class_cast([((id<ComAsheraWidgetFactoryIWidget>) nil_chk(w)) asWidget], [RepackagedAndroidViewView class]);
   [((RepackagedAndroidWidgetRelativeLayout *) nil_chk(relativeLayout_)) addViewWithRepackagedAndroidViewView:view];
   
-#line 77
+#line 80
   RepackagedAndroidWidgetRelativeLayout_LayoutParams *layoutParams = (RepackagedAndroidWidgetRelativeLayout_LayoutParams *) check_class_cast([((RepackagedAndroidViewView *) nil_chk(view)) getLayoutParams], [RepackagedAndroidWidgetRelativeLayout_LayoutParams class]);
   jint widgetWidth = [((JavaLangInteger *) nil_chk((JavaLangInteger *) check_class_cast([w getAttributeValueWithNSString:@"width"], [JavaLangInteger class]))) intValue];
   jint heightWidth = [((JavaLangInteger *) nil_chk((JavaLangInteger *) check_class_cast([w getAttributeValueWithNSString:@"height"], [JavaLangInteger class]))) intValue];
@@ -139,41 +143,41 @@ J2OBJC_TYPE_LITERAL_HEADER(IosRelativeLayoutImpl_$1)
   }
   else {
     
-#line 84
+#line 87
     layoutParams->width_ = widgetWidth;
     layoutParams->height_ = heightWidth;
   }
   
-#line 88
+#line 91
   if ([((JavaLangBoolean *) nil_chk((JavaLangBoolean *) check_class_cast([w getAttributeValueWithNSString:@"align_parentbottom"], [JavaLangBoolean class]))) booleanValue]) {
     [((RepackagedAndroidWidgetRelativeLayout_LayoutParams *) nil_chk(layoutParams)) addRuleWithInt:RepackagedAndroidWidgetRelativeLayout_ALIGN_PARENT_BOTTOM];
   }
   
-#line 92
+#line 95
   if ([((JavaLangBoolean *) nil_chk((JavaLangBoolean *) check_class_cast([w getAttributeValueWithNSString:@"align_parentright"], [JavaLangBoolean class]))) booleanValue]) {
     [((RepackagedAndroidWidgetRelativeLayout_LayoutParams *) nil_chk(layoutParams)) addRuleWithInt:RepackagedAndroidWidgetRelativeLayout_ALIGN_PARENT_RIGHT];
   }
   
-#line 96
+#line 99
   if ([w getAttributeValueWithNSString:@"left_of"] != nil) {
     [((RepackagedAndroidWidgetRelativeLayout_LayoutParams *) nil_chk(layoutParams)) addRuleWithInt:RepackagedAndroidWidgetRelativeLayout_LEFT_OF withInt:((jint)
-#line 98
+#line 101
     [nil_chk([w getAttributeValueWithNSString:@"left_of"]) hash])];
   }
   
-#line 101
+#line 104
   IosRelativeLayoutImpl_nativeAddViewWithId_(self, [w asNativeWidget]);
 }
 
 
-#line 105
+#line 108
 - (void)clear {
   [super clear];
   [((RepackagedAndroidWidgetRelativeLayout *) nil_chk(relativeLayout_)) removeAllViews];
 }
 
 
-#line 111
+#line 114
 - (jboolean)removeWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)w {
   jboolean remove = [super removeWithComAsheraWidgetFactoryIWidget:w];
   [((RepackagedAndroidWidgetRelativeLayout *) nil_chk(relativeLayout_)) removeViewWithRepackagedAndroidViewView:(RepackagedAndroidViewView *) check_class_cast([((id<ComAsheraWidgetFactoryIWidget>) nil_chk(w)) asWidget], [RepackagedAndroidViewView class])];
@@ -181,7 +185,7 @@ J2OBJC_TYPE_LITERAL_HEADER(IosRelativeLayoutImpl_$1)
 }
 
 
-#line 119
+#line 122
 - (IOSObjectArray *)getLayoutAttributes {
   return [IOSObjectArray newArrayWithObjects:(id[]){ @"align_parentbottom", @"align_parentright", @"left_of" } count:3 type:NSString_class_()];
 }
@@ -194,9 +198,28 @@ J2OBJC_TYPE_LITERAL_HEADER(IosRelativeLayoutImpl_$1)
 }
 
 
-#line 127
+#line 130
 - (void)nativeAddViewWithId:(id)w {
   IosRelativeLayoutImpl_nativeAddViewWithId_(self, w);
+}
+
+- (void)addClickListenerWithRepackagedAndroidViewView_OnClickListener:(id<RepackagedAndroidViewView_OnClickListener>)onClickListener {
+  self->onClickListener_ = onClickListener;
+  [self nativeAddClickListenerWithRepackagedAndroidViewView_OnClickListener:onClickListener];
+}
+
+- (void)clickMeWithRepackagedAndroidViewView_OnClickListener:(id<RepackagedAndroidViewView_OnClickListener>)onClickListener {
+  [((id<RepackagedAndroidViewView_OnClickListener>) nil_chk(onClickListener)) onClickWithRepackagedAndroidViewView:relativeLayout_];
+}
+
+- (void)nativeAddClickListenerWithRepackagedAndroidViewView_OnClickListener:(id<RepackagedAndroidViewView_OnClickListener>)onClickListener {
+  UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetectedWithUITapGestureRecognizer:)];
+    gestureRecognizer.numberOfTapsRequired = 1;
+  [self.uiView addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)tapDetectedWithUITapGestureRecognizer:(UITapGestureRecognizer *)tapRecognizer {
+  [self clickMeWithRepackagedAndroidViewView_OnClickListener:onClickListener_];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -216,25 +239,30 @@ J2OBJC_TYPE_LITERAL_HEADER(IosRelativeLayoutImpl_$1)
     { "getLayoutAttributes", NULL, "[Ljava.lang.String;", 0x1, NULL, NULL },
     { "nativeMakeFrameWithInt:withInt:withInt:withInt:", "nativeMakeFrame", "V", 0x101, NULL, NULL },
     { "nativeAddViewWithId:", "nativeAddView", "V", 0x102, NULL, NULL },
+    { "addClickListenerWithRepackagedAndroidViewView_OnClickListener:", "addClickListener", "V", 0x1, NULL, NULL },
+    { "clickMeWithRepackagedAndroidViewView_OnClickListener:", "clickMe", "V", 0x2, NULL, NULL },
+    { "nativeAddClickListenerWithRepackagedAndroidViewView_OnClickListener:", "nativeAddClickListener", "V", 0x101, NULL, NULL },
+    { "tapDetectedWithUITapGestureRecognizer:", "tapDetected", "V", 0x104, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "context_", NULL, 0x2, "Lrepackaged.android.content.Context;", NULL, NULL,  },
     { "relativeLayout_", NULL, 0x2, "Lrepackaged.android.widget.RelativeLayout;", NULL, NULL,  },
+    { "onClickListener_", NULL, 0x2, "Lrepackaged.android.view.View$OnClickListener;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _IosRelativeLayoutImpl = { 2, "RelativeLayoutImpl", "ios", NULL, 0x1, 15, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _IosRelativeLayoutImpl = { 2, "RelativeLayoutImpl", "ios", NULL, 0x1, 19, methods, 3, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_IosRelativeLayoutImpl;
 }
 
 @end
 
 
-#line 17
+#line 20
 void IosRelativeLayoutImpl_init(IosRelativeLayoutImpl *self) {
   (void) ComAsheraWidgetBaseHasWidgets_init(self);
 }
 
 
-#line 17
+#line 20
 IosRelativeLayoutImpl *new_IosRelativeLayoutImpl_init() {
   IosRelativeLayoutImpl *self = [IosRelativeLayoutImpl alloc];
   IosRelativeLayoutImpl_init(self);
@@ -242,7 +270,7 @@ IosRelativeLayoutImpl *new_IosRelativeLayoutImpl_init() {
 }
 
 
-#line 127
+#line 130
 void IosRelativeLayoutImpl_nativeAddViewWithId_(IosRelativeLayoutImpl *self, id w) {
   [self.uiView addSubview:w];
 }
@@ -252,7 +280,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosRelativeLayoutImpl)
 @implementation IosRelativeLayoutImpl_$1
 
 
-#line 46
+#line 49
 - (void)onLayoutWithBoolean:(jboolean)changed
                     withInt:(jint)l
                     withInt:(jint)t
@@ -260,7 +288,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosRelativeLayoutImpl)
                     withInt:(jint)b {
   [super onLayoutWithBoolean:changed withInt:l withInt:t withInt:r withInt:b];
   
-#line 49
+#line 52
   [this$0_ nativeMakeFrameWithInt:l withInt:t withInt:r withInt:b];
 }
 

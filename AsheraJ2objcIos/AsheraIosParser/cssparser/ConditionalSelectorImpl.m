@@ -91,19 +91,24 @@ J2OBJC_STATIC_FIELD_GETTER(ComSteadystateCssParserSelectorsConditionalSelectorIm
 
 #line 96
 - (NSString *)getRegEx {
+  NSString *condition = [((id<RepackagedOrgW3cCssSacCondition>) nil_chk(condition__)) description];
+  if ([((NSString *) nil_chk(condition)) indexOfString:@":"] != -1) {
+    condition = IOSObjectArray_Get(nil_chk([condition split:@"\\:"]), 0);
+  }
+  condition = [((NSString *) nil_chk(condition)) replaceAll:@"\\." withReplacement:@"\\\\."];
   if ([((NSString *) nil_chk([((id<RepackagedOrgW3cCssSacSimpleSelector>) nil_chk(simpleSelector__)) description])) isEqual:@"*"]) {
-    NSString *selector = NSString_formatWithNSString_withNSObjectArray_(RepackagedOrgW3cCssSacSelector_get_ID_CLASS_REGEX_(), [IOSObjectArray newArrayWithObjects:(id[]){ RepackagedOrgW3cCssSacSelector_get_TAG_REGEX_(), [((NSString *) nil_chk([((id<RepackagedOrgW3cCssSacCondition>) nil_chk(condition__)) description])) replaceAll:@"\\." withReplacement:@"\\\\."] } count:2 type:NSObject_class_()]);
+    NSString *selector = NSString_formatWithNSString_withNSObjectArray_(RepackagedOrgW3cCssSacSelector_get_ID_CLASS_REGEX_(), [IOSObjectArray newArrayWithObjects:(id[]){ RepackagedOrgW3cCssSacSelector_get_TAG_REGEX_(), condition } count:2 type:NSObject_class_()]);
     [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:selector];
     return selector;
   }
   else {
     
-#line 102
+#line 107
     [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:[simpleSelector__ description]];
-    [JavaLangSystem_get_out_() printlnWithNSString:[((id<RepackagedOrgW3cCssSacCondition>) nil_chk(condition__)) description]];
+    [JavaLangSystem_get_out_() printlnWithNSString:condition];
     return NSString_formatWithNSString_withNSObjectArray_(RepackagedOrgW3cCssSacSelector_get_ID_CLASS_REGEX_(), [IOSObjectArray newArrayWithObjects:(id[]){ [simpleSelector__ description],
-#line 105
-    [((NSString *) nil_chk([condition__ description])) replaceAll:@"\\." withReplacement:@"\\\\."] } count:2 type:NSObject_class_()]);
+#line 110
+    condition } count:2 type:NSObject_class_()]);
   }
 }
 

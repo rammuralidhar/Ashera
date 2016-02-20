@@ -99,6 +99,19 @@ public class LabelWithImageImpl extends BaseHasWidgets implements HasText{
 		label.setUpStyle(styles);
 		imageView.setUpStyle(styles);
 		frame.setUpStyle(styles);
+		
+		String bgImageActive = styles.get("active:background-image");
+		
+		if (bgImageActive != null) {
+			String url1 = bgImageActive.replaceAll("url\\(", "www/").replaceAll("\\)", "");
+			frame.addClickListener(new repackaged.android.view.View.OnClickListener() {
+				@Override
+				public void onClick(repackaged.android.view.View v) {
+					System.out.println("22222222222");
+				}
+			});
+			
+		}
 	}
 	
 	@Override

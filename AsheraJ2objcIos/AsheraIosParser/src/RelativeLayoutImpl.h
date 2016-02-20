@@ -13,6 +13,7 @@
 @class IOSObjectArray;
 @protocol ComAsheraWidgetFactoryIWidget;
 @protocol JavaUtilMap;
+@protocol RepackagedAndroidViewView_OnClickListener;
 
 @interface IosRelativeLayoutImpl : ComAsheraWidgetBaseHasWidgets < ComAsheraWidgetFactoryILinearLayout >
 @property UIView* uiView;
@@ -21,6 +22,8 @@
 - (instancetype)init;
 
 - (void)addWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)w;
+
+- (void)addClickListenerWithRepackagedAndroidViewView_OnClickListener:(id<RepackagedAndroidViewView_OnClickListener>)onClickListener;
 
 - (id)asNativeWidget;
 
@@ -33,6 +36,8 @@
 - (IOSObjectArray *)getAttributes;
 
 - (IOSObjectArray *)getLayoutAttributes;
+
+- (void)nativeAddClickListenerWithRepackagedAndroidViewView_OnClickListener:(id<RepackagedAndroidViewView_OnClickListener>)onClickListener;
 
 - (id)nativeAsWidget;
 
@@ -48,6 +53,10 @@
 - (jboolean)removeWithComAsheraWidgetFactoryIWidget:(id<ComAsheraWidgetFactoryIWidget>)w;
 
 - (void)setUpAttributeWithJavaUtilMap:(id<JavaUtilMap>)attributes;
+
+#pragma mark Protected
+
+- (void)tapDetectedWithUITapGestureRecognizer:(UITapGestureRecognizer *)tapRecognizer;
 
 @end
 

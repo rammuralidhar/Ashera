@@ -206,6 +206,7 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelImpl_LabelView)
 - (void)nativeCreate {
   self.uiLabel = [UILabel new];
   self.uiLabel.numberOfLines = 0;
+    self.uiLabel.userInteractionEnabled = YES;
 }
 
 

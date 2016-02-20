@@ -117,7 +117,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
 }
 
 
-#line 143
+#line 146
 - (NSString *)getCssTextWithComSteadystateCssFormatCSSFormat:(ComSteadystateCssFormatCSSFormat *)format {
   JavaLangStringBuilder *sb = new_JavaLangStringBuilder_init();
   for (jint i = 0; i < [self getLength]; i++) {
@@ -125,7 +125,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
       (void) [sb appendWithNSString:@"\x0d\n"];
     }
     
-#line 150
+#line 153
     id<RepackagedOrgW3cDomCssCSSRule> rule = [self itemWithInt:i];
     if ([ComSteadystateCssFormatCSSFormatable_class_() isInstance:rule]) {
       (void) [sb appendWithNSString:[((id<ComSteadystateCssFormatCSSFormatable>) nil_chk(((id<ComSteadystateCssFormatCSSFormatable>) check_protocol_cast(rule, @protocol(ComSteadystateCssFormatCSSFormatable))))) getCssTextWithComSteadystateCssFormatCSSFormat:format]];
@@ -142,7 +142,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
 }
 
 
-#line 167
+#line 170
 - (jboolean)isEqual:(id)obj {
   if (self == obj) {
     return YES;
@@ -159,7 +159,7 @@ __attribute__((unused)) static jboolean ComSteadystateCssDomCSSRuleListImpl_equa
 }
 
 
-#line 193
+#line 196
 - (NSUInteger)hash {
   jint hash_ = ComSteadystateCssUtilLangUtils_HASH_SEED;
   hash_ = ComSteadystateCssUtilLangUtils_hashCodeWithInt_withId_(hash_, rules__);
@@ -225,7 +225,7 @@ void ComSteadystateCssDomCSSRuleListImpl_updateMapWithComSteadystateCssDomCSSSty
     
 #line 118
     if ([((NSString *) nil_chk(key)) contains:@"."]) {
-      IOSObjectArray *keys = [key split:@"\\."];
+      IOSObjectArray *keys = [key split:@"\\.|\\:"];
       if (![((NSString *) nil_chk(IOSObjectArray_Get(nil_chk(keys), 0))) isEqual:@"*"]) {
         (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:IOSObjectArray_Get(keys, 0) withId:cssRule];
       }
@@ -236,7 +236,7 @@ void ComSteadystateCssDomCSSRuleListImpl_updateMapWithComSteadystateCssDomCSSSty
     else
 #line 126
     if ([key contains:@".#"]) {
-      IOSObjectArray *keys = [key split:@"#"];
+      IOSObjectArray *keys = [key split:@"#|\\:"];
       if (![((NSString *) nil_chk(IOSObjectArray_Get(nil_chk(keys), 0))) isEqual:@"*"]) {
         (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:IOSObjectArray_Get(keys, 0) withId:cssRule];
       }
@@ -244,16 +244,22 @@ void ComSteadystateCssDomCSSRuleListImpl_updateMapWithComSteadystateCssDomCSSSty
         (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:JreStrcat("C$", '#', IOSObjectArray_Get(keys, 1)) withId:cssRule];
       }
     }
+    else
+#line 134
+    if ([key contains:@":"]) {
+      IOSObjectArray *keys = [key split:@"\\:"];
+      (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:IOSObjectArray_Get(nil_chk(keys), 0) withId:cssRule];
+    }
     else {
       
-#line 135
+#line 138
       (void) [((ComSteadystateCssUtilMultiMap *) nil_chk(self->ruleMap__)) putWithId:key withId:cssRule];
     }
   }
 }
 
 
-#line 178
+#line 181
 jboolean ComSteadystateCssDomCSSRuleListImpl_equalsRulesWithRepackagedOrgW3cDomCssCSSRuleList_(ComSteadystateCssDomCSSRuleListImpl *self, id<RepackagedOrgW3cDomCssCSSRuleList> crl) {
   if ((crl == nil) || ([self getLength] != [crl getLength])) {
     return NO;

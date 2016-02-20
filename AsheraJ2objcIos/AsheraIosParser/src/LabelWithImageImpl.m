@@ -12,6 +12,9 @@
 #include "LabelImpl.h"
 #include "LabelWithImageImpl.h"
 #include "RelativeLayoutImpl.h"
+#include "View.h"
+#include "java/io/PrintStream.h"
+#include "java/lang/System.h"
 #include "java/util/ArrayList.h"
 #include "java/util/Arrays.h"
 #include "java/util/List.h"
@@ -87,6 +90,22 @@ __attribute__((unused)) static IosLabelWithImageImpl_$2 *new_IosLabelWithImageIm
 
 J2OBJC_TYPE_LITERAL_HEADER(IosLabelWithImageImpl_$2)
 
+@interface IosLabelWithImageImpl_$3 : NSObject < RepackagedAndroidViewView_OnClickListener >
+
+- (void)onClickWithRepackagedAndroidViewView:(RepackagedAndroidViewView *)v;
+
+- (instancetype)init;
+
+@end
+
+J2OBJC_EMPTY_STATIC_INIT(IosLabelWithImageImpl_$3)
+
+__attribute__((unused)) static void IosLabelWithImageImpl_$3_init(IosLabelWithImageImpl_$3 *self);
+
+__attribute__((unused)) static IosLabelWithImageImpl_$3 *new_IosLabelWithImageImpl_$3_init() NS_RETURNS_RETAINED;
+
+J2OBJC_TYPE_LITERAL_HEADER(IosLabelWithImageImpl_$3)
+
 
 #line 12
 @implementation IosLabelWithImageImpl
@@ -156,26 +175,35 @@ J2OBJC_TYPE_LITERAL_HEADER(IosLabelWithImageImpl_$2)
   [((IosLabelImpl *) nil_chk(label_)) setUpStyleWithJavaUtilMap:styles];
   [((IosImageViewImpl *) nil_chk(imageView_)) setUpStyleWithJavaUtilMap:styles];
   [((IosRelativeLayoutImpl *) nil_chk(frame_)) setUpStyleWithJavaUtilMap:styles];
+  
+#line 103
+  NSString *bgImageActive = [((id<JavaUtilMap>) nil_chk(styles)) getWithId:@"active:background-image"];
+  
+#line 105
+  if (bgImageActive != nil) {
+    NSString *url1 = [((NSString *) nil_chk([bgImageActive replaceAll:@"url\\(" withReplacement:@"www/"])) replaceAll:@"\\)" withReplacement:@""];
+    [frame_ addClickListenerWithRepackagedAndroidViewView_OnClickListener:new_IosLabelWithImageImpl_$3_init()];
+  }
 }
 
 
-#line 105
+#line 118
 - (void)initialized {
   [super initialized];
   
-#line 109
+#line 122
   [((IosRelativeLayoutImpl *) nil_chk(frame_)) addWithComAsheraWidgetFactoryIWidget:imageView_];
   [frame_ addWithComAsheraWidgetFactoryIWidget:label_];
 }
 
 
-#line 114
+#line 127
 - (NSString *)getText {
   return self->text_;
 }
 
 
-#line 119
+#line 132
 - (void)setTextWithNSString:(NSString *)text {
   self->text_ = text;
   [((IosLabelImpl *) nil_chk(label_)) setTextWithNSString:text];
@@ -336,3 +364,40 @@ IosLabelWithImageImpl_$2 *new_IosLabelWithImageImpl_$2_initWithIosLabelWithImage
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosLabelWithImageImpl_$2)
+
+@implementation IosLabelWithImageImpl_$3
+
+
+#line 109
+- (void)onClickWithRepackagedAndroidViewView:(RepackagedAndroidViewView *)v {
+  [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:@"22222222222"];
+}
+
+- (instancetype)init {
+  IosLabelWithImageImpl_$3_init(self);
+  return self;
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static const J2ObjcMethodInfo methods[] = {
+    { "onClickWithRepackagedAndroidViewView:", "onClick", "V", 0x1, NULL, NULL },
+    { "init", "", NULL, 0x0, NULL, NULL },
+  };
+  static const J2ObjCEnclosingMethodInfo enclosing_method = { "IosLabelWithImageImpl", "setUpStyleWithJavaUtilMap:" };
+  static const J2ObjcClassInfo _IosLabelWithImageImpl_$3 = { 2, "", "ios", "LabelWithImageImpl", 0x8008, 2, methods, 0, NULL, 0, NULL, 0, NULL, &enclosing_method, NULL };
+  return &_IosLabelWithImageImpl_$3;
+}
+
+@end
+
+void IosLabelWithImageImpl_$3_init(IosLabelWithImageImpl_$3 *self) {
+  (void) NSObject_init(self);
+}
+
+IosLabelWithImageImpl_$3 *new_IosLabelWithImageImpl_$3_init() {
+  IosLabelWithImageImpl_$3 *self = [IosLabelWithImageImpl_$3 alloc];
+  IosLabelWithImageImpl_$3_init(self);
+  return self;
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(IosLabelWithImageImpl_$3)

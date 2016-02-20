@@ -5,6 +5,8 @@ import java.util.Map;
 import repackaged.android.content.Context;
 import repackaged.android.view.View;
 import repackaged.android.widget.RelativeLayout;
+import repackaged.android.view.View.OnClickListener;
+import UI.TapGestureRecognizer;
 
 import com.ashera.widget.BaseHasWidgets;
 import com.ashera.widget.factory.ILinearLayout;
@@ -13,6 +15,7 @@ import com.ashera.widget.factory.IWidget;
 public class RelativeLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 	private Context context;
 	private RelativeLayout relativeLayout;
+	private OnClickListener onClickListener;
 
 	public RelativeLayoutImpl() {
 	}
@@ -126,5 +129,25 @@ public class RelativeLayoutImpl extends BaseHasWidgets implements ILinearLayout{
 	
 	private native void nativeAddView(Object w)/*-[ 
     	[self.uiView addSubview:w];
+	]-*/;
+
+	public void addClickListener(OnClickListener onClickListener) {
+		this.onClickListener = onClickListener;
+		nativeAddClickListener(onClickListener);
+	}
+
+	private void clickMe(OnClickListener onClickListener) {
+		onClickListener.onClick(relativeLayout);
+	}
+	
+
+	public native void nativeAddClickListener(OnClickListener onClickListener)/*-[
+  		UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetectedWithUITapGestureRecognizer:)];
+  		gestureRecognizer.numberOfTapsRequired = 1;
+  		[self.uiView addGestureRecognizer:gestureRecognizer];
+	]-*/;
+	
+	protected native void tapDetected(TapGestureRecognizer tapRecognizer) /*-[
+		[self clickMeWithRepackagedAndroidViewView_OnClickListener:onClickListener_];
 	]-*/;
 }
